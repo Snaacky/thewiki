@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://beta.thewiki.moe/sitemap.xml.gz
