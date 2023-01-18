@@ -10,7 +10,6 @@ order: -2
 #### PC
 
 - [MPV](https://mpv.io/installation/) - [Installation and configuration tutorial](/tutorials/mpv) (recommended)
-
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases)/[Potplayer](https://potplayer.daum.net) - [Configuration guide with MadVR](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
 
 VLC is not recommended because it often displays wrong colours, introduces visual artifacts, and breaks intensive subtitles. Here are some comparisons showing these issues -
@@ -37,9 +36,7 @@ There are three ways of using Kodi on a TV -
 **1. Kodi installed on a computer which stores the content and is directly connected to the TV.**
 
 - No decoding problems with a powerful cpu.
-
 - Possibility to use high quality shaders that utilize your gpu to improve upscaling with [an external player of your choice.](https://kodi.wiki/view/External_players)
-
 - Control using a normal mouse+keyboard or through an android app like [Yatse.](https://yatse.tv/)
 
 **2. Kodi on a TV/Android box with the content on a separate computer.**
@@ -56,9 +53,7 @@ Transcoding is only a last resort to deal with compatibility problems. Direct pl
 Here, Kodi acts as a client,increasing compatibility and replacing the default one that comes with Plex, Emby or Jellyfin. This is done through their respective add-ons for kodi.
 
 - [PlexKodiConnect](https://github.com/croneter/PlexKodiConnect)
-
 - [Emby for Kodi](https://github.com/MediaBrowser/plugin.video.emby)
-
 - [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
 
 ## Media Server
@@ -66,9 +61,7 @@ Here, Kodi acts as a client,increasing compatibility and replacing the default o
 The setup consists of two parts - the server and the client. A client is simply a media player that will access the content from a server. The server runs on the device which stores your content. Both may be installed on the same system, but they're separate applications. Usually you'd have the server on a computer connected to other devices in your home network and a client installed on all of those devices. All three of the popular ones come with their own client/player as well as support for using kodi as a client (recommended for anime).
 
 - [Plex](https://www.plex.tv/) - [Guide for Anime](https://docs.google.com/document/d/1sXKZDYzbBDDWS8eqJ3IcaxSWhYKIPDdtChm74CBJ6ig)
-
 - [Emby](https://emby.media/)
-
 - [Jellyfin](https://jellyfin.org/)
 
 ### Scanning anime without renaming
