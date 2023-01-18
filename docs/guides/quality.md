@@ -1,5 +1,6 @@
 ---
 label: Quality
+order: -1
 ---
 
 # Video

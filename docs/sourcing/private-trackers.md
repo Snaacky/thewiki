@@ -1,5 +1,6 @@
 ---
 label: Private Trackers
+order: -3
 ---
 
 # Private Trackers

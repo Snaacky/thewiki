@@ -1,5 +1,6 @@
 ---
 label: Release Standards
+order: -3
 ---
 
 # Video
