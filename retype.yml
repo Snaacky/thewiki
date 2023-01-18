@@ -6,6 +6,7 @@ branding:
   title: The Wiki
 
 edit:
-  repo: "https://github.com/snaacky/thewiki/"
+  repo: "https://github.com/Snaacky/thewiki/"
+  base: /docs/
   branch: "master"
   label: "Edit this page"
