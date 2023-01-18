@@ -31,10 +31,11 @@ Read more: [Torrenting Guide](/en/guides/torrenting), [RSS Tutorial](/tutorials/
 
 ## Playback
 
-> VLC is not recommended because it displays wrong colours, introduces visual artifacts, and breaks intensive subtitles.
-> {.is-info}
+!!!warning Warning
+VLC is not recommended because it displays wrong colours, introduces visual artifacts, and breaks intensive subtitles.
+!!!
 
-**PC:** [MPV](https://mpv.io/installation/) , [MPC-HC](https://github.com/clsid2/mpc-hc/releases), [Potplayer](https://potplayer.daum.net)
+**PC:** [MPV](https://mpv.io/installation/), [MPC-HC](https://github.com/clsid2/mpc-hc/releases), [Potplayer](https://potplayer.daum.net)
 
 **Android:** [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv&hl=lv&gl=US), [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 

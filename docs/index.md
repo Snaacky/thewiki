@@ -36,7 +36,7 @@ Read more: [Sourcing Guide](/guides/sourcing), [Torrenting Guide](/en/guides/tor
 > Do not use VLC
 > {.is-info}
 
-**PC:** [MPV](https://mpv.io/installation/) , [MPC-HC](https://github.com/clsid2/mpc-hc/releases), [Potplayer](https://potplayer.daum.net)
+**PC:** [MPV](https://mpv.io/installation/), [MPC-HC](https://github.com/clsid2/mpc-hc/releases), [Potplayer](https://potplayer.daum.net)
 
 **Android:** [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv&hl=lv&gl=US), [MX player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad&hl=lv&gl=US)
 
