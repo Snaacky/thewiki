@@ -1,5 +1,6 @@
 ---
 label: Sourcing
+visibility: hidden
 ---
 
 # Anime
