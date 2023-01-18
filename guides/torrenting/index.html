@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727379552264">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727383495741">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727379552264" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727383495741" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727379552264" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727383495741" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727379552264" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727383495741" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,10 +174,23 @@
         <div class="pr-5 ml-3 w-full">
 <blockquote>
 <p>You may want to use a <a href="/en/faq/vpn">VPN</a> or a <a href="/en/guides/torrenting#what-is-a-seedbox">seedbox</a> for downloading torrents to avoid receiving a copyright infringement notice from your ISP or a copyright body, and having your internet limited or revoked.</p>
-</blockquote>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
         </div>
     </div>
 </div>
+</blockquote>
 <doc-anchor-target id="basics">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#basics">#</doc-anchor-trigger>
@@ -193,14 +206,16 @@
 </doc-anchor-target>
 <p>For many people, streaming services are more convenient to use. However, torrenting is fairly simple and allows for more flexibility. Some reasons to use torrents are:</p>
 <ul>
-<li><p>A range of qualities and sizes.</p>
-</li>
-<li><p>Better subtitles and style options.</p>
-</li>
-<li><p>Easier access to a larger variety of titles.</p>
-</li>
-<li><p>Downloaded files for rewatching with no additional data usage.</p>
-</li>
+<li>A range of qualities and sizes.</li>
+</ul>
+<ul>
+<li>Better subtitles and style options.</li>
+</ul>
+<ul>
+<li>Easier access to a larger variety of titles.</li>
+</ul>
+<ul>
+<li>Downloaded files for rewatching with no additional data usage.</li>
 </ul>
 <doc-anchor-target id="what-is-torrenting">
     <h2>
@@ -209,6 +224,11 @@
     </h2>
 </doc-anchor-target>
 <p>The BitTorrent Protocol is an internet protocol for peer-to-peer (P2P) file sharing, where the large file will be broken down into many small pieces called &quot;packets&quot;. Those packets will be exchanged between all the devices in a P2P network consist of uploaders (a.k.a. &quot;seeders&quot;) and downloaders (a.k.a. &quot;leechers&quot;). The seeders will send the packets that the leechers are still missing until all the needed packets are received, and finally merged into the complete file that you originally wanted to download.</p>
+        </div>
+    </div>
+</div>
+<blockquote>
+<p><strong>Key difference:</strong> The file is not being hosted on any specific servers and ready to be downloaded like the commonly found direct download links on the internet. Instead, each computer in the P2P network acts as a small server that will share you small pieces of the file.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -222,12 +242,10 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p><strong>Key difference:</strong> The file is not being hosted on any specific servers and ready to be downloaded like the commonly found direct download links on the internet. Instead, each computer in the P2P network acts as a small server that will share you small pieces of the file.</p>
-</blockquote>
         </div>
     </div>
 </div>
+</blockquote>
 <doc-anchor-target id="torrent-clients">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#torrent-clients">#</doc-anchor-trigger>
@@ -250,10 +268,23 @@
         <div class="pr-5 ml-3 w-full">
 <blockquote>
 <p>Keep in mind that some clients (such as newer versions of uTorrent and BitTorrent) have been known to be bundled with crypto miners and adware.</p>
-</blockquote>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
         </div>
     </div>
 </div>
+</blockquote>
 <p><strong>Windows, Linux, macOS:</strong></p>
 <ul>
 <li><p><a href="https://www.qbittorrent.org/download.php">qBittorrent</a></p>
@@ -280,7 +311,7 @@
 </li>
 <li><p><a href="https://play.google.com/store/apps/details?id=com.kevinforeman.nzb360">nzb360</a> - Remote torrent management app with support for managing Sonarr, Radarr etc.</p>
 </li>
-<li><p><a href="https://github.com/Novik/ruTorrent">ruTorrent for rTorrent</a> - Web  UI for rtorrent.</p>
+<li><p><a href="https://github.com/Novik/ruTorrent">ruTorrent for rTorrent</a> - Web UI for rtorrent.</p>
 </li>
 <li><p><a href="https://github.com/Flood-UI/flood">Flood for rTorrent</a> - Sleek web UI for rtorrent.</p>
 </li>
@@ -299,6 +330,11 @@
 <p>A .torrent file can be added to the client by double clicking it or use the client and browse to the location of the file manually.</p>
 <p>A magnet link can be opened by clicking on it in your web browser, where it will prompt you to choose the torrent client to be opened with. You can also paste the magnet link into the torrent client manually.</p>
 <p>Most clients will begin leeching/downloading when you add the torrent, and will start seeding (uploading) immediately to other peers once the first few packets are downloaded, and will continue to seed even after the torrent finishes downloading.</p>
+        </div>
+    </div>
+</div>
+<blockquote>
+<p>After the torrent finishes downloading, you should seed it at least for a while (ideally forever). Seeding is the way you give back to the swarm that you leeched from. Leeching without seeding back (hit-n-run) is extremely ill-advised due to the nature of how torrenting works.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -312,12 +348,10 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p>After the torrent finishes downloading, you should seed it at least for a while (ideally forever). Seeding is the way you give back to the swarm that you leeched from. Leeching without seeding back (hit-n-run) is extremely ill-advised due to the nature of how torrenting works.</p>
-</blockquote>
         </div>
     </div>
 </div>
+</blockquote>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -333,10 +367,6 @@
         <div class="pr-5 ml-3 w-full">
 <blockquote>
 <p>The &quot;ratio&quot; is your upload size divided by download size. A ratio of 1 implies that you seeded as much as you leeched.</p>
-</blockquote>
-        </div>
-    </div>
-</div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -350,12 +380,32 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p>Often times, you will notice that there are no uploads from your actively seeding torrents. This happens when there are no peers downloading on the P2P network, or they are prioritizing other faster seeders over you (this is controlled by the BitTorrent protocol).</p>
+        </div>
+    </div>
+</div>
 </blockquote>
         </div>
     </div>
 </div>
+<blockquote>
+<p>Often times, you will notice that there are no uploads from your actively seeding torrents. This happens when there are no peers downloading on the P2P network, or they are prioritizing other faster seeders over you (this is controlled by the BitTorrent protocol).</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+        </div>
+    </div>
+</div>
+</blockquote>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -371,22 +421,6 @@
         <div class="pr-5 ml-3 w-full">
 <blockquote>
 <p>If there are no seeders, or rather, connectable seeders, you will be unable to get the files, because there is no one left to upload the files to you. In such a situation, try waiting, or add more trackers and announce to those to try and get more seeds. Peers may also connect and upload to you, however, they do not hold the entirety of the torrent, and can only upload the parts they possess.</p>
-</blockquote>
-        </div>
-    </div>
-</div>
-<doc-anchor-target id="advanced">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced">#</doc-anchor-trigger>
-        <span>Advanced</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="qbittorrent-features">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#qbittorrent-features">#</doc-anchor-trigger>
-        <span>qBittorrent features</span>
-    </h2>
-</doc-anchor-target>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -400,12 +434,44 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p>The features mentioned below are available in most torrent clients, but qBittorrent will be used as an example.</p>
-</blockquote>
         </div>
     </div>
 </div>
+</blockquote>
+<doc-anchor-target id="advanced">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced">#</doc-anchor-trigger>
+        <span>Advanced</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="qbittorrent-features">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#qbittorrent-features">#</doc-anchor-trigger>
+        <span>qBittorrent features</span>
+    </h2>
+</doc-anchor-target>
+        </div>
+    </div>
+</div>
+<blockquote>
+<p>The features mentioned below are available in most torrent clients, but qBittorrent will be used as an example.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+        </div>
+    </div>
+</div>
+</blockquote>
 <p>The functionality is broadly divided into 3 tabs visible in the top bar - Transfers, Search and RSS. If they are not visible, they can be enabled from the &quot;View&quot; menu.</p>
 <p><strong>Transfers</strong>: This is where you can see all the torrents, which can be filtered by status, category and tags in the left pane. Categories and tags can be updated by selecting the torrents &gt; right click.</p>
 <p><strong>Search</strong>: This is one of the most powerful features of qBittorrent. The search plugin can be enabled by clicking &quot;Search plugins...&quot; at the bottom right, and choose the second option &quot;Check for updates&quot;. This will populate the list with some of the common trackers. Unfortunately, while nyaa is not one of the default plugins, it is available to be installed <a href="http://plugins.qbittorrent.org">here</a> with instructions.</p>
@@ -440,13 +506,6 @@
         <div class="pr-5 ml-3 w-full">
 <blockquote>
 <p>Being connectable means that you accept &quot;direct&quot; connections from seeders or leechers. In a rough metaphor, your &quot;address&quot; (IP) is known, and your &quot;door&quot; (port) is open to meet new peers.</p>
-</blockquote>
-        </div>
-    </div>
-</div>
-<p>In the BitTorrent protocol, a transaction between 2 peers can only happen if at least one of them is connectable (one &quot;open door&quot; is enough).</p>
-<p>When you attempt to download something from a peer, you must first establish the connection with them. If their port is open, then you can directly connect with them and start downloading. If their port is not open, you must wait for them to connect with you.</p>
-<p>While being connectible does not magically boost your upload speed, a properly configured setup increases the pool of potential peers to connect to. This will not make a difference with torrents that have hundreds of seeds, but can drastically increase upload speed on torrents with less seeds.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -460,12 +519,35 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p>Being non-connectable will still allow you to seed and leech, unless you are attempting to connect with another non-connectable peer.</p>
-</blockquote>
         </div>
     </div>
 </div>
+</blockquote>
+<p>In the BitTorrent protocol, a transaction between 2 peers can only happen if at least one of them is connectable (one &quot;open door&quot; is enough).</p>
+<p>When you attempt to download something from a peer, you must first establish the connection with them. If their port is open, then you can directly connect with them and start downloading. If their port is not open, you must wait for them to connect with you.</p>
+<p>While being connectible does not magically boost your upload speed, a properly configured setup increases the pool of potential peers to connect to. This will not make a difference with torrents that have hundreds of seeds, but can drastically increase upload speed on torrents with less seeds.</p>
+        </div>
+    </div>
+</div>
+<blockquote>
+<p>Being non-connectable will still allow you to seed and leech, unless you are attempting to connect with another non-connectable peer.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+        </div>
+    </div>
+</div>
+</blockquote>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -481,10 +563,23 @@
         <div class="pr-5 ml-3 w-full">
 <blockquote>
 <p>Being a non-connectable seeder will get you less upload next to a connectable seeder.</p>
-</blockquote>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
         </div>
     </div>
 </div>
+</blockquote>
 <p>That said, you might be wondering on how to become connectable. This can be achieved relatively easily by port forwarding - which will be covered down below.</p>
 <doc-anchor-target id="what-is-port-forwarding">
     <h2>
@@ -505,6 +600,11 @@
 <p class="is-warning">This guide is not applicable to VPN users. If you are using one, please check with your VPN service provider and see if it allows port forwarding, as well as any instructions they might provide you with. If it does not, there is nothing you can do about it and it also has nothing to do with your router - either disable your VPN, or choose a different VPN service provider that allows port forwarding. </p>
 </blockquote>
 <p>The port used by your client can be found in Settings &gt; Connection. Avoid using the <a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports">well-known ports</a> and the <a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports">registered ports</a>. To simplify - and preferably, use the ports from <a href="https://en.wikipedia.org/wiki/Ephemeral_port">49152 or higher</a> to avoid interference with other services as well as being blocked by your ISP on some lower number ports.</p>
+        </div>
+    </div>
+</div>
+<blockquote>
+<p>Use <a href="https://canyouseeme.org/">https://canyouseeme.org/</a> to check if this port is open. If it already is, you can skip this instruction. If you are already portforwarding via a VPN, often times, it will show your port as unopened. However, this is completely normal because those ports are ephemeral and only opened when you&#x27;re actively uploading/downloading something.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -518,12 +618,10 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p>Use <a href="https://canyouseeme.org/">https://canyouseeme.org/</a> to check if this port is open. If it already is, you can skip this instruction. If you are already portforwarding via a VPN, often times, it will show your port as unopened. However, this is completely normal because those ports are ephemeral and only opened when you&#x27;re actively uploading/downloading something.</p>
-</blockquote>
         </div>
     </div>
 </div>
+</blockquote>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -539,23 +637,6 @@
         <div class="pr-5 ml-3 w-full">
 <blockquote>
 <p>If you are already port forwarding via a VPN, often times, it will show your port as closed. However, this is completely normal since those ports are ephemeral and only opened up when you are actively uploading/downloading something.</p>
-</blockquote>
-        </div>
-    </div>
-</div>
-<p>The easy way to do this is with UPnP - though it is considered a security risk by some, this is something enabled by default on both your router and in qBittorrent. It will automatically open the port needed by your torrent client without needing to manually change router settings. You can find and enable this on your torrent client and your router&#x27;s settings (by logging into it).</p>
-<p>Alternatively, find your router manufacturer and model <a href="https://portforward.com/router.htm">in this list</a> for a concise, step-by-step guide for your exact router model.</p>
-<p>In case you have unknown issues preventing you from port forwarding despite correctly followed the instructions, try the following:</p>
-<ul>
-<li><p>Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS etc. in your router settings. However, it is generally ill-advised due to security reasons.</p>
-</li>
-<li><p>Sometimes port forwarding will fail if you&#x27;re doing so through a proxy.</p>
-</li>
-<li><p>Double check your torrent client configurations.</p>
-</li>
-<li><p>Flush your DNS cache by typing &quot;ipconfig /flushdns&quot; in the Windows command prompt. For Linux distributions, it varies from each other slightly as well as having many ways to do so. A quick Google search should help.</p>
-</li>
-</ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -569,12 +650,45 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p>Also make sure to create inbound/outbound rules for your torrent client on your firewall settings.</p>
-</blockquote>
         </div>
     </div>
 </div>
+</blockquote>
+<p>The easy way to do this is with UPnP - though it is considered a security risk by some, this is something enabled by default on both your router and in qBittorrent. It will automatically open the port needed by your torrent client without needing to manually change router settings. You can find and enable this on your torrent client and your router&#x27;s settings (by logging into it).</p>
+<p>Alternatively, find your router manufacturer and model <a href="https://portforward.com/router.htm">in this list</a> for a concise, step-by-step guide for your exact router model.</p>
+<p>In case you have unknown issues preventing you from port forwarding despite correctly followed the instructions, try the following:</p>
+<ul>
+<li><p>Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS etc. in your router settings. However, it is generally ill-advised due to security reasons.</p>
+</li>
+<li><p>Sometimes port forwarding will fail if you&#x27;re doing so through a proxy.</p>
+</li>
+<li><p>Double check your torrent client configurations.</p>
+</li>
+<li><p>Flush your DNS cache by typing &quot;ipconfig /flushdns&quot; in the Windows command prompt. For Linux distributions, it varies from each other slightly as well as having many ways to do so. A quick Google search should help.</p>
+</li>
+</ul>
+        </div>
+    </div>
+</div>
+<blockquote>
+<p>Also make sure to create inbound/outbound rules for your torrent client on your firewall settings.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+        </div>
+    </div>
+</div>
+</blockquote>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -590,10 +704,23 @@
             <h5>Warning</h5>
 <blockquote>
 <p>Do not use port triggering - they are meant to be used for local network devices and those ports will be closed when they are not in use. Hence, they are not suitable for torrenting purpose.</p>
-</blockquote>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
         </div>
     </div>
 </div>
+</blockquote>
 <doc-anchor-target id="what-is-a-seedbox">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-seedbox">#</doc-anchor-trigger>
@@ -612,6 +739,11 @@
 </li>
 </ul>
 <p>If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything like your own personal computer. This is one of the more luxury options and tend to cost significantly more.</p>
+        </div>
+    </div>
+</div>
+<blockquote>
+<p>Check out <a href="https://www.reddit.com/r/seedboxes/">/r/seedboxes</a> for more information. They are geared towards private trackers so be sure to check for public tracker support, as well as unlimited bandwidth with any seedbox provider.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -625,12 +757,10 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p>Check out <a href="https://www.reddit.com/r/seedboxes/">/r/seedboxes</a> for more information. They are geared towards private trackers so be sure to check for public tracker support, as well as unlimited bandwidth with any seedbox provider.</p>
-</blockquote>
         </div>
     </div>
 </div>
+</blockquote>
 <doc-anchor-target id="glossary">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#glossary">#</doc-anchor-trigger>
@@ -692,20 +822,25 @@
     </h2>
 </doc-anchor-target>
 <ul>
-<li><p>/r/trackers - For discussion of public and private torrent trackers. No requests of specific pirated titles.</p>
-</li>
-<li><p>/r/Invites - Request and offer invites for private trackers that allow for invites to be distributed through such means.</p>
-</li>
-<li><p>/r/OpenSignups - Announcements of private trackers that have opened up registration or applications. opentrackers.org is another great resource</p>
-</li>
-<li><p>/r/VPN - Discussion of VPNs</p>
-</li>
-<li><p>/r/VPNTorrents - Discussion of VPNs for the purpose of torrenting</p>
-</li>
-<li><p>/r/torrents - For torrents dicussion and news</p>
-</li>
-<li><p>/r/seedboxes - For discussion, sourcing, and recommendations about seedboxes.</p>
-</li>
+<li>/r/trackers - For discussion of public and private torrent trackers. No requests of specific pirated titles.</li>
+</ul>
+<ul>
+<li>/r/Invites - Request and offer invites for private trackers that allow for invites to be distributed through such means.</li>
+</ul>
+<ul>
+<li>/r/OpenSignups - Announcements of private trackers that have opened up registration or applications. opentrackers.org is another great resource</li>
+</ul>
+<ul>
+<li>/r/VPN - Discussion of VPNs</li>
+</ul>
+<ul>
+<li>/r/VPNTorrents - Discussion of VPNs for the purpose of torrenting</li>
+</ul>
+<ul>
+<li>/r/torrents - For torrents dicussion and news</li>
+</ul>
+<ul>
+<li>/r/seedboxes - For discussion, sourcing, and recommendations about seedboxes.</li>
 </ul>
 
                                 
@@ -726,16 +861,16 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Anime</span>
+                                                <span class="block mt-1">Sourcing</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../guides/music/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../sourcing/ddl/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Header</span>
+                                                <span class="block mt-1">DDL</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -779,6 +914,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Disclaimer", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Torrenting", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
