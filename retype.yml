@@ -1,4 +1,11 @@
 url: beta.thewiki.moe
+
+input: ./docs
+
 branding:
   title: The Wiki
-input: ./docs
+
+edit:
+  repo: "https://github.com/snaacky/thewiki/"
+  branch: "master"
+  label: "Edit this page"
