@@ -34,8 +34,9 @@ Read more: [Sourcing Guide](/guides/sourcing), [Torrenting Guide](/en/guides/tor
 
 ## Playback
 
-> Do not use VLC
-> {.is-info}
+!!!info
+Do not use VLC
+!!!
 
 **PC:** [MPV](https://mpv.io/installation/), [MPC-HC](https://github.com/clsid2/mpc-hc/releases), [Potplayer](https://potplayer.daum.net)
 
