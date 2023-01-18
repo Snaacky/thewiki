@@ -3,19 +3,17 @@ label: Public BitTorrent Trackers
 order: -2
 ---
 
-# Public Trackers
+# Public BitTorrent Trackers
+
+## Public Trackers
 
 - [Nyaa.si](https://nyaa.si)
-
 - [Anidex](https://anidex.info/)
-
 - [Rutracker](https://rutracker.org/) (Russian, use Google Translate)
-
 - [Tokyotosho](https://www.tokyotosho.info/?cat=1)
-
 - [AnimeTosho](https://animetosho.org/) - Scrapes other public trackers, useful for getting information, mediainfo or subtitles and attachments from a torrent.
 
-# Using Nyaa
+## Using Nyaa
 
 The main source for finding torrents is [Nyaa](nyaa.si), you already have a general idea about the codecs, quality and release groups from the [quality guide](/guides/quality). These 3 things are what we'll use to quickly find the best release for any anime. Nyaa search is simple and limited, but it's enough for finding anything, given that the uploader correctly tags the release.
 

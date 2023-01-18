@@ -3,6 +3,8 @@ label: Muxing
 order: -2
 ---
 
+# Muxing
+
 Matroska(mkv) is a very versatile container. It can contain multiple streams of video, audio, subtitles, and other attachments. The process of taking these streams, adding or removing some, and bundling them into a new mkv is called muxing. In general, you could be muxing any format, but for anime we'll mostly be dealing with mkv. It's useful when you want to use subtitles from a different release with what you already have downloaded, or to remove the extra english audio tracks to save space. Note that this is a lossless process different from encoding and takes only a few seconds.
 
 [Mkvtoolnix](https://mkvtoolnix.download/) is the best tool for all kinds of muxing. The equivalent cli option is mkvmerge (installed with mkvtoolnix) or ffmpeg. The process can also be done in batch for a whole folder at once. Example (paste in cmd in that folder) -
@@ -11,11 +13,11 @@ Matroska(mkv) is a very versatile container. It can contain multiple streams of 
 
 This will copy the first video, second audio, third subtitle stream and all attachments, which are usually the japanese ones in dual audio releases. You can check the stream number with mediainfo. The index starts from zero so `-map 0:s:0` would select the first subtitle stream. `-map 0:t?` copies the attachments(fonts) if any exist. Understanding more about the [ffmpeg map option](https://trac.ffmpeg.org/wiki/Map) is helpful here as that is the only part you need to change.
 
-# Video
+## Video
 
 Ideally, the video should be an encode that's an improvement over the source video but realistically that isn't always the case since sometimes no good encode exists. This guide won't be tackling the topic of encoding since there's already one [here](https://guide.encode.moe/encoding/preparation.html).
 
-## General
+### General
 
 - WEB-DLs are usually the best source for shows which haven't gotten a BluRay (usually airing or recently ended).
 - An encode of the BluRay that's better than the source will trump the source.
@@ -28,16 +30,16 @@ Edge, EMBER, Hakata Ramen, Hi10, iPUNISHER, Judas, Kanjouteki, M@nI, MiniFreeza,
 MiniTheatre, Mr.Deadpool, NemDiggers, NoobSubs, project-gxs, SSA, youshikibi
 ```
 
-## Video Source
+### Video Source
 
 Unless you are making your own encode, you'll have to stick to the available options. To get started:
 
 - Download the different raws/encodes you find along with the source (BDMV/Remux) and make a [comparison](/tutorials/comparison).
 - Look at the comparison to decide the best source and if you are having trouble picking one, feel free to join the [SeaDex Discord](https://discord.com/invite/jPeeZewWRn) where pixel peepers will check it out and help you decide.
 
-# Audio
+## Audio
 
-## Recommended Tools
+### Recommended Tools
 
 - [eac3to](https://forum.doom9.org/showthread.php?t=125966) with [updated libraries](https://mega.nz/#!dFAmEC4Y!WMTQvzLkfTDHPfhTXURSLaFWbmDMVaq3dKfk4ucjYrI) for extracting and transcoding.
 - [SoX](http://sox.sourceforge.net/) for resampling and bit depth reduction.
@@ -46,7 +48,7 @@ Unless you are making your own encode, you'll have to stick to the available opt
 - [sync-audio-tracks](https://github.com/alopatindev/sync-audio-tracks) calculates a delay between two audios and produces a shifted audio.
 - [downsampler-threaded](https://gitlab.com/beep_street/downsampler-threaded) is a multi-process sox frontend for automatically resampling FLAC files.
 
-## General
+### General
 
 Either lossless or lossy audio can be used for a good release but with a few things to keep in mind:
 
@@ -56,7 +58,7 @@ Either lossless or lossy audio can be used for a good release but with a few thi
 - Never downmix multichannel audio to stereo.
 - Never transcode a lossy track.
 
-## eac3to
+### eac3to
 
 Once you have eac3to with updated libraries, you can start with this simple command:
 
@@ -151,7 +153,7 @@ Done.
 
 Here the second and fourth lossless tracks get transcoded to FLAC while the lossy AC3 track remains the same.
 
-## SoX
+### SoX
 
 If you're planning to include lossless audio from the source, downconvert and dither 24-bit lossless tracks to 16-bit FLAC for the sake of reducing bloat as 24-bit is significantly larger with no benefits over 16-bit FLAC.
 
@@ -173,7 +175,7 @@ Shell command:
 for file in *.flac; do sox -S "${file}" -R -G -b 16 "${file%.*}.flac" rate -v -L 48000 dither; done
 ```
 
-## opus-tools
+### opus-tools
 
 If you're planning to include lossy audio, it's recommended to use Opus with a bitrate of 128-192Kb/s for Stereo tracks and 256-320Kb/s for multi-channel tracks to achieve transparency.
 
@@ -199,7 +201,7 @@ Shell command:
 for file in *.flac; do opusenc --bitrate 192 "${file}" "${file%.*}.opus"; done
 ```
 
-# Subtitles
+## Subtitles
 
 ## Recommended Tools
 
@@ -241,9 +243,9 @@ for file in *.ass do; python -m subdigest -i "${file}" --selection-set "text" "\
 - You can also copy styling from existing groups like [GJM](https://nyaa.si/user/GoodJobMedia), [Kaleido](https://nyaa.si/user/Kaleido-subs), or [DDY](https://nyaa.si/user/DameDesuYo).
 - Try to match the styling of previous seasons of the same show to maintain consistency. Although this isn't mandatory and should be avoided if previous season releases had bad styling.
 
-# Advanced
+## Advanced
 
-## Ordered Chapters/mkv linking
+### Ordered Chapters/mkv linking
 
 On some releases(like coalgirls), the OP/ED are removed from the episodes and placed into separate files. These files are then linked to the appropriate position in the episodes where they are supposed to play. While this is a great idea to save space, unfortunately, it doesn't work on a lot of players and the OP/ED is never played. If you notice this while watching anime, OCs are the most probable cause.
 
@@ -251,7 +253,7 @@ On some releases(like coalgirls), the OP/ED are removed from the episodes and pl
 
 Fix ordered chapters using [UnlinkMKV](https://github.com/gnoling/UnlinkMKV)
 
-## CRC32
+### CRC32
 
 This is used to verify that the files you have are the correct ones, or whether they match with the version released by the uploader. CRCs will change if any part of the file changes, even if you only change one letter in one tag in the file. This allows us to identify files that were changed from the original source or corrupted at some point. However, just renaming the file will not change it. Apart from the numbers included within [] at the end of a filename, .sfv (CRC checksum) or .md5 (MD5 checksum) files can also be used for the same purpose. Sometimes a group makes mistakes and wants to correct them by releasing a second version(v2), in this case the changed CRC makes it easy to differentiate between multiple versions.
 

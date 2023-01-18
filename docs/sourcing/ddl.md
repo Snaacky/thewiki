@@ -3,11 +3,13 @@ label: DDL/XDCC
 order: -4
 ---
 
-# IRC
+# DDL/XDCC
+
+## IRC
 
 IRC (Internet Relay Chat) is a protocol that allows communication in the form of text. XDCC is a computer file sharing method which relies on IRC as a hosting service. The main advantage to using this method is that IRC bots are usually the fastest at uploading new anime episodes, thus being able to download them much earlier. They usually upload even faster than anime websites.
 
-# Connecting to the network
+## Connecting to the network
 
 1. Download and install [HexChat](https://hexchat.github.io/).
 
@@ -24,7 +26,7 @@ Repeat steps 3 and 4 for other networks and channels where your target IRC bot i
 #XDCCLeech@irc.xertion.org
 ```
 
-# Downloading Anime
+## Downloading Anime
 
 1. Go to https://nibl.co.uk/bots (Rizon) or https://animk.info/xdcc (Xertion).
 
@@ -34,7 +36,7 @@ Repeat steps 3 and 4 for other networks and channels where your target IRC bot i
 
 4. Paste this command in hexchat and send it. The download should start immediately.
 
-# Batch downloading
+## Batch downloading
 
 Note the pack numbers for all the episodes you need and modify the command as follows -
 
@@ -46,6 +48,6 @@ Note the pack numbers for all the episodes you need and modify the command as fo
 
 XDCC commands reference - https://wiki.xertion.org/w/XDCC_Commands
 
-# Advanced
+## Advanced
 
 Automation - https://github.com/Vodes/XDCC-AutoDL

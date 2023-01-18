@@ -3,18 +3,20 @@ label: Streaming Sites
 order: -1
 ---
 
-# Popular Streaming Sites
+# Streaming Sites
+
+## Popular Streaming Sites
 
 - [gogoanime](https://gogoanime.lu/) - Self-hosted site that nearly all scraper sites source from.
 - [9anime](https://9anime.to) - Self-hosted site with a library on par with gogoanime. Marginally better quality while updating their releases to more often include fansubs and BD versions on older content.
 - [Zoro](https://zoro.to/) - Self-hosted site similar in quality to 9anime with an extensive library and is one of the only streaming sites with soft subtitles.
 - [Animixplay](https://animixplay.to/) - Popular gogo scraper which also scrapes VRV for seasonal content (as indicated by the "0p" resolution option) leading to quality on par with legal options and WEB-DL torrent releases such as SubsPlease in those specific instances.
 
-# Picking a Streaming Site
+## Picking a Streaming Site
 
 While one can choose between the numerous popular sites listed both here and on [The Index](https://theindex.moe/), the best way to pick a streaming site is to choose one that suits your needs, whatever those may be. These are some factors that may affect your choice.
 
-## Scrapers vs Self-Hosted Sites
+### Scrapers vs Self-Hosted Sites
 
 A "scraper" is a site that takes content hosted on other sites, and puts it on their own. These are the streaming site equivalent to [manga aggregator sites](https://thewiki.moe/en/guides/literature#sourcing) that are mentioned in the literature page. These can lead to extensive libraries without the need for the site owners to host the content themselves, usually at the expense of video quality. By far the most commonly scraped from site is [gogoanime](https://gogoanime.lu/), so much so that most streaming sites in existence are gogoanime scrapers.
 
@@ -24,7 +26,7 @@ A "self-hosted" site is one that actually hosts all the content on their own ser
 
 **Examples of self-hosted sites:** [gogoanime](https://gogoanime.lu/), [9anime](https://9anime.to), [Zoro](https://zoro.to/), [animepahe](https://animepahe.com/), [tenshi](https://tenshi.moe/)
 
-## Video Quality
+### Video Quality
 
 While streaming sites offer the worst video quality in comparison to the alternatives such as torrenting, DDL, or XDCC, that does not mean that all streaming sites are made equal. If for whatever reason those other methods are not open to you but you'd still like to improve the video quality of your media, then you have some options available to you.
 
@@ -35,7 +37,7 @@ Some comparisons between streaming sites:
 - Senran Kagura (gogo, animepahe, 9anime, twist, zoro, and torrents) - https://slow.pics/c/QLtX61qx
 - Dokyuu Hentai HxEros (gogoanime, animepahe, 9anime, torrents) - https://slow.pics/c/PZRxqAsh
 
-### **Quality Tier List**
+#### **Quality Tier List**
 
 **Tier 1**:
 
@@ -52,7 +54,7 @@ Some comparisons between streaming sites:
 - [gogoanime](https://gogoanime.lu/) (and scrapers)
 - [animepahe](https://animepahe.com/) - Can be better or worse than gogoanime but with significantly smaller file size and the benefit of sourcing from good BD releases when available, like [tenshi](https://tenshi.moe/).
 
-## Other Factors
+### Other Factors
 
 There are a multitude of other factors that may affect your decision in picking a site. Here are some brief recommendations based on some factors that aren't covered in [The Index](https://theindex.moe/) and are often not taken into account.
 

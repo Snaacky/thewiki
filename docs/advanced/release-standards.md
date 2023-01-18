@@ -3,11 +3,13 @@ label: Release Standards
 order: -3
 ---
 
-# Video
+# Release Standards
+
+## Video
 
 Ideally, the video should be an encode that's an improvement over the source video but realistically that isn't always the case since sometimes no good encode exists. This guide won't be tackling the topic of encoding since there's already one [here](https://guide.encode.moe/encoding/preparation.html).
 
-## General
+### General
 
 - WEB-DLs are usually the best source for shows which haven't gotten a BluRay (usually airing or recently ended).
 - An encode of the BluRay that's better than the source will trump the source.
@@ -20,16 +22,16 @@ Edge, EMBER, Hakata Ramen, Hi10, iPUNISHER, Judas, Kanjouteki, M@nI, MiniFreeza,
 MiniTheatre, Mr.Deadpool, NemDiggers, NoobSubs, project-gxs, SSA, youshikibi
 ```
 
-## Video Source
+### Video Source
 
 Unless you are making your own encode, you'll have to stick to the available options. To get started:
 
 - Download the different raws/encodes you find along with the source (BDMV/Remux) and make a [comparison](/tutorials/comparison).
 - Look at the comparison to decide the best source and if you are having trouble picking one, feel free to join the [SeaDex Discord](https://discord.com/invite/jPeeZewWRn) where pixel peepers will check it out and help you decide.
 
-# Audio
+## Audio
 
-## Recommended Tools
+### Recommended Tools
 
 - [eac3to](https://forum.doom9.org/showthread.php?t=125966) with [updated libraries](https://mega.nz/#!dFAmEC4Y!WMTQvzLkfTDHPfhTXURSLaFWbmDMVaq3dKfk4ucjYrI) for extracting and transcoding.
 - [SoX](http://sox.sourceforge.net/) for resampling and bit depth reduction.
@@ -38,7 +40,7 @@ Unless you are making your own encode, you'll have to stick to the available opt
 - [sync-audio-tracks](https://github.com/alopatindev/sync-audio-tracks) calculates a delay between two audios and produces a shifted audio.
 - [downsampler-threaded](https://gitlab.com/beep_street/downsampler-threaded) is a multi-process sox frontend for automatically resampling FLAC files.
 
-## General
+### General
 
 Either lossless or lossy audio can be used for a good release but with a few things to keep in mind:
 
@@ -48,7 +50,7 @@ Either lossless or lossy audio can be used for a good release but with a few thi
 - Never downmix multichannel audio to stereo.
 - Never transcode a lossy track.
 
-## eac3to
+### eac3to
 
 Once you have eac3to with updated libraries, you can start with this simple command:
 
@@ -143,7 +145,7 @@ Done.
 
 Here the second and fourth lossless tracks get transcoded to FLAC while the lossy AC3 track remains the same.
 
-## SoX
+### SoX
 
 If you're planning to include lossless audio from the source, downconvert and dither 24-bit lossless tracks to 16-bit FLAC for the sake of reducing bloat as 24-bit is significantly larger with no benefits over 16-bit FLAC.
 
@@ -165,7 +167,7 @@ Shell command:
 for file in *.flac; do sox -S "${file}" -R -G -b 16 "${file%.*}.flac" rate -v -L 48000 dither; done
 ```
 
-## opus-tools
+### opus-tools
 
 If you're planning to include lossy audio, it's recommended to use Opus with a bitrate of 128-192Kb/s for Stereo tracks and 256-320Kb/s for multi-channel tracks to achieve transparency.
 
@@ -191,9 +193,9 @@ Shell command:
 for file in *.flac; do opusenc --bitrate 192 "${file}" "${file%.*}.opus"; done
 ```
 
-# Subtitles
+## Subtitles
 
-## Recommended Tools
+### Recommended Tools
 
 - [arch1t3cht/Aegisub](https://github.com/arch1t3cht/Aegisub) for all subtitle work.
 - [SubKt](https://github.com/Myaamori/SubKt) is a highly configurable toolkit for fansubbing automation.
@@ -202,7 +204,7 @@ for file in *.flac; do opusenc --bitrate 192 "${file}" "${file%.*}.opus"; done
 - [tp7/Sushi](https://github.com/tp7/Sushi) is an automatic subtitle shifter based on audio.
 - [FichteFoll/Sushi](https://github.com/FichteFoll/Sushi) is the python 3 fork of [tp7/Sushi](https://github.com/tp7/Sushi).
 
-## General
+### General
 
 - Multiple Subtitle tracks take negligible space and provide more options so there's no reason not to include them.
 - Always include the official subtitle track.
@@ -226,30 +228,30 @@ Shell command:
 for file in *.ass do; python -m subdigest -i "${file}" --selection-set "text" "\\p" --remove-selected --selection-set style "Sign|OP|ED|op|ed|kfx|Karaoke|Eyecatch|Signs" --remove-selected --remove-all-tags --remove-comments --get-field text -o "${file%.*}.txt"; done
 ```
 
-## Styling
+### Styling
 
 - The dialogue style must be readable without being distracting.
 - Feel free to restyle bad styling. Here's a reference for some good [dialogue fonts](https://i.imgur.com/qQUFf7n.png).
 - You can also copy styling from existing groups like [GJM](https://nyaa.si/user/GoodJobMedia), [Kaleido](https://nyaa.si/user/Kaleido-subs), or [DDY](https://nyaa.si/user/DameDesuYo).
 - Try to match the styling of previous seasons of the same show to maintain consistency. Although this isn't mandatory and should be avoided if previous season releases had bad styling.
 
-# Muxing and Tagging
+## Muxing and Tagging
 
 Once you have prepared the individual files, you'll have to put them together in a container, preferably [Matroska](https://www.matroska.org/index.html), commonly seen as files with the extension `.mkv`.
 
-## Recommended Tools
+### Recommended Tools
 
 - [MKVToolNix](https://mkvtoolnix.download/downloads.html)
 - [SubKt](https://github.com/Myaamori/SubKt)
 - [MKVToolNix-Sequential-Batch-Mapper](https://github.com/McBaws/MKVToolNix-Sequential-Batch-Mapper)
 - [Inviska-MKV-Extract](https://www.videohelp.com/software/Inviska-MKV-Extract)
 
-## Forced Subtitles
+### Forced Subtitles
 
 Forced here **DOES NOT** mean that these subs will be permanently on the screen, which is a common misconception.
 Forced subtitles only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. In our case, it's supposed to be displayed whenever the English dub has untranslated things like Japanese Signs and Songs like Opening/Ending or Inserts.
 
-## Correct Tagging
+### Correct Tagging
 
 Proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix Header Editor or mkvpropedit without remuxing.
 
@@ -307,19 +309,19 @@ for file in *.mkv; do
 done
 ```
 
-# Naming
+## Naming
 
 This guide aims to somewhat standardize naming schemes used for Anime in an effort to make them work beyond File Explorer and work well with Usenet, XDCC, automation software, and media servers.
 **Everything mentioned here aims to work with everything and if something isn't mentioned, it's very likely because it breaks support for one thing or another.** Adopting all of it will ensure compatibility with basically everything, for example, not only will your releases be snatched by auto-downloaders but will also be parsed and matched accurately and people can drop your releases in media servers without having to rename and break seeding.
 
-## Recommended Tools
+### Recommended Tools
 
 - [Advanced Renamer](https://www.advancedrenamer.com/)
 - [Filebot-mod](https://github.com/barry-allen07/FB-Mod)
 - [Bulk Rename Utility](https://www.bulkrenameutility.co.uk/)
 - [tvnamer](https://github.com/dbr/tvnamer)
 
-## General
+### General
 
 - Must contain the name of the Anime.
 - Must contain `(year)` when there are multiple versions, e.g, `Hunter x Hunter (1999)` and `Hunter x Hunter (2011)`. **Note:** _Including year is required for all movies, regardless of whether multiple versions exist or not._
@@ -330,7 +332,7 @@ This guide aims to somewhat standardize naming schemes used for Anime in an effo
 - Always add a group tag to your release, ideally placing it at the end for both easier parsing and human readability.
 - You should use `.` or `-` as a delimiter.
 
-## Filename
+### Filename
 
 - Must contain Season and Episode information in the format `SXXEYY` following [TVDB](https://thetvdb.com/).
 - Absolute Episode Numbers may be used together with `SXXEYY`.
@@ -350,7 +352,7 @@ Anime Name (2022) - S01E01 - (BD Remux 1080p HEVC FLAC) [Dual Audio]-Group.mkv
 Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10P-Group.mkv
 ```
 
-## Specials/OVA Filename
+### Specials/OVA Filename
 
 - These are wildly inconsistent across different databases which means you need to be more careful when naming these to avoid any confusion while also keeping it both human and machine readable. Databases like [thetvdb](https://thetvdb.com/) use `S00EXX` for specials while databases like [MAL](https://myanimelist.net/) simply use the episode name for specials.
 - A common thing in anime releases is Specials/OVAs numbered as `0.5`, e.g. `Anime Name - 18.5`. This is not recommended at all.
@@ -372,7 +374,7 @@ Anime Name - 18.5 - S00E05 - Title of the Episode
 
 - Another good example, this tells us the name of the anime, where it lands chronologically, what episode it is with reference to databases and the name of the episode to aid with identifying the episode without much effort.
 
-### More Examples
+#### More Examples
 
 Bad, do not use:
 
@@ -394,7 +396,7 @@ Anime Name (2022) - S00E01 - Title of the Episode (BD Remux 1080p HEVC FLAC) [Du
 Anime.Name.S00E09.Title.of.the.Episode.1080p.BluRay.Opus2.0.x264-Hi10P-Group.mkv
 ```
 
-## Folder
+### Folder
 
 - Must contain Season information in the format: `S0X` or `Season X`.
 - Make one folder for each Season following all the guidelines. This is due to the fact that most trackers do not allow multi-season batch torrents.
@@ -415,9 +417,9 @@ Anime.Name.2022.S01.E01-E11.1080p.BluRay.FLAC2.0.H.265-Group
 Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group
 ```
 
-## Nyaa
+### Nyaa
 
-### Title
+#### Title
 
 - Same guidelines as Folder, simply add more aliases at the end for easier searching.
 - You can also put the group tag before everything else in the Nyaa title.
@@ -435,18 +437,18 @@ Anime.Name.2022.S01.E01-E11.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name
 Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name
 ```
 
-### Description
+#### Description
 
 - Always include [MediaInfo](https://mediaarea.net/en/MediaInfo).
 - Always include a link to a [comparison](/tutorials/comparison) of the video used in the release.
 
-# QC
+## QC
 
 - Check the MediaInfo for any missing tracks, tracks in wrong order or wrong tags.
 - Check for any missing fonts. You can use [fontvalidator](https://github.com/TypesettingTools/Myaamori-Aegisub-Scripts#font-validator) for this.
 - Watch your finished release for any errors you may have missed before going forward.
 
-# CRC
+## CRC
 
 - [RapidCRC](https://www.ov2.eu/programs/rapidcrc-unicode)
 - CRC32 is an error-detecting function that uses a CRC32 algorithm to detect changes between source and target data.
@@ -456,11 +458,11 @@ Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name
 - CRC32 is redundant for torrents since torrents already have an infohash, an SHA-1 hash calculated over the contents of the info dictionary in bencode form. You can easily check their integrity via your client's `Recheck` feature.
 - CRC32 is helpful when the file has been obtained from sources like Drive, Usenet, or XDCC.
 
-# Torrent
+## Torrent
 
 - To create a torrent, simply follow the guide [here](/tutorials/torrent).
 
-# Patches/Revisions
+## Patches/Revisions
 
 - For making patches, use [dan0v/xdelta3-cross-gui](https://github.com/dan0v/xdelta3-cross-gui).
 - Append `v2` at the end of `SXXEYY`, e.g, `S01E01v2`.

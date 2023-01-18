@@ -3,9 +3,11 @@ label: Playback
 order: -2
 ---
 
-# Video players
+# Playback
 
-### PC
+## Video players
+
+#### PC
 
 - [MPV](https://mpv.io/installation/) - [Installation and configuration tutorial](/tutorials/mpv) (recommended)
 
@@ -16,17 +18,17 @@ VLC is not recommended because it often displays wrong colours, introduces visua
 https://slow.pics/c/XhbmrYgU (Spice and Wolf by MTBB)
 https://slow.pics/c/vH560pvp
 
-### Android
+#### Android
 
 - [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv&hl=lv&gl=US)
 - [MX player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad&hl=lv&gl=US)
 
-### iOS
+#### iOS
 
 - [MX player](https://apps.apple.com/in/app/mx-player/id1429703801)
 - [Outplayer](https://apps.apple.com/us/app/outplayer/id1449923287)
 
-### TV
+#### TV
 
 - [Kodi](https://kodi.tv), optionally through [LibreElec(Minimal OS)](https://libreelec.tv)
 
@@ -59,7 +61,7 @@ Here, Kodi acts as a client,increasing compatibility and replacing the default o
 
 - [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
 
-# Media Server
+## Media Server
 
 The setup consists of two parts - the server and the client. A client is simply a media player that will access the content from a server. The server runs on the device which stores your content. Both may be installed on the same system, but they're separate applications. Usually you'd have the server on a computer connected to other devices in your home network and a client installed on all of those devices. All three of the popular ones come with their own client/player as well as support for using kodi as a client (recommended for anime).
 
@@ -69,12 +71,12 @@ The setup consists of two parts - the server and the client. A client is simply 
 
 - [Jellyfin](https://jellyfin.org/)
 
-## Scanning anime without renaming
+### Scanning anime without renaming
 
 - https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them
 - [Absolute Series Scanner for Plex](https://github.com/ZeroQI/Hama.bundle)
 
-# Scaling
+## Scaling
 
 1. Quality is not the same as resolution.
 2. Whenever something with a different resolution than your display is playing on it in full screen mode, then something is scaling it to the resolution of the display.
@@ -88,11 +90,11 @@ The shaders mentioned above are 2x scalers, which means that they always scale b
 Ravu and NNEDI - https://github.com/bjin/mpv-prescalers
 FSRCNNX - https://github.com/igv/FSRCNN-TensorFlow/releases
 
-# Filtering
+## Filtering
 
 The same kind of filtering that is used by encoders but in real time. It's not an alternative to a good encode, but rather a temporary fix for web sources. Debanding is the most commonly used and the only one necessary. Detail enhancement, noise reduction, sharpening etc. are not recommended. All these options are available with both mpv and madvr. More about quality, video artifacts and encoding in the [quality guide](/guides/quality).
 
-# Smooth Playback
+## Smooth Playback
 
 **The problem:** Almost all anime plays back at 23.976fps (technically 24000/1001) but we'll round up to 24fps for convenience. However, displays often run at refresh rates that do not match this frame rate, leading to an effect known as judder.
 Judder is most commonly seen with laptops/desktops that have 60hz displays, because the refresh rate is not an integer multiple of the content frame rate. 60hz/24fps is 2.5, and since you can't refresh 2.5 times per frame, it has to be averaged out over time. In this case the first frame will be held for 2 refreshes, the second frame for 3 refreshes, the third for 2 and so on leading to the 2.5 average. Because of this, each frame is shown for a different amount of time (33.3ms for even frames, 50ms for odd) which leads to motion appearing stuttery/laggy, this is especially noticeable during panning scenes.
@@ -107,7 +109,7 @@ Be sure to use a player that will activate adaptive sync, such as MPV.
 
 **High refresh rate displays:** 120hz, 144hz, 240hz, and 360hz are all multiples of 24, and as such will match perfectly since each frame can be repeated for multiple refreshes. However 144hz will not display 30/60fps content properly, and none of the above will handle 25fps content correctly.
 
-# Compatibility
+## Compatibility
 
 Decoding is the process of playing the video file. There are two types - hardware and software. Everything can be decoded, the difference is in the amount of work needed to do that. When it's hardware accelerated, it doesn't put any strain on your device cpu.
 
@@ -119,6 +121,6 @@ If you're watching on a TV/+Android box, you'll see a list of supported codecs i
 - h264 10-bit rarely works without a decent cpu. Hardware decode support for this is non-existent.
 - h265 8-bit and 10-bit work when hardware support exists. Most newer devices in the last 5 years support it.
 
-## Typesetting
+### Typesetting
 
 Anime usually has .ass subtitle styling, while the subs will show up on most TVs and players (plex, emby, jellyfin etc.), the typesetting or overlapping dialogue is sometimes broken. This is especially a problem if you're watching fansubs. **Kodi** is one of the few players which supports proper ass rendering. Note that the player is separate from the kodi media server and can even be used with plex.

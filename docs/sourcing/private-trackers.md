@@ -3,19 +3,17 @@ label: Private BitTorrent Trackers
 order: -3
 ---
 
-# Private Trackers
+# Private BitTorrent Trackers
+
+## Private Trackers
 
 - [AnimeBytes](https://animebytes.tv/)
-
 - [BakaBT](http://bakabt.me/)
-
 - [AnimeTorrents](https://animetorrents.me/)
-
 - [U2](https://u2.dmhy.org)
-
 - [Skyeysnow](https://skyeysnow.com/) (open signup)
 
-# How do I join private trackers?
+## How do I join private trackers?
 
 Typically by open signups, interviews, applications, recruitment and user invites. The ways to get into common private anime trackers are given below:
 

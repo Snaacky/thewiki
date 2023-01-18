@@ -3,11 +3,13 @@ label: Sourcing
 visibility: hidden
 ---
 
-# Anime
+# Sourcing
+
+## Anime
 
 **Note: The old sourcing guide is now at [/guides/quality](/guides/quality) and remains a strongly recommended reading to completely understand this guide.**
 
-## Torrents
+### Torrents
 
 If you're in a rush to get something, try searching on nyaa with the recommended release from -
 
@@ -17,7 +19,7 @@ If you're in a rush to get something, try searching on nyaa with the recommended
 
 The first one is geared more towards video quality than the best subtitles. A lot of releases were compared by various people and compiled into these sheets to make it easier for you. However, these don't cover all the anime that exists. Subtitle preferences are subjective and the author's might not match with your own or the best video might not be compatible with your setup. It's always better to have an idea about these things yourself so you can always find what you need.
 
-## Searching
+### Searching
 
 The main source for finding torrents is [Nyaa](nyaa.si), you already have a general idea about the codecs, quality and release groups from the sections above. These 3 things are what we'll use to quickly find the best release for any anime. Nyaa search is simple and limited, but it's enough for finding anything, given that the uploader correctly tags the release.
 
@@ -41,7 +43,7 @@ Most releases are tagged both hevc and x265, explicitly mentioning only 265 like
 
 This was just to provide a better idea of the process, most actual searches are easy and rarely need anything beyond `Anime name BD` or `Anime name hevc` for smaller sizes.
 
-## Trackers
+### Trackers
 
 Public:
 
@@ -67,7 +69,7 @@ Private:
 
 - [Skyeysnow](https://skyeysnow.com/) (open signup)
 
-## DDL
+### DDL
 
 - XDCC - Downloads over IRC offered by many groups, useful to obtain content with dead torrents.
 
@@ -75,13 +77,13 @@ Private:
 
 - Animetosho - Mirrors most torrents posted on TokyoTosho, Anidex and Nyaa's English translated anime category onto various file hosting services, as well as usenet. Screenshots, mediainfo, subtitles are also extracted and posted.
 
-# Advanced
+## Advanced
 
-## Typesetting
+### Typesetting
 
 Anime usually has .ass subtitle styling, while the subs will show up on most TVs and players (plex, emby, jellyfin etc.), the typesetting or overlapping dialogue is sometimes broken. This is especially a problem if you're watching fansubs. **Kodi** is one of the few players which supports proper ass rendering. Note that the player is separate from the kodi media server and can even be used with plex.
 
-## Ordered Chapters/mkv linking
+### Ordered Chapters/mkv linking
 
 On some releases(like coalgirls), the OP/ED are removed from the episodes and placed into separate files. These files are then linked to the appropriate position in the episodes where they are supposed to play. While this is a great idea to save space, unfortunately, it doesn't work on a lot of players and the OP/ED is never played. If you notice this while watching anime, OCs are the most probable cause.
 
@@ -89,7 +91,7 @@ On some releases(like coalgirls), the OP/ED are removed from the episodes and pl
 
 Fix ordered chapters using [UnlinkMKV](https://github.com/gnoling/UnlinkMKV)
 
-## Muxing
+### Muxing
 
 Matroska(mkv) is a very versatile container. It can contain multiple streams of video, audio, subtitles, and other attachments. The process of taking these streams, adding or removing some, and bundling them into a new mkv is called muxing. In general, you could be muxing any format, but for anime we'll mostly be dealing with mkv. It's useful when you want to use subtitles from a different release with what you already have downloaded, or to remove the extra english audio tracks to save space. Note that this is a lossless process different from encoding and takes only a few seconds.
 
@@ -99,7 +101,7 @@ Matroska(mkv) is a very versatile container. It can contain multiple streams of 
 
 This will copy the first video, second audio, third subtitle stream and all attachments, which are usually the japanese ones in dual audio releases. You can check the stream number with mediainfo. The index starts from zero so `-map 0:s:0` would select the first subtitle stream. `-map 0:t?` copies the attachments(fonts) if any exist. Understanding more about the [ffmpeg map option](https://trac.ffmpeg.org/wiki/Map) is helpful here as that is the only part you need to change.
 
-## CRC32
+### CRC32
 
 This is used to verify that the files you have are the correct ones, or whether they match with the version released by the uploader. CRCs will change if any part of the file changes, even if you only change one letter in one tag in the file. This allows us to identify files that were changed from the original source or corrupted at some point. However, just renaming the file will not change it. Apart from the numbers included within [] at the end of a filename, .sfv (CRC checksum) or .md5 (MD5 checksum) files can also be used for the same purpose. Sometimes a group makes mistakes and wants to correct them by releasing a second version(v2), in this case the changed CRC makes it easy to differentiate between multiple versions.
 

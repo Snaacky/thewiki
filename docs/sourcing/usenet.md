@@ -3,6 +3,6 @@ label: Usenet
 order: -5
 ---
 
-# Header
+# Usenet
 
 animetosho
