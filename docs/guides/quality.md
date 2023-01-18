@@ -26,11 +26,8 @@ Quality might be somewhat subjective. The best release for the purpose of this g
 The official BDMV, from the blurays, is itself an encode of the actual source. It often suffers from issues like banding, blocking, noise, aliasing, etc. These might be originating from a variety of reasons. For example, a lot of anime is native 720p and is upscaled to 1080p for the bluray. Even if issues aren't present in the bdmv, they can appear in the encode because of compression. This fixing is called filtering, a step which comes before encoding. The video is filtered with Avisynth/Vapoursynth before passing it on to the encoder.
 
 - [Examples of problems](http://bakashots.me/guide/index.php)
-
 - [Encoding guides and more examples](https://guide.encode.moe/encoding/video-artifacts.html)
-
 - [Advanced encoding guide](https://silentaperture.gitlab.io/mdbook-guide/introduction.html)
-
 - [Mini encodes and audio](https://kokomins.wordpress.com/2019/10/10/anime-encoding-guide-for-x265-and-why-to-never-use-flac/)
 
 ## Types of releases
@@ -46,9 +43,7 @@ These can be found on U2 (Chinese-Private), Skyeysnow (Chinese-Open) and nyaa (u
 Most can be found on nyaa with some rare stuff on rutracker(Russian). The direct encode is usually a raw without subtitles and is used by muxers or fansubbers to make a release. The groups can be roughly rated as -
 
 - Excellent - Beatrice-Raws, Kawaiika-Raws, SCY, Raws-Maji
-
 - Good - VCB-Studio
-
 - Okay - Snow-raws, ANK-raws, Reinforce, LowPower-Raws, Moozzi2
 
 Fansub groups like Coalgirls, Commie, Doki etc. also have their own encodes, but their main contribution is subtitles. These subtitles are taken by mux groups and combined with good video and multiple subtitle/audio options to make a complete release. Sometimes they use their own encodes. They'll usually mention all sources used for the release in the description.
@@ -62,11 +57,8 @@ Examples of good mux groups are - OZR, Kametsu, CTR, YURI, pog42, Arid, ARC, Mys
 **Mini encode** - These are around 500mb or lower, they can be either a BDRip or a re-encode. Despite a bad reputation, the minis which are not re-encodes can be a decent option for those low on storage or bandwidth. Mini groups -
 
 - Good - Judas (new)
-
 - Decent - Akihitosubs, DB, Ember, Nep_Blanc
-
 - Bad - Judas (old), Cleo, Reaktor, Cerberus. Their video might be bad, but Cerberus and Reaktor often pick good subtitle sources.
-
 - Trash - bonkai77, DaddySubs, Tenrai-Sensei, DKB, HR, SSA, FFA, YuiSubs and any other group using NVENC.
 
 Judas (new) is roughly mid 2020 and later.
@@ -102,9 +94,7 @@ Lossless audio is unnecessary for most sound systems. Even with the best audioph
 A good benchmark for bitrates (stereo/2.0) is -
 
 - 128 kbps for opus
-
 - 160 kbps for aac
-
 - 192 kbps for mp3
 
 For surround audio, multiply with the number of stereo pairs.
@@ -122,7 +112,6 @@ Older anime was subbed by a variety of fansub groups. Every good release will me
 Localization means changing cultural references and puns to fit the english context, but too often it becomes more about the American context and fansubs get riddled with memes. A degree of localization is always involved with translation to make sure the dialogue flows smoothly, but too much of it might be a problem for some. These two websites provide information and comparisons between various groups doing any anime -
 
 - https://www.crymore.net
-
 - https://fansub.co
 
 Most newer fansubbed anime is some variation of edited official subs from CR or Funi. These edits are usually range between excessive localization by completely eradicating and replacing the idea of Japan with America or untranslation by changing random phrases and lines back to Japanese. Most actual fansubs lie somewhere in between these extremes. After looking at the work of a few groups, you'll be able to figure out who has a tendency to do what.
