@@ -1,2 +1,7 @@
+---
+label: Usenet
+---
+
 # Header
+
 animetosho

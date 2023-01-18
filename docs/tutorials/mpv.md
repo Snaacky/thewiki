@@ -1,17 +1,24 @@
+---
+label: MPV
+---
+
 # Installation
+
 ## Windows
+
 1. Grab the topmost file from [here](https://sourceforge.net/projects/mpv-player-windows/files/64bit/).
-    - *Note: If you don't want to setup MPV yourself, you can grab this pre-configured [MPV portable build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw) with the same settings as described in this guide. All you need to do is download it and follow these installation instructions.*
+   - _Note: If you don't want to setup MPV yourself, you can grab this pre-configured [MPV portable build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw) with the same settings as described in this guide. All you need to do is download it and follow these installation instructions._
 2. Extract it into a folder.
-    - *Note: This folder cannot be changed after installation. If you want to change it after installation, you'll have to uninstall and then reinstall it in the new location.*
+   - _Note: This folder cannot be changed after installation. If you want to change it after installation, you'll have to uninstall and then reinstall it in the new location._
 3. Navigate to the `installer` folder.
 4. Inside the `installer` folder you'll find `mpv-install.bat`, run this as an administrator.
-    - *If you want to read about what `mpv-install.bat` does, visit [here](https://github.com/rossy/mpv-install).*
+   - _If you want to read about what `mpv-install.bat` does, visit [here](https://github.com/rossy/mpv-install)._
 5. After it's done, you'll get a prompt to open Control Panel and set MPV as the default player.
 
-That's it for the basic installation of MPV. You can use it without doing anything else. 
+That's it for the basic installation of MPV. You can use it without doing anything else.
 
 ### Adding MPV to PATH
+
 1. Open the Start Search, type in `env`, and choose `Edit the system environment variables`.
 2. Click the `Environment Variables…` button.
 3. Under the `System Variables` section (the lower half), find the row with `Path` in the first column, and click `edit`.
@@ -19,19 +26,26 @@ That's it for the basic installation of MPV. You can use it without doing anythi
 5. Dismiss all of the dialogs by choosing `OK`. Your changes are saved.
 
 ## MacOS
+
 Grab MacOS builds from [here](https://laboratory.stolendata.net/~djinn/mpv_osx/)
-### Homebrew 
+
+### Homebrew
+
 You will need [homebrew](https://brew.sh/) installed for this and then run the following command in your terminal.
+
 ```
 brew install mpv --HEAD
 ```
+
 ## Linux
+
 ```
 apt install mpv
 ```
+
 # Additional files/folders
 
-The default path for mpv config is `%APPDATA%/mpv/` but a folder named `portable_config` next to the `mpv.exe` overrides this. Here's a brief overview of files/folders you may want inside either of these folders - 
+The default path for mpv config is `%APPDATA%/mpv/` but a folder named `portable_config` next to the `mpv.exe` overrides this. Here's a brief overview of files/folders you may want inside either of these folders -
 
 - `mpv.conf` - MPV user settings.
 - `input.conf` - custom keybind settings. You can see the default key bindings [here](https://i.imgur.com/G6Rx74P.png) and syntax [here](https://mpv.io/manual/master/#input-conf).
@@ -43,9 +57,11 @@ The default path for mpv config is `%APPDATA%/mpv/` but a folder named `portable
 For more details, visit [here](https://mpv.io/manual/master/#files)
 
 # Custom config
+
 MPV is a great player out-of-the-box but you can customize it further to make it even better.
 
 ## Basic Config
+
 The comments are a brief explaination of what each line does.
 
 ```yml
@@ -87,14 +103,17 @@ alang=jpn,ja,jpn
 #subs-with-matching-audio=no
 
 ```
+
 ## Profiles for automatic debanding
-Banding is a visual artifact, visual artifacts should never be in a video. 
+
+Banding is a visual artifact, visual artifacts should never be in a video.
 Example of banding:
 ![Banding](https://i.imgur.com/32d77H0.jpeg =426x240)
 Debanding is the process of removing said banding.
 6 minute explanation of what causes banding: https://youtu.be/h9j89L8eQQk
+
 ```
-#Banding is a visual artifact, visual artifacts should never be in a video. 
+#Banding is a visual artifact, visual artifacts should never be in a video.
 #Example of banding: https://imgur.com/32d77H0
 #Debanding is the process of removing said banding.
 #6 minute explanation of what causes banding: https://youtu.be/h9j89L8eQQk
@@ -116,9 +135,11 @@ Debanding is the process of removing said banding.
     deband=yes
 
 ```
+
 ## Profiles for upscaling
 
-These are for a 2160p display, simply adjust the values accordingly for other resolutions. Explanation of scaling - https://thewiki.moe/en/guides/playback#scaling 
+These are for a 2160p display, simply adjust the values accordingly for other resolutions. Explanation of scaling - https://thewiki.moe/en/guides/playback#scaling
+
 ```
 [2x_upscaling]
     profile-desc='Profile for 1080: 2*1080=2160'
@@ -140,15 +161,14 @@ These are for a 2160p display, simply adjust the values accordingly for other re
     scaler-resizes-only=no
 ```
 
-
 For more options, check out -
 
-  - [MPV Docs](https://mpv.io/manual/master/#options)
-  - [Configuration guide 1](https://iamscum.wordpress.com/guides/videoplayback-guide/)
-  - [Configuration guide 2](https://kokomins.wordpress.com/2019/10/14/mpv-config-guide/)
-  - [Sample config 1](https://github.com/DeadNews/mpv-config/blob/main/mpv/mpv.conf)
-  - [Sample config 2](https://github.com/LightArrowsEXE/dotfiles/blob/master/mpv/.config/mpv/mpv.conf)
-  
+- [MPV Docs](https://mpv.io/manual/master/#options)
+- [Configuration guide 1](https://iamscum.wordpress.com/guides/videoplayback-guide/)
+- [Configuration guide 2](https://kokomins.wordpress.com/2019/10/14/mpv-config-guide/)
+- [Sample config 1](https://github.com/DeadNews/mpv-config/blob/main/mpv/mpv.conf)
+- [Sample config 2](https://github.com/LightArrowsEXE/dotfiles/blob/master/mpv/.config/mpv/mpv.conf)
+
 ## Scripts
 
 - https://github.com/ekisu/mpv-webm
@@ -159,11 +179,14 @@ For more options, check out -
 - https://github.com/po5/trackselect
 
 ## DV/HDR Tonemapping
+
 For watching Dobly Vision or HDR content on an SDR screen you need to tonemap it. To do this change the `vo=gpu` to `vo=gpu-next` and add `tone-mapping=bt.2446a` to your config.
+
 ```
 vo=gpu-next
 tone-mapping=bt.2446a
 ```
+
 !!!
 This will only affect content that needs tonemapping, SDR content will be unaffected. `gpu-next` is still an experimental output driver so you may experience unexpected behavior. You can read more about `gpu-next` [here](https://github.com/mpv-player/mpv/wiki/GPU-Next-vs-GPU).
 !!!

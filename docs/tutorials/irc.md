@@ -1,3 +1,7 @@
+---
+label: IRC
+---
+
 # IRC
 
 IRC (Internet Relay Chat) is a protocol that allows communication in the form of text. XDCC is a computer file sharing method which relies on IRC as a hosting service. The main advantage to using this method is that IRC bots are usually the fastest at uploading new anime episodes, thus being able to download them much earlier. They usually upload even faster than anime websites.
@@ -8,16 +12,16 @@ IRC (Internet Relay Chat) is a protocol that allows communication in the form of
 
 2. The network list tab will open on starting the app, pick a username and nickname here, along with second and third choices.
 
-3. Find and select the `Rizon network`. 
+3. Find and select the `Rizon network`.
 
 4. Type `#nibl` in "Join this channel" and click OK.
 
-Repeat steps 3 and 4 for other networks and channels where your target IRC bot is hosted. These can usually be found on the nyaa releases of any group. For example - 
+Repeat steps 3 and 4 for other networks and channels where your target IRC bot is hosted. These can usually be found on the nyaa releases of any group. For example -
+
 ```
 #MK@irc.xertion.org
 #XDCCLeech@irc.xertion.org
 ```
-
 
 # Downloading Anime
 
@@ -31,7 +35,8 @@ Repeat steps 3 and 4 for other networks and channels where your target IRC bot i
 
 # Batch downloading
 
-Note the pack numbers for all the episodes you need and modify the command as follows - 
+Note the pack numbers for all the episodes you need and modify the command as follows -
+
 ```
 /msg Rory|XDCC xdcc batch 22430-22441
 /msg Rory|XDCC xdcc batch 22430,22435,22440

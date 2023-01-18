@@ -1,10 +1,15 @@
+---
+label: Torrenting
+---
+
 # Disclaimer
 
 The process of sharing files through torrents is completely legal. Transferring copyright infringing files may be illegal depending on your local laws. Copyright organizations may scrape lists of peers, and send takedown notices to the internet service provider of users participating in the swarms of files that are under copyright. In some jurisdictions, copyright holders may start lawsuits against uploaders or downloaders for infringement. However, they are less common for anime compared to Movies/TV shows.
 
 !!!
+
 > You may want to use a [VPN](/en/faq/vpn) or a [seedbox](/en/guides/torrenting#what-is-a-seedbox) for downloading torrents to avoid receiving a copyright infringement notice from your ISP or a copyright body, and having your internet limited or revoked.
-!!!
+> !!!
 
 # Basics
 
@@ -16,34 +21,33 @@ For many people, streaming services are more convenient to use. However, torrent
 
 - A range of qualities and sizes.
 
-
-- Better subtitles and style options.
-
+* Better subtitles and style options.
 
 - Easier access to a larger variety of titles.
 
-
-- Downloaded files for rewatching with no additional data usage.
+* Downloaded files for rewatching with no additional data usage.
 
 ## What is torrenting?
 
 The BitTorrent Protocol is an internet protocol for peer-to-peer (P2P) file sharing, where the large file will be broken down into many small pieces called "packets". Those packets will be exchanged between all the devices in a P2P network consist of uploaders (a.k.a. "seeders") and downloaders (a.k.a. "leechers"). The seeders will send the packets that the leechers are still missing until all the needed packets are received, and finally merged into the complete file that you originally wanted to download.
 
 !!!
+
 > **Key difference:** The file is not being hosted on any specific servers and ready to be downloaded like the commonly found direct download links on the internet. Instead, each computer in the P2P network acts as a small server that will share you small pieces of the file.
-!!!
+> !!!
 
 ## Torrent clients
 
-This is the program where you add torrents, connect to other peers, and download the files. 
+This is the program where you add torrents, connect to other peers, and download the files.
 
 !!!
+
 > Keep in mind that some clients (such as newer versions of uTorrent and BitTorrent) have been known to be bundled with crypto miners and adware.
-!!!
+> !!!
 
 **Windows, Linux, macOS:**
 
-- [qBittorrent](https://www.qbittorrent.org/download.php) 
+- [qBittorrent](https://www.qbittorrent.org/download.php)
 
 - [Transmission](https://transmissionbt.com/about/)
 
@@ -65,7 +69,7 @@ This is the program where you add torrents, connect to other peers, and download
 
 - [nzb360](https://play.google.com/store/apps/details?id=com.kevinforeman.nzb360) - Remote torrent management app with support for managing Sonarr, Radarr etc.
 
-- [ruTorrent for rTorrent](https://github.com/Novik/ruTorrent) - Web  UI for rtorrent.
+- [ruTorrent for rTorrent](https://github.com/Novik/ruTorrent) - Web UI for rtorrent.
 
 - [Flood for rTorrent](https://github.com/Flood-UI/flood) - Sleek web UI for rtorrent.
 
@@ -84,27 +88,33 @@ A magnet link can be opened by clicking on it in your web browser, where it will
 Most clients will begin leeching/downloading when you add the torrent, and will start seeding (uploading) immediately to other peers once the first few packets are downloaded, and will continue to seed even after the torrent finishes downloading.
 
 !!!
+
 > After the torrent finishes downloading, you should seed it at least for a while (ideally forever). Seeding is the way you give back to the swarm that you leeched from. Leeching without seeding back (hit-n-run) is extremely ill-advised due to the nature of how torrenting works.
-!!!
+> !!!
 
 !!!
+
 > The "ratio" is your upload size divided by download size. A ratio of 1 implies that you seeded as much as you leeched.
-!!!
+> !!!
 
 !!!
+
 > Often times, you will notice that there are no uploads from your actively seeding torrents. This happens when there are no peers downloading on the P2P network, or they are prioritizing other faster seeders over you (this is controlled by the BitTorrent protocol).
-!!!
+> !!!
 
 !!!
+
 > If there are no seeders, or rather, connectable seeders, you will be unable to get the files, because there is no one left to upload the files to you. In such a situation, try waiting, or add more trackers and announce to those to try and get more seeds. Peers may also connect and upload to you, however, they do not hold the entirety of the torrent, and can only upload the parts they possess.
-!!!
+> !!!
+
 # Advanced
 
 ## qBittorrent features
 
 !!!
+
 > The features mentioned below are available in most torrent clients, but qBittorrent will be used as an example.
-!!!
+> !!!
 
 The functionality is broadly divided into 3 tabs visible in the top bar - Transfers, Search and RSS. If they are not visible, they can be enabled from the "View" menu.
 
@@ -125,22 +135,25 @@ Check out the [RSS Guide](/tutorials/rss) for instructions on using it with qBit
 ## Connectability
 
 !!!
-> Being connectable means that you accept "direct" connections from seeders or leechers. In a rough metaphor, your "address" (IP) is known, and your "door" (port) is open to meet new peers.
-!!!
 
-In the BitTorrent protocol, a transaction between 2 peers can only happen if at least one of them is connectable (one "open door" is enough). 
+> Being connectable means that you accept "direct" connections from seeders or leechers. In a rough metaphor, your "address" (IP) is known, and your "door" (port) is open to meet new peers.
+> !!!
+
+In the BitTorrent protocol, a transaction between 2 peers can only happen if at least one of them is connectable (one "open door" is enough).
 
 When you attempt to download something from a peer, you must first establish the connection with them. If their port is open, then you can directly connect with them and start downloading. If their port is not open, you must wait for them to connect with you.
 
 While being connectible does not magically boost your upload speed, a properly configured setup increases the pool of potential peers to connect to. This will not make a difference with torrents that have hundreds of seeds, but can drastically increase upload speed on torrents with less seeds.
 
 !!!
+
 > Being non-connectable will still allow you to seed and leech, unless you are attempting to connect with another non-connectable peer.
-!!!
+> !!!
 
 !!!
+
 > Being a non-connectable seeder will get you less upload next to a connectable seeder.
-!!!
+> !!!
 
 That said, you might be wondering on how to become connectable. This can be achieved relatively easily by port forwarding - which will be covered down below.
 
@@ -159,12 +172,14 @@ Metamorphically, think of your torrent client like a laser pointer. When it runs
 The port used by your client can be found in Settings > Connection. Avoid using the [well-known ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports) and the [registered ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports). To simplify - and preferably, use the ports from [49152 or higher](https://en.wikipedia.org/wiki/Ephemeral_port) to avoid interference with other services as well as being blocked by your ISP on some lower number ports.
 
 !!!
+
 > Use https://canyouseeme.org/ to check if this port is open. If it already is, you can skip this instruction. If you are already portforwarding via a VPN, often times, it will show your port as unopened. However, this is completely normal because those ports are ephemeral and only opened when you're actively uploading/downloading something.
-!!!
+> !!!
 
 !!!
+
 > If you are already port forwarding via a VPN, often times, it will show your port as closed. However, this is completely normal since those ports are ephemeral and only opened up when you are actively uploading/downloading something.
-!!!
+> !!!
 
 The easy way to do this is with UPnP - though it is considered a security risk by some, this is something enabled by default on both your router and in qBittorrent. It will automatically open the port needed by your torrent client without needing to manually change router settings. You can find and enable this on your torrent client and your router's settings (by logging into it).
 
@@ -181,12 +196,14 @@ In case you have unknown issues preventing you from port forwarding despite corr
 - Flush your DNS cache by typing "ipconfig /flushdns" in the Windows command prompt. For Linux distributions, it varies from each other slightly as well as having many ways to do so. A quick Google search should help.
 
 !!!
+
 > Also make sure to create inbound/outbound rules for your torrent client on your firewall settings.
-!!!
+> !!!
 
 !!!warning Warning
+
 > Do not use port triggering - they are meant to be used for local network devices and those ports will be closed when they are not in use. Hence, they are not suitable for torrenting purpose.
-!!!
+> !!!
 
 ## What Is a Seedbox?
 
@@ -203,61 +220,56 @@ A seedbox is a server - a computer in a data center with high bandwidth and uplo
 If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything like your own personal computer. This is one of the more luxury options and tend to cost significantly more.
 
 !!!
+
 > Check out [/r/seedboxes](https://www.reddit.com/r/seedboxes/) for more information. They are geared towards private trackers so be sure to check for public tracker support, as well as unlimited bandwidth with any seedbox provider.
-!!!
+> !!!
 
 ## Glossary
 
 - Peer: Any person who is uploading/downloading a torrent.
 
 - Swarm: The entire set of peers.
-- 
+-
 - Seed: A peer who has finished downloading the torrent and is now uploading it to other peers.
-- 
+-
 - Leech: A peer who is still downloading or someone who downloads more than they upload (slang).
-- 
+-
 - Seeding: Uploading to other peers in the swarm.
-- 
+-
 - Leeching: Downloading from other peers in the swarm.
-- 
+-
 - Ratio: The number of bytes of data you have seeded to others divided by the number of bytes of data you have downloaded from others. If you download a 2GB movie, and you have seeded 1.5GB, your ratio on that torrent is 0.75 (1.5/2.0).
-- 
+-
 - Torrent file: A small file with a .torrent extension that you download to begin torrenting. Contains metadata about the torrent (checksum, list of files and their sizes, etc).
-- 
+-
 - Checksum/hash: A fixed-length value that is calculated based on all the data in the complete torrent that is intended to be unique to the specific torrent. Think of it like the torrent's unique ID. Used to identify the torrent to trackers and DHT.
-- 
+-
 - Magnet link: a link containing at minimum the checksum of the torrent. May also contain the torrent name and/or one or more trackers. Since the magnet link does not contain torrent metadata, the .torrent file must be downloaded from the swarm first before the actual torrent can begin. Without any trackers, a magnet link requires DHT to find initial peers and begin downloading the .torrent file.
-- 
+-
 - Tracker: A server that clients talk to to get lists of peers from the swarm. Each torrent may have zero, one, or many trackers. Private trackers are websites that run their own tracker. All private torrents will use only that private tracker.
-- 
+-
 - Trackerless torrent: A torrent that does not use any trackers. Peers share lists of peers with each other instead.
-- 
+-
 - DHT: Distributed hash table, the basis of trackerless torrents. Basically it is a giant table that, as the name implies, is distributed among all torrent clients. This table basically functions like a giant distributed tracker of all torrents that use DHT.
--     
+-
 - PEX: Peer exchange. This protocol allows peers on the same torrent to exchange lists of peers with each other. It is not as powerful as DHT because it cannot be used to join a new trackerless torrent; you have to know which peers to ask before you can ask.
-- 
+-
 - Announcing: The act of registering yourself as a peer for a torrent on a tracker. The tracker will then return a list of peers on the torrent back to your torrent client.
-- 
+-
 - Hash checking: Verifying the integrity of the downloaded files using the file's hash.
 
 ## Related Subreddits
 
 - /r/trackers - For discussion of public and private torrent trackers. No requests of specific pirated titles.
 
-
-- /r/Invites - Request and offer invites for private trackers that allow for invites to be distributed through such means.
-
+* /r/Invites - Request and offer invites for private trackers that allow for invites to be distributed through such means.
 
 - /r/OpenSignups - Announcements of private trackers that have opened up registration or applications. opentrackers.org is another great resource
 
-
-- /r/VPN - Discussion of VPNs
-
+* /r/VPN - Discussion of VPNs
 
 - /r/VPNTorrents - Discussion of VPNs for the purpose of torrenting
 
-
-- /r/torrents - For torrents dicussion and news
-
+* /r/torrents - For torrents dicussion and news
 
 - /r/seedboxes - For discussion, sourcing, and recommendations about seedboxes.

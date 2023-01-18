@@ -1,15 +1,19 @@
+---
+label: RSS
+---
+
 # Prerequisites
 
 This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and the [SubsPlease RSS feed](https://subsplease.org/rss-feeds/) as an example. The process should be similar for other clients and feeds.
 
 # Enabling RSS
 
-1. In qBittorrent, enable `RSS Reader` from the `View` menu on the toolbar. A new `RSS` tab will appear next to `Transfers`. 
-2. Navigate to `Tools` -> `Options` -> `RSS` and 
+1. In qBittorrent, enable `RSS Reader` from the `View` menu on the toolbar. A new `RSS` tab will appear next to `Transfers`.
+2. Navigate to `Tools` -> `Options` -> `RSS` and
 3. Check `Enable fetching RSS feeds` and `Enable auto downloading of RSS torrents.`
 4. Set `Feeds refresh interval` to 15 minutes.
 
-![vmajcpa.png](/vmajcpa.png )
+![vmajcpa.png](/vmajcpa.png)
 
 # Adding the RSS feed
 
@@ -18,9 +22,9 @@ This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and 
 3. Paste the link you copied and click OK.
 
 !!!
-> Do not paste this link in a browser because it will do nothing.
-!!!
 
+> Do not paste this link in a browser because it will do nothing.
+> !!!
 
 # Setting up download rules
 
@@ -32,10 +36,10 @@ This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and 
 
 3. Change the textbox `Must Contain:` to the title of the anime you need to download. Use the Japanese title of the show, as SubsPlease only offers the anime in their original title. For example, `Kimetsu no Yaiba`.
 
-4. In the textbox `Must Not Contain:`, write `batch` to avoid downloading the batch when the season ends. 
-   
+4. In the textbox `Must Not Contain:`, write `batch` to avoid downloading the batch when the season ends.
+
 5. If your filter works, you'll see the entries under `Matching RSS Articles`.
-   
+
 6. **Optional:** Check `Save to a Different Directory` and choose the download directory for the episodes.
 
 7. Check `SubsPlease RSS` under `Apply Rule to Feeds`.
@@ -45,8 +49,7 @@ This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and 
 > The client can be left running in the background. The anime episode will be automatically downloaded whenever it is released. {.is-info}
 
 > When you first add an anime to the list, the previous episodes may start downloading automatically. This only happens once, but you can manually stop the download process for any unwanted episodes.
-{.is-info}
-
+> {.is-info}
 
 # Advanced
 

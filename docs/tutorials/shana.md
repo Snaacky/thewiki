@@ -1,15 +1,19 @@
+---
+label: Shana
+---
+
 **Note**
 
 Hi everyone, I'd like to share a little project I wrote over the past year + a workflow I've personally been using to reduce the manual work involved every season in downloading anime. This helps a lot especially if you're an avid anime watcher and follow 10+ anime per season. Everything from auto-downloading new releases to selecting the "correct" resolution is automated.
 
 Requirements:
 
-  - An account on [ShanaProject](https://www.shanaproject.com/)
-  - [taiga2shana](https://github.com/zehric/taiga2shana/releases/)
+- An account on [ShanaProject](https://www.shanaproject.com/)
+- [taiga2shana](https://github.com/zehric/taiga2shana/releases/)
 
 Recommended:
 
-  - [Taiga](https://taiga.moe/) (note: please install to the default directory if you can!)
+- [Taiga](https://taiga.moe/) (note: please install to the default directory if you can!)
 
 First, if you haven't already, follow the guide to [set up your follows](https://www.shanaproject.com/help/follows/) on ShanaProject. By the end of this step you should be able to add follows manually on the website and have them automatically downloaded on your torrent client.
 

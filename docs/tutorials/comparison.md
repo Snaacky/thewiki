@@ -1,31 +1,43 @@
+---
+label: Comparison
+---
+
 # Vapoursynth-Preview
+
 ## Setup
 
 1. **Install [Python 3.10](https://www.python.org/downloads/release/python-3105/)**
-    - During installation tick `Add Python 3.10 to PATH`.
+   - During installation tick `Add Python 3.10 to PATH`.
 2. **Install [Git](https://gitforwindows.org/)**
-    - Optionally type `git version` in your terminal to verify Git was installed.
+   - Optionally type `git version` in your terminal to verify Git was installed.
 3. **Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases)**
-    - Select `Install for me only`.
-    - If you have any issues here, check out the [official Installation Guide](https://www.vapoursynth.com/doc/installation.html).
+
+   - Select `Install for me only`.
+   - If you have any issues here, check out the [official Installation Guide](https://www.vapoursynth.com/doc/installation.html).
 
 4. **Before we install vs-preview, we need to install the following dependencies**:
-[`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "[`LibP2P`]")  - [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works "`LSMASHSource`") - [`Subtext`](https://github.com/vapoursynth/subtext "`Subtext`") - [`vs-placebo`](https://github.com/Lypheo/vs-placebo "`vs-placebo`") - [`libdovi`](https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7 "`libdovi`")    - [`awsmfunc`](https://github.com/OpusGang/awsmfunc "`awsmfunc`")
+   [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "[`LibP2P`]") - [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works "`LSMASHSource`") - [`Subtext`](https://github.com/vapoursynth/subtext "`Subtext`") - [`vs-placebo`](https://github.com/Lypheo/vs-placebo "`vs-placebo`") - [`libdovi`](https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7 "`libdovi`") - [`awsmfunc`](https://github.com/OpusGang/awsmfunc "`awsmfunc`")
 
 To install them, run the following commands in your terminal:
+
 ```
 vsrepo.py install libp2p sub placebo dovi_library
 ```
-* Note: If this doesn't work, make sure Windows is set to open .py files with Python
+
+- Note: If this doesn't work, make sure Windows is set to open .py files with Python
+
 ```
 pip install --user git+https://github.com/OpusGang/awsmfunc.git
 ```
+
 Download [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "`LSMASHSource`") Inside the zip open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
 
 5. **Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):**
+
 ```
 pip install vspreview
 ```
+
 6. **Create a new file called `comp.vpy`**.
 7. **Open `comp.vpy` with a text editor such as notepad++ and paste the following, edit as required and save it:**
 
@@ -95,49 +107,49 @@ clip1.set_output(1)
 clip2.set_output(2)
 clip3.set_output(3)
 ```
+
 8. **That's it for the setup, now to use vspreview you just need to run this command in your terminal or paste it in a text file and save it as `comp.bat`:**
+
 ```
 vspreview /path/to/comp.vpy
 ```
+
 Now, when making comps you just edit `comp.vpy` to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed and then run `comp.bat` or run `vspreview comp.vpy` directly from your terminal.
 
 ## Screenshotting Manually (Recommended)
+
 ### Quality of Life Changes
-							 
- **Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted**
-    - In VSPreview on the bottom bar select Misc, set file name template to `{frame}_{script_name}_({index})`.
 
- **Jump through frames quickly**
-    - In VSPreview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
+**Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted** - In VSPreview on the bottom bar select Misc, set file name template to `{frame}_{script_name}_({index})`.
 
- **Take screenshots quicker by setting the save image button to enter**
-    - Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc`and edit `toolbar.py`
-    - Line 150: `Replace Qt.SHIFT + Qt.Key_S` with `Qt.Key_Return`.
-    - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
+**Jump through frames quickly** - In VSPreview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
 
- **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
-    - Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
-    - Line 164-165 Add `Qt.SHIFT + ` before `Qt.Key_Left` and `Qt.Key_Right`
-    - Line 166-167 Remove `Qt.SHIFT + ` before `Qt.Key_Left` and `Qt.Key_Right`
+**Take screenshots quicker by setting the save image button to enter** - Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc`and edit `toolbar.py` - Line 150: `Replace Qt.SHIFT + Qt.Key_S` with `Qt.Key_Return`. - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
+
+**Swap binds to save your pinky finger, so you no longer have to hold shift all the time** - Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py` - Line 164-165 Add `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right` - Line 166-167 Remove `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right`
+
 ### Making the comparison
+
 - Press `Right Arrow` key to move forward a set amount of frames.
 - `Number` keys to switch between video sources and compare quality.
 - Double tap `Enter` key to take and save screenshots.
 - Aim to screenshot a variety of scenes like light/dark, low/high motion, etc.
 - Try and match frame type when screenshotting, e.g. all sources on a `B` frame, single frame jump comes in handy for when they don't match (`Shift + Arrow keys`).
-    - *Note: If a source file does not have `B` frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no `B` frames.*
+  - _Note: If a source file does not have `B` frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no `B` frames._
 
 ## Screenshotting Automatically (Simply much less effort)
+
 If you don't want to take screenshots and upload them manually, then you can simply use VS-Preview's automatic comparison function.
+
 - Click the `comp` button in the toolbar.
 - Set the `Picture Type` to `All`, or `B` if you want matching frame-types
 - Name the collection appropriately for Slow.pics.
 - Use a large amount of images to make the comparison as useful as possible, ideally at least 40 since you'll get a lot of futile results with it being automatic.
 - Hit `Start Upload` and patiently wait while vspreview absolutely molests your battlestation.
-[![Comp](https://i.imgur.com/00m9QvB.png "Comp")](https://i.imgur.com/00m9QvB.png "Comp")
-
+  [![Comp](https://i.imgur.com/00m9QvB.png "Comp")](https://i.imgur.com/00m9QvB.png "Comp")
 
 # Manually with MPV
+
 - [Install MPV](/tutorials/mpv)
 - Screenshots are to be taken using MPV.
 - [Slow.pics](https://slow.pics/) must be used for making comparisons.
@@ -151,6 +163,7 @@ If you don't want to take screenshots and upload them manually, then you can sim
 - You must include source in the comparison, this will usually be the BDMV/Remux when BluRay encodes are being compared or WEB-DL if WEB encodes are being compared.
 
 **MPV config must be the one as shown below:**
+
 ```
 no-deband
 profile=gpu-hq
@@ -158,5 +171,6 @@ screenshot-format=png
 ```
 
 !!!
+
 > It's recommended to use the latest git builds of MPV
-!!!
+> !!!
