@@ -1,5 +1,6 @@
 ---
 label: Tutorials
+order: -5
 ---
 
 - [Auto downloading anime using RSS](/tutorials/rss)

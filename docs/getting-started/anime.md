@@ -1,5 +1,6 @@
 ---
 label: Anime
+order: -1
 ---
 
 # Streaming

@@ -1,5 +1,6 @@
 ---
 label: Literature
+order: -2
 ---
 
 # Manga

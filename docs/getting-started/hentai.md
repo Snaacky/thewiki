@@ -1,5 +1,6 @@
 ---
 label: Hentai
+order: -4
 ---
 
 # Illustrations
