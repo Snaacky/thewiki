@@ -1,5 +1,5 @@
 ---
-label: Public Trackers
+label: Public BitTorrent Trackers
 order: -2
 ---
 

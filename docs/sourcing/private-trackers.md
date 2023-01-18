@@ -1,5 +1,5 @@
 ---
-label: Private Trackers
+label: Private BitTorrent Trackers
 order: -3
 ---
 
