@@ -1,6 +1,5 @@
 ---
-label: Index
-visibility: hidden
+label: Home
 ---
 
 !!!
