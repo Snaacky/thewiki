@@ -1,5 +1,5 @@
 ---
-label: Streaming
+label: Streaming Sites
 ---
 
 # Popular Streaming Sites

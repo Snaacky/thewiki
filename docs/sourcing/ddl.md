@@ -1,5 +1,5 @@
 ---
-label: DDL
+label: DDL/XDCC
 ---
 
 # IRC
