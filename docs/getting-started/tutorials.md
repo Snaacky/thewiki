@@ -3,6 +3,8 @@ label: Tutorials
 order: -5
 ---
 
+# Tutorials
+
 - [Auto downloading anime using RSS](/tutorials/rss)
 - [Automate Downloads With Taiga2shana](/tutorials/shana)
 - [Creating a comparison](/tutorials/comparison)

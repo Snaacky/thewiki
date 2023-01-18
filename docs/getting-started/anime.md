@@ -3,7 +3,9 @@ label: Anime
 order: -1
 ---
 
-# Streaming
+# Anime
+
+## Streaming
 
 Unofficial - [TheIndex](https://theindex.moe/)
 
@@ -15,7 +17,7 @@ Official streams have better quality, but are also larger (~1.3GB per episode fo
 
 Read more: [Quality Guide](/guides/quality)
 
-# Torrenting
+## Torrenting
 
 Torrent files can be found and downloaded from trackers like [nyaa.si](https://nyaa.si). Use [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) or follow this [tutorial](/tutorials/unblock) to unblock sites.
 
@@ -27,7 +29,7 @@ Advantages of torrents include access to more options with better quality/size r
 
 Read more: [Torrenting Guide](/en/guides/torrenting), [RSS Tutorial](/tutorials/rss)
 
-# Playback
+## Playback
 
 > VLC is not recommended because it displays wrong colours, introduces visual artifacts, and breaks intensive subtitles.
 > {.is-info}

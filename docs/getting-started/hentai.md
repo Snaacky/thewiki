@@ -3,7 +3,9 @@ label: Hentai
 order: -4
 ---
 
-# Illustrations
+# Hentai
+
+## Illustrations
 
 https://kemono.party/
 https://konachan.com/
@@ -14,13 +16,13 @@ https://www.reddit.com/r/ecchi/
 https://www.reddit.com/r/thighdeology/
 https://www.reddit.com/r/hentai/
 
-# Doujinshi
+## Doujinshi
 
 https://www.fakku.net/
 https://nhentai.net/
 https://exhentai.org/
 
-# Games
+## Games
 
 https://www.nutaku.net/
 https://www.fakku.net/

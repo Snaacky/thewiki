@@ -3,9 +3,11 @@ label: Literature
 order: -2
 ---
 
-# Manga
+# Literature
 
-## Sourcing Files (for standalone readers)
+## Manga
+
+### Sourcing Files (for standalone readers)
 
 [Nyaa](https://nyaa.si) - The best public source for downloading manga
 
@@ -18,9 +20,9 @@ Scanlation Rips
 Search both the English and Japanese title by adding `|` in between. For example - `Attack on Titan|Shingeki no Kyojin` and sort by file size.
 Although these are significantly lower quality, not all manga get official digital releases, and downloading as opposed to reading online allows you to utilise the better scaling that standalone readers can provide.
 
-## Reading
+### Reading
 
-### Windows
+#### Windows
 
 [CDisplayEx](https://www.cdisplayex.com/) (Highest Quality)
 
@@ -34,7 +36,7 @@ Although these are significantly lower quality, not all manga get official digit
 
 - Tachiyomi fork for PC
 
-### Android
+#### Android
 
 [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) (Highest Quality)
 
@@ -50,7 +52,7 @@ Although these are significantly lower quality, not all manga get official digit
 
 - Tachiyomi forks with added features.
 
-### iOS
+#### iOS
 
 [Sidebooks](https://apps.apple.com/us/app/sidebooks/id409777225) (Highest Quality)
 
@@ -60,7 +62,7 @@ Although these are significantly lower quality, not all manga get official digit
 
 - Tachiyomi alternative that supports adding sources.
 
-### Browser (Any platform)
+#### Browser (Any platform)
 
 [MangaDex](https://mangadex.org/) (Most Convenient Scanlation)
 
@@ -70,7 +72,7 @@ Although these are significantly lower quality, not all manga get official digit
 
 - These sites upload downscaled official rips with the highest quality among online sites. The original rips can be found on nyaa.
 
-## Organization and Manga Servers
+### Organization and Manga Servers
 
 [Komga](https://komga.org/) - Free and open source manga server with OPDS support. This means that any reader with OPDS, like Perfect Viewer, [can be used to read manga from the server](https://komga.org/guides/opds.html). Tachiyomi and Paperback are supported through their respective [komga extensions](https://komga.org/guides/tachiyomi.html). It also has an integrated webreader.
 
@@ -82,13 +84,13 @@ Although these are significantly lower quality, not all manga get official digit
 
 [HakuNeko](https://hakuneko.download/) - cross-platform downloader for manga and anime from various websites
 
-# Light Novels
+## Light Novels
 
 Official vs Fan Translations - In general, official translations are more consistent, localized and flow better as a result of having professional translators and editors working on the project. At the same time, some readers may not prefer the excessive localization, editing or censorship in certain novels, which is where fan translations become the better choice. Seven Seas was guilty of doing this with Mushoku Tensei and Classroom of the Elite under the guise of localization - [1](https://www.animenewsnetwork.com/news/2021-02-17/seven-seas-addresses-mushoku-tensei-classroom-of-the-elite-light-novel-localization-changes/.169582), [2](https://www.animenewsnetwork.com/feature/2021-04-26/why-seven-seas-altered-its-light-novels/.171956), [3](https://boundingintocomics.com/2021/02/21/seven-seas-admits-to-heavy-handed-censorship-of-classroom-of-the-elite-and-mushoku-tensei-jobless-reincarnation/). The problems were apparently fixed later in revised releases.
 
 Fan translations can range from better than official to unreadable machine translated garbage. It's best to consult the community of each series to determine what their preferred version is, and go with that. In most cases, going with official is a safe bet.
 
-## Sourcing
+### Sourcing
 
 [Nyaa](https://nyaa.si/) is the first place you should check for official releases.
 
@@ -98,7 +100,7 @@ Fan TLs can be found from novelupdates or from the reddit/discord communities of
 
 [WebToEpub](https://github.com/dteviot/WebToEpub) - An extension to convert Web Novels into EPUB.
 
-## Reading and Organization
+### Reading and Organization
 
 [Calibre](https://calibre-ebook.com/) is a complete e-book management solution. It can be used to read, transfer and convert ebooks for all sorts of readers. It can also modify styling and download/edit/create metadata. The [calibre content server](https://manual.calibre-ebook.com/server.html) can be used to host and remotely access your library.
 
