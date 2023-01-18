@@ -15,37 +15,30 @@ You may want to use a [VPN](/en/faq/vpn) or a [seedbox](/en/guides/torrenting#wh
 
 ## Basics
 
-&nbsp;
-
 ### Why should I use torrents?
 
 For many people, streaming services are more convenient to use. However, torrenting is fairly simple and allows for more flexibility. Some reasons to use torrents are:
 
 - A range of qualities and sizes.
-
-* Better subtitles and style options.
-
+- Better subtitles and style options.
 - Easier access to a larger variety of titles.
-
-* Downloaded files for rewatching with no additional data usage.
+- Downloaded files for rewatching with no additional data usage.
 
 ### What is torrenting?
 
 The BitTorrent Protocol is an internet protocol for peer-to-peer (P2P) file sharing, where the large file will be broken down into many small pieces called "packets". Those packets will be exchanged between all the devices in a P2P network consist of uploaders (a.k.a. "seeders") and downloaders (a.k.a. "leechers"). The seeders will send the packets that the leechers are still missing until all the needed packets are received, and finally merged into the complete file that you originally wanted to download.
 
+!!!info
+**Key difference:** The file is not being hosted on any specific servers and ready to be downloaded like the commonly found direct download links on the internet. Instead, each computer in the P2P network acts as a small server that will share you small pieces of the file.
 !!!
-
-> **Key difference:** The file is not being hosted on any specific servers and ready to be downloaded like the commonly found direct download links on the internet. Instead, each computer in the P2P network acts as a small server that will share you small pieces of the file.
-> !!!
 
 ### Torrent clients
 
 This is the program where you add torrents, connect to other peers, and download the files.
 
+!!!info
+Keep in mind that some clients (such as newer versions of uTorrent and BitTorrent) have been known to be bundled with crypto miners and adware.
 !!!
-
-> Keep in mind that some clients (such as newer versions of uTorrent and BitTorrent) have been known to be bundled with crypto miners and adware.
-> !!!
 
 **Windows, Linux, macOS:**
 
@@ -79,34 +72,29 @@ A magnet link can be opened by clicking on it in your web browser, where it will
 
 Most clients will begin leeching/downloading when you add the torrent, and will start seeding (uploading) immediately to other peers once the first few packets are downloaded, and will continue to seed even after the torrent finishes downloading.
 
+!!!info
+After the torrent finishes downloading, you should seed it at least for a while (ideally forever). Seeding is the way you give back to the swarm that you leeched from. Leeching without seeding back (hit-n-run) is extremely ill-advised due to the nature of how torrenting works.
 !!!
 
-> After the torrent finishes downloading, you should seed it at least for a while (ideally forever). Seeding is the way you give back to the swarm that you leeched from. Leeching without seeding back (hit-n-run) is extremely ill-advised due to the nature of how torrenting works.
-> !!!
-
+!!!info
+The "ratio" is your upload size divided by download size. A ratio of 1 implies that you seeded as much as you leeched.
 !!!
 
-> The "ratio" is your upload size divided by download size. A ratio of 1 implies that you seeded as much as you leeched.
-> !!!
-
+!!!info
+Often times, you will notice that there are no uploads from your actively seeding torrents. This happens when there are no peers downloading on the P2P network, or they are prioritizing other faster seeders over you (this is controlled by the BitTorrent protocol).
 !!!
 
-> Often times, you will notice that there are no uploads from your actively seeding torrents. This happens when there are no peers downloading on the P2P network, or they are prioritizing other faster seeders over you (this is controlled by the BitTorrent protocol).
-> !!!
-
+!!!info
+If there are no seeders, or rather, connectable seeders, you will be unable to get the files, because there is no one left to upload the files to you. In such a situation, try waiting, or add more trackers and announce to those to try and get more seeds. Peers may also connect and upload to you, however, they do not hold the entirety of the torrent, and can only upload the parts they possess.
 !!!
-
-> If there are no seeders, or rather, connectable seeders, you will be unable to get the files, because there is no one left to upload the files to you. In such a situation, try waiting, or add more trackers and announce to those to try and get more seeds. Peers may also connect and upload to you, however, they do not hold the entirety of the torrent, and can only upload the parts they possess.
-> !!!
 
 ## Advanced
 
 ### qBittorrent features
 
+!!!info
+The features mentioned below are available in most torrent clients, but qBittorrent will be used as an example.
 !!!
-
-> The features mentioned below are available in most torrent clients, but qBittorrent will be used as an example.
-> !!!
 
 The functionality is broadly divided into 3 tabs visible in the top bar - Transfers, Search and RSS. If they are not visible, they can be enabled from the "View" menu.
 
@@ -126,10 +114,9 @@ Check out the [RSS Guide](/tutorials/rss) for instructions on using it with qBit
 
 ### Connectability
 
+!!!info
+Being connectable means that you accept "direct" connections from seeders or leechers. In a rough metaphor, your "address" (IP) is known, and your "door" (port) is open to meet new peers.
 !!!
-
-> Being connectable means that you accept "direct" connections from seeders or leechers. In a rough metaphor, your "address" (IP) is known, and your "door" (port) is open to meet new peers.
-> !!!
 
 In the BitTorrent protocol, a transaction between 2 peers can only happen if at least one of them is connectable (one "open door" is enough).
 
@@ -137,15 +124,13 @@ When you attempt to download something from a peer, you must first establish the
 
 While being connectible does not magically boost your upload speed, a properly configured setup increases the pool of potential peers to connect to. This will not make a difference with torrents that have hundreds of seeds, but can drastically increase upload speed on torrents with less seeds.
 
+!!!info
+Being non-connectable will still allow you to seed and leech, unless you are attempting to connect with another non-connectable peer.
 !!!
 
-> Being non-connectable will still allow you to seed and leech, unless you are attempting to connect with another non-connectable peer.
-> !!!
-
+!!!info
+Being a non-connectable seeder will get you less upload next to a connectable seeder.
 !!!
-
-> Being a non-connectable seeder will get you less upload next to a connectable seeder.
-> !!!
 
 That said, you might be wondering on how to become connectable. This can be achieved relatively easily by port forwarding - which will be covered down below.
 
@@ -159,19 +144,19 @@ Metamorphically, think of your torrent client like a laser pointer. When it runs
 
 ### How To Port Forward
 
-> This guide is not applicable to VPN users. If you are using one, please check with your VPN service provider and see if it allows port forwarding, as well as any instructions they might provide you with. If it does not, there is nothing you can do about it and it also has nothing to do with your router - either disable your VPN, or choose a different VPN service provider that allows port forwarding. {.is-warning}
+!!!warning
+This guide is not applicable to VPN users. If you are using one, please check with your VPN service provider and see if it allows port forwarding, as well as any instructions they might provide you with. If it does not, there is nothing you can do about it and it also has nothing to do with your router - either disable your VPN, or choose a different VPN service provider that allows port forwarding. {.is-warning}
+!!!
 
 The port used by your client can be found in Settings > Connection. Avoid using the [well-known ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports) and the [registered ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports). To simplify - and preferably, use the ports from [49152 or higher](https://en.wikipedia.org/wiki/Ephemeral_port) to avoid interference with other services as well as being blocked by your ISP on some lower number ports.
 
+!!!info
+Use https://canyouseeme.org/ to check if this port is open. If it already is, you can skip this instruction. If you are already portforwarding via a VPN, often times, it will show your port as unopened. However, this is completely normal because those ports are ephemeral and only opened when you're actively uploading/downloading something.
 !!!
 
-> Use https://canyouseeme.org/ to check if this port is open. If it already is, you can skip this instruction. If you are already portforwarding via a VPN, often times, it will show your port as unopened. However, this is completely normal because those ports are ephemeral and only opened when you're actively uploading/downloading something.
-> !!!
-
+!!!info
+If you are already port forwarding via a VPN, often times, it will show your port as closed. However, this is completely normal since those ports are ephemeral and only opened up when you are actively uploading/downloading something.
 !!!
-
-> If you are already port forwarding via a VPN, often times, it will show your port as closed. However, this is completely normal since those ports are ephemeral and only opened up when you are actively uploading/downloading something.
-> !!!
 
 The easy way to do this is with UPnP - though it is considered a security risk by some, this is something enabled by default on both your router and in qBittorrent. It will automatically open the port needed by your torrent client without needing to manually change router settings. You can find and enable this on your torrent client and your router's settings (by logging into it).
 
@@ -180,41 +165,29 @@ Alternatively, find your router manufacturer and model [in this list](https://po
 In case you have unknown issues preventing you from port forwarding despite correctly followed the instructions, try the following:
 
 - Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS etc. in your router settings. However, it is generally ill-advised due to security reasons.
-
 - Sometimes port forwarding will fail if you're doing so through a proxy.
-
 - Double check your torrent client configurations.
-
 - Flush your DNS cache by typing "ipconfig /flushdns" in the Windows command prompt. For Linux distributions, it varies from each other slightly as well as having many ways to do so. A quick Google search should help.
+- Also make sure to create inbound/outbound rules for your torrent client on your firewall settings.
 
+!!!warning
+Do not use port triggering - they are meant to be used for local network devices and those ports will be closed when they are not in use. Hence, they are not suitable for torrenting purpose.
 !!!
-
-> Also make sure to create inbound/outbound rules for your torrent client on your firewall settings.
-> !!!
-
-!!!warning Warning
-
-> Do not use port triggering - they are meant to be used for local network devices and those ports will be closed when they are not in use. Hence, they are not suitable for torrenting purpose.
-> !!!
 
 ### What Is a Seedbox?
 
 A seedbox is a server - a computer in a data center with high bandwidth and upload/download speed, that can be used to store your torrents virtually and seed reliably around the clock. You can directly upload/download from the seedbox to your computer by using a file transfer protocol (FTP) client (such as WinSCP, FileZilla, Cyberduck, etc.). Since the seedbox is more likely to have a high upload speed compared to your internet connection as well as other peers in the swarm, it is more likely to be prioritized when seeding the bittorent packets. Typical advantages include:
 
 - Utilize a faster download/upload speed than your internet connection.
-
 - High uptime - a seedbox is on 24/7 seeding your torrents at high speed, that allows you to maintain a good ratio on private (and public) trackers.
-
 - Avoiding copyright/DMCA problems, especially if you are not using a VPN.
-
 - Many seedboxes also support third-party plugins such as sonarr, plex etc.
 
 If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything like your own personal computer. This is one of the more luxury options and tend to cost significantly more.
 
+!!!info
+Check out [/r/seedboxes](https://www.reddit.com/r/seedboxes/) for more information. They are geared towards private trackers so be sure to check for public tracker support, as well as unlimited bandwidth with any seedbox provider.
 !!!
-
-> Check out [/r/seedboxes](https://www.reddit.com/r/seedboxes/) for more information. They are geared towards private trackers so be sure to check for public tracker support, as well as unlimited bandwidth with any seedbox provider.
-> !!!
 
 ### Glossary
 

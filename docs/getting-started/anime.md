@@ -31,7 +31,7 @@ Read more: [Torrenting Guide](/en/guides/torrenting), [RSS Tutorial](/tutorials/
 
 ## Playback
 
-!!!warning Warning
+!!!warning
 VLC is not recommended because it displays wrong colours, introduces visual artifacts, and breaks intensive subtitles.
 !!!
 
