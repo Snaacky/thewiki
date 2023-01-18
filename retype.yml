@@ -1,5 +1,4 @@
 url: beta.thewiki.moe
 branding:
   title: The Wiki
-edit:
-  repo: "https://github.com/snaacky/thewiki"
+input: ./docs
