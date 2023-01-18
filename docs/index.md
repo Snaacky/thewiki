@@ -1,5 +1,10 @@
+---
+label: Index
+visibility: hidden
+---
+
 !!!
-Did you know TheIndex and TheWiki have a Discord server? discord.gg/snackbox 
+Did you know TheIndex and TheWiki have a Discord server? discord.gg/snackbox
 !!!
 
 # Anime
@@ -10,7 +15,7 @@ Unofficial - [TheIndex](https://theindex.moe/)
 
 Official - [/r/anime list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams)
 
-Streaming sites require no user setup and are convenient; however, streams typically compress video, which reduces quality, and the site may have unfavorable features like ads. Aiming for compatibility, streaming sites are unable to use efficient codecs like x265. Users may find a similar, if not better, experience to streaming by torrenting x265 mini encodes from nyaa. These small encodes are useful for individuals with data limits. Here is a comparison between mini encodes and most popular streaming sites - https://slow.pics/c/pjYaqdnr. 
+Streaming sites require no user setup and are convenient; however, streams typically compress video, which reduces quality, and the site may have unfavorable features like ads. Aiming for compatibility, streaming sites are unable to use efficient codecs like x265. Users may find a similar, if not better, experience to streaming by torrenting x265 mini encodes from nyaa. These small encodes are useful for individuals with data limits. Here is a comparison between mini encodes and most popular streaming sites - https://slow.pics/c/pjYaqdnr.
 
 Official streams have better quality but are also larger (~1.3GB per episode for 1080p). They can be obtained by torrenting from groups like SubsPlease, who rip untouched official streams.
 
@@ -18,7 +23,7 @@ Read more: [Quality Guide](/guides/quality)
 
 ## Torrenting
 
-Torrent files can be found and downloaded from trackers like [nyaa.si](https://nyaa.si). Use [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI), or follow this [tutorial](/tutorials/unblock) to unblock sites. 
+Torrent files can be found and downloaded from trackers like [nyaa.si](https://nyaa.si). Use [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI), or follow this [tutorial](/tutorials/unblock) to unblock sites.
 
 The downloaded .torrent file or the magnet link has to be opened in your torrent client - [qBittorrent](https://www.qbittorrent.org/download.php) for PC and [LibreTorrent](https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent)/[Flud](https://play.google.com/store/apps/details?id=com.delphicoder.flud) for Android. After the download is complete, the torrents do not need to be removed from the client.
 
@@ -31,7 +36,7 @@ Read more: [Sourcing Guide](/guides/sourcing), [Torrenting Guide](/en/guides/tor
 ## Playback
 
 > Do not use VLC
-{.is-info}
+> {.is-info}
 
 **PC:** [MPV](https://mpv.io/installation/) , [MPC-HC](https://github.com/clsid2/mpc-hc/releases), [Potplayer](https://potplayer.daum.net)
 
@@ -45,11 +50,11 @@ Read more: [Playback Guide](/en/guides/playback)
 
 # Literature
 
-[Mangaupdates](https://www.mangaupdates.com/) and [Novelupdates](https://www.novelupdates.com/) provide information about translation groups, their progress, and other things about the series like genres, tags, etc. 
+[Mangaupdates](https://www.mangaupdates.com/) and [Novelupdates](https://www.novelupdates.com/) provide information about translation groups, their progress, and other things about the series like genres, tags, etc.
 
 [Nyaa.si](https://nyaa.si/) has torrents (and DDL links in descriptions) for official releases of manga and light novels. [Mangasee](https://mangasee123.com/) and [MangaLife](https://manga4life.com/) upload downscaled versions of these official rips, which are the best quality. [MangaDex](https://mangadex.org/) is where most scanlators upload.
 
-## Reading 
+## Reading
 
 - [CDisplayEX](https://www.cdisplayex.com/) or [Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader) (PC)
 - [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) or [Tachiyomi](https://tachiyomi.org/) (Android)
