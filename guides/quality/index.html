@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727386423580">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727386683341">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727386423580" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727386683341" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727386423580" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727386683341" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727386423580" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727386683341" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -175,14 +175,10 @@ x264   High    10     .mkv
 <p>Quality might be somewhat subjective. The best release for the purpose of this guide is an encode which fixes flaws of the raw bdmv while simultaneously not altering the original material too much. There is a difference between obvious flaws which need to be fixed and your subjective preference of how you like the encode. If something apparently looks &quot;better&quot; because it unnecessarily alters the video, then it&#x27;s not a good indication of quality. These statements might seem too complicated or a bit vague, I&#x27;ll try to explain in brief, but this is beyond the scope of a guide for beginners and more into the realm of encoding.</p>
 <p>The official BDMV, from the blurays, is itself an encode of the actual source. It often suffers from issues like banding, blocking, noise, aliasing, etc. These might be originating from a variety of reasons. For example, a lot of anime is native 720p and is upscaled to 1080p for the bluray. Even if issues aren&#x27;t present in the bdmv, they can appear in the encode because of compression. This fixing is called filtering, a step which comes before encoding. The video is filtered with Avisynth/Vapoursynth before passing it on to the encoder.</p>
 <ul>
-<li><p><a href="http://bakashots.me/guide/index.php">Examples of problems</a></p>
-</li>
-<li><p><a href="https://guide.encode.moe/encoding/video-artifacts.html">Encoding guides and more examples</a></p>
-</li>
-<li><p><a href="https://silentaperture.gitlab.io/mdbook-guide/introduction.html">Advanced encoding guide</a></p>
-</li>
-<li><p><a href="https://kokomins.wordpress.com/2019/10/10/anime-encoding-guide-for-x265-and-why-to-never-use-flac/">Mini encodes and audio</a></p>
-</li>
+<li><a href="http://bakashots.me/guide/index.php">Examples of problems</a></li>
+<li><a href="https://guide.encode.moe/encoding/video-artifacts.html">Encoding guides and more examples</a></li>
+<li><a href="https://silentaperture.gitlab.io/mdbook-guide/introduction.html">Advanced encoding guide</a></li>
+<li><a href="https://kokomins.wordpress.com/2019/10/10/anime-encoding-guide-for-x265-and-why-to-never-use-flac/">Mini encodes and audio</a></li>
 </ul>
 <doc-anchor-target id="types-of-releases">
     <h2>
@@ -196,12 +192,9 @@ x264   High    10     .mkv
 <p><strong>BDRip</strong> - An encode made directly from the BDMV/BDRemux. This is the only kind of encode considered good quality.</p>
 <p>Most can be found on nyaa with some rare stuff on rutracker(Russian). The direct encode is usually a raw without subtitles and is used by muxers or fansubbers to make a release. The groups can be roughly rated as -</p>
 <ul>
-<li><p>Excellent - Beatrice-Raws, Kawaiika-Raws, SCY, Raws-Maji</p>
-</li>
-<li><p>Good - VCB-Studio</p>
-</li>
-<li><p>Okay - Snow-raws, ANK-raws, Reinforce, LowPower-Raws, Moozzi2</p>
-</li>
+<li>Excellent - Beatrice-Raws, Kawaiika-Raws, SCY, Raws-Maji</li>
+<li>Good - VCB-Studio</li>
+<li>Okay - Snow-raws, ANK-raws, Reinforce, LowPower-Raws, Moozzi2</li>
 </ul>
 <p>Fansub groups like Coalgirls, Commie, Doki etc. also have their own encodes, but their main contribution is subtitles. These subtitles are taken by mux groups and combined with good video and multiple subtitle/audio options to make a complete release. Sometimes they use their own encodes. They&#x27;ll usually mention all sources used for the release in the description.</p>
 <p>Examples of good mux groups are - OZR, Kametsu, CTR, YURI, pog42, Arid, ARC, Mysteria, Drag, UDF, NH, KH.</p>
@@ -209,14 +202,10 @@ x264   High    10     .mkv
 <p><strong>Re-encode</strong> - Marked red on nyaa, these are usually encodes of a BDRip, WEB source or even worse. Encoding is a lossy proceess and information is lost at every stage. The same encode made from the BDMV instead of a BDRip would&#x27;ve been better quality. Re-encoding is considered a bad practice.</p>
 <p><strong>Mini encode</strong> - These are around 500mb or lower, they can be either a BDRip or a re-encode. Despite a bad reputation, the minis which are not re-encodes can be a decent option for those low on storage or bandwidth. Mini groups -</p>
 <ul>
-<li><p>Good - Judas (new)</p>
-</li>
-<li><p>Decent - Akihitosubs, DB, Ember, Nep_Blanc</p>
-</li>
-<li><p>Bad - Judas (old), Cleo, Reaktor, Cerberus. Their video might be bad, but Cerberus and Reaktor often pick good subtitle sources.</p>
-</li>
-<li><p>Trash - bonkai77, DaddySubs, Tenrai-Sensei, DKB, HR, SSA, FFA, YuiSubs and any other group using NVENC.</p>
-</li>
+<li>Good - Judas (new)</li>
+<li>Decent - Akihitosubs, DB, Ember, Nep_Blanc</li>
+<li>Bad - Judas (old), Cleo, Reaktor, Cerberus. Their video might be bad, but Cerberus and Reaktor often pick good subtitle sources.</li>
+<li>Trash - bonkai77, DaddySubs, Tenrai-Sensei, DKB, HR, SSA, FFA, YuiSubs and any other group using NVENC.</li>
 </ul>
 <p>Judas (new) is roughly mid 2020 and later.
 Note that this tier list is valid only for BD sourced encodes and not airing anime. The order of quality for WEB releases is -</p>
@@ -255,12 +244,9 @@ Note that this tier list is valid only for BD sourced encodes and not airing ani
 <p>Lossless audio is unnecessary for most sound systems. Even with the best audiophile grade setup, it&#x27;s nearly impossible to make out the difference. However, some exceptional music samples exist, which can be used to differentiate lower-bitrate lossy audio by listening to small extracted parts repeatedly. If you want to try, check out these <a href="http://abx.digitalfeed.net">online ABX tests</a> or <a href="https://www.foobar2000.org/components/view/foo_abx">Foobar plugin</a> with <a href="https://www.head-fi.org/threads/setting-up-an-abx-test-simple-guide-to-ripping-tagging-transcoding.655879/#post-9268096.">this guide for setting it up.</a> This foobar plugin lets you ABX any two tracks of your choice and produces a verifiable log. If you manage to complete it with a decent probability, do join our <a href="https://discord.gg/snackbox">discord</a> for some interesting conversation.</p>
 <p>A good benchmark for bitrates (stereo/2.0) is -</p>
 <ul>
-<li><p>128 kbps for opus</p>
-</li>
-<li><p>160 kbps for aac</p>
-</li>
-<li><p>192 kbps for mp3</p>
-</li>
+<li>128 kbps for opus</li>
+<li>160 kbps for aac</li>
+<li>192 kbps for mp3</li>
 </ul>
 <p>For surround audio, multiply with the number of stereo pairs.</p>
 <doc-anchor-target id="subtitles">
@@ -280,10 +266,8 @@ Note that this tier list is valid only for BD sourced encodes and not airing ani
 <p>Older anime was subbed by a variety of fansub groups. Every good release will mention the sources used for subtitles, the edits made, and often describe their choice of subtitles. A very good resource for fansub reviews was MyAnimeList. They removed the fansub reviews section a few years ago towards their goal of legitimization, since fansubs are associated with piracy. Luckily, the data was archived and <a href="https://www.reddit.com/r/anime/comments/9kq1ch/bringing_fansubs_back_on_mal/">can be brought back on the MAL page itself through this</a>. Fair warning, the reviews are mostly filled with hate and trolls but often give you an idea of which group used which script. You can also make out the kind of translation and how much it is localized.</p>
 <p>Localization means changing cultural references and puns to fit the english context, but too often it becomes more about the American context and fansubs get riddled with memes. A degree of localization is always involved with translation to make sure the dialogue flows smoothly, but too much of it might be a problem for some. These two websites provide information and comparisons between various groups doing any anime -</p>
 <ul>
-<li><p><a href="https://www.crymore.net">https://www.crymore.net</a></p>
-</li>
-<li><p><a href="https://fansub.co">https://fansub.co</a></p>
-</li>
+<li><a href="https://www.crymore.net">https://www.crymore.net</a></li>
+<li><a href="https://fansub.co">https://fansub.co</a></li>
 </ul>
 <p>Most newer fansubbed anime is some variation of edited official subs from CR or Funi. These edits are usually range between excessive localization by completely eradicating and replacing the idea of Japan with America or untranslation by changing random phrases and lines back to Japanese. Most actual fansubs lie somewhere in between these extremes. After looking at the work of a few groups, you&#x27;ll be able to figure out who has a tendency to do what.</p>
 <p>AnimeTosho is a very useful resource for grabbing just the subtitles from any release on nyaa. You search the title as it is on nyaa and after opening the page you&#x27;ll see <code v-pre>All Attachments</code> near the bottom. This will download all subtitles and fonts extracted from that release. It&#x27;s also useful to get the mediainfo when the uploader hasn&#x27;t posted it, to do this, just click on any of the mkv files in the torrent and you&#x27;ll get details about it. Animetosho is also a DDL site which uploads torrents from nyaa to various hosting services. There&#x27;s also an NZB option, but none of the file hosts last for long.</p>

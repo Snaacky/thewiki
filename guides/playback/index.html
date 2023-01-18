@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727386423580">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727386683341">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727386423580" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727386683341" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727386423580" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727386683341" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727386423580" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727386683341" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -171,10 +171,8 @@
     </h4>
 </doc-anchor-target>
 <ul>
-<li><p><a href="https://mpv.io/installation/">MPV</a> - <a href="../../tutorials/mpv/">Installation and configuration tutorial</a> (recommended)</p>
-</li>
-<li><p><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a>/<a href="https://potplayer.daum.net">Potplayer</a> - <a href="https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/">Configuration guide with MadVR</a></p>
-</li>
+<li><a href="https://mpv.io/installation/">MPV</a> - <a href="../../tutorials/mpv/">Installation and configuration tutorial</a> (recommended)</li>
+<li><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a>/<a href="https://potplayer.daum.net">Potplayer</a> - <a href="https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/">Configuration guide with MadVR</a></li>
 </ul>
 <p>VLC is not recommended because it often displays wrong colours, introduces visual artifacts, and breaks intensive subtitles. Here are some comparisons showing these issues -</p>
 <p><a href="https://slow.pics/c/XhbmrYgU">https://slow.pics/c/XhbmrYgU</a> (Spice and Wolf by MTBB)
@@ -211,12 +209,9 @@
 <p>There are three ways of using Kodi on a TV -</p>
 <p><strong>1. Kodi installed on a computer which stores the content and is directly connected to the TV.</strong></p>
 <ul>
-<li><p>No decoding problems with a powerful cpu.</p>
-</li>
-<li><p>Possibility to use high quality shaders that utilize your gpu to improve upscaling with <a href="https://kodi.wiki/view/External_players">an external player of your choice.</a></p>
-</li>
-<li><p>Control using a normal mouse+keyboard or through an android app like <a href="https://yatse.tv/">Yatse.</a></p>
-</li>
+<li>No decoding problems with a powerful cpu.</li>
+<li>Possibility to use high quality shaders that utilize your gpu to improve upscaling with <a href="https://kodi.wiki/view/External_players">an external player of your choice.</a></li>
+<li>Control using a normal mouse+keyboard or through an android app like <a href="https://yatse.tv/">Yatse.</a></li>
 </ul>
 <p><strong>2. Kodi on a TV/Android box with the content on a separate computer.</strong></p>
 <ul>
@@ -230,12 +225,9 @@
 <p>Transcoding is only a last resort to deal with compatibility problems. Direct play is always prefereble to transcoding, which affects quality and uses cpu power on your server. More about transcoding on plex - <a href="https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream/">https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream/</a></p>
 <p>Here, Kodi acts as a client,increasing compatibility and replacing the default one that comes with Plex, Emby or Jellyfin. This is done through their respective add-ons for kodi.</p>
 <ul>
-<li><p><a href="https://github.com/croneter/PlexKodiConnect">PlexKodiConnect</a></p>
-</li>
-<li><p><a href="https://github.com/MediaBrowser/plugin.video.emby">Emby for Kodi</a></p>
-</li>
-<li><p><a href="https://github.com/jellyfin/jellyfin-kodi">Jellyfin for Kodi</a></p>
-</li>
+<li><a href="https://github.com/croneter/PlexKodiConnect">PlexKodiConnect</a></li>
+<li><a href="https://github.com/MediaBrowser/plugin.video.emby">Emby for Kodi</a></li>
+<li><a href="https://github.com/jellyfin/jellyfin-kodi">Jellyfin for Kodi</a></li>
 </ul>
 <doc-anchor-target id="media-server">
     <h2>
@@ -245,12 +237,9 @@
 </doc-anchor-target>
 <p>The setup consists of two parts - the server and the client. A client is simply a media player that will access the content from a server. The server runs on the device which stores your content. Both may be installed on the same system, but they&#x27;re separate applications. Usually you&#x27;d have the server on a computer connected to other devices in your home network and a client installed on all of those devices. All three of the popular ones come with their own client/player as well as support for using kodi as a client (recommended for anime).</p>
 <ul>
-<li><p><a href="https://www.plex.tv/">Plex</a> - <a href="https://docs.google.com/document/d/1sXKZDYzbBDDWS8eqJ3IcaxSWhYKIPDdtChm74CBJ6ig">Guide for Anime</a></p>
-</li>
-<li><p><a href="https://emby.media/">Emby</a></p>
-</li>
-<li><p><a href="https://jellyfin.org/">Jellyfin</a></p>
-</li>
+<li><a href="https://www.plex.tv/">Plex</a> - <a href="https://docs.google.com/document/d/1sXKZDYzbBDDWS8eqJ3IcaxSWhYKIPDdtChm74CBJ6ig">Guide for Anime</a></li>
+<li><a href="https://emby.media/">Emby</a></li>
+<li><a href="https://jellyfin.org/">Jellyfin</a></li>
 </ul>
 <doc-anchor-target id="scanning-anime-without-renaming">
     <h3>
