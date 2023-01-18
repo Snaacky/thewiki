@@ -1,11 +1,12 @@
 ---
 label: Home
-title: Home
 ---
 
 !!!
 Did you know TheIndex and TheWiki have a Discord server? discord.gg/snackbox
 !!!
+
+# Home
 
 ## Streaming
 
