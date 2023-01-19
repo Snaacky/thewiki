@@ -1,4 +1,9 @@
-# VIPS
+---
+label: VIPs
+visibility: hidden
+---
+
+# VIPs
 
 The list is currenlty sorted in the order of 0-9/A-Z. 
 

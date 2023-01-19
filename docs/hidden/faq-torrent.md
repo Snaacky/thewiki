@@ -1,3 +1,10 @@
+---
+label: Torrent FAQ
+visibility: hidden
+---
+
+# Torrent FAQ
+
 ## How do I torrent?
 
 Check out our [detailed torrenting guide](/guides/torrenting), it's very useful along with [Google](https://www.google.com/).
@@ -12,7 +19,9 @@ Check out our [detailed torrenting guide](/guides/torrenting), it's very useful 
 
 * Android: [Flud](https://play.google.com/store/apps/details?id=com.delphicoder.flud&hl=en_US&gl=US), [LibreTorrent](https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent&hl=en_US&gl=US)
 
-> Do your own research on the clients you use but these are generally the most widely accepted clients. Keep in mind that some clients (such as newer versions of uTorrent and BitTorrent) have been known to be bundled with crypto miners and adware. {.is-info}
+!!!
+Do your own research on the clients you use but these are generally the most widely accepted clients. Keep in mind that some clients (such as newer versions of uTorrent and BitTorrent) have been known to be bundled with crypto miners and adware.
+!!!
 
 
 ## Is torrenting illegal?

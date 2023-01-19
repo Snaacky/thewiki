@@ -1,3 +1,8 @@
+---
+label: Trial Mod Guide
+visibility: hidden
+---
+
 # Trial Mod Guide
 
 &nbsp;

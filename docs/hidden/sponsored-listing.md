@@ -1,3 +1,11 @@
+---
+label: Sponsored Listing
+visibility: hidden
+---
+
+# Sponsored Listing
+
+
 ## What is a sponsored listing?
 
 A sponsored listing is a paid advertisement featured on https://theindex.moe.

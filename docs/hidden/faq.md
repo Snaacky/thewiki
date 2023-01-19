@@ -1,4 +1,9 @@
-# General
+---
+label: FAQ
+visibility: hidden
+---
+
+# FAQ
 
 ## Can I link to piracy sites, torrents, or direct download links?
 

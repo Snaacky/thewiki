@@ -1,3 +1,10 @@
+---
+label: VPN FAQ
+visibility: hidden
+---
+
+# VPN FAQ
+
 ## What is a VPN?
 
 A virtual private network (VPN) is a service that gives you online privacy by masking your IP address so that all of your online actions are virtually untraceable unless your VPN provider keeps logs - we highly recommend you to stay away from such providers.

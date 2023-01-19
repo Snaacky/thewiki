@@ -1,3 +1,10 @@
+---
+label: General FAQ
+visibility: hidden
+---
+
+# General FAQ
+
 ## Where can I find X? What app has X? What's the best X?
 If you're looking for a streaming site or app, check out [TheIndex](https://theindex.moe). If you're looking for a torrent, check Nyaa. These types of posts violate our subreddit rules and will be removed. If you still can't find the answer you're looking for, or looking for a service with some specific feature, these questions are allowed in [our Discord server](https://discord.gg/theindex).
 

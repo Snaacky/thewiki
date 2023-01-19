@@ -1,4 +1,11 @@
-# Torrents
+---
+label: Terminology
+visibility: hidden
+---
+
+# Terminology
+
+## Torrents
 
 **Peer** - Any person who is uploading/downloading a torrent.
 
@@ -28,7 +35,7 @@
     
 **PEX** - Peer exchange. This protocol allows peers on the same torrent to exchange lists of peers with each other. It is not as powerful as DHT because it cannot be used to join a new trackerless torrent; you have to know which peers to ask before you can ask.
 
-# Audio and Video
+## Audio and Video
 
 **Container** - A container is a file format that allows multiple data streams to be embedded into a single file. Examples - mp4, mkv, flac. Not to be confused with codec.
 
@@ -42,7 +49,7 @@ Audio - lossless (FLAC, TrueHD, DTS-HDMA) and lossy (AAC, OPUS, MP3).
 
 **Level/Profile** - Specifications within the h264/h265 standard which give an idea of compatibility and specify the maximum resolution and bitrate, for example h264 4.0 = 1080p 30fps 20 Mbps. Higher level/profile = lower compatibility = more processing power needed to decode.
 
-# Release Types
+## Release Types
 
 **BDMV** - A complete copy of the bluray, often used as a source for making another release or encoding.
 

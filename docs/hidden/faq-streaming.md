@@ -1,3 +1,10 @@
+---
+label: Streaming FAQ
+visibility: hidden
+---
+
+# Streaming FAQ
+
 ## **Which official streaming sites are available for me?**
 
 This depends on which region you are in due to licensing. [/r/anime offers an extensive list on their wiki of what streaming services are available for which regions](https://www.reddit.com/r/anime/wiki/legal_streams).

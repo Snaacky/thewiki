@@ -1,6 +1,13 @@
-# Anime
+---
+label: Quick Start
+visibility: hidden
+---
 
-## Streaming
+# Quick Start
+
+## Anime
+
+### Streaming
 
 Unofficial - [TheIndex](https://theindex.moe/)
 
@@ -12,7 +19,7 @@ Official streams have better quality, but are also larger (~1.3GB per episode fo
 
 Read more: [Quality Guide](/guides/quality)
 
-## Torrenting
+### Torrenting
 
 Torrent files can be found and downloaded from trackers like [Nyaa](https://nyaa.si). Use [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) or follow this [tutorial](/tutorials/unblock) to unblock sites. 
 
@@ -24,10 +31,11 @@ Advantages of torrents include access to a large variety of options with better 
 
 Read more: [Sourcing Guide](/guides/sourcing), [Torrenting Guide](/en/guides/torrenting), [RSS Tutorial](/tutorials/rss)
 
-## Playback
+### Playback
 
-> Do not VLC
-{.is-info}
+!!!
+Do not use VLC
+!!!
 
 **PC:** &ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp; &ensp;[MPV](https://mpv.io/installation/) (recommended), [MPC-HC](https://github.com/clsid2/mpc-hc/releases), [Potplayer](https://potplayer.daum.net)
 
@@ -39,13 +47,13 @@ Read more: [Sourcing Guide](/guides/sourcing), [Torrenting Guide](/en/guides/tor
 
 Read more: [Playback Guide](/en/guides/playback)
 
-# Literature
+## Literature
 
 [Mangaupdates](https://www.mangaupdates.com/) and [Novelupdates](https://www.novelupdates.com/) provide information about translation groups, their progress, and other things about the series like genres,tags, etc. 
 
 [Nyaa.si](https://nyaa.si/) has torrents (and DDL links in descriptions) for official releases of manga and light novels. [Mangasee](https://mangasee123.com/) uploads downscaled versions of these official rips, which are the best quality. [MangaDex](https://mangadex.org/) is where most scanlators upload.
 
-## Reading 
+### Reading 
 
 - [CDisplayEX](https://www.cdisplayex.com/) or [Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader) (PC)
 - [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) or [Tachiyomi](https://tachiyomi.org/) (Android)

@@ -1,3 +1,10 @@
+---
+label: Creating your own Site
+visibility: hidden
+---
+
+# Creating your own Site
+
 This FAQ is targetting experienced devs or site owners who have at least a basic knowledge and give them a few points to consider before making their service available to the public. We will not recommend any service or solution. If you'd be blindly reliant on our tips, it would be quite foolish, research on your own and form your own opinion!
 
 ## How can I create my own site?

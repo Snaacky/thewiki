@@ -1,4 +1,12 @@
-# How to use the Seadex/Fansubber Index?
+---
+label: SeaDex Tutorial
+visibility: hidden
+---
+
+# SeaDex Tutorial
+
+
+## How to use the Seadex/Fansubber Index?
 
 - Go to [SeaDex](http://releases.moe/)/[Fansubber Index](http://index.fansubcar.tel) and search for the anime you want to find Best Release/Best Fansub for (In this example i will be using Absolute Duo). In case you are looking for a movie you can switch between TV Series and Movies by clicking on the corresponding buttons at the top left corner.
 

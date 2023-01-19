@@ -1,4 +1,11 @@
-# Introduction
+---
+label: Rules
+visibility: hidden
+---
+
+# Rules
+
+## Introduction
 
 /r/animepiracy is a community devoted to the discussions "weeb media" piracy (primarily anime), available on both [Reddit](https://reddit.com/r/AnimePiracy) and [Discord](https://discord.gg/piracy). The subreddit is our primary base of operations, while any communication both among the staffs and members are dedicated to the Discord server.
 
@@ -14,7 +21,7 @@ Here are some of the channels relevant to the moderation of the server and commu
 
 &nbsp;
 
-## Subreddit Flairs
+### Subreddit Flairs
 
 Every post has a 'flair' to categorize its topic. Here is a list of all flairs on the subreddit and each flair's usage:
 | Flair | Usage |
@@ -34,7 +41,7 @@ Every post has a 'flair' to categorize its topic. Here is a list of all flairs o
 
 &nbsp;
 
-# Discord Moderation
+## Discord Moderation
 
 There are numerous mod actions that may be performed on the [Discord](https://discord.gg/piracy) by our moderators. Oftentimes these are used when a user violates any of the rules. However, as stated in the [`#rules`](https://discord.com/channels/622243127435984927/623100638812962816) channel:
 
@@ -56,13 +63,13 @@ Some actions that may be seen include:
 
 &nbsp;
 
-# Reddit Moderation
+## Reddit Moderation
 
-## Rules
+### Rules
 
 &nbsp;
 
-### Rule 1: No sourcing or linking to copyrighted material
+#### Rule 1: No sourcing or linking to copyrighted material
 
 > Attempting to source or linking to copyrighted material is not allowed and also violates Reddit's [content policy](https://www.redditinc.com/policies/content-policy).
 
@@ -75,7 +82,7 @@ This means that failing to abide the Reddit rules will put us on thin ice with a
 
 &nbsp;
 
-### Rule 2: No frequently posted topics
+#### Rule 2: No frequently posted topics
 
 > Frequently posted topics will be removed at moderator discretion to reduce repetition. This includes certain questions and memes. Before posting, please do a quick search to see if another user has asked or shared something similar.
 
@@ -83,7 +90,7 @@ No one wants to visit a subreddit with questions that are asked over and over ag
 
 &nbsp;
 
-### Rule 3: No piracy app/site support submissions
+#### Rule 3: No piracy app/site support submissions
 
 > Tech support submissions for piracy websites and apps are not allowed on our subreddit. Users should seek support from the respective service for their issues.
 
@@ -96,7 +103,7 @@ If any app/site support is needed, feel free to join our [Discord](https://disco
 
 &nbsp;
 
-### Rule 4: No off-topic discussion
+#### Rule 4: No off-topic discussion
 
 > Submissions must be related to Chinese, Japanese, and Korean media piracy, including but not limited to anime, manga, manhwa, light novels, visual novels, and hentai.
 
@@ -104,7 +111,7 @@ Any posts about the aforementioned topics that are not related to piracy will be
 
 &nbsp;
 
-### Rule 5: No attacks or witchhunts
+#### Rule 5: No attacks or witchhunts
 
 > Do not personally attack other users. Do not attempt to incite a witchhunt against other users or services. Constructive criticism is allowed, but ranting will be removed.
 
@@ -112,7 +119,7 @@ Toxic users trying to pick up fights on the internet will not be tolerated under
 
 &nbsp;
 
-### Rule 6: No advertising without permission
+#### Rule 6: No advertising without permission
 
 > Self-promotional content must receive prior approval. Suspected astroturfing may result in a service blacklist. Advertisements are limited to one post a month and are only for substantial updates. FOSS projects are exempt.
 
@@ -121,7 +128,7 @@ Any promotional activities must be approved by our admins. Due to the large amou
 There is a fine line between user recommendations on a service and promotional activity. 
 &nbsp;
 
-### Rule 7: No buying, selling, trading, or giveaways
+#### Rule 7: No buying, selling, trading, or giveaways
 
 > Buying, selling, and trading any items or services is not allowed. Invites for private communities cannot be asked for, offered, or shared. Giveaways must receive prior approval.
 
@@ -129,7 +136,7 @@ The aforementioned actions may lead to both the inviter and the invitee being ba
 
 &nbsp;
 
-## Bans
+### Bans
 
 
 Bans are handed out to people with disruptive behaviors in the community. Banned users will be unable to make any submissions, but are still able to see other submisions. There are two types of ban:
@@ -142,7 +149,7 @@ Users may be unbanned with a reasonable appeal to the moderation team and it dep
 
 &nbsp;
 
-## Distinguished, Stickied, and Pinned Posts
+### Distinguished, Stickied, and Pinned Posts
 
 Distinguished comments and/or posts speak officially from the perspective of the moderation team. Undistinguished comments and/or posts by anyone on the moderation team are **never** official or formal statements, and they do not speak from the perspective of the whole team. Keeping a professional image is crucial.
 
@@ -152,9 +159,9 @@ Pinned posts stay on top of the front page regardless of any trending posts for 
 
 &nbsp;
 
-# FAQ
+## FAQ
 
-## Can I link to piracy sites, torrents, or direct download links?
+### Can I link to piracy sites, torrents, or direct download links?
 
 All subreddits are governed by the [Reddit Content Policy](https://www.redditinc.com/policies/content-policy) which means we have to be careful with what we allow in order to keep our subreddit from being shutdown. 
 
@@ -166,7 +173,7 @@ All subreddits are governed by the [Reddit Content Policy](https://www.redditinc
 
 Attempting to bypass our link filters will result in a ban.
 
-## What are those strings of numbers I keep seeing?
+### What are those strings of numbers I keep seeing?
 
 Torrent releases from nyaa are referenced by their ID in a similar vein to nHentai releases, think 177013 for example. You can find the torrent's release ID at the end of the page's URL. 
 

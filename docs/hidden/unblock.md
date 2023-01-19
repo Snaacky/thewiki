@@ -1,4 +1,11 @@
-# DNS Block
+---
+label: Unblock Guide
+visibility: hidden
+---
+
+# Unblock Guide
+
+## DNS Block
 
 
 1. Go to the Control Panel.
@@ -24,7 +31,7 @@
 !!!
 
 
-# DPI Block
+## DPI Block
 
 [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) is designed to bypass Deep Packet Inspection systems found in many Internet Service Providers which block access to certain websites. Modify service_install_russia_blacklist.cmd according to your selected configuration and run it to install goodbyedpi as a service.
 

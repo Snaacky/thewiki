@@ -1,9 +1,15 @@
-# How do I use a command?
+---
+label: Chiya Mod Information
+visibility: hidden
+---
+
+# Chiya Mod Information
+
+## How do I use a command?
 
 All moderation commands are accessed via Chiya slash commands. Type `/` into any channel and a list of all the available commands and their respective syntaxes will appear.
 
-
-# How to reference a user?
+## How to reference a user?
 
 You can reference a user in the following ways:
 
@@ -14,14 +20,14 @@ Discord ID is the most consistent way to reference a user with the bot but requi
 
 Discord mention also works but you can't easily mention users who don't have access to the channel you're executing the command in so it is not preferably in most moderation circumstances.
 
+## How do I enable Developer Mode?
 
-# How do I enable Developer Mode?
 ![q7bk4uerwm.png](/q7bk4uerwm.png)
 ![juf8lor1rh.png](/juf8lor1rh.png)
 ![umejpsjaz5.png](/umejpsjaz5.png)
 ![jqxyswgi33.png](/jqxyswgi33.png)
 
-# How do I get the ID for X?
+## How do I get the ID for X?
 
 - Right clicking on a username or profile picture will give you the users ID. 
 
