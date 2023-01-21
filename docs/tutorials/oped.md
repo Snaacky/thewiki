@@ -2,7 +2,9 @@
 label: OPED
 ---
 
-# Prerequisites and Setup
+# OP/ED
+
+## Prerequisites and Setup
 
 [Themes.moe](https://themes.moe/) is a super useful site that lets you search for your profile and shows each OP and ED associated with all the anime in your list.
 
@@ -12,7 +14,7 @@ label: OPED
 
 Unzip the downloaded archive and copy over ffmpeg.exe from the folder called bin to where you'll be downloading music. Alternatively, [add the bin folder to path.](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
 
-# Downloading
+## Downloading
 
 1. Go to [themes.moe](https://themes.moe/), select Anilist or MyAnimeList, enter your username and click the search button.
 
@@ -33,6 +35,5 @@ for %%f in (*.webm) do ffmpeg -n -i "%%f" -c:a copy "%%~nf.ogg"
 7. Run the .bat file. It will now start to extract the audio from each webm file in the folder and save them as .ogg.
 
 !!!
-
-> The songs downloaded are TV size.
-> !!!
+The songs downloaded are TV size, i.e, typically 1 minute and 30 seconds long.
+!!!
