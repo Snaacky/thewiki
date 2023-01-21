@@ -94,7 +94,29 @@ For those low on data or storage, HEVC mini encodes on nyaa are the best option.
 
 ## What do the things in brackets mean at the end of a torrent?
 
-( BD &emsp; &emsp;&emsp;&emsp;&emsp;&emsp; 1080p&emsp;&emsp; &emsp;HEVC x265 &emsp; 10-bit &emsp; &emsp; FLAC ) [2CE04B17]
-( Source - Blu-ray&emsp; Resolution &emsp;&emsp;Codec &emsp; &emsp; Bit Depth &emsp;Audio)&emsp;[CRC32]
+Example filenames:
+```
+[Group] Anime Name - S01E01 - (BD 1080p HEVC 10-bit FLAC) [Dual Audio] [CRC32].mkv
+Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [Group].mkv
+Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10p-Group.mkv
+```
+
+| Keyword         | What it means                                                     |
+|-----------------|-------------------------------------------------------------------|
+|`.mkv`           | Commonly used container that holds everything together.           |
+| BD              | Video is taken from BluRay (typically JPBD)                       |
+| Remux           | Untouched Video taken from BluRay                                 |
+| x265/HEVC/H.265 | Codec used to encode the video                                    |
+| x264/AVC/H.264  | Codec used to encode the video                                    |
+| AV1             | Codec used to encode the video                                    |
+| 1080p           | Resolution is 1920x1080p, `p` stands for progressive video.       |
+| 8-bit           | Bit-Depth of the video                                            |
+| 10-bit          | Bit-Depth of the video                                            |
+| FLAC            | Codec used to encode the audio                                    |
+| Opus            | Codec used to encode the audio                                    |
+| AAC             | Codec used to encode the audio                                    |
+| E-AC-3/EAC3/DDP | Codec used to encode the audio, DDP stands for Dobly Digital Plus |
+| Dual Audio      | Has two audio tracks. Typically English and Japanese              |
+| [F0EAA72E]      | Random string at the end of the filename is typically CRC32.      |
 
 For more details, check out the sourcing guide - [basics](/en/guides/sourcing#basics) and [CRC32.](/en/guides/sourcing#crc32)

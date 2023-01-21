@@ -2,9 +2,11 @@
 label: Comparison
 ---
 
-# Vapoursynth-Preview
+# Comparison
 
-## Setup
+## Vapoursynth-Preview
+
+### Setup
 
 1. **Install [Python 3.10](https://www.python.org/downloads/release/python-3105/)**
    - During installation tick `Add Python 3.10 to PATH`.
@@ -116,9 +118,9 @@ vspreview /path/to/comp.vpy
 
 Now, when making comps you just edit `comp.vpy` to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed and then run `comp.bat` or run `vspreview comp.vpy` directly from your terminal.
 
-## Screenshotting Manually (Recommended)
+### Screenshotting Manually (Recommended)
 
-### Quality of Life Changes
+#### Quality of Life Changes
 
 **Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted** - In VSPreview on the bottom bar select Misc, set file name template to `{frame}_{script_name}_({index})`.
 
@@ -128,7 +130,7 @@ Now, when making comps you just edit `comp.vpy` to include the necessary file pa
 
 **Swap binds to save your pinky finger, so you no longer have to hold shift all the time** - Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py` - Line 164-165 Add `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right` - Line 166-167 Remove `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right`
 
-### Making the comparison
+#### Making the comparison
 
 - Press `Right Arrow` key to move forward a set amount of frames.
 - `Number` keys to switch between video sources and compare quality.
@@ -137,7 +139,7 @@ Now, when making comps you just edit `comp.vpy` to include the necessary file pa
 - Try and match frame type when screenshotting, e.g. all sources on a `B` frame, single frame jump comes in handy for when they don't match (`Shift + Arrow keys`).
   - _Note: If a source file does not have `B` frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no `B` frames._
 
-## Screenshotting Automatically (Simply much less effort)
+### Screenshotting Automatically (Simply much less effort)
 
 If you don't want to take screenshots and upload them manually, then you can simply use VS-Preview's automatic comparison function.
 
@@ -148,7 +150,7 @@ If you don't want to take screenshots and upload them manually, then you can sim
 - Hit `Start Upload` and patiently wait while vspreview absolutely molests your battlestation.
   [![Comp](https://i.imgur.com/00m9QvB.png "Comp")](https://i.imgur.com/00m9QvB.png "Comp")
 
-# Manually with MPV
+## Manually with MPV
 
 - [Install MPV](/tutorials/mpv)
 - Screenshots are to be taken using MPV.
@@ -171,6 +173,5 @@ screenshot-format=png
 ```
 
 !!!
-
-> It's recommended to use the latest git builds of MPV
-> !!!
+It's recommended to use the latest git builds of MPV.
+!!!

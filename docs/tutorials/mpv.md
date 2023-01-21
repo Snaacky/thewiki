@@ -108,7 +108,7 @@ alang=jpn,ja,jpn
 
 Banding is a visual artifact, visual artifacts should never be in a video.
 Example of banding:
-![Banding](https://i.imgur.com/32d77H0.jpeg =426x240)
+![Banding](https://i.imgur.com/32d77H0.jpeg "Banding (bad) vs No Banding (good)")
 Debanding is the process of removing said banding.
 6 minute explanation of what causes banding: https://youtu.be/h9j89L8eQQk
 

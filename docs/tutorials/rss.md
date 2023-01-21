@@ -2,11 +2,11 @@
 label: RSS
 ---
 
-# Prerequisites
+## Prerequisites
 
 This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and the [SubsPlease RSS feed](https://subsplease.org/rss-feeds/) as an example. The process should be similar for other clients and feeds.
 
-# Enabling RSS
+## Enabling RSS
 
 1. In qBittorrent, enable `RSS Reader` from the `View` menu on the toolbar. A new `RSS` tab will appear next to `Transfers`.
 2. Navigate to `Tools` -> `Options` -> `RSS` and
@@ -15,18 +15,17 @@ This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and 
 
 ![vmajcpa.png](/vmajcpa.png)
 
-# Adding the RSS feed
+## Adding the RSS feed
 
 1. Choose the resolution that you want to download and copy the corresponding link from https://subsplease.org/rss-feeds/. For example - `https://subsplease.org/rss/?t&r=1080`
 2. Go to the `RSS` tab in qBittorrent and click `New subscription`
 3. Paste the link you copied and click OK.
 
 !!!
+Do not paste this link in a browser because it will do nothing.
+!!!
 
-> Do not paste this link in a browser because it will do nothing.
-> !!!
-
-# Setting up download rules
+## Setting up download rules
 
 **To set up the seasonal anime that you want to download, follow the steps below:**
 
@@ -46,12 +45,15 @@ This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and 
 
 ![rssrules.png](/rssrules.png)
 
-> The client can be left running in the background. The anime episode will be automatically downloaded whenever it is released. {.is-info}
+!!!
+The client can be left running in the background. The anime episode will be automatically downloaded whenever it is released.
+!!!
 
-> When you first add an anime to the list, the previous episodes may start downloading automatically. This only happens once, but you can manually stop the download process for any unwanted episodes.
-> {.is-info}
+!!!
+When you first add an anime to the list, the previous episodes may start downloading automatically. This only happens once, but you can manually stop the download process for any unwanted episodes.
+!!!
 
-# Advanced
+## Advanced
 
 - Erai-raws is an alternative for SubsPlease. They are sometimes inconsistent and late but they fix certain issues with subtitles that are left unfixed in subsplease. Exclude "v0" releases with the "Must not contain:" filter to avoid duplicated downloads.
 

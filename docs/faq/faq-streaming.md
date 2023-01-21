@@ -27,7 +27,7 @@ Please refer to [TheIndex](https://theindex.moe/). We have a comprehensive list 
 
 Use uBlock Origin (recommended) or AdGuard AdBlock. Both are browser extensions that can be found on the plugin store of Google Chrome and Firefox.
 
-## Is {website} safe? Can it harm my PC?
+## Is X streaming site safe? Can it harm my PC?
 
 You're always taking a gamble when using piracy sites. Do your research about the site you're using.
 
@@ -39,7 +39,7 @@ Nowhere. Only a handful of anime has been produced at 4K and no unofficial strea
 
 Please refer to [TheIndex](https://theindex.moe/) in the 'Application' section for a list of apps on various platforms.
 
-## Is {app} trustworthy? Can it harm my phone/tablet?
+## Is X app trustworthy? Can it harm my phone/tablet?
 
 You’re always taking a gamble when sideloading apps on your phone. Do your research about the app you're installing.
 
