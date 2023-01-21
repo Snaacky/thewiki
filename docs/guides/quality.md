@@ -15,9 +15,30 @@ order: -1
 
 **Level/Profile** - These are specifications within the h264/h265 standard which give an idea of compatibility and specify the maximum resolution and bitrate, for example h264 4.0 = 1080p 30fps 20 Mbps. Higher level/profile = lower compatibility = more processing power needed to decode.
 
-The full information for a video will look like -
-x264 &emsp;&emsp;High &emsp; &emsp;10 &emsp;&emsp;&emsp;&emsp;.mkv
-(codec)&emsp;(profile)&emsp;(bit depth)&emsp;(container)
+The full information for a video will look like:
+```
+[Group] Anime Name - S01E01 - (BD 1080p HEVC 10-bit FLAC) [Dual Audio] [CRC32].mkv
+Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [Group].mkv
+Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10p-Group.mkv
+```
+
+| Keyword         | What it means                                                     |
+|-----------------|-------------------------------------------------------------------|
+|`.mkv`           | Commonly used container that holds everything together.           |
+| BD              | Video is taken from BluRay (typically JPBD)                       |
+| Remux           | Untouched Video taken from BluRay                                 |
+| x265/HEVC/H.265 | Codec used to encode the video                                    |
+| x264/AVC/H.264  | Codec used to encode the video                                    |
+| AV1             | Codec used to encode the video                                    |
+| 1080p           | Resolution is 1920x1080p, `p` stands for progressive video.       |
+| 8-bit           | Bit-Depth of the video                                            |
+| 10-bit          | Bit-Depth of the video                                            |
+| FLAC            | Codec used to encode the audio                                    |
+| Opus            | Codec used to encode the audio                                    |
+| AAC             | Codec used to encode the audio                                    |
+| E-AC-3/EAC3/DDP | Codec used to encode the audio, DDP stands for Dobly Digital Plus |
+| Dual Audio      | Has two audio tracks. Typically English and Japanese              |
+| [F0EAA72E]      | Random string at the end of the filename is typically CRC32.      |
 
 ## Quality
 
