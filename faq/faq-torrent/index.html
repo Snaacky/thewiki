@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727631850744">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727646744027">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727631850744" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727646744027" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727631850744" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727646744027" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727631850744" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727646744027" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -337,8 +337,84 @@
         <span>What do the things in brackets mean at the end of a torrent?</span>
     </h2>
 </doc-anchor-target>
-<p>( BD         1080p    HEVC x265   10-bit     FLAC ) [2CE04B17]
-( Source - Blu-ray  Resolution   Codec     Bit Depth  Audio) [CRC32]</p>
+<p>Example filenames:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">[Group] Anime Name - S01E01 - (BD 1080p HEVC 10-bit FLAC) [Dual Audio] [CRC32].mkv
+Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [Group].mkv
+Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10p-Group.mkv</code></pre>
+</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Keyword</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>.mkv</code></td>
+<td>Commonly used container that holds everything together.</td>
+</tr>
+<tr>
+<td>BD</td>
+<td>Video is taken from BluRay (typically JPBD)</td>
+</tr>
+<tr>
+<td>Remux</td>
+<td>Untouched Video taken from BluRay</td>
+</tr>
+<tr>
+<td>x265/HEVC/H.265</td>
+<td>Codec used to encode the video</td>
+</tr>
+<tr>
+<td>x264/AVC/H.264</td>
+<td>Codec used to encode the video</td>
+</tr>
+<tr>
+<td>AV1</td>
+<td>Codec used to encode the video</td>
+</tr>
+<tr>
+<td>1080p</td>
+<td>Resolution is 1920x1080p, <code v-pre>p</code> stands for progressive video.</td>
+</tr>
+<tr>
+<td>8-bit</td>
+<td>Bit-Depth of the video</td>
+</tr>
+<tr>
+<td>10-bit</td>
+<td>Bit-Depth of the video</td>
+</tr>
+<tr>
+<td>FLAC</td>
+<td>Codec used to encode the audio</td>
+</tr>
+<tr>
+<td>Opus</td>
+<td>Codec used to encode the audio</td>
+</tr>
+<tr>
+<td>AAC</td>
+<td>Codec used to encode the audio</td>
+</tr>
+<tr>
+<td>E-AC-3/EAC3/DDP</td>
+<td>Codec used to encode the audio, DDP stands for Dobly Digital Plus</td>
+</tr>
+<tr>
+<td>Dual Audio</td>
+<td>Has two audio tracks. Typically English and Japanese</td>
+</tr>
+<tr>
+<td>[F0EAA72E]</td>
+<td>Random string at the end of the filename is typically CRC32.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>For more details, check out the sourcing guide - <a href="/en/guides/sourcing#basics">basics</a> and <a href="/en/guides/sourcing#crc32">CRC32.</a></p>
 
                                 

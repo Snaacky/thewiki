@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727631850744">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727646744027">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Vapoursynth-Preview</title>
-    <meta name="title" content="Vapoursynth-Preview">
+    <title>Comparison</title>
+    <meta name="title" content="Comparison">
     <meta name="description" content="Install Python 3.10" />
 
     <!-- Canonical -->
@@ -19,25 +19,25 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://beta.thewiki.moe/tutorials/comparison/">
-    <meta property="og:title" content="Vapoursynth-Preview">
+    <meta property="og:title" content="Comparison">
     <meta property="og:description" content="Install Python 3.10">
     <meta property="og:image" content="https://i.imgur.com/00m9QvB.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://beta.thewiki.moe/tutorials/comparison/">
-    <meta property="twitter:title" content="Vapoursynth-Preview">
+    <meta property="twitter:title" content="Comparison">
     <meta property="twitter:description" content="Install Python 3.10">
     <meta property="twitter:image" content="https://i.imgur.com/00m9QvB.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727631850744" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727646744027" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727631850744" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727646744027" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727631850744" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.727631850744" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727646744027" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.727646744027" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -155,17 +155,23 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="vapoursynth-preview" class="break-words">
+<doc-anchor-target id="comparison" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vapoursynth-preview">#</doc-anchor-trigger>
-        <span>Vapoursynth-Preview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comparison">#</doc-anchor-trigger>
+        <span>Comparison</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="setup">
+<doc-anchor-target id="vapoursynth-preview">
     <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vapoursynth-preview">#</doc-anchor-trigger>
+        <span>Vapoursynth-Preview</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="setup">
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
         <span>Setup</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <ol>
 <li><p><strong>Install <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a></strong></p>
@@ -283,26 +289,26 @@ clip3.set_output(3)</code></pre>
 </doc-codeblock></div>
 <p>Now, when making comps you just edit <code v-pre>comp.vpy</code> to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed and then run <code v-pre>comp.bat</code> or run <code v-pre>vspreview comp.vpy</code> directly from your terminal.</p>
 <doc-anchor-target id="screenshotting-manually-recommended">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting-manually-recommended">#</doc-anchor-trigger>
         <span>Screenshotting Manually (Recommended)</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <doc-anchor-target id="quality-of-life-changes">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#quality-of-life-changes">#</doc-anchor-trigger>
         <span>Quality of Life Changes</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted</strong> - In VSPreview on the bottom bar select Misc, set file name template to <code v-pre>{frame}_{script_name}_({index})</code>.</p>
 <p><strong>Jump through frames quickly</strong> - In VSPreview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
 <p><strong>Take screenshots quicker by setting the save image button to enter</strong> - Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc</code>and edit <code v-pre>toolbar.py</code> - Line 150: <code v-pre>Replace Qt.SHIFT + Qt.Key_S</code> with <code v-pre>Qt.Key_Return</code>. - If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
 <p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong> - Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Line 164-165 Add <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code> - Line 166-167 Remove <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code></p>
 <doc-anchor-target id="making-the-comparison">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#making-the-comparison">#</doc-anchor-trigger>
         <span>Making the comparison</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li>Press <code v-pre>Right Arrow</code> key to move forward a set amount of frames.</li>
@@ -316,10 +322,10 @@ clip3.set_output(3)</code></pre>
 </li>
 </ul>
 <doc-anchor-target id="screenshotting-automatically-simply-much-less-effort">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting-automatically-simply-much-less-effort">#</doc-anchor-trigger>
         <span>Screenshotting Automatically (Simply much less effort)</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>If you don&#x27;t want to take screenshots and upload them manually, then you can simply use VS-Preview&#x27;s automatic comparison function.</p>
 <ul>
@@ -331,10 +337,10 @@ clip3.set_output(3)</code></pre>
 <a href="https://i.imgur.com/00m9QvB.png" title="Comp"><img src="https://i.imgur.com/00m9QvB.png" alt="Comp" title="Comp" /></a></li>
 </ul>
 <doc-anchor-target id="manually-with-mpv">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#manually-with-mpv">#</doc-anchor-trigger>
         <span>Manually with MPV</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <ul>
 <li><a href="../mpv/">Install MPV</a></li>
@@ -368,25 +374,7 @@ screenshot-format=png</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<blockquote>
-<p>It&#x27;s recommended to use the latest git builds of MPV</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-        </div>
-    </div>
-</div>
-</blockquote>
+<p>It&#x27;s recommended to use the latest git builds of MPV.</p>
         </div>
     </div>
 </div>

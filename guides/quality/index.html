@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727631850744">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727646744027">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Video</title>
-    <meta name="title" content="Video">
+    <title>Quality</title>
+    <meta name="title" content="Quality">
     <meta name="description" content="Container- .mkv and.mp4, these contain various video, audio, and subtitle streams within them." />
 
     <!-- Canonical -->
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://beta.thewiki.moe/guides/quality/">
-    <meta property="og:title" content="Video">
+    <meta property="og:title" content="Quality">
     <meta property="og:description" content="Container- .mkv and.mp4, these contain various video, audio, and subtitle streams within them.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://beta.thewiki.moe/guides/quality/">
-    <meta property="twitter:title" content="Video">
+    <meta property="twitter:title" content="Quality">
     <meta property="twitter:description" content="Container- .mkv and.mp4, these contain various video, audio, and subtitle streams within them.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727631850744" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727646744027" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727631850744" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727646744027" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727631850744" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727646744027" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -152,25 +152,106 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="video" class="break-words">
+<doc-anchor-target id="quality" class="break-words">
     <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quality">#</doc-anchor-trigger>
+        <span>Quality</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="video">
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#video">#</doc-anchor-trigger>
         <span>Video</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p><strong>Container</strong> - .mkv and.mp4, these contain various video, audio, and subtitle streams within them. Even the exact same video can be placed in different containers. You can losslessly convert between them with <a href="https://ffmpeg.org/download.html">ffmpeg</a>.</p>
 <p><strong>Codec</strong> - This is what most people mean when they confuse it with the container. The codec is the biggest factor in compatibility with your hardware and system. HEVC(h265/x265) and AVC(h264/x264) are the main ones.</p>
 <p><strong>Bit depth</strong> - 8-bit/10-bit - Most high quality anime encodes are 10-bit. Converting an 8-bit source to 10-bit might seem counterintuitive if you know a little about transcoding and data loss, <a href="https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf">but it gives a better result at smaller sizes.</a></p>
 <p><strong>Frame rate</strong> - This will usually be 23.976 FPS. Many TVs use <a href="https://en.wikipedia.org/wiki/Motion_interpolation">interpolation</a> to turn this into 60 fps giving you an artificial sense of smoothness. This is not recommended for anime and should be disabled in settings. 60 FPS encodes are even worse and should be avoided.</p>
 <p><strong>Level/Profile</strong> - These are specifications within the h264/h265 standard which give an idea of compatibility and specify the maximum resolution and bitrate, for example h264 4.0 = 1080p 30fps 20 Mbps. Higher level/profile = lower compatibility = more processing power needed to decode.</p>
-<p>The full information for a video will look like -
-x264   High    10     .mkv
-(codec) (profile) (bit depth) (container)</p>
-<doc-anchor-target id="quality">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quality">#</doc-anchor-trigger>
+<p>The full information for a video will look like:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">[Group] Anime Name - S01E01 - (BD 1080p HEVC 10-bit FLAC) [Dual Audio] [CRC32].mkv
+Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [Group].mkv
+Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10p-Group.mkv</code></pre>
+</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Keyword</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>.mkv</code></td>
+<td>Commonly used container that holds everything together.</td>
+</tr>
+<tr>
+<td>BD</td>
+<td>Video is taken from BluRay (typically JPBD)</td>
+</tr>
+<tr>
+<td>Remux</td>
+<td>Untouched Video taken from BluRay</td>
+</tr>
+<tr>
+<td>x265/HEVC/H.265</td>
+<td>Codec used to encode the video</td>
+</tr>
+<tr>
+<td>x264/AVC/H.264</td>
+<td>Codec used to encode the video</td>
+</tr>
+<tr>
+<td>AV1</td>
+<td>Codec used to encode the video</td>
+</tr>
+<tr>
+<td>1080p</td>
+<td>Resolution is 1920x1080p, <code v-pre>p</code> stands for progressive video.</td>
+</tr>
+<tr>
+<td>8-bit</td>
+<td>Bit-Depth of the video</td>
+</tr>
+<tr>
+<td>10-bit</td>
+<td>Bit-Depth of the video</td>
+</tr>
+<tr>
+<td>FLAC</td>
+<td>Codec used to encode the audio</td>
+</tr>
+<tr>
+<td>Opus</td>
+<td>Codec used to encode the audio</td>
+</tr>
+<tr>
+<td>AAC</td>
+<td>Codec used to encode the audio</td>
+</tr>
+<tr>
+<td>E-AC-3/EAC3/DDP</td>
+<td>Codec used to encode the audio, DDP stands for Dobly Digital Plus</td>
+</tr>
+<tr>
+<td>Dual Audio</td>
+<td>Has two audio tracks. Typically English and Japanese</td>
+</tr>
+<tr>
+<td>[F0EAA72E]</td>
+<td>Random string at the end of the filename is typically CRC32.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="quality-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quality-1">#</doc-anchor-trigger>
         <span>Quality</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>Quality might be somewhat subjective. The best release for the purpose of this guide is an encode which fixes flaws of the raw bdmv while simultaneously not altering the original material too much. There is a difference between obvious flaws which need to be fixed and your subjective preference of how you like the encode. If something apparently looks &quot;better&quot; because it unnecessarily alters the video, then it&#x27;s not a good indication of quality. These statements might seem too complicated or a bit vague, I&#x27;ll try to explain in brief, but this is beyond the scope of a guide for beginners and more into the realm of encoding.</p>
 <p>The official BDMV, from the blurays, is itself an encode of the actual source. It often suffers from issues like banding, blocking, noise, aliasing, etc. These might be originating from a variety of reasons. For example, a lot of anime is native 720p and is upscaled to 1080p for the bluray. Even if issues aren&#x27;t present in the bdmv, they can appear in the encode because of compression. This fixing is called filtering, a step which comes before encoding. The video is filtered with Avisynth/Vapoursynth before passing it on to the encoder.</p>
@@ -181,10 +262,10 @@ x264   High    10     .mkv
 <li><a href="https://kokomins.wordpress.com/2019/10/10/anime-encoding-guide-for-x265-and-why-to-never-use-flac/">Mini encodes and audio</a></li>
 </ul>
 <doc-anchor-target id="types-of-releases">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#types-of-releases">#</doc-anchor-trigger>
         <span>Types of releases</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p><strong>BDMV</strong> - A simple complete copy of the bluray. It&#x27;s used as a source for making another release or encoding, this is not useful for watching.</p>
 <p>These can be found on U2 (Chinese-Private), Skyeysnow (Chinese-Open) and nyaa (usually without seeds). Release groups don&#x27;t matter for bdmvs because they&#x27;re all the same unless the files are corrupted. JPBDs often have better quality than USBD because of more bitrate devoted to the video instead of multiple(dub) audio tracks. In some cases, blurays from Italy or other countries might have the best quality.</p>
@@ -211,10 +292,10 @@ x264   High    10     .mkv
 Note that this tier list is valid only for BD sourced encodes and not airing anime. The order of quality for WEB releases is -</p>
 <p><code v-pre>Subsplease/Erai 1080p &gt; Subsplease/Erai 720p &gt; All mini encodes.</code></p>
 <doc-anchor-target id="bd-vs-web">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#bd-vs-web">#</doc-anchor-trigger>
         <span>BD vs WEB</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>The BD is usually always a better source than WEB. There&#x27;s no reason to get a WEB sourced encode once the BD is out. The advantages of BD and what you&#x27;re missing out on with WEB are -</p>
 <ol>
@@ -235,10 +316,10 @@ Note that this tier list is valid only for BD sourced encodes and not airing ani
 <li><a href="https://slow.pics/c/UMxyTZ7T">Demon Slayer</a></li>
 </ul>
 <doc-anchor-target id="audio">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#audio">#</doc-anchor-trigger>
         <span>Audio</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>Codecs - Audio codecs are divided into lossless (FLAC, TrueHD, DTS-HDMA) and lossy (aac, opus, mp3). While lossless raw video will be multiple GBs per minute, audio is more manageable in size, and you&#x27;ll see many options with lossless audio.</p>
 <p>Lossless audio is unnecessary for most sound systems. Even with the best audiophile grade setup, it&#x27;s nearly impossible to make out the difference. However, some exceptional music samples exist, which can be used to differentiate lower-bitrate lossy audio by listening to small extracted parts repeatedly. If you want to try, check out these <a href="http://abx.digitalfeed.net">online ABX tests</a> or <a href="https://www.foobar2000.org/components/view/foo_abx">Foobar plugin</a> with <a href="https://www.head-fi.org/threads/setting-up-an-abx-test-simple-guide-to-ripping-tagging-transcoding.655879/#post-9268096.">this guide for setting it up.</a> This foobar plugin lets you ABX any two tracks of your choice and produces a verifiable log. If you manage to complete it with a decent probability, do join our <a href="https://discord.gg/snackbox">discord</a> for some interesting conversation.</p>
@@ -250,18 +331,18 @@ Note that this tier list is valid only for BD sourced encodes and not airing ani
 </ul>
 <p>For surround audio, multiply with the number of stereo pairs.</p>
 <doc-anchor-target id="subtitles">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#subtitles">#</doc-anchor-trigger>
         <span>Subtitles</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>Most anime subtitles are in the .ass format, it has better styling options compared to srt. This styling often breaks when there is incompatibility somewhere in the playback process.</p>
 <p>Fansubs use a variety of fonts in subtitles. These are bundled within the .mkv files as attachments or provided separately in a folder. The ones given separately can be installed on windows or placed in your player&#x27;s fonts folder for a quick solution. They should be muxed in for perfect compatibility.</p>
 <doc-anchor-target id="fansubs">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#fansubs">#</doc-anchor-trigger>
         <span>Fansubs</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>Older anime was subbed by a variety of fansub groups. Every good release will mention the sources used for subtitles, the edits made, and often describe their choice of subtitles. A very good resource for fansub reviews was MyAnimeList. They removed the fansub reviews section a few years ago towards their goal of legitimization, since fansubs are associated with piracy. Luckily, the data was archived and <a href="https://www.reddit.com/r/anime/comments/9kq1ch/bringing_fansubs_back_on_mal/">can be brought back on the MAL page itself through this</a>. Fair warning, the reviews are mostly filled with hate and trolls but often give you an idea of which group used which script. You can also make out the kind of translation and how much it is localized.</p>
 <p>Localization means changing cultural references and puns to fit the english context, but too often it becomes more about the American context and fansubs get riddled with memes. A degree of localization is always involved with translation to make sure the dialogue flows smoothly, but too much of it might be a problem for some. These two websites provide information and comparisons between various groups doing any anime -</p>
