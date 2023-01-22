@@ -36,7 +36,7 @@ The BitTorrent Protocol is an internet protocol for peer-to-peer (P2P) file shar
 
 This is the program where you add torrents, connect to other peers, and download the files.
 
-!!!info
+!!!warning Warning
 Keep in mind that some clients (such as newer versions of uTorrent and BitTorrent) have been known to be bundled with crypto miners and adware.
 !!!
 
@@ -64,29 +64,21 @@ Keep in mind that some clients (such as newer versions of uTorrent and BitTorren
 
 ### How do I torrent?
 
-First, find a torrent file or magnet link for the content you want to download. Such files can be found on websites (called [trackers](/en/guides/torrenting#trackers)) like nyaa.si.
+- First, find a torrent file or magnet link for the content you want to download. Such files can be found on websites (called [trackers](/en/guides/torrenting#trackers)) like nyaa.si.
 
-A .torrent file can be added to the client by double clicking it or use the client and browse to the location of the file manually.
+- A `.torrent` file can be added to the client by double clicking it or use the client and browse to the location of the file manually.
 
-A magnet link can be opened by clicking on it in your web browser, where it will prompt you to choose the torrent client to be opened with. You can also paste the magnet link into the torrent client manually.
+- A magnet link can be opened by clicking on it in your web browser, where it will prompt you to choose the torrent client to be opened with. You can also paste the magnet link into the torrent client manually.
 
-Most clients will begin leeching/downloading when you add the torrent, and will start seeding (uploading) immediately to other peers once the first few packets are downloaded, and will continue to seed even after the torrent finishes downloading.
+- Most clients will begin leeching/downloading when you add the torrent, and will start seeding (uploading) immediately to other peers once the first few packets are downloaded, and will continue to seed even after the torrent finishes downloading.
 
-!!!info
-After the torrent finishes downloading, you should seed it at least for a while (ideally forever). Seeding is the way you give back to the swarm that you leeched from. Leeching without seeding back (hit-n-run) is extremely ill-advised due to the nature of how torrenting works.
-!!!
+- After the torrent finishes downloading, you should seed it at least for a while (ideally forever). Seeding is the way you give back to the swarm that you leeched from. Leeching without seeding back (hit-n-run) is extremely ill-advised due to the nature of how torrenting works.
 
-!!!info
-The "ratio" is your upload size divided by download size. A ratio of 1 implies that you seeded as much as you leeched.
-!!!
+- The "ratio" is your upload size divided by download size. A ratio of 1 implies that you seeded as much as you leeched.
 
-!!!info
-Often times, you will notice that there are no uploads from your actively seeding torrents. This happens when there are no peers downloading on the P2P network, or they are prioritizing other faster seeders over you (this is controlled by the BitTorrent protocol).
-!!!
+- Often times, you will notice that there are no uploads from your actively seeding torrents. This happens when there are no peers downloading on the P2P network, or they are prioritizing other faster seeders over you (this is controlled by the BitTorrent protocol).
 
-!!!info
-If there are no seeders, or rather, connectable seeders, you will be unable to get the files, because there is no one left to upload the files to you. In such a situation, try waiting, or add more trackers and announce to those to try and get more seeds. Peers may also connect and upload to you, however, they do not hold the entirety of the torrent, and can only upload the parts they possess.
-!!!
+- If there are no seeders, or rather, connectable seeders, you will be unable to get the files, because there is no one left to upload the files to you. In such a situation, try waiting, or add more trackers and announce to those to try and get more seeds. Peers may also connect and upload to you, however, they do not hold the entirety of the torrent, and can only upload the parts they possess.
 
 ## Advanced
 
@@ -98,19 +90,20 @@ The features mentioned below are available in most torrent clients, but qBittorr
 
 The functionality is broadly divided into 3 tabs visible in the top bar - Transfers, Search and RSS. If they are not visible, they can be enabled from the "View" menu.
 
-**Transfers**: This is where you can see all the torrents, which can be filtered by status, category and tags in the left pane. Categories and tags can be updated by selecting the torrents > right click.
-
-**Search**: This is one of the most powerful features of qBittorrent. The search plugin can be enabled by clicking "Search plugins..." at the bottom right, and choose the second option "Check for updates". This will populate the list with some of the common trackers. Unfortunately, while nyaa is not one of the default plugins, it is available to be installed [here](http://plugins.qbittorrent.org) with instructions.
+- **Transfers**: This is where you can see all the torrents, which can be filtered by status, category and tags in the left pane. Categories and tags can be updated by selecting the torrents > right click.
+- **Search**: This is one of the most powerful features of qBittorrent. The search plugin can be enabled by clicking "Search plugins..." at the bottom right, and choose the second option "Check for updates". This will populate the list with some of the common trackers. Unfortunately, while nyaa is not one of the default plugins, it is available to be installed [here](http://plugins.qbittorrent.org) with instructions.
 
 A better method is to add multiple trackers through the default search plugin called Jackett. Jackett is a separate program which has to be installed and can be configured with most private and public trackers, this plugin allows qBittorrent to search through Jackett.
 
 ### RSS
 
-This is the simplest way of automating downloads. It is a link on a website that is autogenerated by that website whenever a new torrent is listed on it. It takes the metadata of that torrent and lists it on its site, but it also puts the information into an file called an RSS feed.
+- This is the simplest way of automating downloads. It is a link on a website that is autogenerated by that website whenever a new torrent is listed on it. It takes the metadata of that torrent and lists it on its site, but it also puts the information into an file called an RSS feed.
 
-Most torrent clients can automatically check this file every once in a while and automatically download the torrents within, and can be filtered based on various things like name, uploader, size, format, quality, or encoding, as long as it is listed in the information on the feed.
+- Most torrent clients can automatically check this file every once in a while and automatically download the torrents within, and can be filtered based on various things like name, uploader, size, format, quality, or encoding, as long as it is listed in the information on the feed.
+
 
 Check out the [RSS Guide](/tutorials/rss) for instructions on using it with qBittorrent. More sophesticated alternatives utilizing RSS are Taiga and Sonarr.
+
 
 ### Connectability
 
@@ -118,41 +111,35 @@ Check out the [RSS Guide](/tutorials/rss) for instructions on using it with qBit
 Being connectable means that you accept "direct" connections from seeders or leechers. In a rough metaphor, your "address" (IP) is known, and your "door" (port) is open to meet new peers.
 !!!
 
-In the BitTorrent protocol, a transaction between 2 peers can only happen if at least one of them is connectable (one "open door" is enough).
+- In the BitTorrent protocol, a transaction between 2 peers can only happen if at least one of them is connectable (one "open door" is enough).
 
-When you attempt to download something from a peer, you must first establish the connection with them. If their port is open, then you can directly connect with them and start downloading. If their port is not open, you must wait for them to connect with you.
+- When you attempt to download something from a peer, you must first establish the connection with them. If their port is open, then you can directly connect with them and start downloading. If their port is not open, you must wait for them to connect with you.
 
-While being connectible does not magically boost your upload speed, a properly configured setup increases the pool of potential peers to connect to. This will not make a difference with torrents that have hundreds of seeds, but can drastically increase upload speed on torrents with less seeds.
-
-!!!info
-Being non-connectable will still allow you to seed and leech, unless you are attempting to connect with another non-connectable peer.
-!!!
+- While being connectible does not magically boost your upload speed, a properly configured setup increases the pool of potential peers to connect to. This will not make a difference with torrents that have hundreds of seeds, but can drastically increase upload speed on torrents with less seeds.
 
 !!!info
-Being a non-connectable seeder will get you less upload next to a connectable seeder.
+Being non-connectable will still allow you to seed and leech, unless you are attempting to connect with another non-connectable peer. It also means you will get less upload next to a connectable seeder.
 !!!
 
 That said, you might be wondering on how to become connectable. This can be achieved relatively easily by port forwarding - which will be covered down below.
 
 ### What Is Port Forwarding?
 
-Your connection is assigned with a public "address" (IP address) by your ISP to your router. Your router will then assign a private (local) IP address to the devices that are connecting to it. On your devices, services which need to connect with another deivce over a network needs to have a "door" (port) opened (such as FTP on port 21, SSH & SFTP on port 22, HTTP on port 80, or HTTPS on port 443, etc.). The IP address and the port number combination (for example - http://192.168.0.1:8080/, where "192.168.0.1" is your private IP address, and "8080" is the port number) can be used to access the service in question.
+- Your connection is assigned with a public "address" (IP address) by your ISP to your router. Your router will then assign a private (local) IP address to the devices that are connecting to it. On your devices, services which need to connect with another deivce over a network needs to have a "door" (port) opened (such as FTP on port 21, SSH & SFTP on port 22, HTTP on port 80, or HTTPS on port 443, etc.). The IP address and the port number combination (for example - http://192.168.0.1:8080/, where "192.168.0.1" is your private IP address, and "8080" is the port number) can be used to access the service in question.
 
-Similarly, your torrent client also needs to run on a port on your device's private IP address. However, for anyone on the internet to be able to "see" your torrent client through this port, it has to be forwarded/connected to the equivalent port on your public IP address.
+- Similarly, your torrent client also needs to run on a port on your device's private IP address. However, for anyone on the internet to be able to "see" your torrent client through this port, it has to be forwarded/connected to the equivalent port on your public IP address.
 
-Metamorphically, think of your torrent client like a laser pointer. When it runs, it tries to shoot a beam of light (the connection) to another person, but is blocked by a "wall" - which is your router. If your router does not have an appropriate "hole" (port) prepared, nobody from the other side will be able to see the beam of light.
+- Metamorphically, think of your torrent client like a laser pointer. When it runs, it tries to shoot a beam of light (the connection) to another person, but is blocked by a "wall" - which is your router. If your router does not have an appropriate "hole" (port) prepared, nobody from the other side will be able to see the beam of light.
 
 ### How To Port Forward
 
 !!!warning
-This guide is not applicable to VPN users. If you are using one, please check with your VPN service provider and see if it allows port forwarding, as well as any instructions they might provide you with. If it does not, there is nothing you can do about it and it also has nothing to do with your router - either disable your VPN, or choose a different VPN service provider that allows port forwarding. {.is-warning}
+This guide is not applicable to VPN users. If you are using one, please check with your VPN service provider and see if it allows port forwarding, as well as any instructions they might provide you with. If it does not, there is nothing you can do about it and it also has nothing to do with your router - either disable your VPN, or choose a different VPN service provider that allows port forwarding.
 !!!
 
-The port used by your client can be found in Settings > Connection. Avoid using the [well-known ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports) and the [registered ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports). To simplify - and preferably, use the ports from [49152 or higher](https://en.wikipedia.org/wiki/Ephemeral_port) to avoid interference with other services as well as being blocked by your ISP on some lower number ports.
+- The port used by your client can be found in Settings > Connection. Avoid using the [well-known ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports) and the [registered ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports). To simplify - and preferably, use the ports from [49152 or higher](https://en.wikipedia.org/wiki/Ephemeral_port) to avoid interference with other services as well as being blocked by your ISP on some lower number ports.
 
-!!!info
-Use https://canyouseeme.org/ to check if this port is open. If it already is, you can skip this instruction. If you are already portforwarding via a VPN, often times, it will show your port as unopened. However, this is completely normal because those ports are ephemeral and only opened when you're actively uploading/downloading something.
-!!!
+- Use https://canyouseeme.org/ to check if this port is open. If it already is, you can skip this instruction. If you are already portforwarding via a VPN, often times, it will show your port as unopened. However, this is completely normal because those ports are ephemeral and only opened when you're actively uploading/downloading something.
 
 !!!info
 If you are already port forwarding via a VPN, often times, it will show your port as closed. However, this is completely normal since those ports are ephemeral and only opened up when you are actively uploading/downloading something.
