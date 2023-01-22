@@ -14,4 +14,4 @@ order: -5
 - [Manage LN/WN using Calibre](/tutorials/calibre)
 - [MPV](/tutorials/mpv)
 - [Propolis](/tutorials/propolis)
-- [Sonarr](/tutorials/arr)
+- [Sonarr](/tutorials/sonarr)
