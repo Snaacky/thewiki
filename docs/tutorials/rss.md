@@ -13,7 +13,7 @@ This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and 
 3. Check `Enable fetching RSS feeds` and `Enable auto downloading of RSS torrents.`
 4. Set `Feeds refresh interval` to 15 minutes.
 
-![vmajcpa.png](/vmajcpa.png)
+![Qbittorrent RSS](https://user-images.githubusercontent.com/78981416/213906548-b2735470-157d-4cca-8927-cf1d15feb24a.png "Qbittorrent RSS")
 
 ## Adding the RSS feed
 
@@ -43,7 +43,8 @@ Do not paste this link in a browser because it will do nothing.
 
 7. Check `SubsPlease RSS` under `Apply Rule to Feeds`.
 
-![rssrules.png](/rssrules.png)
+![Qbittorrent RSS Rules](https://user-images.githubusercontent.com/78981416/213906574-546aae6e-a5f5-411f-b43a-14ed26e66ff5.png "Qbittorrent RSS Rules")
+
 
 !!!
 The client can be left running in the background. The anime episode will be automatically downloaded whenever it is released.
