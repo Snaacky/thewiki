@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727690637467">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727718211643">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727690637467" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727718211643" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727690637467" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727718211643" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727690637467" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.727690637467" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727718211643" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.727718211643" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,26 +174,31 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li><p><strong>Install <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a></strong></p>
+<li><p>Install <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a></p>
 <ul>
 <li>During installation tick <code v-pre>Add Python 3.10 to PATH</code>.</li>
 </ul>
 </li>
-<li><p><strong>Install <a href="https://gitforwindows.org/">Git</a></strong></p>
+<li><p>Install <a href="https://gitforwindows.org/">Git</a></p>
 <ul>
 <li>Optionally type <code v-pre>git version</code> in your terminal to verify Git was installed.</li>
 </ul>
 </li>
-<li><p><strong>Install <a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a></strong></p>
+<li><p>Install <a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a></p>
 <ul>
 <li>Select <code v-pre>Install for me only</code>.</li>
 <li>If you have any issues here, check out the <a href="https://www.vapoursynth.com/doc/installation.html">official Installation Guide</a>.</li>
 </ul>
 </li>
-<li><p><strong>Before we install vs-preview, we need to install the following dependencies</strong>:
-<a href="https://github.com/DJATOM/LibP2P-Vapoursynth" title="[`LibP2P`]"><code v-pre>LibP2P</code></a> - <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works" title="`LSMASHSource`"><code v-pre>LSMASHSource</code></a> - <a href="https://github.com/vapoursynth/subtext" title="`Subtext`"><code v-pre>Subtext</code></a> - <a href="https://github.com/Lypheo/vs-placebo" title="`vs-placebo`"><code v-pre>vs-placebo</code></a> - <a href="https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7" title="`libdovi`"><code v-pre>libdovi</code></a> - <a href="https://github.com/OpusGang/awsmfunc" title="`awsmfunc`"><code v-pre>awsmfunc</code></a></p>
-</li>
-</ol>
+<li><p>Before we install vs-preview, we need to install the following dependencies:</p>
+<ul>
+<li><a href="https://github.com/DJATOM/LibP2P-Vapoursynth" title="[`LibP2P`]"><code v-pre>LibP2P</code></a></li>
+<li><a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works" title="`LSMASHSource`"><code v-pre>LSMASHSource</code></a></li>
+<li><a href="https://github.com/vapoursynth/subtext" title="`Subtext`"><code v-pre>Subtext</code></a></li>
+<li><a href="https://github.com/Lypheo/vs-placebo" title="`vs-placebo`"><code v-pre>vs-placebo</code></a></li>
+<li><a href="https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7" title="`libdovi`"><code v-pre>libdovi</code></a></li>
+<li><a href="https://github.com/OpusGang/awsmfunc" title="`awsmfunc`"><code v-pre>awsmfunc</code></a></li>
+</ul>
 <p>To install them, run the following commands in your terminal:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">vsrepo.py install libp2p sub placebo dovi_library</code></pre>
@@ -205,16 +210,15 @@
 <pre class="language-none"><code v-pre class="language-none">pip install --user git+https://github.com/OpusGang/awsmfunc.git</code></pre>
 </doc-codeblock></div>
 <p>Download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="`LSMASHSource`"><code v-pre>LSMASHSource</code></a> Inside the zip open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></p>
-<ol start="5">
-<li><strong>Install <a href="https://github.com/Irrational-Encoding-Wizardry/vs-preview">vs-preview</a>:</strong></li>
-</ol>
+</li>
+<li><p>Install <a href="https://github.com/Irrational-Encoding-Wizardry/vs-preview">vs-preview</a>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">pip install vspreview</code></pre>
 </doc-codeblock></div>
-<ol start="6">
-<li><strong>Create a new file called <code v-pre>comp.vpy</code></strong>.</li>
-<li><strong>Open <code v-pre>comp.vpy</code> with a text editor such as notepad++ and paste the following, edit as required and save it:</strong></li>
-</ol>
+</li>
+<li><p>Create a new file called <code v-pre>comp.vpy</code>.</p>
+</li>
+<li><p>Open <code v-pre>comp.vpy</code> with a text editor such as notepad++ and paste the following, edit as required and save it:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">import vapoursynth as vs
 from vapoursynth import core
@@ -281,34 +285,35 @@ clip1.set_output(1)
 clip2.set_output(2)
 clip3.set_output(3)</code></pre>
 </doc-codeblock></div>
-<ol start="8">
-<li><strong>That&#x27;s it for the setup, now to use vspreview you just need to run this command in your terminal or paste it in a text file and save it as <code v-pre>comp.bat</code>:</strong></li>
-</ol>
+</li>
+<li><p>That&#x27;s it for the setup, now to use vspreview you just need to run this command in your terminal or paste it in a text file and save it as <code v-pre>comp.bat</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">vspreview /path/to/comp.vpy</code></pre>
 </doc-codeblock></div>
 <p>Now, when making comps you just edit <code v-pre>comp.vpy</code> to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed and then run <code v-pre>comp.bat</code> or run <code v-pre>vspreview comp.vpy</code> directly from your terminal.</p>
-<doc-anchor-target id="screenshotting-manually-recommended">
+</li>
+</ol>
+<doc-anchor-target id="quality-of-life-changes-for-screenshotting-manually-via-vs-preview-recommended">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting-manually-recommended">#</doc-anchor-trigger>
-        <span>Screenshotting Manually (Recommended)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quality-of-life-changes-for-screenshotting-manually-via-vs-preview-recommended">#</doc-anchor-trigger>
+        <span>Quality of Life Changes for Screenshotting Manually via VS-Preview (Recommended)</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="quality-of-life-changes">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quality-of-life-changes">#</doc-anchor-trigger>
-        <span>Quality of Life Changes</span>
-    </h4>
-</doc-anchor-target>
-<p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted</strong> - In VSPreview on the bottom bar select Misc, set file name template to <code v-pre>{frame}_{script_name}_({index})</code>.</p>
-<p><strong>Jump through frames quickly</strong> - In VSPreview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
-<p><strong>Take screenshots quicker by setting the save image button to enter</strong> - Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc</code>and edit <code v-pre>toolbar.py</code> - Line 150: <code v-pre>Replace Qt.SHIFT + Qt.Key_S</code> with <code v-pre>Qt.Key_Return</code>. - If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
-<p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong> - Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Line 164-165 Add <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code> - Line 166-167 Remove <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code></p>
+<ul>
+<li><p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted</strong> - In VSPreview on the bottom bar select Misc, set file name template to <code v-pre>{frame}_{script_name}_({index})</code>.</p>
+</li>
+<li><p><strong>Jump through frames quickly</strong> - In VSPreview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
+</li>
+<li><p><strong>Take screenshots quicker by setting the save image button to enter</strong> - Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code> - Line 150: <code v-pre>Replace Qt.SHIFT + Qt.Key_S</code> with <code v-pre>Qt.Key_Return</code>. - If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
+</li>
+<li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong> - Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Line 164-165 Add <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code> - Line 166-167 Remove <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code></p>
+</li>
+</ul>
 <doc-anchor-target id="making-the-comparison">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#making-the-comparison">#</doc-anchor-trigger>
         <span>Making the comparison</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <ul>
 <li>Press <code v-pre>Right Arrow</code> key to move forward a set amount of frames.</li>
@@ -321,10 +326,10 @@ clip3.set_output(3)</code></pre>
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="screenshotting-automatically-simply-much-less-effort">
+<doc-anchor-target id="screenshotting-automatically">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting-automatically-simply-much-less-effort">#</doc-anchor-trigger>
-        <span>Screenshotting Automatically (Simply much less effort)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting-automatically">#</doc-anchor-trigger>
+        <span>Screenshotting Automatically</span>
     </h3>
 </doc-anchor-target>
 <p>If you don&#x27;t want to take screenshots and upload them manually, then you can simply use VS-Preview&#x27;s automatic comparison function.</p>
@@ -355,8 +360,9 @@ clip3.set_output(3)</code></pre>
 <li>Comparisons must be titled the name of the anime, and all encodes must be labelled accordingly.</li>
 <li>You must include source in the comparison, this will usually be the BDMV/Remux when BluRay encodes are being compared or WEB-DL if WEB encodes are being compared.</li>
 </ul>
-<p><strong>MPV config must be the one as shown below:</strong></p>
+<p>MPV config must be the one as shown below:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">conf</div>
 <pre class="language-none"><code v-pre class="language-none">no-deband
 profile=gpu-hq
 screenshot-format=png</code></pre>
