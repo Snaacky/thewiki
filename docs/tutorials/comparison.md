@@ -18,26 +18,25 @@ label: Comparison
    - If you have any issues here, check out the [official Installation Guide](https://www.vapoursynth.com/doc/installation.html).
 
 4. Before we install vs-preview, we need to install the following dependencies:
-   -  [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "[`LibP2P`]")
-   -  [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works "`LSMASHSource`")
-   -  [`Subtext`](https://github.com/vapoursynth/subtext "`Subtext`")
-   -  [`vs-placebo`](https://github.com/Lypheo/vs-placebo "`vs-placebo`")
-   -  [`libdovi`](https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7 "`libdovi`")
-   -  [`awsmfunc`](https://github.com/OpusGang/awsmfunc "`awsmfunc`")
+   -  [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P")
+   -  [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works "LSMASHSource")
+   -  [`Subtext`](https://github.com/vapoursynth/subtext "Subtext")
+   -  [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo")
+   -  [`libdovi`](https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7 "libdovi")
+   -  [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
 
-   To install them, run the following commands in your terminal:
-
+   To install LSMASHSource, download [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it. Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
+   
+   To install the rest of the plugins, run the following commands in your terminal:
    ```
    vsrepo.py install libp2p sub placebo dovi_library
    ```
-
-   - Note: If this doesn't work, make sure Windows is set to open .py files with Python
-
    ```
-   pip install --user git+https://github.com/OpusGang/awsmfunc.git
+   pip install git+https://github.com/OpusGang/awsmfunc.git
    ```
-
-   Download [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "`LSMASHSource`") Inside the zip open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
+   !!!
+   If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python.
+   !!!
 
 5. Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
 
