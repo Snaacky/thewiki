@@ -1,3 +1,2 @@
 label: FAQ
-expanded: true
-order: -4
+visibility: hidden
