@@ -8,7 +8,7 @@ icon: home
 
 
 Welcome to the Wiki for all things piracy! Here you can find stuff ranging from easy to digest tutorials to full blown guides.
-We also have a discord serber: [discord.gg/snackbox](https://discord.gg/snackbox)
+We also have a discord server: [discord.gg/snackbox](https://discord.gg/snackbox)
 
 ## Streaming
 
