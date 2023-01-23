@@ -1,12 +1,14 @@
 ---
 label: Home
+icon: home
 ---
 
 # Home
+![rounded](https://user-images.githubusercontent.com/78981416/214139250-2bf3e07d-7e07-484e-a952-eff7570aaefa.png)
 
-!!!
-Did you know TheIndex and TheWiki have a Discord server? [discord.gg/snackbox](https://discord.gg/snackbox)
-!!!
+
+Welcome to the Wiki for all things piracy! Here you can find stuff ranging from easy to digest tutorials to full blown guides.
+We also have a discord serber: [discord.gg/snackbox](https://discord.gg/snackbox)
 
 ## Streaming
 
