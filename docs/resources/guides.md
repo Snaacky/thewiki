@@ -1,5 +1,6 @@
 ---
 label: Guides
+order: -2
 ---
 
 # Guides
