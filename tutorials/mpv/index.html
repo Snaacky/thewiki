@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727820153345">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727902176600">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Installation</title>
     <meta name="title" content="Installation">
-    <meta name="description" content="Grab the topmost file from here." />
+    <meta name="description" content="Installation, Setup and Configuration for MPV" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://thewiki.moe/tutorials/mpv/" />
@@ -20,24 +20,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thewiki.moe/tutorials/mpv/">
     <meta property="og:title" content="Installation">
-    <meta property="og:description" content="Grab the topmost file from here.">
-    <meta property="og:image" content="https://i.imgur.com/32d77H0.jpeg">
+    <meta property="og:description" content="Installation, Setup and Configuration for MPV">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/tutorials/mpv/">
     <meta property="twitter:title" content="Installation">
-    <meta property="twitter:description" content="Grab the topmost file from here.">
-    <meta property="twitter:image" content="https://i.imgur.com/32d77H0.jpeg">
+    <meta property="twitter:description" content="Installation, Setup and Configuration for MPV">
+    <meta property="twitter:image" content="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727820153345" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727902176600" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727820153345" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727902176600" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727820153345" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.727820153345" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727902176600" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.727902176600" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -257,7 +257,7 @@
 </doc-anchor-target>
 <p>The comments are a brief explaination of what each line does.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">#### General
+<pre class="language-properties"><code v-pre class="language-properties">#### General
 profile=gpu-hq                    #Allows for higher quality playback on MPV. Uses scaling methods that are significantly better than Default MPV, VLC and MPC.
 vo=gpu                            #General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more.
 priority=high                     #Makes PC prioritize MPV for allocating resources.
@@ -304,13 +304,13 @@ alang=jpn,ja,jpn
 <p>Banding is a visual artifact, visual artifacts should never be in a video.
 Example of banding:
 <figure class="content-center">
-    <img src="https://i.imgur.com/32d77H0.jpeg" alt="Banding" title="Banding (bad) vs No Banding (good)" />
-    <figcaption class="caption">Banding</figcaption>
+    <img src="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png" alt="Banding (bad) vs No Banding (good)" title="Banding (bad) vs No Banding (good)" />
+    <figcaption class="caption">Banding (bad) vs No Banding (good)</figcaption>
 </figure>
 Debanding is the process of removing said banding.
 6 minute explanation of what causes banding: <a href="https://youtu.be/h9j89L8eQQk">https://youtu.be/h9j89L8eQQk</a></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">#Banding is a visual artifact, visual artifacts should never be in a video.
+<pre class="language-properties"><code v-pre class="language-properties">#Banding is a visual artifact, visual artifacts should never be in a video.
 #Example of banding: https://imgur.com/32d77H0
 #Debanding is the process of removing said banding.
 #6 minute explanation of what causes banding: https://youtu.be/h9j89L8eQQk
@@ -338,9 +338,22 @@ Debanding is the process of removing said banding.
         <span>Profiles for upscaling</span>
     </h2>
 </doc-anchor-target>
-<p>These are for a 2160p display, simply adjust the values accordingly for other resolutions. Explanation of scaling - <a href="https://thewiki.moe/en/guides/playback#scaling">https://thewiki.moe/en/guides/playback#scaling</a></p>
+<p>These are for a 2160p display, simply adjust the values accordingly for other resolutions.
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Read about scaling in details</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>../../guides/playback/#scaling</span>
+    </div>
+    <a href="../../guides/playback/#scaling" class="absolute block inset-0"></a>
+</div>
+</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">[2x_upscaling]
+<pre class="language-properties"><code v-pre class="language-properties">[2x_upscaling]
     profile-desc='Profile for 1080: 2*1080=2160'
     profile-cond=(height == 1080 and estimated_vf_fps &lt;= 31 and string.match(path, 'http') == nil)
     glsl-shaders='~~/shaders/compute/nnedi3-nns16-win8x4.hook'
@@ -359,7 +372,29 @@ Debanding is the process of removing said banding.
     glsl-shaders-append='~~/shaders/vulkan/compute/ravu-r3.hook'
     scaler-resizes-only=no</code></pre>
 </doc-codeblock></div>
-<p>For more options, check out -</p>
+<p><figure class="content-center">
+    <img src="https://user-images.githubusercontent.com/78981416/214379891-5caaf01d-8c24-4e3c-addf-ed8eee02305e.png" alt="An Example Showing some of the Scalers. Do note this does not cover everything." />
+    <figcaption class="caption">An Example Showing some of the Scalers. Do note this does not cover everything.</figcaption>
+</figure>
+</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Scalers only work when the resolution of your video does not match with your display. If the resolution of the video you&#x27;re playing matches with your display&#x27;s resolution, scalers will remain unused.</p>
+        </div>
+    </div>
+</div>
+<p>For more options, check out the following links:</p>
 <ul>
 <li><a href="https://mpv.io/manual/master/#options">MPV Docs</a></li>
 <li><a href="https://iamscum.wordpress.com/guides/videoplayback-guide/">Configuration guide 1</a></li>
@@ -367,6 +402,22 @@ Debanding is the process of removing said banding.
 <li><a href="https://github.com/DeadNews/mpv-config/blob/main/mpv/mpv.conf">Sample config 1</a></li>
 <li><a href="https://github.com/LightArrowsEXE/dotfiles/blob/master/mpv/.config/mpv/mpv.conf">Sample config 2</a></li>
 </ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Some of the above guides are quite advanced, do not blindly copy paste things from them without understanding what they do.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="scripts">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scripts">#</doc-anchor-trigger>
@@ -389,7 +440,7 @@ Debanding is the process of removing said banding.
 </doc-anchor-target>
 <p>For watching Dobly Vision or HDR content on an SDR screen you need to tonemap it. To do this change the <code v-pre>vo=gpu</code> to <code v-pre>vo=gpu-next</code> and add <code v-pre>tone-mapping=bt.2446a</code> to your config.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">vo=gpu-next
+<pre class="language-properties"><code v-pre class="language-properties">vo=gpu-next
 tone-mapping=bt.2446a</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
