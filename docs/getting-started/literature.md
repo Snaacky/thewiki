@@ -1,6 +1,8 @@
 ---
 label: Literature
 order: -2
+icon: book
+description: Learn How to Read Your Favorite Manga
 ---
 
 # Literature
