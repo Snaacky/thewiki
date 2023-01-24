@@ -1,5 +1,6 @@
 ---
 label: MPV
+description: Installation, Setup and Configuration for MPV
 ---
 
 # Installation
@@ -64,7 +65,7 @@ MPV is a great player out-of-the-box but you can customize it further to make it
 
 The comments are a brief explaination of what each line does.
 
-```yml
+```properties
 #### General
 profile=gpu-hq                    #Allows for higher quality playback on MPV. Uses scaling methods that are significantly better than Default MPV, VLC and MPC.
 vo=gpu                            #General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more.
@@ -108,11 +109,11 @@ alang=jpn,ja,jpn
 
 Banding is a visual artifact, visual artifacts should never be in a video.
 Example of banding:
-![Banding](https://i.imgur.com/32d77H0.jpeg "Banding (bad) vs No Banding (good)")
+![Banding (bad) vs No Banding (good)](https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png "Banding (bad) vs No Banding (good)")
 Debanding is the process of removing said banding.
 6 minute explanation of what causes banding: https://youtu.be/h9j89L8eQQk
 
-```
+```properties
 #Banding is a visual artifact, visual artifacts should never be in a video.
 #Example of banding: https://imgur.com/32d77H0
 #Debanding is the process of removing said banding.
@@ -138,9 +139,10 @@ Debanding is the process of removing said banding.
 
 ## Profiles for upscaling
 
-These are for a 2160p display, simply adjust the values accordingly for other resolutions. Explanation of scaling - https://thewiki.moe/en/guides/playback#scaling
+These are for a 2160p display, simply adjust the values accordingly for other resolutions.
+[!ref Read about scaling in details](/guides/playback/#scaling)
 
-```
+```properties
 [2x_upscaling]
     profile-desc='Profile for 1080: 2*1080=2160'
     profile-cond=(height == 1080 and estimated_vf_fps <= 31 and string.match(path, 'http') == nil)
@@ -160,14 +162,23 @@ These are for a 2160p display, simply adjust the values accordingly for other re
     glsl-shaders-append='~~/shaders/vulkan/compute/ravu-r3.hook'
     scaler-resizes-only=no
 ```
+![An Example Showing some of the Scalers. Do note this does not cover everything.](https://user-images.githubusercontent.com/78981416/214379891-5caaf01d-8c24-4e3c-addf-ed8eee02305e.png)
 
-For more options, check out -
+!!!
+Scalers only work when the resolution of your video does not match with your display. If the resolution of the video you're playing matches with your display's resolution, scalers will remain unused.
+!!!
+
+For more options, check out the following links:
 
 - [MPV Docs](https://mpv.io/manual/master/#options)
 - [Configuration guide 1](https://iamscum.wordpress.com/guides/videoplayback-guide/)
 - [Configuration guide 2](https://kokomins.wordpress.com/2019/10/14/mpv-config-guide/)
 - [Sample config 1](https://github.com/DeadNews/mpv-config/blob/main/mpv/mpv.conf)
 - [Sample config 2](https://github.com/LightArrowsEXE/dotfiles/blob/master/mpv/.config/mpv/mpv.conf)
+
+!!!warning
+Some of the above guides are quite advanced, do not blindly copy paste things from them without understanding what they do.
+!!!
 
 ## Scripts
 
@@ -182,7 +193,7 @@ For more options, check out -
 
 For watching Dobly Vision or HDR content on an SDR screen you need to tonemap it. To do this change the `vo=gpu` to `vo=gpu-next` and add `tone-mapping=bt.2446a` to your config.
 
-```
+```properties
 vo=gpu-next
 tone-mapping=bt.2446a
 ```
