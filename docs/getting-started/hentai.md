@@ -1,6 +1,8 @@
 ---
 label: Hentai
 order: -4
+icon: /assets/icons/hentai.svg
+description: Where to Watch Hentai
 ---
 
 # Hentai

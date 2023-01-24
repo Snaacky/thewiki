@@ -1,6 +1,8 @@
 ---
 label: Anime
 order: -1
+icon: video
+descripton: Learn How to Watch Your Favorite Anime
 ---
 
 # Anime
