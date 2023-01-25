@@ -65,7 +65,7 @@ MPV is a great player out-of-the-box but you can customize it further to make it
 
 The comments are a brief explaination of what each line does.
 
-```yml
+```
 #### General
 profile=gpu-hq                    #Allows for higher quality playback on MPV. Uses scaling methods that are significantly better than Default MPV, VLC and MPC.
 vo=gpu                            #General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more.
@@ -113,7 +113,7 @@ Example of banding:
 Debanding is the process of removing said banding.
 6 minute explanation of what causes banding: https://youtu.be/h9j89L8eQQk
 
-```yml
+```
 #Banding is a visual artifact, visual artifacts should never be in a video.
 #Example of banding: https://imgur.com/32d77H0
 #Debanding is the process of removing said banding.
@@ -142,7 +142,7 @@ Debanding is the process of removing said banding.
 These are for a 2160p display, simply adjust the values accordingly for other resolutions.
 [!ref Read about scaling in details](/guides/playback/#scaling)
 
-```yml
+```
 [2x_upscaling]
     profile-desc='Profile for 1080: 2*1080=2160'
     profile-cond=(height == 1080 and estimated_vf_fps <= 31 and string.match(path, 'http') == nil)
@@ -193,7 +193,7 @@ Some of the above guides are quite advanced, do not blindly copy paste things fr
 
 For watching Dobly Vision or HDR content on an SDR screen you need to tonemap it. To do this change the `vo=gpu` to `vo=gpu-next` and add `tone-mapping=bt.2446a` to your config.
 
-```yml
+```
 vo=gpu-next
 tone-mapping=bt.2446a
 ```
