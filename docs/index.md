@@ -4,7 +4,8 @@ icon: home
 ---
 
 # Home
-![](https://user-images.githubusercontent.com/78981416/214139250-2bf3e07d-7e07-484e-a952-eff7570aaefa.png)
+![](https://user-images.githubusercontent.com/78981416/214676141-cb116b5f-5c42-4d7d-bf39-c3426ab2f367.png)
+
 
 
 Welcome to the Wiki for all things piracy! Here you can find stuff ranging from easy to digest tutorials to full blown guides.
