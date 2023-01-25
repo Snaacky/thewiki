@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727904940201">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.727982398380">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.727904940201" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.727982398380" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727904940201" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.727982398380" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727904940201" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.727904940201" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.727982398380" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -257,7 +256,7 @@
 </doc-anchor-target>
 <p>The comments are a brief explaination of what each line does.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">#### General
+<pre class="language-none"><code v-pre class="language-none">#### General
 profile=gpu-hq                    #Allows for higher quality playback on MPV. Uses scaling methods that are significantly better than Default MPV, VLC and MPC.
 vo=gpu                            #General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more.
 priority=high                     #Makes PC prioritize MPV for allocating resources.
@@ -310,7 +309,7 @@ Example of banding:
 Debanding is the process of removing said banding.
 6 minute explanation of what causes banding: <a href="https://youtu.be/h9j89L8eQQk">https://youtu.be/h9j89L8eQQk</a></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">#Banding is a visual artifact, visual artifacts should never be in a video.
+<pre class="language-none"><code v-pre class="language-none">#Banding is a visual artifact, visual artifacts should never be in a video.
 #Example of banding: https://imgur.com/32d77H0
 #Debanding is the process of removing said banding.
 #6 minute explanation of what causes banding: https://youtu.be/h9j89L8eQQk
@@ -353,7 +352,7 @@ Debanding is the process of removing said banding.
 </div>
 </p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">[2x_upscaling]
+<pre class="language-none"><code v-pre class="language-none">[2x_upscaling]
     profile-desc='Profile for 1080: 2*1080=2160'
     profile-cond=(height == 1080 and estimated_vf_fps &lt;= 31 and string.match(path, 'http') == nil)
     glsl-shaders='~~/shaders/compute/nnedi3-nns16-win8x4.hook'
@@ -440,7 +439,7 @@ Debanding is the process of removing said banding.
 </doc-anchor-target>
 <p>For watching Dobly Vision or HDR content on an SDR screen you need to tonemap it. To do this change the <code v-pre>vo=gpu</code> to <code v-pre>vo=gpu-next</code> and add <code v-pre>tone-mapping=bt.2446a</code> to your config.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">vo=gpu-next
+<pre class="language-none"><code v-pre class="language-none">vo=gpu-next
 tone-mapping=bt.2446a</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
@@ -511,6 +510,6 @@ tone-mapping=bt.2446a</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "MPV", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "MPV", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
