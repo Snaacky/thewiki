@@ -2,7 +2,6 @@
 label: Usenet
 order: -5
 description: Get Started with Usenet
-image: :server:
 ---
 
 # Usenet
@@ -54,3 +53,6 @@ You can use either of the following to upload to usenet.
 ## Usenet Providers and Backbones
 
 ![](https://upload.wikimedia.org/wikipedia/commons/7/7d/Usenet_Providers_and_Backbones.svg)
+
+## Related Subreddit
+[!ref /r/Usenet](https://www.reddit.com/r/usenet/)
