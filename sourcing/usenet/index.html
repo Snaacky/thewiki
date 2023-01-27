@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.728159654948">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.728162909963">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Usenet</title>
     <meta name="title" content="Usenet">
-    <meta name="description" content="animetosho" />
+    <meta name="description" content="Get Started with Usenet" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://thewiki.moe/sourcing/usenet/" />
@@ -20,21 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thewiki.moe/sourcing/usenet/">
     <meta property="og:title" content="Usenet">
-    <meta property="og:description" content="animetosho">
+    <meta property="og:description" content="Get Started with Usenet">
+    <meta property="og:image" content="https://i.imgur.com/yLpavtq.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/sourcing/usenet/">
     <meta property="twitter:title" content="Usenet">
-    <meta property="twitter:description" content="animetosho">
+    <meta property="twitter:description" content="Get Started with Usenet">
+    <meta property="twitter:image" content="https://i.imgur.com/yLpavtq.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.728159654948" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.728162909963" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.728159654948" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.728162909963" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.728159654948" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.728162909963" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -158,7 +160,181 @@
         <span>Usenet</span>
     </h1>
 </doc-anchor-target>
-<p>animetosho</p>
+<doc-anchor-target id="getting-started">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
+        <span>Getting started</span>
+    </h2>
+</doc-anchor-target>
+<p>You will need 3 things at a basic level before you can download anything:</p>
+<ul>
+<li>A usenet provider, which will provide servers to download content from. You have to pay for one and many offer in-bulk deals (yearly) which can average out to as low as 3-4 USD a month.</li>
+<li>An NZB indexer, this is where you will get your <code v-pre>.nzb</code> file. An <code v-pre>.nzb</code> file is akin to a <code v-pre>.torrent</code> file in that it contains a map pointing to the location of the content that you want to download. These can be paid, free, public or private. Just like torrents, private ones are better than the public ones. Indexers usually have a heavily limited free tier and you&#x27;ll have to pay for full functionality.</li>
+<li><a href="https://sabnzbd.org/">SABnzbd</a>, which is a download client, into which you will feed your <code v-pre>.nzb</code> files in order to begin downloading your desired content. Make sure to put your SABnzbd behind a strong password.</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Warning</h5>
+<p><a href="https://github.com/nzbget/nzbget">NZBGet</a> has been deprecated by its developers. It will not receive any more updates.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="par">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#par">#</doc-anchor-trigger>
+        <span>PAR</span>
+    </h2>
+</doc-anchor-target>
+<p>A file that contains the computed parity bits from a source file. PAR files are generated from Usenet archives that have been broken into multiple files because of file size limitations on news servers. A PAR file would allow the complete archive to be reconstructed if one of the files became corrupt. PAR files can also be used to verify the integrity of the complete archive. Your download client, such as SABnzbd, will automatically repair or attempt to repair broken files using par files after download.</p>
+<doc-anchor-target id="anime-tosho">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#anime-tosho">#</doc-anchor-trigger>
+        <span>Anime Tosho</span>
+    </h2>
+</doc-anchor-target>
+<p><a href="https://animetosho.org/">Anime Tosho</a> is a free, completely automated service which mirrors most torrents posted on TokyoTosho&#x27;s anime category, Nyaa.si&#x27;s English translated anime category and AniDex&#x27;s anime category (filtered). onto various file hosting (otherwise known as &#x27;DDL&#x27;) services, as well as Usenet.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Animetosho skips uploading most torrents over 16GB in size and some specific exceptions, such as duplicates/reposts and excessively large versions of a file (e.g. BD remuxes)</p>
+        </div>
+    </div>
+</div>
+<p>Anime Tosho is an amazing source to download weeklies via usenet. =
+To use it, simply click the <code v-pre>NZB</code> button under the release title to download the <code v-pre>.nzb</code> file which you can then add to your SABnzbd and it&#x27;ll start downloading.
+<figure class="content-center">
+    <img src="https://i.imgur.com/yLpavtq.png" alt="nzb" />
+    <figcaption class="caption">nzb</figcaption>
+</figure>
+</p>
+<p>You can also directly copy the link and paste it in SABnzbd, similar to how magnet links work in torrent clients.
+<figure class="content-center">
+    <img src="https://i.imgur.com/6XWXhBa.png" alt="nzblink" />
+    <figcaption class="caption">nzblink</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="seadex">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#seadex">#</doc-anchor-trigger>
+        <span>SeaDex</span>
+    </h2>
+</doc-anchor-target>
+<p><a href="https://releases.moe/">SeaDex</a> lists all the best releases for specific anime for you to download and enjoy. SeaDex releases which are under 16GB can be found on <a href="https://animetosho.org/">Anime Tosho</a> while the rest are posted by <code v-pre>seadex@releases.moe</code> which you can find <a href="https://www.nzbking.com/poster/seadex@releases.moe">here</a>.</p>
+<doc-anchor-target id="searching-indexers">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#searching-indexers">#</doc-anchor-trigger>
+        <span>Searching Indexers</span>
+    </h2>
+</doc-anchor-target>
+<p>You can use either Prowlarr or NZBHydra2 to search several Indexers together instead of searching them one by one.
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">NZBHydra 2 is a meta search for newznab indexers and torznab trackers</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/theotherp/nzbhydra2</span>
+    </div>
+    <a href="https://github.com/theotherp/nzbhydra2" class="absolute block inset-0"></a>
+</div>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Prowlarr is an indexer manager for both torrent trackers and usenet indexers</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/Prowlarr/Prowlarr</span>
+    </div>
+    <a href="https://github.com/Prowlarr/Prowlarr" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="uploading-to-usenet">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uploading-to-usenet">#</doc-anchor-trigger>
+        <span>Uploading to Usenet</span>
+    </h2>
+</doc-anchor-target>
+<p>You can use either of the following to upload to usenet.
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">ngPost is a CLI/GUI usenet poster for binaries</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/mbruel/ngPost</span>
+    </div>
+    <a href="https://github.com/mbruel/ngPost" class="absolute block inset-0"></a>
+</div>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Nyuu is a flexible CLI usenet binary posting tool</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://github.com/animetosho/Nyuu</span>
+    </div>
+    <a href="https://github.com/animetosho/Nyuu" class="absolute block inset-0"></a>
+</div>
+</p>
+<doc-anchor-target id="usenet-providers-and-backbones">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usenet-providers-and-backbones">#</doc-anchor-trigger>
+        <span>Usenet Providers and Backbones</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Usenet_Providers_and_Backbones.svg" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="related-subreddit">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#related-subreddit">#</doc-anchor-trigger>
+        <span>Related Subreddit</span>
+    </h2>
+</doc-anchor-target>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">/r/Usenet</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.reddit.com/r/usenet/</span>
+    </div>
+    <a href="https://www.reddit.com/r/usenet/" class="absolute block inset-0"></a>
+</div>
+</p>
 
                                 
                                 <!-- Required only on API pages -->
