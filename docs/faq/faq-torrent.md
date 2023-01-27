@@ -68,7 +68,7 @@ Check out the [sourcing guide](/guides/sourcing) for more detailed information o
 
 For airing anime ripped from official streams, the size is always 1.3-1.4 GB. Mini encodes or the versions on streaming sites are encoded from this and are in the range of 200-400 MB. None of those can be called "high quality". A good encode using the blu-ray as a source is usually between 1 and 2 GB, and as high as 4-5 GB where it's needed. 
 
-Size can be used to judge web sources, but it's not the best measure of quality for BDRips. Even though the raw BDMV is larger, a good encode will give you the better experience. Check out [Sourcing - Quality](/en/guides/sourcing#quality) for more.
+Size can be used to judge web sources, but it's not the best measure of quality for BDRips. Even though the raw BDMV is larger, a good encode will give you the better experience. Check out [Sourcing - Quality](/guides/sourcing#quality) for more.
 
 ## What does it mean for a torrent to be "stalled"?
 
@@ -119,4 +119,4 @@ Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10p-Group.mkv
 | Dual Audio      | Has two audio tracks. Typically English and Japanese              |
 | [F0EAA72E]      | Random string at the end of the filename is typically CRC32.      |
 
-For more details, check out the sourcing guide - [basics](/en/guides/sourcing#basics) and [CRC32.](/en/guides/sourcing#crc32)
+For more details, check out the sourcing guide - [basics](/guides/sourcing#basics) and [CRC32.](/guides/sourcing#crc32)

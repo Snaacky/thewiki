@@ -10,7 +10,7 @@ order: -3
 The process of sharing files through torrents is completely legal. Transferring copyright infringing files may be illegal depending on your local laws. Copyright organizations may scrape lists of peers, and send takedown notices to the internet service provider of users participating in the swarms of files that are under copyright. In some jurisdictions, copyright holders may start lawsuits against uploaders or downloaders for infringement. However, they are less common for anime compared to Movies/TV shows.
 
 !!!info
-You may want to use a [VPN](/en/faq/vpn) or a [seedbox](/en/guides/torrenting#what-is-a-seedbox) for downloading torrents to avoid receiving a copyright infringement notice from your ISP or a copyright body, and having your internet limited or revoked.
+You may want to use a [VPN](/faq/vpn) or a [seedbox](/guides/torrenting#what-is-a-seedbox) for downloading torrents to avoid receiving a copyright infringement notice from your ISP or a copyright body, and having your internet limited or revoked.
 !!!
 
 ## Basics
@@ -64,7 +64,7 @@ Keep in mind that some clients (such as newer versions of uTorrent and BitTorren
 
 ### How do I torrent?
 
-- First, find a torrent file or magnet link for the content you want to download. Such files can be found on websites (called [trackers](/en/guides/torrenting#trackers)) like nyaa.si.
+- First, find a torrent file or magnet link for the content you want to download. Such files can be found on websites (called [trackers](/guides/torrenting#trackers)) like nyaa.si.
 
 - A `.torrent` file can be added to the client by double clicking it or use the client and browse to the location of the file manually.
 

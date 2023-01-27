@@ -49,7 +49,7 @@ Same process applies, go to the `#index` channel in our [Discord](https://discor
 
 ## Why is there no OP/ED playing for a particular anime on a streaming site?
 
-Streaming sites use torrent releases as a source. Sometimes they get a release with ordered chapters/linked mkvs. Since these are meant to be downloaded, the op/ed come as a separate file and automatically play inside each episode at the correct time. This can be fixed by combining them back into a single file, but streaming sites will rarely make the effort. If you want the complete experience with OP/EDs, check out the [ordered chapters section here](/en/guides/sourcing) for more information about them and ways to fix it
+Streaming sites use torrent releases as a source. Sometimes they get a release with ordered chapters/linked mkvs. Since these are meant to be downloaded, the op/ed come as a separate file and automatically play inside each episode at the correct time. This can be fixed by combining them back into a single file, but streaming sites will rarely make the effort. If you want the complete experience with OP/EDs, check out the [ordered chapters section here](/guides/sourcing) for more information about them and ways to fix it
 
 ## Where do unofficial streaming sites get their streams from?
 
@@ -59,4 +59,4 @@ Note that these "rips" are not screen captures, they're unaltered WEB-DLs. You c
 
 ## Why are the subtitles for this anime on streaming site X different from site Y or torrent Z?
 
-It depends on which source is used by different streaming sites. The most common one is subtitles from the official stream. Fansubbers often take this as a base and improve upon it by adding effects, translating signs and making edits. Some sites may be using these fansubs as a source. For more information -  [Sourcing - Fansubs.](/en/guides/sourcing#fansubs)
+It depends on which source is used by different streaming sites. The most common one is subtitles from the official stream. Fansubbers often take this as a base and improve upon it by adding effects, translating signs and making edits. Some sites may be using these fansubs as a source. For more information -  [Sourcing - Fansubs.](/guides/sourcing#fansubs)

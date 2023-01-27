@@ -26,7 +26,7 @@ This also applies to feature suggestion posts for apps and services.
 
 For airing anime ripped from official streams, the size is always 1.3-1.4 GB. Mini encodes or the versions on streaming sites are encoded from this and are in the range of 200-400 MB. None of those can be called "high quality". A good encode using the blu-ray as a source is usually between 1 and 2 GB, and as high as 4-5 GB where it's needed. 
 
-Size can be used to judge web sources, but it's not the best measure of quality for BDRips. Even though the raw BDMV is larger, a good encode will give you the better experience. Check out [Sourcing - Quality](/en/guides/sourcing#quality) for more.
+Size can be used to judge web sources, but it's not the best measure of quality for BDRips. Even though the raw BDMV is larger, a good encode will give you the better experience. Check out [Sourcing - Quality](/guides/sourcing#quality) for more.
 
 ## Where can I download smaller sized episodes?
 
@@ -44,7 +44,7 @@ Nyaa and torrents have something called dual audio where the mkv files include b
 
 ## How can I add/remove subtitles or audio?
 
-[Mkvtoolnix](https://mkvtoolnix.download/) is the tool for all kinds of muxing, simply drag and drop the files and you'll be able to select the streams to keep in the final output. This is a lossless process different from encoding and takes only a few seconds. Batch muxing and more - [Guides - Muxing.](/en/guides/sourcing#muxing)
+[Mkvtoolnix](https://mkvtoolnix.download/) is the tool for all kinds of muxing, simply drag and drop the files and you'll be able to select the streams to keep in the final output. This is a lossless process different from encoding and takes only a few seconds. Batch muxing and more - [Guides - Muxing.](/guides/sourcing#muxing)
 
 ## Where do unofficial streaming sites get their streams from?
 
@@ -54,7 +54,7 @@ Note that these "rips" are not screen captures, they're unaltered WEB-DLs. You c
 
 ## Why are the subtitles for this anime on streaming site X different from site Y or torrent Z?
 
-It depends on which source is used by different streaming sites. The most common one is subtitles from the official stream. Fansubbers often take this as a base and improve upon it by adding effects, translating signs and making edits. Some sites may be using these fansubs as a source. For more information -  [Sourcing - Fansubs.](/en/guides/sourcing#fansubs)
+It depends on which source is used by different streaming sites. The most common one is subtitles from the official stream. Fansubbers often take this as a base and improve upon it by adding effects, translating signs and making edits. Some sites may be using these fansubs as a source. For more information -  [Sourcing - Fansubs.](/guides/sourcing#fansubs)
 
 ## How long will I have to wait for the newest anime episode to be available on streaming sites and torrents?
 
@@ -70,11 +70,11 @@ Not every block is implemented the same, so the only way to figure out is by tri
 - If it's a deep packet inspection (DPI) block, you may have some success with DPI circumvention tools such as [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) or [PowerTunnel](https://github.com/krlvm/PowerTunnel-Android).
 
 
-- Otherwise, a VPN with servers in a country without censorship blocks will usually work. [Refer to our VPN FAQ section for more information](/en/faq/vpn).
+- Otherwise, a VPN with servers in a country without censorship blocks will usually work. [Refer to our VPN FAQ section for more information](/faq/vpn).
 
 ## Why is there no OP/ED playing for a particular anime on a streaming site?
 
-Streaming sites use torrent releases as a source. Sometimes they get a release with ordered chapters/linked mkvs. Since these are meant to be downloaded, the op/ed come as a separate file and automatically play inside each episode at the correct time. This can be fixed by combining them back into a single file, but streaming sites will rarely make the effort. If you want the complete experience with OP/EDs, check out the [ordered chapters section here](/en/guides/sourcing) for more information about them and ways to fix it
+Streaming sites use torrent releases as a source. Sometimes they get a release with ordered chapters/linked mkvs. Since these are meant to be downloaded, the op/ed come as a separate file and automatically play inside each episode at the correct time. This can be fixed by combining them back into a single file, but streaming sites will rarely make the effort. If you want the complete experience with OP/EDs, check out the [ordered chapters section here](/guides/sourcing) for more information about them and ways to fix it
 
 ## Where can I download high quality anime soundtracks?
 
@@ -110,4 +110,4 @@ Streaming sites use torrent releases as a source. Sometimes they get a release w
 ( BD &emsp; &emsp;&emsp;&emsp;&emsp;&emsp; 1080p&emsp;&emsp; &emsp;HEVC x265 &emsp; 10-bit &emsp; &emsp; FLAC ) [2CE04B17]
 ( Source - Blu-ray&emsp; Resolution &emsp;&emsp;Codec &emsp; &emsp; Bit Depth &emsp;Audio)&emsp;[CRC32]
 
-For more details, check out the sourcing guide - [basics](/en/guides/sourcing#basics) and [CRC32.](/en/guides/sourcing#crc32)
+For more details, check out the sourcing guide - [basics](/guides/sourcing#basics) and [CRC32.](/guides/sourcing#crc32)

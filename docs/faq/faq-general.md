@@ -59,7 +59,7 @@ Not every block is implemented the same, so the only way to figure out is by tri
 - If it's a deep packet inspection (DPI) block, you may have some success with DPI circumvention tools such as [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) or [PowerTunnel](https://github.com/krlvm/PowerTunnel-Android).
 
 
-- Otherwise, a VPN with servers in a country without censorship blocks will usually work. [Refer to our VPN FAQ section for more information](/en/faq/vpn).
+- Otherwise, a VPN with servers in a country without censorship blocks will usually work. [Refer to our VPN FAQ section for more information](/faq/vpn).
 
 
 

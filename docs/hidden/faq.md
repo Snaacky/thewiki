@@ -42,7 +42,7 @@ This also applies to feature suggestion posts for apps and services.
 
 For airing anime ripped from official streams, the size is around 1.4GB. Mini encodes or the versions on streaming sites are encoded from this and are in the range of 200-400 MB. None of those can be called "high quality". A good encode using the blu-ray as a source is usually between 1 and 2 GB, and as high as 4-5 GB where it's needed. Sometimes the best release could be a remux at about ~6GB per episode.
 
-Size can be used to judge web sources, but it's not the best measure of quality for BDRips. Even though the raw BDMV is larger, a good encode will give you the better experience. Check out [Quality](/en/guides/quality) for more.
+Size can be used to judge web sources, but it's not the best measure of quality for BDRips. Even though the raw BDMV is larger, a good encode will give you the better experience. Check out [Quality](/guides/quality) for more.
 
 ## Where can I download smaller sized episodes?
 
@@ -70,7 +70,7 @@ Note that these "rips" are not screen captures, they're unaltered WEB-DLs. You c
 
 ## Why are the subtitles for this anime on streaming site X different from site Y or torrent Z?
 
-It depends on which source is used by different streaming sites. The most common one is subtitles from the official stream. Fansubbers often take this as a base and improve upon it by adding effects, translating signs and making edits. Some sites may be using these fansubs as a source. For more information -  [Sourcing - Fansubs.](/en/guides/sourcing#fansubs)
+It depends on which source is used by different streaming sites. The most common one is subtitles from the official stream. Fansubbers often take this as a base and improve upon it by adding effects, translating signs and making edits. Some sites may be using these fansubs as a source. For more information -  [Sourcing - Fansubs.](/guides/sourcing#fansubs)
 
 ## How long will I have to wait for the newest anime episode to be available on streaming sites and torrents?
 
@@ -86,11 +86,11 @@ Not every block is implemented the same, so the only way to figure out is by tri
 - If it's a deep packet inspection (DPI) block, you may have some success with DPI circumvention tools such as [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) or [PowerTunnel](https://github.com/krlvm/PowerTunnel-Android).
 
 
-- Otherwise, a VPN with servers in a country without censorship blocks will usually work. [Refer to our VPN FAQ section for more information](/en/faq/vpn).
+- Otherwise, a VPN with servers in a country without censorship blocks will usually work. [Refer to our VPN FAQ section for more information](/faq/vpn).
 
 ## Why is there no OP/ED playing for a particular anime on a streaming site?
 
-Streaming sites use torrent releases as a source. Sometimes they get a release with ordered chapters/linked mkvs. Since these are meant to be downloaded, the op/ed come as a separate file and automatically play inside each episode at the correct time. This can be fixed by combining them back into a single file, but streaming sites will rarely make the effort. If you want the complete experience with OP/EDs, check out the [ordered chapters section here](/en/guides/sourcing) for more information about them and ways to fix it
+Streaming sites use torrent releases as a source. Sometimes they get a release with ordered chapters/linked mkvs. Since these are meant to be downloaded, the op/ed come as a separate file and automatically play inside each episode at the correct time. This can be fixed by combining them back into a single file, but streaming sites will rarely make the effort. If you want the complete experience with OP/EDs, check out the [ordered chapters section here](/guides/sourcing) for more information about them and ways to fix it
 
 # Music
 
@@ -217,7 +217,7 @@ However, they're not the best source for older anime or anime that has been rele
 
 - [A Certain Fansubber's Index](https://docs.google.com/spreadsheets/d/1PJYwhjzLNPXV2X1np-S4rdZE4fb7pxp-QbHY1O0jH6Q/htmlview)
 
-Check out the [sourcing guide](/en/guides/sourcing) for more detailed information on finding the best release for any particular anime.
+Check out the [sourcing guide](/guides/sourcing) for more detailed information on finding the best release for any particular anime.
 
 ## What do the things in brackets mean at the end of a torrent title?
 
