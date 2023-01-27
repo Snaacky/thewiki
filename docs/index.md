@@ -46,4 +46,4 @@ We also have a discord server where you can hang-out, report, and request things
 
 ### :sparkling_heart: Want To Contribute and Help Improve this Wiki?
 
-![!ref target="blank" text="Read How to Contribute"](https://github.com/Snaacky/thewiki#how-to-edit)
+![!ref target="blank" text="Read How to Contribute"](https://github.com/Snaacky/thewiki/)
