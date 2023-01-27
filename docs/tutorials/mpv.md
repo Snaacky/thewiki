@@ -1,7 +1,7 @@
 ---
 label: MPV
 description: Installation, Setup and Configuration for MPV
-image: https://user-images.githubusercontent.com/78981416/215123471-1f49a355-39a8-4ba2-b7b7-7a9ad53bb4f1.png
+image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe50-4d0c-b0dd-49f8828af0dc.png
 ---
 
 # MPV
