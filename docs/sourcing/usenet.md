@@ -23,7 +23,7 @@ A file that contains the computed parity bits from a source file. PAR files are 
 
 ## Anime Tosho
 
-[Anime Tosho](https://animetosho.org/) is a free, completely automated service which mirrors most torrents posted on TokyoTosho's anime category, Nyaa.si's English translated anime category and AniDex's anime category (filtered). onto various file hosting (otherwise known as 'DDL') services, as well as Usenet.
+[Anime Tosho](https://animetosho.org/) is a free, completely automated service which mirrors most torrents posted on TokyoTosho's anime category, Nyaa.si's English translated anime category, and AniDex's anime category (filtered) onto various file hosting (otherwise known as 'DDL') services, as well as Usenet.
 
 !!!
 Animetosho skips uploading most torrents over 16GB in size and some specific exceptions, such as duplicates/reposts and excessively large versions of a file (e.g. BD remuxes)
