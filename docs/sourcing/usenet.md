@@ -28,12 +28,13 @@ A file that contains the computed parity bits from a source file. PAR files are 
 !!!
 Animetosho skips uploading most torrents over 16GB in size and some specific exceptions, such as duplicates/reposts and excessively large versions of a file (e.g. BD remuxes)
 !!!
-Anime Tosho is an amazing source to download weeklies via usenet. =
+
+Anime Tosho is an amazing source to download weeklies via usenet.
 To use it, simply click the `NZB` button under the release title to download the `.nzb` file which you can then add to your SABnzbd and it'll start downloading.
-![nzb](https://i.imgur.com/yLpavtq.png)
+![](https://user-images.githubusercontent.com/78981416/215181082-b1c273ed-9a2a-4b4f-a52d-e069df152645.png)
 
 You can also directly copy the link and paste it in SABnzbd, similar to how magnet links work in torrent clients.
-![nzblink](https://i.imgur.com/6XWXhBa.png)
+![](https://user-images.githubusercontent.com/78981416/215181096-ebc1c2ce-0187-4cf2-acb2-dcc67abeec6b.png)
 
 ## SeaDex
 
@@ -52,7 +53,11 @@ You can use either of the following to upload to usenet.
 
 ## Usenet Providers and Backbones
 
-![](https://upload.wikimedia.org/wikipedia/commons/7/7d/Usenet_Providers_and_Backbones.svg)
+![](https://user-images.githubusercontent.com/78981416/215181155-f6633053-4f7c-4f3b-8a0a-e35c215c7193.png)
+
+!!!
+The above map is from https://commons.wikimedia.org/wiki/File:Usenet_Providers_and_Backbones.svg
+!!!
 
 ## Related Subreddit
 [!ref /r/Usenet](https://www.reddit.com/r/usenet/)
