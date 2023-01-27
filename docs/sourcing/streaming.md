@@ -18,7 +18,7 @@ While one can choose between the numerous popular sites listed both here and on 
 
 ### Scrapers vs Self-Hosted Sites
 
-A "scraper" is a site that takes content hosted on other sites, and puts it on their own. These are the streaming site equivalent to [manga aggregator sites](https://thewiki.moe/en/guides/literature#sourcing) that are mentioned in the literature page. These can lead to extensive libraries without the need for the site owners to host the content themselves, usually at the expense of video quality. By far the most commonly scraped from site is [gogoanime](https://gogoanime.lu/), so much so that most streaming sites in existence are gogoanime scrapers.
+A "scraper" is a site that takes content hosted on other sites, and puts it on their own. These are the streaming site equivalent to [manga aggregator sites](https://thewiki.moe/guides/literature#sourcing) that are mentioned in the literature page. These can lead to extensive libraries without the need for the site owners to host the content themselves, usually at the expense of video quality. By far the most commonly scraped from site is [gogoanime](https://gogoanime.lu/), so much so that most streaming sites in existence are gogoanime scrapers.
 
 **Examples of scraper sites:** [Animixplay](https://animixplay.to/), [11anime](https://11anime.fr/), [5anime](https://5anime.net/), [Genoanime](https://genoanime.com/), [Animeflix](https://animeflix.sbs/)
 

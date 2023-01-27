@@ -25,11 +25,11 @@ Torrent files can be found and downloaded from trackers like [Nyaa](https://nyaa
 
 The downloaded .torrent file or the magnet link has to be opened in your torrent client - [qBittorrent](https://www.qbittorrent.org/download.php) for PC and [LibreTorrent](https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent)/[Flud](https://play.google.com/store/apps/details?id=com.delphicoder.flud) for Android. The torrents do not need to be removed from the client after the download is complete.
 
-The speed is dependent on the number of seeds and their connection quality. You can connect to more seeds and improve speeds with [port forwarding](/en/guides/torrenting#how-to-port-forward). You may want to use a [VPN](/en/faq/vpn) or a [seedbox](/en/guides/torrenting#what-is-a-seedbox) for downloading torrents to avoid receiving a copyright infringement notice from your ISP.
+The speed is dependent on the number of seeds and their connection quality. You can connect to more seeds and improve speeds with [port forwarding](/guides/torrenting#how-to-port-forward). You may want to use a [VPN](/faq/vpn) or a [seedbox](/guides/torrenting#what-is-a-seedbox) for downloading torrents to avoid receiving a copyright infringement notice from your ISP.
 
 Advantages of torrents include access to a large variety of options with better quality/size ratios and automation through RSS or Sonarr.
 
-Read more: [Sourcing Guide](/guides/sourcing), [Torrenting Guide](/en/guides/torrenting), [RSS Tutorial](/tutorials/rss)
+Read more: [Sourcing Guide](/guides/sourcing), [Torrenting Guide](/guides/torrenting), [RSS Tutorial](/tutorials/rss)
 
 ### Playback
 
@@ -45,7 +45,7 @@ Do not use VLC
 
 **TV/Media Servers:** [Kodi](https://kodi.tv), [Plex](https://www.plex.tv/), [Emby](https://emby.media/), [Jellyfin](https://jellyfin.org/)
 
-Read more: [Playback Guide](/en/guides/playback)
+Read more: [Playback Guide](/guides/playback)
 
 ## Literature
 
