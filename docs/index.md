@@ -36,7 +36,7 @@ We also have a discord server where you can hang-out, report, and request things
 [!ref Download Your Favorite Weekly Shows Automatically](/tutorials/rss/)
 [!ref Compare Various Versions to Find the Best](/tutorials/comparison/)
 
-### ::floppy_disk:: Want to Make Your Own Release for Others to Watch and Enjoy?
+### :floppy_disk: Want to Make Your Own Release for Others to Watch and Enjoy?
 
 [!ref Learn How to Make Your Very Own Release](/advanced/release-standards/)
 
@@ -46,4 +46,4 @@ We also have a discord server where you can hang-out, report, and request things
 
 ### :sparkling_heart: Want To Contribute and Help Improve this Wiki?
 
-![!ref target="blank" text="Read How to Contribute"](https://github.com/Snaacky/thewiki/blob/master/README.md)
+![!ref target="blank" text="Read How to Contribute"](https://github.com/Snaacky/thewiki#how-to-edit)
