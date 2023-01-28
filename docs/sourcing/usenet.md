@@ -2,6 +2,8 @@
 label: Usenet
 order: -5
 description: Get Started with Usenet
+image: https://user-images.githubusercontent.com/78981416/215252980-0a038d94-b05c-4e52-83b4-51948df6a591.gif
+
 ---
 
 # Usenet
