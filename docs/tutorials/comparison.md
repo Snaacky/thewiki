@@ -1,5 +1,7 @@
 ---
 label: Comparison
+description: Learn How to Compare Various Sources of a Video
+image: https://user-images.githubusercontent.com/78981416/215324327-3a562e99-6f4c-41b5-828b-9019fc44530b.gif
 ---
 
 # Comparison
@@ -113,7 +115,6 @@ label: Comparison
     clip2.set_output(2)
     clip3.set_output(3)
     ```
-
 8. That's it for the setup, now to use vspreview you just need to run this command in your terminal or paste it in a text file and save it as `comp.bat`:
 
     ```
@@ -169,7 +170,7 @@ If you don't want to take screenshots and upload them manually, then you can sim
 
 MPV config must be the one as shown below:
 
-```conf
+```
 no-deband
 profile=gpu-hq
 screenshot-format=png
