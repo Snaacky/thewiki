@@ -154,6 +154,12 @@ If you don't want to take screenshots and upload them manually, then you can sim
 - Hit `Start Upload` and patiently wait while vspreview absolutely molests your battlestation.
   [![Comp](https://i.imgur.com/00m9QvB.png "Comp")](https://i.imgur.com/00m9QvB.png "Comp")
 
+## Automatic Comparison Scripts
+
+These scripts will do most of the work for you. Instructions on how to use them are in the script itself. Read those carefully.
+[!ref icon="file-code" text="Vodes' Script"](https://gist.github.com/Vodes/300997ac1473ac2b9d08d62c169a26de)
+[!ref icon="file-code" text="McBaws' Script"](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
+
 ## Manually with MPV
 
 - [Install MPV](/tutorials/mpv)
