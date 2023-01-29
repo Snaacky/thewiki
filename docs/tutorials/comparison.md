@@ -157,8 +157,8 @@ If you don't want to take screenshots and upload them manually, then you can sim
 ## Automatic Comparison Scripts
 
 These scripts will do most of the work for you. Instructions on how to use them are in the script itself. Read those carefully.
-[!ref icon="file-code" text="Vodes' Script"](https://gist.github.com/Vodes/300997ac1473ac2b9d08d62c169a26de)
-[!ref icon="file-code" text="McBaws' Script"](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
+[!ref target="blank" icon="file-code" text="Vodes' Script"](https://gist.github.com/Vodes/300997ac1473ac2b9d08d62c169a26de)
+[!ref target="blank" icon="file-code" text="McBaws' Script"](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
 
 ## Manually with MPV
 
