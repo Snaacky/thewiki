@@ -2,7 +2,7 @@
 label: Literature
 order: -2
 description: Learn How and Where to Read your Favorite Stuff
-icon: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-4377-4bb4-baea-72516953c85f.gif
+image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-4377-4bb4-baea-72516953c85f.gif
 ---
 
 # Literature
