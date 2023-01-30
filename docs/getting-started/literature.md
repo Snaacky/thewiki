@@ -1,6 +1,8 @@
 ---
 label: Literature
 order: -2
+description: Learn How and Where to Read your Favorite Stuff
+icon: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-4377-4bb4-baea-72516953c85f.gif
 ---
 
 # Literature
@@ -26,7 +28,7 @@ Although these are significantly lower quality, not all manga get official digit
 
 [CDisplayEx](https://www.cdisplayex.com/) (Highest Quality)
 
-- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/y737QBlP) scaling available on PC with [Rezising Algorithm set to Lanczos](https://i.imgur.com/BiNvbSq.png), and the [Lanczos slider set to level 2](https://i.imgur.com/qkSifGM.png).
+- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/y737QBlP) scaling available on PC with [Resizing Algorithm set to Lanczos](https://i.imgur.com/BiNvbSq.png), and the [Lanczos slider set to level 2](https://i.imgur.com/qkSifGM.png).
 
 - For laptops or high resolution displays, you will likely need to [disable Windows DPI scaling](https://i.imgur.com/PkjLdAA.png) (Go to `C:\Program Files\CDisplayEx`, right click `CDisplayEx.exe` and select Properties -> Compatibility -> Change high DPI settings
 
