@@ -6,9 +6,9 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 # MPV
 
-## Windows
+## Windows Rezising
 
-1. Grab the topmost file from [here](https://sourceforge.net/projects/mpv-player-windows/files/64bit/).
+1. Grab the topmost filee from [here](https://sourceforge.net/projects/mpv-player-windows/files/64bit/).
    - _Note: If you don't want to setup MPV yourself, you can grab this pre-configured [MPV portable build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw) with the same settings as described in this guide. All you need to do is download it and follow these installation instructions._
 2. Extract it into a folder.
    - _Note: This folder cannot be changed after installation. If you want to change it after installation, you'll have to uninstall and then reinstall it in the new location._
