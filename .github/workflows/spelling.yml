@@ -83,17 +83,6 @@ jobs:
         use_sarif: 1
         extra_dictionary_limit: 10
         check_commit_messages: commits title description
-        extra_dictionaries:
-          cspell:cpp/src/cpp.txt
-          cspell:software-terms/src/software-terms.txt
-          cspell:php/php.txt
-          cspell:python/src/python/python-lib.txt
-          cspell:node/node.txt
-          cspell:filetypes/filetypes.txt
-          cspell:win32/src/win32.txt
-          cspell:typescript/typescript.txt
-          cspell:npm/npm.txt
-          cspell:aws/aws.txt
 
   comment-push:
     name: Report (Push)
