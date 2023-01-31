@@ -36,12 +36,12 @@ name: Check Spelling
 on:
   push:
     branches:
-    - "master"
+    - "**"
     tags-ignore:
     - "**"
   pull_request_target:
     branches:
-    - "master"
+    - "**"
     tags-ignore:
     - "**"
     types:
@@ -59,6 +59,7 @@ jobs:
       contents: read
       pull-requests: read
       actions: read
+      security-events: write
     outputs:
       followup: ${{ steps.spelling.outputs.followup }}
     runs-on: ubuntu-latest
@@ -66,13 +67,12 @@ jobs:
     concurrency:
       group: spelling-${{ github.event.pull_request.number || github.ref }}
       # note: If you use only_check_changed_files, you do not want cancel-in-progress
-      cancel-in-progress: false
+      cancel-in-progress: true
     steps:
     - name: check-spelling
       id: spelling
       uses: check-spelling/check-spelling@main
       with:
-        only_check_changed_files: 1
         suppress_push_for_open_pull_request: 1
         checkout: true
         check_file_names: 1
