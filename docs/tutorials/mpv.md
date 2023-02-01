@@ -10,17 +10,11 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 ==- Manually Installing MPV
 1. Grab the topmost file from [here](https://sourceforge.net/projects/mpv-player-windows/files/64bit/).
 
-2. Extract it into a folder.
-   !!!warning
-   This folder cannot be changed after installation. If you want to change it after installation, you'll have to uninstall and then reinstall it in the new location.
-   !!!
+2. Extract it into a folder. This folder cannot be changed after installation. If you want to change it after installation, you'll have to uninstall and then reinstall it in the new location.
 
 3. Navigate to the `installer` folder.
 
-4. Inside the `installer` folder you'll find `mpv-install.bat`, run this as an administrator.
-   !!!   
-   If you want to read about what `mpv-install.bat` does, visit [here](https://github.com/rossy/mpv-install).
-   !!!
+4. Inside the `installer` folder you'll find `mpv-install.bat`, run this as an administrator. If you want to read about what `mpv-install.bat` does, visit [here](https://github.com/rossy/mpv-install).
 
 5. After it's done, you'll get a prompt to open Control Panel and set MPV as the default player.
 
@@ -63,14 +57,12 @@ That's it for the basic installation of MPV. You can use it without doing anythi
    ```powershell
    scoop uninstall mpv-git
    ```
-   !!!
    This will uninstall MPV entirely but preserve your `portable-config` in `C:\Users\<YOUR USERNAME>\scoop\persist\mpv-git\portable_config`.
    If you also want to delete persisting data such as the config, run:
    ```powershell
    scoop uninstall mpv-git --purge
    ```
-   !!!
-
+   
 ==- Preconfigured MPV portable build
 If you don't want to setup MPV yourself, you can grab the preconfigured MPV portable build linked below. It has the same settings as described in this guide. All you need to do is download it and follow these installation instructions.
 [!file MPV Portable Build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw)
