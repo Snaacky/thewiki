@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.728508739103">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.728558026508">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,11 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.728508739103" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.728558026508" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.728508739103" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.728558026508" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.728508739103" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.728558026508" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.728558026508" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -166,6 +167,8 @@
         <span>Windows</span>
     </h2>
 </doc-anchor-target>
+<doc-panel id="manually-installing-mpv">
+    <template #title>Manually Installing MPV</template>
 <ol>
 <li>Grab the topmost file from <a href="https://sourceforge.net/projects/mpv-player-windows/files/64bit/">here</a>.
 <ul>
@@ -199,6 +202,35 @@
 <li>The <code v-pre>Edit environment variable</code> UI will appear. Here, you can click <code v-pre>New</code> and add the path of the directory containing <code v-pre>mpv.exe</code>.</li>
 <li>Dismiss all of the dialogs by choosing <code v-pre>OK</code>. Your changes are saved.</li>
 </ol>
+</doc-panel>
+<doc-panel id="automatically-installing-mpv-with-scoop" collapsed>
+    <template #title>Automatically Installing MPV with Scoop</template>
+<ol>
+<li>Open PowerShell</li>
+<li>Run the following commands in PowerShell to install <a href="https://scoop.sh/">scoop</a>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-powershell"><code v-pre class="language-powershell">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-powershell"><code v-pre class="language-powershell">irm get.scoop.sh | iex</code></pre>
+</doc-codeblock></div>
+This is a one time thing to install scoop. Scoop will be installed to <code v-pre>C:\Users\&lt;YOUR USERNAME&gt;\scoop</code> by default.</li>
+<li>Now install mpv via running the following commands
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-powershell"><code v-pre class="language-powershell">scoop bucket add extras</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-powershell"><code v-pre class="language-powershell">scoop install mpv-git</code></pre>
+</doc-codeblock></div>
+That&#x27;s it. This will not only install MPV, it&#x27;ll also add it to your PATH which makes MPV accessible via terminal and create <doc-anchor-trigger to="#additional-filesfolders"><code v-pre>portable-config</code></doc-anchor-trigger> folder for you. This is where your <doc-anchor-trigger to="#custom-config">custom config</doc-anchor-trigger> will go.
+Scoop installs each app under its own directory and keeps them contained so your MPV is installed in <code v-pre>C:\Users\&lt;YOUR USERNAME&gt;\scoop\apps\mpv-git</code> by default.</li>
+<li>To update MPV in future just run the command below
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-powershell"><code v-pre class="language-powershell">scoop update mpv</code></pre>
+</doc-codeblock></div>
+</li>
+</ol>
+</doc-panel>
 <doc-anchor-target id="macos">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#macos">#</doc-anchor-trigger>
@@ -510,6 +542,6 @@ tone-mapping=bt.2446a</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "MPV", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "MPV", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
