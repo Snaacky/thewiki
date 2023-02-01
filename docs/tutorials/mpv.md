@@ -7,7 +7,7 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 # MPV
 
 ## Windows
-
+=== Manually Installing MPV
 1. Grab the topmost file from [here](https://sourceforge.net/projects/mpv-player-windows/files/64bit/).
    - _Note: If you don't want to setup MPV yourself, you can grab this pre-configured [MPV portable build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw) with the same settings as described in this guide. All you need to do is download it and follow these installation instructions._
 2. Extract it into a folder.
@@ -26,7 +26,32 @@ That's it for the basic installation of MPV. You can use it without doing anythi
 3. Under the `System Variables` section (the lower half), find the row with `Path` in the first column, and click `edit`.
 4. The `Edit environment variable` UI will appear. Here, you can click `New` and add the path of the directory containing `mpv.exe`.
 5. Dismiss all of the dialogs by choosing `OK`. Your changes are saved.
+===
 
+==- Automatically Installing MPV with Scoop
+1. Open PowerShell
+2. Run the following commands in PowerShell to install [scoop](https://scoop.sh/)
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+   ```powershell
+   irm get.scoop.sh | iex
+   ```
+   This is a one time thing to install scoop. Scoop will be installed to `C:\Users\<YOUR USERNAME>\scoop` by default.
+3. Now install mpv via running the following commands
+   ```powershell
+   scoop bucket add extras
+   ```
+   ```powershell
+   scoop install mpv-git
+   ```
+   That's it. This will not only install MPV, it'll also add it to your PATH which makes MPV accessible via terminal and create [`portable-config`](#additional-filesfolders) folder for you. This is where your [custom config](#custom-config) will go.
+   Scoop installs each app under its own directory and keeps them contained so your MPV is installed in `C:\Users\<YOUR USERNAME>\scoop\apps\mpv-git` by default.
+4. To update MPV in future just run the command below
+   ```powershell
+   scoop update mpv
+   ```
+===
 ## MacOS
 
 Grab MacOS builds from [here](https://laboratory.stolendata.net/~djinn/mpv_osx/)
