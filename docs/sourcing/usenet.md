@@ -45,8 +45,8 @@ You can also directly copy the link and paste it in SABnzbd, similar to how magn
 ## Searching Indexers
 
 You can use either Prowlarr or NZBHydra2 to search several Indexers together instead of searching them one by one.
-[!ref NZBHydra 2 is a meta search for newznab indexers and torznab trackers](https://github.com/theotherp/nzbhydra2)
-[!ref Prowlarr is an indexer manager for both torrent trackers and usenet indexers](https://github.com/Prowlarr/Prowlarr)
+- [NZBHydra 2 is a meta search for newznab indexers and torznab trackers](https://github.com/theotherp/nzbhydra2)
+- [Prowlarr is an indexer manager for both torrent trackers and usenet indexers](https://github.com/Prowlarr/Prowlarr)
 
 ## Uploading to Usenet
 You can use either of the following to upload to usenet.
