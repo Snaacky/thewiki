@@ -3,16 +3,8 @@ label: Home
 icon: home
 description: Wiki for all things related to anime piracy and more!
 authors:
-  - name: [REDACTED]#2110
-    avatar: https://cdn.discordapp.com/avatars/640108543235719190/ae409961636860c6fe45bd5fcc076001.png
-  - name: Genesiss#0125
-    avatar: https://cdn.discordapp.com/avatars/331362146179088387/7eaad0253c48f37d6f69836d4d1b69c5.png
-  - name: RainingTerror#0365
-    avatar: https://cdn.discordapp.com/avatars/99572723256147968/1d76ef097fd7c034426fcbe9bd537f56.png
-  - name: Raventric#6253
-    avatar: https://cdn.discordapp.com/avatars/315922031000682506/dd9cf24c72fd10da4df6f81a4ee24bf8.png
-  - name: V01#8183
-    avatar: https://cdn.discordapp.com/avatars/298446839324213248/8da2df5fec79109c5a8084aa2f34993f.png    
+  name: [REDACTED]#2110
+  avatar: https://cdn.discordapp.com/avatars/640108543235719190/ae409961636860c6fe45bd5fcc076001.png   
 ---
 
 # Home
