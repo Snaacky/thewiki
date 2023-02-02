@@ -55,7 +55,7 @@ You can use either of the following to upload to usenet.
 
 ## Usenet Providers and Backbones
 
-![](https://user-images.githubusercontent.com/78981416/215181155-f6633053-4f7c-4f3b-8a0a-e35c215c7193.png)
+[![](https://user-images.githubusercontent.com/78981416/215181155-f6633053-4f7c-4f3b-8a0a-e35c215c7193.png)](https://upload.wikimedia.org/wikipedia/commons/7/7d/Usenet_Providers_and_Backbones.svg)
 
 !!!
 The above map is from https://commons.wikimedia.org/wiki/File:Usenet_Providers_and_Backbones.svg
