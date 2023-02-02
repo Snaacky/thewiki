@@ -50,8 +50,8 @@ You can use either Prowlarr or NZBHydra2 to search several Indexers together ins
 
 ## Uploading to Usenet
 You can use either of the following to upload to usenet.
-[!ref ngPost is a CLI/GUI usenet poster for binaries](https://github.com/mbruel/ngPost)
-[!ref Nyuu is a flexible CLI usenet binary posting tool](https://github.com/animetosho/Nyuu)
+- [ngPost is a CLI/GUI usenet poster for binaries](https://github.com/mbruel/ngPost)
+- [Nyuu is a flexible CLI usenet binary posting tool](https://github.com/animetosho/Nyuu)
 
 ## Usenet Providers and Backbones
 
