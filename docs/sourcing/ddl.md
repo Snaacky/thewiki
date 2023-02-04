@@ -16,7 +16,7 @@ IRC (Internet Relay Chat) is a protocol that allows communication in the form of
 3. Find and select the `Rizon network`.
 4. Type `#nibl` in "Join this channel" and click OK.
 
-Repeat steps 3 and 4 for other networks and channels where your target IRC bot is hosted. These can usually be found on the nyaa releases of any group. For example -
+Repeat steps 3 and 4 for other networks and channels where your target IRC bot is hosted. These can usually be found on the Nyaa releases of any group. For example -
 
 ```
 #MK@irc.xertion.org

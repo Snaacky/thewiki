@@ -7,7 +7,7 @@ label: Torrent
 Before you make a torrent, there are a few things to keep in mind:
 
 - Do not make a torrent of a directory containing a single file, instead make a torrent of the file itself.
-- Hybrid and V2 torrents are not supported on nyaa and most other trackers.
+- Hybrid and V2 torrents are not supported on Nyaa and most other trackers.
 - Smaller pieces make for more protocol overhead, bigger torrent files, longer hashing times and possibly higher load on the CPU and HDD.
 - Older torrent clients do not support 16MiB+ piece sizes. When using 16MiB pieces, torrent size limits are only a concern above ~5TB.
 - Most clients automatically pick too small piece sizes, except dottorrent-gui which aims for a reasonable 1000-1500 pieces.

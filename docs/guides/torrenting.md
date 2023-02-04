@@ -91,7 +91,7 @@ The features mentioned below are available in most torrent clients, but qBittorr
 The functionality is broadly divided into 3 tabs visible in the top bar - Transfers, Search and RSS. If they are not visible, they can be enabled from the "View" menu.
 
 - **Transfers**: This is where you can see all the torrents, which can be filtered by status, category and tags in the left pane. Categories and tags can be updated by selecting the torrents > right click.
-- **Search**: This is one of the most powerful features of qBittorrent. The search plugin can be enabled by clicking "Search plugins..." at the bottom right, and choose the second option "Check for updates". This will populate the list with some of the common trackers. Unfortunately, while nyaa is not one of the default plugins, it is available to be installed [here](http://plugins.qbittorrent.org) with instructions.
+- **Search**: This is one of the most powerful features of qBittorrent. The search plugin can be enabled by clicking "Search plugins..." at the bottom right, and choose the second option "Check for updates". This will populate the list with some of the common trackers. Unfortunately, while Nyaa is not one of the default plugins, it is available to be installed [here](http://plugins.qbittorrent.org) with instructions.
 
 A better method is to add multiple trackers through the default search plugin called Jackett. Jackett is a separate program which has to be installed and can be configured with most private and public trackers, this plugin allows qBittorrent to search through Jackett.
 

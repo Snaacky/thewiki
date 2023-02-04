@@ -55,7 +55,7 @@ Streaming sites use torrent releases as a source. Sometimes they get a release w
 
 They get them from release groups like Erai-raws or Subsplease who rip official streams from Crunchyroll, Funimation, VRV etc. Some sites may do their own rips, and many re-encode these streams to get a smaller size. For older anime which have a BD release, some sites may switch to that as a source for better quality.
 
-Note that these "rips" are not screen captures, they're unaltered WEB-DLs. You can find them on nyaa or release group sites.
+Note that these "rips" are not screen captures, they're unaltered WEB-DLs. You can find them on Nyaa or release group sites.
 
 ## Why are the subtitles for this anime on streaming site X different from site Y or torrent Z?
 

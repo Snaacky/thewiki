@@ -57,13 +57,13 @@ The official BDMV, from the blurays, is itself an encode of the actual source. I
 
 **BDMV** - A simple complete copy of the bluray. It's used as a source for making another release or encoding, this is not useful for watching.
 
-These can be found on U2 (Chinese-Private), Skyeysnow (Chinese-Open) and nyaa (usually without seeds). Release groups don't matter for bdmvs because they're all the same unless the files are corrupted. JPBDs often have better quality than USBD because of more bitrate devoted to the video instead of multiple(dub) audio tracks. In some cases, blurays from Italy or other countries might have the best quality.
+These can be found on U2 (Chinese-Private), Skyeysnow (Chinese-Open) and Nyaa (usually without seeds). Release groups don't matter for bdmvs because they're all the same unless the files are corrupted. JPBDs often have better quality than USBD because of more bitrate devoted to the video instead of multiple(dub) audio tracks. In some cases, blurays from Italy or other countries might have the best quality.
 
 **BDRemux** - The BDMV is losslessly packaged into mkv files for ease. The sizes are huge, just like bdmvs.
 
 **BDRip** - An encode made directly from the BDMV/BDRemux. This is the only kind of encode considered good quality.
 
-Most can be found on nyaa with some rare stuff on rutracker(Russian). The direct encode is usually a raw without subtitles and is used by muxers or fansubbers to make a release. The groups can be roughly rated as -
+Most can be found on Nyaa with some rare stuff on rutracker(Russian). The direct encode is usually a raw without subtitles and is used by muxers or fansubbers to make a release. The groups can be roughly rated as -
 
 - Excellent - Beatrice-Raws, Kawaiika-Raws, SCY, Raws-Maji
 - Good - VCB-Studio
@@ -139,4 +139,4 @@ Localization means changing cultural references and puns to fit the english cont
 
 Most newer fansubbed anime is some variation of edited official subs from CR or Funi. These edits are usually range between excessive localization by completely eradicating and replacing the idea of Japan with America or untranslation by changing random phrases and lines back to Japanese. Most actual fansubs lie somewhere in between these extremes. After looking at the work of a few groups, you'll be able to figure out who has a tendency to do what.
 
-AnimeTosho is a very useful resource for grabbing just the subtitles from any release on nyaa. You search the title as it is on nyaa and after opening the page you'll see `All Attachments` near the bottom. This will download all subtitles and fonts extracted from that release. It's also useful to get the mediainfo when the uploader hasn't posted it, to do this, just click on any of the mkv files in the torrent and you'll get details about it. Animetosho is also a DDL site which uploads torrents from nyaa to various hosting services. There's also an NZB option, but none of the file hosts last for long.
+AnimeTosho is a very useful resource for grabbing just the subtitles from any release on nyaa. You search the title as it is on Nyaa and after opening the page you'll see `All Attachments` near the bottom. This will download all subtitles and fonts extracted from that release. It's also useful to get the mediainfo when the uploader hasn't posted it, to do this, just click on any of the mkv files in the torrent and you'll get details about it. Animetosho is also a DDL site which uploads torrents from Nyaa to various hosting services. There's also an NZB option, but none of the file hosts last for long.

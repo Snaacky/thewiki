@@ -13,7 +13,7 @@ Unofficial - [TheIndex](https://theindex.moe/)
 
 Official - [/r/anime list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams)
 
-Streaming sites require no setup and are convenient. However, they heavily compress video and may have ads. Aiming for compatibility, they are also unable to use efficient codecs like x265. If data limits are a concern, torrenting x265 mini encodes from nyaa is a better option. Here is a comparison between mini encodes and most popular streaming sites - https://slow.pics/c/pjYaqdnr.
+Streaming sites require no setup and are convenient. However, they heavily compress video and may have ads. Aiming for compatibility, they are also unable to use efficient codecs like x265. If data limits are a concern, torrenting x265 mini encodes from Nyaa is a better option. Here is a comparison between mini encodes and most popular streaming sites - https://slow.pics/c/pjYaqdnr.
 
 Official streams have better quality, but are also larger (~1.3GB per episode for 1080p). They can be obtained by torrenting from groups like SubsPlease, who rip untouched official streams.
 

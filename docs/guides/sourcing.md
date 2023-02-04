@@ -11,7 +11,7 @@ visibility: hidden
 
 ### Torrents
 
-If you're in a rush to get something, try searching on nyaa with the recommended release from -
+If you're in a rush to get something, try searching on Nyaa with the recommended release from -
 
 - [SeaDex Index](http://releases.moe)
 
@@ -73,7 +73,7 @@ Private:
 
 - XDCC - Downloads over IRC offered by many groups, useful to obtain content with dead torrents.
 
-- Anichiraku (private) - Stuff from nyaa and other places mirrored to google drive for fast direct downloads.
+- Anichiraku (private) - Stuff from Nyaa and other places mirrored to google drive for fast direct downloads.
 
 - Animetosho - Mirrors most torrents posted on TokyoTosho, Anidex and Nyaa's English translated anime category onto various file hosting services, as well as usenet. Screenshots, mediainfo, subtitles are also extracted and posted.
 

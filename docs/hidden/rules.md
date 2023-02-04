@@ -175,6 +175,6 @@ Attempting to bypass our link filters will result in a ban.
 
 ### What are those strings of numbers I keep seeing?
 
-Torrent releases from nyaa are referenced by their ID in a similar vein to nHentai releases, think 177013 for example. You can find the torrent's release ID at the end of the page's URL. 
+Torrent releases from Nyaa are referenced by their ID in a similar vein to nHentai releases, think 177013 for example. You can find the torrent's release ID at the end of the page's URL. 
 
 They are used liked this: `nyaa.si/view/177013`

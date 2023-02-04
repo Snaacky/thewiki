@@ -37,13 +37,13 @@ This also applies to feature suggestion posts for apps and services.
 
 ## Where can I download smaller sized episodes?
 
-For those low on data or storage, HEVC mini encodes on nyaa are the best option. In terms of quality, they'll be equal to or often better than streaming sites. Simply search `anime name hevc` in the category `Anime - English Translated` on nyaa and sort by seeds. The most common release groups doing these are - Judas, Akihito, Ember, DB, and Cleo.
+For those low on data or storage, HEVC mini encodes on Nyaa are the best option. In terms of quality, they'll be equal to or often better than streaming sites. Simply search `anime name hevc` in the category `Anime - English Translated` on Nyaa and sort by seeds. The most common release groups doing these are - Judas, Akihito, Ember, DB, and Cleo.
 
 ## Where can I find subbed/dubbed anime?
 
 Streaming sites usually have (dub) in the title to differentiate dubs, the default version without a (dub) tag is the subbed one.
 
-Nyaa and torrents have something called dual audio where the mkv files include both japanese and english audio with accompanying subtitle tracks. All the dubs you'll find on nyaa are dual audio. If it doesn't say dual audio then it's sub only.
+Nyaa and torrents have something called dual audio where the mkv files include both japanese and english audio with accompanying subtitle tracks. All the dubs you'll find on Nyaa are dual audio. If it doesn't say dual audio then it's sub only.
 
 ## How long will I have to wait for the newest anime episode to be available on streaming sites and torrents?
 

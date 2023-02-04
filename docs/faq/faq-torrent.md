@@ -82,7 +82,7 @@ There is a **recheck** option in most torrent clients. This will recheck the has
 
 ## Where can I download smaller sized episodes?
 
-For those low on data or storage, HEVC mini encodes on nyaa are the best option. In terms of quality, they'll be equal to or often better than streaming sites. Simply search `anime name hevc` in the category `Anime - English Translated` on nyaa and sort by seeds. Some release groups doing these are - Judas, Akihito, Ember, DB, and Cleo.
+For those low on data or storage, HEVC mini encodes on Nyaa are the best option. In terms of quality, they'll be equal to or often better than streaming sites. Simply search `anime name hevc` in the category `Anime - English Translated` on Nyaa and sort by seeds. Some release groups doing these are - Judas, Akihito, Ember, DB, and Cleo.
 
 ## Where can I download subtitles separately?
 

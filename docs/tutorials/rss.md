@@ -58,6 +58,6 @@ When you first add an anime to the list, the previous episodes may start downloa
 
 - Erai-raws is an alternative for SubsPlease. They are sometimes inconsistent and late but they fix certain issues with subtitles that are left unfixed in subsplease. Exclude "v0" releases with the "Must not contain:" filter to avoid duplicated downloads.
 
-- If you want something smaller try searching nyaa for mini encoders like [Judas](https://nyaa.si/user/Judas) or [ASW](https://nyaa.si/user/AkihitoSubsWeeklies). Clicking the RSS button on these pages gives you the required link for a particular uploader, doing the same on the homepage gives you an RSS feed of everything on nyaa.
+- If you want something smaller try searching Nyaa for mini encoders like [Judas](https://nyaa.si/user/Judas) or [ASW](https://nyaa.si/user/AkihitoSubsWeeklies). Clicking the RSS button on these pages gives you the required link for a particular uploader, doing the same on the homepage gives you an RSS feed of everything on nyaa.
 
 - Alternatively, check out [this guide](https://iamscum.wordpress.com/guides/taiga/) for a better way of automating downloads and tracking synced with your Anilist account.

@@ -46,13 +46,13 @@ Size can be used to judge web sources, but it's not the best measure of quality 
 
 ## Where can I download smaller sized episodes?
 
-For those low on data or storage, HEVC mini encodes on nyaa are the best option. In terms of quality, they'll be equal to or often better than streaming sites. Simply search `anime name hevc` in the category `Anime - English Translated` on nyaa and sort by seeds. Some release groups doing these are - Judas, Akihito, Ember, DB, and Cleo.
+For those low on data or storage, HEVC mini encodes on Nyaa are the best option. In terms of quality, they'll be equal to or often better than streaming sites. Simply search `anime name hevc` in the category `Anime - English Translated` on Nyaa and sort by seeds. Some release groups doing these are - Judas, Akihito, Ember, DB, and Cleo.
 
 ## Where can I find subbed/dubbed anime?
 
 Streaming sites usually have (dub) in the title to differentiate dubs, the default version without a (dub) tag is the subbed one.
 
-Nyaa and torrents have something called dual audio where the mkv files include both Japanese and English audio with accompanying subtitle tracks. All the dubs you'll find on nyaa are dual audio. If it doesn't say dual audio then it's sub only.
+Nyaa and torrents have something called dual audio where the mkv files include both Japanese and English audio with accompanying subtitle tracks. All the dubs you'll find on Nyaa are dual audio. If it doesn't say dual audio then it's sub only.
 
 ## Where can I download subtitles separately?
 
@@ -66,7 +66,7 @@ Nyaa and torrents have something called dual audio where the mkv files include b
 
 They get them from release groups like Erai-raws or Subsplease who rip official streams from Crunchyroll, Funimation, VRV etc. Some sites may do their own rips, and many re-encode these streams to get a smaller size. For older anime which have a BD release, some sites may switch to that as a source for better quality.
 
-Note that these "rips" are not screen captures, they're unaltered WEB-DLs. You can find them on nyaa or release group sites.
+Note that these "rips" are not screen captures, they're unaltered WEB-DLs. You can find them on Nyaa or release group sites.
 
 ## Why are the subtitles for this anime on streaming site X different from site Y or torrent Z?
 
