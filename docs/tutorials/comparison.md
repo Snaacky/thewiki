@@ -126,13 +126,17 @@ image: https://user-images.githubusercontent.com/78981416/215324327-3a562e99-6f4
 
 ### Quality of Life Changes for Screenshotting Manually via VS-Preview (Recommended)
 
-- **Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted** - In VSPreview on the bottom bar select Misc, set file name template to `{frame}_{script_name}_({index})`.
+- **Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted**
+   In VSPreview on the bottom bar select Misc, set file name template to `{frame}_{script_name}_({index})`.
 
-- **Jump through frames quickly** - In VSPreview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
+- **Jump through frames quickly**
+   In VSPreview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
 
-- **Take screenshots quicker by setting the save image button to enter** - Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py` - Line 150: `Replace Qt.SHIFT + Qt.Key_S` with `Qt.Key_Return`. - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
+- **Take screenshots quicker by setting the save image button to enter**
+   Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py` - Line 150: `Replace Qt.SHIFT + Qt.Key_S` with `Qt.Key_Return`. - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
 
-- **Swap binds to save your pinky finger, so you no longer have to hold shift all the time** - Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py` - Line 164-165 Add `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right` - Line 166-167 Remove `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right`
+- **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
+   Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py` - Line 164-165 Add `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right` - Line 166-167 Remove `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right`
 
 ### Making the comparison
 
@@ -172,16 +176,15 @@ Instructions:
 1. Put `comp.py` into the same folder where the video files you want to compare are located.
 2. Rename your files to have the typical `[Group] Show - EP.mkv` naming, since the script will try to parse the group and show name.
 3. When there's no group, such as BDMV or WEB-DL, use the source/service as the group tag.
-  For example:
-  ```
-  /Comparison/
-  ├── [JPBD] Youjo Senki - 01.m2ts 
-  ├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
-  ├── [Group] Youjo Senki - 01.mkv
-  └── comp.py
-  ```
-  This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.
-  
+   For example:
+   ```
+   /Comparison/
+   ├── [JPBD] Youjo Senki - 01.m2ts 
+   ├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
+   ├── [Group] Youjo Senki - 01.mkv
+   └── comp.py
+   ```
+   This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.
 4. Adjust the variables in the script accordingly.
 5. Run the script via either double clicking it or by running `py comp.py` in your terminal.
 
