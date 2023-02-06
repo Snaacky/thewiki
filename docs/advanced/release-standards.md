@@ -66,8 +66,7 @@ eac3to /path/to/BDMV/
 
 This will return all the tracks in the file.
 
-For example:
-
+==- Example
 ```batch
 D:\MHA>eac3to "My Hero Academia the Movie- The Heroes Rising 2018 1080p BluRay Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv"
 MKV, 1 video track, 3 audio tracks, 3 subtitle tracks, 1:44:09, 24p /1.001
@@ -83,30 +82,27 @@ MKV, 1 video track, 3 audio tracks, 3 subtitle tracks, 1:44:09, 24p /1.001
 6: Subtitle (PGS), English, "Signs & Songs"
 7: Subtitle (PGS), Japanese
 ```
+===
 
 Now you can select, extract and convert them all at once by using the numbers corresponding to each track.
 
++++ eac3to
 ```batch
 eac3to ExampleAnime.mkv 2: "ENG.5.1.flac" 3: "ENG.5.1.*" 4: "JPN.5.1.flac"
 ```
-
-Batch command:
-
++++ Windows
 ```batch
 for %I in (*.mkv) do eac3to "%I" 2: "%~nI.ENG.5.1.flac" 3: "%~nI.ENG.5.1.*" 4: "%~nI.JPN.5.1.flac"
 ```
-
-Shell command:
-
++++ Linux
 ```shell
 for file in *.mkv; do eac3to "${file}" 2: "${file%.*}.ENG.5.1.flac" 3: "${file%.*}.ENG.5.1.*" 4: "${file%.*}.JPN.5.1.flac"; done
-
 ```
++++
 
 This will select the second and fourth tracks and transcode both of them losslessly to FLAC but the third lossy track will be extracted without any transcoding because no codec was specified.
 
-For example:
-
+==- eac3to CLI example
 ```batch
 D:\MHA>eac3to  "My Hero Academia the Movie- The Heroes Rising 2018 1080p BluRay Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv" 2: "English 5.1.flac" 3: "English 5.1.*" 4: "Japanese 5.1.flac"
 ------------------------------------------------------------------------------
@@ -142,6 +138,7 @@ Video track 1 contains 149592 frames.
 eac3to processing took 7 minutes, 28 seconds.
 Done.
 ```
+===
 
 Here the second and fourth lossless tracks get transcoded to FLAC while the lossy AC3 track remains the same.
 
@@ -151,21 +148,19 @@ If you're planning to include lossless audio from the source, downconvert and di
 
 Here's the recommended command:
 
++++ sox
 ```batch
 sox input.flac -R -G -b 16 output.flac rate -v -L 48000 dither
 ```
-
-Batch command:
-
++++ Windows
 ```batch
 for %I in (*.flac) do sox "%I" -G -b 16 "%~nI.flac" rate -v -L 48000 dither
 ```
-
-Shell command:
-
++++ Linux
 ```shell
 for file in *.flac; do sox -S "${file}" -R -G -b 16 "${file%.*}.flac" rate -v -L 48000 dither; done
 ```
++++
 
 ### opus-tools
 
@@ -173,25 +168,22 @@ If you're planning to include lossy audio, it's recommended to use Opus with a b
 
 Here are the recommended commands:
 
++++ opusenc
 ```batch
 opusenc --bitrate 192 Stereo_track.flac Stereo_track.opus
 ```
-
 ```batch
 opusenc --bitrate 320 multichannel_track.flac multichannel_track.opus
 ```
-
-Batch command:
-
++++ Windows
 ```batch
 for %I in (*.flac) do opusenc --bitrate 192 "%I" "%~nI.opus"
 ```
-
-Shell command:
-
++++ Linux
 ```shell
 for file in *.flac; do opusenc --bitrate 192 "${file}" "${file%.*}.opus"; done
 ```
++++
 
 ## Subtitles
 
@@ -216,17 +208,15 @@ for file in *.flac; do opusenc --bitrate 192 "${file}" "${file%.*}.opus"; done
 - Pick the default subtitle track by diffing the different options and finding the best one. This can be done via sites like [Diffchecker](https://www.diffchecker.com/) or [evadiff](https://meitantei.org/public/evadiff/).
 - Here's a [subdigest](https://github.com/TypesettingTools/Myaamori-Aegisub-Scripts#sub-digest) script to get clean text file output of .ASS subtitles for diff checking:
 
-Batch command:
-
++++ Windows
 ```batch
 for %I in (*.ass) do python -m subdigest -i "%I" --selection-set "text" "\\p" --remove-selected --selection-set style "Sign|OP|ED|op|ed|kfx|Karaoke|Eyecatch|Signs" --remove-selected --remove-all-tags --remove-comments --get-field text -o "%~nI.txt"
 ```
-
-Shell command:
-
++++ Linux
 ```shell
 for file in *.ass do; python -m subdigest -i "${file}" --selection-set "text" "\\p" --remove-selected --selection-set style "Sign|OP|ED|op|ed|kfx|Karaoke|Eyecatch|Signs" --remove-selected --remove-all-tags --remove-comments --get-field text -o "${file%.*}.txt"; done
 ```
++++
 
 ### Styling
 
@@ -281,8 +271,8 @@ Proper tagging enables a player to autoselect the correct language streams for a
 | Subtitles #3 | eng      | Signs/Songs [Fansub]      | no      | yes    |
 | Subtitles #4 | eng      | Full Subtitles [Official] | no      | no     |
 
-**Batch command to tag everything (assuming the order of tracks is correct):**
-
+**Command to tag everything properly (assuming the order of tracks is correct):**
++++ Windows
 ```batch
 for %X in (*.mkv) do mkvpropedit "%X" --add-track-statistics-tags --edit info --delete title ^
 --edit track:v1 --set name="Encode Group"              --set language=jpn --set flag-default=1 ^
@@ -293,9 +283,7 @@ for %X in (*.mkv) do mkvpropedit "%X" --add-track-statistics-tags --edit info --
 --edit track:s3 --set name="Signs/Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 ^
 --edit track:s4 --set name="Full Subtitles [Official]" --set language=eng --set flag-default=0 --set flag-forced=0
 ```
-
-**Shell command to tag everything (assuming the order of tracks is correct):**
-
++++ Linux
 ```shell
 for file in *.mkv; do
   mkvpropedit "${file}" --add-track-statistics-tags --edit info --delete title \
@@ -308,6 +296,7 @@ for file in *.mkv; do
   --edit track:s4 --set name="Full Subtitles [Official]" --set language=eng --set flag-default=0 --set flag-forced=0
 done
 ```
++++
 
 ## Naming
 
