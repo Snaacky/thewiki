@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.728989014948">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.729018920229">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.728989014948" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.729018920229" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.728989014948" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.729018920229" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.728989014948" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.728989014948" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.729018920229" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.729018920229" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -199,7 +199,7 @@
 <li><a href="https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7" title="libdovi"><code v-pre>libdovi</code></a></li>
 <li><a href="https://github.com/OpusGang/awsmfunc" title="awsmfunc"><code v-pre>awsmfunc</code></a></li>
 </ul>
-<p>To install LSMASHSource, download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="LSMASHSource"><code v-pre>LSMASHSource</code></a> and open it. Inside the zip, open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></p>
+<p>To install LSMASHSource, download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="LSMASHSource">LSMASHSource</a> and open it. Inside the zip, open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></p>
 <p>To install the rest of the plugins, run the following commands in your terminal:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">vsrepo.py install libp2p sub placebo dovi_library</code></pre>
@@ -361,7 +361,43 @@ clip3.set_output(3)</code></pre>
         <span>Automatic Comparison Scripts</span>
     </h2>
 </doc-anchor-target>
-<p>These scripts will do most of the work for you. Instructions on how to use them are in the script itself. Read those carefully.
+<p>Prequesites:</p>
+<ol>
+<li>Install <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a></li>
+<li>Install <a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a>
+<ul>
+<li>Select <code v-pre>Install for me only</code>.</li>
+<li>If you have any issues here, check out the <a href="https://www.vapoursynth.com/doc/installation.html">official Installation Guide</a>.</li>
+</ul>
+</li>
+<li>Install dependencies via running the following command in your terminal:
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">pip install pathlib anitopy pyperclip requests requests_toolbelt</code></pre>
+</doc-codeblock></div>
+</li>
+<li>Download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="LSMASHSource">LSMASHSource</a> and open it. Inside the zip, open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></li>
+<li>(Optional) Install <a href="https://ffmpeg.org/download.html">FFmpeg</a> and add it to PATH.</li>
+</ol>
+<p>Instructions:</p>
+<ol>
+<li>Put <code v-pre>comp.py</code> into the same folder where the video files you want to compare are located.</li>
+<li>Rename your files to have the typical <code v-pre>[Group] Show - EP.mkv</code> naming, since the script will try to parse the group and show name.</li>
+<li>When there&#x27;s no group, such as BDMV or WEB-DL, use the source/service as the group tag.
+For example:</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/Comparison/
+├── [JPBD] Youjo Senki - 01.m2ts 
+├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
+├── [Group] Youjo Senki - 01.mkv
+└── comp.py</code></pre>
+</doc-codeblock></div>
+<p>This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.</p>
+<ol start="4">
+<li>Adjust the variables in the script accordingly.</li>
+<li>Run the script via either double clicking it or by running <code v-pre>py comp.py</code> in your terminal.</li>
+</ol>
+<p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
     <div class="flex items-center text-blue-500 dark:text-blue-400">
         <span class="inline-block mb-px">
