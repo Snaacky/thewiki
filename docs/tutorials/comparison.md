@@ -188,8 +188,8 @@ Instructions:
 4. Adjust the variables in the script accordingly.
 5. Run the script via either double clicking it or by running `py comp.py` in your terminal.
 
-[!ref target="blank" icon="file-code" text="Vodes' Script"](https://gist.github.com/Vodes/300997ac1473ac2b9d08d62c169a26de)
-[!ref target="blank" icon="file-code" text="McBaws' Script"](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
+- [Vodes' Script](https://gist.github.com/Vodes/300997ac1473ac2b9d08d62c169a26de)
+- [McBaws' Script](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
 
 ## Manually with MPV
 

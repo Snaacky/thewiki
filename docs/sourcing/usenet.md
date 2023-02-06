@@ -62,4 +62,4 @@ The above map is from https://commons.wikimedia.org/wiki/File:Usenet_Providers_a
 !!!
 
 ## Related Subreddit
-[!ref /r/Usenet](https://www.reddit.com/r/usenet/)
+- [/r/Usenet](https://www.reddit.com/r/usenet/)

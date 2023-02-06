@@ -7,5 +7,5 @@ image: https://user-images.githubusercontent.com/78981416/215862523-7c39ad32-265
 
 # Music
 
-[!ref The Mega Music Ripping Guide](https://ori5000.github.io/musicripping.html)
-[!ref Sharky's Music Google Docs](https://docs.google.com/document/d/1Poj4p2W0C0Napmwd7bcustlgWrkgp71dy9HlZwUr46w/edit)
+- [The Mega Music Ripping Guide](https://ori5000.github.io/musicripping.html)
+- [Sharky's Music Google Docs](https://docs.google.com/document/d/1Poj4p2W0C0Napmwd7bcustlgWrkgp71dy9HlZwUr46w/edit)

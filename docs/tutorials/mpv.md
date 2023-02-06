@@ -182,7 +182,7 @@ Debanding is the process of removing said banding.
 ## Profiles for upscaling
 
 These are for a 2160p display, simply adjust the values accordingly for other resolutions.
-[!ref Read about scaling in details](/guides/playback/#scaling)
+[Click here to read about scaling in details](/guides/playback/#scaling)
 
 ```
 [2x_upscaling]

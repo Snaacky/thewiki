@@ -118,4 +118,4 @@ sudo chmod -R a=,a+rX,u+w,g+w /data
 ```
 
 ## Advanced Configuration Guide
-[!ref TRaSH Guides](https://trash-guides.info/)
+- [TRaSH Guides](https://trash-guides.info/)
