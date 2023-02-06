@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.728855992167">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.728989014948">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.728855992167" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.728989014948" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.728855992167" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.728989014948" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.728855992167" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.728855992167" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.728989014948" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.728989014948" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -246,7 +246,8 @@ MiniTheatre, Mr.Deadpool, NemDiggers, NoobSubs, project-gxs, SSA, youshikibi</co
 <pre class="language-batch"><code v-pre class="language-batch">eac3to /path/to/BDMV/</code></pre>
 </doc-codeblock></div>
 <p>This will return all the tracks in the file.</p>
-<p>For example:</p>
+<doc-panel id="example" collapsed>
+    <template #title>Example</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">D:\MHA&gt;eac3to &quot;My Hero Academia the Movie- The Heroes Rising 2018 1080p BluRay Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv&quot;
 MKV, 1 video track, 3 audio tracks, 3 subtitle tracks, 1:44:09, 24p /1.001
@@ -262,21 +263,31 @@ MKV, 1 video track, 3 audio tracks, 3 subtitle tracks, 1:44:09, 24p /1.001
 6: Subtitle (PGS), English, &quot;Signs &amp; Songs&quot;
 7: Subtitle (PGS), Japanese</code></pre>
 </doc-codeblock></div>
+</doc-panel>
 <p>Now you can select, extract and convert them all at once by using the numbers corresponding to each track.</p>
+<doc-tabs>
+<doc-tab id="eac3to">
+<template #title>eac3to</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">eac3to ExampleAnime.mkv 2: &quot;ENG.5.1.flac&quot; 3: &quot;ENG.5.1.*&quot; 4: &quot;JPN.5.1.flac&quot;</code></pre>
 </doc-codeblock></div>
-<p>Batch command:</p>
+</doc-tab>
+<doc-tab id="windows">
+<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %I in (*.mkv) do eac3to &quot;%I&quot; 2: &quot;%~nI.ENG.5.1.flac&quot; 3: &quot;%~nI.ENG.5.1.*&quot; 4: &quot;%~nI.JPN.5.1.flac&quot;</code></pre>
 </doc-codeblock></div>
-<p>Shell command:</p>
+</doc-tab>
+<doc-tab id="linux">
+<template #title>Linux</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do eac3to &quot;${file}&quot; 2: &quot;${file%.*}.ENG.5.1.flac&quot; 3: &quot;${file%.*}.ENG.5.1.*&quot; 4: &quot;${file%.*}.JPN.5.1.flac&quot;; done
-</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do eac3to &quot;${file}&quot; 2: &quot;${file%.*}.ENG.5.1.flac&quot; 3: &quot;${file%.*}.ENG.5.1.*&quot; 4: &quot;${file%.*}.JPN.5.1.flac&quot;; done</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <p>This will select the second and fourth tracks and transcode both of them losslessly to FLAC but the third lossy track will be extracted without any transcoding because no codec was specified.</p>
-<p>For example:</p>
+<doc-panel id="eac3to-cli-example" collapsed>
+    <template #title>eac3to CLI example</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">D:\MHA&gt;eac3to  &quot;My Hero Academia the Movie- The Heroes Rising 2018 1080p BluRay Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv&quot; 2: &quot;English 5.1.flac&quot; 3: &quot;English 5.1.*&quot; 4: &quot;Japanese 5.1.flac&quot;
 ------------------------------------------------------------------------------
@@ -312,6 +323,7 @@ Video track 1 contains 149592 frames.
 eac3to processing took 7 minutes, 28 seconds.
 Done.</code></pre>
 </doc-codeblock></div>
+</doc-panel>
 <p>Here the second and fourth lossless tracks get transcoded to FLAC while the lossy AC3 track remains the same.</p>
 <doc-anchor-target id="sox">
     <h3>
@@ -321,17 +333,26 @@ Done.</code></pre>
 </doc-anchor-target>
 <p>If you&#x27;re planning to include lossless audio from the source, downconvert and dither 24-bit lossless tracks to 16-bit FLAC for the sake of reducing bloat as 24-bit is significantly larger with no benefits over 16-bit FLAC.</p>
 <p>Here&#x27;s the recommended command:</p>
+<doc-tabs>
+<doc-tab id="sox">
+<template #title>sox</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">sox input.flac -R -G -b 16 output.flac rate -v -L 48000 dither</code></pre>
 </doc-codeblock></div>
-<p>Batch command:</p>
+</doc-tab>
+<doc-tab id="windows">
+<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %I in (*.flac) do sox &quot;%I&quot; -G -b 16 &quot;%~nI.flac&quot; rate -v -L 48000 dither</code></pre>
 </doc-codeblock></div>
-<p>Shell command:</p>
+</doc-tab>
+<doc-tab id="linux">
+<template #title>Linux</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.flac; do sox -S &quot;${file}&quot; -R -G -b 16 &quot;${file%.*}.flac&quot; rate -v -L 48000 dither; done</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="opus-tools">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#opus-tools">#</doc-anchor-trigger>
@@ -340,20 +361,29 @@ Done.</code></pre>
 </doc-anchor-target>
 <p>If you&#x27;re planning to include lossy audio, it&#x27;s recommended to use Opus with a bitrate of 128-192Kb/s for Stereo tracks and 256-320Kb/s for multi-channel tracks to achieve transparency.</p>
 <p>Here are the recommended commands:</p>
+<doc-tabs>
+<doc-tab id="opusenc">
+<template #title>opusenc</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">opusenc --bitrate 192 Stereo_track.flac Stereo_track.opus</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">opusenc --bitrate 320 multichannel_track.flac multichannel_track.opus</code></pre>
 </doc-codeblock></div>
-<p>Batch command:</p>
+</doc-tab>
+<doc-tab id="windows">
+<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %I in (*.flac) do opusenc --bitrate 192 &quot;%I&quot; &quot;%~nI.opus&quot;</code></pre>
 </doc-codeblock></div>
-<p>Shell command:</p>
+</doc-tab>
+<doc-tab id="linux">
+<template #title>Linux</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.flac; do opusenc --bitrate 192 &quot;${file}&quot; &quot;${file%.*}.opus&quot;; done</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="subtitles">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#subtitles">#</doc-anchor-trigger>
@@ -391,14 +421,20 @@ Done.</code></pre>
 <li>Pick the default subtitle track by diffing the different options and finding the best one. This can be done via sites like <a href="https://www.diffchecker.com/">Diffchecker</a> or <a href="https://meitantei.org/public/evadiff/">evadiff</a>.</li>
 <li>Here&#x27;s a <a href="https://github.com/TypesettingTools/Myaamori-Aegisub-Scripts#sub-digest">subdigest</a> script to get clean text file output of .ASS subtitles for diff checking:</li>
 </ul>
-<p>Batch command:</p>
+<doc-tabs>
+<doc-tab id="windows">
+<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %I in (*.ass) do python -m subdigest -i &quot;%I&quot; --selection-set &quot;text&quot; &quot;\\p&quot; --remove-selected --selection-set style &quot;Sign|OP|ED|op|ed|kfx|Karaoke|Eyecatch|Signs&quot; --remove-selected --remove-all-tags --remove-comments --get-field text -o &quot;%~nI.txt&quot;</code></pre>
 </doc-codeblock></div>
-<p>Shell command:</p>
+</doc-tab>
+<doc-tab id="linux">
+<template #title>Linux</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.ass do; python -m subdigest -i &quot;${file}&quot; --selection-set &quot;text&quot; &quot;\\p&quot; --remove-selected --selection-set style &quot;Sign|OP|ED|op|ed|kfx|Karaoke|Eyecatch|Signs&quot; --remove-selected --remove-all-tags --remove-comments --get-field text -o &quot;${file%.*}.txt&quot;; done</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="styling">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#styling">#</doc-anchor-trigger>
@@ -534,7 +570,10 @@ Forced subtitles only provide subtitles when the characters speak a foreign or a
 </tbody>
 </table>
 </div>
-<p><strong>Batch command to tag everything (assuming the order of tracks is correct):</strong></p>
+<p><strong>Command to tag everything properly (assuming the order of tracks is correct):</strong></p>
+<doc-tabs>
+<doc-tab id="windows">
+<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do mkvpropedit &quot;%X&quot; --add-track-statistics-tags --edit info --delete title ^
 --edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 ^
@@ -545,7 +584,9 @@ Forced subtitles only provide subtitles when the characters speak a foreign or a
 --edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 ^
 --edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=eng --set flag-default=0 --set flag-forced=0</code></pre>
 </doc-codeblock></div>
-<p><strong>Shell command to tag everything (assuming the order of tracks is correct):</strong></p>
+</doc-tab>
+<doc-tab id="linux">
+<template #title>Linux</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do
   mkvpropedit &quot;${file}&quot; --add-track-statistics-tags --edit info --delete title \
@@ -558,6 +599,8 @@ Forced subtitles only provide subtitles when the characters speak a foreign or a
   --edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=eng --set flag-default=0 --set flag-forced=0
 done</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="naming">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#naming">#</doc-anchor-trigger>
