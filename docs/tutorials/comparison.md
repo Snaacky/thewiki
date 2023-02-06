@@ -27,7 +27,7 @@ image: https://user-images.githubusercontent.com/78981416/215324327-3a562e99-6f4
    -  [`libdovi`](https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7 "libdovi")
    -  [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
 
-   To install LSMASHSource, download [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it. Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
+   To install LSMASHSource, download [LSMASHSource](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it. Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
    
    To install the rest of the plugins, run the following commands in your terminal:
    ```
@@ -156,7 +156,35 @@ If you don't want to take screenshots and upload them manually, then you can sim
 
 ## Automatic Comparison Scripts
 
-These scripts will do most of the work for you. Instructions on how to use them are in the script itself. Read those carefully.
+Prequesites:
+1. Install [Python 3.10](https://www.python.org/downloads/release/python-3105/)
+2. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases)
+   - Select `Install for me only`.
+   - If you have any issues here, check out the [official Installation Guide](https://www.vapoursynth.com/doc/installation.html).
+3. Install dependencies via running the following command in your terminal:
+   ```
+   pip install pathlib anitopy pyperclip requests requests_toolbelt
+   ```
+4. Download [LSMASHSource](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it. Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
+5. (Optional) Install [FFmpeg](https://ffmpeg.org/download.html) and add it to PATH.
+
+Instructions:
+1. Put `comp.py` into the same folder where the video files you want to compare are located.
+2. Rename your files to have the typical `[Group] Show - EP.mkv` naming, since the script will try to parse the group and show name.
+3. When there's no group, such as BDMV or WEB-DL, use the source/service as the group tag.
+  For example:
+  ```
+  /Comparison/
+  ├── [JPBD] Youjo Senki - 01.m2ts 
+  ├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
+  ├── [Group] Youjo Senki - 01.mkv
+  └── comp.py
+  ```
+  This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.
+  
+4. Adjust the variables in the script accordingly.
+5. Run the script via either double clicking it or by running `py comp.py` in your terminal.
+
 [!ref target="blank" icon="file-code" text="Vodes' Script"](https://gist.github.com/Vodes/300997ac1473ac2b9d08d62c169a26de)
 [!ref target="blank" icon="file-code" text="McBaws' Script"](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
 
