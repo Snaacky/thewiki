@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.729018920229">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.729019213345">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.729018920229" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.729019213345" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.729018920229" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.729019213345" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.729018920229" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.729018920229" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.729019213345" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.729019213345" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -314,13 +314,17 @@ clip3.set_output(3)</code></pre>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted</strong> - In VSPreview on the bottom bar select Misc, set file name template to <code v-pre>{frame}_{script_name}_({index})</code>.</p>
+<li><p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted</strong>
+In VSPreview on the bottom bar select Misc, set file name template to <code v-pre>{frame}_{script_name}_({index})</code>.</p>
 </li>
-<li><p><strong>Jump through frames quickly</strong> - In VSPreview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
+<li><p><strong>Jump through frames quickly</strong>
+In VSPreview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
 </li>
-<li><p><strong>Take screenshots quicker by setting the save image button to enter</strong> - Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code> - Line 150: <code v-pre>Replace Qt.SHIFT + Qt.Key_S</code> with <code v-pre>Qt.Key_Return</code>. - If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
+<li><p><strong>Take screenshots quicker by setting the save image button to enter</strong>
+Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code> - Line 150: <code v-pre>Replace Qt.SHIFT + Qt.Key_S</code> with <code v-pre>Qt.Key_Return</code>. - If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
 </li>
-<li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong> - Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Line 164-165 Add <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code> - Line 166-167 Remove <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code></p>
+<li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong>
+Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Line 164-165 Add <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code> - Line 166-167 Remove <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code></p>
 </li>
 </ul>
 <doc-anchor-target id="making-the-comparison">
@@ -383,8 +387,7 @@ clip3.set_output(3)</code></pre>
 <li>Put <code v-pre>comp.py</code> into the same folder where the video files you want to compare are located.</li>
 <li>Rename your files to have the typical <code v-pre>[Group] Show - EP.mkv</code> naming, since the script will try to parse the group and show name.</li>
 <li>When there&#x27;s no group, such as BDMV or WEB-DL, use the source/service as the group tag.
-For example:</li>
-</ol>
+For example:
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/Comparison/
 ├── [JPBD] Youjo Senki - 01.m2ts 
@@ -392,8 +395,7 @@ For example:</li>
 ├── [Group] Youjo Senki - 01.mkv
 └── comp.py</code></pre>
 </doc-codeblock></div>
-<p>This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.</p>
-<ol start="4">
+This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.</li>
 <li>Adjust the variables in the script accordingly.</li>
 <li>Run the script via either double clicking it or by running <code v-pre>py comp.py</code> in your terminal.</li>
 </ol>
