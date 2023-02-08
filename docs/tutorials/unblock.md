@@ -1,6 +1,6 @@
 ---
 label: Unblock Guide
-description: Simple Guide to Unblocking
+description: Simple Guide to Bypass Website Blocks
 image: https://user-images.githubusercontent.com/78981416/217623478-91268767-ba25-4498-9755-bc0eeca97033.gif
 ---
 
