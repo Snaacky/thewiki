@@ -15,3 +15,4 @@ order: -3
 - [MPV Setup and Config](/tutorials/mpv)
 - [Propolis](/tutorials/propolis)
 - [Sonarr](/tutorials/sonarr)
+- [Unblock Guide](/tutorials/unblock)
