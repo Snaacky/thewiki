@@ -16,10 +16,10 @@ image: https://user-images.githubusercontent.com/78981416/217623478-91268767-ba2
 4. Under This connection uses the following items, select Internet Protocol Version 4 (TCP/IPv4) or Internet Protocol Version 6 (TCP/IPv6) and then click Properties.
 5. Select Use the following DNS server addresses. If there are any IP addresses listed in the Preferred DNS server or Alternate DNS server, write them down for future reference.
 6. Replace those addresses with the IP addresses of the Google DNS servers:
-	- IPv4: 1.1.1.1 and 1.0.0.1
-	- IPv4 (google): 8.8.8.8 and 8.8.4.4
-	- IPv6: 2606:4700:4700::1111 and 2606:4700:4700::1001
-	- IPv6 (google) : 2001:4860:4860::8888 and 2001:4860:4860::8844.
+	- IPv4: `1.1.1.1` and `1.0.0.1`
+	- IPv4 (google): `8.8.8.8` and `8.8.4.4`
+	- IPv6: `2606:4700:4700::1111` and `2606:4700:4700::1001`
+	- IPv6 (google) : `2001:4860:4860::8888` and `2001:4860:4860::8844`
 
 !!!
 [1.1.1.1](https://1.1.1.1/) also has cloudflare warp installers/apps available for Android, ios, macOS, Windows and Linux.
