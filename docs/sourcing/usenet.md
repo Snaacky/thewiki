@@ -16,7 +16,7 @@ You will need 3 things at a basic level before you can download anything:
 - [SABnzbd](https://sabnzbd.org/), which is a download client, into which you will feed your `.nzb` files in order to begin downloading your desired content. Make sure to put your SABnzbd behind a strong password.
 
 !!!warning Warning
-[NZBGet](https://github.com/nzbget/nzbget) has been deprecated by its developers. It will not receive any more updates.
+While often recommended online, [NZBGet](https://github.com/nzbget/nzbget) has been deprecated by its developers. It will not receive any more updates so you should avoid using it and if you're already using it then consider switching to [SABnzbd](https://sabnzbd.org/).
 !!!
 
 ## PAR
