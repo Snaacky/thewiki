@@ -1,7 +1,7 @@
 ---
 label: Comparison
 description: Learn How to Compare Various Sources of a Video
-image: https://user-images.githubusercontent.com/78981416/215324327-3a562e99-6f4c-41b5-828b-9019fc44530b.gif
+image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3ec-4b50-aae3-a7881292887f.gif
 ---
 
 # Comparison
