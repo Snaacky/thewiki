@@ -160,7 +160,7 @@ If you don't want to take screenshots and upload them manually, then you can sim
 
 ## Automatic Comparison Scripts
 
-Prequesites:
+Prerequisites:
 1. Install [Python 3.10](https://www.python.org/downloads/release/python-3105/)
 2. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases)
    - Select `Install for me only`.
