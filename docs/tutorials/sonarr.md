@@ -77,6 +77,7 @@ Currently, Sonarr's capability of auto-downloading non-seasonal anime is quite b
 - Select its location and assign the indexer tag and the release tag.
 - Check the `Start search for missing episodes` option and click the `Add` button.
 - From personal experience, it's better to use `Any` profile instead of `1080p` due to how multiple anime releasers don't bother putting `1080p` in the title, causing them to be rejected. You might also have to allow `Unknown` under `Any` profile because some releasers don't put any information in the title.
+- Set the `Series Type` to `Anime`.
   [![Seasonal](https://i.imgur.com/0FQGR1E.gif "Seasonal")](https://i.imgur.com/0FQGR1E.gif "Seasonal")
 - It'll now show up in your client along with the `tv-sonarr` tag and Sonarr will import a hardlinked copy into the Root Folder (`/HDD/plex/anime`).
   [![Qbit](https://i.imgur.com/271wNmN.png "Qbit")](https://i.imgur.com/271wNmN.png "Qbit")
