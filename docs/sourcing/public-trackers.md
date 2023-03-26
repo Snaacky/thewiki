@@ -12,6 +12,9 @@ order: -2
 - [Rutracker](https://rutracker.org/) (Russian, use Google Translate)
 - [Tokyotosho](https://www.tokyotosho.info/?cat=1)
 - [AnimeTosho](https://animetosho.org/) - Scrapes other public trackers, useful for getting information, mediainfo or subtitles and attachments from a torrent.
+- [Dmhy](https://dmhy.org/) - (Chinese, use Google Translate)
+- [ACG.RIP](https://acg.rip/) - (Chinese, use Google Translate)
+- [ACGNX](https://share.acgnx.se/) - (Chinese, use Google Translate)
 
 ## Using Nyaa
 
