@@ -35,7 +35,7 @@ Some comparisons between streaming sites:
 - Fate/Zero (9anime, animepahe, gogo, tenshi, and torrents) - https://slow.pics/c/1LNZtDzm
 - Senran Kagura (gogo, animepahe, 9anime, twist, zoro, and torrents) - https://slow.pics/c/QLtX61qx
 - Dokyuu Hentai HxEros (gogoanime, animepahe, 9anime, torrents) - https://slow.pics/c/PZRxqAsh
-
+- Vinland Saga S2 (9anime, Zoro, Marin, torrents) - https://slow.pics/c/GjhwBwo3
 #### **Quality Tier List**
 
 **Tier 1**:
@@ -52,7 +52,7 @@ Some comparisons between streaming sites:
 **Tier 3**:
 
 - [gogoanime](https://gogoanime.lu/) (and scrapers)
-- [animepahe](https://animepahe.com/) - Can be better or worse than gogoanime but with significantly smaller file size and the benefit of sourcing from good BD releases when available, like [tenshi](https://tenshi.moe/).
+- [animepahe](https://animepahe.com/) - Can be better or worse than gogoanime but with significantly smaller file size and the benefit of sourcing from good BD releases when available, like [Marin](https://marin.moe/).
 
 ### Other Factors
 
