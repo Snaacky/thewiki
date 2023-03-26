@@ -42,7 +42,7 @@ Some comparisons between streaming sites:
 
 - [Marin](https://marin.moe/) - Contains the smallest library of all the sites but with the best quality for BD releases and good quality for seasonal content. Consistently the best overall
 - [AllAnime](https://allanime.to/) - Specific seasonal content belongs in Tier 1 because it is equal to SubsPlease/HorribleSubs releases making it the undisputed best quality for illegal streaming sites in these instances. Not all series are scraped from VRV though and in those instances the quality is Tier 3.
-- [https://animedao.to/](https://animedao.to/) - Same as above but it depends on which server you choose. Try them out and pick the one with good quality.
+- [AnimeDao](https://animedao.to/) - Same as above but it depends on which server you choose. Try them out and pick the one with good quality.
 
 **Tier 2**:
 
