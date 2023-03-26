@@ -10,7 +10,6 @@ order: -1
 - [gogoanime](https://gogoanime.lu/) - Self-hosted site that nearly all scraper sites source from.
 - [9anime](https://9anime.to) - Self-hosted site with a library on par with gogoanime. Marginally better quality while updating their releases to more often include fansubs and BD versions on older content.
 - [Zoro](https://zoro.to/) - Self-hosted site similar in quality to 9anime with an extensive library and is one of the only streaming sites with soft subtitles.
-- [Animixplay](https://animixplay.to/) - Popular gogo scraper which also scrapes VRV for seasonal content (as indicated by the "0p" resolution option) leading to quality on par with legal options and WEB-DL torrent releases such as SubsPlease in those specific instances.
 
 ## Picking a Streaming Site
 
@@ -20,11 +19,11 @@ While one can choose between the numerous popular sites listed both here and on 
 
 A "scraper" is a site that takes content hosted on other sites, and puts it on their own. These are the streaming site equivalent to [manga aggregator sites](https://thewiki.moe/guides/literature#sourcing) that are mentioned in the literature page. These can lead to extensive libraries without the need for the site owners to host the content themselves, usually at the expense of video quality. By far the most commonly scraped from site is [gogoanime](https://gogoanime.lu/), so much so that most streaming sites in existence are gogoanime scrapers.
 
-**Examples of scraper sites:** [Animixplay](https://animixplay.to/), [11anime](https://11anime.fr/), [5anime](https://5anime.net/), [Genoanime](https://genoanime.com/), [Animeflix](https://animeflix.sbs/)
+**Examples of scraper sites:** [AllAnime](https://allanime.to/), [11anime](https://11anime.fr/), [5anime](https://5anime.net/), [Genoanime](https://genoanime.com/), [Animeflix](https://animeflix.sbs/)
 
 A "self-hosted" site is one that actually hosts all the content on their own servers. With some exceptions, this usually means a significantly smaller selection than all the scraper sites who can utilize gogo's massive library. However, this usually also leads to better video quality that can range from a marginal improvement, to extremely significant.
 
-**Examples of self-hosted sites:** [gogoanime](https://gogoanime.lu/), [9anime](https://9anime.to), [Zoro](https://zoro.to/), [animepahe](https://animepahe.com/), [tenshi](https://tenshi.moe/)
+**Examples of self-hosted sites:** [gogoanime](https://gogoanime.lu/), [9anime](https://9anime.to), [Zoro](https://zoro.to/), [animepahe](https://animepahe.com/), [Marin](https://marin.moe/)
 
 ### Video Quality
 
@@ -41,8 +40,9 @@ Some comparisons between streaming sites:
 
 **Tier 1**:
 
-- [Animixplay (0p)](https://animixplay.to/) - Seasonal content with the 0p option belongs in Tier 1 because it is equal to SubsPlease/HorribleSubs releases making it the undisputed best quality for illegal streaming sites in these instances. Any content that does not have the 0p option belongs in Tier 3 with gogoanime.
-- [tenshi](https://tenshi.moe/) - Contains the smallest library of all the sites but with the best quality for BD releases and good quality for seasonal content.
+- [Marin](https://marin.moe/) - Contains the smallest library of all the sites but with the best quality for BD releases and good quality for seasonal content. Consistently the best overall
+- [AllAnime](https://allanime.to/) - Specific seasonal content belongs in Tier 1 because it is equal to SubsPlease/HorribleSubs releases making it the undisputed best quality for illegal streaming sites in these instances. Not all series are scraped from VRV though and in those instances the quality is Tier 3.
+- [AnimeDao](https://animedao.to/) - Same as above but it depends on which server you choose. Try them out and pick the one with good quality.
 
 **Tier 2**:
 
@@ -60,11 +60,11 @@ There are a multitude of other factors that may affect your decision in picking 
 
 **Fansubs and BD Versions**
 
-- [Tenshi](https://tenshi.moe/) and [animepahe](https://animepahe.com/) are very consistent at picking good BD releases with good fansubs. [9anime](https://9anime.to) also does this but less often and often with slightly worse release choice.
+- [Marin](https://marin.moe/) and [animepahe](https://animepahe.com/) are very consistent at picking good BD releases with good fansubs. [9anime](https://9anime.to) also does this but less often and often with slightly worse release choice.
 
 **Filesize**
 
-- [animepahe](https://animepahe.com/) has some of the smallest filesizes compared to other streaming sites. [9anime's](https://9anime.to) are also relatively small compared to [gogoanime](https://gogoanime.lu/) and [tenshi](https://tenshi.moe/).
+- [animepahe](https://animepahe.com/) has some of the smallest filesizes compared to other streaming sites. [9anime's](https://9anime.to) are also relatively small compared to [gogoanime](https://gogoanime.lu/) and [Marin](https://marin.moe/).
 
 **UI**
 
