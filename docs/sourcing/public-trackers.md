@@ -7,6 +7,10 @@ order: -2
 
 ## Public Trackers
 
+!!!
+Make sure to use an adblocker like [uBlock Origin](https://ublockorigin.com/).
+!!!
+
 - [Nyaa.si](https://nyaa.si)
 - [Anidex](https://anidex.info/)
 - [Rutracker](https://rutracker.org/) (Russian, use Google Translate)
