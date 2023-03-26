@@ -36,6 +36,7 @@ Some comparisons between streaming sites:
 - Senran Kagura (gogo, animepahe, 9anime, twist, zoro, and torrents) - https://slow.pics/c/QLtX61qx
 - Dokyuu Hentai HxEros (gogoanime, animepahe, 9anime, torrents) - https://slow.pics/c/PZRxqAsh
 - Vinland Saga S2 (9anime, Zoro, Marin, torrents) - https://slow.pics/c/GjhwBwo3
+
 #### **Quality Tier List**
 
 **Tier 1**:
