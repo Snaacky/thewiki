@@ -13,12 +13,14 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
 
 [Nyaa](https://nyaa.si) - The best public source for downloading manga
 
-Official Digital Rips
+#### Official Digital Rips
+
 Search for the English title and add `Digital` for the best rips. For example - `Attack on Titan Digital`.
 In the rare cases where multiple groups release the same manga, prioritise the newer release as it's likely to have been ripped from a superior source.
 If the files are dead on public trackers, you may have luck with DDL links in their descriptions, or alternatively setting up [DC++](https://www.reddit.com/r/trackers/comments/p1z313/comic_trackers_other_than_32pages/h8iu5uh/)
 
-Scanlation Rips
+#### Scanlation Rips
+
 Search both the English and Japanese title by adding `|` in between. For example - `Attack on Titan|Shingeki no Kyojin` and sort by file size.
 Although these are significantly lower quality, not all manga get official digital releases, and downloading as opposed to reading online allows you to utilise the better scaling that standalone readers can provide.
 
