@@ -139,7 +139,7 @@ This guide is not applicable to VPN users. If you are using one, please check wi
 
 - The port used by your client can be found in Settings > Connection. Avoid using the [well-known ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports) and the [registered ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports). To simplify - and preferably, use the ports from [49152 or higher](https://en.wikipedia.org/wiki/Ephemeral_port) to avoid interference with other services as well as being blocked by your ISP on some lower number ports.
 
-- Use https://canyouseeme.org/ to check if this port is open. If it already is, you can skip this instruction. If you are already portforwarding via a VPN, often times, it will show your port as unopened. However, this is completely normal because those ports are ephemeral and only opened when you're actively uploading/downloading something.
+- Use https://canyouseeme.org/ to check if this port is open. If it already is, you can skip this instruction.
 
 !!!info
 If you are already port forwarding via a VPN, often times, it will show your port as closed. However, this is completely normal since those ports are ephemeral and only opened up when you are actively uploading/downloading something.
