@@ -13,6 +13,7 @@ order: -3
 - [How To Use IRC/XDCC](/tutorials/irc)
 - [Manage LN/WN using Calibre](/tutorials/calibre)
 - [MPV Setup and Config](/tutorials/mpv)
+- [Plex Player Modding](/tutorials/plex)
 - [Propolis](/tutorials/propolis)
 - [Sonarr](/tutorials/sonarr)
 - [Unblock Guide](/tutorials/unblock)
