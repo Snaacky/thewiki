@@ -2,7 +2,7 @@
 label: Plex
 description: Modify the Plex Windows App to Include an Extended MPV Version
 author:
-  name: ! ThaUnknown_#3951
+  name: "! ThaUnknown_#3951"
   link: http://github.com/ThaUnknown
   avatar: https://avatars.githubusercontent.com/u/6506529
 ---
