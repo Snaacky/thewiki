@@ -1,6 +1,12 @@
 ---
 label: Hentai
 order: -4
+description: Learn How and Where to Find Your Favorite Hentai
+image: https://user-images.githubusercontent.com/124029849/230732748-f412e947-7450-4260-88ad-6486b2a0ace0.gif
+author:  
+  name: "ctyd"
+  link: https://github.com/0xctyd
+  avatar: https://avatars.githubusercontent.com/u/124029849
 ---
 
 # Hentai
