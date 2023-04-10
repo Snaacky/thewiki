@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734421802713">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.734460441093">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Why modify the player?</title>
-    <meta name="title" content="Why modify the player?">
+    <title>Plex MPV Mod</title>
+    <meta name="title" content="Plex MPV Mod">
     <meta name="description" content="Modify the Plex Windows App to Include an Extended MPV Version" />
 
     <!-- Canonical -->
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thewiki.moe/tutorials/plex/">
-    <meta property="og:title" content="Why modify the player?">
+    <meta property="og:title" content="Plex MPV Mod">
     <meta property="og:description" content="Modify the Plex Windows App to Include an Extended MPV Version">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/tutorials/plex/">
-    <meta property="twitter:title" content="Why modify the player?">
+    <meta property="twitter:title" content="Plex MPV Mod">
     <meta property="twitter:description" content="Modify the Plex Windows App to Include an Extended MPV Version">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.734421802713" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.734460441093" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.734421802713" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.734460441093" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.734421802713" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.734460441093" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -152,10 +152,10 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="why-modify-the-player" class="break-words">
+<doc-anchor-target id="plex-mpv-mod" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-modify-the-player">#</doc-anchor-trigger>
-        <span>Why modify the player?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#plex-mpv-mod">#</doc-anchor-trigger>
+        <span>Plex MPV Mod</span>
     </h1>
 </doc-anchor-target>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -170,12 +170,18 @@
     </div>
 </div>
 
+<doc-anchor-target id="why-modify-the-player">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-modify-the-player">#</doc-anchor-trigger>
+        <span>Why Modify The Player?</span>
+    </h2>
+</doc-anchor-target>
 <p>You get:</p>
 <ul>
 <li>Less buffering</li>
 <li>Better quality</li>
-<li>Dolby Vision support</li>
-<li>HDR10+ support</li>
+<li>Dolby Vision support without Plex pass</li>
+<li>HDR10+ support without Plex pass</li>
 <li>No transcoding</li>
 </ul>
 <doc-anchor-target id="how-to-modify-the-mpv-player">
@@ -192,10 +198,10 @@
 <li>Download <code v-pre>mpv-dev-x86_64-v3-{date}-git-{hash}.7z</code>, where <code v-pre>date</code> is the most recent date in <code v-pre>YYYYMMDD</code> format and <code v-pre>hash</code> is some random hash.</li>
 </ul>
 </li>
-<li>Extract the zip to somewhere, and copy the <code v-pre>mpv-2.dll</code> file.</li>
+<li>Extract the zip to somewhere, and copy the <code v-pre>libmpv-2.dll</code> file.</li>
 <li>Go to plex install location (by default <code v-pre>C:\Program Files\Plex\Plex</code>, though it can vary).
 <ul>
-<li>Paste the copied <code v-pre>mpv-2.dll</code> and overwrite it. It should be ~80MB in constrast to the original&#x27;s 10MB.</li>
+<li>If inside the Plex folder <code v-pre>libmpv-2.dll</code> exists paste the copied <code v-pre>libmpv-2.dll</code> and overwrite it. If it doesn&#x27;t paste it and rename it to <code v-pre>mpv-2.dll</code>. It should be ~80MB in constrast to the original&#x27;s 10MB.</li>
 </ul>
 </li>
 <li>Go to <code v-pre>%localappdata%\plex</code> (by default <code v-pre>C:\Users\YourUserName\AppData\Local\Plex</code>, where <code v-pre>YourUserName</code> is your account name. Again, it can vary).
