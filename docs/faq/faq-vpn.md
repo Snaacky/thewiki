@@ -25,7 +25,7 @@ Take the top Google search results with a grain of salt - those reviews are ofte
 
 ## Do I need to use a VPN for torrenting?
 
-Using a VPN for piracy purposes are always a good practice - hence, it is advised. Legal entities acting on behalf of copyright holders have been known to send DMCA letters to the ISP of IP addresses found in P2P network swarms. 
+Using a VPN for torrenting is always a good practice - hence, it is advised. Legal entities acting on behalf of copyright holders have been known to send DMCA letters to the ISP of IP addresses found in P2P network swarms. 
 
 ## Do I need a VPN for streaming or direct download link (DDL)?
 

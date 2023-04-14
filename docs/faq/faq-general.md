@@ -5,7 +5,7 @@ order: -1
 
 # General FAQ
 
-## Can I link to piracy sites, torrents, or direct download links?
+## Can I link to sites, torrents, or direct download links?
 
 All subreddits are governed by the [Reddit Content Policy](https://www.redditinc.com/policies/content-policy) which means we have to be careful with what we allow in order to keep our subreddit from being shutdown. 
 
