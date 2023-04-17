@@ -7,7 +7,7 @@ order: -3
 
 - [Auto downloading anime using RSS](/tutorials/rss)
 - [Automate Downloads With Taiga2shana](/tutorials/shana)
-- [Bind VPN network interface to torrent client](/tutorials/vpn-binding.)
+- [Bind VPN network interface to torrent client](/tutorials/vpn-binding)
 - [Creating a comparison](/tutorials/comparison)
 - [Creating a torrent](/tutorials/torrent)
 - [Deluge](/tutorials/deluge)
