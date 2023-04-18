@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.735075935735">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.735163404075">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.735075935735" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.735163404075" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.735075935735" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.735163404075" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.735075935735" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.735163404075" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -182,37 +182,25 @@
         <span>Requirements</span>
     </h2>
 </doc-anchor-target>
-<p>A torrent client that supports binding, eg. qBittorrent (Windows, macOS and Linux) or BiglyBT (Android). The instructions below are for qBittorrent.</p>
-<doc-anchor-target id="method-1">
+<p>A torrent client that supports binding, eg. qBittorrent.</p>
+<doc-anchor-target id="windows">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#method-1">#</doc-anchor-trigger>
-        <span>Method 1</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#windows">#</doc-anchor-trigger>
+        <span>Windows</span>
     </h2>
 </doc-anchor-target>
-<ul>
-<li>Open qBittorrent. Go to Preferences, and then Advanced tab.</li>
-<li>Check for the differences on the &quot;Network Interface&quot; list when you connect/disconnect VPN (you may have to restart qBittorrent for the list to refresh).</li>
-<li>Select (bind) the one that shows up/disappears from the previous test.</li>
-<li>Restart qBittorrent.</li>
-</ul>
-<doc-anchor-target id="method-2">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#method-2">#</doc-anchor-trigger>
-        <span>Method 2</span>
-    </h2>
-</doc-anchor-target>
-<doc-panels>
-   <doc-panel id="windows">
-       <template #title>Windows</template>
 <ul>
 <li>Start the VPN and connect to a location.</li>
 <li>Open qBittorrent. Go to Preferences, and then Advanced tab.</li>
 <li>Change Network interface to the VPN (usually its name, like &quot;Mullvad&quot;).</li>
 <li>Restart qBittorrent.</li>
 </ul>
-   </doc-panel>
-   <doc-panel id="macos" collapsed>
-       <template #title>macOS</template>
+<doc-anchor-target id="macos">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#macos">#</doc-anchor-trigger>
+        <span>macOS</span>
+    </h2>
+</doc-anchor-target>
 <ul>
 <li>Start the VPN and connect to a location.</li>
 <li>Open the Terminal app (it&#x27;s in Applications/Utilities).</li>
@@ -239,29 +227,35 @@
         </div>
     </div>
 </div>
-   </doc-panel>
-   <doc-panel id="linux" collapsed>
-       <template #title>Linux</template>
+<doc-anchor-target id="linux">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#linux">#</doc-anchor-trigger>
+        <span>Linux</span>
+    </h2>
+</doc-anchor-target>
 <ul>
 <li>Start the VPN and connect to a location.</li>
 <li>Open qBittorrent. Go to Preferences, and then Advanced tab.</li>
 <li>Change Network interface to one of the following depending on the app and protocol you are using (Mullvad VPN as example)</li>
-<li>Mullvad app using OpenVPN: tun0</li>
-<li>Mullvad app using WireGuard kernel: wg-mullvad</li>
-<li>Mullvad app using WireGuard userspace: tun0</li>
-<li>WireGuard standalone: mlvd-xx</li>
-<li>OpenVPN standalone: tun0</li>
+<li>Mullvad app using OpenVPN: <code v-pre>tun0</code></li>
+<li>Mullvad app using WireGuard kernel: <code v-pre>wg-mullvad</code></li>
+<li>Mullvad app using WireGuard userspace: <code v-pre>tun0</code></li>
+<li>WireGuard standalone: <code v-pre>mlvd-xx</code></li>
+<li>OpenVPN standalone: <code v-pre>tun0</code></li>
 <li>Restart qBittorrent.</li>
 </ul>
-   </doc-panel>
-</doc-panels>
 <doc-anchor-target id="how-to-test">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-test">#</doc-anchor-trigger>
         <span>How to test?</span>
     </h2>
 </doc-anchor-target>
-<p>You can download the <a href="https://releases.ubuntu.com/22.10/ubuntu-22.10-desktop-amd64.iso.torrent">official Ubuntu 22.10 torrent</a> and open it on qBittorrent. If the binding is properly set, the download will only start if the VPN is connected. If you disconnect your VPN, the download will stop.</p>
+<ul>
+<li><p>You can download the <a href="https://releases.ubuntu.com/22.10/ubuntu-22.10-desktop-amd64.iso.torrent">official Ubuntu 22.10 torrent</a> and open it on qBittorrent. If the binding is properly set, the download will only start if the VPN is connected. If you disconnect your VPN, the download will stop.</p>
+</li>
+<li><p>Visit <a href="https://torguard.net/checkmytorrentipaddress.php">TorGuard&#x27;s Check My Torrent IP Address</a></p>
+</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
