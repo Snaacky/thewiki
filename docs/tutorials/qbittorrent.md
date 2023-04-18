@@ -6,9 +6,9 @@ image: https://user-images.githubusercontent.com/78981416/232305852-17383fd0-c7d
 
 # qBittorrent
 
-[qBittorrent](https://www.qbittorrent.org) is a free, open source, and cross platform bittorrent client with several features like Categories, tags, RSS, Web-UI, and more. Visit <https://github.com/qbittorrent/qBittorrent/wiki> for docs.
+[qBittorrent](https://www.qbittorrent.org) is a free, open source, and cross platform bittorrent client with several features like Categories, tags, RSS, Web-UI, and more.
 
-1. Go to <https://www.fosshub.com/qBittorrent.html>
+1. Go to qBittorrent's [download page](https://www.fosshub.com/qBittorrent.html)
 2. Download `qBittorrent Windows x64` for Windows, `qBittorrent AppImage` for Linux, and `qBittorrent Mac OS X` for macOS.
 
     ![](https://user-images.githubusercontent.com/78981416/232291788-1eb92521-c0a1-46ea-a81c-9f00881bc2cb.png)

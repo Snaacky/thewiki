@@ -6,15 +6,15 @@ image: https://user-images.githubusercontent.com/78981416/232306295-0e123ed8-c83
 
 # Deluge
 
-[Deluge](https://deluge-torrent.org/) is a free, open source, and cross platform bittorrent client, primarily used by seedboxes for racing. Works as both a stand alone client and a thin client for a remote server. Visit <https://dev.deluge-torrent.org/wiki/UserGuide> for docs. 
+[Deluge](https://deluge-torrent.org/) is a free, open source, and cross platform bittorrent client, primarily used by seedboxes for racing. Works as both a stand alone client and a thin client for a remote server.
 
 ## Install
 
-1. For Windows, go to <https://ftp.osuosl.org/pub/deluge/windows/?C=M;O=D>, then download the latest `.exe` file.
+1. For Windows, go to Deluge's Windows [download page](https://ftp.osuosl.org/pub/deluge/windows/?C=M;O=D), then download the latest `.exe` file.
 
     ![](https://user-images.githubusercontent.com/78981416/232305635-111a14c6-7dba-4ff1-a4b4-90e6dc0e4808.png)
 
-2. For macOS, go to <https://ftp.osuosl.org/pub/deluge/mac_osx/?C=M;O=D>, then download the latest `.dmg` file.
+2. For macOS, go to Deluge's macOS [download page](https://ftp.osuosl.org/pub/deluge/mac_osx/?C=M;O=D), then download the latest `.dmg` file.
 
     ![](https://user-images.githubusercontent.com/78981416/232306677-efd31d7f-57c6-4a19-bf0f-62e354ea0c99.png)
 
