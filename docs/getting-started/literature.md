@@ -30,11 +30,11 @@ Although these are significantly lower quality, not all manga get official digit
 
 [CDisplayEx](https://www.cdisplayex.com/) (Highest Quality)
 
-- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/y737QBlP) scaling available on PC with [Resizing Algorithm set to Lanczos](https://i.imgur.com/BiNvbSq.png), and the [Lanczos slider set to level 2](https://i.imgur.com/qkSifGM.png).
+- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/y737QBlP) scaling available on PC with [Resizing Algorithm set to Lanczos](https://user-images.githubusercontent.com/78981416/233718226-57d36d09-fe1d-40bb-b1d6-415c66272d74.png), and the [Lanczos slider set to level 2](https://user-images.githubusercontent.com/78981416/233718286-67f29d7f-53bf-47df-a41a-24fcd96a66f7.png).
 
-- For laptops or high resolution displays, you will likely need to [disable Windows DPI scaling](https://i.imgur.com/PkjLdAA.png) (Go to `C:\Program Files\CDisplayEx`, right click `CDisplayEx.exe` and select Properties -> Compatibility -> Change high DPI settings
+- For laptops or high resolution displays, you will likely need to [disable Windows DPI scaling](https://user-images.githubusercontent.com/78981416/233718346-e66ff623-abcf-4c3a-8541-23fb840e65c9.png). Go to `C:\Program Files\CDisplayEx`, right click `CDisplayEx.exe` and select Properties -> Compatibility -> Change high DPI settings
 
-- Offers an ["Auto Colors"](https://i.imgur.com/qCEc9MB.png) option which allows you to fix black levels, however requires manual tweaking depending on the source. Should only be enabled when [obvious blacks are appearing as grey](https://i.imgur.com/AA85Knn.png), at which point you should increase the white level sensitivity slightly [until they become black](https://i.imgur.com/sDmx0b7.png).
+- Offers an ["Auto Colors"](https://user-images.githubusercontent.com/78981416/233718417-d994059b-b18d-4fa1-92cf-e2f7a51bd072.png) option which allows you to fix black levels, however requires manual tweaking depending on the source. Should only be enabled when [obvious blacks are appearing as grey](https://user-images.githubusercontent.com/78981416/233718453-c358222b-384e-45f5-9ff5-151aad32c94f.png), at which point you should increase the white level sensitivity slightly [until they become black](https://user-images.githubusercontent.com/78981416/233718539-a670d966-9ab7-4f23-8abd-a1a8f2cb93f4.png).
 
 [Tachidesk](https://github.com/Suwayomi/Tachidesk-Server) (Most Convenient)
 
@@ -44,7 +44,7 @@ Although these are significantly lower quality, not all manga get official digit
 
 [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) (Highest Quality)
 
-- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/y737QBlP) scaling available on Android with Image smooth filter set to [Lanczos 3](https://i.imgur.com/M2fkp9p.jpeg)
+- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/y737QBlP) scaling available on Android with Image smooth filter set to [Lanczos 3](https://user-images.githubusercontent.com/78981416/233718601-dbdd3303-d96a-474e-aed5-7d4c22a8e8da.png)
 
 [Tachiyomi](https://tachiyomi.org/) (Most Convenient)
 

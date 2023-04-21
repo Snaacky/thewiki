@@ -156,7 +156,7 @@ If you don't want to take screenshots and upload them manually, then you can sim
 - Name the collection appropriately for Slow.pics.
 - Use a large amount of images to make the comparison as useful as possible, ideally at least 40 since you'll get a lot of futile results with it being automatic.
 - Hit `Start Upload` and patiently wait while vspreview absolutely molests your battlestation.
-  [![Comp](https://i.imgur.com/00m9QvB.png "Comp")](https://i.imgur.com/00m9QvB.png "Comp")
+  [![Comp](https://user-images.githubusercontent.com/78981416/233719219-2db98938-04f7-420b-b389-c7a3bbdf3898.png "Comp")](https://user-images.githubusercontent.com/78981416/233719219-2db98938-04f7-420b-b389-c7a3bbdf3898.png "Comp")
 
 ## Automatic Comparison Scripts
 

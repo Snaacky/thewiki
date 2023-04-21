@@ -26,13 +26,13 @@ We offer the definitive resource for users looking for new services to try out. 
 Your sponsored listing will be put up in three places, on the home page of the index for maximum traffic potential, at the top of the library overview (category) for your service, and at the top of any collections that your service is in (sub-categories).
 
 Home page:
-![nxxjegkvso.png](https://i.imgur.com/UgjHT4X.png)
+![nxxjegkvso.png](https://user-images.githubusercontent.com/78981416/233719095-22e48086-db8c-4045-924e-8e5649b23384.png)
 
 Library specific:
-![1yzcis1mlq.png](https://i.imgur.com/BpvlvEb.png)
+![1yzcis1mlq.png](https://user-images.githubusercontent.com/78981416/233719137-c6d95f5f-63c1-4d59-ac78-7560bceabff0.png)
 
 Collection specific:
-![hoar58xgky.png](https://i.imgur.com/BoGNjUv.png)
+![hoar58xgky.png](https://user-images.githubusercontent.com/78981416/233719169-5fbf36ba-587d-4773-b7cf-aaefd46230de.png)
 
 
 ## How much traffic does the index receive per month?
