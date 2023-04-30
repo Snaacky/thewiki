@@ -1,7 +1,7 @@
 ---
 label: Visual Novels
 description: A guide to extract Visual Novel assets
-image: 
+image: https://files.catbox.moe/g9nbkd.gif
 ---
 
 # Visual Novels
