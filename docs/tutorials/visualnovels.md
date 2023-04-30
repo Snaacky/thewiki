@@ -16,7 +16,9 @@ The following guide will explain how to extract and acquire the assets from Visu
 
 3. [GARBro](https://github.com/morkt/GARbro) - Probably the swiss army knife of Visual Novel asset extractors. It contains extractors for many visual novels which are made with many different kinds of engines. List of supported formats and games [here](https://morkt.github.io/GARbro/supported.html).
 
-Please note that not all Visual Novels and their archival schemes are supported. Some may even be encrypted to prevent tampering.
+!!!info Info
+Not all Visual Novels and their archival schemes are supported. Some may even be encrypted to prevent tampering.
+!!!
 
 ## Extracting a game's assets with GARBro
 
@@ -31,7 +33,9 @@ The left panel is your file browser and will be your primary method of navigatin
 The below archive is probably an archive for event CGs. ![https://files.catbox.moe/8tle3x.jpg](https://files.catbox.moe/8tle3x.jpg)
 4. You're done! You may need to explore and experiment a lot at times to find certain things, and many files may be named poorly, but they should all generally be visible in the preview. To save a file, right click it and hit Extract. You may also choose to save the entire extracted data folder for further use.
 
-NOTE: You may encounter the following opening certain archives. This just means that the tool was unable to automatically determine what format the archive was in, or maybe the archive is encrypted. You can select one of the games (if it is your game) in the dropdown, or just select NoCrypt and attempt to open it. 
+!!!info Info
+You may encounter the following opening certain archives. This just means that the tool was unable to automatically determine what format the archive was in, or maybe the archive is encrypted. You can select one of the games (if it is your game) in the dropdown, or just select NoCrypt and attempt to open it. 
+!!!
 
 ![https://files.catbox.moe/4pjqou.jpg](https://files.catbox.moe/4pjqou.jpg)
 
