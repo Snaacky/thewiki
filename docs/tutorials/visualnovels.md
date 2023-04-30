@@ -1,5 +1,7 @@
 ---
 label: Visual Novels
+description: A guide to extract Visual Novel assets
+image: 
 ---
 
 # Visual Novels
