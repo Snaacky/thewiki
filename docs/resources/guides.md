@@ -8,3 +8,4 @@ order: -2
 [!ref](/guides/quality/)
 [!ref](/guides/playback/)
 [!ref](/guides/torrenting/)
+[!ref](/guides/splittunnel/)
