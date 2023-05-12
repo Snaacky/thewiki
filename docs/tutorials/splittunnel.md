@@ -22,6 +22,7 @@ This guide can be used to achieve whitelist split tunneling on any Wireguard VPN
 5. Now click Add Tunnel (bottom left). Browse for your VPN configuration file.
 6. Select your configuration and click Edit at the bottom right of the window
 7. A text file should open. Add `AllowedApps = qbittorrent` to the bottom of this file, then click Save. If you would like to add more programs, add a comma and a space. For example, `AllowedApps = qbittorrent, firefox`![image](https://github.com/guyman624/thewiki/assets/82007920/d2ba5e4f-ecdd-422e-b645-dd8d76635861)
+7a. If instead of whitlisting only qBittorrent, you would prefer blacklisting other applications, for example have everything route through the VPN except the browser, you can instead use something like `DisallowedApps = firefox` or `DisallowedApps = chrome`.
 
 8. Activate the tunnel
 
