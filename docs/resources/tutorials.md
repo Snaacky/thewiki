@@ -20,6 +20,7 @@ order: -3
 - [Propolis](/tutorials/propolis)
 - [qBittorrent](/tutorials/qbittorrent)
 - [Sonarr](/tutorials/sonarr)
+- [Split Tunneling](/tutorials/splittunnel)
 - [Transmission](/tutorials/transmission)
 - [Unblock Guide](/tutorials/unblock)
-- [Split Tunneling](/tutorials/splittunnel)
+
