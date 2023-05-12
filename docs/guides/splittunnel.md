@@ -1,6 +1,6 @@
 ---
 label: Split Tunneling
-order: -3
+order: -4
 ---
 
 # Split Tunneling on Any VPN (Wireguard)
