@@ -9,12 +9,12 @@ author:
 # Split Tunneling on Any VPN (Wireguard)
 This guide can be used to achieve whitelist split tunneling on any Wireguard VPN. Most VPNs will provide you with a wireguard config or have some sort of method to extract one. 
 
-# Required
+## Required
 1. [WireSockUI](https://github.com/wiresock/WireSockUI/releases) 
 2. Torrent Client (qBittorrent preferred)
 3. Your provider's wireguard .conf file
 
-# Steps
+## Steps
 1. Download WireSockUI. Extract the exe and config file to a folder where it wont be deleted by accident.
 2. Run the program
 3. Click the settings icon around the bottom middle of the window
