@@ -22,3 +22,4 @@ order: -3
 - [Sonarr](/tutorials/sonarr)
 - [Transmission](/tutorials/transmission)
 - [Unblock Guide](/tutorials/unblock)
+- [Split Tunneling](/tutorials/splittunnel)
