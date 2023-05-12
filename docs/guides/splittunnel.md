@@ -1,3 +1,8 @@
+---
+label: Split Tunneling
+order: -3
+---
+
 # Split Tunneling on Any VPN (Wireguard)
 This guide can be used to achieve whitelist split tunneling on any Wireguard VPN. Most VPNs will provide you with a wireguard config or have some sort of method to extract one. 
 
