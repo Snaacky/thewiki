@@ -47,7 +47,7 @@ sudo apt -y install sox flac
 2. Download the compiled release by clicking the button underneath **Download artifacts**.
 3. Extract the contents of the archive into a new folder. For the sake of this guide, I'll be extracting it to `/mnt/d/propolis-v0.5.5`
 4. Run `./propolis` in the directory you extracted propolis into and it should look like this:
-   [![./propolis](https://i.imgur.com/buzcicv.png "./propolis")](https://i.imgur.com/buzcicv.png "./propolis")
+   [![./propolis](https://user-images.githubusercontent.com/78981416/233719501-3130572b-ecd3-47ea-8c00-806a59e721c6.png "./propolis")](https://user-images.githubusercontent.com/78981416/233719501-3130572b-ecd3-47ea-8c00-806a59e721c6.png "./propolis")
    This means that you have successfully installed `propolis`.
 
 ## Adding propolis to PATH
@@ -61,4 +61,4 @@ source ~/.bashrc
 
 If you did everything correctly, `propolis` is now installed and added to path. You can test this by running `propolis` from anywhere else. For example:
 
-[![propolis](https://i.imgur.com/6FqepHA.png "propolis")](https://i.imgur.com/6FqepHA.png "propolis")
+[![propolis](https://user-images.githubusercontent.com/78981416/233719555-3593f92c-bdde-4efe-a103-1a7a21647d76.png "propolis")](https://user-images.githubusercontent.com/78981416/233719555-3593f92c-bdde-4efe-a103-1a7a21647d76.png "propolis")

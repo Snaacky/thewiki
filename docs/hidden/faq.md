@@ -5,7 +5,7 @@ visibility: hidden
 
 # FAQ
 
-## Can I link to piracy sites, torrents, or direct download links?
+## Can I link to sites, torrents, or direct download links?
 
 All subreddits are governed by the [Reddit Content Policy](https://www.redditinc.com/policies/content-policy) which means we have to be careful with what we allow in order to keep our subreddit from being shutdown. 
 
@@ -242,7 +242,7 @@ TorrentFreak's [Which VPN Providers Really Take Privacy Seriously in 2021?](http
 
 ## Do I need to use a VPN for torrenting?
 
-Using a VPN for piracy purposes are always a good practice - hence, it is advised. Legal entities acting on behalf of copyright holders have been known to send DMCA letters to the ISP of IP addresses found in P2P network swarms. 
+Using a VPN for torrenting is always a good practice - hence, it is advised. Legal entities acting on behalf of copyright holders have been known to send DMCA letters to the ISP of IP addresses found in P2P network swarms. 
 
 ## Do I need a VPN for streaming or direct download link (DDL)?
 

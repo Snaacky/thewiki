@@ -239,7 +239,7 @@ for file in *.ass do; python -m subdigest -i "${file}" --selection-set "text" "\
 ## Styling
 
 - The dialogue style must be readable without being distracting.
-- Feel free to restyle bad styling. Here's a reference for some good [dialogue fonts](https://i.imgur.com/qQUFf7n.png).
+- Feel free to restyle bad styling. Here's a reference for some good [dialogue fonts](https://user-images.githubusercontent.com/78981416/233718169-0c5bf0d5-3ba4-4836-b41b-6c7c1c0d14b1.png).
 - You can also copy styling from existing groups like [GJM](https://nyaa.si/user/GoodJobMedia), [Kaleido](https://nyaa.si/user/Kaleido-subs), or [DDY](https://nyaa.si/user/DameDesuYo).
 - Try to match the styling of previous seasons of the same show to maintain consistency. Although this isn't mandatory and should be avoided if previous season releases had bad styling.
 

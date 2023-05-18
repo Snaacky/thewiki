@@ -91,7 +91,7 @@ apt install mpv
 The default path for mpv config is `%APPDATA%/mpv/` but a folder named `portable_config` next to the `mpv.exe` overrides this. Here's a brief overview of files/folders you may want inside either of these folders -
 
 - `mpv.conf` - MPV user settings.
-- `input.conf` - custom keybind settings. You can see the default key bindings [here](https://i.imgur.com/G6Rx74P.png) and syntax [here](https://mpv.io/manual/master/#input-conf).
+- `input.conf` - custom keybind settings. You can see the default key bindings [here](https://user-images.githubusercontent.com/78981416/233719424-c442e27d-bd40-4138-912a-746a2b14493b.png) and syntax [here](https://mpv.io/manual/master/#input-conf).
 - `fonts` - Font files in this directory are used by mpv/libass for subtitles.
 - `scripts` - This directory is used to load custom scripts, usually `.lua` files. You can find scripts [here](https://github.com/mpv-player/mpv/wiki/User-Scripts).
 - `shaders` - This directory is used to load custom shaders like NNEDI3, Ravu, FSRCNNX, etc.
@@ -157,7 +157,7 @@ Debanding is the process of removing said banding.
 
 ```
 #Banding is a visual artifact, visual artifacts should never be in a video.
-#Example of banding: https://imgur.com/32d77H0
+#Example of banding: https://user-images.githubusercontent.com/78981416/233719301-ebe72064-03ef-45ff-aa93-76ef0d990ecd.png
 #Debanding is the process of removing said banding.
 #6 minute explanation of what causes banding: https://youtu.be/h9j89L8eQQk
 

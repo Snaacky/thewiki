@@ -29,7 +29,7 @@ Use uBlock Origin (recommended) or AdGuard AdBlock. Both are browser extensions 
 
 ## Is X streaming site safe? Can it harm my PC?
 
-You're always taking a gamble when using piracy sites. Do your research about the site you're using.
+You're always taking a gamble when using sites. Do your research about the site you're using.
 
 ## Where can I stream 4K/BD quality anime?
 

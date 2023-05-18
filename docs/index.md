@@ -1,13 +1,14 @@
 ---
 label: Home
 icon: home
-description: Wiki for all things related to anime piracy and more!
+description: Wiki for all things related to anime and more!
 ---
 
 # Home
+
 ![](https://user-images.githubusercontent.com/78981416/214677895-b5497a9f-b78c-4c26-8ef3-880594c67e7a.png)
 
-Welcome to the wiki for all things related to anime piracy and more!
+Welcome to the wiki for all things related to anime and more!
 Here you can find stuff ranging from easy to digest tutorials to full blown guides.
 We also have a Discord server where you can hang out, report, and request things related to this wiki.
 [![](https://discordapp.com/api/guilds/974468300304171038/widget.png?style=banner2)](https://discord.gg/snackbox)
