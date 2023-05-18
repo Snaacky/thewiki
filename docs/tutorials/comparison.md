@@ -10,7 +10,7 @@ image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3e
 
 ### Setup
 
-1. Install [Python 3.10](https://www.python.org/downloads/release/python-3105/)
+1. Install [Python 3.10](https://www.python.org/downloads/release/python-3109/)
    - During installation tick `Add Python 3.10 to PATH`.
 2. Install [Git](https://gitforwindows.org/)
    - Optionally type `git version` in your terminal to verify Git was installed.
@@ -43,7 +43,7 @@ image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3e
 5. Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
 
     ```
-    pip install vspreview
+    pip install -U git+https://github.com/Irrational-Encoding-Wizardry/vs-preview.git
     ```
 
 6. Create a new file called `comp.vpy`.
@@ -63,6 +63,11 @@ image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3e
     source1 = "FirstSourceName"
     source2 = "SecondSourceName"
     source3 = "ThirdSourceName"
+	
+	## Sets the content as either progressive (0) or interlaced (1/2), required for progressive content tagged as interlaced
+    ##clip1 = core.std.SetFieldBased(clip1, 0)
+    ##clip2 = core.std.SetFieldBased(clip2, 1)
+    ##clip3 = core.std.SetFieldBased(clip3, 2)
 
     ## Convert clip to 16bit (Only for filters that need it such as tonemapping and gamma fixing)
     ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
@@ -84,11 +89,16 @@ image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3e
     ##clip1 = clip1[0:]
     ##clip2 = clip2[24:]
     ##clip3 = clip3[0:]
+	
+    ## Change fps to match other sources, only needed when the previewer doesn't automatically keep them in sync
+    ##clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
+    ##clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
+    ##clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
     ## Tonemapping (For HDR/DV content only), src_csp=1 is for HDR, src_csp=3 is for DV [16 BIT REQUIRED]
-    ##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=0, tone_mapping_function=3, src_csp=1, dst_csp=0)
-    ##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=0, tone_mapping_function=3, src_csp=3, dst_csp=0)
-    ##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=0, tone_mapping_function=3, src_csp=1, dst_csp=0)
+    ##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=1, dst_csp=0, gamut_mode=0, use_dovi=1)
+    ##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=3, dst_csp=0, gamut_mode=0, use_dovi=1)
+    ##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=1, dst_csp=0, gamut_mode=0, use_dovi=1, dst_max=120)
 
     ##Set DV clips to limited after tonemapping so FrameInfo works
     ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
@@ -99,6 +109,10 @@ image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3e
     ##clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
     ##clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
     ##clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+	
+    ##Fix Double range compression (When one source looks very washed out)
+    ##clip1 = core.resize.Point(clip1, range_in=0, range=1, dither_type="error_diffusion")
+    ##clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
     ## Displays the frame number, type, and group name in the top left corner
     clip1= FrameInfo(clip1, source1)
@@ -118,13 +132,33 @@ image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3e
 8. That's it for the setup, now to use vspreview you just need to run this command in your terminal or paste it in a text file and save it as `comp.bat`:
 
     ```
-    vspreview /path/to/comp.vpy
+    vspreview "C:\Path\To\comp.vpy"
     ```
 
     Now, when making comps you just edit `comp.vpy` to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed and then run `comp.bat` or run `vspreview comp.vpy` directly from your terminal.
 
+### Screenshotting Automatically (Easiest)
 
-### Quality of Life Changes for Screenshotting Manually via VS-Preview (Recommended)
+If you don't want to take screenshots and upload them manually, then you can simply use VS-Preview's automatic comparison function.
+
+- Click the `comp` button in the bottom right of the toolbar.
+- Make sure all `Picture Types` are selected, or only select `B` if you want matching frame-types
+- Tick the `public` box to make the comparison available on the slow.pics homepage
+- Name the collection appropriately for Slow.pics, get the TMDB ID from https://www.themoviedb.org/ and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content. 
+- Under `random` enter a frame count amount, you should use a large amount of images to make the comparison as effective as possible, ideally at least 40 as not all frames will be useful.
+- Hit `Start Upload` and patiently wait while vspreview collects the frames and uploads the comparison.
+
+### Screenshotting Manaully (Recommended)
+
+- Press `Shift` & `Right Arrow` keys to move forward a set amount of frames (configurable in playback section of the toolbar)
+- `Number` keys to switch between video sources and compare quality.
+- Press `Shift` & `S` keys to take and save screenshots.
+- Aim to screenshot a variety of scenes like light/dark, low/high motion, etc.
+- Try and match frame type when screenshotting, e.g. all sources on a `B` frame, single frame jump comes in handy for when they don't match (`Shift + Arrow keys`).
+- See QoL changes below to make this slightly easier on your fingers
+  - *Note: If a source file does not have `B` frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no `B` frames.*
+  
+ #### Quality of Life Changes for Screenshotting Manually via VS-Preview
 
 - **Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted**
    In VSPreview on the bottom bar select Misc, set file name template to `{frame}_{script_name}_({index})`.
@@ -133,30 +167,16 @@ image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3e
    In VSPreview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
 
 - **Take screenshots quicker by setting the save image button to enter**
-   Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py` - Line 150: `Replace Qt.SHIFT + Qt.Key_S` with `Qt.Key_Return`. - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
+   Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py` - Line 166: Replace `QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click` with `(Qt.Key_Return), self.save_frame_as_button.click
+`. - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
 
 - **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
-   Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py` - Line 164-165 Add `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right` - Line 166-167 Remove `Qt.SHIFT +` before `Qt.Key_Left` and `Qt.Key_Right`
-
-### Making the comparison
-
-- Press `Right Arrow` key to move forward a set amount of frames.
-- `Number` keys to switch between video sources and compare quality.
-- Double tap `Enter` key to take and save screenshots.
-- Aim to screenshot a variety of scenes like light/dark, low/high motion, etc.
-- Try and match frame type when screenshotting, e.g. all sources on a `B` frame, single frame jump comes in handy for when they don't match (`Shift + Arrow keys`).
-  - *Note: If a source file does not have `B` frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no `B` frames.*
-
-### Screenshotting Automatically
-
-If you don't want to take screenshots and upload them manually, then you can simply use VS-Preview's automatic comparison function.
-
-- Click the `comp` button in the toolbar.
-- Set the `Picture Type` to `All`, or `B` if you want matching frame-types
-- Name the collection appropriately for Slow.pics.
-- Use a large amount of images to make the comparison as useful as possible, ideally at least 40 since you'll get a lot of futile results with it being automatic.
-- Hit `Start Upload` and patiently wait while vspreview absolutely molests your battlestation.
-  [![Comp](https://i.imgur.com/00m9QvB.png "Comp")](https://i.imgur.com/00m9QvB.png "Comp")
+   Open `%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py` - Select lines 180-187, delete them, and paste
+   
+		self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+        self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+        self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+        self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
 
 ## Automatic Comparison Scripts
 
