@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.737221677455">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.737688697375">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.737221677455" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.737688697375" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.737221677455" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.737688697375" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.737221677455" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.737221677455" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.737688697375" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.737688697375" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,7 +174,7 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li><p>Install <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a></p>
+<li><p>Install <a href="https://www.python.org/downloads/release/python-3109/">Python 3.10</a></p>
 <ul>
 <li>During installation tick <code v-pre>Add Python 3.10 to PATH</code>.</li>
 </ul>
@@ -227,7 +227,7 @@
 </li>
 <li><p>Install <a href="https://github.com/Irrational-Encoding-Wizardry/vs-preview">vs-preview</a>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">pip install vspreview</code></pre>
+<pre class="language-none"><code v-pre class="language-none">pip install -U git+https://github.com/Irrational-Encoding-Wizardry/vs-preview.git</code></pre>
 </doc-codeblock></div>
 </li>
 <li><p>Create a new file called <code v-pre>comp.vpy</code>.</p>
@@ -247,6 +247,11 @@ clip3 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;)
 source1 = &quot;FirstSourceName&quot;
 source2 = &quot;SecondSourceName&quot;
 source3 = &quot;ThirdSourceName&quot;
+
+ ## Sets the content as either progressive (0) or interlaced (1/2), required for progressive content tagged as interlaced
+##clip1 = core.std.SetFieldBased(clip1, 0)
+##clip2 = core.std.SetFieldBased(clip2, 1)
+##clip3 = core.std.SetFieldBased(clip3, 2)
 
 ## Convert clip to 16bit (Only for filters that need it such as tonemapping and gamma fixing)
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
@@ -269,10 +274,15 @@ source3 = &quot;ThirdSourceName&quot;
 ##clip2 = clip2[24:]
 ##clip3 = clip3[0:]
 
+## Change fps to match other sources, only needed when the previewer doesn't automatically keep them in sync
+##clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
+##clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
+##clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
+
 ## Tonemapping (For HDR/DV content only), src_csp=1 is for HDR, src_csp=3 is for DV [16 BIT REQUIRED]
-##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=0, tone_mapping_function=3, src_csp=1, dst_csp=0)
-##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=0, tone_mapping_function=3, src_csp=3, dst_csp=0)
-##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=0, tone_mapping_function=3, src_csp=1, dst_csp=0)
+##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=1, dst_csp=0, gamut_mode=0, use_dovi=1)
+##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=3, dst_csp=0, gamut_mode=0, use_dovi=1)
+##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=1, dst_csp=0, gamut_mode=0, use_dovi=1, dst_max=120)
 
 ##Set DV clips to limited after tonemapping so FrameInfo works
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
@@ -283,6 +293,10 @@ source3 = &quot;ThirdSourceName&quot;
 ##clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 ##clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 ##clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+
+##Fix Double range compression (When one source looks very washed out)
+##clip1 = core.resize.Point(clip1, range_in=0, range=1, dither_type=&quot;error_diffusion&quot;)
+##clip1 = core.std.SetFrameProp(clip1, prop=&quot;_ColorRange&quot;, intval=1)
 
 ## Displays the frame number, type, and group name in the top left corner
 clip1= FrameInfo(clip1, source1)
@@ -302,16 +316,49 @@ clip3.set_output(3)</code></pre>
 </li>
 <li><p>That&#x27;s it for the setup, now to use vspreview you just need to run this command in your terminal or paste it in a text file and save it as <code v-pre>comp.bat</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">vspreview /path/to/comp.vpy</code></pre>
+<pre class="language-none"><code v-pre class="language-none">vspreview &quot;C:\Path\To\comp.vpy&quot;</code></pre>
 </doc-codeblock></div>
 <p>Now, when making comps you just edit <code v-pre>comp.vpy</code> to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed and then run <code v-pre>comp.bat</code> or run <code v-pre>vspreview comp.vpy</code> directly from your terminal.</p>
 </li>
 </ol>
-<doc-anchor-target id="quality-of-life-changes-for-screenshotting-manually-via-vs-preview-recommended">
+<doc-anchor-target id="screenshotting-automatically-easiest">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quality-of-life-changes-for-screenshotting-manually-via-vs-preview-recommended">#</doc-anchor-trigger>
-        <span>Quality of Life Changes for Screenshotting Manually via VS-Preview (Recommended)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting-automatically-easiest">#</doc-anchor-trigger>
+        <span>Screenshotting Automatically (Easiest)</span>
     </h3>
+</doc-anchor-target>
+<p>If you don&#x27;t want to take screenshots and upload them manually, then you can simply use VS-Preview&#x27;s automatic comparison function.</p>
+<ul>
+<li>Click the <code v-pre>comp</code> button in the bottom right of the toolbar.</li>
+<li>Make sure all <code v-pre>Picture Types</code> are selected, or only select <code v-pre>B</code> if you want matching frame-types</li>
+<li>Tick the <code v-pre>public</code> box to make the comparison available on the slow.pics homepage</li>
+<li>Name the collection appropriately for Slow.pics, get the TMDB ID from <a href="https://www.themoviedb.org/">https://www.themoviedb.org/</a> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.</li>
+<li>Under <code v-pre>random</code> enter a frame count amount, you should use a large amount of images to make the comparison as effective as possible, ideally at least 40 as not all frames will be useful.</li>
+<li>Hit <code v-pre>Start Upload</code> and patiently wait while vspreview collects the frames and uploads the comparison.</li>
+</ul>
+<doc-anchor-target id="screenshotting-manaully-recommended">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting-manaully-recommended">#</doc-anchor-trigger>
+        <span>Screenshotting Manaully (Recommended)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Press <code v-pre>Shift</code> &amp; <code v-pre>Right Arrow</code> keys to move forward a set amount of frames (configurable in playback section of the toolbar)</li>
+<li><code v-pre>Number</code> keys to switch between video sources and compare quality.</li>
+<li>Press <code v-pre>Shift</code> &amp; <code v-pre>S</code> keys to take and save screenshots.</li>
+<li>Aim to screenshot a variety of scenes like light/dark, low/high motion, etc.</li>
+<li>Try and match frame type when screenshotting, e.g. all sources on a <code v-pre>B</code> frame, single frame jump comes in handy for when they don&#x27;t match (<code v-pre>Shift + Arrow keys</code>).</li>
+<li>See QoL changes below to make this slightly easier on your fingers
+<ul>
+<li><em>Note: If a source file does not have <code v-pre>B</code> frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no <code v-pre>B</code> frames.</em></li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="quality-of-life-changes-for-screenshotting-manually-via-vs-preview">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quality-of-life-changes-for-screenshotting-manually-via-vs-preview">#</doc-anchor-trigger>
+        <span>Quality of Life Changes for Screenshotting Manually via VS-Preview</span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automaically sorted</strong>
@@ -321,43 +368,17 @@ In VSPreview on the bottom bar select Misc, set file name template to <code v-pr
 In VSPreview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
 </li>
 <li><p><strong>Take screenshots quicker by setting the save image button to enter</strong>
-Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code> - Line 150: <code v-pre>Replace Qt.SHIFT + Qt.Key_S</code> with <code v-pre>Qt.Key_Return</code>. - If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
+Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code> - Line 166: Replace <code v-pre>QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click</code> with <code v-pre>(Qt.Key_Return), self.save_frame_as_button.click </code>. - If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
 </li>
 <li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong>
-Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Line 164-165 Add <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code> - Line 166-167 Remove <code v-pre>Qt.SHIFT +</code> before <code v-pre>Qt.Key_Left</code> and <code v-pre>Qt.Key_Right</code></p>
+Open <code v-pre>%localappdata%\Programs\Python\Python310\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Select lines 180-187, delete them, and paste</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">  self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+  self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+  self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+  self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
+</doc-codeblock></div>
 </li>
-</ul>
-<doc-anchor-target id="making-the-comparison">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#making-the-comparison">#</doc-anchor-trigger>
-        <span>Making the comparison</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Press <code v-pre>Right Arrow</code> key to move forward a set amount of frames.</li>
-<li><code v-pre>Number</code> keys to switch between video sources and compare quality.</li>
-<li>Double tap <code v-pre>Enter</code> key to take and save screenshots.</li>
-<li>Aim to screenshot a variety of scenes like light/dark, low/high motion, etc.</li>
-<li>Try and match frame type when screenshotting, e.g. all sources on a <code v-pre>B</code> frame, single frame jump comes in handy for when they don&#x27;t match (<code v-pre>Shift + Arrow keys</code>).
-<ul>
-<li><em>Note: If a source file does not have <code v-pre>B</code> frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no <code v-pre>B</code> frames.</em></li>
-</ul>
-</li>
-</ul>
-<doc-anchor-target id="screenshotting-automatically">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting-automatically">#</doc-anchor-trigger>
-        <span>Screenshotting Automatically</span>
-    </h3>
-</doc-anchor-target>
-<p>If you don&#x27;t want to take screenshots and upload them manually, then you can simply use VS-Preview&#x27;s automatic comparison function.</p>
-<ul>
-<li>Click the <code v-pre>comp</code> button in the toolbar.</li>
-<li>Set the <code v-pre>Picture Type</code> to <code v-pre>All</code>, or <code v-pre>B</code> if you want matching frame-types</li>
-<li>Name the collection appropriately for Slow.pics.</li>
-<li>Use a large amount of images to make the comparison as useful as possible, ideally at least 40 since you&#x27;ll get a lot of futile results with it being automatic.</li>
-<li>Hit <code v-pre>Start Upload</code> and patiently wait while vspreview absolutely molests your battlestation.
-<a href="https://user-images.githubusercontent.com/78981416/233719219-2db98938-04f7-420b-b389-c7a3bbdf3898.png" title="Comp"><img src="https://user-images.githubusercontent.com/78981416/233719219-2db98938-04f7-420b-b389-c7a3bbdf3898.png" alt="Comp" title="Comp" /></a></li>
 </ul>
 <doc-anchor-target id="automatic-comparison-scripts">
     <h2>
