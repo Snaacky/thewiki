@@ -77,7 +77,7 @@ Grab MacOS builds from [here](https://laboratory.stolendata.net/~djinn/mpv_osx/)
 You will need [homebrew](https://brew.sh/) installed for this and then run the following command in your terminal.
 
 ```
-brew install mpv --HEAD
+brew install mpv
 ```
 
 ## Linux
