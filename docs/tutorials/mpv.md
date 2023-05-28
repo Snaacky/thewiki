@@ -231,15 +231,14 @@ Some of the above guides are quite advanced, do not blindly copy paste things fr
 - https://github.com/po5/thumbfast
 - https://github.com/po5/trackselect
 
-## DV/HDR Tonemapping
+## Collection of MPV configs
 
-For watching Dobly Vision or HDR content on an SDR screen you need to tonemap it. To do this change the `vo=gpu` to `vo=gpu-next` and add `tone-mapping=bt.2446a` to your config.
+### [Cyberpunk: Edgerunners](https://anilist.co/anime/120377/CYBERPUNK-EDGERUNNERS/)
+
+The SDR release for this show is bad and the DV stream is significantly better compared to the SDR version but also requires a DV capable display. If you don't have a DV capable display, you can tonemap it by adding snippet below to your `mpv.conf`
+Here's a [comparison between the different tone-mapping options](https://slow.pics/c/nv2PHAUW)
 
 ```
 vo=gpu-next
 tone-mapping=bt.2446a
 ```
-
-!!!
-This will only affect content that needs tonemapping, SDR content will be unaffected. `gpu-next` is still an experimental output driver so you may experience unexpected behavior. You can read more about `gpu-next` [here](https://github.com/mpv-player/mpv/wiki/GPU-Next-vs-GPU).
-!!!
