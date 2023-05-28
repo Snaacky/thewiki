@@ -13,38 +13,38 @@ Here you can find stuff ranging from easy to digest tutorials to full blown guid
 We also have a Discord server where you can hang out, report, and request things related to this wiki.
 [![](https://discordapp.com/api/guilds/974468300304171038/widget.png?style=banner2)](https://discord.gg/snackbox)
 
-### :rocket: Getting Started
+#### :rocket: Getting started
 
 - [How and where to find your favorite anime](/getting-started/anime/)
 - [How and where to find your favorite manga, light novel, etc](/getting-started/literature/)
 - [How and where to find your favorite hentai](/getting-started/hentai/)
 
-### :book: Learn About Various Topics in Details
+#### :book: Learn about various topics in details
 
 - [Various players and what's best for your device](/guides/playback/)
 - [Sourcing your favorite content in the easiest and highest quality possible](/guides/playback/)
 - [Learn how to torrent from scratch](/guides/torrenting/)
 
-### :tv: Learn about the Various Ways to Watch Your Anime
+#### :tv: Learn about the various ways to watch your anime
 
 - [Quickly and easily stream your favorite anime](/sourcing/streaming/)
 - [Download your favorite anime in the higest quality possible](/sourcing/public-trackers/)
 - [Direct download your favorite anime](/sourcing/ddl/)
 
-### :scroll: Some Helpful Tutorials
+#### :scroll: Some helpful tutorials
 
 - [Install and configure MPV](/tutorials/mpv/)
 - [Download your favorite weekly shows automatically](/tutorials/rss/)
 - [Compare various versions to find the best](/tutorials/comparison/)
 
-### :floppy_disk: Want to Make Your Own Release for Others to Watch and Enjoy?
+#### :floppy_disk: Want to make your own release for others to watch and enjoy?
 
 - [Learn how to make your very own release](/advanced/release-standards/)
 
-### :question: Have Some Questions You Want to Ask?
+#### :question: Have some questions you want to ask?
 
 - [Check out our extensive FAQ](/resources/faq/)
 
-### :sparkling_heart: Want To Contribute and Help Improve this Wiki?
+#### :sparkling_heart: Want to contribute and help improve this wiki?
 
 - [Read how to contribute](https://github.com/Snaacky/thewiki/blob/master/README.md)
