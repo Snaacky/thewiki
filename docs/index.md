@@ -47,4 +47,4 @@ We also have a Discord server where you can hang out, report, and request things
 
 #### :sparkling_heart: Want to contribute and help improve this wiki?
 
-- [Read how to contribute](https://github.com/Snaacky/thewiki/blob/master/README.md)
+- [Read how to contribute](/contributing)
