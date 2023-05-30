@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738616275143">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.0.738793815290">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 2.4.0">
+    <meta name="generator" content="Retype 3.0.0">
 
     <!-- Primary Meta Tags -->
     <title>Muxing</title>
     <meta name="title" content="Muxing">
-    <meta name="description" content="Matroska(mkv) is a very versatile container. It can contain multiple streams of video, audio, subtitles, and other attachments." />
+    <meta name="description" content="Matroska is a very versatile container. Matroska is usually found as .mkv files (Matroska video), . mka" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://thewiki.moe/advanced/muxing/" />
@@ -20,22 +20,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thewiki.moe/advanced/muxing/">
     <meta property="og:title" content="Muxing">
-    <meta property="og:description" content="Matroska(mkv) is a very versatile container. It can contain multiple streams of video, audio, subtitles, and other attachments.">
+    <meta property="og:description" content="Matroska is a very versatile container. Matroska is usually found as .mkv files (Matroska video), . mka">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/advanced/muxing/">
     <meta property="twitter:title" content="Muxing">
-    <meta property="twitter:description" content="Matroska(mkv) is a very versatile container. It can contain multiple streams of video, audio, subtitles, and other attachments.">
+    <meta property="twitter:description" content="Matroska is a very versatile container. Matroska is usually found as .mkv files (Matroska video), . mka">
+    <meta property="twitter:image" content="https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.738616275143" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.0.738793815290" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738616275143" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738616275143" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.738616275143" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.0.738793815290" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.0.738793815290" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.0.738793815290" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -146,8 +148,8 @@
             <div class="grow min-w-0 dark:bg-dark-850">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="grow min-w-0 px-6 md:px-16">
-                        <main class="relative pt-6 pb-16">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
                             <div class="docs-markdown" id="docs-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
@@ -159,285 +161,229 @@
         <span>Muxing</span>
     </h1>
 </doc-anchor-target>
-<p>Matroska(mkv) is a very versatile container. It can contain multiple streams of video, audio, subtitles, and other attachments. The process of taking these streams, adding or removing some, and bundling them into a new mkv is called muxing. In general, you could be muxing any format, but for anime we&#x27;ll mostly be dealing with mkv. It&#x27;s useful when you want to use subtitles from a different release with what you already have downloaded, or to remove the extra english audio tracks to save space. Note that this is a lossless process different from encoding and takes only a few seconds.</p>
-<p><a href="https://mkvtoolnix.download/">Mkvtoolnix</a> is the best tool for all kinds of muxing. The equivalent cli option is mkvmerge (installed with mkvtoolnix) or ffmpeg. The process can also be done in batch for a whole folder at once. Example (paste in cmd in that folder) -</p>
-<p><code v-pre>FOR /F &quot;tokens=*&quot; %G IN ( 'dir /b *.mkv ') DO ffmpeg -n -i &quot;%G&quot; -map 0:v:0 -map 0:a:1 -map 0:s:2 -map 0:t? -c copy &quot;%~nG .mkv&quot;</code></p>
-<p>This will copy the first video, second audio, third subtitle stream and all attachments, which are usually the japanese ones in dual audio releases. You can check the stream number with mediainfo. The index starts from zero so <code v-pre>-map 0:s:0</code> would select the first subtitle stream. <code v-pre>-map 0:t?</code> copies the attachments(fonts) if any exist. Understanding more about the <a href="https://trac.ffmpeg.org/wiki/Map">ffmpeg map option</a> is helpful here as that is the only part you need to change.</p>
-<doc-anchor-target id="video">
+<p><a href="https://www.matroska.org/">Matroska</a> is a very versatile container. Matroska is usually found as <code v-pre>.mkv</code> files (Matroska video), .<code v-pre>mka</code> files (Matroska audio), <code v-pre>.mks</code> files (subtitles). It can contain multiple streams of video, audio, subtitles, and other attachments. The process of taking these streams, adding or removing some, and bundling them into a new file is called muxing or multiplexing. Muxing is a lossless process and takes only a few seconds. In general, you could be muxing any format, but for anime we&#x27;ll mostly be dealing with mkv. It&#x27;s useful when you want to use subtitles from a different release with what you already have downloaded, or to remove the extra english audio tracks to save space.</p>
+<doc-anchor-target id="mkvtoolnix">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#video">#</doc-anchor-trigger>
-        <span>Video</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mkvtoolnix">#</doc-anchor-trigger>
+        <span>MKVToolNix</span>
     </h2>
 </doc-anchor-target>
-<p>Ideally, the video should be an encode that&#x27;s an improvement over the source video but realistically that isn&#x27;t always the case since sometimes no good encode exists. This guide won&#x27;t be tackling the topic of encoding since there&#x27;s already one <a href="https://guide.encode.moe/encoding/preparation.html">here</a>.</p>
-<doc-anchor-target id="general">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general">#</doc-anchor-trigger>
-        <span>General</span>
-    </h3>
-</doc-anchor-target>
+<p><a href="https://mkvtoolnix.download/downloads.html">MKVToolNix</a> is a set of tools to create, alter and inspect Matroska &amp; WebM files under Windows, macOS, Linux and other Unices. It is the de-facto reference implementation of a Matroska multiplexer.</p>
+<p>MKVToolNix consists of the following command-line tools:</p>
 <ul>
-<li>WEB-DLs are usually the best source for shows which haven&#x27;t gotten a BluRay (usually airing or recently ended).</li>
-<li>An encode of the BluRay that&#x27;s better than the source will trump the source.</li>
-<li>BluRay Remux trumps WEB-DL/WEBRip and Bad Encodes.</li>
-<li>Avoid mini encodes as these are targeted to save size by sacrificing quality. Some popular mini encode groups to avoid are:</li>
+<li><code v-pre>mkvmerge</code> is a tool to create Matroska &amp; WebM files from other formats.</li>
+<li><code v-pre>mkvinfo</code> allows one to get information about the tracks in Matroska &amp; WebM files.</li>
+<li><code v-pre>mkvextract</code> can extract tracks from Matroska &amp; WebM files to other formats.</li>
+<li><code v-pre>mkvpropedit</code> can edit properties such as header and chapter information or attachments without remuxing.</li>
 </ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Anime Time, AnimeKaizoku, AnimeRG, BakedFish, Bonkai, CBB/CherryBomB, Cleo, DB, DeadFish,
-Edge, EMBER, Hakata Ramen, Hi10, iPUNISHER, Judas, Kanjouteki, M@nI, MiniFreeza,
-MiniTheatre, Mr.Deadpool, NemDiggers, NoobSubs, project-gxs, SSA, youshikibi</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="video-source">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#video-source">#</doc-anchor-trigger>
-        <span>Video Source</span>
-    </h3>
-</doc-anchor-target>
-<p>Unless you are making your own encode, you&#x27;ll have to stick to the available options. To get started:</p>
-<ul>
-<li>Download the different raws/encodes you find along with the source (BDMV/Remux) and make a <a href="../../tutorials/comparison/">comparison</a>.</li>
-<li>Look at the comparison to decide the best source and if you are having trouble picking one, feel free to join the <a href="https://discord.com/invite/jPeeZewWRn">SeaDex Discord</a> where pixel peepers will check it out and help you decide.</li>
-</ul>
-<doc-anchor-target id="audio">
+<p>On top of them sits <code v-pre>MKVToolNix GUI</code>, an easy-to-use program making the functionality of those command-line tools available as a GUI.</p>
+<doc-anchor-target id="getting-started">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#audio">#</doc-anchor-trigger>
-        <span>Audio</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
+        <span>Getting started</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="recommended-tools">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-tools">#</doc-anchor-trigger>
-        <span>Recommended Tools</span>
-    </h3>
-</doc-anchor-target>
+<ol>
+<li><p>After installing MKVToolNix, you&#x27;re pretty much ready to go. Once you launch it, you&#x27;ll be greeted with this.
+You&#x27;ll see 3 tabs here:</p>
 <ul>
-<li><a href="https://forum.doom9.org/showthread.php?t=125966">eac3to</a> with <a href="https://mega.nz/#!dFAmEC4Y!WMTQvzLkfTDHPfhTXURSLaFWbmDMVaq3dKfk4ucjYrI">updated libraries</a> for extracting and transcoding.</li>
-<li><a href="http://sox.sourceforge.net/">SoX</a> for resampling and bit depth reduction.</li>
-<li><a href="https://opus-codec.org/downloads/">opus-tools</a> for transcoding lossless audio to Opus.</li>
-<li><a href="https://github.com/OrangeChannel/acsuite">acsuite</a> for frame-based cutting/trimming/splicing of audio files using VapourSynth clip information.</li>
-<li><a href="https://github.com/alopatindev/sync-audio-tracks">sync-audio-tracks</a> calculates a delay between two audios and produces a shifted audio.</li>
-<li><a href="https://gitlab.com/beep_street/downsampler-threaded">downsampler-threaded</a> is a multi-process sox frontend for automatically resampling FLAC files.</li>
+<li><code v-pre>Input</code> tab for adding your files, modifying existing tracks, adding/removing tracks and more.</li>
+<li><code v-pre>Output</code> tab for adding metadata like file title or chapters.</li>
+<li><code v-pre>Attachments</code> tab for additional attachments, commonly used for adding fonts required by the subtitle tracks and things like cover.</li>
 </ul>
-<doc-anchor-target id="general-1">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general-1">#</doc-anchor-trigger>
-        <span>General</span>
-    </h3>
+<p><a href="https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png"><img src="https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png" alt="" /></a></p>
+</li>
+<li><p>You can either right-click anywhere in the top &quot;Source Files&quot; box or drag and drop your file in it.</p>
+<ul>
+<li>Once you add your source file, all the tracks in your file will show up in the box below, along with other relevant things in each tab.</li>
+<li>Tracks will be randomly assigned a color to indicate what source they belong to.</li>
+<li>Checking or unchecking a track will decide if it&#x27;ll be kept or removed in the output file.</li>
+<li>By default, anything you won&#x27;t explicitly uncheck will be copied over to the new output file.</li>
+<li>Clicking on any track allows you to modify several properties in the <doc-anchor-trigger to="#properties"><code v-pre>Properties</code></doc-anchor-trigger> window on the right. It&#x27;s important you get this right and it&#x27;s covered in more details below.</li>
+</ul>
+<p><a href="https://user-images.githubusercontent.com/78981416/242075905-711652cb-8fa5-4d4e-aea4-c44468f12bcc.png"><img src="https://user-images.githubusercontent.com/78981416/242075905-711652cb-8fa5-4d4e-aea4-c44468f12bcc.png" alt="" /></a></p>
+</li>
+<li><p>Once you&#x27;re done making your changes, assign a <a href="../release-standards/#naming">name</a> to your file and hit <code v-pre>Start multiplexing</code>. Make sure to check all 3 tabs to ensure what&#x27;s being copied over.</p>
+<p><a href="https://user-images.githubusercontent.com/78981416/242080040-79908193-4bbb-43b2-88e5-1a6a1a937f83.png"><img src="https://user-images.githubusercontent.com/78981416/242080040-79908193-4bbb-43b2-88e5-1a6a1a937f83.png" alt="" /></a></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>MKVToolNix also allows you to <a href="https://user-images.githubusercontent.com/78981416/242086965-882d8d2d-e88d-4490-8452-31f4ff10f273.png">generate a commandline</a> with all the changes you made in the GUI.</p>
+        </div>
+    </div>
+</div>
+</li>
+</ol>
+<doc-anchor-target id="properties">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#properties">#</doc-anchor-trigger>
+        <span>Properties</span>
+    </h2>
 </doc-anchor-target>
-<p>Either lossless or lossy audio can be used for a good release but with a few things to keep in mind:</p>
+<p>The <code v-pre>Properties</code> tab allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing.</p>
 <ul>
-<li>Avoid including the lossless audio tracks like PCM, DTS-HD, DTS-HD MA, and TrueHD from BDMVs/Remuxes. These tracks should always be transcoded to either FLAC (lossless compression) or a lossy codec with appropriate bitrate.
+<li><strong>Video track:</strong>
 <ul>
-<li><strong>Note</strong>: <em>Do not transcode object-based codecs like DTS:X or Dolby Atmos to FLAC as Dolby Atmos is an extension to TrueHD and DTS:X is an extension to DTS-HD MA. Their metadata will be ignored or stripped out during conversion.</em></li>
+<li>Language tag is optional.</li>
+<li>Mention the name of the <code v-pre>Encoder/Encode group</code> or simply region like <code v-pre>JPBD</code> or <code v-pre>ITABD</code> if it&#x27;s untouched BluRay Remux.</li>
 </ul>
 </li>
-<li>Audio tracks should either be converted to 16-bit FLAC because 24-bit FLAC is bloated with no benefits or to a lossy audio codec like Opus with an appropriate bitrate like 128-192Kb/s for Stereo tracks and 256-320Kb/s for multi-channel tracks to achieve transparency.</li>
-<li>Never downmix multichannel audio to stereo.</li>
-<li>Never transcode a lossy track.</li>
-</ul>
-<doc-anchor-target id="eac3to">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#eac3to">#</doc-anchor-trigger>
-        <span>eac3to</span>
-    </h3>
-</doc-anchor-target>
-<p>Once you have eac3to with updated libraries, you can start with this simple command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">eac3to ExampleAnime.mkv</code></pre>
-</doc-codeblock></div>
-<p>Or, if it&#x27;s a BDMV</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">eac3to /path/to/BDMV/</code></pre>
-</doc-codeblock></div>
-<p>This will return all the tracks in the file.</p>
-<p>For example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">D:\MHA&gt;eac3to &quot;My Hero Academia the Movie- The Heroes Rising 2018 1080p BluRay Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv&quot;
-MKV, 1 video track, 3 audio tracks, 3 subtitle tracks, 1:44:09, 24p /1.001
-1: h264/AVC, English, 1080p24 /1.001 (16:9)
-2: TrueHD, English, 5.1 channels, 48kHz
-   &quot;Surround 5.1&quot;
-3: AC3, English, 5.1 channels, 448kbps, 48kHz, 24ms
-   &quot;Surround 5.1&quot;
-4: DTS Master Audio, Japanese, 5.1 channels, 24 bits, 48kHz
-   (core: DTS, 5.1 channels, 1509kbps, 48kHz)
-   &quot;Surround 5.1&quot;
-5: Subtitle (PGS), English
-6: Subtitle (PGS), English, &quot;Signs &amp; Songs&quot;
-7: Subtitle (PGS), Japanese</code></pre>
-</doc-codeblock></div>
-<p>Now you can select, extract and convert them all at once by using the numbers corresponding to each track.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">eac3to ExampleAnime.mkv 2: &quot;ENG.5.1.flac&quot; 3: &quot;ENG.5.1.*&quot; 4: &quot;JPN.5.1.flac&quot;</code></pre>
-</doc-codeblock></div>
-<p>Batch command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">for %I in (*.mkv) do eac3to &quot;%I&quot; 2: &quot;%~nI.ENG.5.1.flac&quot; 3: &quot;%~nI.ENG.5.1.*&quot; 4: &quot;%~nI.JPN.5.1.flac&quot;</code></pre>
-</doc-codeblock></div>
-<p>Shell command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do eac3to &quot;${file}&quot; 2: &quot;${file%.*}.ENG.5.1.flac&quot; 3: &quot;${file%.*}.ENG.5.1.*&quot; 4: &quot;${file%.*}.JPN.5.1.flac&quot;; done
-</code></pre>
-</doc-codeblock></div>
-<p>This will select the second and fourth tracks and transcode both of them losslessly to FLAC but the third lossy track will be extracted without any transcoding because no codec was specified.</p>
-<p>For example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">D:\MHA&gt;eac3to  &quot;My Hero Academia the Movie- The Heroes Rising 2018 1080p BluRay Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv&quot; 2: &quot;English 5.1.flac&quot; 3: &quot;English 5.1.*&quot; 4: &quot;Japanese 5.1.flac&quot;
-------------------------------------------------------------------------------
-MKV, 1 video track, 3 audio tracks, 3 subtitle tracks, 1:44:09, 24p /1.001
-1: h264/AVC, English, 1080p24 /1.001 (16:9)
-2: TrueHD, English, 5.1 channels, 48kHz
-   &quot;Surround 5.1&quot;
-3: AC3, English, 5.1 channels, 448kbps, 48kHz, 24ms
-   &quot;Surround 5.1&quot;
-4: DTS Master Audio, Japanese, 5.1 channels, 24 bits, 48kHz
-   (core: DTS, 5.1 channels, 1509kbps, 48kHz)
-   &quot;Surround 5.1&quot;
-5: Subtitle (PGS), English
-6: Subtitle (PGS), English, &quot;Signs &amp; Songs&quot;
-7: Subtitle (PGS), Japanese
-[a02] Extracting audio track number 2...
-[a03] Extracting audio track number 3...
-[a04] Extracting audio track number 4...
-[a02] Decoding with libav/ffmpeg...
-[a03] Applying (E-)AC3 delay...
-[a04] Decoding with libDcaDec DTS Decoder...
-[a02] Encoding FLAC with libFlac...
-[a03] A remaining delay of -8ms could not be fixed.
-[a04] Encoding FLAC with libFlac...
-[a02] Creating file &quot;English 5.1.flac&quot;...
-[a03] Creating file &quot;English 5.1.ac3&quot;...
-[a04] Creating file &quot;Japanese 5.1.flac&quot;...
-[a02] Removing TrueHD dialog normalization...
-[a02] Original audio track, L+R+C+SL+SR: max 20 bits, average 17 bits.
-[a02] Original audio track, LFE: constant bit depth of 16 bits.
-[a04] The original audio track has a constant bit depth of 24 bits.
-Video track 1 contains 149592 frames.
-eac3to processing took 7 minutes, 28 seconds.
-Done.</code></pre>
-</doc-codeblock></div>
-<p>Here the second and fourth lossless tracks get transcoded to FLAC while the lossy AC3 track remains the same.</p>
-<doc-anchor-target id="sox">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sox">#</doc-anchor-trigger>
-        <span>SoX</span>
-    </h3>
-</doc-anchor-target>
-<p>If you&#x27;re planning to include lossless audio from the source, downconvert and dither 24-bit lossless tracks to 16-bit FLAC for the sake of reducing bloat as 24-bit is significantly larger with no benefits over 16-bit FLAC.</p>
-<p>Here&#x27;s the recommended command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">sox input.flac -R -G -b 16 output.flac rate -v -L 48000 dither</code></pre>
-</doc-codeblock></div>
-<p>Batch command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">for %I in (*.flac) do sox &quot;%I&quot; -G -b 16 &quot;%~nI.flac&quot; rate -v -L 48000 dither</code></pre>
-</doc-codeblock></div>
-<p>Shell command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.flac; do sox -S &quot;${file}&quot; -R -G -b 16 &quot;${file%.*}.flac&quot; rate -v -L 48000 dither; done</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="opus-tools">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#opus-tools">#</doc-anchor-trigger>
-        <span>opus-tools</span>
-    </h3>
-</doc-anchor-target>
-<p>If you&#x27;re planning to include lossy audio, it&#x27;s recommended to use Opus with a bitrate of 128-192Kb/s for Stereo tracks and 256-320Kb/s for multi-channel tracks to achieve transparency.</p>
-<p>Here are the recommended commands:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">opusenc --bitrate 192 Stereo_track.flac Stereo_track.opus</code></pre>
-</doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">opusenc --bitrate 320 multichannel_track.flac multichannel_track.opus</code></pre>
-</doc-codeblock></div>
-<p>Batch command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">for %I in (*.flac) do opusenc --bitrate 192 &quot;%I&quot; &quot;%~nI.opus&quot;</code></pre>
-</doc-codeblock></div>
-<p>Shell command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.flac; do opusenc --bitrate 192 &quot;${file}&quot; &quot;${file%.*}.opus&quot;; done</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="subtitles">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#subtitles">#</doc-anchor-trigger>
-        <span>Subtitles</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="recommended-tools-1">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-tools-1">#</doc-anchor-trigger>
-        <span>Recommended Tools</span>
-    </h2>
-</doc-anchor-target>
+<li><strong>Audio Tracks:</strong>
 <ul>
-<li><a href="https://github.com/arch1t3cht/Aegisub">arch1t3cht/Aegisub</a> for everything subtitle work.</li>
-<li><a href="https://github.com/Myaamori/SubKt">SubKt</a> is a highly configurable toolkit for fansubbing automation.</li>
-<li><a href="https://github.com/TypesettingTools/Myaamori-Aegisub-Scripts">Myaamori-Aegisub-Scripts</a> includes several helpful scripts for processing <code v-pre>.ASS</code> subtitles.</li>
-<li><a href="https://github.com/tp7/Prass">Prass</a> is another Console processor for <code v-pre>.ASS</code> subtitles.</li>
-<li><a href="https://github.com/tp7/Sushi">tp7/Sushi</a> is an automatic subtitle shifter based on audio.</li>
-<li><a href="https://github.com/FichteFoll/Sushi">FichteFoll/Sushi</a> is the python 3 fork of <a href="https://github.com/tp7/Sushi">tp7/Sushi</a>.</li>
+<li>Mention the Codec, Channels, and Bitrate in the <code v-pre>Name</code> field.</li>
+<li><code v-pre>Japanese</code> audio should always be tagged as <code v-pre>jpn</code> and marked as <code v-pre>Default</code></li>
+<li><code v-pre>English</code> audio should always be tagged as <code v-pre>eng</code> but should not be marked as <code v-pre>Default</code> or <code v-pre>Forced</code>. This is to make sure auto-selection works well for both dub and sub watchers.</li>
 </ul>
-<doc-anchor-target id="general-2">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general-2">#</doc-anchor-trigger>
-        <span>General</span>
-    </h2>
-</doc-anchor-target>
+</li>
+<li><strong>Subtitle Tracks:</strong>
 <ul>
-<li>Multiple Subtitle tracks take negligible space and provide more options so there&#x27;s no reason not to include them.</li>
-<li>Always include the official subtitle track.</li>
-<li>Always include fansubs if they exist and are of good quality.</li>
-<li><code v-pre>Honorifics</code> track must be tagged as <code v-pre>enm</code>.</li>
-<li>Must include a <code v-pre>Signs and Songs</code> track for English dub.</li>
-<li>It&#x27;s recommended to check the subtitle track for obvious grammatical errors, punctuation errors, typos, etc.</li>
-<li>Check the subtitle tracks for scene bleeds, i.e, when something extends to a frame it shouldn&#x27;t.</li>
-<li>Pick the default subtitle track by diffing the different options and finding the best one. This can be done via sites like <a href="https://www.diffchecker.com/">Diffchecker</a> or <a href="https://meitantei.org/public/evadiff/">evadiff</a>.</li>
-<li>Here&#x27;s a <a href="https://github.com/TypesettingTools/Myaamori-Aegisub-Scripts#sub-digest">subdigest</a> script to get clean text file output of .ASS subtitles for diff checking:</li>
+<li>Language tag must be used appropriately reflecting the language of the subtitles.</li>
+<li>Tag the best <code v-pre>Full Subtitles</code> as <code v-pre>eng</code> and <code v-pre>Default</code></li>
+<li>Tag the <code v-pre>Signs/Songs</code> track as <code v-pre>eng</code> and <code v-pre>forced</code>. This is to make sure auto-selection works well for both dub and sub watchers.</li>
+<li>Tag the <code v-pre>Honorifics</code> track as <code v-pre>enm</code> but neither <code v-pre>Default</code> nor <code v-pre>Forced</code>.</li>
+<li>Tag any and all additional subtitle tracks as neither <code v-pre>Default</code> nor <code v-pre>Forced</code>.</li>
 </ul>
-<p>Batch command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">for %I in (*.ass) do python -m subdigest -i &quot;%I&quot; --selection-set &quot;text&quot; &quot;\\p&quot; --remove-selected --selection-set style &quot;Sign|OP|ED|op|ed|kfx|Karaoke|Eyecatch|Signs&quot; --remove-selected --remove-all-tags --remove-comments --get-field text -o &quot;%~nI.txt&quot;</code></pre>
-</doc-codeblock></div>
-<p>Shell command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.ass do; python -m subdigest -i &quot;${file}&quot; --selection-set &quot;text&quot; &quot;\\p&quot; --remove-selected --selection-set style &quot;Sign|OP|ED|op|ed|kfx|Karaoke|Eyecatch|Signs&quot; --remove-selected --remove-all-tags --remove-comments --get-field text -o &quot;${file%.*}.txt&quot;; done</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="styling">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#styling">#</doc-anchor-trigger>
-        <span>Styling</span>
-    </h2>
-</doc-anchor-target>
-<ul>
-<li>The dialogue style must be readable without being distracting.</li>
-<li>Feel free to restyle bad styling. Here&#x27;s a reference for some good <a href="https://user-images.githubusercontent.com/78981416/233718169-0c5bf0d5-3ba4-4836-b41b-6c7c1c0d14b1.png">dialogue fonts</a>.</li>
-<li>You can also copy styling from existing groups like <a href="https://nyaa.si/user/GoodJobMedia">GJM</a>, <a href="https://nyaa.si/user/Kaleido-subs">Kaleido</a>, or <a href="https://nyaa.si/user/DameDesuYo">DDY</a>.</li>
-<li>Try to match the styling of previous seasons of the same show to maintain consistency. Although this isn&#x27;t mandatory and should be avoided if previous season releases had bad styling.</li>
+</li>
 </ul>
-<doc-anchor-target id="advanced">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced">#</doc-anchor-trigger>
-        <span>Advanced</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="ordered-chaptersmkv-linking">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ordered-chaptersmkv-linking">#</doc-anchor-trigger>
-        <span>Ordered Chapters/mkv linking</span>
-    </h3>
-</doc-anchor-target>
-<p>On some releases(like coalgirls), the OP/ED are removed from the episodes and placed into separate files. These files are then linked to the appropriate position in the episodes where they are supposed to play. While this is a great idea to save space, unfortunately, it doesn&#x27;t work on a lot of players and the OP/ED is never played. If you notice this while watching anime, OCs are the most probable cause.</p>
-<p><a href="https://mod16.org/hurfdurf/?p=8">Explanation for ordered chapters</a></p>
-<p>Fix ordered chapters using <a href="https://github.com/gnoling/UnlinkMKV">UnlinkMKV</a></p>
-<doc-anchor-target id="crc32">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#crc32">#</doc-anchor-trigger>
-        <span>CRC32</span>
-    </h3>
-</doc-anchor-target>
-<p>This is used to verify that the files you have are the correct ones, or whether they match with the version released by the uploader. CRCs will change if any part of the file changes, even if you only change one letter in one tag in the file. This allows us to identify files that were changed from the original source or corrupted at some point. However, just renaming the file will not change it. Apart from the numbers included within [] at the end of a filename, .sfv (CRC checksum) or .md5 (MD5 checksum) files can also be used for the same purpose. Sometimes a group makes mistakes and wants to correct them by releasing a second version(v2), in this case the changed CRC makes it easy to differentiate between multiple versions.</p>
-<p>You can use <a href="http://animechecker.sourceforge.net/">Anime Checker</a> or <a href="https://www.ov2.eu/programs/rapidcrc-unicode">RapidCRC</a> to verify or add CRC to your files.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The <a href="https://user-images.githubusercontent.com/78981416/242083337-174f6edf-8ac7-4bbf-a4ea-1dd46f66d3d7.png"><code v-pre>Forced display</code></a> flag here DOES NOT mean that these subs will be permanently on the screen, which is a common misconception. Forced subtitles only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. In our case, it&#x27;s supposed to be displayed whenever the English dub has untranslated things like Japanese Signs and Songs like Opening/Ending or Inserts.</p>
+        </div>
+    </div>
+</div>
+<p>Here&#x27;s an example of what a properly tagged file would look like:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Track</th>
+<th>Language</th>
+<th>Name</th>
+<th>Default</th>
+<th>Forced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Video</td>
+<td>jpn</td>
+<td>Encode Group</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Audio #1</td>
+<td>jpn</td>
+<td>FLAC 2.0</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Audio #2</td>
+<td>eng</td>
+<td>Opus 5.1 @ 320kb/s</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Subtitles #1</td>
+<td>eng</td>
+<td>Full Subtitles [Fansub]</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Subtitles #2</td>
+<td>enm</td>
+<td>Honorifics [Fansub]</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Subtitles #3</td>
+<td>eng</td>
+<td>Signs/Songs [Fansub]</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Subtitles #4</td>
+<td>eng</td>
+<td>Full Subtitles [Official]</td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Newer mkvtoolnix versions automatically set the default flag to <code v-pre>yes</code> on all streams. This is technically the correct use for the flag but all players do not have the intended results with this kind of tagging.</p>
+        </div>
+    </div>
+</div>
+<p><strong>Command to tag everything properly for an existing file without remuxing (assuming the order of tracks is correct):</strong></p>
+<doc-tabs>
+<doc-tab id="windows">
+<template #title>Windows</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do mkvpropedit &quot;%X&quot; --add-track-statistics-tags --edit info --delete title ^
+--edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 ^
+--edit track:a1 --set name=&quot;FLAC 2.0&quot;                  --set language=jpn --set flag-default=1 ^
+--edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=0 ^
+--edit track:s1 --set name=&quot;Full Subtitles [Fansub]&quot;   --set language=eng --set flag-default=1 --set flag-forced=0 ^
+--edit track:s2 --set name=&quot;Honorifics [Fansub]&quot;       --set language=enm --set flag-default=0 --set flag-forced=0 ^
+--edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 ^
+--edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=eng --set flag-default=0 --set flag-forced=0</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab id="linux">
+<template #title>Linux</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do
+  mkvpropedit &quot;${file}&quot; --add-track-statistics-tags --edit info --delete title \
+  --edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 \
+  --edit track:a1 --set name=&quot;FLAC 2.0&quot;                  --set language=jpn --set flag-default=1 \
+  --edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=0 \
+  --edit track:s1 --set name=&quot;Full Subtitles [Fansub]&quot;   --set language=eng --set flag-default=1 --set flag-forced=0 \
+  --edit track:s2 --set name=&quot;Honorifics [Fansub]&quot;       --set language=enm --set flag-default=0 --set flag-forced=0 \
+  --edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 \
+  --edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=eng --set flag-default=0 --set flag-forced=0
+done</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->
