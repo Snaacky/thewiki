@@ -17,6 +17,10 @@ image: https://user-images.githubusercontent.com/78981416/232287791-8ab2be5d-094
 - Torrent file - A small file with a `.torrent` extension that you download to begin torrenting. It contains metadata that describes the to-be-downloaded content and tells your torrent client where to download the content from.
 - Torrent Client - Your Client is the software that manages your BitTorrent connections. It is responsible for loading torrent links and connecting to peers in the swarm.
 - Tracker - A tracker is a server that keeps track of which seeds and peers are in the swarm. Clients report information to the tracker periodically and in exchange, receive information about other clients to which they can connect. The tracker is not directly involved in the data transfer and does not have a copy of the file. It only receives information from the client.
+- Freeleech - the download size of the torrent does not count towards your overall ratio, only the uploaded amount on the torrent counts toward your ratio.
+- Neutralleech -  none of the data uploaded or downloaded is counted.
+- Hit-and-Run (HnR or H&R) - a torrent is downloaded but not seeded for enough time as per the tracker's rules.
+- Ratio - a comparison between your downloaded and uploaded data.
 
 ## Torrent Clients
 
