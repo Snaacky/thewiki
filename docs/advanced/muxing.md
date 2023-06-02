@@ -37,7 +37,7 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
    - Tracks will be randomly assigned a color to indicate what source they belong to.
    - Checking or unchecking a track will decide if it'll be kept or removed in the output file.
    - By default, anything you won't explicitly uncheck will be copied over to the new output file.
-   - Clicking on any track allows you to modify several properties in the [`Properties`](#properties) window on the right. It's important you get this right and it's covered in more details below.
+   - Clicking on any track allows you to modify several properties in the window on the right. It's important you get this right and it's covered in more details [below](#correct-tagging).
 
    [![](https://user-images.githubusercontent.com/78981416/242075905-711652cb-8fa5-4d4e-aea4-c44468f12bcc.png)](https://user-images.githubusercontent.com/78981416/242075905-711652cb-8fa5-4d4e-aea4-c44468f12bcc.png)
 
@@ -49,7 +49,7 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
    MKVToolNix also allows you to [generate a commandline](https://user-images.githubusercontent.com/78981416/242086965-882d8d2d-e88d-4490-8452-31f4ff10f273.png) with all the changes you made in the GUI.
    !!!
 
-## Properties
+## Correct Tagging
 
 The `Properties` tab allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing. 
 
