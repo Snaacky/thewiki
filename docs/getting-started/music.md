@@ -18,6 +18,8 @@ author:
 ## Spectral Analysis 
 
 - Since Soulseek doesn't have strict rules regarding upconversion (lossy->lossless), many files may be of dubious quality. This can be verified through spectral analysis. A full guide for doing so along with the required software can be found [here](https://interviewfor.red/en/spectrals.html) and [here](https://erikstechcorner.com/2020/09/how-to-check-if-your-flac-files-are-really-lossless/). In summary, you are looking for frequency cutoffs like the following:
+
+
     ![](https://user-images.githubusercontent.com/124029849/243498651-0193fe75-9a98-462d-aa2e-a3079f533bc2.png)
 
 ## Comprehensive Guides
