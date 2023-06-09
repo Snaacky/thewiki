@@ -22,6 +22,8 @@ author:
 
     ![](https://user-images.githubusercontent.com/124029849/243498651-0193fe75-9a98-462d-aa2e-a3079f533bc2.png)
 
+- (Recommended) Spectrogram generation can be achieved using popular audio command-line utility [SoX](https://sox.sourceforge.net/) - [here](https://github.com/scourgeofgrozny/sox-spectrogram) is a GitHub repo containing a useful script that takes away most of the heavy lifting.
+
 ## Comprehensive Guides
 
 - [The Mega Music Ripping Guide](https://ori5000.github.io/musicripping.html) guide containing instructions on how to rip music from a variety of different popular sources. 
