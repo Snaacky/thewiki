@@ -22,7 +22,15 @@ author:
 
     ![](https://user-images.githubusercontent.com/124029849/243498651-0193fe75-9a98-462d-aa2e-a3079f533bc2.png)
 
-- (Recommended) Spectrogram generation can be achieved using popular audio command-line utility [SoX](https://sox.sourceforge.net/) - [here](https://github.com/scourgeofgrozny/sox-spectrogram) is a GitHub repo containing a useful script that takes away most of the heavy lifting.
+- (Recommended) Spectrogram generation can be achieved using popular audio command-line utility [SoX](https://sox.sourceforge.net/) - [here]
+  Some basic options to generate spectrograms are `sox track01.flac -n remix 1 spectrogram -x 3000 -y 513 -z 120 -w Kaiser -o "track01-full.png"` and 
+  `sox track01.flac -n remix 1 spectrogram -X 500 -y 1025 -z 120 -w Kaiser -S 1:00 -d 0:02 -o "track01-zoom.png"`.
+  
+- How this works in a nutshell is that the user's input audio file gets downmixed into a singular channel with `remix 1`, followed by the input track being replaced with a null file by flag `-n` (since spectrogram is a command that returns audio information and does not modify it, the audio itself isn't needed for much else). `-X,`, `-y`, and `-z` are used to specify the spectrogram's dimensions, where X is the length, y is the height (both in pixels), and z is the range in decibels. `-w Kaiser` produces the spectrogram calculated with the Kaiser window function. `-S` and `-d` are options that allow for the analysis of audio snippets, where S is the start and d is the end of the audio snippet. Finally, `-o "filename"` changes the name of the spectrogram. 
+
+-   You can find detailed explanations on each option flag [here](https://sox.sourceforge.net/sox.html) as well a plethora of additional ones to fine-tune your spectrogram to your desire.
+
+- If you're looking for something that can produce spectograms of various file and directories quickly, (https://github.com/scourgeofgrozny/sox-spectrogram) is a GitHub repo containing a useful script that takes away most of the heavy lifting. Feel free to fork or download the source code and customize it to fit your own uses and preferences :)
 
 ## Comprehensive Guides
 
