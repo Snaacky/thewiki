@@ -15,7 +15,7 @@ author:
 
 - [Soulseek](http://www.slsknet.org/news/) - P2P network where people share music files of their own. Great way to find lossless music and a lot of relevant music.
 
-- [Redacted](https://redacted.ch/) - Commonly referred to as RED, it's the best source for music, and has everything in both FLAC and MP3. It's a private tracker, meaning you'll have to go through an [IRC Interview to join](https://interviewfor.red/en/index.html). Thoroughly read the interview page.
+- [Redacted](https://redacted.ch/) - Commonly referred to as RED, it's the best source for music, and has everything in both FLAC and MP3. It's a private tracker, meaning you'll have to go through an [IRC Interview](https://interviewfor.red/en/index.html) to join. Thoroughly read the interview page.
 
 - [Orpheus](https://orpheus.network/) - Another music private tracker like RED. Music selection is smaller than RED but it's easier to join with a more lenient economy. You'll have to go through an [IRC Interview](https://interview.orpheus.network/) to join this as well. Again, thoroughly read the interview page.
 
