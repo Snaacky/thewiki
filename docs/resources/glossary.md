@@ -1,7 +1,7 @@
 ---
 label: Glossary
 description: A glossary of common video, audio, subtitles, and more related terms
-image: https://user-images.githubusercontent.com/78981416/245921140-f9575668-42e8-4696-b001-677130e90964.gif
+image: https://user-images.githubusercontent.com/78981416/246030855-c784e898-74a6-4fae-bbfa-1bb4a6bdbac1.gif
 order: -4
 ---
 
