@@ -51,7 +51,7 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
 
 ## Correct Tagging
 
-The `Properties` tab allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing. 
+The `Properties` tab allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing.
 
 - **Video track:**
   - Language tag is optional.

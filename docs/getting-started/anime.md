@@ -1,7 +1,7 @@
 ---
 label: Anime
 order: -2
-description: Learn How and Where to Find Your Favorite Anime
+description: Learn how and where to find your favorite anime
 image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec2-4a54-a9ec-71deab646e56.gif
 ---
 

@@ -2,6 +2,8 @@
 label: RSS
 ---
 
+# RSS
+
 ## Prerequisites
 
 This guide will use [qBittorrent](https://www.qbittorrent.org/download.php) and the [SubsPlease RSS feed](https://subsplease.org/rss-feeds/) as an example. The process should be similar for other clients and feeds.
