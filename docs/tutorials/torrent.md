@@ -69,7 +69,7 @@ udp://exodus.desync.com:6969/announce ^
 +++ Linux
 ```shell
 torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce \
+-t http://nyaa.tracker.wf:7777/announce,\
 http://anidex.moe:6969/announce,\
 udp://open.stealth.si:80/announce,\
 udp://tracker.opentrackr.org:1337/announce,\
