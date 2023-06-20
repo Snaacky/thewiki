@@ -19,11 +19,11 @@ While one can choose between the numerous popular sites listed both here and on 
 
 A "scraper" is a site that takes content hosted on other sites, and puts it on their own. These are the streaming site equivalent to [manga aggregator sites](https://thewiki.moe/guides/literature#sourcing) that are mentioned in the literature page. These can lead to extensive libraries without the need for the site owners to host the content themselves, usually at the expense of video quality. By far the most commonly scraped from site is [gogoanime](https://gogoanime.lu/), so much so that most streaming sites in existence are gogoanime scrapers.
 
-**Examples of scraper sites:** [AllAnime](https://allanime.to/), [11anime](https://11anime.fr/), [5anime](https://5anime.net/), [Genoanime](https://genoanime.com/), [Animeflix](https://animeflix.sbs/)
+**Examples of scraper sites:** [AllAnime](https://allanime.to/), [Genoanime](https://genoanime.com/)
 
 A "self-hosted" site is one that actually hosts all the content on their own servers. With some exceptions, this usually means a significantly smaller selection than all the scraper sites who can utilize gogo's massive library. However, this usually also leads to better video quality that can range from a marginal improvement, to extremely significant.
 
-**Examples of self-hosted sites:** [gogoanime](https://gogoanime.lu/), [9anime](https://9anime.to), [Zoro](https://zoro.to/), [animepahe](https://animepahe.com/), [Marin](https://marin.moe/)
+**Examples of self-hosted sites:** [9anime](https://9anime.to), [animepahe](https://animepahe.com/), [Gogoanime](https://gogoanime.lu/), [Marin](https://marin.moe/), [Zoro](https://zoro.to/)
 
 ### Video Quality
 
@@ -32,10 +32,10 @@ While streaming sites offer the worst video quality in comparison to the alterna
 Some comparisons between streaming sites:
 
 - Demon Slayer (most major streaming sites and torrents) - https://slow.pics/c/pjYaqdnr
-- Fate/Zero (9anime, animepahe, gogo, tenshi, and torrents) - https://slow.pics/c/1LNZtDzm
-- Senran Kagura (gogo, animepahe, 9anime, twist, zoro, and torrents) - https://slow.pics/c/QLtX61qx
-- Dokyuu Hentai HxEros (gogoanime, animepahe, 9anime, torrents) - https://slow.pics/c/PZRxqAsh
-- Vinland Saga S2 (9anime, Zoro, Marin, torrents) - https://slow.pics/c/GjhwBwo3
+- Fate/Zero (9anime, animepahe, Gogoanime, tenshi/Marin, and torrents) - https://slow.pics/c/1LNZtDzm
+- Senran Kagura (9anime, animepahe, Gogoanime, Zoro, and torrents) - https://slow.pics/c/QLtX61qx
+- Dokyuu Hentai HxEros (9anime, animepahe, Gogoanime, torrents) - https://slow.pics/c/PZRxqAsh
+- Vinland Saga S2 (Gogoanime, Marin, torrents) - https://slow.pics/c/GjhwBwo3
 
 #### **Quality Tier List**
 
