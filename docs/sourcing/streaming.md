@@ -7,7 +7,7 @@ order: -1
 
 ## Popular Streaming Sites
 
-- [gogoanime](https://gogoanime.lu/) - Self-hosted site that nearly all scraper sites source from.
+- [Gogoanime](https://gogoanime.lu/) - Self-hosted site that nearly all scraper sites source from.
 - [9anime](https://9anime.to) - Self-hosted site with a library on par with gogoanime. Marginally better quality while updating their releases to more often include fansubs and BD versions on older content.
 - [Zoro](https://zoro.to/) - Self-hosted site similar in quality to 9anime with an extensive library and is one of the only streaming sites with soft subtitles.
 
@@ -17,7 +17,7 @@ While one can choose between the numerous popular sites listed both here and on 
 
 ### Scrapers vs Self-Hosted Sites
 
-A "scraper" is a site that takes content hosted on other sites, and puts it on their own. These are the streaming site equivalent to [manga aggregator sites](https://thewiki.moe/guides/literature#sourcing) that are mentioned in the literature page. These can lead to extensive libraries without the need for the site owners to host the content themselves, usually at the expense of video quality. By far the most commonly scraped from site is [gogoanime](https://gogoanime.lu/), so much so that most streaming sites in existence are gogoanime scrapers.
+A "scraper" is a site that takes content hosted on other sites, and puts it on their own. These are the streaming site equivalent to [manga aggregator sites](https://thewiki.moe/guides/literature#sourcing) that are mentioned in the literature page. These can lead to extensive libraries without the need for the site owners to host the content themselves, usually at the expense of video quality. By far the most commonly scraped from site is [Gogoanime](https://gogoanime.lu/), so much so that most streaming sites in existence are gogoanime scrapers.
 
 **Examples of scraper sites:** [AllAnime](https://allanime.to/), [Genoanime](https://genoanime.com/), [YugenAnime](https://yugenanime.tv/)
 
@@ -53,7 +53,7 @@ Some comparisons between streaming sites:
 
 **Tier 3**:
 
-- [gogoanime](https://gogoanime.lu/) (and scrapers)
+- [Gogoanime](https://gogoanime.lu/) (and scrapers)
 - [animepahe](https://animepahe.com/) - Can be better or worse than gogoanime but with significantly smaller file size and the benefit of sourcing from good BD releases when available, like [Marin](https://marin.moe/).
 
 ### Other Factors
@@ -66,7 +66,7 @@ There are a multitude of other factors that may affect your decision in picking 
 
 **Filesize**
 
-- [animepahe](https://animepahe.com/) has some of the smallest filesizes compared to other streaming sites. [9anime's](https://9anime.to) are also relatively small compared to [gogoanime](https://gogoanime.lu/) and [Marin](https://marin.moe/).
+- [animepahe](https://animepahe.com/) has some of the smallest filesizes compared to other streaming sites. [9anime's](https://9anime.to) are also relatively small compared to [Gogoanime](https://gogoanime.lu/) and [Marin](https://marin.moe/).
 
 **UI**
 
@@ -74,7 +74,7 @@ There are a multitude of other factors that may affect your decision in picking 
 
 **Library**
 
-- [gogoanime](https://gogoanime.lu/) (and its scrapers) and [9anime](https://9anime.to) have some of the largest libraries available.
+- [Gogoanime](https://gogoanime.lu/) (and its scrapers) and [9anime](https://9anime.to) have some of the largest libraries available.
 
 **Soft Subs**
 
