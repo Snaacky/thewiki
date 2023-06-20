@@ -19,7 +19,7 @@ While one can choose between the numerous popular sites listed both here and on 
 
 A "scraper" is a site that takes content hosted on other sites, and puts it on their own. These are the streaming site equivalent to [manga aggregator sites](https://thewiki.moe/guides/literature#sourcing) that are mentioned in the literature page. These can lead to extensive libraries without the need for the site owners to host the content themselves, usually at the expense of video quality. By far the most commonly scraped from site is [gogoanime](https://gogoanime.lu/), so much so that most streaming sites in existence are gogoanime scrapers.
 
-**Examples of scraper sites:** [AllAnime](https://allanime.to/), [Genoanime](https://genoanime.com/)
+**Examples of scraper sites:** [AllAnime](https://allanime.to/), [Genoanime](https://genoanime.com/), [YugenAnime](https://yugenanime.tv/)
 
 A "self-hosted" site is one that actually hosts all the content on their own servers. With some exceptions, this usually means a significantly smaller selection than all the scraper sites who can utilize gogo's massive library. However, this usually also leads to better video quality that can range from a marginal improvement, to extremely significant.
 
@@ -36,12 +36,13 @@ Some comparisons between streaming sites:
 - Senran Kagura (9anime, animepahe, Gogoanime, Zoro, and torrents) - https://slow.pics/c/QLtX61qx
 - Dokyuu Hentai HxEros (9anime, animepahe, Gogoanime, torrents) - https://slow.pics/c/PZRxqAsh
 - Vinland Saga S2 (Gogoanime, Marin, torrents) - https://slow.pics/c/GjhwBwo3
+- Oshi no Ko (9anime, Gogoanime, Marin, Zoro, torrents) - https://slow.pics/c/6HqApHsn
 
 #### **Quality Tier List**
 
 **Tier 1**:
 
-- [Marin](https://marin.moe/) - Contains the smallest library of all the sites but with the best quality for BD releases and good quality for seasonal content. Consistently the best overall
+- [Marin](https://marin.moe/) - Formerly tenshi; Contains the smallest library of all the sites but with the best quality for BD releases and good quality for seasonal content. Consistently the best overall
 - [AllAnime](https://allanime.to/) - Specific seasonal content belongs in Tier 1 because it is equal to SubsPlease/HorribleSubs releases making it the undisputed best quality for illegal streaming sites in these instances. Not all series are scraped from VRV though and in those instances the quality is Tier 3.
 - [AnimeDao](https://animedao.to/) - Same as above but it depends on which server you choose. Try them out and pick the one with good quality.
 
