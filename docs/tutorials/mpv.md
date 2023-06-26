@@ -136,7 +136,7 @@ For more details, visit [here](https://mpv.io/manual/master/#files)
 
 ## Basic Config
 
-MPV is a great player out-of-the-box but you can customize it further to make it even better. You can personalize settings, key bindings, and appearance. You can also fine-tuning playback behavior, add new features through scripts, or optimize visual and audio settings.
+MPV is a great player out-of-the-box but you can customize it further to make it even better. You can personalize settings, key bindings, and appearance. You can also fine-tune playback behavior, add new features through scripts, or optimize visual and audio settings.
 
 We'll start with a generic basic config that'll be good enough for most people:
 
@@ -179,9 +179,9 @@ alang=jpn,ja
 
 ==- What do these options do?
 
-Below are some breif explainations of what some of the options do. Visit [MPV docs](https://mpv.io/manual/stable) for a detailed explaination of all the options.
+Below are some brief explanations of what some of the options do. Visit [MPV docs](https://mpv.io/manual/stable) for a detailed explanation of all the options.
 
-- **profile=gpu-hq** - Allows for higher quality playback
+- **profile=gpu-hq** - Allows for higher-quality playback
 - **vo=gpu-next** -  General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more
 - **gpu-api=vulkan** - Use Vulkan graphics API
 - **hwdec=auto-safe** - Enable hardware decoding
@@ -201,13 +201,13 @@ Below are some breif explainations of what some of the options do. Visit [MPV do
 
 ## Advanced Config
 
-With advanced configuration options, you can fine-tune MPV to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. You can do alot here and covering all of it here is impossible, so we'll just go over some of the common ones. Alot of the values here should be good enough but obviously it can't be a one size fits all, so you may need to adjust things depending on your sources.
+With advanced configuration options, you can fine-tune MPV to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. You can do a lot here and covering all of it here is impossible, so we'll just go over some of the common ones. A lot of the values here should be good enough but you may need to adjust things depending on your sources.
 
 ### Debanding
 
 Banding is a visual artifact, visual artifacts should never be in a video.
 Debanding is the process of removing said banding.
-Here's a 6 minute explanation of what causes banding: [Why dark video is a terrible mess - Tom Scott](https://youtu.be/h9j89L8eQQk)
+Here's a 6-minute explanation of what causes banding: [Why dark video is a terrible mess - Tom Scott](https://youtu.be/h9j89L8eQQk)
 
 ==- Example of banding
 
@@ -231,7 +231,7 @@ Now go to your `input.conf`, located in `portable_config`. If it doesn't exist, 
 D cycle deband
 ```
 
-Now you can press `d` to enable or disable debanding
+Now you can press `shift + d` to enable or disable debanding.
 
 ### Restyling subtitles
 
@@ -286,7 +286,7 @@ Now go to your `input.conf`, located in `portable_config`. If it doesn't exist, 
 k cycle_values sub-ass-override "force" "no"
 ```
 
-Now you can press `k` to enable or disable debanding
+Now you can press `k` to enable or disable style override.
 
 ### Auto Profiles
 
@@ -305,11 +305,11 @@ sub-ass-override=force
 deband=yes
 ```
 
-Simply copy paste the above at the end of your `mpv.conf`.
+Simply copy and paste the above at the end of your `mpv.conf`.
 
 ### Upscaling
 
-If you're watching content that's a lower resolution than your screen, you can consider using a high quality scaler like `nnedi3-nns256-win8x4` which you can download from [here](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x6.hook). Do note that this will be way more taxing on your system.
+If you're watching content that's a lower resolution than your screen, you can consider using a high-quality scaler like `nnedi3-nns256-win8x4` which you can download from [here](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x6.hook). Do note that this will be way more taxing on your system.
 
 You can add it directly to your `mpv.conf`
 
@@ -324,7 +324,7 @@ G change-list glsl-shaders toggle "~~/nnedi3-nns256-win8x4.hook"
 ```
 
 !!!
-Scalers only work when the resolution of your video does not match with your display. If the resolution of the video you're playing matches with your display's resolution, scalers will remain unused.
+Scalers only work when the resolution of your video does not match your display. If the resolution of the video you're playing matches your display's resolution, scalers will remain unused.
 !!!
 
 ### QoL Changes
@@ -349,7 +349,7 @@ MPV offers powerful scripting capabilities, allowing the player to do almost any
 
 ### Skins
 
-You can customize how MPV looks by using skins. These are completely upto your preference so you can look through some of the ones linked below.
+You can customize how MPV looks by using skins. These are completely up to your preference so you can look through some of the ones linked below.
 
 - [ModernX](https://github.com/cyl0/ModernX)
 - [mfpbar](https://codeberg.org/NRK/mpv-toolbox/src/branch/master/mfpbar)
