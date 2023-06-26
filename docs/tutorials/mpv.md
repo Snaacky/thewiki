@@ -150,7 +150,7 @@ hwdec=auto-safe
 
 ## Scaler
 
-#change ewa_lanczos to spline36 your system can't handle ewa_lanczos
+#change ewa_lanczos to spline36 if your system can't handle ewa_lanczos
 scale=ewa_lanczos
 dscale=mitchell
 cscale=ewa_lanczos
@@ -159,7 +159,7 @@ cscale=ewa_lanczos
 
 screenshot-format=png
 screenshot-high-bit-depth=no
-screenshot-png-compression=7
+screenshot-png-compression=9
 screenshot-directory="~/Pictures/MPV"
 screenshot-template="%F-%p"
 
@@ -228,7 +228,7 @@ deband-grain=48
 Now go to your `input.conf`, located in `portable_config`. If it doesn't exist, you can make it. Open `input.conf` and add the following line to your `input.conf`.
 
 ```properties
-d cycle deband
+D cycle deband
 ```
 
 Now you can press `d` to enable or disable debanding
