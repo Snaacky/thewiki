@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741126199877">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741132419380">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.741126199877" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.741132419380" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.741126199877" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.741132419380" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.741126199877" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.741126199877" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.741132419380" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.741132419380" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -321,7 +321,7 @@ If you also want to delete persisting data such as the config, run:</p>
         <span>Basic Config</span>
     </h2>
 </doc-anchor-target>
-<p>MPV is a great player out-of-the-box but you can customize it further to make it even better. You can personalize settings, key bindings, and appearance. You can also fine-tuning playback behavior, add new features through scripts, or optimize visual and audio settings.</p>
+<p>MPV is a great player out-of-the-box but you can customize it further to make it even better. You can personalize settings, key bindings, and appearance. You can also fine-tune playback behavior, add new features through scripts, or optimize visual and audio settings.</p>
 <p>We&#x27;ll start with a generic basic config that&#x27;ll be good enough for most people:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">## Video
@@ -361,9 +361,9 @@ alang=jpn,ja
 </doc-codeblock></div>
 <doc-panel id="what-do-these-options-do" collapsed>
     <template #title>What do these options do?</template>
-<p>Below are some breif explainations of what some of the options do. Visit <a href="https://mpv.io/manual/stable">MPV docs</a> for a detailed explaination of all the options.</p>
+<p>Below are some brief explanations of what some of the options do. Visit <a href="https://mpv.io/manual/stable">MPV docs</a> for a detailed explanation of all the options.</p>
 <ul>
-<li><strong>profile=gpu-hq</strong> - Allows for higher quality playback</li>
+<li><strong>profile=gpu-hq</strong> - Allows for higher-quality playback</li>
 <li><strong>vo=gpu-next</strong> -  General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more</li>
 <li><strong>gpu-api=vulkan</strong> - Use Vulkan graphics API</li>
 <li><strong>hwdec=auto-safe</strong> - Enable hardware decoding</li>
@@ -386,7 +386,7 @@ alang=jpn,ja
         <span>Advanced Config</span>
     </h2>
 </doc-anchor-target>
-<p>With advanced configuration options, you can fine-tune MPV to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. You can do alot here and covering all of it here is impossible, so we&#x27;ll just go over some of the common ones. Alot of the values here should be good enough but obviously it can&#x27;t be a one size fits all, so you may need to adjust things depending on your sources.</p>
+<p>With advanced configuration options, you can fine-tune MPV to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. You can do a lot here and covering all of it here is impossible, so we&#x27;ll just go over some of the common ones. A lot of the values here should be good enough but you may need to adjust things depending on your sources.</p>
 <doc-anchor-target id="debanding">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debanding">#</doc-anchor-trigger>
@@ -395,7 +395,7 @@ alang=jpn,ja
 </doc-anchor-target>
 <p>Banding is a visual artifact, visual artifacts should never be in a video.
 Debanding is the process of removing said banding.
-Here&#x27;s a 6 minute explanation of what causes banding: <a href="https://youtu.be/h9j89L8eQQk">Why dark video is a terrible mess - Tom Scott</a></p>
+Here&#x27;s a 6-minute explanation of what causes banding: <a href="https://youtu.be/h9j89L8eQQk">Why dark video is a terrible mess - Tom Scott</a></p>
 <doc-panel id="example-of-banding" collapsed>
     <template #title>Example of banding</template>
 <p><figure class="content-center">
@@ -417,7 +417,7 @@ deband-grain=48</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">D cycle deband</code></pre>
 </doc-codeblock></div>
-<p>Now you can press <code v-pre>d</code> to enable or disable debanding</p>
+<p>Now you can press <code v-pre>shift + d</code> to enable or disable debanding.</p>
 <doc-anchor-target id="restyling-subtitles">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#restyling-subtitles">#</doc-anchor-trigger>
@@ -482,7 +482,7 @@ sub-ass-force-style=Kerning=yes</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">k cycle_values sub-ass-override &quot;force&quot; &quot;no&quot;</code></pre>
 </doc-codeblock></div>
-<p>Now you can press <code v-pre>k</code> to enable or disable debanding</p>
+<p>Now you can press <code v-pre>k</code> to enable or disable style override.</p>
 <doc-anchor-target id="auto-profiles">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#auto-profiles">#</doc-anchor-trigger>
@@ -501,14 +501,14 @@ sub-fix-timing=yes
 sub-ass-override=force
 deband=yes</code></pre>
 </doc-codeblock></div>
-<p>Simply copy paste the above at the end of your <code v-pre>mpv.conf</code>.</p>
+<p>Simply copy and paste the above at the end of your <code v-pre>mpv.conf</code>.</p>
 <doc-anchor-target id="upscaling">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#upscaling">#</doc-anchor-trigger>
         <span>Upscaling</span>
     </h3>
 </doc-anchor-target>
-<p>If you&#x27;re watching content that&#x27;s a lower resolution than your screen, you can consider using a high quality scaler like <code v-pre>nnedi3-nns256-win8x4</code> which you can download from <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x6.hook">here</a>. Do note that this will be way more taxing on your system.</p>
+<p>If you&#x27;re watching content that&#x27;s a lower resolution than your screen, you can consider using a high-quality scaler like <code v-pre>nnedi3-nns256-win8x4</code> which you can download from <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x6.hook">here</a>. Do note that this will be way more taxing on your system.</p>
 <p>You can add it directly to your <code v-pre>mpv.conf</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">glsl-shaders=&quot;~~/shaders/nnedi3-nns256-win8x4.hook&quot;</code></pre>
@@ -530,7 +530,7 @@ deband=yes</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Scalers only work when the resolution of your video does not match with your display. If the resolution of the video you&#x27;re playing matches with your display&#x27;s resolution, scalers will remain unused.</p>
+<p>Scalers only work when the resolution of your video does not match your display. If the resolution of the video you&#x27;re playing matches your display&#x27;s resolution, scalers will remain unused.</p>
         </div>
     </div>
 </div>
@@ -566,7 +566,7 @@ WHEEL_DOWN    add volume -2</code></pre>
         <span>Skins</span>
     </h3>
 </doc-anchor-target>
-<p>You can customize how MPV looks by using skins. These are completely upto your preference so you can look through some of the ones linked below.</p>
+<p>You can customize how MPV looks by using skins. These are completely up to your preference so you can look through some of the ones linked below.</p>
 <ul>
 <li><a href="https://github.com/cyl0/ModernX">ModernX</a></li>
 <li><a href="https://codeberg.org/NRK/mpv-toolbox/src/branch/master/mfpbar">mfpbar</a></li>
