@@ -148,6 +148,11 @@ vo=gpu-next
 gpu-api=vulkan
 hwdec=auto-safe
 
+## Behavior
+
+keep-open=yes
+save-position-on-quit
+
 ## Scaler
 
 #change ewa_lanczos to spline36 if your system can't handle ewa_lanczos
@@ -185,6 +190,8 @@ Below are some brief explanations of what some of the options do. Visit [MPV doc
 - **vo=gpu-next** -  General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more
 - **gpu-api=vulkan** - Use Vulkan graphics API
 - **hwdec=auto-safe** - Enable hardware decoding
+- **keep-open=yes** - Pause the player instead of terminating when playing or seeking beyond the end of the file, and there is no next file to be played
+- **save-position-on-quit** - Save the current playback position on quit. When this file is played again later, the player will seek to the old playback position on start
 - **scale=ewa_lanczos** - Use `ewa_lanczos` for upscaling
 - **dscale=mitchell** - Use `mitchell` for downscaling
 - **cscale=ewa_lanczos** - As `scale`, but for interpolating chroma information
