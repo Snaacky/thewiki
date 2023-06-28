@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741132551014">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741283443093">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -32,11 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.741132551014" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.741283443093" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.741132551014" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.741283443093" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.741132551014" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.741283443093" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -223,14 +223,14 @@
 <p>Anime Tosho is an amazing source to download weeklies via usenet.
 To use it, simply click the <code v-pre>NZB</code> button under the release title to download the <code v-pre>.nzb</code> file which you can then add to your SABnzbd and it&#x27;ll start downloading.
 <figure class="content-center">
-    <img src="https://user-images.githubusercontent.com/78981416/215181082-b1c273ed-9a2a-4b4f-a52d-e069df152645.png" alt="" />
-    <figcaption class="caption"></figcaption>
+    <img src="https://user-images.githubusercontent.com/78981416/215181082-b1c273ed-9a2a-4b4f-a52d-e069df152645.png" alt="Animetosho NZB download" />
+    <figcaption class="caption">Animetosho NZB download</figcaption>
 </figure>
 </p>
 <p>You can also directly copy the link and paste it in SABnzbd, similar to how magnet links work in torrent clients.
 <figure class="content-center">
-    <img src="https://user-images.githubusercontent.com/78981416/215181096-ebc1c2ce-0187-4cf2-acb2-dcc67abeec6b.png" alt="" />
-    <figcaption class="caption"></figcaption>
+    <img src="https://user-images.githubusercontent.com/78981416/215181096-ebc1c2ce-0187-4cf2-acb2-dcc67abeec6b.png" alt="Animetosho NZB link" />
+    <figcaption class="caption">Animetosho NZB link</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="seadex">
@@ -259,9 +259,53 @@ To use it, simply click the <code v-pre>NZB</code> button under the release titl
 </doc-anchor-target>
 <p>You can use either of the following to upload to usenet.</p>
 <ul>
-<li><a href="https://github.com/mbruel/ngPost">ngPost is a CLI/GUI usenet poster for binaries</a></li>
+<li><a href="https://github.com/mbruel/ngPost/releases">ngPost is a CLI/GUI usenet poster for binaries</a></li>
 <li><a href="https://github.com/animetosho/Nyuu">Nyuu is a flexible CLI usenet binary posting tool</a></li>
 </ul>
+<p><strong>A provider is required to upload, however we recommend that you purchase an account anonymously with crypto, and upload using a VPN.</strong></p>
+<doc-anchor-target id="uploading-with-ngpost">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uploading-with-ngpost">#</doc-anchor-trigger>
+        <span>Uploading with ngPost</span>
+    </h3>
+</doc-anchor-target>
+<p>Download the appropriate version for your OS from the above link, the file ending with x64_setup.exe if you&#x27;re using Windows</p>
+<p>After installing, you&#x27;ll want to edit the config file before you open the GUI, otherwise your settings will not be saved between sessions.</p>
+<doc-panel id="configuring-ngpost" collapsed>
+    <template #title>Configuring ngPost</template>
+<p>Go to the install location, open ngPost.conf with a text editor, and set the following values:</p>
+<doc-anchor-target id="config-options">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-options">#</doc-anchor-trigger>
+        <span>Config options</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>nzbPath:</strong> Where you want the .nzb files to be saved after the upload is complete</p>
+<p><strong>GROUPS:</strong> The usenet groups you wish to upload to, we recommend <code v-pre>a.b.boneless</code> as a default</p>
+<p><strong>obfuscate:</strong> Uncomment this section if you wish to obfuscate your uploads, see below.</p>
+<p><strong>TMP_DIR:</strong> Folder where rar and par files will temporarily be stored during the upload process</p>
+<doc-anchor-target id="provider-details">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#provider-details">#</doc-anchor-trigger>
+        <span>Provider details</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>host:</strong> Your usenet provider address, for example <code v-pre>news.eweka.nl</code></p>
+<p><strong>port:</strong> The port given, usually 563 for SSL and 119 for normal</p>
+<p><strong>ssl:</strong> Keep as true if your port is 563, otherwise set to false</p>
+<p><strong>user/pass:</strong> Self explanatory</p>
+<p><strong>connection:</strong> Limit according to your internet capabilities, recommended to start with 8</p>
+</doc-panel>
+<p>Now you&#x27;ve setup the config file, open the GUI with ngPost.exe, which should be filled with all the values you just set</p>
+<p>To upload files, simply select Auto Posting, drag all your files into the window below, and click Generate Posts.</p>
+<p><strong><code v-pre>Compress</code> should be un-ticked unless you need to preserve folder structure, as it allows for faster creation and downloading of NZBs</strong></p>
+<p><strong><code v-pre>Article's obfuscation</code> should be un-ticked if you want your uploads to be easily accessible without the need for your NZB file</strong></p>
+<p><figure class="content-center">
+    <img src="https://i.imgur.com/5Pz3rbT.png" alt="ngPost GUI" />
+    <figcaption class="caption">ngPost GUI</figcaption>
+</figure>
+</p>
+<p>Once the upload has finished, you&#x27;ll be left with the NZB file in the directory you chose earlier.</p>
 <doc-anchor-target id="usenet-providers-and-backbones">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#usenet-providers-and-backbones">#</doc-anchor-trigger>
@@ -270,9 +314,9 @@ To use it, simply click the <code v-pre>NZB</code> button under the release titl
 </doc-anchor-target>
 <p><figure class="content-center">
     <a href="https://upload.wikimedia.org/wikipedia/commons/7/7d/Usenet_Providers_and_Backbones.svg">
-        <img src="https://user-images.githubusercontent.com/78981416/215181155-f6633053-4f7c-4f3b-8a0a-e35c215c7193.png" alt="" />
+        <img src="https://user-images.githubusercontent.com/78981416/215181155-f6633053-4f7c-4f3b-8a0a-e35c215c7193.png" alt="Usenet Providers and Backbones" />
     </a>
-    <figcaption class="caption"></figcaption>
+    <figcaption class="caption">Usenet Providers and Backbones</figcaption>
 </figure>
 </p>
 <div class="flex mb-6">
