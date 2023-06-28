@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741283443093">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741283459060">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -32,11 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.741283443093" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.741283459060" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.741283443093" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.741283459060" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.741283443093" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.741283459060" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.741283459060" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -160,48 +161,38 @@
         <span>Comparison</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="comparisons-are-frequently-used-within-the-enthusiast-community-to-compare-the-video-quality-offered-by-different-sources-be-that-official-releases-or-user-made-encodes-this-guide-goes-through-the-process-of-setting-up-and-effectively-utilising-vapoursynth-preview-to-produce-useful-comparisons-that-will-allow-you-to-ascertain-which-release-offers-the-best-visual-experience">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#comparisons-are-frequently-used-within-the-enthusiast-community-to-compare-the-video-quality-offered-by-different-sources-be-that-official-releases-or-user-made-encodes-this-guide-goes-through-the-process-of-setting-up-and-effectively-utilising-vapoursynth-preview-to-produce-useful-comparisons-that-will-allow-you-to-ascertain-which-release-offers-the-best-visual-experience">#</doc-anchor-trigger>
-        <span>Comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources, be that official releases or user made encodes. This guide goes through the process of setting up and effectively utilising Vapoursynth-Preview to produce useful comparisons that will allow you to ascertain which release offers the best visual experience.</span>
-    </h5>
+<p>Comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources, be that official releases or user made encodes. This guide goes through the process of setting up and effectively utilising Vapoursynth-Preview to produce useful comparisons that will allow you to ascertain which release offers the best visual experience.</p>
+<doc-anchor-target id="initial-setup">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#initial-setup">#</doc-anchor-trigger>
+        <span>Initial setup</span>
+    </h2>
 </doc-anchor-target>
-<doc-panel id="initial-setup" collapsed>
-    <template #title>Initial setup</template>
+<doc-anchor-target id="installing-dependencies">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-dependencies">#</doc-anchor-trigger>
+        <span>Installing dependencies</span>
+    </h3>
+</doc-anchor-target>
 <ol>
-<li>Install <a href="https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe">Python 3.11</a></li>
-</ol>
-<ul>
-<li>During installation tick <code v-pre>Add python.exe to PATH</code>.</li>
-</ul>
-<ol start="2">
+<li><p>Install <a href="https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe">Python 3.11</a> - During installation tick <code v-pre>Add python.exe to PATH</code>.</p>
+</li>
 <li><p>Install <a href="https://gitforwindows.org/">Git</a></p>
 </li>
-<li><p>Install <a href="https://github.com/vapoursynth/vapoursynth/releases/download/R63/VapourSynth64-R63.exe">Vapoursynth</a></p>
+<li><p>Install <a href="https://github.com/vapoursynth/vapoursynth/releases/download/R63/VapourSynth64-R63.exe">Vapoursynth</a> - Select <code v-pre>Install for me only</code>.</p>
+</li>
+<li><p>Before we install vs-preview, we need to install the following dependencies:</p>
+<p><a href="https://github.com/DJATOM/LibP2P-Vapoursynth" title="LibP2P"><code v-pre>LibP2P</code></a> <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works" title="LSMASHSource"><code v-pre>LSMASHSource</code></a> <a href="https://github.com/vapoursynth/subtext" title="Subtext"><code v-pre>Subtext</code></a> <a href="https://github.com/Lypheo/vs-placebo" title="vs-placebo"><code v-pre>vs-placebo</code></a> <a href="https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7" title="libdovi"><code v-pre>libdovi</code></a> <a href="https://github.com/OpusGang/awsmfunc" title="awsmfunc"><code v-pre>awsmfunc</code></a></p>
 </li>
 </ol>
-<ul>
-<li>Select <code v-pre>Install for me only</code>.</li>
-<li>If you have any issues here, check out the <a href="https://www.vapoursynth.com/doc/installation.html">official Installation Guide</a>.</li>
-</ul>
-<ol start="4">
-<li>Before we install vs-preview, we need to install the following dependencies:</li>
-</ol>
-<ul>
-<li><a href="https://github.com/DJATOM/LibP2P-Vapoursynth" title="LibP2P"><code v-pre>LibP2P</code></a></li>
-<li><a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works" title="LSMASHSource"><code v-pre>LSMASHSource</code></a></li>
-<li><a href="https://github.com/vapoursynth/subtext" title="Subtext"><code v-pre>Subtext</code></a></li>
-<li><a href="https://github.com/Lypheo/vs-placebo" title="vs-placebo"><code v-pre>vs-placebo</code></a></li>
-<li><a href="https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7" title="libdovi"><code v-pre>libdovi</code></a></li>
-<li><a href="https://github.com/OpusGang/awsmfunc" title="awsmfunc"><code v-pre>awsmfunc</code></a></li>
-</ul>
-<p>To install LSMASHSource, download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="LSMASHSource">LSMASHSource</a> and open it. Inside the zip, open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></p>
-<p>To install the rest of the plugins, run the following commands in your terminal:</p>
+<p>To install LSMASHSource, download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="LSMASHSource">LSMASHSource</a> and open it.
+Inside the zip, open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code>
+To install the rest of the plugins, run the following commands in your terminal:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">vsrepo.py install libp2p sub placebo dovi_library</code></pre>
+<pre class="language-shell-session"><code v-pre class="language-shell-session">vsrepo.py install libp2p sub placebo dovi_library</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">pip install git+https://github.com/OpusGang/awsmfunc.git</code></pre>
+<pre class="language-shell-session"><code v-pre class="language-shell-session">pip install git+https://github.com/OpusGang/awsmfunc.git</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
@@ -224,14 +215,22 @@
 <li>Install <a href="https://github.com/Irrational-Encoding-Wizardry/vs-preview">vs-preview</a>:</li>
 </ol>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">pip install git+https://github.com/Irrational-Encoding-Wizardry/vs-preview@2f28e7105b7ffec057d51196b7cea7aa5992b9d3</code></pre>
+<pre class="language-shell-session"><code v-pre class="language-shell-session">pip install git+https://github.com/Irrational-Encoding-Wizardry/vs-preview@2f28e7105b7ffec057d51196b7cea7aa5992b9d3pi</code></pre>
 </doc-codeblock></div>
-<ol start="6">
+<doc-anchor-target id="the-comparison-script">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-comparison-script">#</doc-anchor-trigger>
+        <span>The comparison script</span>
+    </h3>
+</doc-anchor-target>
+<ol>
 <li>Create a new file called <code v-pre>comp.vpy</code>.</li>
 <li>Open <code v-pre>comp.vpy</code> with a text editor such as Notepad++ and paste the following, edit as required, and save it:</li>
 </ol>
+<doc-panel id="comp-vpy-contents" collapsed>
+    <template #title>comp.vpy contents</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">## Boring stuff: Ignore me
+<pre class="language-python"><code v-pre class="language-python">## Boring stuff: Ignore me
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
@@ -323,18 +322,18 @@ clip1.set_output(1)
 clip2.set_output(2)
 clip3.set_output(3)</code></pre>
 </doc-codeblock></div>
-<ol start="8">
-<li><p>That&#x27;s it for the setup, now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as <code v-pre>comp.bat</code>:</p>
+</doc-panel>
+<ol start="3">
+<li>Now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as <code v-pre>comp.bat</code></li>
+</ol>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">vspreview &quot;C:\Path\To\comp.vpy&quot;</code></pre>
+<pre class="language-shell-session"><code v-pre class="language-shell-session">vspreview &quot;C:\Path\To\comp.vpy&quot;</code></pre>
 </doc-codeblock></div>
 <ul>
 <li>To get the path, shift and right-click the comp.py file you just made, and select <code v-pre>Copy as path</code></li>
 </ul>
-</li>
-</ol>
 <p>Now, when making comps you just edit <code v-pre>comp.vpy</code> to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed, and then run <code v-pre>comp.bat</code> or run <code v-pre>vspreview comp.vpy</code> directly from your terminal.</p>
-</doc-panel>
+<p>Unsure of how to go about editing the comp script? The panel below will explain how each section works.</p>
 <doc-panel id="understanding-comp-vpy" collapsed>
     <template #title>Understanding comp.vpy</template>
 <p>At first, the comparison script may seem daunting, especially since it&#x27;s a giant wall of text with a lot of technical jargon. It has basic explanations of each section, however, this guide will go over each part in more detail and describe how to properly edit the values.</p>
@@ -358,26 +357,30 @@ clip3.set_output(3)</code></pre>
 <p><strong>FrameProp:</strong> Sets the source name you entered earlier, for correct labelling on slow.pics.</p>
 <p><strong>Output:</strong> Simply makes the clips appear in VS-Preview.</p>
 </doc-panel>
-<doc-panel id="screenshotting-automatically-easiest" collapsed>
-    <template #title>Screenshotting Automatically (Easiest)</template>
+<doc-anchor-target id="screenshotting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting">#</doc-anchor-trigger>
+        <span>Screenshotting</span>
+    </h2>
+</doc-anchor-target>
+<p>There are 3 methods of screenshotting:</p>
+<p><strong>Full-auto:</strong> Allowing VS-Preview to do everything for you, by far the fastest option.</p>
+<p><strong>Semi-auto:</strong> Manually marking the frame numbers as you go through the clips, then letting VS-Preview automatically extract, compress, and upload them to slow.pics. Generally the recommended option.</p>
+<p><strong>Bolt-action:</strong> Saving the images locally as you go through the clips, then uploading them manually later. Mainly useful for uploading to other sites and keeping the comparison archived locally, but also has other benefits like faster and more efficient compression.</p>
+<doc-tabs>
+<doc-tab id="full-auto">
+<template #title>Full-auto</template>
 <ul>
-<li><p>Click the <code v-pre>comp</code> button in the bottom right of the toolbar.</p>
-</li>
-<li><p>Untick <code v-pre>I</code> so only <code v-pre>P</code> and <code v-pre>B</code> are selected, or only select <code v-pre>B</code> if you want matching frame-types.</p>
-</li>
-<li><p>Tick the <code v-pre>public</code> box to make the comparison available on the slow.pics homepage.</p>
-</li>
-<li><p>Name the collection appropriately for Slow.pics, get the TMDB ID from <a href="https://www.themoviedb.org/">https://www.themoviedb.org/</a> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.</p>
-</li>
-<li><p>Set the tag to the same name as listed on TMDB.</p>
-</li>
-<li><p>Set &quot;Delete After&quot; to your desired value, by default comps expire after 2 years of not being viewed.</p>
-</li>
-<li><p>Under <code v-pre>random</code> enter a frame count amount, you should use a large number of images to make the comparison as effective as possible, ideally at least 40 since not all frames will be useful.</p>
-</li>
-<li><p>Make sure your PNG compression is set to 0 (Max) under Settings -&gt; Main*</p>
-</li>
-<li><p>Hit <code v-pre>Start Upload</code> and patiently wait while VS-Preview collects the frames and uploads the comparison.</p>
+<li>Click the <code v-pre>comp</code> button in the bottom right of the toolbar.</li>
+<li>Untick <code v-pre>I</code> so only <code v-pre>P</code> and <code v-pre>B</code> are selected, or only select <code v-pre>B</code> if you want matching frame-types.</li>
+<li>Tick the <code v-pre>public</code> box to make the comparison available on the slow.pics homepage.</li>
+<li>Name the collection appropriately for Slow.pics, get the TMDB ID from <a href="https://www.themoviedb.org/">https://www.themoviedb.org/</a> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.</li>
+<li>Set the tag to the same name as listed on TMDB.</li>
+<li>Set &quot;Delete After&quot; to your desired value, by default comps expire after 2 years of not being viewed.</li>
+<li>Under <code v-pre>random</code> enter a frame count amount, you should use a large number of images to make the comparison as effective as possible, ideally at least 40 since not all frames will be useful.</li>
+<li>Make sure your PNG compression is set to 0 (Max) under Settings -&gt; Main*</li>
+<li>Hit <code v-pre>Start Upload</code> and patiently wait while VS-Preview collects the frames and uploads the comparison.</li>
+</ul>
 <p><strong>If you wish to upload to a slow.pics account for comp history and ability to edit comps, do the following:</strong></p>
 <ul>
 <li>Make sure you&#x27;re logged into slow.pics</li>
@@ -385,79 +388,75 @@ clip3.set_output(3)</code></pre>
 <li>Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.</li>
 <li>Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.</li>
 </ul>
-</li>
-</ul>
-</doc-panel>
-<doc-panel id="screenshotting-manually-recommended" collapsed>
-    <template #title>Screenshotting Manually (Recommended)</template>
-<p>There are 2 methods of screenshotting manually:</p>
-<p>Semi-auto: Marking the frame numbers as you go through the frames, then letting VS-Preview automatically extract, compress, and upload them to slow.pics. Generally the much easier and recommended option.</p>
-<p>Bolt-action: Saving the images locally as you go through the frames, then uploading them manually later. Mainly useful for uploading to other sites and keeping the comparison archived locally, but also has other benefits like faster and more efficient compression.</p>
-<doc-tabs>
+</doc-tab>
 <doc-tab id="semi-auto">
 <template #title>Semi-auto</template>
+<doc-anchor-target id="marking-the-frames">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#marking-the-frames">#</doc-anchor-trigger>
+        <span>Marking the frames</span>
+    </h3>
+</doc-anchor-target>
 <ul>
-<li><p>Press <code v-pre>Shift</code> &amp; <code v-pre>Right Arrow</code> keys to move forward a set amount of frames (configurable in playback section of the toolbar)</p>
-</li>
-<li><p><code v-pre>Number</code> keys to switch between video sources and compare quality.</p>
-</li>
-<li><p>Press <code v-pre>Control</code> &amp; <code v-pre>Space</code> keys to mark the frame numbers. (Configrable in cfg files)</p>
-</li>
-<li><p>Aim to screenshot a variety of scenes, light/dark, low/high motion, etc.</p>
-</li>
-<li><p>Try and match frame type when screenshotting, e.g. all sources on a <code v-pre>B</code> frame, single frame jump comes in handy for when they don&#x27;t match (<code v-pre>Arrow keys</code>).</p>
-</li>
-<li><p>If a source file does not have <code v-pre>B</code> frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no <code v-pre>B</code> frames.</p>
-</li>
-<li><p>See QoL changes below to make this slightly easier on your fingers</p>
-</li>
-<li><p>Once you are done marking frames, click the <code v-pre>comp</code> button in the bottom right of the toolbar.</p>
-</li>
-<li><p>Tick the <code v-pre>public</code> box to make the comparison available on the slow.pics homepage.</p>
-</li>
-<li><p>Name the collection appropriately for Slow.pics, get the TMDB ID from <a href="https://www.themoviedb.org/">https://www.themoviedb.org/</a> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.</p>
-</li>
-<li><p>Set the tag to the same name as listed on TMDB.</p>
-</li>
-<li><p>Set &quot;Delete After&quot; to your desired value, by default comps expire after 2 years of not being viewed.</p>
-</li>
-<li><p>Under <code v-pre>random</code> you may specify an additional frame amount for VS-Preview to pick at random, recommended to help fill the comparison with more frames.</p>
-</li>
-<li><p>Untick <code v-pre>Current frame</code> as you likely don&#x27;t want that included.</p>
-</li>
-<li><p>Make sure your PNG compression is set to 0 (Max) under Settings -&gt; Main</p>
+<li>Press <code v-pre>Shift</code> &amp; <code v-pre>Right Arrow</code> keys to move forward a set amount of frames (configurable in playback section of the toolbar)</li>
+<li><code v-pre>Number</code> keys to switch between video sources and compare quality.</li>
+<li>Press <code v-pre>Control</code> &amp; <code v-pre>Space</code> keys to mark the frame numbers. (Configurable in cfg files)</li>
+<li>Aim to screenshot a variety of scenes, light/dark, low/high motion, etc.</li>
+<li>Try and match frame type when screenshotting, e.g. all sources on a <code v-pre>B</code> frame, single frame jump comes in handy for when they don&#x27;t match (<code v-pre>Arrow keys</code>).</li>
+<li>If a source file does not have <code v-pre>B</code> frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no <code v-pre>B</code> frames.</li>
+</ul>
+<doc-anchor-target id="uploading-the-comp">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uploading-the-comp">#</doc-anchor-trigger>
+        <span>Uploading the comp</span>
+    </h3>
+</doc-anchor-target>
 <ul>
-<li>If you wish to upload to a slow.pics account for comp history and the ability to edit comps do the following:</li>
+<li>Once you are done marking frames, click the <code v-pre>comp</code> button in the bottom right of the toolbar.</li>
+<li>Tick the <code v-pre>public</code> box to make the comparison available on the slow.pics homepage.</li>
+<li>Name the collection appropriately for Slow.pics, get the TMDB ID from <a href="https://www.themoviedb.org/">https://www.themoviedb.org/</a> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.</li>
+<li>Set the tag to the same name as listed on TMDB.</li>
+<li>Set &quot;Delete After&quot; to your desired value, by default comps expire after 2 years of not being viewed.</li>
+<li>Under <code v-pre>random</code> you may specify an additional frame amount for VS-Preview to pick at random, recommended to help fill the comparison with more frames.</li>
+<li>Untick <code v-pre>Current frame</code> as you likely don&#x27;t want that included.</li>
+<li>Make sure your PNG compression is set to 0 (Max) under Settings -&gt; Main</li>
+</ul>
+<p><strong>If you wish to upload to a slow.pics account for comp history and the ability to edit comps do the following:</strong></p>
+<ul>
 <li>Make sure you&#x27;re logged into slow.pics</li>
-<li>Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browerId.</li>
+<li>Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browserId.</li>
 <li>Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.</li>
 <li>Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.</li>
 </ul>
-</li>
-</ul>
 <doc-anchor-target id="qol-changes">
-    <h5>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#qol-changes">#</doc-anchor-trigger>
         <span>QOL Changes</span>
-    </h5>
+    </h3>
 </doc-anchor-target>
 <ul>
-<li><p><strong>Jump through frames quickly</strong>
-In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
+<li><p><strong>Jump through frames quickly</strong></p>
+<p>In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
 </li>
-<li><p><strong>Mark screenshots quicker by setting the mark frame button to enter</strong>
-Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\comp</code> and edit <code v-pre>toolbar.py</code> - Line 552: Replace <code v-pre>QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp</code> with &#x60;(Qt.Key_Return), self.add_current_frame_to_comp</p>
-</li>
-<li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong>
-Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Select lines 180-187, delete them, and paste</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">  self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-  self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-  self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-  self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
-</doc-codeblock></div>
+<li><p><strong>Mark screenshots quicker by setting the mark frame button to enter</strong></p>
 </li>
 </ul>
+<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\comp</code> and edit <code v-pre>toolbar.py</code></p>
+<ul>
+<li><p>Line 552: Replace <code v-pre>QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp</code> with <code v-pre>(Qt.Key_Return), self.add_current_frame_to_comp</code></p>
+</li>
+<li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong></p>
+<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code></p>
+</li>
+<li><p>Select lines 180-187, delete them, and paste</p>
+</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-shell-session"><code v-pre class="language-shell-session">self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
+</doc-codeblock></div>
 </doc-tab>
 <doc-tab id="bolt-action">
 <template #title>Bolt-action</template>
@@ -469,72 +468,75 @@ Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspr
 <li>Aim to screenshot a variety of scenes, light/dark, low/high motion, etc.</li>
 <li>Try and match frame type when screenshotting, e.g. all sources on a <code v-pre>B</code> frame, single frame jump comes in handy for when they don&#x27;t match (<code v-pre>Arrow keys</code>).</li>
 <li><em>Note: If a source file does not have <code v-pre>B</code> frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no <code v-pre>B</code> frames.</em></li>
-<li>See QoL changes below to make this slightly easier on your fingers</li>
 </ul>
-<doc-anchor-target id="qol-changes-1">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#qol-changes-1">#</doc-anchor-trigger>
-        <span>QOL Changes</span>
-    </h5>
+<doc-anchor-target id="qol-improvements">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#qol-improvements">#</doc-anchor-trigger>
+        <span>QOL Improvements</span>
+    </h4>
 </doc-anchor-target>
 <ul>
-<li><p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automatically sorted, with comparison names intact.</strong>
-In VS-Preview on the bottom bar select Misc, and set file name template to <code v-pre>{frame}_{index}_{Name}</code>.</p>
+<li><p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automatically sorted, with comparison names intact.</strong></p>
+<p>In VS-Preview on the bottom bar select Misc, and set file name template to <code v-pre>{frame}_{index}_{Name}</code>.</p>
 </li>
-<li><p><strong>Jump through frames quickly</strong>
-In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
+<li><p><strong>Jump through frames quickly</strong></p>
+<p>In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
 </li>
-<li><p><strong>Take screenshots quicker by setting the save image button to enter</strong>
-Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code> - Line 166: Replace <code v-pre>QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click</code> with <code v-pre>(Qt.Key_Return), self.save_frame_as_button.click</code>.</p>
+<li><p><strong>Take screenshots quicker by setting the save image button to enter</strong></p>
+<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code></p>
+</li>
+<li><p>Line 166: Replace <code v-pre>QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click</code> with <code v-pre>(Qt.Key_Return), self.save_frame_as_button.click</code>.</p>
 </li>
 <li><p>If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
 </li>
 <li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong></p>
 </li>
 </ul>
-<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code> - Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).</p>
+<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code></p>
+<ul>
+<li>Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).</li>
+</ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">        self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-        self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-        self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-        self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
+<pre class="language-shell-session"><code v-pre class="language-shell-session">self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="post-processing">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#post-processing">#</doc-anchor-trigger>
-        <span>Post-processing:</span>
-    </h5>
+        <span>Post-processing</span>
+    </h4>
 </doc-anchor-target>
 <p>The Bolt-action method is best paired with some scripts to run after you&#x27;ve saved all the frames. The following scripts are generated by chatgpt as I cannot code <span class="docs-emoji">&#x1F44D;</span>
 Generally, I just run all 3 with a .bat file, or just the first 2 if I&#x27;m not uploading to ptpimg.</p>
-<doc-panels>
-   <doc-panel id="zero-padding" collapsed>
-       <template #title>Zero padding</template>
+<doc-panel id="zero-padding" collapsed>
+    <template #title>Zero padding</template>
+<p>Zero pads all frames in the current directory and removes some of the garbage from the name. Allows for automatic numerical sorting on slow.pics and automatic filling of comparison names based on comp.vpy</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">#Zero pads all frames in the current directory and removes some of the garbage from the name. Allows for automatic numerical sorting on slow.pics and automatic filling of comparison names based on comp.vpy
-import os
+<pre class="language-python"><code v-pre class="language-python">import os
 
 def zero_pad_and_clean_file_names():
-	current_directory = os.getcwd()
-	for filename in os.listdir(current_directory):
-		base_name, extension = os.path.splitext(filename)
-		parts = base_name.split('_')
+    current_directory = os.getcwd()
+    for filename in os.listdir(current_directory):
+        base_name, extension = os.path.splitext(filename)
+        parts = base_name.split('_')
 
-		if len(parts) &gt; 2 and parts[0].isdigit():
-			parts[0] = parts[0].zfill(5)
-			parts[2] = parts[2].replace(&quot;b'&quot;, &quot;&quot;).replace(&quot;'&quot;, &quot;&quot;)
-			new_filename = '_'.join(parts) + extension
-			os.rename(os.path.join(current_directory, filename), os.path.join(current_directory, new_filename))
+        if len(parts) &gt; 2 and parts[0].isdigit():
+            parts[0] = parts[0].zfill(5)
+            parts[2] = parts[2].replace(&quot;b'&quot;, &quot;&quot;).replace(&quot;'&quot;, &quot;&quot;)
+            new_filename = '_'.join(parts) + extension
+            os.rename(os.path.join(current_directory, filename), os.path.join(current_directory, new_filename))
 
 # Usage example
 zero_pad_and_clean_file_names()</code></pre>
 </doc-codeblock></div>
-   </doc-panel>
-   <doc-panel id="compressing" collapsed>
-       <template #title>Compressing</template>
+</doc-panel>
+<doc-panel id="compressing" collapsed>
+    <template #title>Compressing</template>
+<p>Compresses all png files in the current directory with Oxipng compression level 1, very fast and should take less than a minute to iterate over hundreds of images.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">#Compresses all png files in the current directory with Oxipng compression level 1, very fast and should take less than a minute to iterate over hundreds of images.
-import os
+<pre class="language-python"><code v-pre class="language-python">import os
 import glob
 import subprocess
 
@@ -550,20 +552,20 @@ processes = []
 image_chunks = [image_files[i:i+4] for i in range(0, len(image_files), 4)]
 
 for images in image_chunks:
-	command = [&quot;oxipng&quot;] + images + [&quot;-o&quot;, &quot;1&quot;, &quot;-s&quot;, &quot;-a&quot;, &quot;-t&quot;, &quot;8&quot;]
-	process = subprocess.Popen(command)
-	processes.append(process)
+    command = [&quot;oxipng&quot;] + images + [&quot;-o&quot;, &quot;1&quot;, &quot;-s&quot;, &quot;-a&quot;, &quot;-t&quot;, &quot;8&quot;]
+    process = subprocess.Popen(command)
+    processes.append(process)
 
 # Wait for all processes to finish
 for process in processes:
-	process.wait()</code></pre>
+    process.wait()</code></pre>
 </doc-codeblock></div>
-   </doc-panel>
-   <doc-panel id="uploading-to-ptpimg" collapsed>
-       <template #title>Uploading to ptpimg</template>
+</doc-panel>
+<doc-panel id="uploading-to-ptpimg" collapsed>
+    <template #title>Uploading to ptpimg</template>
+<p>Uploads all png files in the current directory to ptpimg. Requires your ptpimg API key in <code v-pre>%USERPROFILE%\.ptpimg.key</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">#Uploads all png files in the current directory to ptpimg. Requires your ptpimg API key in `%USERPROFILE%\.ptpimg.key`.
-#!/usr/bin/python
+<pre class="language-python"><code v-pre class="language-python">#!/usr/bin/python
 #Windows wildcard support fork - use at your own peril
 import sys
 import requests
@@ -574,98 +576,116 @@ noconf=0
 debug=0
 configfile=os.path.join(os.path.expanduser(&quot;~&quot;), &quot;.ptpimg.key&quot;)
 if argc==1:
-	print(&quot;&quot;&quot;Usage: ptpimgup.py file1 file2 file3...
-	Uploads images to ptpimg and spits out http urls of said images
-	config file %s should contain api_key eg:
-	01234567-89ab-cdef-0123-456789abcdef
-	contact oddbondboris with bugs&quot;&quot;&quot;%(configfile))
-	sys.exit()
+    print(&quot;&quot;&quot;Usage: ptpimgup.py file1 file2 file3...
+    Uploads images to ptpimg and spits out http urls of said images
+    config file %s should contain api_key eg:
+    01234567-89ab-cdef-0123-456789abcdef
+    contact oddbondboris with bugs&quot;&quot;&quot;%(configfile))
+    sys.exit()
 try:
-	configfile=os.path.expanduser(configfile)
-	cfgfile=open(configfile,'r')
-	apikey=cfgfile.read()[:36]
-	if len(apikey.split(&quot;-&quot;)) != 5:
-		print(&quot;bad api key %s, file should only contain the api key&quot;%(apikey))
-	else:
-		if debug==1:
-			print(apikey)
+    configfile=os.path.expanduser(configfile)
+    cfgfile=open(configfile,'r')
+    apikey=cfgfile.read()[:36]
+    if len(apikey.split(&quot;-&quot;)) != 5:
+        print(&quot;bad api key %s, file should only contain the api key&quot;%(apikey))
+    else:
+        if debug==1:
+            print(apikey)
 except:
-	print(&quot;broken configi %s&quot;%(configfile))
-	raise
-	sys.exit()
+    print(&quot;broken configi %s&quot;%(configfile))
+    raise
+    sys.exit()
 finally:
-	try:
-		cfgfile.close()
-	except:
-		pass
+    try:
+        cfgfile.close()
+    except:
+        pass
 links=[]
 if '*' in sys.argv[-1]:
-	sys.argv[-1:] = glob.glob(sys.argv[-1])
+    sys.argv[-1:] = glob.glob(sys.argv[-1])
 for fname in sys.argv[1:]:
-	#print fname
-	try:
-		curimg=open(os.path.expanduser(fname),'rb')
-		r=requests.post(&quot;https://ptpimg.me/upload.php&quot;,files={('file-upload[0]',('lol.png',curimg, 'image/jpg'))},data={'api_key':apikey})
-		if r.status_code==200:
-			print(&quot;https://ptpimg.me/%s.%s&quot;%(r.json()[0]['code'],r.json()[0]['ext']))
-			links.append((&quot;https://ptpimg.me/%s.%s&quot;%(r.json()[0]['code'],r.json()[0]['ext']),fname))
-		else:
-			print(&quot;error uploading file %s http %s&quot;%(fname,r.status_code))
-	except IOError as e:
-		print(&quot;error on file %s : %s&quot;%(fname,e.strerror))
-	finally:
-		try:
-			curimg.close()
-		except:
-			pass
+    #print fname
+    try:
+        curimg=open(os.path.expanduser(fname),'rb')
+        r=requests.post(&quot;https://ptpimg.me/upload.php&quot;,files={('file-upload[0]',('lol.png',curimg, 'image/jpg'))},data={'api_key':apikey})
+        if r.status_code==200:
+            print(&quot;https://ptpimg.me/%s.%s&quot;%(r.json()[0]['code'],r.json()[0]['ext']))
+            links.append((&quot;https://ptpimg.me/%s.%s&quot;%(r.json()[0]['code'],r.json()[0]['ext']),fname))
+        else:
+            print(&quot;error uploading file %s http %s&quot;%(fname,r.status_code))
+    except IOError as e:
+        print(&quot;error on file %s : %s&quot;%(fname,e.strerror))
+    finally:
+        try:
+            curimg.close()
+        except:
+            pass
 for link in links:
-	print(&quot;[img]%s[/img]&quot;%(link[0]))
+    print(&quot;[img]%s[/img]&quot;%(link[0]))
 for link in links:
-	print(&quot;%s %s&quot;%(link))</code></pre>
+    print(&quot;%s %s&quot;%(link))</code></pre>
 </doc-codeblock></div>
-   </doc-panel>
-</doc-tab>
 </doc-panel>
-<doc-panel id="automatic-comparison-scripts-if-vapoursynth-preview-is-too-scary" collapsed>
-    <template #title>Automatic Comparison Scripts (If Vapoursynth-Preview is too scary)</template>
-<p>Prerequisites:</p>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="automatic-comp-scripts">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-comp-scripts">#</doc-anchor-trigger>
+        <span>Automatic Comp Scripts</span>
+    </h2>
+</doc-anchor-target>
+<p>If VS-Preview is too scary to setup, you can simply run a script to generate the comparisons for you.</p>
+<doc-anchor-target id="setup">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
+        <span>Setup</span>
+    </h3>
+</doc-anchor-target>
 <ol>
-<li>Install <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a></li>
-<li>Install <a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a>
-<ul>
-<li>Select <code v-pre>Install for me only</code>.</li>
-<li>If you have any issues here, check out the <a href="https://www.vapoursynth.com/doc/installation.html">official Installation Guide</a>.</li>
-</ul>
+<li><p>Install <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a></p>
 </li>
-<li>Install dependencies via running the following command in your terminal:
+<li><p>Install <a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a> - Select <code v-pre>Install for me only</code>.</p>
+</li>
+<li><p>Install dependencies via running the following command in your terminal:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">pip install pathlib anitopy pyperclip requests requests_toolbelt</code></pre>
+<pre class="language-shell-session"><code v-pre class="language-shell-session">pip install pathlib anitopy pyperclip requests requests_toolbelt</code></pre>
 </doc-codeblock></div>
 </li>
-<li>Download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="LSMASHSource">LSMASHSource</a> and open it. Inside the zip, open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></li>
-<li>(Optional) Install <a href="https://ffmpeg.org/download.html">FFmpeg</a> and add it to PATH.</li>
+<li><p>Download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="LSMASHSource">LSMASHSource</a> and open it. Inside the zip, open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></p>
+</li>
+<li><p>(Optional) Install <a href="https://ffmpeg.org/download.html">FFmpeg</a> and add it to PATH.</p>
+</li>
 </ol>
-<p>Instructions:</p>
+<doc-anchor-target id="running-the-script">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#running-the-script">#</doc-anchor-trigger>
+        <span>Running the script</span>
+    </h3>
+</doc-anchor-target>
 <ol>
-<li>Put <code v-pre>comp.py</code> into the same folder where the video files you want to compare are located.</li>
-<li>Rename your files to have the typical <code v-pre>[Group] Show - EP.mkv</code> naming, since the script will try to parse the group and show name.</li>
-<li>When there&#x27;s no group, such as BDMV or WEB-DL, use the source/service as the group tag.
-For example:
+<li><p>Put <code v-pre>comp.py</code> into the same folder where the video files you want to compare are located.</p>
+</li>
+<li><p>Rename your files to have the typical <code v-pre>[Group] Show - EP.mkv</code> naming, since the script will try to parse the group and show name.</p>
+</li>
+<li><p>When there&#x27;s no group, such as BDMV or WEB-DL, use the source/service as the group tag.
+For example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/Comparison/
+<pre class="language-shell-session"><code v-pre class="language-shell-session">/Comparison/
 ├── [JPBD] Youjo Senki - 01.m2ts 
 ├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
 ├── [Group] Youjo Senki - 01.mkv
 └── comp.py</code></pre>
 </doc-codeblock></div>
-This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.</li>
-<li>Adjust the variables in the script accordingly.</li>
-<li>Run the script via either double-clicking it or by running <code v-pre>py comp.py</code> in your terminal.</li>
+<p>This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.</p>
+</li>
+<li><p>Adjust the variables in the script accordingly.</p>
+</li>
+<li><p>Run the script via either double-clicking it or by running <code v-pre>py comp.py</code> in your terminal.</p>
+</li>
 </ol>
 <ul>
 <li><a href="https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609">McBaws&#x27; Script</a></li>
 </ul>
-</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
@@ -717,6 +737,6 @@ This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Comparison", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Comparison", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
