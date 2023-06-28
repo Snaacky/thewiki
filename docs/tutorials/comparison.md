@@ -6,49 +6,47 @@ image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3e
 
 # Comparison
 
-##### Comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources, be that official releases or user made encodes. This guide goes through the process of setting up and effectively utilising Vapoursynth-Preview to produce useful comparisons that will allow you to ascertain which release offers the best visual experience.
+Comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources, be that official releases or user made encodes. This guide goes through the process of setting up and effectively utilising Vapoursynth-Preview to produce useful comparisons that will allow you to ascertain which release offers the best visual experience.
 
-==- Initial setup
+## Initial setup
 
-1. Install [Python 3.11](https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe)
-  - During installation tick `Add python.exe to PATH`.
+### Installing dependencies
+
+1. Install [Python 3.11](https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe) - During installation tick `Add python.exe to PATH`.
 2. Install [Git](https://gitforwindows.org/)
-
-3. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases/download/R63/VapourSynth64-R63.exe)
-
-  - Select `Install for me only`.
-  - If you have any issues here, check out the [official Installation Guide](https://www.vapoursynth.com/doc/installation.html).
-
+3. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases/download/R63/VapourSynth64-R63.exe) - Select `Install for me only`.
 4. Before we install vs-preview, we need to install the following dependencies:
-  -  [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P")
-  -  [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works "LSMASHSource")
-  -  [`Subtext`](https://github.com/vapoursynth/subtext "Subtext")
-  -  [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo")
-  -  [`libdovi`](https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7 "libdovi")
-  -  [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
 
-   To install LSMASHSource, download [LSMASHSource](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it. Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
-   
-   To install the rest of the plugins, run the following commands in your terminal:
-   ```
-   vsrepo.py install libp2p sub placebo dovi_library
-   ```
-   ```
-   pip install git+https://github.com/OpusGang/awsmfunc.git
-   ```
-   !!!
-   If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python.
-   !!!
+   [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P") [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works "LSMASHSource") [`Subtext`](https://github.com/vapoursynth/subtext "Subtext") [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo") [`libdovi`](https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7 "libdovi") [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
 
+To install LSMASHSource, download [LSMASHSource](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it.
+Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
+To install the rest of the plugins, run the following commands in your terminal:
+
+```console
+vsrepo.py install libp2p sub placebo dovi_library
+```
+
+```console
+pip install git+https://github.com/OpusGang/awsmfunc.git
+```
+
+!!!
+If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python.
+!!!
 5. Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
 
-  ```
-  pip install git+https://github.com/Irrational-Encoding-Wizardry/vs-preview@2f28e7105b7ffec057d51196b7cea7aa5992b9d3
-  ```
-
-6. Create a new file called `comp.vpy`.
-7. Open `comp.vpy` with a text editor such as Notepad++ and paste the following, edit as required, and save it:
+```console
+pip install git+https://github.com/Irrational-Encoding-Wizardry/vs-preview@2f28e7105b7ffec057d51196b7cea7aa5992b9d3pi
 ```
+
+### The comparison script
+
+1. Create a new file called `comp.vpy`.
+2. Open `comp.vpy` with a text editor such as Notepad++ and paste the following, edit as required, and save it:
+==- comp.vpy contents
+
+```python
 ## Boring stuff: Ignore me
 import vapoursynth as vs
 from vapoursynth import core
@@ -142,16 +140,18 @@ clip2.set_output(2)
 clip3.set_output(3)
 ```
 
-8. That's it for the setup, now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as `comp.bat`:
+==-
+3. Now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as `comp.bat`
 
-    ```
-    vspreview "C:\Path\To\comp.vpy"
-    ```
-	- To get the path, shift and right-click the comp.py file you just made, and select `Copy as path`
+```console
+vspreview "C:\Path\To\comp.vpy"
+```
+
+- To get the path, shift and right-click the comp.py file you just made, and select `Copy as path`
 
 Now, when making comps you just edit `comp.vpy` to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed, and then run `comp.bat` or run `vspreview comp.vpy` directly from your terminal.
-==- 
 
+Unsure of how to go about editing the comp script? The panel below will explain how each section works.
 ==- Understanding comp.vpy
 At first, the comparison script may seem daunting, especially since it's a giant wall of text with a lot of technical jargon. It has basic explanations of each section, however, this guide will go over each part in more detail and describe how to properly edit the values.
 
@@ -192,74 +192,92 @@ When comparing, you will want to go through the different sections, uncommenting
 **FrameProp:** Sets the source name you entered earlier, for correct labelling on slow.pics.
 
 **Output:** Simply makes the clips appear in VS-Preview.
-==- 
+==-
 
-==- Screenshotting Automatically (Easiest)
+## Screenshotting
+
+There are 3 methods of screenshotting:
+
+**Full-auto:** Allowing VS-Preview to do everything for you, by far the fastest option.
+
+**Semi-auto:** Manually marking the frame numbers as you go through the clips, then letting VS-Preview automatically extract, compress, and upload them to slow.pics. Generally the recommended option.
+
+**Bolt-action:** Saving the images locally as you go through the clips, then uploading them manually later. Mainly useful for uploading to other sites and keeping the comparison archived locally, but also has other benefits like faster and more efficient compression.
+
++++ Full-auto
+
 - Click the `comp` button in the bottom right of the toolbar.
 - Untick `I` so only `P` and `B` are selected, or only select `B` if you want matching frame-types.
 - Tick the `public` box to make the comparison available on the slow.pics homepage.
-- Name the collection appropriately for Slow.pics, get the TMDB ID from https://www.themoviedb.org/ and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content. 
+- Name the collection appropriately for Slow.pics, get the TMDB ID from <https://www.themoviedb.org/> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.
 - Set the tag to the same name as listed on TMDB.
 - Set "Delete After" to your desired value, by default comps expire after 2 years of not being viewed.
 - Under `random` enter a frame count amount, you should use a large number of images to make the comparison as effective as possible, ideally at least 40 since not all frames will be useful.
 - Make sure your PNG compression is set to 0 (Max) under Settings -> Main*
 - Hit `Start Upload` and patiently wait while VS-Preview collects the frames and uploads the comparison.
 
-	**If you wish to upload to a slow.pics account for comp history and ability to edit comps, do the following:**
-	- Make sure you're logged into slow.pics
-	- Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browserId.
-	- Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.
-	- Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.
-==- 
+**If you wish to upload to a slow.pics account for comp history and ability to edit comps, do the following:**
 
-==- Screenshotting Manually (Recommended)
-
-There are 2 methods of screenshotting manually:
-
-Semi-auto: Marking the frame numbers as you go through the frames, then letting VS-Preview automatically extract, compress, and upload them to slow.pics. Generally the much easier and recommended option.
-
-Bolt-action: Saving the images locally as you go through the frames, then uploading them manually later. Mainly useful for uploading to other sites and keeping the comparison archived locally, but also has other benefits like faster and more efficient compression.
+- Make sure you're logged into slow.pics
+- Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browserId.
+- Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.
+- Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.
 
 +++ Semi-auto
+
+### Marking the frames
+
 - Press `Shift` & `Right Arrow` keys to move forward a set amount of frames (configurable in playback section of the toolbar)
 - `Number` keys to switch between video sources and compare quality.
-- Press `Control` & `Space` keys to mark the frame numbers. (Configrable in cfg files)
+- Press `Control` & `Space` keys to mark the frame numbers. (Configurable in cfg files)
 - Aim to screenshot a variety of scenes, light/dark, low/high motion, etc.
 - Try and match frame type when screenshotting, e.g. all sources on a `B` frame, single frame jump comes in handy for when they don't match (`Arrow keys`).
 - If a source file does not have `B` frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no `B` frames.
-- See QoL changes below to make this slightly easier on your fingers
+
+### Uploading the comp
 
 - Once you are done marking frames, click the `comp` button in the bottom right of the toolbar.
 - Tick the `public` box to make the comparison available on the slow.pics homepage.
-- Name the collection appropriately for Slow.pics, get the TMDB ID from https://www.themoviedb.org/ and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content. 
+- Name the collection appropriately for Slow.pics, get the TMDB ID from <https://www.themoviedb.org/> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.
 - Set the tag to the same name as listed on TMDB.
 - Set "Delete After" to your desired value, by default comps expire after 2 years of not being viewed.
 - Under `random` you may specify an additional frame amount for VS-Preview to pick at random, recommended to help fill the comparison with more frames.
 - Untick `Current frame` as you likely don't want that included.
 - Make sure your PNG compression is set to 0 (Max) under Settings -> Main
-	- If you wish to upload to a slow.pics account for comp history and the ability to edit comps do the following:
-	- Make sure you're logged into slow.pics
-	- Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browerId.
-	- Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.
-	- Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.
-	
-##### QOL Changes
+
+**If you wish to upload to a slow.pics account for comp history and the ability to edit comps do the following:**
+
+- Make sure you're logged into slow.pics
+- Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browserId.
+- Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.
+- Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.
+
+### QOL Changes
+
 - **Jump through frames quickly**
+
    In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
-   
+
 - **Mark screenshots quicker by setting the mark frame button to enter**
-   Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\comp` and edit `toolbar.py` - Line 552: Replace `QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp` with `(Qt.Key_Return), self.add_current_frame_to_comp
+
+Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\comp` and edit `toolbar.py`
+
+- Line 552: Replace `QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp` with `(Qt.Key_Return), self.add_current_frame_to_comp`
 
 - **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
-   Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py` - Select lines 180-187, delete them, and paste
-   
-		self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-        self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-        self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-        self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
 
+   Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
+- Select lines 180-187, delete them, and paste
+
+```console
+self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
+```
 
 +++ Bolt-action
+
 - Press `Shift` & `Right Arrow` keys to move forward a set amount of frames (configurable in playback section of the toolbar)
 - `Number` keys to switch between video sources and compare quality.
 - Press `Shift` & `S` keys to take and save screenshots. (Configurable in cfg files)
@@ -267,173 +285,197 @@ Bolt-action: Saving the images locally as you go through the frames, then upload
 - Aim to screenshot a variety of scenes, light/dark, low/high motion, etc.
 - Try and match frame type when screenshotting, e.g. all sources on a `B` frame, single frame jump comes in handy for when they don't match (`Arrow keys`).
 - *Note: If a source file does not have `B` frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no `B` frames.*
-- See QoL changes below to make this slightly easier on your fingers
 
-##### QOL Changes
+#### QOL Improvements
+
 - **Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automatically sorted, with comparison names intact.**
+
    In VS-Preview on the bottom bar select Misc, and set file name template to `{frame}_{index}_{Name}`.
 
 - **Jump through frames quickly**
+
    In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
 
 - **Take screenshots quicker by setting the save image button to enter**
-   Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py` - Line 166: Replace `QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click` with `(Qt.Key_Return), self.save_frame_as_button.click`.
+
+   Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py`
+- Line 166: Replace `QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click` with `(Qt.Key_Return), self.save_frame_as_button.click`.
 - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
 
 - **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
-   
-Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py` - Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).
-   
-            self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-            self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-            self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-            self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
 
-##### Post-processing: 
+Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
+
+- Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).
+
+```console
+self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
+```
+
+#### Post-processing
+
 The Bolt-action method is best paired with some scripts to run after you've saved all the frames. The following scripts are generated by chatgpt as I cannot code 👍
 Generally, I just run all 3 with a .bat file, or just the first 2 if I'm not uploading to ptpimg.
 ==- Zero padding
-	#Zero pads all frames in the current directory and removes some of the garbage from the name. Allows for automatic numerical sorting on slow.pics and automatic filling of comparison names based on comp.vpy
-	import os
-	
-	def zero_pad_and_clean_file_names():
-		current_directory = os.getcwd()
-		for filename in os.listdir(current_directory):
-			base_name, extension = os.path.splitext(filename)
-			parts = base_name.split('_')
-	
-			if len(parts) > 2 and parts[0].isdigit():
-				parts[0] = parts[0].zfill(5)
-				parts[2] = parts[2].replace("b'", "").replace("'", "")
-				new_filename = '_'.join(parts) + extension
-				os.rename(os.path.join(current_directory, filename), os.path.join(current_directory, new_filename))
-	
-	# Usage example
-	zero_pad_and_clean_file_names()
-	
- 
+
+Zero pads all frames in the current directory and removes some of the garbage from the name. Allows for automatic numerical sorting on slow.pics and automatic filling of comparison names based on comp.vpy
+
+```python
+import os
+
+def zero_pad_and_clean_file_names():
+    current_directory = os.getcwd()
+    for filename in os.listdir(current_directory):
+        base_name, extension = os.path.splitext(filename)
+        parts = base_name.split('_')
+
+        if len(parts) > 2 and parts[0].isdigit():
+            parts[0] = parts[0].zfill(5)
+            parts[2] = parts[2].replace("b'", "").replace("'", "")
+            new_filename = '_'.join(parts) + extension
+            os.rename(os.path.join(current_directory, filename), os.path.join(current_directory, new_filename))
+
+# Usage example
+zero_pad_and_clean_file_names()
+```
+
+==-
+
 ==- Compressing
-	#Compresses all png files in the current directory with Oxipng compression level 1, very fast and should take less than a minute to iterate over hundreds of images.
-	import os
-	import glob
-	import subprocess
-	
-	folder_path = os.getcwd()  # Get the current working directory
-	
-	os.chdir(folder_path)  # Change the working directory to the specified folder
-	
-	image_files = glob.glob("*.png")  # Get a list of PNG files in the folder
-	
-	processes = []
-	
-	# Divide the image files into chunks of four
-	image_chunks = [image_files[i:i+4] for i in range(0, len(image_files), 4)]
-	
-	for images in image_chunks:
-		command = ["oxipng"] + images + ["-o", "1", "-s", "-a", "-t", "8"]
-		process = subprocess.Popen(command)
-		processes.append(process)
-	
-	# Wait for all processes to finish
-	for process in processes:
-		process.wait()
+Compresses all png files in the current directory with Oxipng compression level 1, very fast and should take less than a minute to iterate over hundreds of images.
 
+```python
+import os
+import glob
+import subprocess
 
+folder_path = os.getcwd()  # Get the current working directory
+
+os.chdir(folder_path)  # Change the working directory to the specified folder
+
+image_files = glob.glob("*.png")  # Get a list of PNG files in the folder
+
+processes = []
+
+# Divide the image files into chunks of four
+image_chunks = [image_files[i:i+4] for i in range(0, len(image_files), 4)]
+
+for images in image_chunks:
+    command = ["oxipng"] + images + ["-o", "1", "-s", "-a", "-t", "8"]
+    process = subprocess.Popen(command)
+    processes.append(process)
+
+# Wait for all processes to finish
+for process in processes:
+    process.wait()
+```
+
+==-
 ==- Uploading to ptpimg
-	#Uploads all png files in the current directory to ptpimg. Requires your ptpimg API key in `%USERPROFILE%\.ptpimg.key`.
-	#!/usr/bin/python
-	#Windows wildcard support fork - use at your own peril
-	import sys
-	import requests
-	import os
-	import glob
-	argc=len(sys.argv)
-	noconf=0
-	debug=0
-	configfile=os.path.join(os.path.expanduser("~"), ".ptpimg.key")
-	if argc==1:
-		print("""Usage: ptpimgup.py file1 file2 file3...
-		Uploads images to ptpimg and spits out http urls of said images
-		config file %s should contain api_key eg:
-		01234567-89ab-cdef-0123-456789abcdef
-		contact oddbondboris with bugs"""%(configfile))
-		sys.exit()
-	try:
-		configfile=os.path.expanduser(configfile)
-		cfgfile=open(configfile,'r')
-		apikey=cfgfile.read()[:36]
-		if len(apikey.split("-")) != 5:
-			print("bad api key %s, file should only contain the api key"%(apikey))
-		else:
-			if debug==1:
-				print(apikey)
-	except:
-		print("broken configi %s"%(configfile))
-		raise
-		sys.exit()
-	finally:
-		try:
-			cfgfile.close()
-		except:
-			pass
-	links=[]
-	if '*' in sys.argv[-1]:
-		sys.argv[-1:] = glob.glob(sys.argv[-1])
-	for fname in sys.argv[1:]:
-		#print fname
-		try:
-			curimg=open(os.path.expanduser(fname),'rb')
-			r=requests.post("https://ptpimg.me/upload.php",files={('file-upload[0]',('lol.png',curimg, 'image/jpg'))},data={'api_key':apikey})
-			if r.status_code==200:
-				print("https://ptpimg.me/%s.%s"%(r.json()[0]['code'],r.json()[0]['ext']))
-				links.append(("https://ptpimg.me/%s.%s"%(r.json()[0]['code'],r.json()[0]['ext']),fname))
-			else:
-				print("error uploading file %s http %s"%(fname,r.status_code))
-		except IOError as e:
-			print("error on file %s : %s"%(fname,e.strerror))
-		finally:
-			try:
-				curimg.close()
-			except:
-				pass
-	for link in links:
-		print("[img]%s[/img]"%(link[0]))
-	for link in links:
-		print("%s %s"%(link))
+Uploads all png files in the current directory to ptpimg. Requires your ptpimg API key in `%USERPROFILE%\.ptpimg.key`.
 
+```python
+#!/usr/bin/python
+#Windows wildcard support fork - use at your own peril
+import sys
+import requests
+import os
+import glob
+argc=len(sys.argv)
+noconf=0
+debug=0
+configfile=os.path.join(os.path.expanduser("~"), ".ptpimg.key")
+if argc==1:
+    print("""Usage: ptpimgup.py file1 file2 file3...
+    Uploads images to ptpimg and spits out http urls of said images
+    config file %s should contain api_key eg:
+    01234567-89ab-cdef-0123-456789abcdef
+    contact oddbondboris with bugs"""%(configfile))
+    sys.exit()
+try:
+    configfile=os.path.expanduser(configfile)
+    cfgfile=open(configfile,'r')
+    apikey=cfgfile.read()[:36]
+    if len(apikey.split("-")) != 5:
+        print("bad api key %s, file should only contain the api key"%(apikey))
+    else:
+        if debug==1:
+            print(apikey)
+except:
+    print("broken configi %s"%(configfile))
+    raise
+    sys.exit()
+finally:
+    try:
+        cfgfile.close()
+    except:
+        pass
+links=[]
+if '*' in sys.argv[-1]:
+    sys.argv[-1:] = glob.glob(sys.argv[-1])
+for fname in sys.argv[1:]:
+    #print fname
+    try:
+        curimg=open(os.path.expanduser(fname),'rb')
+        r=requests.post("https://ptpimg.me/upload.php",files={('file-upload[0]',('lol.png',curimg, 'image/jpg'))},data={'api_key':apikey})
+        if r.status_code==200:
+            print("https://ptpimg.me/%s.%s"%(r.json()[0]['code'],r.json()[0]['ext']))
+            links.append(("https://ptpimg.me/%s.%s"%(r.json()[0]['code'],r.json()[0]['ext']),fname))
+        else:
+            print("error uploading file %s http %s"%(fname,r.status_code))
+    except IOError as e:
+        print("error on file %s : %s"%(fname,e.strerror))
+    finally:
+        try:
+            curimg.close()
+        except:
+            pass
+for link in links:
+    print("[img]%s[/img]"%(link[0]))
+for link in links:
+    print("%s %s"%(link))
+```
 
+==-
++++
 
-==- 
+## Automatic Comp Scripts
 
-==- Automatic Comparison Scripts (If Vapoursynth-Preview is too scary)
+If VS-Preview is too scary to setup, you can simply run a script to generate the comparisons for you.
 
-Prerequisites:
+### Setup
+
 1. Install [Python 3.10](https://www.python.org/downloads/release/python-3105/)
-2. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases)
-   - Select `Install for me only`.
-   - If you have any issues here, check out the [official Installation Guide](https://www.vapoursynth.com/doc/installation.html).
+2. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases) - Select `Install for me only`.
 3. Install dependencies via running the following command in your terminal:
-   ```
+
+   ```console
    pip install pathlib anitopy pyperclip requests requests_toolbelt
    ```
+
 4. Download [LSMASHSource](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it. Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
 5. (Optional) Install [FFmpeg](https://ffmpeg.org/download.html) and add it to PATH.
 
-Instructions:
+### Running the script
+
 1. Put `comp.py` into the same folder where the video files you want to compare are located.
 2. Rename your files to have the typical `[Group] Show - EP.mkv` naming, since the script will try to parse the group and show name.
 3. When there's no group, such as BDMV or WEB-DL, use the source/service as the group tag.
    For example:
-   ```
+
+   ```console
    /Comparison/
    ├── [JPBD] Youjo Senki - 01.m2ts 
    ├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
    ├── [Group] Youjo Senki - 01.mkv
    └── comp.py
    ```
+
    This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.
 4. Adjust the variables in the script accordingly.
 5. Run the script via either double-clicking it or by running `py comp.py` in your terminal.
 
 - [McBaws' Script](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
-==- 
