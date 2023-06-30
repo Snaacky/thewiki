@@ -19,9 +19,9 @@ See [The Index](https://theindex.moe) for a more comprehensive list of unofficia
 
 Streaming sites are generally preferred by most anime watchers as they require no additional setup and are easy to use while being convenient.
 
-However, some sites will heavily compress video/audio and may have ads. *As a result, you may want to consider torrenting if you care about quality.*
+However, some sites will heavily compress video/audio and may have ads. *We suggest using a reliable content blocker, such as [uBlock Origin](https://ublockorigin.com). Additionally, you may want to consider torrenting if you care about quality.*
 
-Aiming for compatibility, they are also unable to use efficient codecs like x265. *If data limits are a concern, torrenting x265 mini encodes may be a better option.* See the [quality comparison between mini encodes and popular streaming sites](https://slow.pics/c/pjYaqdnr).
+Aiming for compatibility, they are also unable to use efficient codecs like x265. *If data limits are a concern, torrenting x265 mini encodes may be a better option. See the [quality comparison between mini encodes and popular streaming sites](https://slow.pics/c/pjYaqdnr).*
 
 Official streams have better quality but are also typically larger (~1.3GB per episode for 1080p). *They can be obtained by torrenting from groups like SubsPlease, who rip untouched streams.*
 
@@ -36,7 +36,7 @@ Unlike streaming sites, releases will have better quality and access to BD relea
 Torrenting requires the use of a torrent client, such as [qBittorrent](https://www.qbittorrent.org/download). Shows are shared in the form of .torrent files or magnet links, which can be found on trackers such as [Nyaa](https://nyaa.si). These are used by your torrent client to know what to download. *Download speeds are dependent on the number of seeds available and connection quality.*
 
 !!!warning
-**Downloading anime torrents may be illegal depending on where you live.** *To avoid receiving a copyright notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting#vpn) or a [seedbox](/guides/torrenting#what-is-a-seedbox).*
+**Downloading anime torrents may be illegal depending on where you live.** *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting#vpn) or a [seedbox](/guides/torrenting#what-is-a-seedbox).*
 !!!
 
 !!!
@@ -52,7 +52,7 @@ Additionally, you may choose to automatically fetch and download shows using RSS
 A brief list of recommended media player applications.
 
 !!!warning
-**VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles.** *Use alternative media players.*
+**VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles.** *We suggest using alternative media players.*
 !!!
 
 ==- PC
