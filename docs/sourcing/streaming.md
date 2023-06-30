@@ -5,7 +5,7 @@ order: -1
 
 # Streaming Sites
 
-!!!warning 
+!!!warning
 **Majority of unofficial streaming sites will contain unwanted or annoying pop-ups and ads that may interfere with your experience.** *We suggest you use a reliable content blocker such as [uBlock Origin](https://ublockorigin.com).*
 !!!
 
@@ -27,10 +27,10 @@ See [The Index](https://theindex.moe) for a more comprehensive list of unofficia
 
 The best way to pick a streaming site is to choose one that suits your needs and preferences. These are some factors that you may want to take into consideration:
 
-### Scrapers vs Self-Hosted Sites
+### Scrapers vs. Self-Hosted Sites
 
 !!!warning
-**Beware of fake streaming sites!** These are scrapers with copied interfaces and are often times not reflected of the original site. *Always pay attention to the URL of the website.*
+**Beware of fake streaming sites!** These are scrapers with copied interfaces and are oftentimes not reflected of the original site. *Always pay attention to the URL of the website.*
 
 You can always find legitimate sites on [The Index](https://theindex.moe).
 !!!
@@ -70,7 +70,7 @@ You can see for yourself in the quality comparisons linked below:
 
 === Tier 1 (Best)
 - [AllAnime](https://allanime.to) - Scraper site with great video quality when scraped from VRV, making them on par with SubsPlease/HorribleSubs torrent releases. *However, not all shows use VRV, resulting in Tier 3 quality.*
-- [AnimeDao](https://animedao.to) - Quality can be similar to [Allanime](https://allanime.to) depending on the server you choose.
+- [AnimeDao](https://animedao.to) - Quality can be similar to [AllAnime](https://allanime.to) depending on the server you choose.
 - [Marin](https://marin.moe) - Consistently the best video quality with BD releases and good quality for seasonals. *Formerly tenshi.*
 
 === Tier 2 (Good)
@@ -103,10 +103,10 @@ There are a multitude of other factors that may affect your decision in picking 
 Additionally, [9anime](https://9anime.to) has one of the best libraries when it comes to older and rarer shows.
 
 ==- Soft Subs
-[Zoro](https://zoro.to) is one of the only streaming sites that uses soft subtitles, with the other alternatives being legal streaming sites.
+[Zoro](https://zoro.to) is one of the only streaming sites that use soft subtitles, with the other alternatives being legal streaming sites.
 
 ==- UI and Features
-Users often care about the UI and site features. As this is completely subjective, we suggest you visit and try out the collection of sites from [The Index](https://theindex.moe) and find what you like best.
+Users often care about the UI and site features. *As this is completely subjective, we suggest you visit and try out the collection of sites from [The Index](https://theindex.moe) and find what you like best.*
 
 ===
 
