@@ -99,7 +99,8 @@ To upload files, simply select Auto Posting, drag all your files into the window
 
 **`Article's obfuscation` should be un-ticked if you want your uploads to be easily accessible without the need for your NZB file**
 
-![ngPost GUI](https://i.imgur.com/5Pz3rbT.png)
+[![ngPost GUI](https://github.com/Snaacky/thewiki/assets/78981416/332b361b-b1f7-40ba-a7fe-d1b8f96fbcae "ngPost GUI")](https://github.com/Snaacky/thewiki/assets/78981416/332b361b-b1f7-40ba-a7fe-d1b8f96fbcae "ngPost GUI")
+
 
 Once the upload has finished, you'll be left with the NZB file in the directory you chose earlier.
 
