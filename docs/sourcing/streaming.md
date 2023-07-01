@@ -6,22 +6,18 @@ order: -1
 # Streaming Sites
 
 !!!warning
-**Majority of unofficial streaming sites will contain unwanted or annoying pop-ups and ads that may interfere with your experience.** *We suggest you use a reliable content blocker such as [uBlock Origin](https://ublockorigin.com).*
+Majority of unofficial streaming sites will contain unwanted or annoying pop-ups and ads that may interfere with your experience. *We suggest you use a reliable content blocker such as [uBlock Origin](https://ublockorigin.com).*
 !!!
 
 ## Popular Sites
 
-!!!
-See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.
-!!!
-
-!!!secondary
-*Looking for official streaming sites?* See [r/anime's list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams).
-!!!
-
 - [9anime](https://9anime.to) - Self-hosted site with one of the largest and oldest anime libraries. *Releases are often updated to include fansubs and BD releases for older content.*
 - [Gogoanime](https://gogoanime.lu) - Self-hosted site with a vast library. *Majority of scraper sites will source from here.*
 - [Zoro](https://zoro.to) - Self-hosted site with quality similar to 9anime while maintaining an extensive library. *One of the only streaming sites with soft subtitles.*
+
+See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.
+
+*Looking for official streaming sites?* See [r/anime's list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams).
 
 ## Picking a Site
 
@@ -30,9 +26,9 @@ The best way to pick a streaming site is to choose one that suits your needs and
 ### Scrapers vs. Self-Hosted Sites
 
 !!!warning
-**Beware of fake streaming sites!** These are scrapers with copied interfaces and are oftentimes not reflected of the original site. *Always pay attention to the URL of the website.*
+Beware of fake streaming sites! *These are scrapers with copied interfaces and are oftentimes not reflected of the original site. Always pay attention to the URL of the website.*
 
-You can always find legitimate sites on [The Index](https://theindex.moe).
+*You can always find legitimate sites on [The Index](https://theindex.moe).*
 !!!
 
 ==- Scraper Sites
@@ -110,6 +106,4 @@ Users often care about the UI and site features. *As this is completely subjecti
 
 ===
 
-!!!
-Additional factors, like the ability to download, comment, use [MAL-Sync](https://malsync.moe), and more can be identified in [The Index](https://theindex.moe).
-!!!
+*Additional factors, like the ability to download, comment, use [MAL-Sync](https://malsync.moe), and more can be identified in [The Index](https://theindex.moe).*

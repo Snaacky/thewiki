@@ -11,9 +11,7 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 !!!
 See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.
-!!!
 
-!!!secondary
 *Looking for official streaming sites?* See [r/anime's list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams).
 !!!
 
@@ -36,11 +34,7 @@ Unlike streaming sites, releases will have better quality and access to BD relea
 Torrenting requires the use of a torrent client, such as [qBittorrent](https://www.qbittorrent.org/download). Shows are shared in the form of .torrent files or magnet links, which can be found on trackers such as [Nyaa](https://nyaa.si). These are used by your torrent client to know what to download. *Download speeds are dependent on the number of seeds available and connection quality.*
 
 !!!warning
-**Downloading anime torrents may be illegal depending on where you live.** *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting#vpn) or a [seedbox](/guides/torrenting#what-is-a-seedbox).*
-!!!
-
-!!!
-*Blocked from accessing torrent sites?* Try using [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) or follow the [Unblock Guide](/tutorials/unblock).
+Downloading anime torrents may be illegal depending on where you live. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting#vpn) or a [seedbox](/guides/torrenting#what-is-a-seedbox).*
 !!!
 
 Additionally, you may choose to automatically fetch and download shows using RSS or Sonarr. *Check out the [RSS Tutorial](/tutorials/rss) on how to set up RSS with your torrent client.*
@@ -52,7 +46,7 @@ Additionally, you may choose to automatically fetch and download shows using RSS
 A brief list of recommended media player applications.
 
 !!!warning
-**VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles.** *We suggest using alternative media players.*
+VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. *We suggest using alternative media players.*
 !!!
 
 ==- PC
