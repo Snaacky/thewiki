@@ -29,12 +29,12 @@ Official streams have better quality but are also typically larger (~1.3GB per e
 
 Torrenting, while can sometimes require more setup, allows for more flexibility and accessibility for watching your shows.
 
-Unlike streaming sites, releases will have better quality and access to BD releases. *Some shows will also have fansub choices, which may be preferred over official subtitles.*
+Unlike streaming sites, torrents provide access to better releases, such as [BDs for older shows](/guides/quality/#bd-vs-web) and greater video quality. *Some shows will also have fansubs, which may be preferred over official subtitles.*
 
 Torrenting requires the use of a torrent client, such as [qBittorrent](https://www.qbittorrent.org/download). Shows are shared in the form of .torrent files or magnet links, which can be found on trackers such as [Nyaa](https://nyaa.si). These are used by your torrent client to know what to download. *Download speeds are dependent on the number of seeds available and connection quality.*
 
 !!!warning
-Downloading anime torrents may be illegal depending on where you live. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting#vpn) or a [seedbox](/guides/torrenting#what-is-a-seedbox).*
+Downloading anime torrents may be illegal depending on where you live. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting#vpn) or [seedbox](/guides/torrenting#what-is-a-seedbox).*
 !!!
 
 Additionally, you may choose to automatically fetch and download shows using RSS or Sonarr. *Check out the [RSS Tutorial](/tutorials/rss) on how to set up RSS with your torrent client.*
