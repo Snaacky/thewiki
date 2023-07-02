@@ -9,40 +9,64 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 ## Streaming
 
-Unofficial - [TheIndex](https://theindex.moe/)
+!!!
+See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.
 
-Official - [/r/anime list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams)
+*Looking for official streaming sites?* See [r/anime's list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams).
+!!!
 
-Streaming sites require no setup and are convenient. However, they heavily compress video and may have ads. Aiming for compatibility, they are also unable to use efficient codecs like x265. If data limits are a concern, torrenting x265 mini encodes from Nyaa is a better option. Here is a comparison between mini encodes and most popular streaming sites - https://slow.pics/c/pjYaqdnr.
+Streaming sites are generally preferred by most anime watchers as they require no additional setup and are easy to use while being convenient.
 
-Official streams have better quality, but are also larger (~1.3GB per episode for 1080p). They can be obtained by torrenting from groups like SubsPlease, who rip untouched official streams.
+However, some sites will heavily compress video/audio and may have ads. *We suggest using a reliable content blocker, such as [uBlock Origin](https://ublockorigin.com). Additionally, you may want to consider torrenting if you care about quality.*
 
-Read more: [Quality Guide](/guides/quality)
+Aiming for compatibility, they are also unable to use efficient codecs like x265. *If data limits are a concern, torrenting x265 mini encodes may be a better option. See the [quality comparison between mini encodes and popular streaming sites](https://slow.pics/c/pjYaqdnr).*
+
+Official streams have better quality but are also typically larger (~1.3GB per episode for 1080p). *They can be obtained by torrenting from groups like SubsPlease, who rip untouched streams.*
+
+*See the [Streaming Sites](/sourcing/streaming/) sourcing guide and [Quality Guide](/guides/quality) for more information.*
 
 ## Torrenting
 
-Torrent files can be found and downloaded from trackers like [nyaa.si](https://nyaa.si). Use [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) or follow this [tutorial](/tutorials/unblock) to unblock sites.
+Torrenting, while can sometimes require more setup, allows for more flexibility and accessibility for watching your shows.
 
-The downloaded .torrent file or the magnet link has to be opened in your torrent client - [qBittorrent](https://www.qbittorrent.org/download.php) for PC and [LibreTorrent](https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent)/[Flud](https://play.google.com/store/apps/details?id=com.delphicoder.flud) for Android. After the download is complete, the torrents do not need to be removed from the client.
+Unlike streaming sites, torrents provide access to better releases, such as [BDs for older shows](/guides/quality/#bd-vs-web) and greater video quality. *Some shows will also have fansubs, which may be preferred over official subtitles.*
 
-The speed is dependent on the number of seeds and their connection quality. You can connect to more seeds and improve speeds with [port forwarding](/guides/torrenting#how-to-port-forward). You may want to use a [VPN](/faq/vpn) or a [seedbox](/guides/torrenting#what-is-a-seedbox) for downloading torrents to avoid receiving a copyright infringement notice from your ISP.
+Torrenting requires the use of a torrent client, such as [qBittorrent](https://www.qbittorrent.org/download). Shows are shared in the form of .torrent files or magnet links, which can be found on trackers such as [Nyaa](https://nyaa.si). These are used by your torrent client to know what to download. *Download speeds are dependent on the number of seeds available and connection quality.*
 
-Advantages of torrents include access to more options with better quality/size ratios, and automation through RSS or Sonarr.
+!!!warning
+Downloading anime torrents may be illegal depending on where you live. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting#vpn) or [seedbox](/guides/torrenting#what-is-a-seedbox).*
+!!!
 
-Read more: [Torrenting Guide](/guides/torrenting), [RSS Tutorial](/tutorials/rss)
+Additionally, you may choose to automatically fetch and download shows using RSS or Sonarr. *Check out the [RSS Tutorial](/tutorials/rss) on how to set up RSS with your torrent client.*
+
+*See the [Torrenting Guide](/guides/torrenting) for more information.*
 
 ## Playback
 
+A brief list of recommended media player applications.
+
 !!!warning
-VLC is not recommended because it displays wrong colours, introduces visual artifacts, and breaks intensive subtitles.
+VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. *We suggest using alternative media players.*
 !!!
 
-**PC:** [MPV](https://mpv.io/installation/), [MPC-HC](https://github.com/clsid2/mpc-hc/releases), [Potplayer](https://potplayer.daum.net)
+==- PC
+- [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
+- [mpv](https://mpv.io/installation/)
+- [Potplayer](https://potplayer.daum.net)
 
-**Android:** [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv&hl=lv&gl=US), [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
+==- Android
+- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
+- [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
-**iOS:** [Outplayer](https://apps.apple.com/us/app/outplayer/id1449923287), [VLC for iOS](https://apps.apple.com/us/app/vlc-media-player/id650377962)
+==- iOS
+- [Outplayer](https://apps.apple.com/app/outplayer/id1449923287)
+- [VLC media player](https://apps.apple.com/app/vlc-media-player/id650377962)
 
-**TV/Media Servers:** [Kodi](https://kodi.tv), [Plex](https://www.plex.tv/), [Jellyfin](https://jellyfin.org/)
+==- TV/Media Servers
+- [Jellyfin](https://jellyfin.org)
+- [Kodi](https://kodi.tv)
+- [Plex](https://www.plex.tv)
 
-Read more: [Playback Guide](/guides/playback)
+===
+
+*See the [Playback Guide](/guides/playback) for more information.*
