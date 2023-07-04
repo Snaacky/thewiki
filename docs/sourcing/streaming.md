@@ -12,7 +12,8 @@ Majority of unofficial streaming sites will contain unwanted or annoying pop-ups
 ## Popular Sites
 
 - [9anime](https://9anime.to) - Self-hosted site with one of the largest and oldest anime libraries. *Releases are often updated to include fansubs and BD releases for older content.*
-- [AniWatch](https://aniwatch.to) - Self-hosted site with quality similar to 9anime while maintaining an extensive library. *One of the only streaming sites with soft subtitles.*
+- [AniWatch](https://aniwatch.to) (previously *Zoro*) - Self-hosted site with quality similar to 9anime while maintaining an extensive library. *One of the only streaming sites with soft subtitles.*
+   - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me).*
 - [Gogoanime](https://gogoanime.lu) - Self-hosted site with a vast library. *Majority of scraper sites will source from here.*
 
 See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.
@@ -72,6 +73,7 @@ You can see for yourself in the quality comparisons linked below:
 === Tier 2 (Good)
 - [9anime](https://9anime.to)
 - [AniWatch](https://aniwatch.to) - *Formerly Zoro.*
+   - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me).*
 
 === Tier 3 (Okay)
 - [animepahe](https://animepahe.com) - Quality can be better or worse than Gogoanime. *However, they offer significantly smaller file sizes and use good BD releases whenever available similar to [Marin](https://marin.moe).*
