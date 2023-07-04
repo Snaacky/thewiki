@@ -1,6 +1,8 @@
 ---
 label: Playback
 order: -2
+description: Learn how to play your anime
+image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec2-4a54-a9ec-71deab646e56.gif
 ---
 
 # Playback
@@ -23,7 +25,7 @@ order: -2
 ==- TV/Media Servers
 - [Emby](https://emby.media)
 - [Jellyfin](https://jellyfin.org)
-- [Kodi](https://kodi.tv) - *Can be installed optionally through [LibreElec OS](https://libreelec.tv).*
+- [Kodi](https://kodi.tv) - *Can be installed optionally through [LibreELEC OS](https://libreelec.tv).*
 - [Plex](https://www.plex.tv)
 
 ===
@@ -31,31 +33,34 @@ order: -2
 !!!warning
 VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. *We suggest using alternative media players.*
 
-*See the example comparisons below:*
-- https://slow.pics/c/XhbmrYgU
-- https://slow.pics/c/vH560pvp
-
+*See the example comparisons to [mpv](https://mpv.io) below:*
+- [Spice and Wolf](https://slow.pics/c/XhbmrYgU)
+- [One Piece](https://slow.pics/c/FW2nBwKP)
 !!!
 
 ## Media Servers
 
-The setup consists of two parts: the **server** and the **client**. *Both may be installed on the same system, but they're separate applications.*
+The setup consists of two parts: the **server** and the **client**. *Both may be installed on the same system, but they are separate applications.*
 - The **client** is a media player that will access the content stored on the server.
 - The **server** runs on the device which hosts your content.
 
 In a typical setup, the server is installed on a computer hosted on your home network, with the client being installed on all your devices. *Most media players will also come with their own client, as well as including support for using [Kodi](https://kodi.tv) as a client (recommended for anime).*
 
 - [Emby](https://emby.media)
-- [Plex](https://www.plex.tv) - [Guide for Anime](https://docs.google.com/document/d/1sXKZDYzbBDDWS8eqJ3IcaxSWhYKIPDdtChm74CBJ6ig)
+- [Plex](https://www.plex.tv)
 - [Jellyfin](https://jellyfin.org)
 
-==- Scanning Anime Without Renaming
-- [Scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them) [!badge Kodi]
-- [Absolute Series Scanner](https://github.com/ZeroQI/Hama.bundle) [!badge Plex]
+!!!
+Running a media server requires a rigid folder structure and a set file naming scheme.
 
-===
+*See the guides below for your server:*
+- [Jellyfin](https://jellyfin.org/docs/general/server/media/shows)
+- [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/)
+!!!
 
 ### Kodi
+
+#### Installing Kodi
 
 There are three ways of installing and configuring Kodi for your TV:
 
@@ -80,6 +85,10 @@ Here, Kodi acts as the client, increasing compatibility and replacing the defaul
 
 ===
 
+#### Scanning Files
+
+*See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them).*
+
 ## Settings
 
 ### Scaling
@@ -90,17 +99,25 @@ Scaling is the process of taking content that does not match your screen resolut
 
 For displays that match the content resolution, scaling isn't necessary. *These shaders only activate when these resolutions don't match. Scaling is not an enhancement and cannot be enabled manually.*
 
-[mpv](https://mpv.io) has a built-in high-quality profile called `gpu-hq` which enables better upscaling algorithms (`scale=spline36`, `cscale=spline36`, `dscale=mitchell`). *This option is necessary to enable even if you use external shaders, as it can act as a fallback.*
+[mpv](https://mpv.io) has a built-in high-quality profile called `gpu-hq` which enables better upscaling algorithms (`scale=spline36`, `cscale=spline36`, `dscale=mitchell`). By default, mpv uses `spline36`. *This option is necessary to enable even if you use external shaders, as it can act as a fallback.*
 
-For those with powerful GPUs, we recommend using the following external shaders for mpv:
-- [RAVU and nnedi3](https://github.com/bjin/mpv-prescalers)
-- [FSRCNNX](https://github.com/igv/FSRCNN-TensorFlow/releases)
+#### External Shaders
 
-These are 2x shaders, meaning they always scale by 2x, regardless of the original video. For instance, if you have:
-- 720p video upscaling to 1080p: external shader upscales to 1440p, then downscaled to 1080p by `dscale=mitchell`.
-- 720p video upscaling to 2160p/4K: external shader upscales to 1440p, then upscaled to 2160p by `scale=spline36`.
+Below is a brief list of recommended external shaders for [mpv](https://mpv.io):
 
-Some shaders can upscale to arbitrary ratios, such as [ravu-zoom](https://github.com/bjin/mpv-prescalers). *This comes at the cost of lower performance, due to the shader rendering directly to the target resolution.*
++++ High-End PCs
+For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
+
++++ Mid-End PCs
+For those with mid-end hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
+
++++ Low-End PCs
+For those with low-end hardware, we recommend sticking to mpv's default shaders:
+- `scale=ewa_lanczos`
+- `dscale=mitchell`
+- `cscale=ewa_lanczos`
+
++++
 
 ==- Installing External Shaders in mpv
 - Head to your shader folder (`%appdata%/mpv/shaders`). *You may need to create one if it doesn't exist.*
@@ -110,7 +127,7 @@ Some shaders can upscale to arbitrary ratios, such as [ravu-zoom](https://github
 glsl-shader="~~/shaders/<name>"
 ```
 - Confirm your shader is working by pressing *Shift* + *I*, followed by *2*.
-   - Watch for dropped frames or high frame times, as they are a signal that your GPU may not be able to keep up with your shader. *If this applies to you, we suggest switching to a less-demanding shader.*
+   - Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader. *If this applies to you, we suggest switching to a less-demanding shader.*
 
 ===
 
@@ -154,19 +171,19 @@ This process is repeated for the entire video. Because each frame is shown for a
 
 To avoid judder, *it is best to try and match your display's refresh rate with the content frame rate:*
 
-==- High Refresh Rate
+==- Using a High Refresh Rate
 Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match perfectly with each frame, as they are all multiples of 24.
 
 *144Hz displays will not display 30/60 fps content properly. Additionally, none of the above will handle 25 fps content correctly.*
 
-==- Adaptive Sync
+==- Using Adaptive Sync
 Adaptive sync is a technology that dynamically adjusts your display's refresh rate based on the frame rate of the content on your screen.
 
 Most modern GPUs will have adaptive sync functionality, such as through AMD FreeSync or NVIDIA G-Sync.
 
 The best solution is to use G-Sync/G-Sync Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#faq-What-is-Low-Framerate-Compensation?). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
 
-==- Automatic Refresh Rate Adjustment
+==- Using Automatic Refresh Rate Adjustment
 Many modern streaming devices (e.g. Apple TV, NVIDIA Shield, Amazon Fire Stick, etc.) will have the option to change the TV refresh rate to match the content frame rate, either through the device's settings or a setting in the playback software (e.g. Kodi, Plex, etc.)
 
 24/30/60 fps content should all work perfectly. *25 fps content requires 25/50Hz support, which some TVs in [NTSC regions](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png) do not support.*
@@ -196,10 +213,10 @@ Most TVs and boxes will display a list of supported codecs in their specificatio
 
 ### Typesetting
 
-Most subbed anime will use `.ass` subtitle styling, also known as Aegisub subtitles.
+Most subbed anime will use `.ass` subtitles, allowing for extensive styling and typesetting. *This comes at the cost of additional system resources, though most modern computers, phones, and media servers will not have an issue.*
 
 While subtitles will show up on most TVs/media players, the typesetting or overlapping dialogue can sometimes be broken when using certain applications. *This is especially a problem with fansubs, where typesetting is used extensively in various areas (e.g. text on a sign, moving scenes).*
 
 !!!
-[Kodi](https://kodi.tv) does not have this issue and renders `.ass` subtitles properly. *Additionally, the Kodi player is separate from the Kodi media server and is compatible with other media servers, such as [Plex](https://www.plex.tv).*
+Some TVs will have difficulty showing `.ass` subtitles. *We suggest you use an external box, such as Apple TV, Fire TV, or NVIDIA Shield.*
 !!!
