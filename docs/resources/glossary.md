@@ -54,6 +54,7 @@ order: -4
 | Hit and run     | A term used to describe when a user downloads a file from a private tracker but fails to continue seeding it to the required ratio or for a specified period                                       |
 | Leecher         | A user who is in the process of downloading a file but has not yet completed the download or is not actively uploading (sharing) the downloaded pieces with others                                 |
 | Magnet link     | A type of hyperlink used in BitTorrent that allows users to directly connect to the tracker and peers without needing to download a separate torrent file                                          |
+| Neutral leech   | A status assigned to certain torrents on a private tracker where none of the data uploaded or downloaded is counted                                                                                |     
 | Peer            | An individual computer or device connected to a P2P network that participates in sharing and downloading files                                                                                     |
 | Piece           | A small part of a file that is broken down during the BitTorrent process, allowing simultaneous downloading and uploading of different pieces from different peers                                 |
 | Private tracker | A BitTorrent tracker that requires an invitation to join. Advantages of private trackers include speed, retention, selection, and quality control                                                  |
