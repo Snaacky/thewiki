@@ -22,7 +22,7 @@ We also have a Discord server where you can hang out, report, and request things
 #### :book: Learn about various topics in detail
 
 - [Find the best media player for your device](/guides/playback/)
-- [Source your favorite content in the highest quality possible](/guides/playback/)
+- [Source your favorite content in the highest quality possible](/guides/quality/)
 - [Learn how to torrent from scratch](/guides/torrenting/)
 
 #### :tv: Learn about the various ways to watch your anime
