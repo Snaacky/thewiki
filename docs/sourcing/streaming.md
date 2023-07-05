@@ -12,8 +12,9 @@ Majority of unofficial streaming sites will contain unwanted or annoying pop-ups
 ## Popular Sites
 
 - [9anime](https://9anime.to) - Self-hosted site with one of the largest and oldest anime libraries. *Releases are often updated to include fansubs and BD releases for older content.*
+- [AniWatch](https://aniwatch.to) (previously *Zoro*) - Self-hosted site with quality similar to 9anime while maintaining an extensive library. *One of the only streaming sites with soft subtitles.*
+   - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me).*
 - [Gogoanime](https://gogoanime.lu) - Self-hosted site with a vast library. *Majority of scraper sites will source from here.*
-- [Zoro](https://zoro.to) - Self-hosted site with quality similar to 9anime while maintaining an extensive library. *One of the only streaming sites with soft subtitles.*
 
 See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.
 
@@ -45,7 +46,7 @@ A **self-hosted** site is a streaming site that hosts the content on their own s
 
 Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. *However, some self-hosted libraries can be more limited.*
 
-**Examples of self-hosted sites:** [9anime](https://9anime.to), [animepahe](https://animepahe.com), [Gogoanime](https://gogoanime.lu), [Marin](https://marin.moe), [Zoro](https://zoro.to)
+**Examples of self-hosted sites:** [9anime](https://9anime.to), [animepahe](https://animepahe.com), [AniWatch](https://aniwatch.to), [Gogoanime](https://gogoanime.lu), [Marin](https://marin.moe)
 
 ===
 
@@ -55,12 +56,12 @@ While streaming sites will offer worse video quality compared to alternatives su
 
 You can see for yourself in the quality comparisons linked below:
 
-- [Demon Slayer](https://slow.pics/c/pjYaqdnr) - 9anime, animepahe, Gogoanime, tenshi (Marin), Zoro, torrents
+- [Demon Slayer](https://slow.pics/c/pjYaqdnr) - 9anime, AniWatch (Zoro), animepahe, Gogoanime, tenshi (Marin), torrents
 - [Fate/Zero](https://slow.pics/c/1LNZtDzm) - 9anime, animepahe, Gogoanime, tenshi (Marin), torrents
-- [Senran Kagura](https://slow.pics/c/QLtX61qx) - 9anime, animepahe, Gogoanime, Zoro, torrents
+- [Senran Kagura](https://slow.pics/c/QLtX61qx) - 9anime, AniWatch (Zoro), animepahe, Gogoanime, torrents
 - [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - 9anime, animepahe, Gogoanime, torrents
 - [Vinland Saga S2](https://slow.pics/c/GjhwBwo3) - Gogoanime, Marin, torrents
-- [Oshi no Ko](https://slow.pics/c/6HqApHsn) - 9anime, Gogoanime, Marin, Zoro, torrents
+- [Oshi no Ko](https://slow.pics/c/6HqApHsn) - 9anime, AniWatch (Zoro), Gogoanime, Marin, torrents
 
 #### Quality Tier List
 
@@ -71,7 +72,8 @@ You can see for yourself in the quality comparisons linked below:
 
 === Tier 2 (Good)
 - [9anime](https://9anime.to)
-- [Zoro](https://zoro.to)
+- [AniWatch](https://aniwatch.to) - *Formerly Zoro.*
+   - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me).*
 
 === Tier 3 (Okay)
 - [animepahe](https://animepahe.com) - Quality can be better or worse than Gogoanime. *However, they offer significantly smaller file sizes and use good BD releases whenever available similar to [Marin](https://marin.moe).*
@@ -99,7 +101,7 @@ There are a multitude of other factors that may affect your decision in picking 
 Additionally, [9anime](https://9anime.to) has one of the best libraries when it comes to older and rarer shows.
 
 ==- Soft Subs
-[Zoro](https://zoro.to) is one of the only streaming sites that use soft subtitles, with the other alternatives being legal streaming sites.
+[AniWatch](https://aniwatch.to) is one of the only streaming sites that use soft subtitles, with the other alternatives being legal streaming sites.
 
 ==- UI and Features
 Users often care about the UI and site features. *As this is completely subjective, we suggest you visit and try out the collection of sites from [The Index](https://theindex.moe) and find what you like best.*
