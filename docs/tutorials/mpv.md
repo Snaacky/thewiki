@@ -248,6 +248,8 @@ Restyling subtitles refers to the process of modifying the appearance of subtitl
 
 [![GandhiSans](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png "GandhiSans")](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png "GandhiSans")
 
+To use this font, you'll first have to download it from [here](https://fontmeme.com/fonts/gandhi-sans-font/) and then you can either install it system-wide or put it in your `/portable_config/fonts`.
+
 ```properties
 ## Restyle Subtitles
 
@@ -268,6 +270,8 @@ sub-ass-force-style=Kerning=yes
 ==- Style 2: Cabin
 
 [![Cabin](https://user-images.githubusercontent.com/78981416/248583220-ac376f74-ce9f-4c3c-800b-370355a841f0.png "Cabin")](https://user-images.githubusercontent.com/78981416/248583220-ac376f74-ce9f-4c3c-800b-370355a841f0.png "Cabin")
+
+To use this font, you'll first have to download it from [here](https://fontmeme.com/fonts/cabin-font/) and then you can either install it system-wide or put it in your `/portable_config/fonts`.
 
 ```properties
 ## Restyle Subtitles
@@ -316,7 +320,7 @@ Simply copy and paste the above at the end of your `mpv.conf`.
 
 ### Upscaling
 
-If you're watching content that's a lower resolution than your screen, you can consider using a high-quality scaler like `nnedi3-nns256-win8x4` which you can download from [here](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x6.hook). Do note that this will be way more taxing on your system.
+If you're watching content that's a lower resolution than your screen, you can consider using a high-quality scaler like `nnedi3-nns256-win8x4` which you can download from [here](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook). Do note that this will be way more taxing on your system.
 
 You can add it directly to your `mpv.conf`
 
