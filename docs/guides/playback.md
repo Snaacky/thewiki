@@ -49,7 +49,7 @@ In a typical setup, the server is installed on a computer hosted on your home ne
 - [Jellyfin](https://jellyfin.org)
 
 !!!
-Running a media server requires a rigid folder structure and a set file naming scheme.
+Running a media server requires a rigid folder structure and a specific file naming scheme.
 
 *See the guides for your server: [Jellyfin](https://jellyfin.org/docs/general/server/media/shows), [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/)*
 !!!
@@ -95,11 +95,11 @@ Scaling is the process of taking content that does not match your screen resolut
 
 For displays that match the content resolution, scaling isn't necessary. *These shaders only activate when these resolutions don't match. Scaling is not an enhancement and cannot be enabled manually.*
 
-[mpv](https://mpv.io) has a built-in high-quality profile called `gpu-hq` which enables better upscaling algorithms (`scale=spline36`, `cscale=spline36`, `dscale=mitchell`). By default, mpv uses `spline36`. *This option is necessary to enable even if you use external shaders, as it can act as a fallback.*
+[mpv](https://mpv.io) has a built-in high-quality profile called `gpu-hq` which enables better upscaling algorithms (`scale=spline36`, `cscale=spline36`, `dscale=mitchell`). By default, mpv uses `spline36`. *This option is necessary to enable even if you use an external shader, as it can act as a fallback.*
 
-#### External Shaders
+#### Recommended Shaders
 
-Below is a brief list of recommended external shaders for [mpv](https://mpv.io):
+Below is a brief list of recommended shaders for [mpv](https://mpv.io):
 
 +++ High-End PCs
 For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
@@ -124,7 +124,7 @@ cscale=ewa_lanczos
 - Head to your shader folder (`%appdata%/mpv/shaders`). *You may need to create one if it doesn't exist.*
 - Place your downloaded external shaders in the directory.
 - Add the following line to your `mpv.conf`, replacing `<name>` with the file name of your shader:
-```
+```properties
 glsl-shader="~~/shaders/<name>"
 ```
 - Confirm your shader is working by pressing *Shift* + *I*, followed by *2*.
@@ -151,12 +151,12 @@ Most modern anime will play close to 24 fps (24000/1001 = 23.976 fps). *However,
 Judder is most commonly seen with devices that have 60Hz displays, *as the refresh rate is not an integer multiple of the content frame rate.*
 
 ==- Explaining Judder
-A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to play a video/game locked at:
+A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to play a video or game locked at:
 - 60 fps: 1 frame is shown for *every 1 refresh* (next frame in 16.67 ms).
 - 30 fps: 1 frame is shown for *every 2 refreshes* (next frame in 33.33 ms).
 - 15 fps: 1 frame is shown for *every 4 refreshes* (next frame in 66.67 ms).
 
-These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. *With 60 fps video, for instance, each frame is shown for 1 refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.*
+These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. *With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.*
 
 If anime plays at 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). *However, refreshes cannot be divided, and you cannot have "part" of a refresh show on your monitor.*
 
@@ -166,7 +166,9 @@ Instead, your monitor will try to refresh 2.5 times like this:
 - Frame 3 is shown for *2 refreshes* (next frame in 33.33 ms).
 - Frame 4 is shown for *3 refreshes* (next frame in 50 ms).
 
-This process is repeated for the entire video. Because each frame is shown for a different number of refreshes, plus the time between changing frames is not the same, *it leads to motion appearing stuttery/laggy. This is especially noticeable when panning scenes.* 
+Every odd frame appears for *2 refreshes*, and every even frame appears for *3 refreshes*. 
+
+This process is repeated for the entire video. Because each frame is displayed for a different number of refreshes, plus the time between changing frames is not the same, *it leads to motion appearing stuttery or laggy. This is especially noticeable when panning scenes.*
 
 ===
 
@@ -178,14 +180,14 @@ Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match perfectly with eac
 *144Hz displays will not display 30/60 fps content properly. Additionally, none of the above will handle 25 fps content correctly.*
 
 ==- Using Adaptive Sync
-Adaptive sync is a technology that dynamically adjusts your display's refresh rate based on the frame rate of the content on your screen.
+Adaptive sync, also known as variable refresh rate, is a technology that dynamically adjusts your display's refresh rate based on the frame rate of the content on your screen.
 
-Most modern GPUs will have adaptive sync functionality, such as through AMD FreeSync or NVIDIA G-Sync.
+Most modern GPUs will have adaptive sync functionality, such as through AMD FreeSync or NVIDIA G-SYNC.
 
-The best solution is to use G-Sync/G-Sync Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#faq-What-is-Low-Framerate-Compensation?). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
+The best solution is to use G-SYNC/G-SYNC Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#faq-What-is-Low-Framerate-Compensation?). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
 
 ==- Using Automatic Refresh Rate Adjustment
-Many modern streaming devices (e.g. Apple TV, NVIDIA Shield, Amazon Fire Stick, etc.) will have the option to change the TV refresh rate to match the content frame rate, either through the device's settings or a setting in the playback software (e.g. Kodi, Plex, etc.)
+Many modern streaming devices (e.g. Amazon Fire TV, Apple TV, NVIDIA SHIELD, etc.) will have the option to change the TV refresh rate to match the content frame rate, either through the device's settings or a setting in the playback software (e.g. Kodi, Plex, etc.)
 
 24/30/60 fps content should all work perfectly. *25 fps content requires 25/50Hz support, which some TVs in [NTSC regions](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png) do not support.*
 
@@ -203,7 +205,7 @@ There are two ways to handle video decoding: hardware and software. *Hardware de
 
 For most users, this isn't an issue. Generally:
 - H.264 8-bit (AVC) works everywhere.
-- H.264 10-bit (AVC) works on some hardware. *Recommended to use a decent CPU. Additionally, hardware decoding support is suboptimal.*
+- H.264 10-bit (AVC) works on some hardware. *Recommended to use a decent CPU. Hardware decoding support is suboptimal.*
 - H.265 8-bit/10-bit (HEVC) works with most modern hardware.
 
 Most TVs and boxes will display a list of supported codecs in their specifications.
@@ -219,5 +221,5 @@ Most subbed anime will use `.ass` subtitles, allowing for extensive styling and 
 While subtitles will show up on most TVs/media players, the typesetting or overlapping dialogue can sometimes be broken when using certain applications. *This is especially a problem with fansubs, where typesetting is used extensively in various areas (e.g. text on a sign, moving scenes).*
 
 !!!
-Most TVs will have difficulty showing `.ass` subtitles. *You should use an external box, such as Apple TV, Fire TV, or NVIDIA Shield.*
+Most TVs will have difficulty showing `.ass` subtitles. *You should use an external box, such as Amazon Fire TV, Apple TV, or NVIDIA SHIELD.*
 !!!
