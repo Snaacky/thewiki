@@ -33,9 +33,7 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 !!!warning
 VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. *We suggest using alternative media players.*
 
-*See the example comparisons to [mpv](https://mpv.io) below:*
-- [Spice and Wolf](https://slow.pics/c/XhbmrYgU)
-- [One Piece](https://slow.pics/c/FW2nBwKP)
+*See the example comparisons to [mpv](https://mpv.io): [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)*
 !!!
 
 ## Media Servers
@@ -53,9 +51,7 @@ In a typical setup, the server is installed on a computer hosted on your home ne
 !!!
 Running a media server requires a rigid folder structure and a set file naming scheme.
 
-*See the guides below for your server:*
-- [Jellyfin](https://jellyfin.org/docs/general/server/media/shows)
-- [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/)
+*See the guides for your server: [Jellyfin](https://jellyfin.org/docs/general/server/media/shows), [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/)*
 !!!
 
 ### Kodi
@@ -213,7 +209,7 @@ Most TVs and boxes will display a list of supported codecs in their specificatio
 
 ### Typesetting
 
-Most subbed anime will use `.ass` subtitles, allowing for extensive styling and typesetting. *This comes at the cost of additional system resources, though most modern computers, phones, and media servers will not have an issue.*
+Most subbed anime will use `.ass` subtitles, allowing for extensive styling and typesetting. This comes at the cost of additional system resources, *though most modern computers, phones, and media servers will not have an issue.*
 
 While subtitles will show up on most TVs/media players, the typesetting or overlapping dialogue can sometimes be broken when using certain applications. *This is especially a problem with fansubs, where typesetting is used extensively in various areas (e.g. text on a sign, moving scenes).*
 
