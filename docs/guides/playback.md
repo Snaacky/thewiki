@@ -60,15 +60,15 @@ Running a media server requires a rigid folder structure and a set file naming s
 
 There are three ways of installing and configuring Kodi for your TV:
 
-==- Client on PC: Content stored on the computer
+==- Client on PC with content stored on the computer
 - No decoding problems with a powerful CPU.
 - The ability to use high-quality shaders that utilize your GPU to improve upscaling with [an external player of your choice](https://kodi.wiki/view/External_players).
 - Control using a normal keyboard and mouse or through an Android app like [Yatse](https://yatse.tv).
 
-==- Client on TV/Android box: Content stored on a separate computer
+==- Client on TV/Android box with content stored on a separate computer
 - Works with a simple [SMB share](https://kodi.wiki/view/SMB) from your computer on the same network.
 
-==- Client on TV/Android box: Content stored on a separate computer running a media server
+==- Client on TV/Android box with content stored on a media server
 - Transcoding support for videos.
 - The ability to remotely stream content from devices outside your local network.
 
@@ -108,10 +108,15 @@ For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](http
 For those with mid-end hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
 
 +++ Low-End PCs
-For those with low-end hardware, we recommend sticking to mpv's default shaders:
-- `scale=ewa_lanczos`
-- `dscale=mitchell`
-- `cscale=ewa_lanczos`
+For those with low-end hardware, we recommend sticking to mpv's built-in scalers.
+
+In your `mpv.conf`, add the following:
+```properties
+vo=gpu
+scale=ewa_lanczos
+dscale=mitchell
+cscale=ewa_lanczos
+```
 
 +++
 
@@ -131,7 +136,7 @@ glsl-shader="~~/shaders/<name>"
 
 Filters act as a temporary fix to amend issues that may appear when watching anime. These can be applied using the options available in [mpv](https://mpv.io) and [madVR](https://madvr.com).
 
-Debanding is the most commonly used filter, which helps to fix issues with [color banding](https://en.wikipedia.org/wiki/Colour_banding) in your video.
+Debanding is the most commonly used filter, which helps to fix issues with [color banding](/tutorials/mpv/#debanding) in your video.
 
 !!!warning
 We do not recommend using detail enhancement, noise reduction, or sharpening filters with your media player, *as it can negatively affect the quality of your content.*
@@ -214,5 +219,5 @@ Most subbed anime will use `.ass` subtitles, allowing for extensive styling and 
 While subtitles will show up on most TVs/media players, the typesetting or overlapping dialogue can sometimes be broken when using certain applications. *This is especially a problem with fansubs, where typesetting is used extensively in various areas (e.g. text on a sign, moving scenes).*
 
 !!!
-Some TVs will have difficulty showing `.ass` subtitles. *We suggest you use an external box, such as Apple TV, Fire TV, or NVIDIA Shield.*
+Most TVs will have difficulty showing `.ass` subtitles. *You should use an external box, such as Apple TV, Fire TV, or NVIDIA Shield.*
 !!!
