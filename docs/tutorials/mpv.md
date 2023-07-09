@@ -146,7 +146,6 @@ We'll start with a generic basic config that'll be good enough for most people:
 profile=gpu-hq
 vo=gpu-next
 gpu-api=vulkan
-hwdec=auto-safe
 
 ## Behavior
 
@@ -189,7 +188,6 @@ Below are some brief explanations of what some of the options do. Visit [MPV doc
 - **profile=gpu-hq** - Allows for higher-quality playback
 - **vo=gpu-next** -  General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more
 - **gpu-api=vulkan** - Use Vulkan graphics API
-- **hwdec=auto-safe** - Enable hardware decoding
 - **keep-open=yes** - Pause the player instead of terminating when playing or seeking beyond the end of the file, and there is no next file to be played
 - **save-position-on-quit** - Save the current playback position on quit. When this file is played again later, the player will seek to the old playback position on start
 - **scale=ewa_lanczos** - Use `ewa_lanczos` for upscaling
