@@ -27,15 +27,17 @@ The file name for a video will typically look like one of the following:
 
 Key                                                           | Meaning                                                           
 --------------------------------------------------------------|-----------------------------------------------------------
-![#ed8796](https://placehold.co/15x15/ed8796/ed8796.png) 1    | The name of the group who created the release.                     
-![#f5a97f](https://placehold.co/15x15/f5a97f/f5a97f.png) 2    | The anime show title.                                        
-![#eed49f](https://placehold.co/15x15/eed49f/eed49f.png) 3    | The season/episode number.
-![#a6da95](https://placehold.co/15x15/a6da95/a6da95.png) 4    | The source where the release was taken from. *Typically BD (Blu-ray/JPBD) or WEB.*
-![#91d7e3](https://placehold.co/15x15/91d7e3/91d7e3.png) 5    | The resolution of the video file.
-![#8aadf4](https://placehold.co/15x15/8aadf4/8aadf4.png) 6    | The video codec. *Typically HEVC or AVC.*
-![#c6a0f6](https://placehold.co/15x15/c6a0f6/c6a0f6.png) 7    | The audio codec. *Dual audio means the release contains two audio streams, typically the dubbed version and original.*
-![#f4dbd6](https://placehold.co/15x15/f4dbd6/f4dbd6.png) 8    | The CRC32 checksum.
-![#f5bde6](https://placehold.co/15x15/f5bde6/f5bde6.png) 9    | The container format. *Typically `.mkv` or `.mp4`.*
+![#ed8796](https://placehold.co/14x14/ed8796/ed8796.png) 1    | The name of the group who created the release.                     
+![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) 2    | The anime show title.                                        
+![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) 3    | The season/episode number.
+![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4    | The source where the release was taken from. *Typically BD (Blu-ray/JPBD) or WEB.*
+![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5    | The resolution of the video file.
+![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) 6    | The video codec. *Typically HEVC or AVC.*
+![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) 7    | The audio codec. *Dual audio means the release contains two audio streams, typically the dubbed version and original.*
+![#f4dbd6](https://placehold.co/14x14/f4dbd6/f4dbd6.png) 8    | The CRC32 checksum.
+![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) 9    | The container format. *Typically `.mkv` or `.mp4`.*
+
+===
 
 ### Encoding
 
@@ -167,6 +169,9 @@ Fansubs are fan-produced versions of subtitles. They can often be better than of
 
 For most newer fansubbed anime, fansubs will often use an edited version of official subs from sources like [Crunchyroll](https://www.crunchyroll.com). *These edits range from removing excessive localization to reverting translations back to their original language.*
 
+==- Using AnimeTosho
 [AnimeTosho](https://animetosho.org) is a useful resource for grabbing just the subtitles from any release on [Nyaa](https://nyaa.si). They can be downloaded under the *Subtitles* section of a release.
 
 ![](https://files.catbox.moe/wbychc.gif)
+
+===
