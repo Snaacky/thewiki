@@ -4,8 +4,6 @@ description: Installation, setup, and configuration for MPV
 image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe50-4d0c-b0dd-49f8828af0dc.png
 ---
 
-# TEEST
-
 # MPV
 
 [MPV](https://mpv.io/) is a versatile and lightweight media player with extensive customization options. It supports a wide variety of video file formats, audio and video codecs, subtitle types, offers advanced features, and is compatible with multiple platforms.
