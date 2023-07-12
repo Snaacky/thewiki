@@ -43,7 +43,7 @@ Key                                                        | Meaning
 
 ### Encoding
 
-Quality is subjective, and there is a difference between flaws which need to be fixed and the preferences of the end user. *Generally, the best release is an encode which fixes the flaws of a raw BDMV while simultaneously not altering the original material.*
+Quality is subjective, and there is a difference between flaws which need to be fixed and the preferences of the end user. Generally, the best release is an encode which fixes the flaws of a raw BDMV while simultaneously not altering the original material.
 
 The official BDMV is an encode of the source Blu-ray. As a result, it often suffers from issues like banding, blocking, noise, aliasing, etc. These can originate from a variety of reasons. For example, a lot of anime is natively 720p and is upscaled to 1080p for the Blu-ray. *Even if issues aren't present in the BDMV, they can appear in the encode due to compression.*
 
@@ -61,12 +61,12 @@ See the links below for more information:
 ==- BDMV
 A simple complete copy of the original Blu-ray, used as a source for making other releases or encodes. *These are not useful for watching.*
 
-JPBDs often have better quality than USBDs because of more bitrate devoted to the video instead of multiple (dub) audio tracks. *In some cases, Blu-rays from other countries can also have the best quality.*
+JPBDs often have better quality than USBDs because of more bitrate devoted to the video instead of multiple (dub) audio tracks. In some cases, Blu-rays from other countries can also have the best quality.
 
 These can be found on [U2](https://u2.dmhy.org) (Private), [Skyeysnow](https://skyeysnow.com) (Private, Open Signup) and [Nyaa](https://nyaa.si) (Public). *Release groups don't matter for BDMVs because they're all the same unless the files are corrupted.*
 
 ==- BDRemux
-A losslessly packaged version of the BDMV put into `.mkv` files for ease. *Similar to BDMVs, they can have large file sizes.*
+A losslessly packaged version of the BDMV put into `.mkv` files for ease. Similar to BDMVs, they can have large file sizes.
 
 ==- BDRip
 An encode made directly from the BDMV/BDRemux. *These are for watching and are considered the best quality.*
@@ -89,7 +89,7 @@ Until the Blu-rays are released, this is the only source available for new airin
 Reliable groups upload direct WEB-DLs from official streaming sources such as [Crunchyroll](https://www.crunchyroll.com) or [HIDIVE](https://www.hidive.com). The quality will be the same no matter which group releases these. *The most reliable one right now is [SubsPlease](https://subsplease.org).*
 
 ==- Re-encode
-Re-encodes are encodes of a BDRip or WEB source. Quality is dependent on the source used. *A re-encode of a BDMV would typically have better quality than a re-encode of a BDRip.*
+Re-encodes are encodes of a BDRip or WEB source. Quality is dependent on the source used. A re-encode of a BDMV would typically have better quality than a re-encode of a BDRip.
 
 Re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process, and information is lost at every stage. *On [Nyaa](https://nyaa.si), these are marked in red.*
 
@@ -120,7 +120,7 @@ See the comparisons below:
 
 ### BD vs WEB
 
-The BD is usually always a better source than WEB. *There's no reason to get a WEB-sourced encode once the BD is out.*
+The BD is usually always a better source than WEB. There's no reason to get a WEB-sourced encode once the BD is out.
 
 The advantages of BD and what you're missing out on with WEB are:
 
@@ -142,7 +142,7 @@ See the comparisons below between BD and WEB:
 ## Audio
 
 ### Codecs
-Audio codecs are divided into lossless (DTS-HDMA, FLAC, TrueHD) and lossy formats (AAC, MP3, Opus). *While lossless raw video will be multiple GBs per minute, audio is more manageable when it comes to size, and you'll see many options with lossless audio.*
+Audio codecs are divided into lossless (DTS-HDMA, FLAC, TrueHD) and lossy formats (AAC, MP3, Opus). While lossless raw video will be multiple GBs per minute, audio is more manageable when it comes to size, and you'll see many options with lossless audio.
 
 Lossless audio is typically unnecessary for most sound systems. Even with the best audiophile grade setup, most users will find it impossible to make out the difference. *However, some exceptional music samples exist, which can be used to differentiate lower-bitrate lossy audio by listening to small extracted parts repeatedly.* 
 
@@ -180,7 +180,7 @@ Looking for the best fansub release? *Check out the following indexes:*
 
 Fansubs are fan-produced versions of subtitles. They can often be better than official subtitles as they retain the phrasing and style of the original media.
 
-For most newer fansubbed anime, fansubs will often use an edited version of official subs from sources like [Crunchyroll](https://www.crunchyroll.com). *These edits range from removing excessive localization to reverting translations back to their original language.*
+For most newer fansubbed anime, fansubs will often use an edited version of official subs from sources like [Crunchyroll](https://www.crunchyroll.com). These edits range from removing excessive localization to reverting translations back to their original language.
 
 ==- Using AnimeTosho
 [AnimeTosho](https://animetosho.org) is a useful resource for grabbing just the subtitles from any release on [Nyaa](https://nyaa.si). They can be downloaded under the *Subtitles* section of a release.
