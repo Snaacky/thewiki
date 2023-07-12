@@ -174,8 +174,8 @@ Fansubs use a variety of fonts in their subtitles. These are bundled within the 
 Looking for the best fansub release? *Check out the following indexes:*
 
 [!button variant="secondary" text="A Certain Fansubber's Index" margin="0 8 0 0"](https://index.fansubcar.tel)
-![button variant="secondary" text="SeaDex" margin="0 8 0 0"](https://releases.moe)
-![button variant="secondary" text="Sneedex"](https://sneedex.moe)
+[!button variant="secondary" text="SeaDex" margin="0 8 0 0"](https://releases.moe)
+[!button variant="secondary" text="Sneedex"](https://sneedex.moe)
 !!!
 
 Fansubs are fan-produced versions of subtitles. They can often be better than official subtitles as they retain the phrasing and style of the original media.
