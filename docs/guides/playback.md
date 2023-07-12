@@ -2,7 +2,7 @@
 label: Playback
 order: -2
 description: Learn how to play your anime
-image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec2-4a54-a9ec-71deab646e56.gif
+image: /assets/tohsaka.gif
 ---
 
 # Playback
@@ -17,7 +17,7 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 +++ Android :robot_face:
 
-- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) [!badge variant="info" text="Recommended"]
+- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
 +++ iOS :green_apple:
@@ -43,8 +43,8 @@ VLC is not recommended as it introduces visual artifacts, displays wrong colors,
 
 The setup consists of two parts: the **server** and the **client**. *Both may be installed on the same system, but they are separate applications.*
 
-- The **client** is a media player that will access the content stored on the server.
-- The **server** runs on the device which hosts your content.
+- The **client** is a media player that will access the content stored on the server
+- The **server** runs on the device which hosts your content
 
 In a typical setup, the server is installed on a computer hosted on your home network, with the client being installed on all your devices. Most media players will also come with their own client, as well as including support for using [Kodi](https://kodi.tv) as a client (recommended for anime).
 
@@ -63,24 +63,27 @@ Running a media server requires a rigid folder structure and a specific file nam
 
 There are three ways of installing and configuring Kodi for your TV:
 
-- **Basic:** Kodi client on your computer, with content also stored on your computer.
-- **Intermediate:** Kodi client on a TV/Android Box, with content stored on your computer.
-- Com**Plex:** Kodi client on a TV/Android Box, with content stored on a media server.
+- **Basic:** Kodi client on your computer, with content also stored on your computer
+- **Intermediate:** Kodi client on a TV/Android Box, with content stored on your computer
+- **Advanced:** Kodi client on a TV/Android Box, with content stored on a media server
 
 +++ Basic
 
-- No decoding problems with a powerful CPU.
-- The ability to use high-quality shaders that utilize your GPU to improve upscaling with [an external player of your choice](https://kodi.wiki/view/External_players).
-- Control using a normal keyboard and mouse or through an Android app like [Yatse](https://yatse.tv).
+- No decoding problems with a powerful CPU
+- The ability to use high-quality shaders that utilize your GPU to improve upscaling with [an external player of your choice](https://kodi.wiki/view/External_players)
+- Control using a normal keyboard and mouse or through an Android app like [Yatse](https://yatse.tv)
+- Your files will be scanned by Kodi. See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them)
+
++++ Intermediate
+
+- Works with a simple [SMB share](https://kodi.wiki/view/SMB) from your computer on the same network.
+- Your files will be scanned by Kodi. See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them)
 
 +++ Advanced
 
-- Works with a simple [SMB share](https://kodi.wiki/view/SMB) from your computer on the same network.
-
-+++ Com**Plex**
-
-- Transcoding support for videos.
-- The ability to remotely stream content from devices outside your local network.
+- Transcoding support for videos
+- The ability to remotely stream content from devices outside your local network
+- Your files will be scanned by your media server and they must abide by your media server's folder structure and naming scheme
 
 Transcoding is used as a last resort to deal with compatibility problems. *Direct play is always preferable to transcoding, which affects quality and uses CPU power on your server. See [Plex's article about transcoding](https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream).*
 
@@ -91,10 +94,6 @@ Here, Kodi acts as the client, increasing compatibility and replacing the defaul
 - [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
 
 +++
-
-#### Scanning Files
-
-*See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them).*
 
 ## Settings
 
@@ -148,8 +147,8 @@ cscale=ewa_lanczos
 glsl-shader="~~/shaders/<name>"
 ```
 
-- Confirm your shader is working by pressing *Shift* + *I*, followed by *2*.
-- Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader. *If this applies to you, we suggest switching to a less-demanding shader.*
+- Confirm your shader is working by pressing `Shift` + `I`, followed by `2`
+- Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader. *If this applies to you, we suggest switching to a less-demanding shader*
 
 ===
 
@@ -174,9 +173,9 @@ Judder is most commonly seen with devices that have 60Hz displays, *as the refre
 ==- Explaining Judder
 A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to play a video or game locked at:
 
-- 60 fps: 1 frame is shown for *every 1 refresh* (next frame in 16.67 ms).
-- 30 fps: 1 frame is shown for *every 2 refreshes* (next frame in 33.33 ms).
-- 15 fps: 1 frame is shown for *every 4 refreshes* (next frame in 66.67 ms).
+- 60 fps: 1 frame is shown for *every 1 refresh* (next frame in 16.67 ms)
+- 30 fps: 1 frame is shown for *every 2 refreshes* (next frame in 33.33 ms)
+- 15 fps: 1 frame is shown for *every 4 refreshes* (next frame in 66.67 ms)
 
 These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.
 
@@ -184,10 +183,10 @@ When content plays at 24 fps, your monitor will need to show 1 frame for every 2
 
 Instead, your monitor will try to refresh 2.5 times like this:
 
-- Frame 1 is shown for *2 refreshes* (next frame in 33.33 ms).
-- Frame 2 is shown for *3 refreshes* (next frame in 50 ms).
-- Frame 3 is shown for *2 refreshes* (next frame in 33.33 ms).
-- Frame 4 is shown for *3 refreshes* (next frame in 50 ms).
+- Frame 1 is shown for *2 refreshes* (next frame in 33.33 ms)
+- Frame 2 is shown for *3 refreshes* (next frame in 50 ms)
+- Frame 3 is shown for *2 refreshes* (next frame in 33.33 ms)
+- Frame 4 is shown for *3 refreshes* (next frame in 50 ms)
 
 Every odd frame appears for *2 refreshes*, and every even frame appears for *3 refreshes*.
 
@@ -216,7 +215,7 @@ Many modern streaming devices (e.g. Amazon Fire TV, Apple TV, NVIDIA SHIELD, etc
 
 24/30/60 fps content should all work perfectly. 25 fps content requires 25/50Hz support, *which some TVs in [NTSC regions](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png) do not support.*
 
-![NTSC Regions](https://i.imgur.com/Xb0Frlb.png)
+![NTSC Regions](/assets/ntsc-regions.png)
 
 +++
 
