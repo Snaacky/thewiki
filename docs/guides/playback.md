@@ -11,13 +11,13 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 +++ PC :desktop_computer:
 
-- [mpv](https://mpv.io/installation/) (Recommended) - [Installation and configuration tutorial](/tutorials/mpv)
+- [mpv](https://mpv.io/installation/) [!badge Recommended] - [Installation and configuration tutorial](/tutorials/mpv)
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases) - [Configuration guide with madVR](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
 - [Potplayer](https://potplayer.daum.net)
 
 +++ Android :robot_face:
 
-- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) (Recommended)
+- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) [!badge Recommended]
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
 +++ iOS :green_apple:
@@ -27,16 +27,16 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 +++ TV/Media Servers :tv:
 
-- [Plex](https://www.plex.tv)
-- [Kodi](https://kodi.tv) - *Can be installed optionally through [LibreELEC OS](https://libreelec.tv).*
-- [Jellyfin](https://jellyfin.org)
+- [Kodi](https://kodi.tv) [!badge Recommended] - *Can be installed optionally through [LibreELEC OS](https://libreelec.tv).*
+- [Plex](https://www.plex.tv) [!badge Recommended]
 - [Emby](https://emby.media)
+- [Jellyfin](https://jellyfin.org)
 
 +++
 
 !!!warning
 VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. We suggest using alternative media players.
-See the example comparisons to mpv: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)
+*See the example comparisons to mpv: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)*
 !!!
 
 ## Media Servers
@@ -48,7 +48,9 @@ The setup consists of two parts: the **server** and the **client**. *Both may be
 
 In a typical setup, the server is installed on a computer hosted on your home network, with the client being installed on all your devices. Most media players will also come with their own client, as well as including support for using [Kodi](https://kodi.tv) as a client (recommended for anime).
 
-- [Emby](https://emby.media) - [Plex](https://www.plex.tv) - [Jellyfin](https://jellyfin.org)
+[!button variant="info" text="Emby" margin="0 8 0 0"](https://emby.media)
+[!button variant="info" text="Plex" margin="0 8 0 0"](https://www.plex.tv)
+[!button variant="info" text="Jellyfin"](https://jellyfin.org)
 
 !!!
 Running a media server requires a rigid folder structure and a specific file naming scheme.
@@ -61,11 +63,9 @@ Running a media server requires a rigid folder structure and a specific file nam
 
 There are three ways of installing and configuring Kodi for your TV:
 
-**Basic:** Kodi client on your computer, with content also stored on your computer.
-
-**Intermediate:** Kodi client on a TV/Android Box, with content stored on your computer.
-
-Com**Plex:** Kodi client on a TV/Android Box, with content stored on a media server.
+- **Basic:** Kodi client on your computer, with content also stored on your computer.
+- **Intermediate:** Kodi client on a TV/Android Box, with content stored on your computer.
+- Com**Plex:** Kodi client on a TV/Android Box, with content stored on a media server.
 
 +++ Basic
 
@@ -110,7 +110,7 @@ For displays that match the content resolution you will only see chroma scaling,
 [mpv](https://mpv.io) has a built-in high-quality profile called `gpu-hq` which enables better upscaling algorithms (`scale=spline36`, `cscale=spline36`, `dscale=mitchell`). By default, mpv uses `spline36`. *This option is necessary to enable even if you use an external shader, as it can act as a fallback.*
 
 !!!
-`gpu-hq` enables debanding by default, which is not recommend for high quality sources. It should be followed by `deband=no`.
+`gpu-hq` enables debanding by default, which is not recommended for high-quality sources. It should be followed by `deband=no`.
 !!!
 
 #### Recommended Shaders
@@ -178,7 +178,7 @@ A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to pl
 - 30 fps: 1 frame is shown for *every 2 refreshes* (next frame in 33.33 ms).
 - 15 fps: 1 frame is shown for *every 4 refreshes* (next frame in 66.67 ms).
 
-These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. *With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.*
+These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.
 
 When content plays at 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). *However, refreshes cannot be divided, and you cannot have "part" of a refresh show on your monitor without screen tearing.*
 
@@ -198,9 +198,7 @@ This process is repeated for the entire video. Because each frame is displayed f
 To avoid judder, it is best to try and match your display's refresh rate with the content frame rate via the following methods:
 
 +++ High Refresh Rate
-Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match perfectly with each frame, as they are all multiples of 24.
-
-Technically they should be set as 119.88hz, 143.86hz, 239.76hz, or 359.64hz to match with the majority of content (24000/1001)fps, roughly 23.976fps
+Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match with each frame, as they are all multiples of 24. Technically, they should be set at 119.88Hz, 143.86Hz, 239.76Hz, or 359.64Hz to perfectly match with the majority of content at 23.976 fps (24000/1001 fps).
 
 *144Hz displays will not display 30/60 fps content properly. Additionally, none of the above will handle 25 fps content correctly.*
 
@@ -211,12 +209,12 @@ Most modern GPUs will have adaptive sync functionality, such as through AMD Free
 
 The best solution is to use G-SYNC/G-SYNC Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#faq-What-is-Low-Framerate-Compensation?). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
 
-You may need to force exclusive fullscreen in mpv to activate adaptive sync, this can be done by adding `ontop` & `fullscreen` to your config file. You can tell adaptive sync is working when your cursor feels laggy, as this means your display has dropped refresh rate to match the content.
+Additionally, you may need to force exclusive fullscreen to activate adaptive sync. In mpv, this can be done by adding `ontop` & `fullscreen` to your `mpv.conf` file. You can tell adaptive sync is active when your cursor feels laggy, as this means your display has dropped its refresh rate to match the content.
 
 +++ Automatic Refresh Rate Adjustment
 Many modern streaming devices (e.g. Amazon Fire TV, Apple TV, NVIDIA SHIELD, etc.) will have the option to change the TV refresh rate to match the content frame rate, either through the device's settings or a setting in the playback software (Kodi, Plex, etc.)
 
-24/30/60 fps content should all work perfectly. *25 fps content requires 25/50Hz support, which some TVs in [NTSC regions](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png) do not support.*
+24/30/60 fps content should all work perfectly. 25 fps content requires 25/50Hz support, *which some TVs in [NTSC regions](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png) do not support.*
 
 ![NTSC Regions](https://i.imgur.com/Xb0Frlb.png)
 
@@ -228,11 +226,10 @@ Many modern streaming devices (e.g. Amazon Fire TV, Apple TV, NVIDIA SHIELD, etc
 
 Decoding is the process of deciphering the encoded video into a format that your device can display.
 
-There are two ways to handle video decoding: Software (SW), and Hardware (HW)
+There are two ways to handle video decoding:
 
-**Software decoding** uses your CPU to bruteforce decode any format, and is only limited by how powerful your chip is.
-
-**Hardware decoding** is vastly more efficient as it uses dedicated decoders on your GPU, resulting in better performance, less power usage, and less strain on your CPU. However older devices will not have support for newer codecs.
+- **Software decoding** uses your CPU, allowing your system to decode any format, and is only limited by how powerful your chip is.
+- **Hardware decoding** uses dedicated decoders on your GPU, making it vastly more efficient and resulting in better performance, lower power usage, and less strain on your CPU. *However, some older devices will not support this option for newer codecs.*
 
 For most users, this isn't an issue. Generally:
 
@@ -248,7 +245,7 @@ Most TVs and boxes will display a list of supported codecs on their specificatio
 
 ### Typesetting
 
-Almost all subbed anime will use `.ass` subtitles, allowing for extensive styling and typesetting. This comes at the cost of additional system resources, though most modern computers, phones, and media servers will not have an issue.
+Almost all subbed anime will use `.ass` subtitles, as they allow for extensive styling and typesetting. This comes at the cost of additional system resources, though most modern computers, phones, and media servers will not have an issue.
 
 While subtitles will display on most TVs/media players, the typesetting or overlapping dialogue can sometimes be broken when using certain applications. *This is especially a problem with fansubs, where typesetting is used extensively in various areas (e.g. text on a sign, moving scenes).*
 
