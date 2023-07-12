@@ -11,13 +11,13 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 +++ PC :desktop_computer:
 
-- [mpv](https://mpv.io/installation/) [!badge Recommended] - [Installation and configuration tutorial](/tutorials/mpv)
+- [mpv](https://mpv.io/installation/) [!badge variant="info" text="Recommended"] - [Installation and configuration tutorial](/tutorials/mpv)
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases) - [Configuration guide with madVR](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
 - [Potplayer](https://potplayer.daum.net)
 
 +++ Android :robot_face:
 
-- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) [!badge Recommended]
+- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) [!badge variant="info" text="Recommended"]
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
 +++ iOS :green_apple:
@@ -27,8 +27,8 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 +++ TV/Media Servers :tv:
 
-- [Kodi](https://kodi.tv) [!badge Recommended] - *Can be installed optionally through [LibreELEC OS](https://libreelec.tv).*
-- [Plex](https://www.plex.tv) [!badge Recommended]
+- [Kodi](https://kodi.tv) [!badge variant="info" text="Recommended"] - *Can be installed optionally through [LibreELEC OS](https://libreelec.tv).*
+- [Plex](https://www.plex.tv) [!badge variant="info" text="Recommended"]
 - [Emby](https://emby.media)
 - [Jellyfin](https://jellyfin.org)
 
@@ -48,9 +48,9 @@ The setup consists of two parts: the **server** and the **client**. *Both may be
 
 In a typical setup, the server is installed on a computer hosted on your home network, with the client being installed on all your devices. Most media players will also come with their own client, as well as including support for using [Kodi](https://kodi.tv) as a client (recommended for anime).
 
-[!button variant="info" text="Emby" margin="0 8 0 0"](https://emby.media)
-[!button variant="info" text="Plex" margin="0 8 0 0"](https://www.plex.tv)
-[!button variant="info" text="Jellyfin"](https://jellyfin.org)
+[!button variant="secondary" text="Emby" margin="0 8 0 0"](https://emby.media)
+[!button variant="secondary" text="Plex" margin="0 8 0 0"](https://www.plex.tv)
+[!button variant="secondary" text="Jellyfin"](https://jellyfin.org)
 
 !!!
 Running a media server requires a rigid folder structure and a specific file naming scheme.
