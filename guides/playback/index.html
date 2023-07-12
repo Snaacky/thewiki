@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.742495646341">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.742496851294">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.742495646341" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.742496851294" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.742495646341" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.742496851294" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.742495646341" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.742495646341" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.742496851294" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.742496851294" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -287,14 +287,14 @@
 <li>No decoding problems with a powerful CPU</li>
 <li>The ability to use high-quality shaders that utilize your GPU to improve upscaling with <a href="https://kodi.wiki/view/External_players">an external player of your choice</a></li>
 <li>Control using a normal keyboard and mouse or through an Android app like <a href="https://yatse.tv">Yatse</a></li>
-<li>Your files will be scanned by Kodi. See <a href="https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them">Kodi&#x27;s documentation on scanning files without renaming them</a></li>
+<li>Your files will be scanned by Kodi. <em>See <a href="https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them">Kodi&#x27;s documentation on scanning files without renaming them</a></em></li>
 </ul>
 </doc-tab>
 <doc-tab id="intermediate">
 <template #title>Intermediate</template>
 <ul>
-<li>Works with a simple <a href="https://kodi.wiki/view/SMB">SMB share</a> from your computer on the same network.</li>
-<li>Your files will be scanned by Kodi. See <a href="https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them">Kodi&#x27;s documentation on scanning files without renaming them</a></li>
+<li>Works with a simple <a href="https://kodi.wiki/view/SMB">SMB share</a> from your computer on the same network</li>
+<li>Your files will be scanned by Kodi. <em>See <a href="https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them">Kodi&#x27;s documentation on scanning files without renaming them</a></em></li>
 </ul>
 </doc-tab>
 <doc-tab id="advanced">
@@ -302,7 +302,7 @@
 <ul>
 <li>Transcoding support for videos</li>
 <li>The ability to remotely stream content from devices outside your local network</li>
-<li>Your files will be scanned by your media server and they must abide by your media server&#x27;s folder structure and naming scheme</li>
+<li>Your files will be scanned by your media server, abiding by your server&#x27;s folder structure and naming scheme</li>
 </ul>
 <p>Transcoding is used as a last resort to deal with compatibility problems. <em>Direct play is always preferable to transcoding, which affects quality and uses CPU power on your server. See <a href="https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream">Plex&#x27;s article about transcoding</a>.</em></p>
 <p>Here, Kodi acts as the client, increasing compatibility and replacing the default one that comes with Emby, Plex, or Jellyfin. This is done through their respective add-ons:</p>
@@ -380,9 +380,9 @@ cscale=ewa_lanczos</code></pre>
 <doc-panel id="installing-external-shaders-in-mpv" collapsed>
     <template #title>Installing External Shaders in mpv</template>
 <ul>
-<li><p>Head to your shader folder (<code v-pre>%appdata%/mpv/shaders</code>). <em>You may need to create one if it doesn&#x27;t exist.</em></p>
+<li><p>Head to your shader folder (<code v-pre>%appdata%/mpv/shaders</code>); <em>you may need to create one if it doesn&#x27;t exist</em></p>
 </li>
-<li><p>Place your downloaded external shaders in the directory.</p>
+<li><p>Place your downloaded external shaders in the directory</p>
 </li>
 <li><p>Add the following line to your <code v-pre>mpv.conf</code>, replacing <code v-pre>&lt;name&gt;</code> with the file name of your shader:</p>
 </li>
@@ -392,7 +392,7 @@ cscale=ewa_lanczos</code></pre>
 </doc-codeblock></div>
 <ul>
 <li>Confirm your shader is working by pressing <code v-pre>Shift</code> + <code v-pre>I</code>, followed by <code v-pre>2</code></li>
-<li>Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader. <em>If this applies to you, we suggest switching to a less-demanding shader</em></li>
+<li>Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader; <em>if this applies to you, we suggest switching to a less-demanding shader</em></li>
 </ul>
 </doc-panel>
 <doc-anchor-target id="filtering">
@@ -488,14 +488,14 @@ cscale=ewa_lanczos</code></pre>
 <p>Decoding is the process of deciphering the encoded video into a format that your device can display.</p>
 <p>There are two ways to handle video decoding:</p>
 <ul>
-<li><strong>Software decoding</strong> uses your CPU, allowing your system to decode any format, and is only limited by how powerful your chip is.</li>
-<li><strong>Hardware decoding</strong> uses dedicated decoders on your GPU, making it vastly more efficient and resulting in better performance, lower power usage, and less strain on your CPU. <em>However, some older devices will not support this option for newer codecs.</em></li>
+<li><strong>Software decoding</strong> uses your CPU, allowing your system to decode any format, and is only limited by how powerful your chip is</li>
+<li><strong>Hardware decoding</strong> uses dedicated decoders on your GPU, making it vastly more efficient and resulting in better performance, lower power usage, and less strain on your CPU. <em>However, some older devices will not support this option for newer codecs</em></li>
 </ul>
 <p>For most users, this isn&#x27;t an issue. Generally:</p>
 <ul>
-<li>H.264 8-bit (AVC) works everywhere.</li>
-<li>H.264 10-bit (Hi10P) works on some hardware. <em>Recommended to use a decent CPU. Hardware decoding support is suboptimal.</em></li>
-<li>H.265 8-bit/10-bit (HEVC) works with most modern hardware.</li>
+<li>H.264 8-bit (AVC) works everywhere</li>
+<li>H.264 10-bit (Hi10P) works on some hardware. <em>Recommended to use a decent CPU; hardware decoding support is suboptimal</em></li>
+<li>H.265 8-bit/10-bit (HEVC) works with most modern hardware</li>
 </ul>
 <p>Most TVs and boxes will display a list of supported codecs on their specification page.</p>
 <p><a href="https://www.plex.tv">Plex</a> and other media servers will recognize unsupported formats and start transcoding to a supported format, such as H.264.</p>
