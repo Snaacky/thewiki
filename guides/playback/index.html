@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.742244234651">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.742460772736">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Playback</title>
     <meta name="title" content="Playback">
-    <meta name="description" content="MPV- Installation and configuration tutorial(recommended)" />
+    <meta name="description" content="Learn how to play your anime" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://thewiki.moe/guides/playback/" />
@@ -20,21 +20,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thewiki.moe/guides/playback/">
     <meta property="og:title" content="Playback">
-    <meta property="og:description" content="MPV- Installation and configuration tutorial(recommended)">
+    <meta property="og:description" content="Learn how to play your anime">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec2-4a54-a9ec-71deab646e56.gif">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/guides/playback/">
     <meta property="twitter:title" content="Playback">
-    <meta property="twitter:description" content="MPV- Installation and configuration tutorial(recommended)">
+    <meta property="twitter:description" content="Learn how to play your anime">
+    <meta property="twitter:image" content="https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec2-4a54-a9ec-71deab646e56.gif">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.742244234651" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.742460772736" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.742244234651" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.742460772736" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.742244234651" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.742460772736" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.742460772736" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -158,156 +161,376 @@
         <span>Playback</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="video-players">
+<doc-anchor-target id="media-players">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#video-players">#</doc-anchor-trigger>
-        <span>Video players</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#media-players">#</doc-anchor-trigger>
+        <span>Media Players</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="pc">
+<doc-tabs>
+<doc-tab id="pc">
+<template #title>PC <span class="docs-emoji">&#x1F5A5;&#xFE0F;</span></template>
+<ul>
+<li><a href="https://mpv.io/installation/">mpv</a> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>Recommended</span>
+</span> - <a href="../../tutorials/mpv/">Installation and configuration tutorial</a></li>
+<li><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a> - <a href="https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/">Configuration guide with madVR</a></li>
+<li><a href="https://potplayer.daum.net">Potplayer</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="android">
+<template #title>Android <span class="docs-emoji">&#x1F916;</span></template>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=is.xyz.mpv">mpv-android</a> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>Recommended</span>
+</span></li>
+<li><a href="https://play.google.com/store/apps/details?id=org.videolan.vlc">VLC for Android</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="ios">
+<template #title>iOS <span class="docs-emoji">&#x1F34F;</span></template>
+<ul>
+<li><a href="https://apps.apple.com/app/outplayer/id1449923287">Outplayer</a></li>
+<li><a href="https://apps.apple.com/app/vlc-media-player/id650377962">VLC media player</a></li>
+</ul>
+</doc-tab>
+<doc-tab id="tv-media-servers">
+<template #title>TV/Media Servers <span class="docs-emoji">&#x1F4FA;</span></template>
+<ul>
+<li><a href="https://kodi.tv">Kodi</a> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>Recommended</span>
+</span> - <em>Can be installed optionally through <a href="https://libreelec.tv">LibreELEC OS</a>.</em></li>
+<li><a href="https://www.plex.tv">Plex</a> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>Recommended</span>
+</span></li>
+<li><a href="https://emby.media">Emby</a></li>
+<li><a href="https://jellyfin.org">Jellyfin</a></li>
+</ul>
+</doc-tab>
+</doc-tabs>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. We suggest using alternative media players.
+<em>See the example comparisons to mpv: <a href="https://slow.pics/c/XhbmrYgU">Spice and Wolf</a>, <a href="https://slow.pics/c/FW2nBwKP">One Piece</a></em></p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="media-servers">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#media-servers">#</doc-anchor-trigger>
+        <span>Media Servers</span>
+    </h2>
+</doc-anchor-target>
+<p>The setup consists of two parts: the <strong>server</strong> and the <strong>client</strong>. <em>Both may be installed on the same system, but they are separate applications.</em></p>
+<ul>
+<li>The <strong>client</strong> is a media player that will access the content stored on the server.</li>
+<li>The <strong>server</strong> runs on the device which hosts your content.</li>
+</ul>
+<p>In a typical setup, the server is installed on a computer hosted on your home network, with the client being installed on all your devices. Most media players will also come with their own client, as well as including support for using <a href="https://kodi.tv">Kodi</a> as a client (recommended for anime).</p>
+<p><a href="https://emby.media" class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-500 hover:bg-gray-600 dark:bg-dark-400 dark:hover:bg-dark-450 text-white px-4 h-10 text-sm rounded-md" style="margin: 0px 8px 0px 0px;">
+    <span>Emby</span>
+</a>
+<a href="https://www.plex.tv" class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-500 hover:bg-gray-600 dark:bg-dark-400 dark:hover:bg-dark-450 text-white px-4 h-10 text-sm rounded-md" style="margin: 0px 8px 0px 0px;">
+    <span>Plex</span>
+</a>
+<a href="https://jellyfin.org" class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-500 hover:bg-gray-600 dark:bg-dark-400 dark:hover:bg-dark-450 text-white px-4 h-10 text-sm rounded-md">
+    <span>Jellyfin</span>
+</a></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Running a media server requires a rigid folder structure and a specific file naming scheme.
+<em>See the guides for your server: <a href="https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/">Plex</a>, <a href="https://jellyfin.org/docs/general/server/media/shows">Jellyfin</a></em></p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="kodi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kodi">#</doc-anchor-trigger>
+        <span>Kodi</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="installing-kodi">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pc">#</doc-anchor-trigger>
-        <span>PC</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-kodi">#</doc-anchor-trigger>
+        <span>Installing Kodi</span>
     </h4>
 </doc-anchor-target>
+<p>There are three ways of installing and configuring Kodi for your TV:</p>
 <ul>
-<li><a href="https://mpv.io/installation/">MPV</a> - <a href="../../tutorials/mpv/">Installation and configuration tutorial</a> (recommended)</li>
-<li><a href="https://github.com/clsid2/mpc-hc/releases">MPC-HC</a>/<a href="https://potplayer.daum.net">Potplayer</a> - <a href="https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/">Configuration guide with MadVR</a></li>
+<li><strong>Basic:</strong> Kodi client on your computer, with content also stored on your computer.</li>
+<li><strong>Intermediate:</strong> Kodi client on a TV/Android Box, with content stored on your computer.</li>
+<li>Com<strong>Plex:</strong> Kodi client on a TV/Android Box, with content stored on a media server.</li>
 </ul>
-<p>VLC is not recommended because it often displays wrong colours, introduces visual artifacts, and breaks intensive subtitles. Here are some comparisons showing these issues -</p>
-<p><a href="https://slow.pics/c/XhbmrYgU">https://slow.pics/c/XhbmrYgU</a> (Spice and Wolf by MTBB)
-<a href="https://slow.pics/c/vH560pvp">https://slow.pics/c/vH560pvp</a></p>
-<doc-anchor-target id="android">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#android">#</doc-anchor-trigger>
-        <span>Android</span>
-    </h4>
-</doc-anchor-target>
+<doc-tabs>
+<doc-tab id="basic">
+<template #title>Basic</template>
 <ul>
-<li><a href="https://play.google.com/store/apps/details?id=is.xyz.mpv&amp;hl=lv&amp;gl=US">mpv-android</a></li>
-<li><a href="https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad&amp;hl=lv&amp;gl=US">MX player</a></li>
+<li>No decoding problems with a powerful CPU.</li>
+<li>The ability to use high-quality shaders that utilize your GPU to improve upscaling with <a href="https://kodi.wiki/view/External_players">an external player of your choice</a>.</li>
+<li>Control using a normal keyboard and mouse or through an Android app like <a href="https://yatse.tv">Yatse</a>.</li>
 </ul>
-<doc-anchor-target id="ios">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ios">#</doc-anchor-trigger>
-        <span>iOS</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li><a href="https://apps.apple.com/in/app/mx-player/id1429703801">MX player</a></li>
-<li><a href="https://apps.apple.com/us/app/outplayer/id1449923287">Outplayer</a></li>
-</ul>
-<doc-anchor-target id="tv">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tv">#</doc-anchor-trigger>
-        <span>TV</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li><a href="https://kodi.tv">Kodi</a>, optionally through <a href="https://libreelec.tv">LibreElec(Minimal OS)</a></li>
-</ul>
-<p>There are three ways of using Kodi on a TV -</p>
-<p><strong>1. Kodi installed on a computer which stores the content and is directly connected to the TV.</strong></p>
-<ul>
-<li>No decoding problems with a powerful cpu.</li>
-<li>Possibility to use high quality shaders that utilize your gpu to improve upscaling with <a href="https://kodi.wiki/view/External_players">an external player of your choice.</a></li>
-<li>Control using a normal mouse+keyboard or through an android app like <a href="https://yatse.tv/">Yatse.</a></li>
-</ul>
-<p><strong>2. Kodi on a TV/Android box with the content on a separate computer.</strong></p>
+</doc-tab>
+<doc-tab id="advanced">
+<template #title>Advanced</template>
 <ul>
 <li>Works with a simple <a href="https://kodi.wiki/view/SMB">SMB share</a> from your computer on the same network.</li>
 </ul>
-<p><strong>3. Kodi on a TV/Android box with the content on a separate computer running a media server.</strong></p>
+</doc-tab>
+<doc-tab id="com-plex">
+<template #title>Com<strong>Plex</strong></template>
 <ul>
-<li>Transcoding support</li>
-<li>Remote streaming support outside your local network</li>
+<li>Transcoding support for videos.</li>
+<li>The ability to remotely stream content from devices outside your local network.</li>
 </ul>
-<p>Transcoding is only a last resort to deal with compatibility problems. Direct play is always prefereble to transcoding, which affects quality and uses cpu power on your server. More about transcoding on plex - <a href="https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream/">https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream/</a></p>
-<p>Here, Kodi acts as a client,increasing compatibility and replacing the default one that comes with Plex, Emby or Jellyfin. This is done through their respective add-ons for kodi.</p>
+<p>Transcoding is used as a last resort to deal with compatibility problems. <em>Direct play is always preferable to transcoding, which affects quality and uses CPU power on your server. See <a href="https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream">Plex&#x27;s article about transcoding</a>.</em></p>
+<p>Here, Kodi acts as the client, increasing compatibility and replacing the default one that comes with Emby, Plex, or Jellyfin. This is done through their respective add-ons:</p>
 <ul>
-<li><a href="https://github.com/croneter/PlexKodiConnect">PlexKodiConnect</a></li>
 <li><a href="https://github.com/MediaBrowser/plugin.video.emby">Emby for Kodi</a></li>
+<li><a href="https://github.com/croneter/PlexKodiConnect">PlexKodiConnect</a></li>
 <li><a href="https://github.com/jellyfin/jellyfin-kodi">Jellyfin for Kodi</a></li>
 </ul>
-<doc-anchor-target id="media-server">
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="scanning-files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scanning-files">#</doc-anchor-trigger>
+        <span>Scanning Files</span>
+    </h4>
+</doc-anchor-target>
+<p><em>See <a href="https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them">Kodi&#x27;s documentation on scanning files without renaming them</a>.</em></p>
+<doc-anchor-target id="settings">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#media-server">#</doc-anchor-trigger>
-        <span>Media Server</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
+        <span>Settings</span>
     </h2>
 </doc-anchor-target>
-<p>The setup consists of two parts - the server and the client. A client is simply a media player that will access the content from a server. The server runs on the device which stores your content. Both may be installed on the same system, but they&#x27;re separate applications. Usually you&#x27;d have the server on a computer connected to other devices in your home network and a client installed on all of those devices. All three of the popular ones come with their own client/player as well as support for using kodi as a client (recommended for anime).</p>
-<ul>
-<li><a href="https://www.plex.tv/">Plex</a> - <a href="https://docs.google.com/document/d/1sXKZDYzbBDDWS8eqJ3IcaxSWhYKIPDdtChm74CBJ6ig">Guide for Anime</a></li>
-<li><a href="https://emby.media/">Emby</a></li>
-<li><a href="https://jellyfin.org/">Jellyfin</a></li>
-</ul>
-<doc-anchor-target id="scanning-anime-without-renaming">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scanning-anime-without-renaming">#</doc-anchor-trigger>
-        <span>Scanning anime without renaming</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><a href="https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them">https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them</a></li>
-<li><a href="https://github.com/ZeroQI/Hama.bundle">Absolute Series Scanner for Plex</a></li>
-</ul>
 <doc-anchor-target id="scaling">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scaling">#</doc-anchor-trigger>
         <span>Scaling</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
-<ol>
-<li>Quality is not the same as resolution.</li>
-<li>Whenever something with a different resolution than your display is playing on it in full screen mode, then something is scaling it to the resolution of the display.</li>
-</ol>
-<p>This something is usually the video player. For example, playing a 1080p video on a 2160p monitor means that it has to be upscaled to fill the screen, otherwise it&#x27;d simply play in 1/4th of the screen. Upscaling is not a choice that you can enable or disable while in full screen, the only thing that can be changed is the method of scaling. Consequently, upscaling is not something you can use to &quot;enhance&quot; the video when playing back at the same resolution. It is not a way to somehow improve 1080p video playing on a 1080p display. The shaders activate only when the video resolution does not match the screen resolution and scaling is needed.</p>
-<p>The default scaling on most players is bad. Mpv has a built in high quality profile called gpu-hq which enables better upscaling algorithms (scale=spline36, cscale=spline36, dscale=mitchell). This option is necessary even if you use external shaders to act as a fallback. Any scaling options explicitly specified after this will override it. For those with powerful gpus, even higher quality external shaders are available - FSRCNNX, NNEDI etc. The file has to be placed in %appdata%/mpv/shaders and the line <code v-pre>glsl-shader=&quot;~~/FSRCNNX_x2_8-0-4-1.glsl&quot;</code> has to be added to the config. Press shift+I followed by 2 for confirmation that the shader is working. Dropped frames or high frame times (above 25ms) are a signal that your gpu isn&#x27;t able to keep up and you should switch to a less demanding shader.</p>
-<p>The shaders mentioned above are 2x scalers, which means that they always scale by 2x. For 720p to 1080p, the video will first be scaled to 1440p by FSRCNNX and then downscaled to 1080p by dscale=mitchell. For 720p to 2160p, FSRCNNX will do 720p to 1440p and then scale=spline36 will scale it the rest of the way to 2160p. When scaling below a certain threshold is required, FSRCNNX will not activate and mpv will fallback to spline36. There are also scalers like ravu-zoom can upscale to arbitrary ratios, at the cost of slow performance because of rendering to the target resolution directly.</p>
-<p>Ravu and NNEDI - <a href="https://github.com/bjin/mpv-prescalers">https://github.com/bjin/mpv-prescalers</a>
-FSRCNNX - <a href="https://github.com/igv/FSRCNN-TensorFlow/releases">https://github.com/igv/FSRCNN-TensorFlow/releases</a></p>
+<p>Scaling is the process of taking content that does not match your screen resolution and scaling it to fit your display.</p>
+<ul>
+<li>Downscaling takes a <em>large</em> video and scales <em>downwards</em> (e.g. 1080p video to 720p display)</li>
+<li>Upscaling takes a <em>small</em> video and scales <em>upwards</em> (e.g. 1080p video to 2160p/4K display)</li>
+</ul>
+<p>For displays that match the content resolution you will only see chroma scaling, as in most video the chroma resolution is half the video resolution. <em>These shaders only activate when these resolutions don&#x27;t match. Scaling is not an enhancement and cannot be enabled manually.</em></p>
+<p><a href="https://mpv.io">mpv</a> has a built-in high-quality profile called <code v-pre>gpu-hq</code> which enables better upscaling algorithms (<code v-pre>scale=spline36</code>, <code v-pre>cscale=spline36</code>, <code v-pre>dscale=mitchell</code>). By default, mpv uses <code v-pre>spline36</code>. <em>This option is necessary to enable even if you use an external shader, as it can act as a fallback.</em></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><code v-pre>gpu-hq</code> enables debanding by default, which is not recommended for high-quality sources. It should be followed by <code v-pre>deband=no</code>.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="recommended-shaders">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-shaders">#</doc-anchor-trigger>
+        <span>Recommended Shaders</span>
+    </h4>
+</doc-anchor-target>
+<p>Below is a brief list of recommended shaders for <a href="https://mpv.io">mpv</a>:</p>
+<doc-tabs>
+<doc-tab id="high-end-pcs">
+<template #title>High-End PCs</template>
+<p>For those with high-end hardware, we recommend using <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook">nnedi3-nns256-win8x4</a>.</p>
+</doc-tab>
+<doc-tab id="mid-range-pcs">
+<template #title>Mid-Range PCs</template>
+<p>For those with mid-range hardware, we recommend using <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook">nnedi3-nns128-win8x4</a>.</p>
+</doc-tab>
+<doc-tab id="low-end-pcs">
+<template #title>Low-End PCs</template>
+<p>For those with low-end hardware, we recommend sticking to mpv&#x27;s built-in scalers.</p>
+<p>In your <code v-pre>mpv.conf</code>, add the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-properties"><code v-pre class="language-properties">vo=gpu
+scale=ewa_lanczos
+dscale=mitchell
+cscale=ewa_lanczos</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-panel id="installing-external-shaders-in-mpv" collapsed>
+    <template #title>Installing External Shaders in mpv</template>
+<ul>
+<li><p>Head to your shader folder (<code v-pre>%appdata%/mpv/shaders</code>). <em>You may need to create one if it doesn&#x27;t exist.</em></p>
+</li>
+<li><p>Place your downloaded external shaders in the directory.</p>
+</li>
+<li><p>Add the following line to your <code v-pre>mpv.conf</code>, replacing <code v-pre>&lt;name&gt;</code> with the file name of your shader:</p>
+</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-properties"><code v-pre class="language-properties">glsl-shader=&quot;~~/shaders/&lt;name&gt;&quot;</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Confirm your shader is working by pressing <em>Shift</em> + <em>I</em>, followed by <em>2</em>.</li>
+<li>Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader. <em>If this applies to you, we suggest switching to a less-demanding shader.</em></li>
+</ul>
+</doc-panel>
 <doc-anchor-target id="filtering">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#filtering">#</doc-anchor-trigger>
         <span>Filtering</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
-<p>The same kind of filtering that is used by encoders but in real time. It&#x27;s not an alternative to a good encode, but rather a temporary fix for web sources. Debanding is the most commonly used and the only one necessary. Detail enhancement, noise reduction, sharpening etc. are not recommended. All these options are available with both mpv and madvr. More about quality, video artifacts and encoding in the <a href="../quality/">quality guide</a>.</p>
+<p>Filters act as a temporary fix to amend issues that may appear when watching anime. These can be applied using the options available in <a href="https://mpv.io">mpv</a> and <a href="https://madvr.com">madVR</a>.</p>
+<p>Debanding is the most commonly used filter, which helps to fix issues with <a href="../../tutorials/mpv/#debanding">color banding</a> in your video.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>We do not recommend detail enhancement, noise reduction, or sharpening filters, as it will negatively affect the quality of your content.</p>
+        </div>
+    </div>
+</div>
+<p><em>See the <a href="../quality/">Quality Guide</a> for more information.</em></p>
 <doc-anchor-target id="smooth-playback">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#smooth-playback">#</doc-anchor-trigger>
         <span>Smooth Playback</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
-<p><strong>The problem:</strong> Almost all anime plays back at 23.976fps (technically 24000/1001) but we&#x27;ll round up to 24fps for convenience. However, displays often run at refresh rates that do not match this frame rate, leading to an effect known as judder.
-Judder is most commonly seen with laptops/desktops that have 60hz displays, because the refresh rate is not an integer multiple of the content frame rate. 60hz/24fps is 2.5, and since you can&#x27;t refresh 2.5 times per frame, it has to be averaged out over time. In this case the first frame will be held for 2 refreshes, the second frame for 3 refreshes, the third for 2 and so on leading to the 2.5 average. Because of this, each frame is shown for a different amount of time (33.3ms for even frames, 50ms for odd) which leads to motion appearing stuttery/laggy, this is especially noticeable during panning scenes.
-While almost all anime is 24fps, you also may watch other content such as live action (sometimes 25fps) and YouTube (mostly 30/60fps, sometimes 25/50fps) and if you do, it&#x27;s important to be able to play those frame rates back properly.</p>
-<p><strong>The solution:</strong> Matching the display refresh rate to the content frame rate, of which there are many methods</p>
-<p><strong>Adaptive sync:</strong> G-Sync/G-Sync Compatible (Certified)/Freesync Premium is by far the best solution, however requires the correct GPU and monitor to utilise. The display will perfectly match the content regardless of the frame rate. Normal Freesync may work, however only if the monitor supports LFC.
-Be sure to use a player that will activate adaptive sync, such as MPV.</p>
-<p><strong>Automatic Refresh Rate Adjustment:</strong> Many streaming devices (Apple TV, Shield, Fire stick etc) will have the ability to change a TVs refresh rate to match the content frame rate, either through the device settings itself or a setting in the playback software (Kodi, Plex etc). 24/30/60fps content should all work perfectly, however 25fps content requires 25/50hz support, which some TVs in <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png">NTSC regions</a> may not support.</p>
-<p><strong>High refresh rate displays:</strong> 120hz, 144hz, 240hz, and 360hz are all multiples of 24, and as such will match perfectly since each frame can be repeated for multiple refreshes. However 144hz will not display 30/60fps content properly, and none of the above will handle 25fps content correctly.</p>
+<p>Most modern anime will play close to 24 fps (24000/1001 fps). However, most displays often run at refresh rates that do not match this frame rate, leading to an effect known as <strong>judder</strong>.</p>
+<p>Judder is most commonly seen with devices that have 60Hz displays, <em>as the refresh rate is not an integer multiple of the content frame rate.</em></p>
+<doc-panel id="explaining-judder" collapsed>
+    <template #title>Explaining Judder</template>
+<p>A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to play a video or game locked at:</p>
+<ul>
+<li>60 fps: 1 frame is shown for <em>every 1 refresh</em> (next frame in 16.67 ms).</li>
+<li>30 fps: 1 frame is shown for <em>every 2 refreshes</em> (next frame in 33.33 ms).</li>
+<li>15 fps: 1 frame is shown for <em>every 4 refreshes</em> (next frame in 66.67 ms).</li>
+</ul>
+<p>These frame rates work because they divide evenly into the monitor&#x27;s 60Hz refresh rate. With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.</p>
+<p>When content plays at 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). <em>However, refreshes cannot be divided, and you cannot have &quot;part&quot; of a refresh show on your monitor without screen tearing.</em></p>
+<p>Instead, your monitor will try to refresh 2.5 times like this:</p>
+<ul>
+<li>Frame 1 is shown for <em>2 refreshes</em> (next frame in 33.33 ms).</li>
+<li>Frame 2 is shown for <em>3 refreshes</em> (next frame in 50 ms).</li>
+<li>Frame 3 is shown for <em>2 refreshes</em> (next frame in 33.33 ms).</li>
+<li>Frame 4 is shown for <em>3 refreshes</em> (next frame in 50 ms).</li>
+</ul>
+<p>Every odd frame appears for <em>2 refreshes</em>, and every even frame appears for <em>3 refreshes</em>.</p>
+<p>This process is repeated for the entire video. Because each frame is displayed for a different number of refreshes, plus the time between changing frames is not the same, <em>it leads to motion appearing stuttery or laggy. This is especially noticeable during panning scenes.</em></p>
+</doc-panel>
+<p>To avoid judder, it is best to try and match your display&#x27;s refresh rate with the content frame rate via the following methods:</p>
+<doc-tabs>
+<doc-tab id="high-refresh-rate">
+<template #title>High Refresh Rate</template>
+<p>Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match with each frame, as they are all multiples of 24. Technically, they should be set at 119.88Hz, 143.86Hz, 239.76Hz, or 359.64Hz to perfectly match with the majority of content at 23.976 fps (24000/1001 fps).</p>
+<p><em>144Hz displays will not display 30/60 fps content properly. Additionally, none of the above will handle 25 fps content correctly.</em></p>
+</doc-tab>
+<doc-tab id="adaptive-sync">
+<template #title>Adaptive Sync</template>
+<p>Adaptive sync, also known as variable refresh rate, is a technology that dynamically adjusts your display&#x27;s refresh rate based on the frame rate of the content on your screen.</p>
+<p>Most modern GPUs will have adaptive sync functionality, such as through AMD FreeSync or NVIDIA G-SYNC.</p>
+<p>The best solution is to use G-SYNC/G-SYNC Compatible or FreeSync Premium. <em>Normal FreeSync may work if your monitor supports <a href="https://www.amd.com/en/technologies/free-sync-faq#faq-What-is-Low-Framerate-Compensation?">Low Framerate Compensation (LFC)</a>. You will also need to use a media player that supports adaptive sync, such as <a href="https://mpv.io">mpv</a>.</em></p>
+<p>Additionally, you may need to force exclusive fullscreen to activate adaptive sync. In mpv, this can be done by adding <code v-pre>ontop</code> &amp; <code v-pre>fullscreen</code> to your <code v-pre>mpv.conf</code> file. You can tell adaptive sync is active when your cursor feels laggy, as this means your display has dropped its refresh rate to match the content.</p>
+</doc-tab>
+<doc-tab id="automatic-refresh-rate-adjustment">
+<template #title>Automatic Refresh Rate Adjustment</template>
+<p>Many modern streaming devices (e.g. Amazon Fire TV, Apple TV, NVIDIA SHIELD, etc.) will have the option to change the TV refresh rate to match the content frame rate, either through the device&#x27;s settings or a setting in the playback software (Kodi, Plex, etc.)</p>
+<p>24/30/60 fps content should all work perfectly. 25 fps content requires 25/50Hz support, <em>which some TVs in <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png">NTSC regions</a> do not support.</em></p>
+<p><figure class="content-center">
+    <img src="https://i.imgur.com/Xb0Frlb.png" alt="NTSC Regions" />
+    <figcaption class="caption">NTSC Regions</figcaption>
+</figure>
+</p>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="compatibility">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#compatibility">#</doc-anchor-trigger>
         <span>Compatibility</span>
     </h2>
 </doc-anchor-target>
-<p>Decoding is the process of playing the video file. There are two types - hardware and software. Everything can be decoded, the difference is in the amount of work needed to do that. When it&#x27;s hardware accelerated, it doesn&#x27;t put any strain on your device cpu.</p>
-<p>Most PC players will decode everything with swdecode as a fallback option. The problem is when this decoding isn&#x27;t fast enough to play your video in real time. That won&#x27;t ever be a problem is hwdecode is supported for that codec.</p>
-<p>If you&#x27;re watching on a TV/+Android box, you&#x27;ll see a list of supported codecs in their specifications. Plex and other media servers will recognize a format as not supported and start transcoding to h264 8 bit. Kodi player is the better option it&#x27;ll fallback to software decoding like on a PC, giving you the option to always direct stream or run without a server. However, since the cpu on your tv/box is much weaker compared to a PC, there will be instances of horrible lag when trying to force swdecode. Note that software decoding utilizes your cpu, so the cause of lag isn&#x27;t limited to decoding. It&#x27;s anything that might be using your cpu at the time. Like when there&#x27;s a lot of complicated .ass typesetting which needs to be rendered, that will lag with a weak cpu no matter what the video codec is. Generally -</p>
+<doc-anchor-target id="codecs">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#codecs">#</doc-anchor-trigger>
+        <span>Codecs</span>
+    </h3>
+</doc-anchor-target>
+<p>Decoding is the process of deciphering the encoded video into a format that your device can display.</p>
+<p>There are two ways to handle video decoding:</p>
 <ul>
-<li>h264 8-bit works everywhere</li>
-<li>h264 10-bit rarely works without a decent cpu. Hardware decode support for this is non-existent.</li>
-<li>h265 8-bit and 10-bit work when hardware support exists. Most newer devices in the last 5 years support it.</li>
+<li><strong>Software decoding</strong> uses your CPU, allowing your system to decode any format, and is only limited by how powerful your chip is.</li>
+<li><strong>Hardware decoding</strong> uses dedicated decoders on your GPU, making it vastly more efficient and resulting in better performance, lower power usage, and less strain on your CPU. <em>However, some older devices will not support this option for newer codecs.</em></li>
 </ul>
+<p>For most users, this isn&#x27;t an issue. Generally:</p>
+<ul>
+<li>H.264 8-bit (AVC) works everywhere.</li>
+<li>H.264 10-bit (Hi10P) works on some hardware. <em>Recommended to use a decent CPU. Hardware decoding support is suboptimal.</em></li>
+<li>H.265 8-bit/10-bit (HEVC) works with most modern hardware.</li>
+</ul>
+<p>Most TVs and boxes will display a list of supported codecs on their specification page.</p>
+<p><a href="https://www.plex.tv">Plex</a> and other media servers will recognize unsupported formats and start transcoding to a supported format, such as H.264.</p>
+<p><a href="https://kodi.tv">Kodi</a> can fallback to software decoding like on PC media players, giving you the option to directly stream from your server or run without it. <em>However, since the CPU on your TV/Android box is much weaker, there may be instances of lag when forcing software decoding. On top of the strain from decoding, any additional CPU activity may further affect your experience, such as rendering complicated <code v-pre>.ass</code> typesetting.</em></p>
 <doc-anchor-target id="typesetting">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#typesetting">#</doc-anchor-trigger>
         <span>Typesetting</span>
     </h3>
 </doc-anchor-target>
-<p>Anime usually has .ass subtitle styling, while the subs will show up on most TVs and players (plex, emby, jellyfin etc.), the typesetting or overlapping dialogue is sometimes broken. This is especially a problem if you&#x27;re watching fansubs. <strong>Kodi</strong> is one of the few players which supports proper ass rendering. Note that the player is separate from the kodi media server and can even be used with plex.</p>
+<p>Almost all subbed anime will use <code v-pre>.ass</code> subtitles, as they allow for extensive styling and typesetting. This comes at the cost of additional system resources, though most modern computers, phones, and media servers will not have an issue.</p>
+<p>While subtitles will display on most TVs/media players, the typesetting or overlapping dialogue can sometimes be broken when using certain applications. <em>This is especially a problem with fansubs, where typesetting is used extensively in various areas (e.g. text on a sign, moving scenes).</em></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Most TVs will have difficulty showing <code v-pre>.ass</code> subs. You should use an external box, such as Amazon Fire TV, Apple TV, or NVIDIA SHIELD.</p>
+        </div>
+    </div>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -359,6 +582,6 @@ Be sure to use a player that will activate adaptive sync, such as MPV.</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Playback", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Playback", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
