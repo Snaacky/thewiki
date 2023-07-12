@@ -57,7 +57,7 @@ VLC is not recommended as it introduces visual artifacts, displays wrong colors,
 
 +++ Android :robot_face:
 
-- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) [!badge variant="info" text="Recommended"]
+- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
 +++ iOS :green_apple:
