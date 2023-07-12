@@ -72,18 +72,18 @@ There are three ways of installing and configuring Kodi for your TV:
 - No decoding problems with a powerful CPU
 - The ability to use high-quality shaders that utilize your GPU to improve upscaling with [an external player of your choice](https://kodi.wiki/view/External_players)
 - Control using a normal keyboard and mouse or through an Android app like [Yatse](https://yatse.tv)
-- Your files will be scanned by Kodi. See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them)
+- Your files will be scanned by Kodi. *See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them)*
 
 +++ Intermediate
 
-- Works with a simple [SMB share](https://kodi.wiki/view/SMB) from your computer on the same network.
-- Your files will be scanned by Kodi. See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them)
+- Works with a simple [SMB share](https://kodi.wiki/view/SMB) from your computer on the same network
+- Your files will be scanned by Kodi. *See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them)*
 
 +++ Advanced
 
 - Transcoding support for videos
 - The ability to remotely stream content from devices outside your local network
-- Your files will be scanned by your media server and they must abide by your media server's folder structure and naming scheme
+- Your files will be scanned by your media server, abiding by your server's folder structure and naming scheme
 
 Transcoding is used as a last resort to deal with compatibility problems. *Direct play is always preferable to transcoding, which affects quality and uses CPU power on your server. See [Plex's article about transcoding](https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream).*
 
@@ -138,8 +138,8 @@ cscale=ewa_lanczos
 
 ==- Installing External Shaders in mpv
 
-- Head to your shader folder (`%appdata%/mpv/shaders`). *You may need to create one if it doesn't exist.*
-- Place your downloaded external shaders in the directory.
+- Head to your shader folder (`%appdata%/mpv/shaders`); *you may need to create one if it doesn't exist*
+- Place your downloaded external shaders in the directory
 
 - Add the following line to your `mpv.conf`, replacing `<name>` with the file name of your shader:
 
@@ -148,7 +148,7 @@ glsl-shader="~~/shaders/<name>"
 ```
 
 - Confirm your shader is working by pressing `Shift` + `I`, followed by `2`
-- Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader. *If this applies to you, we suggest switching to a less-demanding shader*
+- Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader; *if this applies to you, we suggest switching to a less-demanding shader*
 
 ===
 
@@ -227,14 +227,14 @@ Decoding is the process of deciphering the encoded video into a format that your
 
 There are two ways to handle video decoding:
 
-- **Software decoding** uses your CPU, allowing your system to decode any format, and is only limited by how powerful your chip is.
-- **Hardware decoding** uses dedicated decoders on your GPU, making it vastly more efficient and resulting in better performance, lower power usage, and less strain on your CPU. *However, some older devices will not support this option for newer codecs.*
+- **Software decoding** uses your CPU, allowing your system to decode any format, and is only limited by how powerful your chip is
+- **Hardware decoding** uses dedicated decoders on your GPU, making it vastly more efficient and resulting in better performance, lower power usage, and less strain on your CPU. *However, some older devices will not support this option for newer codecs*
 
 For most users, this isn't an issue. Generally:
 
-- H.264 8-bit (AVC) works everywhere.
-- H.264 10-bit (Hi10P) works on some hardware. *Recommended to use a decent CPU. Hardware decoding support is suboptimal.*
-- H.265 8-bit/10-bit (HEVC) works with most modern hardware.
+- H.264 8-bit (AVC) works everywhere
+- H.264 10-bit (Hi10P) works on some hardware. *Recommended to use a decent CPU; hardware decoding support is suboptimal*
+- H.265 8-bit/10-bit (HEVC) works with most modern hardware
 
 Most TVs and boxes will display a list of supported codecs on their specification page.
 
