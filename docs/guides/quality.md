@@ -10,17 +10,19 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 ## Video
 
 ==- Understanding the Different Parts
-- **Container** - The file itself, containing various video, audio, and subtitle streams. *They are typically stored as `.mkv` or `.mp4`.*
-    - You can losslessly convert between them with tools such as [ffmpeg](https://ffmpeg.org/download.html).
-- **Codec** - The compression format used for the video stream and the biggest factor in compatibility with your system. *HEVC (H.265) and AVC (H.264) are the main ones.*
-- **Bit depth** - The maximum colors that can be stored in the video. *Typically in 8-bit, or 10-bit for high-quality anime encodes.*
-    - Converting an 8-bit source to 10-bit might seem counterintuitive if you know a little about transcoding and data loss, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf).*
-- **Frame rate** - The frequency at which frames are displayed. *This will usually be 23.976fps.*
-    - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher framerate like 60fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60fps encodes should be avoided.*
-- **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode.*
-    - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels).*
+
+- **Container** - The file itself, containing various video, audio, and subtitle streams. *They are typically stored as `.mkv` or `.mp4`*
+    - You can losslessly convert between them with tools such as [ffmpeg](https://ffmpeg.org/download.html)
+- **Codec** - The compression format used for the video stream and the biggest factor in compatibility with your system. *HEVC (H.265) and AVC (H.264) are the main ones*
+- **Bit depth** - The maximum colors that can be stored in the video. *Typically in 8-bit, or 10-bit for high-quality anime encodes*
+    - Converting an 8-bit source to 10-bit might seem counterintuitive if you know a little about transcoding and data loss, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf)*
+- **Frame rate** - The frequency at which frames are displayed. *This will usually be 23.976 fps*
+    - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher framerate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should be avoided*
+- **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode*
+    - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
 
 ==- Reading the File Name
+
 The file name for a release will typically look like one of the following examples:
 
 ![](https://files.catbox.moe/dxyv69.png)
@@ -48,6 +50,7 @@ The official BDMV is an encode of the source Blu-ray. As a result, it often suff
 These issues can be fixed through filtering, a step which comes before encoding. The video is filtered with tools like [Vapoursynth](https://www.vapoursynth.com) before passing it on to the encoder.
 
 See the links below for more information:
+
 - [Examples of problems](http://bakashots.me/guide/index.php)
 - [Encoding guides and more examples](https://guide.encode.moe/encoding/video-artifacts.html)
 - [Advanced encoding guide](https://silentaperture.gitlab.io/mdbook-guide/introduction.html)
@@ -71,6 +74,7 @@ An encode made directly from the BDMV/BDRemux. *These are for watching and are c
 Most can be found on [Nyaa](https://nyaa.si), with some rare stuff on places like [RuTracker](https://rutracker.org). The direct encode is usually a raw without subtitles and is used by muxers or fansubbers to make a release. 
 
 Roughly:
+
 - **Excellent Quality** - Beatrice-Raws, Kawaiika-Raws, Raws-Maji, SCY
 - **Good Quality** - VCB-Studio
 - **Okay Quality** - ANK-raws, LowPower-Raws, Moozzi2, Reinforce, Snow-raws
@@ -93,19 +97,22 @@ Re-encoding is generally considered a bad practice due to quality loss, as encod
 Mini encodes are releases designed to be space and bandwidth saving while retaining quality. *These are not the same as re-encodes, as they encode from the original BD or WEB source.*
 
 For BD releases:
+
 - **Good Quality** - Judas (new)
-    - *Judas (new) is roughly mid 2020 and later.*
+    - *Judas (new) is roughly mid 2020 and later*
 - **Decent Quality** - Akihitosubs, DB, Ember, Nep_Blanc
 - **Bad Quality** - Cerberus, Cleo, Judas (old), Reaktor
-    - *Cerberus and Reaktor often pick good subtitle sources.*
+    - *Cerberus and Reaktor often pick good subtitle sources*
 - **Worst Quality** - bonkai77, DaddySubs, DKB,  FFA, HR, SSA, Tenrai-Sensei, YuiSubs, and other groups using NVENC
 
 See the comparison below:
+
 - [Space Dandy](https://slow.pics/c/d5hU8mnp) - BD (MTBB) vs. Minis (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
 
 For airing anime, we recommend sticking with [SubsPlease](https://subsplease.org) or [Erai-Raws](https://www.erai-raws.info) (1080p and 720p), as they are generally better than most mini encodes of WEB releases.
 
 See the comparisons below:
+
 - [Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs) - Web (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Minis (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
 - [SukiMega](https://slow.pics/c/vpcExtLb) - Web (SubsPlease/Crunchyroll 1080p/720p) vs. Minis (Anime Time, ASW, DKB, EMBER, Judas, Valenciano)
 
@@ -117,15 +124,16 @@ The BD is usually always a better source than WEB. *There's no reason to get a W
 
 The advantages of BD and what you're missing out on with WEB are:
 
-1. **Better Quality** - The BD episode is around 6GB compared to 1.3GB on WEB. This makes it a better source even for mini encodes, as they have more data to work with. *A same size encode made from both sources will show the BD version to be superior.*
+1. **Better Quality** - The BD episode is around 6GB compared to 1.3GB on WEB. This makes it a better source even for mini encodes, as they have more data to work with; *a same size encode made from both sources will show the BD version to be superior*
 
-2. **No Censorship** - The BDs will remove or reduce censorship that may be present on WEB releases, ranging from minor changes within scenes to whole new scenes being added.
+2. **No Censorship** - The BDs will remove or reduce censorship that may be present on WEB releases, ranging from minor changes within scenes to whole new scenes being added
 
-3. **Additional Content** - A BD release allows the studios to fix any mistakes made due to budget/time/airing duration constraints and they can add as much content as they want.
+3. **Additional Content** - A BD release allows the studios to fix any mistakes made due to budget/time/airing duration constraints and they can add as much content as they want
 
 4. **Improvements** - Fully redrawn scenes, extra details, shading improvements, removed dimming/brightness changes, etc.
 
 See the comparisons below between BD and WEB:
+
 - [Demon Slayer](https://slow.pics/c/UMxyTZ7T)
 - [Saiki Kusuo no Ψ-nan](https://slow.pics/c/GxJxekoN)
 - [Toaru Kagaku no Accelerator EP 5](https://slow.pics/c/Z0DF2PlI)
@@ -147,6 +155,7 @@ Alternatively, you can use the [ABX Comparator plugin for foobar2000](https://ww
 !!!
 
 A good benchmark for audio bitrates (stereo/2.0) is:
+
 - 128 kbps for Opus
 - 160 kbps for AAC
 - 192 kbps for MP3
@@ -163,9 +172,10 @@ Fansubs use a variety of fonts in their subtitles. These are bundled within the 
 
 !!!
 Looking for the best fansub release? *Check out the following indexes:*
-- [A Certain Fansubber's Index](https://index.fansubcar.tel)
-- [SeaDex](https://releases.moe)
-- [Sneedex](https://sneedex.moe)
+
+[!button variant="secondary" text="A Certain Fansubber's Index" margin="0 8 0 0"](https://index.fansubcar.tel)
+![button variant="secondary" text="SeaDex" margin="0 8 0 0"](https://releases.moe)
+![button variant="secondary" text="Sneedex"](https://sneedex.moe)
 !!!
 
 Fansubs are fan-produced versions of subtitles. They can often be better than official subtitles as they retain the phrasing and style of the original media.
