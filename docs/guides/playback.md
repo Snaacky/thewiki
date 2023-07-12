@@ -2,7 +2,7 @@
 label: Playback
 order: -2
 description: Learn how to play your anime
-image: /static/guides/playback/tohsaka.gif
+image: /static/tohsaka.gif
 ---
 
 # Playback
@@ -215,7 +215,7 @@ Many modern streaming devices (e.g. Amazon Fire TV, Apple TV, NVIDIA SHIELD, etc
 
 24/30/60 fps content should all work perfectly. 25 fps content requires 25/50Hz support, *which some TVs in [NTSC regions](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png) do not support.*
 
-![NTSC Regions](/static/guides/playback/ntsc-regions.png)
+![NTSC Regions](/static/guides/ntsc-regions.png)
 
 +++
 
