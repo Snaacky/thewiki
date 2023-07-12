@@ -100,6 +100,9 @@ For BD releases:
     - *Cerberus and Reaktor often pick good subtitle sources.*
 - **Worst Quality** - bonkai77, DaddySubs, DKB,  FFA, HR, SSA, Tenrai-Sensei, YuiSubs, and other groups using NVENC
 
+See the comparison below:
+- [Space Dandy](https://slow.pics/c/d5hU8mnp) - BD (MTBB) vs. Minis (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
+
 For airing anime, we recommend sticking with [SubsPlease](https://subsplease.org) or [Erai-Raws](https://www.erai-raws.info) (1080p and 720p), as they are generally better than most mini encodes of WEB releases.
 
 See the comparisons below:
