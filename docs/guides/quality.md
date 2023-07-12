@@ -25,7 +25,7 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 The file name for a release will typically look like one of the following examples:
 
-![](https://files.catbox.moe/dxyv69.png)
+![](https://files.catbox.moe/hn6135.png)
 
 Key                                                        | Meaning                                                           
 -----------------------------------------------------------|-----------------------------------------------------------
@@ -45,7 +45,7 @@ Key                                                        | Meaning
 
 Quality is subjective, and there is a difference between flaws which need to be fixed and the preferences of the end user. Generally, the best release is an encode which fixes the flaws of a raw BDMV while simultaneously not altering the original material.
 
-The official BDMV is an encode of the source Blu-ray. As a result, it often suffers from issues like banding, blocking, noise, aliasing, etc. These can originate from a variety of reasons. For example, a lot of anime is natively 720p and is upscaled to 1080p for the Blu-ray. *Even if issues aren't present in the BDMV, they can appear in the encode due to compression.*
+The official BDMV is an encode of the original source master. As a result, it often suffers from issues like banding, blocking, noise, aliasing, etc. These can originate from a variety of reasons. For example, a lot of anime is natively 720p and is upscaled to 1080p for the Blu-ray. *Even if issues aren't present in the BDMV, they can appear in the encode due to compression.*
 
 These issues can be fixed through filtering, a step which comes before encoding. The video is filtered with tools like [Vapoursynth](https://www.vapoursynth.com) before passing it on to the encoder.
 
