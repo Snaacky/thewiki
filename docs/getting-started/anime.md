@@ -46,27 +46,32 @@ Additionally, you may choose to automatically fetch and download shows using RSS
 A brief list of recommended media player applications.
 
 !!!warning
-VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. *We suggest using alternative media players.*
+VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. We suggest using alternative media players.
 !!!
 
-==- PC
++++ PC :desktop_computer:
+
+- [mpv](https://mpv.io/installation/) [!badge variant="info" text="Recommended"]
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
-- [mpv](https://mpv.io/installation/)
 - [Potplayer](https://potplayer.daum.net)
 
-==- Android
-- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
++++ Android :robot_face:
+
+- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) [!badge variant="info" text="Recommended"]
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
-==- iOS
++++ iOS :green_apple:
+
 - [Outplayer](https://apps.apple.com/app/outplayer/id1449923287)
 - [VLC media player](https://apps.apple.com/app/vlc-media-player/id650377962)
 
-==- TV/Media Servers
-- [Jellyfin](https://jellyfin.org)
-- [Kodi](https://kodi.tv)
-- [Plex](https://www.plex.tv)
++++ TV/Media Servers :tv:
 
-===
+- [Kodi](https://kodi.tv) [!badge variant="info" text="Recommended"]
+- [Plex](https://www.plex.tv) [!badge variant="info" text="Recommended"]
+- [Emby](https://emby.media)
+- [Jellyfin](https://jellyfin.org)
+
++++
 
 *See the [Playback Guide](/guides/playback) for more information.*
