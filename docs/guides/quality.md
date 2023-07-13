@@ -12,14 +12,13 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 ==- Understanding the Different Parts
 
 - **Container** - The file itself, containing various video, audio, and subtitle streams. *They are typically stored as `.mkv` or `.mp4`*
-    - You can losslessly convert between them with tools such as [ffmpeg](https://ffmpeg.org/download.html)
 - **Codec** - The compression format used for the video stream and the biggest factor in compatibility with your system. *HEVC (H.265) and AVC (H.264) are the main ones*
 - **Bit depth** - The maximum colors that can be stored in the video. *Typically in 8-bit, or 10-bit for high-quality anime encodes*
-    - Converting an 8-bit source to 10-bit might seem counterintuitive if you know a little about transcoding and data loss, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf)*
+  - Converting an 8-bit source to 10-bit might seem counterintuitive if you know a little about transcoding and data loss, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf)*
 - **Frame rate** - The frequency at which frames are displayed. *This will usually be 23.976 fps*
-    - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher framerate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should be avoided*
+  - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher framerate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should be avoided*
 - **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode*
-    - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
+  - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
 
 ==- Reading the File Name
 
@@ -27,7 +26,7 @@ The file name for a release will typically look like one of the following exampl
 
 ![](https://files.catbox.moe/hn6135.png)
 
-Key                                                        | Meaning                                                           
+Key                                                        | Meaning
 -----------------------------------------------------------|-----------------------------------------------------------
 ![#ed8796](https://placehold.co/14x14/ed8796/ed8796.png) 1 | The name of the group/person who created the release.
 ![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) 2 | The title of the anime.
@@ -43,11 +42,11 @@ Key                                                        | Meaning
 
 ### Encoding
 
-Quality is subjective, and there is a difference between flaws which need to be fixed and the preferences of the end user. Generally, the best release is an encode which fixes the flaws of a raw BDMV while simultaneously not altering the original material.
+Quality is subjective to an extent, and there is a difference between flaws which need to be fixed and the preferences of the end user. Generally, the best release is an encode which fixes the flaws of a raw BDMV while simultaneously not altering the original material. There are objective flaws in videos called artifacts. The term “artifact” is used to broadly describe defects or foreign, unwanted elements in a video. There can be any number of causes ranging from lossy compression, improper conversions, to post-processing adjustments like sharpening and resampling. You can read about artifacts in detail [here](https://guide.encode.moe/encoding/video-artifacts.html). On the other hand, end user preferences like unnecessary sharpening or boosting contrast are destructive and go against the idea of a good encode.
 
 The official BDMV is an encode of the original source master. As a result, it often suffers from issues like banding, blocking, noise, aliasing, etc. These can originate from a variety of reasons. For example, a lot of anime is natively 720p and is upscaled to 1080p for the Blu-ray. *Even if issues aren't present in the BDMV, they can appear in the encode due to compression.*
 
-These issues can be fixed through filtering, a step which comes before encoding. The video is filtered with tools like [Vapoursynth](https://www.vapoursynth.com) before passing it on to the encoder.
+These issues can be fixed through filtering, a step which comes before encoding. The video is filtered with tools like [Vapoursynth](https://www.vapoursynth.com) before passing it on to the encoder. Since encoding is a lossy process, filtering is necessary to improve the video quality along with transparent encoder settings. This means that pretty much all unfiltered encodes are worse than the source.
 
 See the links below for more information:
 
@@ -55,6 +54,10 @@ See the links below for more information:
 - [Encoding guides and more examples](https://guide.encode.moe/encoding/video-artifacts.html)
 - [Advanced encoding guide](https://silentaperture.gitlab.io/mdbook-guide/introduction.html)
 - [Mini encodes and audio](https://kokomins.wordpress.com/2019/10/10/anime-encoding-guide-for-x265-and-why-to-never-use-flac/)
+
+!!!
+The encoding guides above give you a general idea about things but are heavily outdated and incomplete
+!!!
 
 ### Types of Releases
 
@@ -69,24 +72,19 @@ These can be found on [U2](https://u2.dmhy.org) (Private), [Skyeysnow](https://s
 A losslessly packaged version of the BDMV put into `.mkv` files for ease. Similar to BDMVs, they can have large file sizes.
 
 ==- BDRip
-An encode made directly from the BDMV/BDRemux. *These are for watching and are considered the best quality.*
+An encode made directly from the BDMV/BDRemux. Encodes can either be better than the source or be aimed at lower filesizes by sacrificing quality.
 
-Most can be found on [Nyaa](https://nyaa.si), with some rare stuff on places like [RuTracker](https://rutracker.org). The direct encode is usually a raw without subtitles and is used by muxers or fansubbers to make a release. 
-
-Roughly:
-
-- **Excellent Quality** - Beatrice-Raws, Kawaiika-Raws, Raws-Maji, SCY
-- **Good Quality** - VCB-Studio
-- **Okay Quality** - ANK-raws, LowPower-Raws, Moozzi2, Reinforce, Snow-raws
-
-Fansub groups like Coalgirls, Commie, Doki, etc. also have their own encodes, but their main contribution is subtitles. These subtitles are taken by mux groups and combined with good video and multiple subtitle/audio options to make a complete release. Some will use their own encodes. *They'll usually mention all sources used for the release in the description.*
-
-**Examples of good mux groups:** ARC, Arid, CTR, Drag, Kametsu, KH, Mysteria, NH, OZR, pog42, UDF, YURI
+Most can be found on [Nyaa](https://nyaa.si), with some rare stuff on places like [RuTracker](https://rutracker.org). The direct encode is usually a raw without subtitles and is used by muxers or fansubbers to make a release.
 
 ==- WEB-DL
-Until the Blu-rays are released, this is the only source available for new airing anime. *This is not the same as a WEBRip.*
+WEB-DL refers to a file losslessly ripped from a streaming service, such as Netflix, Amazon Video, Crunchyroll, etc. Until the Blu-rays are released, this is the only source available for new airing anime. WEB-DLs are a 1:1 copy of the official stream.
 
-Reliable groups upload direct WEB-DLs from official streaming sources such as [Crunchyroll](https://www.crunchyroll.com) or [HIDIVE](https://www.hidive.com). The quality will be the same no matter which group releases these. *The most reliable one right now is [SubsPlease](https://subsplease.org).*
+Reliable groups upload direct WEB-DLs from official streaming sources such as [Crunchyroll](https://www.crunchyroll.com) or [HIDIVE](https://www.hidive.com). The quality of a WEB-DL from the same service will be identical no matter which group released it. *The most reliable one right now is [SubsPlease](https://subsplease.org).*
+
+WEB-DLs are usually your best source for most airing anime which you can get from [SubsPlease](https://subsplease.org) or [Erai-Raws](https://www.erai-raws.info/). Both of them rip Crunchyroll with the difference being SubsPlease only rips the english subs while Erai-Raws rips all the subs.
+
+==- WEBRip
+Unlike WEB-DLs, WEBRips are not a 1:1 copy of the official stream. Generally, most of the WEBRips you'll see will be lower quality than it's WEB-DL equivalent but this is not always true and there are groups that improve upon a WEB-DL by filtering it to fix issues.
 
 ==- Re-encode
 Re-encodes are encodes of a BDRip or WEB source. Quality is dependent on the source used. A re-encode of a BDMV would typically have better quality than a re-encode of a BDRip.
@@ -96,31 +94,16 @@ Re-encoding is generally considered a bad practice due to quality loss, as encod
 ==- Mini Encode
 Mini encodes are releases designed to be space and bandwidth saving while retaining quality. *These are not the same as re-encodes, as they encode from the original BD or WEB source.*
 
-For BD releases:
-
-- **Good Quality** - Judas (new)
-    - *Judas (new) is roughly mid 2020 and later*
-- **Decent Quality** - Akihitosubs, DB, Ember, Nep_Blanc
-- **Bad Quality** - Cerberus, Cleo, Judas (old), Reaktor
-    - *Cerberus and Reaktor often pick good subtitle sources*
-- **Worst Quality** - bonkai77, DaddySubs, DKB,  FFA, HR, SSA, Tenrai-Sensei, YuiSubs, and other groups using NVENC
-
-See the comparison below:
-
-- [Space Dandy](https://slow.pics/c/d5hU8mnp) - BD (MTBB) vs. Minis (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
-
-For airing anime, we recommend sticking with [SubsPlease](https://subsplease.org) or [Erai-Raws](https://www.erai-raws.info) (1080p and 720p), as they are generally better than most mini encodes of WEB releases.
-
-See the comparisons below:
+You can check out some mini encode comparisons below:
 
 - [Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs) - Web (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Minis (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
 - [SukiMega](https://slow.pics/c/vpcExtLb) - Web (SubsPlease/Crunchyroll 1080p/720p) vs. Minis (Anime Time, ASW, DKB, EMBER, Judas, Valenciano)
 
 ===
 
-### BD vs WEB
+### BluRay vs WEB
 
-The BD is usually always a better source than WEB. There's no reason to get a WEB-sourced encode once the BD is out.
+BluRays are generally always a better source than WEB. *Do note, there are cases where WEB is better than the BluRay for a variety of reasons but for the sake of this guide we are generalizing a bit.*
 
 The advantages of BD and what you're missing out on with WEB are:
 
@@ -142,9 +125,10 @@ See the comparisons below between BD and WEB:
 ## Audio
 
 ### Codecs
-Audio codecs are divided into lossless (DTS-HDMA, FLAC, TrueHD) and lossy formats (AAC, MP3, Opus). While lossless raw video will be multiple GBs per minute, audio is more manageable when it comes to size, and you'll see many options with lossless audio.
 
-Lossless audio is typically unnecessary for most sound systems. Even with the best audiophile grade setup, most users will find it impossible to make out the difference. *However, some exceptional music samples exist, which can be used to differentiate lower-bitrate lossy audio by listening to small extracted parts repeatedly.* 
+Audio codecs are divided into lossless (DTS-HD MA, FLAC, TrueHD) and lossy formats (AAC, MP3, Opus). While lossless raw video will be multiple GBs per minute, audio is more manageable when it comes to size, and you'll see many options with lossless audio.
+
+Lossless audio is typically unnecessary for most sound systems. Even with the best audiophile grade setup, most users will find it impossible to make out the difference. *However, some exceptional music samples exist, which can be used to differentiate lower-bitrate lossy audio by listening to small extracted parts repeatedly.*
 
 !!!
 We suggest checking out these [online ABX tests](http://abx.digitalfeed.net) with your setup.
@@ -170,21 +154,21 @@ Fansubs use a variety of fonts in their subtitles. These are bundled within the 
 
 ### Fansubs
 
-!!!
-Looking for the best fansub release? *Check out the following indexes:*
+Fansubs are fan-produced versions of subtitles. They will often edit the official subs from sources like [Crunchyroll](https://www.crunchyroll.com) and add things like opening/ending lyrics, song translations, typesetted signs, etc.
 
-[!button variant="secondary" text="A Certain Fansubber's Index" margin="0 8 0 0"](https://index.fansubcar.tel)
-[!button variant="secondary" text="SeaDex" margin="0 8 0 0"](https://releases.moe)
-[!button variant="secondary" text="Sneedex"](https://sneedex.moe)
-!!!
+Fansub edits can either be an improvement or they might introduce more errors than they fix. There's also the topic of localization. Localization means changing cultural references and puns to fit the english context. A degree of localization is always involved with translation to make sure the dialogue flows smoothly. Fansubs can range from excessive localization by completely eradicating and replacing the idea of Japan to untranslation by changing random phrases and lines back to Japanese making the very concept of subtitles useless. Most of the good fansubs lie somewhere in between these extremes. After looking at the work of a few groups, you'll be able to figure out who has a tendency to do what.
 
-Fansubs are fan-produced versions of subtitles. They can often be better than official subtitles as they retain the phrasing and style of the original media.
-
-For most newer fansubbed anime, fansubs will often use an edited version of official subs from sources like [Crunchyroll](https://www.crunchyroll.com). These edits range from removing excessive localization to reverting translations back to their original language.
+[AnimeTosho](https://animetosho.org) is a useful resource for grabbing just the subtitles from any release on [Nyaa](https://nyaa.si). They can be downloaded under the *Subtitles* section of a release. *Do note that usually only uploads that are less than 16GB will have downloadable attachments on AnimeTosho.*
 
 ==- Using AnimeTosho
-[AnimeTosho](https://animetosho.org) is a useful resource for grabbing just the subtitles from any release on [Nyaa](https://nyaa.si). They can be downloaded under the *Subtitles* section of a release.
-
-![](https://files.catbox.moe/wbychc.gif)
+![AnimeTosho](https://files.catbox.moe/wbychc.gif)
 
 ===
+
+## How do I find the best release?
+
+With so many options for every show, it can be hard to find which one to download. Although releases marked red on Nyaa means that the release is bad, the opposite isn't true. A green release does not mean it's a good release. The best release group varies per show and there's really no way to tell without actually comparing the different sources ([example](https://slow.pics/c/J8ow4zap)).
+
+To find the best release of a show, you can visit: [!button variant="info" icon="https://files.catbox.moe/6fax26.png" target="blank" size="xs" text="SeaDex"](https://releases.moe/)
+
+SeaDex is an actively maintained sheet of best releases. Different sources are first compared and then a release is picked and added on the sheet.
