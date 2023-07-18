@@ -318,9 +318,14 @@ Simply copy and paste the above at the end of your `mpv.conf`.
 
 ### Upscaling
 
-If you're watching content that's a lower resolution than your screen, you can consider using a high-quality scaler like `nnedi3-nns256-win8x4` which you can download from [here](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook). Do note that this will be way more taxing on your system.
+If you're watching content that's a lower resolution than your screen, you can consider using a high-quality scaler like `nnedi3`. Do note that this will be way more taxing on your system.
 
-You can add it directly to your `mpv.conf`
++++ High-End PCs
+For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
+
+Download the `nnedi3-nns256-win8x4.hook` file and place it in your `/portable_config/shaders`.
+
+You can then add it directly to your `mpv.conf`
 
 ```properties
 glsl-shaders="~~/shaders/nnedi3-nns256-win8x4.hook"
@@ -329,8 +334,42 @@ glsl-shaders="~~/shaders/nnedi3-nns256-win8x4.hook"
 Or, you can bind it to a key in your `input.conf`
 
 ```properties
-G change-list glsl-shaders toggle "~~/nnedi3-nns256-win8x4.hook"
+G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
 ```
+
++++ Mid-Range PCs
+For those with mid-range hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
+
+Download the `nnedi3-nns128-win8x4.hook` file and place it in your `/portable_config/shaders`.
+
+You can then add it directly to your `mpv.conf`
+
+```properties
+glsl-shaders="~~/shaders/nnedi3-nns128-win8x4.hook"
+```
+
+Or, you can bind it to a key in your `input.conf`
+
+```properties
+G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
+```
+
++++ Low-End PCs
+For those with low-end hardware, stick with mpv's built-in scalers.
+
+In your `mpv.conf`, add the following:
+
+```properties
+vo=gpu-next
+scale=ewa_lanczos
+dscale=mitchell
+cscale=ewa_lanczos
+```
+
+If you have copied the [Basic Config](#basic-config) above, then you already have this part in your config.
+
+If these are also too heavy for you system, then just delete these lines from your config. MPV will use `spline36` with `profile=gpu-hq` by default.
++++
 
 !!!
 Scalers only work when the resolution of your video does not match your display. If the resolution of the video you're playing matches your display's resolution, scalers will remain unused.
