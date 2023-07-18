@@ -48,7 +48,7 @@ Generally, the best release is an encode which fixes the flaws of a raw BDMV whi
 
 The official BDMV is an encode of the original source master. Subsequently, it often suffers from various issues (e.g. aliasing, banding, blocking, noise) originating from a variety of reasons. For example, a lot of anime is natively 720p and is upscaled to 1080p for the Blu-ray. *Even if issues aren't present in the BDMV, they can appear in the encode due to compression.*
 
-These issues can be fixed through filtering, a step which comes before encoding. The video is filtered with tools like [Vapoursynth](https://www.vapoursynth.com) before passing it on to the encoder. Since encoding is a lossy process, filtering is necessary to improve the video quality along with transparent encoder settings. *As a result, almost all unfiltered encodes are worse than the source.*
+These issues can be fixed through filtering, a step which comes before encoding. The video is filtered with tools like [VapourSynth](https://github.com/vapoursynth/vapoursynth) before passing it on to the encoder. Since encoding is a lossy process, filtering is necessary to improve the video quality along with transparent encoder settings. *As a result, almost all unfiltered encodes are worse than the source.*
 
 See the links below for more information:
 
