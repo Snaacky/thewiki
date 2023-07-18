@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.742496851294">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.743025088682">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.742496851294" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.743025088682" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.742496851294" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.743025088682" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.742496851294" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.742496851294" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.743025088682" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.743025088682" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -515,15 +515,48 @@ deband=yes</code></pre>
         <span>Upscaling</span>
     </h3>
 </doc-anchor-target>
-<p>If you&#x27;re watching content that&#x27;s a lower resolution than your screen, you can consider using a high-quality scaler like <code v-pre>nnedi3-nns256-win8x4</code> which you can download from <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook">here</a>. Do note that this will be way more taxing on your system.</p>
-<p>You can add it directly to your <code v-pre>mpv.conf</code></p>
+<p>If you&#x27;re watching content that&#x27;s a lower resolution than your screen, you can consider using a high-quality scaler like <code v-pre>nnedi3</code>. Do note that this will be way more taxing on your system.</p>
+<doc-tabs>
+<doc-tab id="high-end-pcs">
+<template #title>High-End PCs</template>
+<p>For those with high-end hardware, we recommend using <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook">nnedi3-nns256-win8x4</a>.</p>
+<p>Download the <code v-pre>nnedi3-nns256-win8x4.hook</code> file and place it in your <code v-pre>/portable_config/shaders</code>.</p>
+<p>You can then add it directly to your <code v-pre>mpv.conf</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">glsl-shaders=&quot;~~/shaders/nnedi3-nns256-win8x4.hook&quot;</code></pre>
 </doc-codeblock></div>
 <p>Or, you can bind it to a key in your <code v-pre>input.conf</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-properties"><code v-pre class="language-properties">G change-list glsl-shaders toggle &quot;~~/nnedi3-nns256-win8x4.hook&quot;</code></pre>
+<pre class="language-properties"><code v-pre class="language-properties">G change-list glsl-shaders toggle &quot;~~/shaders/nnedi3-nns256-win8x4.hook&quot;</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+<doc-tab id="mid-range-pcs">
+<template #title>Mid-Range PCs</template>
+<p>For those with mid-range hardware, we recommend using <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook">nnedi3-nns128-win8x4</a>.</p>
+<p>Download the <code v-pre>nnedi3-nns128-win8x4.hook</code> file and place it in your <code v-pre>/portable_config/shaders</code>.</p>
+<p>You can then add it directly to your <code v-pre>mpv.conf</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-properties"><code v-pre class="language-properties">glsl-shaders=&quot;~~/shaders/nnedi3-nns128-win8x4.hook&quot;</code></pre>
+</doc-codeblock></div>
+<p>Or, you can bind it to a key in your <code v-pre>input.conf</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-properties"><code v-pre class="language-properties">G change-list glsl-shaders toggle &quot;~~/shaders/nnedi3-nns128-win8x4.hook&quot;</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab id="low-end-pcs">
+<template #title>Low-End PCs</template>
+<p>For those with low-end hardware, stick with mpv&#x27;s built-in scalers.</p>
+<p>In your <code v-pre>mpv.conf</code>, add the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-properties"><code v-pre class="language-properties">vo=gpu-next
+scale=ewa_lanczos
+dscale=mitchell
+cscale=ewa_lanczos</code></pre>
+</doc-codeblock></div>
+<p>If you have copied the <doc-anchor-trigger to="#basic-config">Basic Config</doc-anchor-trigger> above, then you already have this part in your config.</p>
+<p>If these are also too heavy for you system, then just delete these lines from your config. MPV will use <code v-pre>spline36</code> with <code v-pre>profile=gpu-hq</code> by default.</p>
+</doc-tab>
+</doc-tabs>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
