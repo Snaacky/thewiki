@@ -242,7 +242,7 @@ Now you can press `shift + d` to enable or disable debanding.
 
 Restyling subtitles refers to the process of modifying the appearance of subtitles to improve readability or match personal preferences. Below are two commonly used styles that you can use or change them to your own liking.
 
-=== Style 1: Gandhi Sans
+==- Style 1: Gandhi Sans
 
 [![GandhiSans](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png "GandhiSans")](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png "GandhiSans")
 
@@ -368,7 +368,7 @@ cscale=ewa_lanczos
 
 If you have copied the [Basic Config](#basic-config) above, then you already have this part in your config.
 
-If these are also too heavy for you system, then just delete these lines from your config. MPV will use `spline36` with `profile=gpu-hq` by default.
+If these are also too heavy for you system, then just delete these lines from your config. MPV will use `spline36` by default with `profile=gpu-hq`.
 +++
 
 !!!
