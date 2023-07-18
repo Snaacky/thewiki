@@ -14,15 +14,15 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 - **Container** - The file itself, containing various video, audio, and subtitle streams. *They are typically stored as `.mkv` or `.mp4`*
 - **Codec** - The compression format used for the video stream and the biggest factor in compatibility with your system. *HEVC (H.265) and AVC (H.264) are the main ones*
 - **Bit depth** - The maximum colors that can be stored in the video. *Typically in 8-bit, or 10-bit for high-quality anime encodes*
-  - Converting an 8-bit source to 10-bit might seem counterintuitive if you know a little about transcoding and data loss, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf)*
+  - Converting an 8-bit source to 10-bit might seem counterintuitive if you know little about transcoding and data loss, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf)*
 - **Frame rate** - The frequency at which frames are displayed. *This will usually be 23.976 fps*
-  - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher framerate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should be avoided*
+  - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher frame rate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should be avoided*
 - **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode*
   - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
 
 ==- Reading the File Name
 
-The file name for a release will typically look like one of the following examples:
+The file name for a release will typically look like one of the following:
 
 ![Example File Names of Common Releases](https://files.catbox.moe/hn6135.png)
 
@@ -119,11 +119,11 @@ Blu-rays are usually a better source than WEB. *However, there are some cases wh
 
 The advantages of BD and what you're missing out on with WEB are:
 
-1. **Better Quality** - The BD episode is around 6GB compared to 1.3GB on WEB. This makes it a better source even for mini encodes, as they have more data to work with; *a same size encode made from both sources will show the BD version to be superior*
+1. **Better Quality** - An average BD episode is around 6GB compared to 1.3GB on WEB. This makes it a better source even for mini encodes, as they have more data to work with; *a same size encode made from both sources will show the BD version to be superior*
 
-2. **No Censorship** - The BDs will remove or reduce censorship that may be present on WEB releases, ranging from minor changes within scenes to whole new scenes being added
+2. **No Censorship** - BDs will remove or reduce censorship that may be present on WEB releases, ranging from minor changes within scenes to whole new scenes being added
 
-3. **Additional Content** - A BD release allows the studios to fix any mistakes made due to budget/time/airing duration constraints and they can add as much content as they want
+3. **Additional Content** - BDs allow studios to add as much content as they want and fix any mistakes made due to budget/time/airing duration constraints
 
 4. **Improvements** - Fully redrawn scenes, extra details, shading improvements, removed dimming/brightness changes, etc.
 
@@ -150,13 +150,13 @@ Alternatively, you can use the [ABX Comparator plugin for foobar2000](https://ww
 *If you manage to complete it with a decent probability, feel free to join our [Discord](https://discord.gg/snackbox) to talk about it!*
 !!!
 
-A good benchmark for audio bitrates (stereo/2.0) is:
+A good benchmark for lossy audio bitrates (stereo/2.0) is:
 
 - 128 kbps for Opus
 - 160 kbps for AAC
 - 192 kbps for MP3
 
-For surround audio, multiply with the number of stereo pairs.
+For surround audio, multiply them by the number of stereo pairs.
 
 ## Subtitles
 
@@ -166,7 +166,7 @@ Fansubs use a variety of fonts in their subtitles. These are bundled within the 
 
 ### Fansubs
 
-Fansubs are fan-produced versions of subtitles. They will often edit the official subs from sources like [Crunchyroll](https://www.crunchyroll.com) and add things like opening/ending lyrics, song translations, typeset signs, etc. These edits can be an improvement over the original subs, *but they may also introduce more errors than they fix.*
+Fansubs are fan-produced versions of subtitles. They will often edit the official subs from sources like [Crunchyroll](https://www.crunchyroll.com) and add things like opening/ending lyrics, song translations, typeset signs, etc. While these edits can be an improvement over the original subs, *they may also introduce more errors than they fix.*
 
 A degree of localization is always involved with translation to make sure the dialogue flows smoothly. Localization is the process of changing cultural references and puns to fit the target audience's context. Fansubs can range from excessive localization by completely eradicating and replacing the idea of Japan, to the untranslation of random phrases and lines back to Japanese, damaging the concept of subtitles. Most good fansubs lie somewhere in between these extremes. After looking at the work of these groups, you'll be able to figure out who has a tendency to do what.
 
