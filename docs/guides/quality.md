@@ -125,7 +125,7 @@ The advantages of BD and what you're missing out on with WEB are:
 
 3. **Additional Content** - BDs allow studios to add as much content as they want and fix any mistakes made due to budget/time/airing duration constraints
 
-4. **Improvements** - Fully redrawn scenes, extra details, shading improvements, removed dimming/brightness changes, etc.
+4. **Improvements** - Fully redrawn scenes, extra details, shading improvements, dimming/brightness changes, etc.
 
 See the comparisons below between BD and WEB:
 
@@ -160,7 +160,7 @@ For surround audio, multiply them by the number of stereo pairs.
 
 ## Subtitles
 
-Most anime releases will use `.ass` subtitles, as it allows for better styling options compared to others like `.srt`. *However, this styling can breaks when there is incompatibility somewhere in the playback process.*
+Most anime releases will use `.ass` subtitles, as it allows for better styling options compared to others like `.srt`. *However, this styling breaks when there is incompatibility somewhere in the playback process.*
 
 Fansubs use a variety of fonts in their subtitles. These are bundled within the `.mkv` files as attachments or provided separately in a folder. Fonts included separately can be installed or placed in your player's fonts folder for a quick solution. They should be muxed in for perfect compatibility.
 
