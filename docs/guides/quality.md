@@ -63,7 +63,7 @@ The encoding guides above should give you a general idea about how they work, *b
 
 ### Types of Releases
 
-==- BDMV
++++ BDMV
 
 A simple complete copy of the original Blu-ray, used as a source for making other releases or encodes. *These are not useful for watching.*
 
@@ -71,17 +71,17 @@ JPBDs often have better quality than USBDs because of more bitrate devoted to th
 
 These can be found on [U2](https://u2.dmhy.org) (Private), [Skyeysnow](https://skyeysnow.com) (Private, Open Signup) and [Nyaa](https://nyaa.si) (Public). *Release groups don't matter for BDMVs because they're all the same unless the files are corrupted.*
 
-==- BDRemux
++++ BDRemux
 
 A losslessly packaged version of the BDMV put into `.mkv` files for ease. Similar to BDMVs, they can have large file sizes.
 
-==- BDRip
++++ BDRip
 
 An encode made directly from the BDMV/BDRemux. Encodes can either be better than the source or aimed at lower file sizes by sacrificing quality.
 
 Most can be found on [Nyaa](https://nyaa.si), with some rare stuff on places like [RuTracker](https://rutracker.org). The direct encode is usually a raw without subtitles and is used by muxers or fansubbers to make a release.
 
-==- WEB-DL
++++ WEB-DL
 
 A WEB-DL is a file losslessly downloaded from an official streaming service, such as Amazon Prime Video, Crunchyroll, HIDIVE, Netflix, etc. As a result, they are a 1:1 copy of the official stream.
 
@@ -89,19 +89,19 @@ Until the Blu-rays are released, this is the only and best source available for 
 
 WEB-DLs can be obtained from groups like [SubsPlease](https://subsplease.org) or [Erai-Raws](https://www.erai-raws.info). Both rip from [Crunchyroll](https://www.crunchyroll.com) and have fast release times, with the difference being that SubsPlease rips only the English subs, while Erai-Raws rips all the subs.
 
-==- WEBRip
++++ WEBRip
 
 Unlike WEB-DLs, WEBRips are not a 1:1 lossless copy of the official stream. Rather than downloading directly from the source, they are created using screen/audio captures of the source. *Because of this, WEBRips are generally not recommended, especially if a WEB-DL already exists.*
 
 Most WEBRips will be lower quality than their WEB-DL equivalent. However, some groups will attempt to improve upon a WEB-DL by filtering it to fix issues.
 
-==- Re-encode
++++ Re-encode
 
 Re-encodes are encodes of a BDRip or WEB source. Quality is dependent on the source used. A re-encode of a BDMV would typically have better quality than a re-encode of a BDRip.
 
 Re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process, and information is lost at every stage. *On [Nyaa](https://nyaa.si), these are marked in red.*
 
-==- Mini Encode
++++ Mini Encode
 
 Mini encodes are releases designed to be space and bandwidth saving while retaining quality. *These are not the same as re-encodes, as they encode from the original BD or WEB source.*
 
@@ -111,7 +111,7 @@ Most mini encodes of BDRips are better than a WEB, as they have more data to wor
 - [Space Dandy](https://slow.pics/c/d5hU8mnp) - BD (MTBB) vs. Minis (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
 - [SukiMega](https://slow.pics/c/vpcExtLb) - Web (SubsPlease/Crunchyroll 1080p/720p) vs. Minis (Anime Time, ASW, DKB, EMBER, Judas, Valenciano)
 
-===
++++
 
 ### Blu-ray vs WEB
 
