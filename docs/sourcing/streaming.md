@@ -58,8 +58,8 @@ While streaming sites will offer worse video quality compared to alternatives su
 
 You can see for yourself in the quality comparisons linked below:
 
-- [Demon Slayer](https://slow.pics/c/pjYaqdnr) - 9anime, AniWatch (Zoro), animepahe, Gogoanime, tenshi (Marin), torrents
-- [Fate/Zero](https://slow.pics/c/1LNZtDzm) - 9anime, animepahe, Gogoanime, tenshi (Marin), torrents
+- [Demon Slayer](https://slow.pics/c/pjYaqdnr) - 9anime, AniWatch (Zoro), animepahe, Gogoanime, Marin (Tenshi), torrents
+- [Fate/Zero](https://slow.pics/c/1LNZtDzm) - 9anime, animepahe, Gogoanime, Marin (tenshi), torrents
 - [Senran Kagura](https://slow.pics/c/QLtX61qx) - 9anime, AniWatch (Zoro), animepahe, Gogoanime, torrents
 - [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - 9anime, animepahe, Gogoanime, torrents
 - [Vinland Saga S2](https://slow.pics/c/GjhwBwo3) - Gogoanime, Marin, torrents
