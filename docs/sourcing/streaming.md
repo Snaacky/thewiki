@@ -13,7 +13,7 @@ Majority of unofficial streaming sites will contain unwanted or annoying pop-ups
 
 - [9anime](https://9anime.to) - Self-hosted site with one of the largest and oldest anime libraries. *Releases are often updated to include fansubs and BD releases for older content.*
 - [AniWatch](https://aniwatch.to) (previously *Zoro*) - Self-hosted site with quality similar to 9anime while maintaining an extensive library. *One of the only streaming sites with soft subtitles.*
-   - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me).*
+  - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me).*
 - [Gogoanime](https://gogoanime.lu) - Self-hosted site with a vast library. *Majority of scraper sites will source from here.*
 
 See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.
@@ -24,7 +24,7 @@ See [The Index](https://theindex.moe) for a more comprehensive list of unofficia
 
 The best way to pick a streaming site is to choose one that suits your needs and preferences. These are some factors that you may want to take into consideration:
 
-### Scrapers vs. Self-Hosted Sites
+### Self-Hosted vs. Scrapers
 
 !!!warning
 Beware of fake streaming sites! *These are scrapers with copied interfaces and are oftentimes not reflected of the original site. Always pay attention to the URL of the website.*
@@ -32,7 +32,16 @@ Beware of fake streaming sites! *These are scrapers with copied interfaces and a
 *You can always find legitimate sites on [The Index](https://theindex.moe).*
 !!!
 
-==- Scraper Sites
++++ Self-Hosted
+
+A **self-hosted** site is a streaming site that hosts the content on their own servers.
+
+Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. *However, some self-hosted libraries can be more limited.*
+
+**Examples of self-hosted sites:** [9anime](https://9anime.to), [animepahe](https://animepahe.com), [AniWatch](https://aniwatch.to), [Gogoanime](https://gogoanime.lu), [Marin](https://marin.moe)
+
++++ Scrapers
+
 A **scraper** is a site that grabs content hosted on existing self-hosted sites and uses it for their own site, similar to how manga aggregator sites operate.
 
 This allows for anime libraries equivalent in size to self-hosted ones, without the need for the scraper to host content themselves. Additionally, site owners can implement their own UI or features, which may be preferred over the original site.
@@ -41,14 +50,7 @@ Majority of sites will scrape from [Gogoanime](https://gogoanime.lu), a popular 
 
 **Examples of scraper sites:** [AllAnime](https://allanime.to), [Anix](https://anix.to), [Genoanime](https://genoanime.com), [YugenAnime](https://yugenanime.tv)
 
-==- Self-Hosted Sites
-A **self-hosted** site is a streaming site that hosts the content on their own servers.
-
-Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. *However, some self-hosted libraries can be more limited.*
-
-**Examples of self-hosted sites:** [9anime](https://9anime.to), [animepahe](https://animepahe.com), [AniWatch](https://aniwatch.to), [Gogoanime](https://gogoanime.lu), [Marin](https://marin.moe)
-
-===
++++
 
 ### Video Quality
 
@@ -65,28 +67,30 @@ You can see for yourself in the quality comparisons linked below:
 
 #### Quality Tier List
 
-=== Tier 1 (Best)
++++ Tier 1 (Best)
+
 - [AllAnime](https://allanime.to) - Scraper site with great video quality when scraped from VRV, making them on par with SubsPlease/HorribleSubs torrent releases. *However, not all shows use VRV, resulting in Tier 3 quality.*
-- [AnimeDao](https://animedao.to) - Quality can be similar to [AllAnime](https://allanime.to) depending on the server you choose.
 - [Marin](https://marin.moe) - Consistently the best video quality with BD releases and good quality for seasonals. *Formerly tenshi.*
 
-=== Tier 2 (Good)
++++ Tier 2 (Good)
+
 - [9anime](https://9anime.to)
 - [AniWatch](https://aniwatch.to) - *Formerly Zoro.*
-   - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me).*
+  - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me).*
 
-=== Tier 3 (Okay)
++++ Tier 3 (Okay)
+
 - [animepahe](https://animepahe.com) - Quality can be better or worse than Gogoanime. *However, they offer significantly smaller file sizes and use good BD releases whenever available similar to [Marin](https://marin.moe).*
 - [Gogoanime](https://gogoanime.lu) (and its scrapers)
 
-===
++++
 
 ### Other Factors
 
 There are a multitude of other factors that may affect your decision in picking a site. Here are some brief recommendations based on some factors that aren't covered in [The Index](https://theindex.moe) and are often not taken into account:
 
 ==- Fansubs and BD Releases
-[Marin](https://marin.moe) and [animepahe](https://animepahe.com) are very consistent at picking good BD releases with fansubs. 
+[Marin](https://marin.moe) and [animepahe](https://animepahe.com) are very consistent at picking good BD releases with fansubs.
 
 [9anime](https://9anime.to) does this too, *but typically less often and with slightly worse release choice.*
 
