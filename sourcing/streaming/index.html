@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.743025548640">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.743270401445">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.743025548640" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.743270401445" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.743025548640" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.743270401445" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.743025548640" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.743270401445" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -198,10 +198,10 @@
     </h2>
 </doc-anchor-target>
 <p>The best way to pick a streaming site is to choose one that suits your needs and preferences. These are some factors that you may want to take into consideration:</p>
-<doc-anchor-target id="scrapers-vs-self-hosted-sites">
+<doc-anchor-target id="self-hosted-vs-scrapers">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scrapers-vs-self-hosted-sites">#</doc-anchor-trigger>
-        <span>Scrapers vs. Self-Hosted Sites</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#self-hosted-vs-scrapers">#</doc-anchor-trigger>
+        <span>Self-Hosted vs. Scrapers</span>
     </h3>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -221,21 +221,21 @@
         </div>
     </div>
 </div>
-<doc-panels>
-   <doc-panel id="scraper-sites" collapsed>
-       <template #title>Scraper Sites</template>
+<doc-tabs>
+<doc-tab id="self-hosted">
+<template #title>Self-Hosted</template>
+<p>A <strong>self-hosted</strong> site is a streaming site that hosts the content on their own servers.</p>
+<p>Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. <em>However, some self-hosted libraries can be more limited.</em></p>
+<p><strong>Examples of self-hosted sites:</strong> <a href="https://9anime.to">9anime</a>, <a href="https://animepahe.com">animepahe</a>, <a href="https://aniwatch.to">AniWatch</a>, <a href="https://gogoanime.lu">Gogoanime</a>, <a href="https://marin.moe">Marin</a></p>
+</doc-tab>
+<doc-tab id="scrapers">
+<template #title>Scrapers</template>
 <p>A <strong>scraper</strong> is a site that grabs content hosted on existing self-hosted sites and uses it for their own site, similar to how manga aggregator sites operate.</p>
 <p>This allows for anime libraries equivalent in size to self-hosted ones, without the need for the scraper to host content themselves. Additionally, site owners can implement their own UI or features, which may be preferred over the original site.</p>
 <p>Majority of sites will scrape from <a href="https://gogoanime.lu">Gogoanime</a>, a popular self-hosted streaming site.</p>
 <p><strong>Examples of scraper sites:</strong> <a href="https://allanime.to">AllAnime</a>, <a href="https://anix.to">Anix</a>, <a href="https://genoanime.com">Genoanime</a>, <a href="https://yugenanime.tv">YugenAnime</a></p>
-   </doc-panel>
-   <doc-panel id="self-hosted-sites" collapsed>
-       <template #title>Self-Hosted Sites</template>
-<p>A <strong>self-hosted</strong> site is a streaming site that hosts the content on their own servers.</p>
-<p>Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. <em>However, some self-hosted libraries can be more limited.</em></p>
-<p><strong>Examples of self-hosted sites:</strong> <a href="https://9anime.to">9anime</a>, <a href="https://animepahe.com">animepahe</a>, <a href="https://aniwatch.to">AniWatch</a>, <a href="https://gogoanime.lu">Gogoanime</a>, <a href="https://marin.moe">Marin</a></p>
-   </doc-panel>
-</doc-panels>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="video-quality">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#video-quality">#</doc-anchor-trigger>
@@ -245,8 +245,8 @@
 <p>While streaming sites will offer worse video quality compared to alternatives such as torrenting, DDL, XDCC, or even legal streaming, <em>not all streaming sites are made equal.</em></p>
 <p>You can see for yourself in the quality comparisons linked below:</p>
 <ul>
-<li><a href="https://slow.pics/c/pjYaqdnr">Demon Slayer</a> - 9anime, AniWatch (Zoro), animepahe, Gogoanime, tenshi (Marin), torrents</li>
-<li><a href="https://slow.pics/c/1LNZtDzm">Fate/Zero</a> - 9anime, animepahe, Gogoanime, tenshi (Marin), torrents</li>
+<li><a href="https://slow.pics/c/pjYaqdnr">Demon Slayer</a> - 9anime, AniWatch (Zoro), animepahe, Gogoanime, Marin (Tenshi), torrents</li>
+<li><a href="https://slow.pics/c/1LNZtDzm">Fate/Zero</a> - 9anime, animepahe, Gogoanime, Marin (tenshi), torrents</li>
 <li><a href="https://slow.pics/c/QLtX61qx">Senran Kagura</a> - 9anime, AniWatch (Zoro), animepahe, Gogoanime, torrents</li>
 <li><a href="https://slow.pics/c/PZRxqAsh">Dokyuu Hentai HxEros</a> - 9anime, animepahe, Gogoanime, torrents</li>
 <li><a href="https://slow.pics/c/GjhwBwo3">Vinland Saga S2</a> - Gogoanime, Marin, torrents</li>
@@ -258,17 +258,16 @@
         <span>Quality Tier List</span>
     </h4>
 </doc-anchor-target>
-<doc-panels>
-   <doc-panel id="tier-1-best">
-       <template #title>Tier 1 (Best)</template>
+<doc-tabs>
+<doc-tab id="tier-1-best">
+<template #title>Tier 1 (Best)</template>
 <ul>
 <li><a href="https://allanime.to">AllAnime</a> - Scraper site with great video quality when scraped from VRV, making them on par with SubsPlease/HorribleSubs torrent releases. <em>However, not all shows use VRV, resulting in Tier 3 quality.</em></li>
-<li><a href="https://animedao.to">AnimeDao</a> - Quality can be similar to <a href="https://allanime.to">AllAnime</a> depending on the server you choose.</li>
 <li><a href="https://marin.moe">Marin</a> - Consistently the best video quality with BD releases and good quality for seasonals. <em>Formerly tenshi.</em></li>
 </ul>
-   </doc-panel>
-   <doc-panel id="tier-2-good">
-       <template #title>Tier 2 (Good)</template>
+</doc-tab>
+<doc-tab id="tier-2-good">
+<template #title>Tier 2 (Good)</template>
 <ul>
 <li><a href="https://9anime.to">9anime</a></li>
 <li><a href="https://aniwatch.to">AniWatch</a> - <em>Formerly Zoro.</em>
@@ -277,15 +276,15 @@
 </ul>
 </li>
 </ul>
-   </doc-panel>
-   <doc-panel id="tier-3-okay">
-       <template #title>Tier 3 (Okay)</template>
+</doc-tab>
+<doc-tab id="tier-3-okay">
+<template #title>Tier 3 (Okay)</template>
 <ul>
 <li><a href="https://animepahe.com">animepahe</a> - Quality can be better or worse than Gogoanime. <em>However, they offer significantly smaller file sizes and use good BD releases whenever available similar to <a href="https://marin.moe">Marin</a>.</em></li>
 <li><a href="https://gogoanime.lu">Gogoanime</a> (and its scrapers)</li>
 </ul>
-   </doc-panel>
-</doc-panels>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="other-factors">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#other-factors">#</doc-anchor-trigger>
