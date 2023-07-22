@@ -16,7 +16,7 @@ Commonly used terminology:
 - **Bit depth** - The maximum colors that can be stored in the video. *Typically in 8-bit, or 10-bit for high-quality anime encodes*
   - Converting an 8-bit source to 10-bit might seem counterintuitive, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf)*
 - **Frame rate** - The frequency at which frames are displayed. *This will usually be at roughly 23.976 fps*
-  - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher frame rate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should similarly be avoided*
+  - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher frame rate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should also be avoided*
 - **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode*
   - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
 
@@ -28,15 +28,15 @@ The file name for a release will typically look like one of the following:
 
 Key                                                        | Meaning
 -----------------------------------------------------------|-----------------------------------------------------------
-![#ed8796](https://placehold.co/14x14/ed8796/ed8796.png) 1 | The name of the group/person who created the release.
-![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) 2 | The title of the anime.
-![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) 3 | The season/episode number.
-![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | The source where the release was taken from. *Typically BD (Blu-ray/JPBD) or WEB.*
-![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | The resolution of the video file.
-![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) 6 | The video codec. *Typically HEVC or AVC.*
-![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) 7 | The audio codec. *Dual audio means the release contains two audio streams, typically the dubbed and original.*
-![#f4dbd6](https://placehold.co/14x14/f4dbd6/f4dbd6.png) 8 | The CRC32 checksum.
-![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) 9 | The container format. *Typically `.mkv` or `.mp4`.*
+![#ed8796](https://placehold.co/14x14/ed8796/ed8796.png) 1 | The name of the group/person who created the release
+![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) 2 | The title of the anime
+![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) 3 | The season/episode number
+![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | The source where the release was taken from. *Typically BD (Blu-ray) or WEB*
+![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | The resolution of the video file
+![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) 6 | The video codec. *Typically HEVC or AVC*
+![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) 7 | The audio codec. *Dual audio means the release contains two audio streams, typically the dubbed and original*
+![#f4dbd6](https://placehold.co/14x14/f4dbd6/f4dbd6.png) 8 | The CRC32 checksum
+![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) 9 | The container format. *Typically `.mkv` or `.mp4`*
 
 ===
 
@@ -81,7 +81,7 @@ These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa]
 +++ BD Remux
 
 Also known as: [!badge variant="info" text="BD Remux" margin="0 8 0 0"]
-[!badge variant="info" text="Blu-ray REMUX"]
+[!badge variant="info" text="Blu-ray Remux"]
 
 A losslessly packaged version of the BDMV put into `.mkv` files, this allows for slightly lower sizes (mkv has less overhead than m2ts), much better ease of use, lossless compression of audio, and tracks from other sources.
 
