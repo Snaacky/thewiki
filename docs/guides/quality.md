@@ -65,10 +65,10 @@ The encoding guides above should give you a general idea of the workflow, *but d
 
 +++ BDMV
 
-Tagged as: [!badge variant="info" text="BDMV" margin="0 8 0 0"]
+Also known as: [!badge variant="info" text="BDMV" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray"]
 
-A complete copy of the original Blu-ray, including menus, extras, adverts etc. Used as a source for making other releases or encodes. *These are not useful for watching.*
+A complete copy of the original Blu-ray, including menus, extras, adverts, etc. Used as a source for making other releases or encodes. *These are not useful for watching.*
 
 Japanese Blu-rays often have better quality than other countries as they allocate far more bitrate to the video. This is not necessarily intentional, but a side effect of having fewer episodes per disc and not including dub tracks, in contrast to other regions which tend to cram more episodes onto a single disc and have large 5.1 dubs.
 
@@ -80,7 +80,7 @@ These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa]
 
 +++ BD Remux
 
-Tagged as: [!badge variant="info" text="BD Remux" margin="0 8 0 0"]
+Also known as: [!badge variant="info" text="BD Remux" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray REMUX"]
 
 A losslessly packaged version of the BDMV put into `.mkv` files, this allows for slightly lower sizes (mkv has less overhead than m2ts), much better ease of use, lossless compression of audio, and tracks from other sources.
@@ -89,7 +89,7 @@ A Blu-ray Remux is generally the best version to get quality-wise, unless a dece
 
 +++ BD Encode
 
-Tagged as: [!badge variant="info" text="BD" margin="0 8 0 0"]
+Also known as: [!badge variant="info" text="BD" margin="0 8 0 0"]
 [!badge variant="info" text="BDRip" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray"]
 
