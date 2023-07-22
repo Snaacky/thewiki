@@ -15,7 +15,7 @@ Commonly used terminology:
 - **Codec** - The compression format used for the video stream and the biggest factor in compatibility with your system. *HEVC (H.265) and AVC (H.264) are the main ones*
 - **Bit depth** - The maximum colors that can be stored in the video. *Typically in 8-bit, or 10-bit for high-quality anime encodes*
   - Converting an 8-bit source to 10-bit might seem counterintuitive, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf)*
-- **Frame rate** - The frequency at which frames are displayed. *This will usually be roughly 23.976 fps*
+- **Frame rate** - The frequency at which frames are displayed. *This will usually be at roughly 23.976 fps*
   - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher frame rate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should similarly be avoided*
 - **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode*
   - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
@@ -44,9 +44,9 @@ Key                                                        | Meaning
 
 Quality is subjective to an extent, and there is a difference between flaws that need to be fixed and the preferences of the end user.
 
-Generally, the best release is an encode which fixes the flaws of an untouched Blu-ray (BDMV) while simultaneously not altering the original material. There are objective flaws called **artifacts**, a term used to broadly describe defects or foreign, unwanted elements in a video. There can be a number of causes, ranging from lossy compression, improper conversions, to post-processing adjustments like sharpening and resampling. *You can read about artifacts in detail [here](https://guide.encode.moe/encoding/video-artifacts.html).* On the other hand, end user preferences like excessive sharpening or contrast are destructive and go against the idea of a good encode.
+Generally, the best release is an encode which fixes the flaws of an untouched Blu-ray (BDMV) while simultaneously not altering the original material. There are objective flaws called **artifacts**, a term used to broadly describe defects or foreign, unwanted elements in a video. There can be several causes, ranging from lossy compression, improper conversions, to post-processing adjustments like sharpening and resampling. *You can read about artifacts in detail [here](https://guide.encode.moe/encoding/video-artifacts.html).* On the other hand, end user preferences like excessive sharpening or contrast are destructive and go against the idea of a good encode.
 
-The official BDMV is an encode of the original source master. Subsequently, it often suffers from various issues (e.g. aliasing, banding, blocking, noise) originating due a variety of reasons. For example, a lot of anime is natively 720p and is upscaled to 1080p for the Blu-ray. *Even if issues aren't present in the BDMV, they can appear in an encode due to compression.*
+The official BDMV is an encode of the original source master. Subsequently, it often suffers from various issues (e.g. aliasing, banding, blocking, noise) originating due to a variety of reasons. For example, a lot of anime is natively 720p and is upscaled to 1080p for the Blu-ray. *Even if issues aren't present in the BDMV, they can appear in an encode due to compression.*
 
 These issues can be fixed through filtering, a step which comes before encoding. The video is filtered with tools like [VapourSynth](https://github.com/vapoursynth/vapoursynth) before passing it on to the encoder. Since encoding is a lossy process, filtering is necessary to improve the video quality along with transparent encoder settings. *As a result, any unfiltered encodes are by definition worse than the source.*
 
@@ -65,31 +65,36 @@ The encoding guides above should give you a general idea of the workflow, *but d
 
 +++ BDMV
 
-Usually tagged as [BDMV], or less commonly just Blu-ray
+Tagged as: [!badge variant="info" text="BDMV" margin="0 8 0 0"]
+[!badge variant="info" text="Blu-ray"]
 
 A complete copy of the original Blu-ray, including menus, extras, adverts etc. Used as a source for making other releases or encodes. *These are not useful for watching.*
 
-Japanese Blu-rays often have better quality than other countries because they allocate far more bitrate to the video. This is not necessarily intentional, but a side effect of having very few episodes per disc and not including any dub tracks, in contrast to other regions which tend to cram many more episodes onto a single disc and have large 5.1 dubs.
+Japanese Blu-rays often have better quality than other countries as they allocate far more bitrate to the video. This is not necessarily intentional, but a side effect of having fewer episodes per disc and not including dub tracks, in contrast to other regions which tend to cram more episodes onto a single disc and have large 5.1 dubs.
 
-There are cases where regional discs do offer better quality. This generally applies when the Japanese discs have authoring issues resulting in the alternatives being good by comparison.
+There are cases where regional discs do offer better quality. This generally applies when Japanese discs have authoring issues, resulting in the alternatives being better by comparison.
 
-The common exception to this rule is Italian discs from Dynit, which frequently offer the best video even at lower bitrates due to filtering and better optimized encode settings.
+The common exception to this rule is Italian discs from Dynit, which frequently offer the best video even at lower bitrates due to filtering and better-optimized encode settings.
 
-These can mainly be found on [U2](https://u2.dmhy.org) (Private), however [Nyaa](https://nyaa.si) (Public) and [Skyeysnow](https://skyeysnow.com) (Private, Open Signup) will have some too. *Release groups don't matter for BDMVs because they are 1:1 copies of the disc, instead you should shop based on region.
+These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa](https://nyaa.si) (Public) and [Skyeysnow](https://skyeysnow.com) (Private, Open Signup) will have some too. *Release groups don't matter for BDMVs because they are 1:1 copies of the disc and should instead be chosen based on region.*
 
-+++ Bluray Remux
++++ BD Remux
 
-Usually tagged as BD Remux or BluRay REMUX
+Tagged as: [!badge variant="info" text="BD Remux" margin="0 8 0 0"]
+[!badge variant="info" text="Blu-ray REMUX"]
 
 A losslessly packaged version of the BDMV put into `.mkv` files, this allows for slightly lower sizes (mkv has less overhead than m2ts), much better ease of use, lossless compression of audio, and tracks from other sources.
 
-A Bluray Remux is generally the best version to get quality wise, unless a decent encoder has done a properly filtered release.
+A Blu-ray Remux is generally the best version to get quality-wise, unless a decent encoder has done a properly filtered release.
 
-+++ Bluray Encode
++++ BD Encode
 
-Usually tagged as BD, BDRip, or BluRay
+Tagged as: [!badge variant="info" text="BD" margin="0 8 0 0"]
+[!badge variant="info" text="BDRip" margin="0 8 0 0"]
+[!badge variant="info" text="Blu-ray"]
 
-An encode made directly from the BDMV/Remux. Generally the goal is to retain visual transparency to the source while reducing file size, however many good encoders will aim to make their release better than source via filtering.
+An encode made directly from the BDMV/Remux. Generally, the goal is to retain visual transparency to the source while reducing file size, however many good encoders will aim to make their release better than the source via filtering.
+
 Most can be found on [Nyaa](https://nyaa.si), with some rare stuff on places like [RuTracker](https://rutracker.org).
 
 +++ WEB-DL
@@ -102,21 +107,21 @@ WEB-DLs can be obtained from groups like [SubsPlease](https://subsplease.org) or
 
 +++ WEBRip
 
-WEBRips are transcodes of the official stream, since the definition is quite broad this can apply to screen recordings of the content, or encodes of a WEB-DL. *Because of this, WEBRips are generally not recommended, especially if a WEB-DL already exists.*
+WEBRips are transcodes of the official stream. This terminology is broad and is associated with either screen recordings of the content or encodes of a WEB-DL. *Because of this, WEBRips are generally not recommended, especially if a WEB-DL already exists.*
 
 Most WEBRips will be lower quality than their WEB-DL equivalent. However, some groups will attempt to improve upon a WEB-DL by filtering it to fix issues.
 
-Recently some encoders have been merging multiple web sources together, resulting in significantly better quality than any one web source, and sometimes even beating Blu-rays.
+Some encoders will merge multiple web sources, resulting in significantly better quality than any one web source, and sometimes even beating Blu-rays.
 
 +++ Re-encode
 
-Re-encodes are encodes of a Bluray encode or WEB source. The same encode made from the BDMV instead of an encode would've been better quality.
+Re-encodes are encodes of a Blu-ray encode or WEB source. Quality is subjective, as the same encode made from the BDMV instead of an encode will have better quality.
 
 Re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process, and information is lost at every stage. *On [Nyaa](https://nyaa.si), these are marked in red.*
 
 +++ Mini Encode
 
-Mini encodes are releases designed to save on space and bandwidth while retaining some quality. *These are not the same as re-encodes, as mini's encode from the original BD or WEB source.*
+Mini encodes are releases designed to save on space and bandwidth while retaining some quality. *These are not the same as re-encodes, as minis encode from the original BD or WEB source.*
 
 Most mini encodes of Blu-rays are better than a WEB, as they have more data to work with. You can check out some mini-encode comparisons below:
 
@@ -151,7 +156,7 @@ See the comparisons below between BD and WEB:
 
 ### Codecs
 
-Audio codecs are divided into lossless (DTS-HD MA, FLAC, TrueHD) and lossy formats (AAC, MP3, Opus). While lossless video will be multiple GBs per minute, lossless audio is more manageable when it comes to size, and you'll see many releases utilising it.
+Audio codecs are divided into lossless (DTS-HD MA, FLAC, TrueHD) and lossy formats (AAC, MP3, Opus). While lossless video will be multiple GBs per minute, lossless audio is more manageable when it comes to size, and you'll see many releases utilizing it.
 
 Lossless audio is typically unnecessary for the majority of sound systems. Even with the best audiophile-grade setup, most users will find it impossible to make out the difference between lossless and good lossy audio. *However, some exceptional music samples exist, which can be used to differentiate lower-bitrate lossy audio by listening to small extracted parts repeatedly.*
 
@@ -163,7 +168,7 @@ Alternatively, you can use the [ABX Comparator plugin for foobar2000](https://ww
 *If you manage to complete it with a decent probability, feel free to join our [Discord](https://discord.gg/snackbox) to talk about it!*
 !!!
 
-A good benchmark for lossy audio bit rates (Stereo/2.0) is:
+A good benchmark for lossy audio bitrates (Stereo/2.0) is:
 
 - 128Kbps for Opus
 - 160Kbps for AAC
@@ -173,16 +178,15 @@ For surround audio, multiply them by the number of stereo pairs.
 
 ## Subtitles
 
-Most anime releases will use `.ass` subtitles, as it allows for better styling options compared to alternatives like `.srt`. *However, this styling breaks when there is incompatibility somewhere in the playback chain.*
+Most anime releases will use `.ass` subtitles, as it allows for better styling options compared to alternatives like `.srt`. *However, this styling breaks when there is incompatibility somewhere during playback.*
 
-Fansubs use a variety of fonts in their subtitles. These are embedded within the `.mkv` files as attachments or provided separately in a folder. Fonts included separately can be installed to your system or placed in your player's fonts folder for a quick solution. They should be muxed in for perfect compatibility.
+Fansubs use a variety of fonts in their subtitles. These are embedded within the `.mkv` files as attachments or provided separately in a folder. Fonts included separately can be installed on your system or placed in your player's fonts folder for a quick solution. They should be muxed in for perfect compatibility.
 
 ### Fansubs
 
-Fansubs are fan-produced versions of subtitles. They will often edit the official subs from sources like [Crunchyroll](https://www.crunchyroll.com) and perform modifications such as retiming, adding OP/ED translations, typesetting signs, restyling etc. Often times they will also edit the dialogue to make it more/less localized (depending on the political persuasion of the group) and fix any perceived issues. While these edits can be an improvement over the original subs, *they may also introduce more errors than they fix.*
-Sometimes fansubbers will opt for an OTL (original translation) meaning they make the entire track from scratch.
+Fansubs are fan-produced versions of subtitles. They will often edit the official subs from sources like [Crunchyroll](https://www.crunchyroll.com) and perform modifications such as retiming, adding OP/ED translations, typesetting signs, restyling, etc. Often they will also edit the dialogue to make it more/less localized (depending on the political persuasion of the group) and fix any perceived issues. Some fansubbers will opt for an OTL (original translation), meaning they make the entire track from scratch.
 
-A degree of localization is always involved with translation to make sure the dialogue flows smoothly. Localization is the process of changing cultural references and puns to fit the target audience's context. Fansubs can range from excessive localization by completely eradicating and replacing the idea of Japan, to the untranslation of random phrases and lines back to Japanese, damaging the concept of subtitles. Most good fansubs lie somewhere in between these extremes. After looking at the work of these groups, you'll be able to figure out who has a tendency to do what.
+While these edits can be an improvement over the original subs, *they may also introduce more errors than they fix.* A degree of localization is always involved with translation to make sure the dialogue flows smoothly. Localization is the process of changing cultural references and puns to fit the target audience's context. Fansubs can range from excessive localization by completely eradicating and replacing the idea of Japan, to the untranslation of random phrases and lines back to Japanese, damaging the concept of subtitles. Most good fansubs lie somewhere in between these extremes. After looking at the work of these groups, you'll be able to figure out who tends to do what.
 
 ==- Getting Subs with AnimeTosho
 
