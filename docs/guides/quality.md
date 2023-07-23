@@ -31,8 +31,8 @@ Key                                                        | Meaning
 ![#ed8796](https://placehold.co/14x14/ed8796/ed8796.png) 1 | The name of the group/person who created the release
 ![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) 2 | The title of the anime
 ![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) 3 | The season/episode number
-![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | The source where the release was taken from. *Typically BD (Blu-ray) or WEB*
-![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | The resolution of the video file
+![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | The source where the video was taken from. *Typically BD (Blu-ray) or WEB*
+![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | The resolution of the video stream
 ![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) 6 | The video codec. *Typically HEVC or AVC*
 ![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) 7 | The audio codec. *Dual audio means the release contains two audio streams, typically the dubbed and original*
 ![#f4dbd6](https://placehold.co/14x14/f4dbd6/f4dbd6.png) 8 | The CRC32 checksum
@@ -68,13 +68,11 @@ The encoding guides above should give you a general idea of the workflow, *but d
 Also known as: [!badge variant="info" text="BDMV" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray"]
 
-A complete copy of the original Blu-ray, including menus, extras, adverts, etc. Used as a source for making other releases or encodes. *These are not useful for watching.*
+A complete copy of the original Blu-ray, including menus, extras, adverts, etc. Used as a source for making other releases or encodes. *These are not practical for watching.*
 
 Japanese Blu-rays often have better quality than other countries as they allocate far more bitrate to the video. This is not necessarily intentional, but a side effect of having fewer episodes per disc and not including dub tracks, in contrast to other regions which tend to cram more episodes onto a single disc and have large 5.1 dubs.
 
-There are cases where regional discs do offer better quality. This generally applies when Japanese discs have authoring issues, resulting in the alternatives being better by comparison.
-
-The common exception to this rule is Italian discs from Dynit, which frequently offer the best video even at lower bitrates due to filtering and better-optimized encode settings.
+There are cases where regional discs do offer better quality. This generally applies when Japanese discs have authoring issues, resulting in the alternatives being better by comparison. For instance, Italian discs from Dynit frequently offer the best video even at lower bitrates due to good filtering and better-optimized encode settings.
 
 These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa](https://nyaa.si) (Public) and [Skyeysnow](https://skyeysnow.com) (Private, Open Signup) will have some too. *Release groups don't matter for BDMVs because they are 1:1 copies of the disc and should instead be chosen based on region.*
 
@@ -83,9 +81,9 @@ These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa]
 Also known as: [!badge variant="info" text="BD Remux" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray Remux"]
 
-A losslessly packaged version of the BDMV put into `.mkv` files, this allows for slightly lower sizes (mkv has less overhead than m2ts), much better ease of use, lossless compression of audio, and tracks from other sources.
+A losslessly packaged version of the BDMV put into `.mkv` files, allowing for slightly lower sizes (`.mkv` files have less overhead than `.m2ts`), much better ease of use, lossless compression of audio, and tracks from other sources.
 
-A Blu-ray Remux is generally the best version to get quality-wise, unless a decent encoder has done a properly filtered release.
+A Blu-ray Remux is generally the best version to get quality-wise, unless a properly filtered release exists.
 
 +++ BD Encode
 
@@ -93,7 +91,7 @@ Also known as: [!badge variant="info" text="BD" margin="0 8 0 0"]
 [!badge variant="info" text="BDRip" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray"]
 
-An encode made directly from the BDMV/Remux. Generally, the goal is to retain visual transparency to the source while reducing file size, however many good encoders will aim to make their release better than the source via filtering.
+An encode made directly from the BDMV or BD Remux. Generally, the goal is to retain visual transparency to the source while reducing file size, however many good encoders will aim to make their release better than the source via filtering.
 
 Most can be found on [Nyaa](https://nyaa.si), with some rare stuff on places like [RuTracker](https://rutracker.org).
 
@@ -101,7 +99,7 @@ Most can be found on [Nyaa](https://nyaa.si), with some rare stuff on places lik
 
 A WEB-DL is a file losslessly downloaded from an official streaming service, such as Amazon, Crunchyroll, HIDIVE, Netflix, etc. As a result, they are a 1:1 copy of the official stream.
 
-Until the Blu-rays are released, this is the only and best source available for most airing anime. The quality of a WEB-DL from the same service will be identical no matter which group releases it. *Exceptions exist, such as Netflix with multiple quality profiles and Amazon with multiple regions/services*
+Until the Blu-rays are released, this is the only and best source available for most airing anime. The quality of a WEB-DL from the same service will be identical no matter which group releases it. *Some exceptions exist, such as Netflix with multiple quality profiles and Amazon with multiple regions/services.*
 
 WEB-DLs can be obtained from groups like [SubsPlease](https://subsplease.org) or [Erai-Raws](https://www.erai-raws.info). Both rip from [Crunchyroll](https://www.crunchyroll.com) and have fast release times, with the difference being that SubsPlease rips only the English subs, while Erai-Raws rips all the subs.
 
@@ -111,7 +109,7 @@ WEBRips are transcodes of the official stream. This terminology is broad and is 
 
 Most WEBRips will be lower quality than their WEB-DL equivalent. However, some groups will attempt to improve upon a WEB-DL by filtering it to fix issues.
 
-Some encoders will merge multiple web sources, resulting in significantly better quality than any one web source, and sometimes even beating Blu-rays.
+Some encoders will merge multiple WEB sources, resulting in significantly better quality than a single source, and sometimes even beating Blu-rays.
 
 +++ Re-encode
 
@@ -163,7 +161,7 @@ Lossless audio is typically unnecessary for the majority of sound systems. Even 
 !!!
 We suggest checking out these [online ABX tests](http://abx.digitalfeed.net) with your setup.
 
-Alternatively, you can use the [ABX Comparator plugin for foobar2000](https://www.foobar2000.org/components/view/foo_abx) with [this guide for setting it up](https://www.head-fi.org/threads/setting-up-an-abx-test-simple-guide-to-ripping-tagging-transcoding.655879/#post-9268096.). ABX Comparator allows you to compare any two tracks and produces a verifiable log.
+Alternatively, you can use the [ABX Comparator plugin for foobar2000](https://www.foobar2000.org/components/view/foo_abx) with [this guide for setting it up](https://www.head-fi.org/threads/setting-up-an-abx-test-simple-guide-to-ripping-tagging-transcoding.655879/#post-9268096.). ABX Comparator allows you to compare any two tracks and produce a verifiable log.
 
 *If you manage to complete it with a decent probability, feel free to join our [Discord](https://discord.gg/snackbox) to talk about it!*
 !!!
