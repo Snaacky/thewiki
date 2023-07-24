@@ -65,8 +65,8 @@ The encoding guides above should give you a general idea of the workflow, *but d
 
 +++ BDMV
 
-Also known as: [!badge variant="info" text="BDMV" margin="0 8 0 0"]
-[!badge variant="info" text="Blu-ray"]
+Also known as: [!badge variant="info" text="Blu-ray Disc" margin="0 8 0 0"]
+[!badge variant="info" text="Untouched Blu-ray"]
 
 A complete copy of the original Blu-ray, including menus, extras, adverts, etc. Used as a source for making other releases or encodes. *These are not practical for watching.*
 
@@ -78,7 +78,7 @@ These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa]
 
 +++ BD Remux
 
-Also known as: [!badge variant="info" text="BD Remux" margin="0 8 0 0"]
+Also known as: [!badge variant="info" text="Remux" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray Remux"]
 
 A losslessly packaged version of the BDMV put into `.mkv` files, allowing for slightly lower sizes (`.mkv` files have less overhead than `.m2ts`), much better ease of use, lossless compression of audio, and tracks from other sources.
@@ -128,7 +128,7 @@ On [Nyaa](https://nyaa.si), these are marked in red. You can see the difference 
 
 Mini encodes are releases designed to save on space and bandwidth while retaining some quality. *These are not the same as re-encodes, as minis encode from the original BD or WEB source.*
 
-Most mini encodes of Blu-rays are better than a WEB, as they have more data to work with. You can check out some mini-encode comparisons below:
+See the mini-encode comparisons below:
 
 - [Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs) - Web (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Minis (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
 - [Space Dandy](https://slow.pics/c/d5hU8mnp) - BD (MTBB) vs. Minis (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
