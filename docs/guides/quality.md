@@ -113,9 +113,16 @@ Some encoders will merge multiple WEB sources, resulting in significantly better
 
 +++ Re-encode
 
-Re-encodes are encodes of a Blu-ray encode or WEB source. Quality is subjective, as the same encode made from the BDMV instead of an encode will have better quality.
+Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on streaming sites, where they convert the original encode to a supported file format while also trying to save space.
 
-Re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process, and information is lost at every stage. *On [Nyaa](https://nyaa.si), these are marked in red.*
+The process of re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process and information is lost at every stage. As a result, it introduces artifacts like blocking and banding. *Because of this, re-encodes are not recommended if you want quality and should be avoided.*
+
+On [Nyaa](https://nyaa.si), these are marked in red. You can see the difference with re-encodes from the comparisons below:
+
+- [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - Raw (Reinforce) vs. Encode (HorribleSubs/Crunchyroll) vs. Re-encode (9anime, animepahe, Gogoanime, Minis)
+- [Oshi no Ko](https://slow.pics/c/6HqApHsn) - Encode (Setsugen, SubsPlease/Crunchyroll) vs. Re-encode (9anime, AniWatch (Zoro), Gogoanime, Marin)
+- [Senran Kagura](https://slow.pics/c/QLtX61qx) - Raw (BDMV, Snow-Raws) vs. Re-encode (9anime, animepahe, AniWatch (Zoro), Gogoanime)
+- [Vinland Saga S2](https://slow.pics/c/GjhwBwo3) - Encode (Foxtrot, SubsPlease/Crunchyroll) vs. Re-encode (Gogoanime, Marin, Minis)
 
 +++ Mini Encode
 
