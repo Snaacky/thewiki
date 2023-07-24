@@ -113,7 +113,7 @@ Some encoders will merge multiple WEB sources, resulting in significantly better
 
 +++ Re-encode
 
-Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on streaming sites, where they convert the original encode to a supported file format while also trying to save space.
+Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on [streaming sites](/sourcing/streaming/), where they convert the original encode to a supported file format while also trying to save space.
 
 The process of re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process and information is lost at every stage. As a result, it introduces artifacts like blocking and banding. *Because of this, re-encodes are not recommended if you want quality and should be avoided.*
 
