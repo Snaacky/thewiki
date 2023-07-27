@@ -6,13 +6,13 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 # mpv
 
-[mpv](https://mpv.io) is a versatile and lightweight media player with extensive customizabilty. It is used and recommended by most users as it supports a wide range of video file formats, audio and video codecs, and subtitle types. Additionally, it offers many advanced features and is available on multiple platforms.
+[mpv](https://mpv.io) is a versatile and lightweight media player with extensive customizability. It is used and recommended by most users as it supports a wide range of video file formats, audio and video codecs, and subtitle types. Additionally, it offers many advanced features and is available on multiple platforms.
 
 ## Installation
 
 ### Windows
 
-==- Installing a Pre-Compiled Build
+==- Installing the Source Binary
 
 1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
 [!button size="xs" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
@@ -25,9 +25,15 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ![Installing mpv](https://files.catbox.moe/ly721g.gif)
 
+==- Installing a Pre-Configured Source
+
+If you don't want to setup mpv yourself, a portable build of mpv is available below. It is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
+
+[!file mpv Portable Build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw)
+
 ==- Installing a Fork
 
-[mpv](https://mpv.io) can be found in the various forks below:
+[mpv](https://mpv.io) can also be found in the various forks below:
 
 - [ImPlay](https://github.com/tsl0922/ImPlay)
 - [mpv.net](https://github.com/mpvnet-player/mpv.net) [!button size="xs" variant="primary" icon="apps" text="Microsoft Store" target="blank" margin="0 8 0 0"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
@@ -79,7 +85,7 @@ apt install mpv
 
 By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder named `portable_config` next to where `mpv.exe` is stored can override this location as the root folder.
 
-+++ Default Root
++++ `%APPDATA%` Root [!badge variant="info" text="Default"]
 
 ```properties
 .
@@ -141,7 +147,7 @@ save-position-on-quit
 
 ## Scaler
 
-#change ewa_lanczos to spline36 if your system can't handle ewa_lanczos
+# If you encounter problems using ewa_lanczos, change to spline36
 scale=ewa_lanczos
 dscale=mitchell
 cscale=ewa_lanczos
@@ -162,9 +168,9 @@ slang=eng,en
 alang=jpn,ja
 
 # Dub
-# uncomment this section to prefer English Dub with subtitles for English Dub
-#alang=eng,en
+# Uncomment this section to prefer English dub with subtitles for English dub
 #slang=zxx,eng,en
+#alang=eng,en
 #subs-with-matching-audio=no
 ```
 
@@ -174,30 +180,30 @@ alang=jpn,ja
 See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation of all the options.
 !!!
 
-Setting                     | Meaning
-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`profile`                   | The profile to be used by mpv. *We recommend `gpu-hq` for high-quality playback*
-`vo`                        | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
-`gpu-api`                   | The graphics API to be used by mpv. *We recommend `vulkan` for high-end hardware*
-`keep-open`                 | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
-`save-position-on-quit`     | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this setting if you do not want the player to save your position*
-`scale`                     | The [upscale](#scaling) filter. *We recommend `ewa_lanczos` for best quality*
-`dscale`                    | The [downscale](#scaling) filter. *We recommend `mitchell` for best quality*
-`cscale`                    | The [scale](#scaling) for interpolating chroma information. *We recommend `ewa_lanczos` for best quality*
-`screenshot-format`         | File format used for screenshots. *We recommend `png` for lossless quality*
-`screenshot-high-bit-depth` | The bit depth for screenshots. *Leave this at `no` as it creates unnecessarily large files*
-`screenshot-png-compression`| The compression level for `.png` screenshots. *Can be set between `0` to `9`; a higher number means better compression and longer output time*
-`screenshot-directory`      | The directory to save screenshots to. *Currently set to your user's `Pictures/mpv/` folder*
-`screenshot-template`       | The naming scheme for screenshots. *See the [format specifiers](https://mpv.io/manual/stable/#options-screenshot-template)*
-`slang`                     | Priority list of subtitle languages to use when there are multiple tracks
-`alang`                     | Priority list of audio languages to use when there are multiple tracks
-`subs-with-matching-audio`  | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
+Option                                                                                           | Meaning
+-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. *We recommend `gpu-hq` for high-quality playback*
+[`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
+[`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *We recommend `vulkan` for high-end hardware*
+[`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
+[`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
+[`scale`](https://mpv.io/manual/stable/#options-scale)                                           | The [upscale](#scaling) filter. *We recommend `ewa_lanczos` for best quality*
+[`dscale`](https://mpv.io/manual/stable/#options-dscale)                                         | The [downscale](#scaling) filter. *We recommend `mitchell` for best quality*
+[`cscale`](https://mpv.io/manual/stable/#options-cscale)                                         | The [scale](#scaling) for interpolating chroma information. *We recommend `ewa_lanczos` for best quality*
+[`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *We recommend `png` for lossless quality*
+[`screenshot-high-bit-depth`](https://mpv.io/manual/stable/#options-screenshot-high-bit-depth)   | Use a bit depth similar to the source for screenshots. *Leave this at `no` as it creates unnecessarily large files*
+[`screenshot-png-compression`](https://mpv.io/manual/stable/#options-screenshot-png-compression) | The compression level for `.png` screenshots. *Can be set between `0` to `9`; a higher number means better compression and longer output time*
+[`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory to save screenshots to. *Currently set to your user's `Pictures/mpv/` folder*
+[`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots.
+[`slang`](https://mpv.io/manual/stable/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
+[`alang`](https://mpv.io/manual/stable/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
+[`subs-with-matching-audio`](https://mpv.io/manual/stable/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
 
 ===
 
 ## Advanced Config
 
-mpv can be fine-tuned to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. This section outlines the common options that are useful in improving your experience.
+mpv can be fine-tuned to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. This section outlines the common options that can improve your experience.
 
 !!!
 This guide assumes you know the root folder for your mpv config. *See [Config Overview](#config-overview) to see where to locate your config files.*
@@ -205,7 +211,7 @@ This guide assumes you know the root folder for your mpv config. *See [Config Ov
 
 ### Debanding
 
-Color banding is a visual artifact that is typically seen in gradients, where the colors can be easily differentiated by the human eye. *See [Tom Scott's video on explaining color banding](https://youtu.be/h9j89L8eQQk).*
+Color banding is a visual artifact that is typically seen in gradients, where the colors can be easily differentiated by the human eye. *See [Tom Scott's video explaining color banding](https://youtu.be/h9j89L8eQQk).*
 
 ![Banding (left) vs. No banding (right)](https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png)
 
@@ -236,7 +242,7 @@ After applying your changes, debanding can be applied at any time by pressing `S
 
 ### Scaling
 
-Scaling is the process of taking content that does not match your screen resolution and scaling it to fit your display. *See the [Playback Guide](/guides/playback/#scaling) for more information.*
+Scaling is the process of taking content that does not match your screen resolution and resizing it to fit your display. *See the [Playback Guide](/guides/playback/#scaling) for more information.*
 
 !!!
 Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
@@ -253,10 +259,10 @@ To use the shader, add the following to your `mpv.conf`:
 glsl-shaders="~~/shaders/nnedi3-nns256-win8x4.hook"
 ```
 
-To activate it with a key, add the following to your `input.conf`, replacing `<key>` with the bind of your choice (case-sensitive, e.g. `G`):
+To activate it with a key, add the following to your `input.conf`, replacing `G` with the bind of your choice, if necessary (case-sensitive):
 
 ```properties
-<key> change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
+G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
 ```
 
 +++ Mid-Range PCs
@@ -270,10 +276,10 @@ To use the shader, add the following to your `mpv.conf`:
 glsl-shaders="~~/shaders/nnedi3-nns128-win8x4.hook"
 ```
 
-To activate it with a key, add the following to your `input.conf`, replacing `<key>` with the bind of your choice (case-sensitive, e.g. `G`):
+To activate it with a key, add the following to your `input.conf`, replacing `G` with the bind of your choice, if necessary (case-sensitive):
 
 ```properties
-<key> change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
+G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
 ```
 
 +++ Low-End PCs
@@ -356,10 +362,10 @@ sub-ass-force-style=Kerning=yes
 
 +++
 
-To activate it with a key, add the following to your `input.conf`, replacing `<key>` with the bind of your choice (case-sensitive, e.g. `k`):
+To activate it with a key, add the following to your `input.conf`, replacing `k` with the bind of your choice, if necessary (case-sensitive):
 
 ```properties
-<key> cycle_values sub-ass-override "force" "no"
+k cycle_values sub-ass-override "force" "no"
 ```
 
 ### Auto Profiles
@@ -383,7 +389,7 @@ deband=yes
 
 In this example, the `simulcast` auto profile will automatically apply when you play a release created by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
 
-### QoL Changes
+### Quality of Life
 
 #### Volume
 
@@ -416,7 +422,7 @@ Below is a list of some popular skins:
 - [mfpbar](https://codeberg.org/NRK/mpv-toolbox/src/branch/master/mfpbar)
 - [ModernX](https://github.com/cyl0/ModernX)
 - [mpv-osc-modern](https://github.com/maoiscat/mpv-osc-modern)
+- [mpv-osc-tethys](https://github.com/Zren/mpv-osc-tethys)
+- [mpv-progressbar](https://github.com/torque/mpv-progressbar)
 - [oscc](https://github.com/longtermfree/oscc)
-- [progressbar](https://github.com/torque/mpv-progressbar)
-- [tethys](https://github.com/Zren/mpv-osc-tethys)
 - [uosc](https://github.com/tomasklaen/uosc)
