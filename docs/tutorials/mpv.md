@@ -15,9 +15,8 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 ==- Installing a Pre-Compiled Build
 
 1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
-
-[!button variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
-[!button variant="secondary" icon="download" text="32-bit"](https://sourceforge.net/projects/mpv-player-windows/files/32bit/)
+[!button size="xs" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
+[!button size="xs" variant="secondary" icon="download" text="32-bit"](https://sourceforge.net/projects/mpv-player-windows/files/32bit/)
 2. Once downloaded, extract the archive's contents to your specified location
 !!!warning
 This folder cannot be changed after installation. If you wish to change it in the future, you will need to uninstall it first.
@@ -39,7 +38,7 @@ If you want to access mpv from the command line, you will need to add it to Wind
 
 1. In *Windows Settings* > *System* > *About*, locate *Advanced System Settings*. Head to *Advanced* and click on *Environment Variables...*
 2. Under *System Variables*, select *Path* and click on *Edit...*
-3. Click *New* and point the new variable to the `mpv.exe` located where mpv is installed.
+3. Click *New* and point the new variable to the `mpv.exe` located where mpv is installed
 4. Dismiss all of the dialogs by clicking `OK`
 
 ===
@@ -49,9 +48,8 @@ If you want to access mpv from the command line, you will need to add it to Wind
 ==- Installing a Pre-Compiled Build
 
 Download the latest macOS build of [mpv](https://mpv.io):
-
-[!button variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
-[!button variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
+[!button size="xs" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
+[!button size="xs" variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
 
 ==- Installing with Homebrew
 
@@ -81,11 +79,11 @@ By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder 
 
 ```properties
 .
-└── mpv
-    ├── fonts
-    ├── script-opts
-    ├── scripts
-    ├── shaders
+└── mpv/
+    ├── fonts/
+    ├── script-opts/
+    ├── scripts/
+    ├── shaders/
     ├── input.conf
     └── mpv.conf
 ```
@@ -95,11 +93,11 @@ By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder 
 ```properties
 .
 ├── mpv.exe
-└── portable_config
-    ├── fonts
-    ├── script-opts
-    ├── scripts
-    ├── shaders
+└── portable_config/
+    ├── fonts/
+    ├── script-opts/
+    ├── scripts/
+    ├── shaders/
     ├── input.conf
     └── mpv.conf
 ```
@@ -178,7 +176,7 @@ Setting                     | Meaning
 `vo`                        | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
 `gpu-api`                   | The graphics API to be used by mpv. *We recommend `vulkan` for high-end hardware*
 `keep-open`                 | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
-`save-position-on-quit`     | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Use `no` if you do not want the player to save your position*
+`save-position-on-quit`     | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this setting if you do not want the player to save your position*
 `scale`                     | The [upscale](#scaling) filter. *We recommend `ewa_lanczos` for best quality*
 `dscale`                    | The [downscale](#scaling) filter. *We recommend `mitchell` for best quality*
 `cscale`                    | The [scale](#scaling) for interpolating chroma information. *We recommend `ewa_lanczos` for best quality*
@@ -197,6 +195,10 @@ Setting                     | Meaning
 
 mpv can be fine-tuned to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. This section outlines the common options that are useful in improving your experience.
 
+!!!
+This guide assumes you know the root folder for your mpv config. *See [Config Overview](#config-overview) to see where to locate your config files.*
+!!!
+
 ### Debanding
 
 Color banding is a visual artifact that is typically seen in gradients, where the colors can be easily differentiated by the human eye. *See [Tom Scott's video on explaining color banding](https://youtu.be/h9j89L8eQQk).*
@@ -205,7 +207,7 @@ Color banding is a visual artifact that is typically seen in gradients, where th
 
 To enable debanding in mpv, apply the following changes to your config:
 
-+++ mpv.conf
++++ `mpv.conf`
 
 ```properties
 ## Deband
@@ -218,7 +220,7 @@ deband-threshold=48
 deband-grain=48
 ```
 
-+++ input.conf
++++ `input.conf`
 
 ```properties
 D cycle deband
@@ -230,7 +232,7 @@ After applying your changes, debanding can be applied at any time by pressing `S
 
 ### Scaling
 
-Scaling is the process of taking content that does not match your screen resolution and scaling it to fit your display. *See the [Playback Guide](https://thewiki.moe/guides/playback/#scaling) for more information.*
+Scaling is the process of taking content that does not match your screen resolution and scaling it to fit your display. *See the [Playback Guide](/guides/playback/#scaling) for more information.*
 
 !!!
 Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
@@ -301,7 +303,7 @@ Below are a few commonly used styles:
 
 Download this font from [Font Meme](https://fontmeme.com/fonts/gandhi-sans-font/), or use the button below:
 
-[!button icon="download" variant="primary" text="Download"](https://fontmeme.com/fonts/gandhi-sans-font/)
+[!button icon="download" variant="primary" text="Gandhi Sans"](https://fontmeme.com/fonts/download/305566/gandhi-sans.zip)
 
 Run the `.otf` font file to install it system-wide or put it in your `fonts/` folder. Add the following to your `mpv.conf`:
 
@@ -329,7 +331,7 @@ sub-ass-force-style=Kerning=yes
 
 Download this font from [Font Meme](https://fontmeme.com/fonts/cabin-font/), or use the button below:
 
-[!button icon="download" variant="primary" text="Download"](https://fontmeme.com/fonts/cabin-font/)
+[!button icon="download" variant="primary" text="Cabin"](https://fontmeme.com/fonts/download/25391/cabin.zip)
 
 Run the `.ttf` font file to install it system-wide or put it in your `fonts/` folder. Add the following to your `mpv.conf`:
 
@@ -379,11 +381,22 @@ deband=yes
 
 In this example, the `simulcast` auto profile will automatically apply when you play a release created by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
 
+### QoL Changes
+
+#### Volume
+
+By default, scrolling the mouse wheel up and down seek the video instead of changing the volume. This behavior can be changed by adding the following to your `input.conf`:
+
+```properties
+WHEEL_UP      add volume 2
+WHEEL_DOWN    add volume -2
+```
+
 ### Custom Scripts
 
 mpv allows you to load custom scripts, allowing you to further expand the player's functionality.
 
-Below is a list of popular scripts:
+Below is a list of some popular scripts:
 
 - [autoload](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua) - Automatically adds all files present in the folder to a playlist
 - [mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager) - Script to create and manage playlists
@@ -396,10 +409,10 @@ Below is a list of popular scripts:
 
 You can customize how mpv looks by using skins.
 
-Below is a list of popular scripts:
+Below is a list of some popular skins:
 
-- [ModernX](https://github.com/cyl0/ModernX)
 - [mfpbar](https://codeberg.org/NRK/mpv-toolbox/src/branch/master/mfpbar)
+- [ModernX](https://github.com/cyl0/ModernX)
 - [mpv-osc-modern](https://github.com/maoiscat/mpv-osc-modern)
 - [oscc](https://github.com/longtermfree/oscc)
 - [progressbar](https://github.com/torque/mpv-progressbar)
