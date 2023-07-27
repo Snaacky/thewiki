@@ -85,7 +85,7 @@ apt install mpv
 
 By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder named `portable_config` next to where `mpv.exe` is stored can override this location as the root folder.
 
-+++ `%APPDATA%` Root [!badge variant="info" text="Default"]
++++ Default Root (`%APPDATA%`)
 
 ```properties
 .
@@ -283,7 +283,7 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
 ```
 
 +++ Low-End PCs
-For those with low-end hardware, stick with mpv's built-in scalers.
+For those with low-end hardware, we recommend sticking to mpv's built-in scalers.
 
 In your `mpv.conf`, add the following:
 
