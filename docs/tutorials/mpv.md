@@ -23,6 +23,8 @@ This folder cannot be changed after installation. If you wish to change it in th
 !!!
 3. Navigate to the `installer` folder and run `mpv-install.bat`. Follow the on-screen instructions to complete installation
 
+![Installing mpv](https://files.catbox.moe/ly721g.gif)
+
 ==- Installing a Fork
 
 [mpv](https://mpv.io) can be found in the various forks below:
@@ -65,6 +67,8 @@ brew install mpv
 
 ==- Debian (APT)
 
+Run the following command in your terminal:
+
 ```sh
 apt install mpv
 ```
@@ -73,9 +77,9 @@ apt install mpv
 
 ## Config Overview
 
-By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder named `portable_config` next to where `mpv.exe` is stored can override this location.
+By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder named `portable_config` next to where `mpv.exe` is stored can override this location as the root folder.
 
-+++ Default
++++ Default Root
 
 ```properties
 .
@@ -88,7 +92,7 @@ By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder 
     └── mpv.conf
 ```
 
-+++ With `portable_config/`
++++ `portable_config/` Root
 
 ```properties
 .
@@ -171,7 +175,7 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 !!!
 
 Setting                     | Meaning
-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 `profile`                   | The profile to be used by mpv. *We recommend `gpu-hq` for high-quality playback*
 `vo`                        | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
 `gpu-api`                   | The graphics API to be used by mpv. *We recommend `vulkan` for high-end hardware*
@@ -183,11 +187,11 @@ Setting                     | Meaning
 `screenshot-format`         | File format used for screenshots. *We recommend `png` for lossless quality*
 `screenshot-high-bit-depth` | The bit depth for screenshots. *Leave this at `no` as it creates unnecessarily large files*
 `screenshot-png-compression`| The compression level for `.png` screenshots. *Can be set between `0` to `9`; a higher number means better compression and longer output time*
-`screenshot-directory`      | The directory to save screenshots to. *Set to your user's `Pictures/mpv/` folder*
-`screenshot-template`       | The naming scheme for screenshots
+`screenshot-directory`      | The directory to save screenshots to. *Currently set to your user's `Pictures/mpv/` folder*
+`screenshot-template`       | The naming scheme for screenshots. *See the [format specifiers](https://mpv.io/manual/stable/#options-screenshot-template)*
 `slang`                     | Priority list of subtitle languages to use when there are multiple tracks
 `alang`                     | Priority list of audio languages to use when there are multiple tracks
-`subs-with-matching-audio`  | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track.*
+`subs-with-matching-audio`  | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
 
 ===
 
@@ -266,7 +270,7 @@ To use the shader, add the following to your `mpv.conf`:
 glsl-shaders="~~/shaders/nnedi3-nns128-win8x4.hook"
 ```
 
-To activate it with a key, add the following to your `input.conf`, replacing `<key>` with the bind of your choice (e.g. `G`):
+To activate it with a key, add the following to your `input.conf`, replacing `<key>` with the bind of your choice (case-sensitive, e.g. `G`):
 
 ```properties
 <key> change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
@@ -288,8 +292,6 @@ This is included in the [Basic Config](#basic-config).
 
 If these are too heavy for your system, delete these lines from your config. mpv will use `spline36` by default with `profile=gpu-hq`.
 +++
-
-Now you can press `shift + d` to enable or disable debanding.
 
 ### Subtitle Restyling
 
@@ -362,7 +364,7 @@ To activate it with a key, add the following to your `input.conf`, replacing `<k
 
 ### Auto Profiles
 
-Auto profiles allow users to automate actions based on certain conditions. Tasks such as debanding and subtitle restyling can be applied automatically when conditions are met, such as file names.
+Auto profiles allow users to automate actions based on certain conditions. Tasks such as [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) can be applied automatically when these conditions are met, such as file names.
 
 For instance, some seasonal releases may exhibit banding issues and less-appealing subtitles. To address this, we can create a `simulcast` auto profile, which will automatically apply debanding and restyle the subtitles when the filename includes specific keywords, such as the group tag.
 
@@ -407,7 +409,7 @@ Below is a list of some popular scripts:
 
 ### Skins
 
-You can customize how mpv looks by using skins.
+You can customize how mpv looks using skins. These are subject to personal preference, so find what works best for you.
 
 Below is a list of some popular skins:
 
