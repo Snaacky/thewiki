@@ -15,6 +15,7 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 ==- Installing a Pre-Compiled Build
 
 1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
+
 [!button variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
 [!button variant="secondary" icon="download" text="32-bit"](https://sourceforge.net/projects/mpv-player-windows/files/32bit/)
 2. Once downloaded, extract the archive's contents to your specified location
@@ -32,7 +33,7 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ===
 
-#### Adding mpv to PATH
+==- Adding mpv to PATH
 
 If you want to access mpv from the command line, you will need to add it to Windows PATH:
 
@@ -60,6 +61,8 @@ Install [Homebrew](https://brew.sh/). Then, run the following command in your te
 brew install mpv
 ```
 
+===
+
 ### Linux
 
 ==- Debian (APT)
@@ -68,7 +71,7 @@ brew install mpv
 apt install mpv
 ```
 
-==-
+===
 
 ## Config Overview
 
@@ -187,6 +190,8 @@ Setting                     | Meaning
 `slang`                     | Priority list of subtitle languages to use when there are multiple tracks
 `alang`                     | Priority list of audio languages to use when there are multiple tracks
 `subs-with-matching-audio`  | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track.*
+
+===
 
 ## Advanced Config
 
