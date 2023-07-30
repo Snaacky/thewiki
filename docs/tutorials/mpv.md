@@ -15,8 +15,8 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 ==- Installing the Source Binary
 
 1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
-[!button size="xs" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
-[!button size="xs" variant="secondary" icon="download" text="32-bit"](https://sourceforge.net/projects/mpv-player-windows/files/32bit/)
+[!button size="s" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
+[!button size="s" variant="secondary" icon="download" text="32-bit"](https://sourceforge.net/projects/mpv-player-windows/files/32bit/)
 2. Once downloaded, extract the archive's contents to your specified location
 !!!warning
 This folder cannot be changed after installation. If you wish to change it in the future, you will need to uninstall it first.
@@ -25,7 +25,7 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ![Installing mpv](https://files.catbox.moe/ly721g.gif)
 
-==- Installing a Pre-Configured Source
+==- Installing a Pre-Configured Build
 
 If you don't want to setup mpv yourself, a portable build of mpv is available below. It is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
 
@@ -53,11 +53,11 @@ If you want to access mpv from the command line, you will need to add it to Wind
 
 ### macOS
 
-==- Installing a Pre-Compiled Build
+==- Installing the Source Binary
 
 Download the latest macOS build of [mpv](https://mpv.io):
-[!button size="xs" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
-[!button size="xs" variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
+[!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
+[!button size="s" variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
 
 ==- Installing with Homebrew
 
@@ -98,7 +98,7 @@ By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder 
     └── mpv.conf
 ```
 
-+++ `portable_config/` Root
++++ Modified Root (`portable_config`)
 
 ```properties
 .
@@ -251,7 +251,7 @@ Scalers only work when the resolution of your video does not match your display.
 +++ High-End PCs
 For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
 
-Download the shader file and place it in your `shaders/` folder.
+Download the shader file and place it in your `shaders` folder.
 
 To use the shader, add the following to your `mpv.conf`:
 
@@ -268,7 +268,7 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
 +++ Mid-Range PCs
 For those with mid-range hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
 
-Download the shader file and place it in your `shaders/` folder.
+Download the shader file and place it in your `shaders` folder.
 
 To use the shader, add the following to your `mpv.conf`:
 
@@ -313,7 +313,7 @@ Download this font from [Font Meme](https://fontmeme.com/fonts/gandhi-sans-font/
 
 [!button icon="download" variant="primary" text="Gandhi Sans"](https://fontmeme.com/fonts/download/305566/gandhi-sans.zip)
 
-Run the `.otf` font file to install it system-wide or put it in your `fonts/` folder. Add the following to your `mpv.conf`:
+Run the `.otf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
 ```properties
 ## Restyle Subtitles
@@ -341,7 +341,7 @@ Download this font from [Font Meme](https://fontmeme.com/fonts/cabin-font/), or 
 
 [!button icon="download" variant="primary" text="Cabin"](https://fontmeme.com/fonts/download/25391/cabin.zip)
 
-Run the `.ttf` font file to install it system-wide or put it in your `fonts/` folder. Add the following to your `mpv.conf`:
+Run the `.ttf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
 ```properties
 ## Restyle Subtitles
