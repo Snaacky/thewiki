@@ -119,9 +119,9 @@ The process of re-encoding is generally considered a bad practice due to quality
 
 On [Nyaa](https://nyaa.si), these are marked in red. You can see the difference with re-encodes from the comparisons below:
 
-- [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - Raw (Reinforce) vs. Encode (HorribleSubs/Crunchyroll) vs. Re-encode (9anime, animepahe, Gogoanime, Minis)
-- [Oshi no Ko](https://slow.pics/c/6HqApHsn) - Encode (Setsugen, SubsPlease/Crunchyroll) vs. Re-encode (9anime, AniWatch (Zoro), Gogoanime, Marin)
-- [Senran Kagura](https://slow.pics/c/QLtX61qx) - Raw (BDMV, Snow-Raws) vs. Re-encode (9anime, animepahe, AniWatch (Zoro), Gogoanime)
+- [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - Raw (Reinforce) vs. Encode (HorribleSubs/Crunchyroll) vs. Re-encode (animepahe, AniWave (9anime), Gogoanime, Minis)
+- [Oshi no Ko](https://slow.pics/c/6HqApHsn) - Encode (Setsugen, SubsPlease/Crunchyroll) vs. Re-encode (AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin)
+- [Senran Kagura](https://slow.pics/c/QLtX61qx) - Raw (BDMV, Snow-Raws) vs. Re-encode (animepahe, AniWatch (Zoro), AniWave (9anime), Gogoanime)
 - [Vinland Saga S2](https://slow.pics/c/GjhwBwo3) - Encode (Foxtrot, SubsPlease/Crunchyroll) vs. Re-encode (Gogoanime, Marin, Minis)
 
 +++ Mini Encode
