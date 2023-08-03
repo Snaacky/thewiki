@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744293778113">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744403577697">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.1.0.744293778113" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.1.0.744403577697" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.744293778113" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.744403577697" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.744293778113" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.1.0.744293778113" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.744403577697" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.1.0.744403577697" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -213,7 +213,7 @@ To install the rest of the plugins, run the following commands in your terminal:
 <li>Install <a href="https://github.com/Irrational-Encoding-Wizardry/vs-preview">vs-preview</a>:</li>
 </ol>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-shell-session"><code v-pre class="language-shell-session">pip install git+https://github.com/Irrational-Encoding-Wizardry/vs-preview@2f28e7105b7ffec057d51196b7cea7aa5992b9d3pi</code></pre>
+<pre class="language-shell-session"><code v-pre class="language-shell-session">pip install vspreview</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="the-comparison-script">
     <h3>
@@ -232,6 +232,7 @@ To install the rest of the plugins, run the following commands in your terminal:
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
+from vspreview import set_output
 
 ## File paths: Hold shift and right-click your file, select copy as path, and paste it here
 clip1 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;)
@@ -316,9 +317,9 @@ clip2 = clip2.std.SetFrameProp('Name', data = source2)
 clip3 = clip3.std.SetFrameProp('Name', data = source3)
 
 ## Output: Comment/Uncomment as needed depending on how many clips you're comparing
-clip1.set_output(1)
-clip2.set_output(2)
-clip3.set_output(3)</code></pre>
+set_output(clip1, name=source1)
+set_output(clip2, name=source2)
+set_output(clip3, name=source3)</code></pre>
 </doc-codeblock></div>
 </doc-panel>
 <ol start="3">
