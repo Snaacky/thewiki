@@ -37,7 +37,7 @@ If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` file
 5. Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
 
 ```console
-pip install git+https://github.com/Irrational-Encoding-Wizardry/vs-preview@2f28e7105b7ffec057d51196b7cea7aa5992b9d3pi
+pip install vspreview
 ```
 
 ### The comparison script
@@ -51,6 +51,7 @@ pip install git+https://github.com/Irrational-Encoding-Wizardry/vs-preview@2f28e
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
+from vspreview import set_output
 
 ## File paths: Hold shift and right-click your file, select copy as path, and paste it here
 clip1 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
@@ -135,9 +136,9 @@ clip2 = clip2.std.SetFrameProp('Name', data = source2)
 clip3 = clip3.std.SetFrameProp('Name', data = source3)
 
 ## Output: Comment/Uncomment as needed depending on how many clips you're comparing
-clip1.set_output(1)
-clip2.set_output(2)
-clip3.set_output(3)
+set_output(clip1, name=source1)
+set_output(clip2, name=source2)
+set_output(clip3, name=source3)
 ```
 
 ==-
