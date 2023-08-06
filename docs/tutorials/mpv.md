@@ -27,9 +27,11 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ==- Installing a Pre-Configured Build
 
-If you don't want to setup mpv yourself, a portable build of mpv is available below. It is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
+If you don't want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
 
-[!file mpv Portable Build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw)
+[!file mpv (Default OSC)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-default.zip)
+[!file mpv (ModernX)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-modernx.zip)
+[!file mpv (uosc)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-uosc.zip)
 
 ==- Installing a Fork
 
