@@ -12,7 +12,7 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 ### Windows
 
-==- Installing the Source Binary
+==- Installing mpv
 
 1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
 [!button size="s" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
@@ -25,7 +25,7 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ![Installing mpv](https://files.catbox.moe/ly721g.gif)
 
-==- Installing a Pre-Configured Build
+==- Installing a pre-configured build
 
 If you don't want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
 
@@ -33,7 +33,7 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 [!file mpv (ModernX)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-modernx.zip)
 [!file mpv (uosc)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-uosc.zip)
 
-==- Installing a Fork
+==- Installing a fork
 
 [mpv](https://mpv.io) can also be found in the various forks below:
 
@@ -55,7 +55,7 @@ If you want to access mpv from the command line, you will need to add it to Wind
 
 ### macOS
 
-==- Installing the Source Binary
+==- Installing mpv
 
 Download the latest macOS build of [mpv](https://mpv.io):
 [!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
@@ -73,7 +73,7 @@ brew install mpv
 
 ### Linux
 
-==- Debian (APT)
+==- Ubuntu/Debian (APT)
 
 Run the following command in your terminal:
 
@@ -85,9 +85,9 @@ apt install mpv
 
 ## Config Overview
 
-By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder named `portable_config` next to where `mpv.exe` is stored can override this location as the root folder.
+By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder named `portable_config` next to where `mpv.exe` is stored can override this location as the config folder.
 
-+++ Default Root (`%APPDATA%`)
++++ Default (`%APPDATA%`)
 
 ```properties
 .
@@ -100,7 +100,7 @@ By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder 
     └── mpv.conf
 ```
 
-+++ Modified Root (`portable_config`)
++++ Modified (`portable_config`)
 
 ```properties
 .
@@ -186,7 +186,7 @@ Option                                                                          
 -------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. *We recommend `gpu-hq` for high-quality playback*
 [`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
-[`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *We recommend `vulkan` for high-end hardware*
+[`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *We recommend `vulkan` for most modern hardware*
 [`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
 [`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
 [`scale`](https://mpv.io/manual/stable/#options-scale)                                           | The [upscale](#scaling) filter. *We recommend `ewa_lanczos` for best quality*
@@ -195,8 +195,8 @@ Option                                                                          
 [`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *We recommend `png` for lossless quality*
 [`screenshot-high-bit-depth`](https://mpv.io/manual/stable/#options-screenshot-high-bit-depth)   | Use a bit depth similar to the source for screenshots. *Leave this at `no` as it creates unnecessarily large files*
 [`screenshot-png-compression`](https://mpv.io/manual/stable/#options-screenshot-png-compression) | The compression level for `.png` screenshots. *Can be set between `0` to `9`; a higher number means better compression and longer output time*
-[`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory to save screenshots to. *Currently set to your user's `Pictures/mpv/` folder*
-[`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots.
+[`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory to save screenshots to. *Currently set to your default pictures folder (`Pictures/mpv`)*
+[`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
 [`slang`](https://mpv.io/manual/stable/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
 [`alang`](https://mpv.io/manual/stable/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
 [`subs-with-matching-audio`](https://mpv.io/manual/stable/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
@@ -208,7 +208,7 @@ Option                                                                          
 mpv can be fine-tuned to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. This section outlines the common options that can improve your experience.
 
 !!!
-This guide assumes you know the root folder for your mpv config. *See [Config Overview](#config-overview) to see where to locate your config files.*
+This guide assumes you know the location of your config folder. *See [Config Overview](#config-overview) to see where to locate your config files.*
 !!!
 
 ### Debanding
