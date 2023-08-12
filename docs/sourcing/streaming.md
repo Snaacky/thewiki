@@ -64,6 +64,7 @@ You can see for yourself in the quality comparisons linked below:
 - [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - animepahe, AniWave (9anime), Gogoanime, torrents
 - [Vinland Saga S2](https://slow.pics/c/GjhwBwo3) - Gogoanime, Marin, torrents
 - [Oshi no Ko](https://slow.pics/c/6HqApHsn) - AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin, torrents
+- [Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) - animepahe, AniWatch, AniWave, Gogoanime, Marin, torrents
 
 #### Quality Tier List
 
