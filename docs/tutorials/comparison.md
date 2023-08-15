@@ -101,7 +101,7 @@ source3 = "ThirdSourceName"
 ##Set Colour Range: Marks the clip as limited (0) or full (1) range, DV clips will need to be set to limited after tonemapping.
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
-##clip2 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
+##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 
 ## Gamma: Fix Gamma bug (When one source is much brighter than others) [16 BIT REQUIRED]
 ##clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
