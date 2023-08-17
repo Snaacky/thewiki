@@ -123,10 +123,7 @@ On [Nyaa](https://nyaa.si), these are marked in red. You can see the difference 
 
 Mini encodes are releases designed to save on space and bandwidth while retaining some quality. *These are not the same as re-encodes, as minis encode from the original BD or WEB source.*
 
-See the mini-encode comparisons below:
-
-- [Goblin Slayer](https://slow.pics/c/Fnkp1NrA) - BD (CBM, Chihiro, ITBD, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Minis (Anime Time, Cerberus, DB, Judas, Sokudo)
-- [Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) - WEB (smol, SubsPlease/Crunchyroll 1080p/720p) vs. Minis (ASW, DKB, EMBER, Judas)
+See how mini encodes compare in the quality comparisons below.
 
 +++
 
@@ -136,7 +133,7 @@ Show                                                      | Type | Sources
 ----------------------------------------------------------|------|-------------------------------------------------------------------------------------------------------------------------------------------------------
 [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | BD   | Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Stream (animepahe, AniWave (9anime), Gogoanime) vs. Mini (EMBER)
 [Goblin Slayer](https://slow.pics/c/Fnkp1NrA)             | BD   | Raw (ITBD) vs. Encode (CBM, Chihiro, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Mini (Anime Time, Cerberus, DB, Judas, Sokudo)
-[Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs)         | WEB  | Official (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Minis (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
+[Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs)         | WEB  | Official (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Mini (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
 [Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | WEB  | Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Stream (animepahe, AniWatch, AniWave, Gogoanime, Marin) vs. Mini (ASW, DKB, EMBER, Judas)
 [Oshi no Ko](https://slow.pics/c/6HqApHsn)                | WEB  | Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Stream (AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin)
 [Senran Kagura](https://slow.pics/c/QLtX61qx)             | BD   | Raw (BDMV, Snow-Raws) vs. Stream (animepahe, AniWatch (Zoro), AniWave (9anime), Gogoanime)
