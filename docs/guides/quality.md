@@ -117,14 +117,7 @@ Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on
 
 The process of re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process and information is lost at every stage. As a result, it introduces artifacts like blocking and banding. *Because of this, re-encodes are not recommended if you want quality and should be avoided.*
 
-On [Nyaa](https://nyaa.si), these are marked in red. You can see the difference with re-encodes from the comparisons below:
-
-- [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Re-encode (animepahe, AniWave (9anime), Gogoanime, Minis)
-- [Goblin Slayer](https://slow.pics/c/Fnkp1NrA) - Raw (ITBD) vs. Encode (CBM, Chihiro, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Re-encode (Minis)
-- [Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) - Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Re-encode (animepahe, AniWatch, AniWave, Gogoanime, Marin, Minis)
-- [Oshi no Ko](https://slow.pics/c/6HqApHsn) - Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Re-encode (AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin)
-- [Senran Kagura](https://slow.pics/c/QLtX61qx) - Raw (BDMV, Snow-Raws) vs. Re-encode (animepahe, AniWatch (Zoro), AniWave (9anime), Gogoanime)
-- [Vinland Saga S2](https://slow.pics/c/GjhwBwo3) - Encode (Foxtrot) vs. Official (SubsPlease/Crunchyroll) vs. Re-encode (Gogoanime, Marin, Minis)
+On [Nyaa](https://nyaa.si), these are marked in red. You can see the difference with re-encodes from the comparisons below.
 
 +++ Mini Encode
 
@@ -134,11 +127,24 @@ See the mini-encode comparisons below:
 
 - [Goblin Slayer](https://slow.pics/c/Fnkp1NrA) - BD (CBM, Chihiro, ITBD, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Minis (Anime Time, Cerberus, DB, Judas, Sokudo)
 - [Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) - WEB (smol, SubsPlease/Crunchyroll 1080p/720p) vs. Minis (ASW, DKB, EMBER, Judas)
-- [Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs) - WEB (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Minis (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
-- [Space Dandy](https://slow.pics/c/d5hU8mnp) - BD (MTBB) vs. Minis (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
-- [SukiMega](https://slow.pics/c/vpcExtLb) - WEB (SubsPlease/Crunchyroll 1080p/720p) vs. Minis (Anime Time, ASW, DKB, EMBER, Judas, Valenciano)
 
 +++
+
+==- Quality Comparisons
+
+Show                                                      | Type | Sources
+----------------------------------------------------------|------|-------------------------------------------------------------------------------------------------------------------------------------------------------
+[Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | BD   | Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Stream (animepahe, AniWave (9anime), Gogoanime) vs. Mini (EMBER)
+[Goblin Slayer](https://slow.pics/c/Fnkp1NrA)             | BD   | Raw (ITBD) vs. Encode (CBM, Chihiro, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Mini (Anime Time, Cerberus, DB, Judas, Sokudo)
+[Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs)         | WEB  | Official (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Minis (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
+[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | WEB  | Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Stream (animepahe, AniWatch, AniWave, Gogoanime, Marin) vs. Mini (ASW, DKB, EMBER, Judas)
+[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | WEB  | Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Stream (AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin)
+[Senran Kagura](https://slow.pics/c/QLtX61qx)             | BD   | Raw (BDMV, Snow-Raws) vs. Stream (animepahe, AniWatch (Zoro), AniWave (9anime), Gogoanime)
+[Space Dandy](https://slow.pics/c/d5hU8mnp)               | BD   | Encode (MTBB) vs. Mini (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
+[SukiMega](https://slow.pics/c/vpcExtLb)                  | WEB  | Official (SubsPlease/Crunchyroll 1080p/720p) vs. Mini (Anime Time, ASW, DKB, EMBER, Judas, Valenciano)
+[Vinland Saga S2](https://slow.pics/c/GjhwBwo3)           | WEB  | Encode (Foxtrot) vs. Official (SubsPlease/Crunchyroll) vs. Stream (Gogoanime, Marin) vs. Mini (Anime Time, ASW, Breeze, DKB, EMBER, Judas, Trix)
+
+===
 
 ### Blu-ray vs WEB
 
