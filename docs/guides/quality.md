@@ -120,6 +120,7 @@ The process of re-encoding is generally considered a bad practice due to quality
 On [Nyaa](https://nyaa.si), these are marked in red. You can see the difference with re-encodes from the comparisons below:
 
 - [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Re-encode (animepahe, AniWave (9anime), Gogoanime, Minis)
+- [Goblin Slayer](https://slow.pics/c/Fnkp1NrA) - Raw (ITBD) vs. Encode (CBM, Chihiro, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Re-encode (Minis)
 - [Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) - Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Re-encode (animepahe, AniWatch, AniWave, Gogoanime, Marin, Minis)
 - [Oshi no Ko](https://slow.pics/c/6HqApHsn) - Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Re-encode (AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin)
 - [Senran Kagura](https://slow.pics/c/QLtX61qx) - Raw (BDMV, Snow-Raws) vs. Re-encode (animepahe, AniWatch (Zoro), AniWave (9anime), Gogoanime)
@@ -131,6 +132,7 @@ Mini encodes are releases designed to save on space and bandwidth while retainin
 
 See the mini-encode comparisons below:
 
+- [Goblin Slayer](https://slow.pics/c/Fnkp1NrA) - BD (CBM, Chihiro, ITBD, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Minis (Anime Time, Cerberus, DB, Judas, Sokudo)
 - [Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) - WEB (smol, SubsPlease/Crunchyroll 1080p/720p) vs. Minis (ASW, DKB, EMBER, Judas)
 - [Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs) - WEB (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Minis (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
 - [Space Dandy](https://slow.pics/c/d5hU8mnp) - BD (MTBB) vs. Minis (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
