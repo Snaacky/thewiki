@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745442075924">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745867324188">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.1.0.745442075924" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.1.0.745867324188" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.745442075924" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.745867324188" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.745442075924" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.745867324188" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -333,29 +333,95 @@
 </doc-tab>
 <doc-tab v-cloak id="re-encode">
 <template #title>Re-encode</template>
-<p>Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on <a href="../../sourcing/streaming/">streaming sites</a>, where they convert the original encode to a supported file format while also trying to save space.</p>
+<p>Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on <a href="../../sourcing/streaming/">streaming sites</a>, where they convert the original encode to a supported file format while also trying to save space, but can also be found in some mini encodes.</p>
 <p>The process of re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process and information is lost at every stage. As a result, it introduces artifacts like blocking and banding. <em>Because of this, re-encodes are not recommended if you want quality and should be avoided.</em></p>
-<p>On <a href="https://nyaa.si">Nyaa</a>, these are marked in red. You can see the difference with re-encodes from the comparisons below:</p>
-<ul>
-<li><a href="https://slow.pics/c/PZRxqAsh">Dokyuu Hentai HxEros</a> - Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Re-encode (animepahe, AniWave (9anime), Gogoanime, Minis)</li>
-<li><a href="https://slow.pics/c/rj3QjRMA">Masamune-kun no Revenge R</a> - Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Re-encode (animepahe, AniWatch, AniWave, Gogoanime, Marin, Minis)</li>
-<li><a href="https://slow.pics/c/6HqApHsn">Oshi no Ko</a> - Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Re-encode (AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin)</li>
-<li><a href="https://slow.pics/c/QLtX61qx">Senran Kagura</a> - Raw (BDMV, Snow-Raws) vs. Re-encode (animepahe, AniWatch (Zoro), AniWave (9anime), Gogoanime)</li>
-<li><a href="https://slow.pics/c/GjhwBwo3">Vinland Saga S2</a> - Encode (Foxtrot) vs. Official (SubsPlease/Crunchyroll) vs. Re-encode (Gogoanime, Marin, Minis)</li>
-</ul>
+<p>On <a href="https://nyaa.si">Nyaa</a>, these are marked in <span style="color:#E53E3E">red</span>. <em>You can see the difference with re-encodes from the comparisons below.</em></p>
 </doc-tab>
 <doc-tab v-cloak id="mini-encode">
 <template #title>Mini Encode</template>
-<p>Mini encodes are releases designed to save on space and bandwidth while retaining some quality. <em>These are not the same as re-encodes, as minis encode from the original BD or WEB source.</em></p>
-<p>See the mini-encode comparisons below:</p>
-<ul>
-<li><a href="https://slow.pics/c/rj3QjRMA">Masamune-kun no Revenge R</a> - WEB (smol, SubsPlease/Crunchyroll 1080p/720p) vs. Minis (ASW, DKB, EMBER, Judas)</li>
-<li><a href="https://slow.pics/c/HZeCzBjs">Jujutsu Kaisen S2</a> - WEB (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Minis (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)</li>
-<li><a href="https://slow.pics/c/d5hU8mnp">Space Dandy</a> - BD (MTBB) vs. Minis (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)</li>
-<li><a href="https://slow.pics/c/vpcExtLb">SukiMega</a> - WEB (SubsPlease/Crunchyroll 1080p/720p) vs. Minis (Anime Time, ASW, DKB, EMBER, Judas, Valenciano)</li>
-</ul>
+<p>Mini encodes are releases designed to save on space and bandwidth while retaining some quality. <em>These are not the same as re-encodes, as some minis encode from the original BD or WEB source.</em></p>
+<p>While re-encoding is a bad process, re-encoded minis will often use the original WEB source. With BDs, some will use the best encode/raw available for their release. They also usually opt for alternative and efficient codecs such as H.265 and apply various filters to compensate. As a result, they can be a better option when compared to <a href="../../sourcing/streaming/">streams</a> of similar size or bad encodes.</p>
+<p>Some may not notice the differences between a good mini encode and its alternatives. <em>See how minis compare in the quality comparisons below.</em></p>
 </doc-tab>
 </doc-tabs>
+<doc-panel id="quality-comparisons" collapsed>
+    <template #title>Quality Comparisons</template>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Most streams and WEB minis are re-encodes. These are marked in <span style="color:#E53E3E">red</span>. <em>See <doc-anchor-trigger to="#types-of-releases">Types of Releases</doc-anchor-trigger>.</em></p>
+        </div>
+    </div>
+</div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Show</th>
+<th>Type</th>
+<th>Sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://slow.pics/c/PZRxqAsh">Dokyuu Hentai HxEros</a></td>
+<td>BD</td>
+<td>Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Stream (<span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Gogoanime</span>) vs. Mini (<span style="color:#E53E3E">EMBER</span>)</td>
+</tr>
+<tr>
+<td><a href="https://slow.pics/c/Fnkp1NrA">Goblin Slayer</a></td>
+<td>BD</td>
+<td>Raw (ITBD) vs. Encode (CBM, Chihiro, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Mini (<span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">Cerberus</span>, DB, <span style="color:#E53E3E">Judas</span>, <span style="color:#E53E3E">Sokudo</span>)</td>
+</tr>
+<tr>
+<td><a href="https://slow.pics/c/HZeCzBjs">Jujutsu Kaisen S2</a></td>
+<td>WEB</td>
+<td>Official (NanakoRaws, SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Mini (<span style="color:#E53E3E">A-L</span>, <span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, Breeze, DKB, <span style="color:#E53E3E">Judas</span>, Sokudo, <span style="color:#E53E3E">Valenciano</span>)</td>
+</tr>
+<tr>
+<td><a href="https://slow.pics/c/rj3QjRMA">Masamune-kun no Revenge R</a></td>
+<td>WEB</td>
+<td>Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWatch</span>, <span style="color:#E53E3E">AniWave</span>, <span style="color:#E53E3E">Gogoanime</span>, <span style="color:#E53E3E">Marin</span>) vs. Mini (<span style="color:#E53E3E">ASW</span>, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>)</td>
+</tr>
+<tr>
+<td><a href="https://slow.pics/c/6HqApHsn">Oshi no Ko</a></td>
+<td>WEB</td>
+<td>Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:#E53E3E">AniWatch (Zoro)</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Gogoanime</span>, <span style="color:#E53E3E">Marin</span>)</td>
+</tr>
+<tr>
+<td><a href="https://slow.pics/c/QLtX61qx">Senran Kagura</a></td>
+<td>BD</td>
+<td>Raw (BDMV, Snow-Raws) vs. Stream (<span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWatch (Zoro)</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Gogoanime</span>)</td>
+</tr>
+<tr>
+<td><a href="https://slow.pics/c/d5hU8mnp">Space Dandy</a></td>
+<td>BD</td>
+<td>Encode (MTBB) vs. Mini (<span style="color:#E53E3E">AnimeRG</span>, Cleo 1080p/720p, Commie 720p, DHD)</td>
+</tr>
+<tr>
+<td><a href="https://slow.pics/c/vpcExtLb">SukiMega</a></td>
+<td>WEB</td>
+<td>Official (SubsPlease/Crunchyroll 1080p/720p) vs. Mini (<span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>, <span style="color:#E53E3E">Valenciano</span>)</td>
+</tr>
+<tr>
+<td><a href="https://slow.pics/c/GjhwBwo3">Vinland Saga S2</a></td>
+<td>WEB</td>
+<td>Encode (Foxtrot) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:#E53E3E">Gogoanime</span>, <span style="color:#E53E3E">Marin</span>) vs. Mini (<span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, Breeze, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>, <span style="color:#E53E3E">Trix</span>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-panel>
 <doc-anchor-target id="blu-ray-vs-web">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#blu-ray-vs-web">#</doc-anchor-trigger>
@@ -454,7 +520,7 @@
     </h2>
 </doc-anchor-target>
 <p>With so many options for every show, it can be hard to find which one to download.</p>
-<p>Although most re-encoded releases (<a href="https://nyaa.si/help#torrent-colors">marked in red on Nyaa</a>) should be avoided, the best release group varies per show, and there&#x27;s no foolproof way to tell without <a href="https://slow.pics/c/J8ow4zap">comparing the different sources</a>.</p>
+<p>Although most re-encoded releases (marked in <span style="color:#E53E3E">red</span> on <a href="https://nyaa.si/help#torrent-colors">Nyaa</a>) should be avoided, the best release group varies per show, and there&#x27;s no foolproof way to tell without <a href="https://slow.pics/c/J8ow4zap">comparing the different sources</a>.</p>
 <p><a href="https://releases.moe">SeaDex</a> is a quick and easy way to find the best releases for your shows. It is actively maintained to stay up-to-date on what&#x27;s best, backed by quality comparisons.</p>
 
                                 
