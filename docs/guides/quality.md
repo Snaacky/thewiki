@@ -129,17 +129,21 @@ See how mini encodes compare in the quality comparisons below.
 
 ==- Quality Comparisons
 
+!!!
+Most streams and WEB minis are re-encodes. These are marked in red. *See [Types of Releases](#types-of-releases).*
+!!!
+
 Show                                                      | Type | Sources
-----------------------------------------------------------|------|-------------------------------------------------------------------------------------------------------------------------------------------------------
-[Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | BD   | Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Stream (animepahe, AniWave (9anime), Gogoanime) vs. Mini (EMBER)
-[Goblin Slayer](https://slow.pics/c/Fnkp1NrA)             | BD   | Raw (ITBD) vs. Encode (CBM, Chihiro, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Mini (Anime Time, Cerberus, DB, Judas, Sokudo)
-[Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs)         | WEB  | Official (SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Mini (A-L, Anime Time, ASW, Breeze, DKB, Judas, NanakoRaws, Sokudo, Valenciano)
-[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | WEB  | Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Stream (animepahe, AniWatch, AniWave, Gogoanime, Marin) vs. Mini (ASW, DKB, EMBER, Judas)
-[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | WEB  | Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Stream (AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin)
-[Senran Kagura](https://slow.pics/c/QLtX61qx)             | BD   | Raw (BDMV, Snow-Raws) vs. Stream (animepahe, AniWatch (Zoro), AniWave (9anime), Gogoanime)
-[Space Dandy](https://slow.pics/c/d5hU8mnp)               | BD   | Encode (MTBB) vs. Mini (AnimeRG, Cleo 1080p/720p, Commie 720p, DHD)
-[SukiMega](https://slow.pics/c/vpcExtLb)                  | WEB  | Official (SubsPlease/Crunchyroll 1080p/720p) vs. Mini (Anime Time, ASW, DKB, EMBER, Judas, Valenciano)
-[Vinland Saga S2](https://slow.pics/c/GjhwBwo3)           | WEB  | Encode (Foxtrot) vs. Official (SubsPlease/Crunchyroll) vs. Stream (Gogoanime, Marin) vs. Mini (Anime Time, ASW, Breeze, DKB, EMBER, Judas, Trix)
+----------------------------------------------------------|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | BD   | Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Stream (<span style="color:red">animepahe</span>, <span style="color:red">AniWave (9anime)</span>, <span style="color:red">Gogoanime</span>) vs. Mini (<span style="color:red">EMBER</span>)
+[Goblin Slayer](https://slow.pics/c/Fnkp1NrA)             | BD   | Raw (ITBD) vs. Encode (CBM, Chihiro, Moozzi2, mottoj, Nep_Blanc/Nep_Blanc Small, OZR, VCB-Studio) vs. Mini (<span style="color:red">Anime Time</span>, <span style="color:red">Cerberus</span>, DB, <span style="color:red">Judas</span>, <span style="color:red">Sokudo</span>)
+[Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs)         | WEB  | Official (NanakoRaws, SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Mini (<span style="color:red">A-L</span>, <span style="color:red">Anime Time</span>, <span style="color:red">ASW</span>, Breeze, DKB, <span style="color:red">Judas</span>, Sokudo, <span style="color:red">Valenciano</span>)
+[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | WEB  | Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:red">animepahe</span>, <span style="color:red">AniWatch</span>, <span style="color:red">AniWave</span>, <span style="color:red">Gogoanime</span>, <span style="color:red">Marin</span>) vs. Mini (<span style="color:red">ASW</span>, DKB, <span style="color:red">EMBER</span>, <span style="color:red">Judas</span>)
+[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | WEB  | Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:red">AniWatch (Zoro)</span>, <span style="color:red">AniWave (9anime)</span>, <span style="color:red">Gogoanime</span>, <span style="color:red">Marin</span>)
+[Senran Kagura](https://slow.pics/c/QLtX61qx)             | BD   | Raw (BDMV, Snow-Raws) vs. Stream (<span style="color:red">animepahe</span>, <span style="color:red">AniWatch (Zoro)</span>, <span style="color:red">AniWave (9anime)</span>, <span style="color:red">Gogoanime</span>)
+[Space Dandy](https://slow.pics/c/d5hU8mnp)               | BD   | Encode (MTBB) vs. Mini (<span style="color:red">AnimeRG</span>, Cleo 1080p/720p, Commie 720p, DHD)
+[SukiMega](https://slow.pics/c/vpcExtLb)                  | WEB  | Official (SubsPlease/Crunchyroll 1080p/720p) vs. Mini (<span style="color:red">Anime Time</span>, <span style="color:red">ASW</span>, DKB, <span style="color:red">EMBER</span>, <span style="color:red">Judas</span>, <span style="color:red">Valenciano</span>)
+[Vinland Saga S2](https://slow.pics/c/GjhwBwo3)           | WEB  | Encode (Foxtrot) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:red">Gogoanime</span>, <span style="color:red">Marin</span>) vs. Mini (<span style="color:red">Anime Time</span>, <span style="color:red">ASW</span>, Breeze, DKB, <span style="color:red">EMBER</span>, <span style="color:red">Judas</span>, <span style="color:red">Trix</span>)
 
 ===
 
