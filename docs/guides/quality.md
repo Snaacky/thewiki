@@ -113,24 +113,26 @@ Some encoders will merge multiple WEB sources, resulting in significantly better
 
 +++ Re-encode
 
-Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on [streaming sites](/sourcing/streaming/), where they convert the original encode to a supported file format while also trying to save space.
+Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on [streaming sites](/sourcing/streaming/), where they convert the original encode to a supported file format while also trying to save space, but can also be found in some mini encodes.
 
 The process of re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process and information is lost at every stage. As a result, it introduces artifacts like blocking and banding. *Because of this, re-encodes are not recommended if you want quality and should be avoided.*
 
-On [Nyaa](https://nyaa.si), these are marked in red. You can see the difference with re-encodes from the comparisons below.
+On [Nyaa](https://nyaa.si), these are marked in <span style="color:red">red</span>. *You can see the difference with re-encodes from the comparisons below.*
 
 +++ Mini Encode
 
-Mini encodes are releases designed to save on space and bandwidth while retaining some quality. *These are not the same as re-encodes, as minis encode from the original BD or WEB source.*
+Mini encodes are releases designed to save on space and bandwidth while retaining some quality. *These are not the same as re-encodes, as some minis encode from the original BD or WEB source.*
 
-See how mini encodes compare in the quality comparisons below.
+While re-encoding is a bad process, re-encoded minis will often use the original WEB source. With BDs, some will use the best encode/raw available for their release. They also usually opt for alternative and efficient codecs such as H.265 and apply various filters to compensate. As a result, they can be a better option when compared to [streams](/sourcing/streaming/) of similar size or bad encodes.
+
+Some may not notice the differences between a good mini encode and its alternatives. *See how minis compare in the quality comparisons below.*
 
 +++
 
 ==- Quality Comparisons
 
 !!!
-Most streams and WEB minis are re-encodes. These are marked in red. *See [Types of Releases](#types-of-releases).*
+Most streams and WEB minis are re-encodes. These are marked in <span style="color:red">red</span>. *See [Types of Releases](#types-of-releases).*
 !!!
 
 Show                                                      | Type | Sources
@@ -218,6 +220,6 @@ They can be downloaded under the *Subtitles* section of a release:
 
 With so many options for every show, it can be hard to find which one to download.
 
-Although most re-encoded releases ([marked in red on Nyaa](https://nyaa.si/help#torrent-colors)) should be avoided, the best release group varies per show, and there's no foolproof way to tell without [comparing the different sources](https://slow.pics/c/J8ow4zap).
+Although most re-encoded releases (marked in <span style="color:red">red</span> on [Nyaa](https://nyaa.si/help#torrent-colors)) should be avoided, the best release group varies per show, and there's no foolproof way to tell without [comparing the different sources](https://slow.pics/c/J8ow4zap).
 
 [SeaDex](https://releases.moe) is a quick and easy way to find the best releases for your shows. It is actively maintained to stay up-to-date on what's best, backed by quality comparisons.
