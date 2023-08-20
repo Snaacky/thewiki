@@ -58,13 +58,15 @@ While streaming sites will offer worse video quality compared to alternatives su
 
 You can see for yourself in the quality comparisons linked below:
 
-- [Demon Slayer](https://slow.pics/c/pjYaqdnr) - AniWatch (Zoro), AniWave (9anime), animepahe, Gogoanime, Marin (tenshi), torrents
-- [Fate/Zero](https://slow.pics/c/1LNZtDzm) - animepahe, AniWave (9anime), Gogoanime, Marin (tenshi), torrents
-- [Senran Kagura](https://slow.pics/c/QLtX61qx) - AniWatch (Zoro), AniWave (9anime), animepahe, Gogoanime, torrents
-- [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh) - animepahe, AniWave (9anime), Gogoanime, torrents
-- [Vinland Saga S2](https://slow.pics/c/GjhwBwo3) - Gogoanime, Marin, torrents
-- [Oshi no Ko](https://slow.pics/c/6HqApHsn) - AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin, torrents
-- [Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) - animepahe, AniWatch, AniWave, Gogoanime, Marin, torrents
+Show                                                      | Sources
+----------------------------------------------------------|------------------------------------------------------------------------------------
+[Demon Slayer](https://slow.pics/c/pjYaqdnr)              | AniWatch (Zoro), AniWave (9anime), animepahe, Gogoanime, Marin (tenshi), torrents
+[Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | animepahe, AniWave (9anime), Gogoanime, torrents
+[Fate/Zero](https://slow.pics/c/1LNZtDzm)                 | animepahe, AniWave (9anime), Gogoanime, Marin (tenshi), torrents
+[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | animepahe, AniWatch, AniWave, Gogoanime, Marin, torrents
+[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | AniWatch (Zoro), AniWave (9anime), Gogoanime, Marin, torrents
+[Senran Kagura](https://slow.pics/c/QLtX61qx)             | AniWatch (Zoro), AniWave (9anime), animepahe, Gogoanime, torrents
+[Vinland Saga S2](https://slow.pics/c/GjhwBwo3)           | Gogoanime, Marin, torrents
 
 #### Quality Tier List
 
