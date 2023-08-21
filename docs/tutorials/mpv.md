@@ -85,7 +85,7 @@ That's it for the basic installation of MPV. You can use it without doing anythi
 ==- Preconfigured MPV portable build
 
 If you don't want to setup MPV yourself, you can grab the preconfigured MPV portable build linked below. It has the same settings as described in this guide. All you need to do is download it and follow these installation instructions.
-[!file MPV Portable Build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw)
+[!file MPV Portable Build](https://files.catbox.moe/99g9jg.zip)
 
 ===
 
