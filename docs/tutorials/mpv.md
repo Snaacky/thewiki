@@ -12,7 +12,7 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 ### Windows
 
-==- Installing mpv
+==- 🔧 Installing mpv
 
 1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
 [!button size="s" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
@@ -25,7 +25,7 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ![Installing mpv](https://files.catbox.moe/ly721g.gif)
 
-==- Installing a pre-configured build
+==- 📦 Installing a pre-configured build
 
 If you don't want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
 
@@ -33,7 +33,7 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 [!file mpv (ModernX)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-modernx.zip)
 [!file mpv (uosc)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-uosc.zip)
 
-==- Installing a fork
+==- 🍴 Installing a fork
 
 [mpv](https://mpv.io) can also be found in the various forks below:
 
@@ -42,7 +42,7 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 
 ===
 
-==- Adding mpv to PATH
+==- 📁 Adding mpv to PATH
 
 If you want to access mpv from the command line, you will need to add it to Windows PATH:
 
@@ -55,13 +55,13 @@ If you want to access mpv from the command line, you will need to add it to Wind
 
 ### macOS
 
-==- Installing mpv
+==- 🔧 Installing mpv
 
 Download the latest macOS build of [mpv](https://mpv.io):
 [!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
 [!button size="s" variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
 
-==- Installing with Homebrew
+==- 🍺 Installing with Homebrew
 
 Install [Homebrew](https://brew.sh/). Then, run the following command in your terminal:
 
@@ -69,11 +69,17 @@ Install [Homebrew](https://brew.sh/). Then, run the following command in your te
 brew install mpv
 ```
 
+==- 🍴 Installing a fork
+
+[mpv](https://mpv.io) can also be found in the various forks below:
+
+- [IINA](https://iina.io)
+
 ===
 
 ### Linux
 
-==- Ubuntu/Debian (APT)
+==- 🔧 Installing on Ubuntu/Debian (APT)
 
 Run the following command in your terminal:
 
@@ -183,7 +189,7 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 !!!
 
 Option                                                                                           | Meaning
--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. *We recommend `gpu-hq` for high-quality playback*
 [`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
 [`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *We recommend `vulkan` for most modern hardware*
@@ -195,7 +201,7 @@ Option                                                                          
 [`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *We recommend `png` for lossless quality*
 [`screenshot-high-bit-depth`](https://mpv.io/manual/stable/#options-screenshot-high-bit-depth)   | Use a bit depth similar to the source for screenshots. *Leave this at `no` as it creates unnecessarily large files*
 [`screenshot-png-compression`](https://mpv.io/manual/stable/#options-screenshot-png-compression) | The compression level for `.png` screenshots. *Can be set between `0` to `9`; a higher number means better compression and longer output time*
-[`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory to save screenshots to. *Currently set to your default pictures folder (`Pictures/mpv`)*
+[`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
 [`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
 [`slang`](https://mpv.io/manual/stable/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
 [`alang`](https://mpv.io/manual/stable/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
@@ -311,7 +317,7 @@ Below are a few commonly used styles:
 
 ![Gandhi Sans](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png)
 
-Download this font from [Font Meme](https://fontmeme.com/fonts/gandhi-sans-font/), or use the button below:
+[Download this font here](https://fontmeme.com/fonts/gandhi-sans-font) or use the button below:
 
 [!button icon="download" variant="primary" text="Gandhi Sans"](https://fontmeme.com/fonts/download/305566/gandhi-sans.zip)
 
@@ -339,7 +345,7 @@ sub-ass-force-style=Kerning=yes
 
 ![Cabin](https://user-images.githubusercontent.com/78981416/248583220-ac376f74-ce9f-4c3c-800b-370355a841f0.png)
 
-Download this font from [Font Meme](https://fontmeme.com/fonts/cabin-font/), or use the button below:
+[Download this font here](https://fontmeme.com/fonts/cabin-font) or use the button below:
 
 [!button icon="download" variant="primary" text="Cabin"](https://fontmeme.com/fonts/download/25391/cabin.zip)
 
@@ -389,7 +395,9 @@ sub-ass-override=force
 deband=yes
 ```
 
-In this example, the `simulcast` auto profile will automatically apply when you play a release created by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
+!!!
+In this example, the `simulcast` auto profile will automatically apply when you play a release by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
+!!!
 
 ### Quality of Life
 
