@@ -69,13 +69,11 @@ Install [Homebrew](https://brew.sh/). Then, run the following command in your te
 brew install mpv
 ```
 
-==- 🍴 Installing a fork
-
-[mpv](https://mpv.io) can also be found in the various forks below:
-
-- [IINA](https://iina.io)
-
 ===
+
+!!!warning
+[IINA](https://iina.io) is not recommended as it can display incorrect colors. We suggest sticking with the stock [mpv](https://mpv.io) player.
+!!!
 
 ### Linux
 
