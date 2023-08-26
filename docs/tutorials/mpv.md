@@ -6,13 +6,13 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 # mpv
 
-[mpv](https://mpv.io) is a versatile and lightweight media player with extensive customizability. It is used and recommended by most users as it supports a wide range of video file formats, audio and video codecs, and subtitle types. Additionally, it offers many advanced features and is available on multiple platforms.
+[mpv](https://mpv.io) is a versatile and lightweight media player with extensive customizability. It is used and recommended by most enthusiasts as it supports a wide range of video, audio, and subtitle formats. Additionally, it offers many advanced features and is available on multiple platforms.
 
 ## Installation
 
 ### Windows
 
-==- 🔧 Installing mpv
++++ 🔧 Installing mpv
 
 1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
 [!button size="s" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
@@ -23,9 +23,13 @@ This folder cannot be changed after installation. If you wish to change it in th
 !!!
 3. Navigate to the `installer` folder and run `mpv-install.bat`. Follow the on-screen instructions to complete installation
 
+==- Video tutorial
+
 ![Installing mpv](https://files.catbox.moe/ly721g.gif)
 
-==- 📦 Installing a pre-configured build
+==-
+
++++ 📦 Installing a pre-configured build
 
 If you don't want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
 
@@ -33,14 +37,14 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 [!file mpv (ModernX)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-modernx.zip)
 [!file mpv (uosc)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-uosc.zip)
 
-==- 🍴 Installing a fork
++++ 🍴 Installing a fork
 
 [mpv](https://mpv.io) can also be found in the various forks below:
 
 - [ImPlay](https://github.com/tsl0922/ImPlay)
 - [mpv.net](https://github.com/mpvnet-player/mpv.net) [!button size="xs" variant="primary" icon="apps" text="Microsoft Store" target="blank" margin="0 8 0 0"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
-===
++++
 
 ==- 📁 Adding mpv to PATH
 
@@ -51,17 +55,17 @@ If you want to access mpv from the command line, you will need to add it to Wind
 3. Click *New* and point the new variable to the `mpv.exe` located where mpv is installed
 4. Dismiss all of the dialogs by clicking `OK`
 
-===
+==-
 
 ### macOS
 
-==- 🔧 Installing mpv
++++ 🔧 Installing mpv
 
 Download the latest macOS build of [mpv](https://mpv.io):
 [!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
 [!button size="s" variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
 
-==- 🍺 Installing with Homebrew
++++ 🍺 Installing with Homebrew
 
 Install [Homebrew](https://brew.sh/). Then, run the following command in your terminal:
 
@@ -69,7 +73,7 @@ Install [Homebrew](https://brew.sh/). Then, run the following command in your te
 brew install mpv
 ```
 
-===
++++
 
 !!!warning
 [IINA](https://iina.io) is not recommended as it can display incorrect colors. We suggest sticking with the stock [mpv](https://mpv.io) player.
@@ -77,7 +81,7 @@ brew install mpv
 
 ### Linux
 
-==- 🔧 Installing on Ubuntu/Debian (APT)
++++ 🔧 Installing on Ubuntu/Debian (APT)
 
 Run the following command in your terminal:
 
@@ -85,7 +89,7 @@ Run the following command in your terminal:
 apt install mpv
 ```
 
-===
++++
 
 ## Config Overview
 
@@ -138,6 +142,8 @@ Some folders may not be present by default and will need to be created.
 mpv is a great player out-of-the-box which can be extensively customized to your liking.
 
 We recommend taking your time to create your own config. If you want to get up and running quickly, we suggest using the generic `mpv.conf` config below:
+
+==- generic mpv.conf
 
 ```properties
 ## Video
