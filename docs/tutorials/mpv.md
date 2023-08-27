@@ -143,7 +143,7 @@ mpv is a great player out-of-the-box which can be extensively customized to your
 
 We recommend taking your time to create your own config. If you want to get up and running quickly, we suggest using the generic `mpv.conf` config below:
 
-==- generic mpv.conf
+==- Generic mpv.conf
 
 ```properties
 ## Video
@@ -186,7 +186,7 @@ alang=jpn,ja
 #subs-with-matching-audio=no
 ```
 
-==- Understanding the Config
+==- Understanding the config
 
 !!!
 See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation of all the options.
