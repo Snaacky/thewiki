@@ -25,7 +25,7 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ==- Video tutorial
 
-![Installing mpv](https://files.catbox.moe/ly721g.gif)
+[!embed text="Installing mpv on Windows"](https://files.catbox.moe/dio3dj.mp4)
 
 ==-
 
@@ -143,7 +143,7 @@ mpv is a great player out-of-the-box which can be extensively customized to your
 
 We recommend taking your time to create your own config. If you want to get up and running quickly, we suggest using the generic `mpv.conf` config below:
 
-==- Generic mpv.conf
+==- Generic `mpv.conf`
 
 ```properties
 ## Video
