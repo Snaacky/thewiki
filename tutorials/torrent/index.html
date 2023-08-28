@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746539698774">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746539847902">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.2.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.2.0.746539698774" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.2.0.746539847902" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.2.0.746539698774" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.2.0.746539847902" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.2.0.746539698774" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.2.0.746539698774" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.2.0.746539847902" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.2.0.746539847902" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -159,11 +159,20 @@
         <span>Torrent</span>
     </h1>
 </doc-anchor-target>
-<doc-panel id="what-is-a-torrent-file" collapsed>
-    <template #title>What is a .torrent file?</template>
+<doc-anchor-target id="what-is-a-torrent-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-torrent-file">#</doc-anchor-trigger>
+        <span>What is a .torrent file?</span>
+    </h2>
+</doc-anchor-target>
 <p>A <code v-pre>.torrent</code> file is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music, games, or documents, over the Internet. It contains metadata that describes the to-be-downloaded content and tells BitTorrent where to download the content from. For example, <code v-pre>.torrent</code> files specify the name, file size, and folder structure of to-be-downloaded content.</p>
-</doc-panel>
-<p>Before you make a torrent, there are a few things to keep in mind:</p>
+<doc-anchor-target id="before-you-start">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#before-you-start">#</doc-anchor-trigger>
+        <span>Before you start</span>
+    </h2>
+</doc-anchor-target>
+<p>There are a few things to keep in mind before creating a torrent:</p>
 <ul>
 <li>Newer clients and tools allow you to make three types of <code v-pre>.torrent</code> files which are <code v-pre>v1</code>, <code v-pre>Hybrid</code> and <code v-pre>v2</code>. Always use <code v-pre>v1</code> when making torrents because none of the public or private trackers currently support <code v-pre>Hybrid</code> or <code v-pre>v2</code> as these are <a href="https://blog.libtorrent.org/2020/09/bittorrent-v2/">relatively new</a>.</li>
 <li>Do not make a torrent of a directory containing a single file, instead make a torrent of the file itself.</li>
@@ -179,44 +188,30 @@
     4 to 8GB  - 8MiB
     8 to ∞ GB - 16MiB</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="public-tracker-urls">
+<doc-anchor-target id="making-the-torrent">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#public-tracker-urls">#</doc-anchor-trigger>
-        <span>Public Tracker URLs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#making-the-torrent">#</doc-anchor-trigger>
+        <span>Making the torrent</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">http://nyaa.tracker.wf:7777/announce
-
-http://anidex.moe:6969/announce
-
-udp://open.stealth.si:80/announce
-
-udp://tracker.opentrackr.org:1337/announce
-
-udp://exodus.desync.com:6969/announce
-
-udp://tracker.torrent.eu.org:451/announce</code></pre>
-</doc-codeblock></div>
 <p>There are several ways to make a torrent:</p>
 <ul>
-<li><a href="https://github.com/rndusr/torf-cli">torf-cli</a> - Cross Platform, CLI.</li>
+<li><a href="https://github.com/rndusr/torf-cli">torf-cli</a> - Cross Platform, CLI. <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+    <span>Recommended</span>
+</span></li>
 <li><a href="https://github.com/fbdtemme/torrenttools">torrenttools</a> - Cross Platform, CLI.</li>
 <li><a href="https://github.com/pobrn/mktorrent">mktorrent</a> - Linux only, CLI.</li>
 <li><a href="https://github.com/kz26/dottorrent-gui">dottorrent-gui</a> - Windows, GUI.</li>
-<li><a href="https://www.qbittorrent.org/">Qbittorrent</a> - Cross Platform, GUI, Slowest of the bunch.</li>
+<li><a href="https://www.qbittorrent.org/">qBittorrent</a> - Cross Platform, GUI, Slowest of the bunch.</li>
 </ul>
-<doc-anchor-target id="torf-cli">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#torf-cli">#</doc-anchor-trigger>
-        <span>torf-cli</span>
-    </h2>
-</doc-anchor-target>
-<p>Refer to the torf-cli <a href="https://rndusr.github.io/torf-cli/torf.1.html">docs</a> for advanced features like <a href="https://rndusr.github.io/torf-cli/torf.1.html#:%7E:text=is%20not%20supported.-,Profiles,-A%20profile%20is">Profiles</a>.</p>
-<p>Command to make a torrent of a single file or directory</p>
 <doc-tabs>
-<doc-tab v-cloak id="windows">
-<template #title>Windows</template>
+<doc-tab v-cloak id="torf-cli">
+<template #title>torf-cli</template>
+<p>Refer to the torf-cli <a href="https://rndusr.github.io/torf-cli/torf.1.html">docs</a> for advanced features like <a href="https://rndusr.github.io/torf-cli/torf.1.html#:%7E:text=is%20not%20supported.-,Profiles,-A%20profile%20is">Profiles</a>.</p>
+<doc-panels>
+   <doc-panel id="windows-commands" collapsed>
+       <template #title>Windows commands</template>
+<p>Command to make a torrent of a single file or directory</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -227,25 +222,7 @@ udp://tracker.coppersurfer.tk:6969/announce,^
 udp://exodus.desync.com:6969/announce ^
 &quot;D:\path\to\root\directory&quot;</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="linux">
-<template #title>Linux</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce,\
-http://anidex.moe:6969/announce,\
-udp://open.stealth.si:80/announce,\
-udp://tracker.opentrackr.org:1337/announce,\
-udp://tracker.coppersurfer.tk:6969/announce,\
-udp://exodus.desync.com:6969/announce \
-&quot;New Folder&quot;</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
 <p>Command to make a torrent for each subdirectory</p>
-<doc-tabs>
-<doc-tab v-cloak id="windows">
-<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for /d %X in (*) do torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -256,25 +233,7 @@ udp://tracker.coppersurfer.tk:6969/announce,^
 udp://exodus.desync.com:6969/announce ^
 &quot;%X&quot;</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="linux">
-<template #title>Linux</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce,\
-http://anidex.moe:6969/announce,\
-udp://open.stealth.si:80/announce,\
-udp://tracker.opentrackr.org:1337/announce,\
-udp://tracker.coppersurfer.tk:6969/announce,\
-udp://exodus.desync.com:6969/announce \
-&quot;$dir&quot;; done</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
 <p>Command to make a torrent for each file in a directory</p>
-<doc-tabs>
-<doc-tab v-cloak id="windows">
-<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -285,9 +244,32 @@ udp://tracker.coppersurfer.tk:6969/announce,^
 udp://exodus.desync.com:6969/announce ^
 &quot;%X&quot;</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="linux">
-<template #title>Linux</template>
+   </doc-panel>
+   <doc-panel id="linux-commands" collapsed>
+       <template #title>Linux commands</template>
+<p>Command to make a torrent of a single file or directory</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">torf --max-piece-size 16 \
+-t http://nyaa.tracker.wf:7777/announce,\
+http://anidex.moe:6969/announce,\
+udp://open.stealth.si:80/announce,\
+udp://tracker.opentrackr.org:1337/announce,\
+udp://tracker.coppersurfer.tk:6969/announce,\
+udp://exodus.desync.com:6969/announce \
+&quot;New Folder&quot;</code></pre>
+</doc-codeblock></div>
+<p>Command to make a torrent for each subdirectory</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do torf --max-piece-size 16 \
+-t http://nyaa.tracker.wf:7777/announce,\
+http://anidex.moe:6969/announce,\
+udp://open.stealth.si:80/announce,\
+udp://tracker.opentrackr.org:1337/announce,\
+udp://tracker.coppersurfer.tk:6969/announce,\
+udp://exodus.desync.com:6969/announce \
+&quot;$dir&quot;; done</code></pre>
+</doc-codeblock></div>
+<p>Command to make a torrent for each file in a directory</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do torf --max-piece-size 16 \
 -t http://nyaa.tracker.wf:7777/announce,\
@@ -298,19 +280,27 @@ udp://tracker.coppersurfer.tk:6969/announce,\
 udp://exodus.desync.com:6969/announce \
 &quot;$file&quot;; done</code></pre>
 </doc-codeblock></div>
+   </doc-panel>
+</doc-panels>
+<p>By default, torf heavily biases 8MB piece size in situations where 16MB would be more suitable. We recommend performing the following edit to more aggresively target 1000 pieces.</p>
+<p>Go to your torf install location, eg <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\torf</code></p>
+<p>Open <code v-pre>_torrent.py</code>, replace lines 723-728 with</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">        elif size &lt;= 16 * 2**30:   # 16 GiB / 1024 pieces = 16 MiB max
+            pieces = size / 1024
+        elif size &lt;= 32 * 2**30:   # 32 GiB / 2048 pieces = 16 MiB max
+            pieces = size / 2048
+        elif size &lt;= 64 * 2**30:   # 64 GiB / 2048 pieces = 32 MiB max
+            pieces = size / 2048</code></pre>
+</doc-codeblock></div>
 </doc-tab>
-</doc-tabs>
-<doc-anchor-target id="torrenttools">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#torrenttools">#</doc-anchor-trigger>
-        <span>torrenttools</span>
-    </h2>
-</doc-anchor-target>
+<doc-tab v-cloak id="torrenttools">
+<template #title>torrenttools</template>
 <p>Refer to the torrenttools <a href="https://fbdtemme.github.io/torrenttools/index.html">docs</a> for advanced features like <a href="https://fbdtemme.github.io/torrenttools/configuration.html#named-trackers">Named trackers</a> and <a href="https://fbdtemme.github.io/torrenttools/configuration.html#tracker-groups">Tracker groups</a>.</p>
 <p>Command to make a torrent of a single file or directory</p>
-<doc-tabs>
-<doc-tab v-cloak id="windows">
-<template #title>Windows</template>
+<doc-panels>
+   <doc-panel id="windows-commands" collapsed>
+       <template #title>Windows commands</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -321,25 +311,7 @@ udp://tracker.coppersurfer.tk:6969/announce ^
 udp://exodus.desync.com:6969/announce ^
 &quot;D:\path\to\root\directory&quot;</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="linux">
-<template #title>Linux</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">torrenttools create -l 16MiB \
--a http://nyaa.tracker.wf:7777/announce \
-http://anidex.moe:6969/announce \
-udp://open.stealth.si:80/announce \
-udp://tracker.opentrackr.org:1337/announce \
-udp://tracker.coppersurfer.tk:6969/announce \
-udp://exodus.desync.com:6969/announce \
-&quot;New Folder&quot;</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
 <p>Command to make a torrent for each subdirectory</p>
-<doc-tabs>
-<doc-tab v-cloak id="windows">
-<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for /d %X in (*) do torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -350,25 +322,7 @@ udp://tracker.coppersurfer.tk:6969/announce ^
 udp://exodus.desync.com:6969/announce ^
 &quot;%X&quot;</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="linux">
-<template #title>Linux</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do torrenttools create -l 16MiB \
--a http://nyaa.tracker.wf:7777/announce \
-http://anidex.moe:6969/announce \
-udp://open.stealth.si:80/announce \
-udp://tracker.opentrackr.org:1337/announce \
-udp://tracker.coppersurfer.tk:6969/announce \
-udp://exodus.desync.com:6969/announce \
-&quot;$dir&quot;; done</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
 <p>Command to make a torrent for each file in a directory</p>
-<doc-tabs>
-<doc-tab v-cloak id="windows">
-<template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -379,9 +333,31 @@ udp://tracker.coppersurfer.tk:6969/announce ^
 udp://exodus.desync.com:6969/announce ^
 &quot;%X&quot;</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="linux">
-<template #title>Linux</template>
+   </doc-panel>
+   <doc-panel id="linux-commands" collapsed>
+       <template #title>Linux commands</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">torrenttools create -l 16MiB \
+-a http://nyaa.tracker.wf:7777/announce \
+http://anidex.moe:6969/announce \
+udp://open.stealth.si:80/announce \
+udp://tracker.opentrackr.org:1337/announce \
+udp://tracker.coppersurfer.tk:6969/announce \
+udp://exodus.desync.com:6969/announce \
+&quot;New Folder&quot;</code></pre>
+</doc-codeblock></div>
+<p>Command to make a torrent for each subdirectory</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do torrenttools create -l 16MiB \
+-a http://nyaa.tracker.wf:7777/announce \
+http://anidex.moe:6969/announce \
+udp://open.stealth.si:80/announce \
+udp://tracker.opentrackr.org:1337/announce \
+udp://tracker.coppersurfer.tk:6969/announce \
+udp://exodus.desync.com:6969/announce \
+&quot;$dir&quot;; done</code></pre>
+</doc-codeblock></div>
+<p>Command to make a torrent for each file in a directory</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -392,14 +368,11 @@ udp://tracker.coppersurfer.tk:6969/announce \
 udp://exodus.desync.com:6969/announce \
 &quot;$file&quot;; done</code></pre>
 </doc-codeblock></div>
+   </doc-panel>
+</doc-panels>
 </doc-tab>
-</doc-tabs>
-<doc-anchor-target id="mktorrent">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mktorrent">#</doc-anchor-trigger>
-        <span>mktorrent</span>
-    </h2>
-</doc-anchor-target>
+<doc-tab v-cloak id="mktorrent">
+<template #title>mktorrent</template>
 <p>For mktorrent, piece size is passed as <code v-pre>-l n</code> where <code v-pre>n</code> is the power of <code v-pre>2</code>, making the piece size equal to <code v-pre>2^(n)</code> bytes.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">n = 22 -&gt; 4MiB
@@ -439,40 +412,55 @@ n = 24 -&gt; 16MiB</code></pre>
 -a udp://exodus.desync.com:6969/announce \
 &quot;$file&quot;; done</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="dottorrent-gui">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dottorrent-gui">#</doc-anchor-trigger>
-        <span>dottorrent-gui</span>
-    </h2>
-</doc-anchor-target>
+</doc-tab>
+<doc-tab v-cloak id="dottorrent-gui">
+<template #title>dottorrent-gui</template>
 <p><figure class="content-center">
     <a href="https://user-images.githubusercontent.com/78981416/226189863-40578262-dbd9-4bd2-a73c-3c6d7fe15451.png" title="3">
-        <img src="https://user-images.githubusercontent.com/78981416/226189863-40578262-dbd9-4bd2-a73c-3c6d7fe15451.png" alt="3" title="3">
+        <img src="https://user-images.githubusercontent.com/78981416/226189863-40578262-dbd9-4bd2-a73c-3c6d7fe15451.png" alt="dottorrent-gui" title="3">
     </a>
-    <figcaption class="caption">3</figcaption>
+    <figcaption class="caption">dottorrent-gui</figcaption>
 </figure>
 </p>
-<doc-anchor-target id="qbittorrent">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#qbittorrent">#</doc-anchor-trigger>
-        <span>qbittorrent</span>
-    </h2>
-</doc-anchor-target>
-<p>Line breaks after each tracker URL are necessary when creating a torrent with Qbittorrent.</p>
+</doc-tab>
+<doc-tab v-cloak id="qbittorrent">
+<template #title>qBittorrent</template>
+<p>Line breaks after each tracker URL are necessary when creating a torrent with qBittorrent.</p>
 <p><figure class="content-center">
     <a href="https://user-images.githubusercontent.com/78981416/226189888-1fdf6f20-8232-4c37-aca6-2bd5e1d22e88.png" title="1">
-        <img src="https://user-images.githubusercontent.com/78981416/226189888-1fdf6f20-8232-4c37-aca6-2bd5e1d22e88.png" alt="1" title="1">
+        <img src="https://user-images.githubusercontent.com/78981416/226189888-1fdf6f20-8232-4c37-aca6-2bd5e1d22e88.png" alt="qBittorrent Menu" title="1">
     </a>
-    <figcaption class="caption">1</figcaption>
+    <figcaption class="caption">qBittorrent Menu</figcaption>
 </figure>
 </p>
 <p><figure class="content-center">
     <a href="https://user-images.githubusercontent.com/78981416/226189911-eeeb29ab-9a0b-4c40-8601-a5c106fa7f6c.png" title="2">
-        <img src="https://user-images.githubusercontent.com/78981416/226189911-eeeb29ab-9a0b-4c40-8601-a5c106fa7f6c.png" alt="2" title="2">
+        <img src="https://user-images.githubusercontent.com/78981416/226189911-eeeb29ab-9a0b-4c40-8601-a5c106fa7f6c.png" alt="qBittorrent Torrent Creator" title="2">
     </a>
-    <figcaption class="caption">2</figcaption>
+    <figcaption class="caption">qBittorrent Torrent Creator</figcaption>
 </figure>
 </p>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="public-tracker-urls">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#public-tracker-urls">#</doc-anchor-trigger>
+        <span>Public Tracker URLs</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">http://nyaa.tracker.wf:7777/announce
+
+http://anidex.moe:6969/announce
+
+udp://open.stealth.si:80/announce
+
+udp://tracker.opentrackr.org:1337/announce
+
+udp://exodus.desync.com:6969/announce
+
+udp://tracker.torrent.eu.org:451/announce</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
