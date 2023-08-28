@@ -1,144 +1,149 @@
 ---
-label: MPV
-description: Installation, setup, and configuration for MPV
+label: mpv
+description: Learn how to install, setup, and configure mpv
 image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe50-4d0c-b0dd-49f8828af0dc.png
 ---
 
-# MPV
+# mpv
 
-[MPV](https://mpv.io/) is a versatile and lightweight media player with extensive customization options. It supports a wide variety of video file formats, audio and video codecs, subtitle types, offers advanced features, and is compatible with multiple platforms.
+[mpv](https://mpv.io) is a versatile and lightweight media player with extensive customizability. It is used and recommended by most enthusiasts as it supports a wide range of video, audio, and subtitle formats. Additionally, it offers many advanced features and is available on multiple platforms.
 
 ## Installation
 
 ### Windows
 
-==- Manually Installing MPV
++++ 🔧 Installing mpv
 
-1. Grab the topmost file from [here](https://sourceforge.net/projects/mpv-player-windows/files/64bit/).
+1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
+[!button size="s" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
+[!button size="s" variant="secondary" icon="download" text="32-bit"](https://sourceforge.net/projects/mpv-player-windows/files/32bit/)
+2. Once downloaded, extract the archive's contents to your specified location
+!!!warning
+This folder cannot be changed after installation. If you wish to change it in the future, you will need to uninstall it first.
+!!!
+3. Navigate to the `installer` folder and run `mpv-install.bat`. Follow the on-screen instructions to complete installation
 
-2. Extract it into a folder. This folder cannot be changed after installation. If you want to change it after installation, you'll have to uninstall and then reinstall it in the new location.
+==- Video tutorial
 
-3. Navigate to the `installer` folder.
+[!embed text="Installing mpv on Windows"](https://files.catbox.moe/dio3dj.mp4)
 
-4. Inside the `installer` folder you'll find `mpv-install.bat`, run this as an administrator. If you want to read about what `mpv-install.bat` does, visit [here](https://github.com/rossy/mpv-install).
+==-
 
-5. After it's done, you'll get a prompt to open Control Panel and set MPV as the default player.
++++ 📦 Installing a pre-configured build
 
-That's it for the basic installation of MPV. You can use it without doing anything else.
+If you don't want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
 
-==- Adding MPV to PATH
+[!file mpv (Default OSC)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-default.zip)
+[!file mpv (ModernX)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-modernx.zip)
+[!file mpv (uosc)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-uosc.zip)
 
-1. Open the Start Search, type in `env`, and choose `Edit the system environment variables`.
-2. Click the `Environment Variables…` button.
-3. Under the `System Variables` section (the lower half), find the row with `Path` in the first column, and click `edit`.
-4. The `Edit environment variable` UI will appear. Here, you can click `New` and add the path of the directory containing `mpv.exe`.
-5. Dismiss all of the dialogs by choosing `OK`. Your changes are saved.
++++ 🍴 Installing a fork
 
-==- Automatically Installing MPV with Scoop
+[mpv](https://mpv.io) can also be found in the various forks below:
 
-1. Open PowerShell
+- [ImPlay](https://github.com/tsl0922/ImPlay)
+- [mpv.net](https://github.com/mpvnet-player/mpv.net) [!button size="xs" variant="primary" icon="apps" text="Microsoft Store" target="blank" margin="0 8 0 0"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
-2. Run the following commands in PowerShell to install [scoop](https://scoop.sh/)
++++
 
-   ```powershell
-   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-   ```
+==- 📁 Adding mpv to PATH
 
-   ```powershell
-   irm get.scoop.sh | iex
-   ```
+If you want to access mpv from the command line, you will need to add it to Windows PATH:
 
-   This is a one time thing to install scoop. Scoop will be installed to `C:\Users\<YOUR USERNAME>\scoop` by default.
+1. In *Windows Settings* > *System* > *About*, locate *Advanced System Settings*. Head to *Advanced* and click on *Environment Variables...*
+2. Under *System Variables*, select *Path* and click on *Edit...*
+3. Click *New* and point the new variable to the `mpv.exe` located where mpv is installed
+4. Dismiss all of the dialogs by clicking `OK`
 
-3. Now install mpv via running the following commands
+==-
 
-   ```powershell
-   scoop bucket add extras
-   ```
+### macOS
 
-   ```powershell
-   scoop install mpv
-   ```
++++ 🔧 Installing mpv
 
-   That's it. This will not only install MPV, it'll also add it to your PATH which makes MPV accessible via terminal and create [`portable-config`](#additional-filesfolders) folder for you. This is where your [custom config](#custom-config) will go.
-   Scoop installs each app under its own directory and keeps them contained so your MPV is installed in `C:\Users\<YOUR USERNAME>\scoop\apps\mpv` by default.
+Download the latest macOS build of [mpv](https://mpv.io):
+[!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
+[!button size="s" variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
 
-4. To update MPV in future just run the command below
++++ 🍺 Installing with Homebrew
 
-   ```powershell
-   scoop update mpv
-   ```
-
-5. To uninstall just run
-
-   ```powershell
-   scoop uninstall mpv
-   ```
-
-   This will uninstall MPV entirely but preserve your `portable-config` in `C:\Users\<YOUR USERNAME>\scoop\persist\mpv\portable_config`.
-   If you also want to delete persisting data such as the config, run:
-
-   ```powershell
-   scoop uninstall mpv --purge
-   ```
-
-==- Preconfigured MPV portable build
-
-If you don't want to setup MPV yourself, you can grab the preconfigured MPV portable build linked below. It has the same settings as described in this guide. All you need to do is download it and follow these installation instructions.
-[!file MPV Portable Build](https://mega.nz/folder/11QCTZgR#sdsjUYkIieGjVR09mnpYSw)
-
-===
-
-### MacOS
-
-Grab MacOS builds from [here](https://laboratory.stolendata.net/~djinn/mpv_osx/)
-
-#### Homebrew
-
-You will need [homebrew](https://brew.sh/) installed for this and then run the following command in your terminal.
+Install [Homebrew](https://brew.sh/). Then, run the following command in your terminal:
 
 ```sh
 brew install mpv
 ```
 
++++
+
+!!!warning
+[IINA](https://iina.io) is not recommended as it can display incorrect colors. We suggest sticking with the stock [mpv](https://mpv.io) player.
+!!!
+
 ### Linux
+
++++ 🔧 Installing on Ubuntu/Debian (APT)
+
+Run the following command in your terminal:
 
 ```sh
 apt install mpv
 ```
 
-## Additional files/folders
++++
 
-The default path for mpv config is `%APPDATA%/mpv/` but a folder named `portable_config` next to the `mpv.exe` overrides this. Here's a brief overview of files/folders you may want inside either of these folders -
+## Config Overview
 
-- `mpv.conf` - MPV user settings.
-- `input.conf` - custom keybind settings. You can see the default key bindings [here](https://user-images.githubusercontent.com/78981416/233719424-c442e27d-bd40-4138-912a-746a2b14493b.png) and syntax [here](https://mpv.io/manual/master/#input-conf).
-- `fonts` - Font files in this directory are used by mpv/libass for subtitles.
-- `scripts` - This directory is used to load custom scripts, usually `.lua` files. You can find scripts [here](https://github.com/mpv-player/mpv/wiki/User-Scripts).
-- `shaders` - This directory is used to load custom shaders like NNEDI3, Ravu, FSRCNNX, etc.
-- `script-opts` - A complementary folder to `scripts`, required by some `.lua` scripts to store user settings.
+By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder named `portable_config` next to where `mpv.exe` is stored can override this location as the config folder.
 
-These will not be present by default, you'll have to create them as needed. Once you're done it'll look like:
++++ Default (`%APPDATA%`)
 
-```Folder structure
+```properties
 .
-├── mpv.exe
-└── portable_config
-    ├── fonts
-    ├── script-opts
-    ├── scripts
-    ├── shaders
-    ├── mpv.conf
-    └── input.conf
+└── mpv/
+    ├── fonts/
+    ├── script-opts/
+    ├── scripts/
+    ├── shaders/
+    ├── input.conf
+    └── mpv.conf
 ```
 
-For more details, visit [here](https://mpv.io/manual/master/#files)
++++ Modified (`portable_config`)
+
+```properties
+.
+├── mpv.exe
+└── portable_config/
+    ├── fonts/
+    ├── script-opts/
+    ├── scripts/
+    ├── shaders/
+    ├── input.conf
+    └── mpv.conf
+```
+
++++
+
+File           | Meaning
+---------------|---------------------------------------------------------------------------------------------------------------------------
+`fonts/`       | Directory for custom font files. *These are typically used for subtitles*
+`scripts/`     | Directory for [custom scripts](#custom-scripts). *These are usually `.lua` scripts*
+`shaders/`     | Directory for custom shaders used in [scaling](/guides/playback/#scaling), [filtering](/guides/playback/#filtering), etc.
+`script-opts/` | Directory used by custom scripts to store additional options/configs
+`mpv.conf`     | General user configuration for mpv
+`input.conf`   | Keybind settings for mpv
+
+Some folders may not be present by default and will need to be created.
+
+*For more details, see [mpv's documentation on files](https://mpv.io/manual/master/#files).*
 
 ## Basic Config
 
-MPV is a great player out-of-the-box but you can customize it further to make it even better. You can personalize settings, key bindings, and appearance. You can also fine-tune playback behavior, add new features through scripts, or optimize visual and audio settings.
+mpv is a great player out-of-the-box which can be extensively customized to your liking.
 
-We'll start with a generic basic config that'll be good enough for most people:
+We recommend taking your time to create your own config. If you want to get up and running quickly, we suggest using the generic `mpv.conf` config below:
+
+==- Generic `mpv.conf`
 
 ```properties
 ## Video
@@ -154,7 +159,7 @@ save-position-on-quit
 
 ## Scaler
 
-#change ewa_lanczos to spline36 if your system can't handle ewa_lanczos
+# If you encounter problems using ewa_lanczos, change to spline36
 scale=ewa_lanczos
 dscale=mitchell
 cscale=ewa_lanczos
@@ -164,7 +169,7 @@ cscale=ewa_lanczos
 screenshot-format=png
 screenshot-high-bit-depth=no
 screenshot-png-compression=9
-screenshot-directory="~/Pictures/MPV"
+screenshot-directory="~/Pictures/mpv"
 screenshot-template="%F-%p"
 
 ## Language Priority
@@ -175,83 +180,158 @@ slang=eng,en
 alang=jpn,ja
 
 # Dub
-# uncomment this section to prefer English Dub with subtitles for English Dub
-#alang=eng,en
+# Uncomment this section to prefer English dub with subtitles for English dub
 #slang=zxx,eng,en
+#alang=eng,en
 #subs-with-matching-audio=no
 ```
 
-==- What do these options do?
+==- Understanding the config
 
-Below are some brief explanations of what some of the options do. Visit [MPV docs](https://mpv.io/manual/stable) for a detailed explanation of all the options.
+!!!
+See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation of all the options.
+!!!
 
-- **profile=gpu-hq** - Allows for higher-quality playback
-- **vo=gpu-next** -  General purpose, customizable, GPU-accelerated video output driver. It supports extended scaling methods, dithering, color management, custom shaders, HDR, and more
-- **gpu-api=vulkan** - Use Vulkan graphics API
-- **keep-open=yes** - Pause the player instead of terminating when playing or seeking beyond the end of the file, and there is no next file to be played
-- **save-position-on-quit** - Save the current playback position on quit. When this file is played again later, the player will seek to the old playback position on start
-- **scale=ewa_lanczos** - Use `ewa_lanczos` for upscaling
-- **dscale=mitchell** - Use `mitchell` for downscaling
-- **cscale=ewa_lanczos** - As `scale`, but for interpolating chroma information
-- **screenshot-format=png** - Use `.png` for screenshots. `.png` is a lossless format.
-- **screenshot-high-bit-depth=no** - Creates unnecessarily large screenshots without any real benefits, hence disabled
-- **screenshot-png-compression=7** -  0-9, higher means better compression. This will affect the file size of the written screenshot file and the time it takes to write a screenshot
-- **screenshot-directory="~/Pictures/MPV"** - The place where your screenshots will be stored. `~/Pictures/MPV` automatically gets expanded to `C:\Users\<YOUR USERNAME>\Pictures\MPV`
-- **screenshot-template="%F-%p"** - Filename format for your screenshots. `%F` here means the filename and `%p` means the timestamp
-- **slang=eng,en** - Priority list of subtitle languages to use
-- **alang=jpn,ja** - Priority list of subtitle languages to use
-- **subs-with-matching-audio=no** - Necessary if you want to watch dubs with signs/songs track
+Option                                                                                           | Meaning
+-------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. *We recommend `gpu-hq` for high-quality playback*
+[`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
+[`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *We recommend `vulkan` for most modern hardware*
+[`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
+[`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
+[`scale`](https://mpv.io/manual/stable/#options-scale)                                           | The [upscale](#scaling) filter. *We recommend `ewa_lanczos` for best quality*
+[`dscale`](https://mpv.io/manual/stable/#options-dscale)                                         | The [downscale](#scaling) filter. *We recommend `mitchell` for best quality*
+[`cscale`](https://mpv.io/manual/stable/#options-cscale)                                         | The [scale](#scaling) for interpolating chroma information. *We recommend `ewa_lanczos` for best quality*
+[`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *We recommend `png` for lossless quality*
+[`screenshot-high-bit-depth`](https://mpv.io/manual/stable/#options-screenshot-high-bit-depth)   | Use a bit depth similar to the source for screenshots. *Leave this at `no` as it creates unnecessarily large files*
+[`screenshot-png-compression`](https://mpv.io/manual/stable/#options-screenshot-png-compression) | The compression level for `.png` screenshots. *Can be set between `0` to `9`; a higher number means better compression and longer output time*
+[`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
+[`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
+[`slang`](https://mpv.io/manual/stable/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
+[`alang`](https://mpv.io/manual/stable/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
+[`subs-with-matching-audio`](https://mpv.io/manual/stable/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
 
 ===
 
 ## Advanced Config
 
-With advanced configuration options, you can fine-tune MPV to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. You can do a lot here and covering all of it here is impossible, so we'll just go over some of the common ones. A lot of the values here should be good enough but you may need to adjust things depending on your sources.
+mpv can be fine-tuned to meet your specific needs, from tweaking playback behavior to customizing video, audio, and subtitle settings. This section outlines the common options that can improve your experience.
+
+!!!
+This guide assumes you know the location of your config folder. *See [Config Overview](#config-overview) to see where to locate your config files.*
+!!!
 
 ### Debanding
 
-Banding is a visual artifact, visual artifacts should never be in a video.
-Debanding is the process of removing said banding.
-Here's a 6-minute explanation of what causes banding: [Why dark video is a terrible mess - Tom Scott](https://youtu.be/h9j89L8eQQk)
+Color banding is a visual artifact that is typically seen in gradients, where the colors can be easily differentiated by the human eye. *See [Tom Scott's video explaining color banding](https://youtu.be/h9j89L8eQQk).*
 
-==- Example of banding
+![Banding (left) vs. No banding (right)](https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png)
 
-![Banding (bad) vs No Banding (good)](https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png "Banding (bad) vs No Banding (good)")
+To enable debanding in mpv, apply the following changes to your config:
 
-===
++++ `mpv.conf`
 
 ```properties
 ## Deband
 
-# Set to "no" as we only need to enable it for specific cases
+# Set deband to "no" as we only need to enable it for specific cases
+# If you wish to apply debanding automatically on startup, set it to "yes" (not recommended)
 deband=no
 deband-iterations=4
 deband-threshold=48
 deband-grain=48
 ```
 
-Now go to your `input.conf`, located in `portable_config`. If it doesn't exist, you can make it. Open `input.conf` and add the following line to your `input.conf`.
++++ `input.conf`
 
 ```properties
 D cycle deband
 ```
 
-Now you can press `shift + d` to enable or disable debanding.
++++
 
-### Restyling subtitles
+After applying your changes, debanding can be applied at any time by pressing `Shift` + `D`.
 
-Restyling subtitles refers to the process of modifying the appearance of subtitles to improve readability or match personal preferences. Below are two commonly used styles that you can use or change them to your own liking.
+### Scaling
 
-==- Style 1: Gandhi Sans
+Scaling is the process of taking content that does not match your screen resolution and resizing it to fit your display. *See the [Playback Guide](/guides/playback/#scaling) for more information.*
 
-[![GandhiSans](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png "GandhiSans")](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png "GandhiSans")
+!!!
+Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
+!!!
 
-To use this font, you'll first have to download it from [here](https://fontmeme.com/fonts/gandhi-sans-font/) and then you can either install it system-wide or put it in your `/portable_config/fonts`.
++++ High-End PCs
+For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
+
+Download the shader file and place it in your `shaders` folder.
+
+To use the shader, add the following to your `mpv.conf`:
+
+```properties
+glsl-shaders="~~/shaders/nnedi3-nns256-win8x4.hook"
+```
+
+To activate it with a key, add the following to your `input.conf`, replacing `G` with the bind of your choice, if necessary (case-sensitive):
+
+```properties
+G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
+```
+
++++ Mid-Range PCs
+For those with mid-range hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
+
+Download the shader file and place it in your `shaders` folder.
+
+To use the shader, add the following to your `mpv.conf`:
+
+```properties
+glsl-shaders="~~/shaders/nnedi3-nns128-win8x4.hook"
+```
+
+To activate it with a key, add the following to your `input.conf`, replacing `G` with the bind of your choice, if necessary (case-sensitive):
+
+```properties
+G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
+```
+
++++ Low-End PCs
+For those with low-end hardware, we recommend sticking to mpv's built-in scalers.
+
+In your `mpv.conf`, add the following:
+
+```properties
+vo=gpu-next
+scale=ewa_lanczos
+dscale=mitchell
+cscale=ewa_lanczos
+```
+
+This is included in the [Basic Config](#basic-config).
+
+If these are too heavy for your system, delete these lines from your config. mpv will use `spline36` by default with `profile=gpu-hq`.
++++
+
+### Subtitle Restyling
+
+Most releases will use their own font for `.ass` subtitles. These can be manually overridden by mpv, which can help improve readability or match personal preferences.
+
+Below are a few commonly used styles:
+
++++ Gandhi Sans
+
+![Gandhi Sans](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png)
+
+[Download this font here](https://fontmeme.com/fonts/gandhi-sans-font) or use the button below:
+
+[!button icon="download" variant="primary" text="Gandhi Sans"](https://fontmeme.com/fonts/download/305566/gandhi-sans.zip)
+
+Run the `.otf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
 ```properties
 ## Restyle Subtitles
 
-# Set to "no" as we only need to enable it for specific cases
+# Set sub-ass-override to "no" as we only need to enable it for specific cases
+# If you wish to use it for all video, set it to "yes"
 sub-ass-override=no
 sub-ass-force-style=playresx=1920,playresy=1080
 sub-font="Gandhi Sans"
@@ -265,16 +345,21 @@ sub-bold=yes
 sub-ass-force-style=Kerning=yes
 ```
 
-==- Style 2: Cabin
++++ Cabin
 
-[![Cabin](https://user-images.githubusercontent.com/78981416/248583220-ac376f74-ce9f-4c3c-800b-370355a841f0.png "Cabin")](https://user-images.githubusercontent.com/78981416/248583220-ac376f74-ce9f-4c3c-800b-370355a841f0.png "Cabin")
+![Cabin](https://user-images.githubusercontent.com/78981416/248583220-ac376f74-ce9f-4c3c-800b-370355a841f0.png)
 
-To use this font, you'll first have to download it from [here](https://fontmeme.com/fonts/cabin-font/) and then you can either install it system-wide or put it in your `/portable_config/fonts`.
+[Download this font here](https://fontmeme.com/fonts/cabin-font) or use the button below:
+
+[!button icon="download" variant="primary" text="Cabin"](https://fontmeme.com/fonts/download/25391/cabin.zip)
+
+Run the `.ttf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
 ```properties
 ## Restyle Subtitles
 
-# Set to "no" as we only need to enable it for specific cases
+# Set sub-ass-override to "no" as we only need to enable it for specific cases
+# If you wish to use it for all video, set it to "yes"
 sub-ass-override=no
 sub-ass-force-style=playresx=1920,playresy=1080
 sub-font="Cabin"
@@ -287,24 +372,24 @@ sub-shadow-offset=0.8
 sub-ass-force-style=Kerning=yes
 ```
 
-===
++++
 
-Now go to your `input.conf`, located in `portable_config`. If it doesn't exist, you can make it. Open `input.conf` and add the following line to your `input.conf`.
+To activate it with a key, add the following to your `input.conf`, replacing `k` with the bind of your choice, if necessary (case-sensitive):
 
 ```properties
 k cycle_values sub-ass-override "force" "no"
 ```
 
-Now you can press `k` to enable or disable style override.
-
 ### Auto Profiles
 
-Auto profiles in MPV allow users to automate actions based on specific conditions. By defining profiles and their corresponding conditions, tasks such as debanding and restyling subtitles can be automatically applied based on factors like filenames.
+Auto profiles allow users to automate actions based on certain conditions. Tasks such as [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) can be applied automatically when these conditions are met, such as file names.
 
-For instance, seasonal releases may exhibit banding issues and less appealing subtitles. To address this, we can create a `[simulcast]` auto-profile in MPV. It will automatically apply debanding and restyle the subtitles when the filename includes specific keywords, such as the group tag.
+For instance, some seasonal releases may exhibit banding issues and less-appealing subtitles. To address this, we can create a `simulcast` auto profile, which will automatically apply debanding and restyle the subtitles when the filename includes specific keywords, such as the group tag.
+
+Add the following to the end of your `mpv.conf`:
 
 ```properties
-## Auto-profiles
+## Auto profiles
 
 [simulcast]
 profile-cond=string.match(p.filename, "SubsPlease") or string.match(p.filename, "Erai%-raws") or string.match(p.filename, "Tsundere%-Raws") or string.match(p.filename, "%-VARYG") or string.match(p.filename, "HorribleSubs")
@@ -314,95 +399,44 @@ sub-ass-override=force
 deband=yes
 ```
 
-Simply copy and paste the above at the end of your `mpv.conf`.
-
-### Upscaling
-
-If you're watching content that's a lower resolution than your screen, you can consider using a high-quality scaler like `nnedi3`. Do note that this will be way more taxing on your system.
-
-+++ High-End PCs
-For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
-
-Download the `nnedi3-nns256-win8x4.hook` file and place it in your `/portable_config/shaders`.
-
-You can then add it directly to your `mpv.conf`
-
-```properties
-glsl-shaders="~~/shaders/nnedi3-nns256-win8x4.hook"
-```
-
-Or, you can bind it to a key in your `input.conf`
-
-```properties
-G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
-```
-
-+++ Mid-Range PCs
-For those with mid-range hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
-
-Download the `nnedi3-nns128-win8x4.hook` file and place it in your `/portable_config/shaders`.
-
-You can then add it directly to your `mpv.conf`
-
-```properties
-glsl-shaders="~~/shaders/nnedi3-nns128-win8x4.hook"
-```
-
-Or, you can bind it to a key in your `input.conf`
-
-```properties
-G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
-```
-
-+++ Low-End PCs
-For those with low-end hardware, stick with mpv's built-in scalers.
-
-In your `mpv.conf`, add the following:
-
-```properties
-vo=gpu-next
-scale=ewa_lanczos
-dscale=mitchell
-cscale=ewa_lanczos
-```
-
-If you have copied the [Basic Config](#basic-config) above, then you already have this part in your config.
-
-If these are also too heavy for you system, then just delete these lines from your config. MPV will use `spline36` by default with `profile=gpu-hq`.
-+++
-
 !!!
-Scalers only work when the resolution of your video does not match your display. If the resolution of the video you're playing matches your display's resolution, scalers will remain unused.
+In this example, the `simulcast` auto profile will automatically apply when you play a release by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
 !!!
 
-### QoL Changes
+### Quality of Life
 
-By default, mouse wheel up and down seek the video instead of changing the volume. You can change this behavior so that mouse wheel up and down control the volume by adding the following to your `input.conf`
+#### Volume
+
+By default, scrolling the mouse wheel up and down seek the video instead of changing the volume. This behavior can be changed by adding the following to your `input.conf`:
 
 ```properties
 WHEEL_UP      add volume 2
 WHEEL_DOWN    add volume -2
 ```
 
-### Popular Scripts
+### Custom Scripts
 
-MPV offers powerful scripting capabilities, allowing the player to do almost anything. Check out a variety of popular user scripts linked below or [here](https://github.com/mpv-player/mpv/wiki/User-Scripts) for additional functionality beyond the core MPV player.
+mpv allows you to load custom scripts, allowing you to further expand the player's functionality.
 
-- [autoload](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua) - Automatically adds all the files present in the folder in a playlist
+Below is a list of some popular scripts:
+
+- [autoload](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua) - Automatically adds all files present in the folder to a playlist
 - [mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager) - Script to create and manage playlists
 - [mpv-webm](https://github.com/ekisu/mpv-webm) - WebM maker for mpv
-- [pause-when-minimize](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/pause-when-minimize.lua) - Pauses playback when minimizing the window, and resumes playback if it's brought back again
-- [thumbfast](https://github.com/po5/thumbfast) - Thumbnailer script for mpv
-- [trackselect](https://github.com/po5/trackselect) - Script to select tracks based on their title
+- [pause-when-minimize](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/pause-when-minimize.lua) - Pauses playback when minimizing the window, and resumes playback when brought back
+- [thumbfast](https://github.com/po5/thumbfast) - Display thumbnails when scrubbing video (may be needed for some [Skins](#skins))
+- [trackselect](https://github.com/po5/trackselect) - Select tracks based on their title
 
 ### Skins
 
-You can customize how MPV looks by using skins. These are completely up to your preference so you can look through some of the ones linked below.
+You can customize how mpv looks using skins. These are subject to personal preference, so find what works best for you.
 
-- [ModernX](https://github.com/cyl0/ModernX)
+Below is a list of some popular skins:
+
 - [mfpbar](https://codeberg.org/NRK/mpv-toolbox/src/branch/master/mfpbar)
+- [ModernX](https://github.com/cyl0/ModernX)
 - [mpv-osc-modern](https://github.com/maoiscat/mpv-osc-modern)
+- [mpv-osc-tethys](https://github.com/Zren/mpv-osc-tethys)
+- [mpv-progressbar](https://github.com/torque/mpv-progressbar)
 - [oscc](https://github.com/longtermfree/oscc)
-- [progressbar](https://github.com/torque/mpv-progressbar)
-- [tethys](https://github.com/Zren/mpv-osc-tethys)
 - [uosc](https://github.com/tomasklaen/uosc)
