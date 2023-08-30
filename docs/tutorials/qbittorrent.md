@@ -56,18 +56,18 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 +++ Enabling RSS
 
 1. Launch qBittorrent. In the top bar, go to **Tools** > **Options**
-2. Head to **RSS**. Under **RSS Reader**, check *Enable fetching RSS feeds*. You can also change how often your RSS feed is updated under *Feeds refresh interval*. *We recommend setting it to 15 minutes.*
+2. Head to **RSS**. Under **RSS Reader**, check *Enable fetching RSS feeds*. You can also change how often your RSS feed is updated under *Feeds refresh interval*. *We recommend setting it to 15 minutes*
 3. Under **RSS Torrent Auto Downloader**, check *Enable auto downloading of RSS torrents*
 
 ==- Video tutorial
 
-[!embed text="Enabling RSS"](https://files.catbox.moe/vucg2l.mp4)
+[!embed text="Enabling RSS"](https://youtu.be/FEzaTjXQE4U)
 
 ==-
 
 +++ Adding feeds
 
-1. Choose an RSS feed to use. *Popular RSS feeds for airing anime:*
+1. Choose an RSS feed to use. Popular RSS feeds for airing anime:
 [!button size="s" variant="secondary" icon="rss" text="Erai-raws" margin="0 8 0 0"](https://www.erai-raws.info/rss-page/)
 [!button size="s" variant="secondary" icon="rss" text="SubsPlease"](https://subsplease.org/rss-feeds/)
 2. Launch qBittorrent. In the top bar, go to **View** and check *RSS Reader*
@@ -76,7 +76,7 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 
 ==- Video tutorial
 
-[!embed text="Adding feeds"](https://files.catbox.moe/wzpm3n.mp4)
+[!embed text="Adding feeds"](https://hitori.is-cute.moe/wf95PG.mp4)
 
 ==-
 
