@@ -15,7 +15,11 @@ image: https://user-images.githubusercontent.com/78981416/232305852-17383fd0-c7d
 1. Download the latest version of [qBittorrent](https://www.qbittorrent.org) from [FOSSHUB](https://www.fosshub.com/qBittorrent.html). For Windows, you'll want to download *qBitTorrent Windows x64*
 2. Run the installer and follow the on-screen instructions to complete installation
 
+==- Video tutorial
+
 [!embed text="Installing qBittorrent on Windows"](https://files.catbox.moe/gbszk1.mp4)
+
+===
 
 +++ macOS
 
@@ -39,7 +43,11 @@ If you use a [VPN](/getting-started/torrenting/#vpn), you may want to consider b
 2. Head to **Advanced** and locate *Network interface*. In the dropdown menu, select your VPN's network adapter
 3. Click **Apply** in the bottom-right and close the **Options** window
 
+==- Video tutorial
+
 [!embed text="Using VPN binding"](https://files.catbox.moe/3c9ebv.mp4)
+
+==-
 
 ### RSS
 
@@ -51,25 +59,33 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 2. Head to **RSS**. Under **RSS Reader**, check *Enable fetching RSS feeds*. You can also change how often your RSS feed is updated under *Feeds refresh interval*. *We recommend setting it to 15 minutes.*
 3. Under **RSS Torrent Auto Downloader**, check *Enable auto downloading of RSS torrents*
 
+==- Video tutorial
+
 [!embed text="Enabling RSS"](https://files.catbox.moe/vucg2l.mp4)
+
+==-
 
 +++ Adding feeds
 
-1. Choose an RSS feed to use. Below is a list of popular RSS feeds for airing anime:
-
+1. Choose an RSS feed to use. *Popular RSS feeds for airing anime:*
 [!button size="s" variant="secondary" icon="rss" text="Erai-raws" margin="0 8 0 0"](https://www.erai-raws.info/rss-page/)
 [!button size="s" variant="secondary" icon="rss" text="SubsPlease"](https://subsplease.org/rss-feeds/)
 2. Launch qBittorrent. In the top bar, go to **View** and check *RSS Reader*
 3. Select the **RSS** tab near the top bar. Click on **New subscription**
 4. Paste the RSS URL and click **OK**.
 
+==- Video tutorial
+
 [!embed text="Adding feeds"](https://files.catbox.moe/wzpm3n.mp4)
+
+==-
 
 +++ Download rules
 
 1. Launch qBittorrent. In the top bar, go to **View** and check *RSS Reader*
 2. Select the **RSS** tab near the top bar. Click on **RSS Downloader...**
 3. Click on the **+** to create a new download rule. Below is a list of important parameters:
+
 Rule                 | Meaning                                                                       | Example Usage
 ---------------------|-------------------------------------------------------------------------------|-----------------------------------------
 **Must Contain**     | The title of the show to follow the rule                                      | `Shiro Seijo to Kuro Bokushi`
@@ -81,7 +97,11 @@ If your filter works properly, you should see the desired files under **Matching
 !!!
 4. Under **Apply Rule to Feeds**, check off the desired RSS feed for the download rule
 
+==- Video tutorial
+
 [!embed text="Download rules"](https://files.catbox.moe/soc7hp.mp4)
+
+==-
 
 +++
 
@@ -99,4 +119,8 @@ Typically, qBittorrent fetches the pieces in a random order from different parts
 This can also be enabled in the right-click menu for the torrent.
 !!!
 
+==- Video tutorial
+
 [!embed text="Using sequential downloading"](https://files.catbox.moe/zbb42w.mp4)
+
+==-
