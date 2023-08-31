@@ -59,13 +59,51 @@ You should not use newer versions of uTorrent or BitTorrent, as they are known t
 
 See the [qBittorrent guide](/tutorials/qbittorrent) on how to install and configure the client for your device.
 
-## Downloading
+## Getting Torrents
 
 Torrents are shared using `.torrent` files or magnet links, which contain the necessary metadata of the file to be downloaded. These can be obtained through various trackers.
+
+`.torrent` files can be added to your torrent client by opening it or browsing for the file manually. Magnet links can be opened in your browser, where it will prompt you to choose the torrent client to be opened with. Alternatively, you can paste this magnet link in your client.
+
+[!embed text="Video example of launching a torrent file with qBittorrent"](https://files.catbox.moe/teg6jp.mp4)
 
 See the list of [public trackers](/sourcing/public-trackers) or [private trackers](/sourcing/private-trackers) for places to find anime torrents.
 
 ## Additional Tools
+
+### Port Forwarding
+
+Port forwarding allows computers on other networks to be able to access services behind your network. If you plan to seed, opening ports make it better for peers to connect to you, allowing you to get higher upload speeds.
+
+For leechers, this is generally unnecessary. A quick breakdown of expected performance is below:
+
+Situation                                                                              | Peer Download Speed |
+---------------------------------------------------------------------------------------|---------------------|
+<span style="color:#E53E3E">Leecher</span> - <span style="color:#E53E3E">Seeder</span> | Bad                 |
+<span style="color:#36AD99">Leecher</span> - <span style="color:#E53E3E">Seeder</span> | Okay                |
+<span style="color:#E53E3E">Leecher</span> - <span style="color:#36AD99">Seeder</span> | Good                |
+<span style="color:#36AD99">Leecher</span> - <span style="color:#36AD99">Seeder</span> | Best                |
+
+!!!
+<span style="color:#36AD99">Green peers</span> have open ports. <span style="color:#E53E3E">Red peers</span> have closed ports.
+!!!
+
+==- Enabling port forwarding
+
+!!!warning
+The port forwarding tutorial below is intended for those using home routers. This will not work with [VPNs](#vpn). *Check with your provider to see if port forwarding is available.*
+!!!
+
+!!!danger
+Do not enable all ports, as they may interfere with other services or put you at risk. Avoid enabling any [well-known ports](https://wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports) and [registered ports](https://wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports).
+!!!
+
+- Find the port used by your client. In [qBittorrent](/tutorials/qbittorrent/), this can be found under **Tools** > **Options** > **Connection** > **Listening Port**
+- Access your router's default gateway in your browser. You can find this on Windows by running Command Prompt and typing in `ipconfig`
+- Locate the port forwarding option for your router. *We recommend using ports from [49152 or higher](https://wikipedia.org/wiki/Ephemeral_port) to avoid interference with other services as well as being blocked by your ISP, which is common on lower ports*
+- After saving and restarting your router, visit [CanYouSeeMe.org](https://canyouseeme.org) to check if the port is open
+
+===
 
 ### VPN
 
@@ -81,6 +119,21 @@ Do not use free VPNs. These services often have limitations, weak security, and 
 If you use qBittorrent, you may want to consider [binding it to your client](/tutorials/qbittorrent/#vpn-binding).
 !!!
 
+#### Split Tunneling
+
+Split tunneling allows you to selectively route your internet traffic through the VPN tunnel or your internet connection simultaneously. With split tunneling, you can choose specific applications, websites, or services to be routed through the VPN while allowing other traffic to bypass the VPN and use the regular internet connection.
+
+See the [split tunneling guide for Wireguard](/tutorials/splittunnel) on how to set it up.
+
 ### Seedbox
 
-A seedbox is a dedicated server optimized for high-speed downloading and seeding of torrents. These are often remote machines hosted in non-DMCA-compliant regions, where infringement notices are ignored or never sent to you. Seedboxes also allow for better uptime for your torrents, especially if you plan to seed without having to leave your PC running or build ratio on various trackers.
+A seedbox is a dedicated server optimized for high-speed downloading and seeding of torrents. Unlike [VPNs](#vpn), seedboxes are separate from your network, allowing for better peace of mind when torrenting.
+
+Other advantages include:
+
+- Better uptime as it doesn't require your PC to run. *This is especially useful if you plan to build ratio on various trackers*
+- Higher prioritization when seeding due to their high speed
+- Avoiding copyright notices, as they are directed to your box instead (i.e. ignored)
+- Synergy and integration with third-party applications/plugins (e.g. [media servers](/guides/playback/#media-servers))
+
+Seedboxes can be run on your own virtual private server (VPS) or personal computer. Alternatively, they can be hosted through various seedbox providers.
