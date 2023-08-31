@@ -33,6 +33,38 @@ image: https://user-images.githubusercontent.com/78981416/232305852-17383fd0-c7d
 
 +++
 
+## Usage
+
+qBittorrent supports both `.torrent` files and magnet links.
+
++++ Automatic
+
+qBittorrent supports automatic detection and can start downloading torrents by simply opening the `.torrent` file or launching magnet links.
+
+==- Video tutorial
+
+[!embed text="Automatically starting from a torrent file"](https://files.catbox.moe/teg6jp.mp4)
+
+[!embed text="Automatically starting from a magnet link"](https://files.catbox.moe/ne13a4.mp4)
+
+==-
+
++++ Manual
+
+- Launch qBittorrent. In the top bar, find the **Add Torrent File** or **Add Torrent Link** button
+- Locate the `.torrent` file or paste in the magnet link
+- Once submitted, qBittorrent should immediately start fetching the file metadata and begin downloading
+
+==- Video tutorial
+
+[!embed text="Adding a torrent file"](https://files.catbox.moe/3zdn7i.mp4)
+
+[!embed text="Adding a magnet link"](https://files.catbox.moe/b2e924.mp4)
+
+==-
+
++++
+
 ## Configuration
 
 ### VPN Binding
@@ -61,7 +93,7 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 
 ==- Video tutorial
 
-[!embed text="Enabling RSS"](https://youtu.be/FEzaTjXQE4U)
+[!embed text="Enabling RSS"](https://files.catbox.moe/vucg2l.mp4)
 
 ==-
 
@@ -76,7 +108,7 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 
 ==- Video tutorial
 
-[!embed text="Adding feeds"](https://hitori.is-cute.moe/wf95PG.mp4)
+[!embed text="Adding feeds"](https://files.catbox.moe/wzpm3n.mp4)
 
 ==-
 
