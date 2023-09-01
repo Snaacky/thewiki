@@ -12,7 +12,7 @@ If you're new to torrenting, see the [torrenting guide](/getting-started/torrent
 - [AnimeBytes](https://animebytes.tv)
 - [AnimeTorrents](https://animetorrents.me)
 - [BakaBT](https://bakabt.me)
-- [Skyey Snow](https://skyeysnow.com) [!badge variant="success" text="Open Signup"]
+- [Skyey Snow](https://skyeysnow.com) [!badge variant="success" icon="sign-in" text="Open Signup"]
 - [U2](https://u2.dmhy.org)
 
 ## AnimeBytes

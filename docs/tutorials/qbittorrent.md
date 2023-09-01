@@ -17,7 +17,7 @@ image: https://user-images.githubusercontent.com/78981416/232305852-17383fd0-c7d
 
 ==- Video tutorial
 
-[!embed text="Installing qBittorrent on Windows"](https://files.catbox.moe/gbszk1.mp4)
+[!embed text="Installing qBittorrent on Windows"](/static/torrenting/qbittorrent/installation-windows.mp4)
 
 ===
 
@@ -43,9 +43,9 @@ qBittorrent supports automatic detection and can start downloading torrents by s
 
 ==- Video tutorial
 
-[!embed text="Automatically starting from a torrent file"](https://files.catbox.moe/teg6jp.mp4)
+[!embed text="Automatically starting from a torrent file"](/static/torrenting/getting-torrents-file.mp4)
 
-[!embed text="Automatically starting from a magnet link"](https://files.catbox.moe/ne13a4.mp4)
+[!embed text="Automatically starting from a magnet link"](/static/torrenting/getting-torrents-magnet.mp4)
 
 ==-
 
@@ -57,9 +57,9 @@ qBittorrent supports automatic detection and can start downloading torrents by s
 
 ==- Video tutorial
 
-[!embed text="Adding a torrent file"](https://files.catbox.moe/3zdn7i.mp4)
+[!embed text="Adding a torrent file"](/static/torrenting/qbittorrent/usage-file.mp4)
 
-[!embed text="Adding a magnet link"](https://files.catbox.moe/b2e924.mp4)
+[!embed text="Adding a magnet link"](/static/torrenting/qbittorrent/usage-magnet.mp4)
 
 ==-
 
@@ -77,7 +77,7 @@ If you use a [VPN](/getting-started/torrenting/#vpn), you may want to consider b
 
 ==- Video tutorial
 
-[!embed text="Using VPN binding"](https://files.catbox.moe/3c9ebv.mp4)
+[!embed text="Using VPN binding"](/static/torrenting/qbittorrent/vpn-binding.mp4)
 
 ==-
 
@@ -93,7 +93,7 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 
 ==- Video tutorial
 
-[!embed text="Enabling RSS"](https://files.catbox.moe/vucg2l.mp4)
+[!embed text="Enabling RSS"](/static/torrenting/qbittorrent/enabling-rss.mp4)
 
 ==-
 
@@ -108,7 +108,7 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 
 ==- Video tutorial
 
-[!embed text="Adding feeds"](https://files.catbox.moe/wzpm3n.mp4)
+[!embed text="Adding feeds"](/static/torrenting/qbittorrent/adding-feeds.mp4)
 
 ==-
 
@@ -131,7 +131,7 @@ If your filter works properly, you should see the desired files under **Matching
 
 ==- Video tutorial
 
-[!embed text="Download rules"](https://files.catbox.moe/soc7hp.mp4)
+[!embed text="Download rules"](/static/torrenting/qbittorrent/download-rules.mp4)
 
 ==-
 
@@ -153,6 +153,6 @@ This can also be enabled in the right-click menu for the torrent.
 
 ==- Video tutorial
 
-[!embed text="Using sequential downloading"](https://files.catbox.moe/zbb42w.mp4)
+[!embed text="Using sequential downloading"](/static/torrenting/qbittorrent/sequential-downloading.mp4)
 
 ==-

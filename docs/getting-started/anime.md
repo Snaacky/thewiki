@@ -51,7 +51,7 @@ VLC is not recommended as it introduces visual artifacts, displays wrong colors,
 
 +++ PC :desktop_computer:
 
-- [mpv](https://mpv.io/installation/) [!badge variant="info" text="Recommended"]
+- [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
 - [Potplayer](https://potplayer.daum.net)
 
@@ -67,8 +67,8 @@ VLC is not recommended as it introduces visual artifacts, displays wrong colors,
 
 +++ TV/Media Servers :tv:
 
-- [Kodi](https://kodi.tv) [!badge variant="info" text="Recommended"]
-- [Plex](https://www.plex.tv) [!badge variant="info" text="Recommended"]
+- [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
+- [Plex](https://www.plex.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [Emby](https://emby.media)
 - [Jellyfin](https://jellyfin.org)
 

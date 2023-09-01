@@ -13,13 +13,13 @@ If you're new to torrenting, see the [torrenting guide](/getting-started/torrent
 We suggest you use a reliable content blocker such as [uBlock Origin](https://ublockorigin.com).
 !!!
 
-- [Nyaa](https://nyaa.si) [!badge variant="info" text="Recommended"]
-- [AcgnX](https://share.acgnx.se) [!badge variant="ghost" text="Chinese"]
-- [ACG.RIP](https://acg.rip) [!badge variant="ghost" text="Chinese"]"
+- [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
+- [AcgnX](https://share.acgnx.se) [!badge variant="secondary" text="Chinese"]
+- [ACG.RIP](https://acg.rip) [!badge variant="secondary" text="Chinese"]
 - [AniDex](https://anidex.info)
-- [AnimeTosho](https://animetosho.org) [!badge variant="danger" text="Scraper"]
-- [DMHY](https://dmhy.org) [!badge variant="ghost" text="Chinese"]
-- [RuTracker](https://rutracker.org) [!badge variant="ghost" text="Russian"]
+- [AnimeTosho](https://animetosho.org) [!badge variant="danger" icon="search" text="Scraper"]
+- [DMHY](https://dmhy.org) [!badge variant="secondary" text="Chinese"]
+- [RuTracker](https://rutracker.org) [!badge variant="secondary" text="Russian"]
 - [Tokyo Toshokan](https://www.tokyotosho.info/?cat=1)
 
 ## Nyaa
@@ -40,9 +40,7 @@ Below is a list of useful regex that can help narrow down your search when looki
 
 Regex | Meaning                              | Example Usage
 ------|--------------------------------------|------------------------------------------------------------
-`\|`  | Return results that match either; or | `"Is the Order a Rabbit?"\|"Gochuumon wa Usagi desu ka?"`
+`|`   | Return results that match either; or | `"Is the Order a Rabbit?"\|"Gochuumon wa Usagi desu ka?"`
 `-`   | Exclude certain words from search    | `"Gochuumon wa Usagi desu ka? BD Hi10P -BLOOM"`
 
 *See [their help section](https://nyaa.si/help#using-search) for more information.*
-
-First, change the All Categories option to `Anime - English Translated`. It can be set to just `Anime` to include english, raws and other languages. The two useful search operators are `-` and `|(OR)`, `AND` is already implicit in every search. For example -

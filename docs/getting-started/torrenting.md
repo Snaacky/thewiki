@@ -45,10 +45,10 @@ Downloading anime torrents may be illegal depending on where you live. *To avoid
 
 To start torrenting, you'll need a torrent client. This is the software that you will use to download torrents. Below is a list of some popular clients:
 
-- [qBittorrent](https://www.qbittorrent.org) [!badge variant="info" text="Recommended"]
+- [qBittorrent](https://www.qbittorrent.org) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [Deluge](https://www.deluge-torrent.org)
-- [LibreTorrent](https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent) [!badge variant="ghost" text="Android"]
-- [rTorrent](https://github.com/rakshasa/rtorrent) [!badge variant="ghost" text="Linux"]
+- [LibreTorrent](https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent) [!badge variant="secondary" text="Android"]
+- [rTorrent](https://github.com/rakshasa/rtorrent) [!badge variant="secondary" text="Linux"]
 - [Transmission](https://github.com/transmission/transmission)
 
 For most users, we recommend using [qBittorrent](https://www.qbittorrent.org). It's a free, open-source, and feature-full client that is easy to use and understand.
@@ -65,7 +65,7 @@ Torrents are shared using `.torrent` files or magnet links, which contain the ne
 
 `.torrent` files can be added to your torrent client by opening it or browsing for the file manually. Magnet links can be opened in your browser, where it will prompt you to choose the torrent client to be opened with. Alternatively, you can paste this magnet link in your client.
 
-[!embed text="Video example of launching a torrent file with qBittorrent"](https://files.catbox.moe/teg6jp.mp4)
+[!embed text="Video example of launching a torrent file with qBittorrent"](/static/torrenting/getting-torrents-file.mp4)
 
 *See the list of [public trackers](/sourcing/public-trackers) or [private trackers](/sourcing/private-trackers) for places to find anime torrents.*
 
