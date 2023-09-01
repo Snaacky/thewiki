@@ -23,7 +23,7 @@ Aiming for compatibility, they are also unable to use efficient codecs like x265
 
 Official streams have better quality but are also typically larger (~1.3GB per episode for 1080p). *They can be obtained by torrenting from groups like SubsPlease, who rip untouched streams.*
 
-*See the [Streaming Sites](/sourcing/streaming/) sourcing guide and [Quality Guide](/guides/quality) for more information.*
+*See the [streaming sites](/sourcing/streaming/) sourcing guide and [quality guide](/guides/quality) for more information.*
 
 ## Torrenting
 
@@ -34,12 +34,12 @@ Unlike streaming sites, torrents provide access to better releases, such as [BDs
 Torrenting requires the use of a torrent client, such as [qBittorrent](https://www.qbittorrent.org/download). Shows are shared in the form of .torrent files or magnet links, which can be found on trackers such as [Nyaa](https://nyaa.si). These are used by your torrent client to know what to download. *Download speeds are dependent on the number of seeds available and connection quality.*
 
 !!!warning
-Downloading anime torrents may be illegal depending on where you live. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting#vpn) or [seedbox](/guides/torrenting#what-is-a-seedbox).*
+Downloading anime torrents may be illegal depending on where you live. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting/#vpn) or [seedbox](/getting-started/torrenting/#seedbox).*
 !!!
 
 Additionally, you may choose to automatically fetch and download shows using RSS or Sonarr. *Check out the [RSS Tutorial](/tutorials/rss) on how to set up RSS with your torrent client.*
 
-*See the [Torrenting Guide](/guides/torrenting) for more information.*
+*See the [torrenting guide](/getting-started/torrenting) for more information.*
 
 ## Playback
 
@@ -74,4 +74,4 @@ VLC is not recommended as it introduces visual artifacts, displays wrong colors,
 
 +++
 
-*See the [Playback Guide](/guides/playback) for more information.*
+*See the [playback guide](/guides/playback) for more information.*

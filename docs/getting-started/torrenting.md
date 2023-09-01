@@ -57,7 +57,7 @@ For most users, we recommend using [qBittorrent](https://www.qbittorrent.org). I
 You should not use newer versions of uTorrent or BitTorrent, as they are known to be bundled with malware and adware.
 !!!
 
-See the [qBittorrent guide](/tutorials/qbittorrent) on how to install and configure the client for your device.
+*See the [qBittorrent guide](/tutorials/qbittorrent) on how to install and configure the client for your device.*
 
 ## Getting Torrents
 
@@ -67,7 +67,7 @@ Torrents are shared using `.torrent` files or magnet links, which contain the ne
 
 [!embed text="Video example of launching a torrent file with qBittorrent"](https://files.catbox.moe/teg6jp.mp4)
 
-See the list of [public trackers](/sourcing/public-trackers) or [private trackers](/sourcing/private-trackers) for places to find anime torrents.
+*See the list of [public trackers](/sourcing/public-trackers) or [private trackers](/sourcing/private-trackers) for places to find anime torrents.*
 
 ## Additional Tools
 
@@ -123,7 +123,7 @@ If you use qBittorrent, you may want to consider [binding it to your client](/tu
 
 Split tunneling allows you to selectively route your internet traffic through the VPN tunnel or your internet connection simultaneously. With split tunneling, you can choose specific applications, websites, or services to be routed through the VPN while allowing other traffic to bypass the VPN and use the regular internet connection.
 
-See the [split tunneling guide for Wireguard](/tutorials/splittunnel) on how to set it up.
+*See the [split tunneling guide for Wireguard](/tutorials/splittunnel) on how to set it up.*
 
 ### Seedbox
 

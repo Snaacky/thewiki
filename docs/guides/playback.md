@@ -162,7 +162,7 @@ Debanding is the most commonly used filter, which helps to fix issues with [colo
 We do not recommend detail enhancement, noise reduction, or sharpening filters, as it will negatively affect the quality of your content.
 !!!
 
-*See the [Quality Guide](/guides/quality) for more information.*
+*See the [quality guide](/guides/quality) for more information.*
 
 ### Smooth Playback
 
