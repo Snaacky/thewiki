@@ -1,7 +1,7 @@
 ---
 label: Sonarr
 description: Beginner's guide to Sonarr
-image: https://user-images.githubusercontent.com/78981416/215346149-674de56b-b9d6-4a70-87c5-5799b66bd73c.png
+image: https://files.catbox.moe/nubkrt.png
 ---
 
 # Sonarr
