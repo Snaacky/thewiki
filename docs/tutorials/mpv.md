@@ -25,7 +25,7 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ==- Video tutorial
 
-[!embed text="Installing mpv on Windows"](https://files.catbox.moe/dio3dj.mp4)
+[!embed text="Installing mpv on Windows"](/static/playback/mpv/installation-windows.mp4)
 
 ==-
 
@@ -323,7 +323,7 @@ Below are a few commonly used styles:
 
 [Download this font here](https://fontmeme.com/fonts/gandhi-sans-font) or use the button below:
 
-[!button icon="download" variant="primary" text="Gandhi Sans"](https://fontmeme.com/fonts/download/305566/gandhi-sans.zip)
+[!button icon="download" variant="primary" text="Gandhi Sans"](/static/playback/fonts/gandhi-sans.zip)
 
 Run the `.otf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
@@ -351,7 +351,7 @@ sub-ass-force-style=Kerning=yes
 
 [Download this font here](https://fontmeme.com/fonts/cabin-font) or use the button below:
 
-[!button icon="download" variant="primary" text="Cabin"](https://fontmeme.com/fonts/download/25391/cabin.zip)
+[!button icon="download" variant="primary" text="Cabin"](/static/playback/fonts/cabin.zip)
 
 Run the `.ttf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
