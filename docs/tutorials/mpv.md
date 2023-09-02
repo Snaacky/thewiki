@@ -62,7 +62,7 @@ If you want to access mpv from the command line, you will need to add it to Wind
 +++ 🔧 Installing mpv
 
 Download the latest macOS build of [mpv](https://mpv.io):
-[!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
+[!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](https://laboratory.stolendata.net/~djinn/mpv_osx/)
 [!button size="s" variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
 
 +++ 🍺 Installing with Homebrew
