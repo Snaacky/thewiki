@@ -5,7 +5,7 @@ order: -2
 
 # Public Trackers
 
-Public trackers are BitTorrent trackers that allow anyone to access and download torrents without requiring user registration, unlike [private trackers](/sourcing/private-trackers). 
+Public trackers are BitTorrent trackers that allow anyone to access and download torrents without requiring user registration, unlike [private trackers](/sourcing/private-trackers).
 
 If you're new to torrenting, see the [torrenting guide](/getting-started/torrenting) on how to get started.
 
@@ -38,9 +38,10 @@ To search for releases in English, use the `- English-translated` option under t
 
 Below is a list of useful regex that can help narrow down your search when looking for torrents:
 
-Regex | Meaning                              | Example Usage
-------|--------------------------------------|------------------------------------------------------------
-`|`   | Return results that match either; or | `"Is the Order a Rabbit?"\|"Gochuumon wa Usagi desu ka?"`
-`-`   | Exclude certain words from search    | `"Gochuumon wa Usagi desu ka? BD Hi10P -BLOOM"`
+Regex | Meaning                                          | Example Usage
+------|--------------------------------------------------|----------------------------------------------------------------
+`"`   | Only return results that match exact word/phrase | `"Gochuumon wa Usagi desu ka??"`
+`|`   | Return results that match either word/phrase; or | `"Is the Order a Rabbit?"|"Gochuumon wa Usagi desu ka?"`
+`-`   | Exclude word/phrase from search                  | `Gochuumon wa Usagi desu ka? BD Hi10P -BLOOM -"Sing For You"`
 
 *See [their help section](https://nyaa.si/help#using-search) for more information.*
