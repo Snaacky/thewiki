@@ -125,7 +125,7 @@ That said, you might be wondering on how to become connectable. This can be achi
 
 ### What Is Port Forwarding?
 
-- Your connection is assigned with a public "address" (IP address) by your ISP to your router. Your router will then assign a private (local) IP address to the devices that are connecting to it. On your devices, services which need to connect with another deivce over a network needs to have a "door" (port) opened (such as FTP on port 21, SSH & SFTP on port 22, HTTP on port 80, or HTTPS on port 443, etc.). The IP address and the port number combination (for example - http://192.168.0.1:8080/, where "192.168.0.1" is your private IP address, and "8080" is the port number) can be used to access the service in question.
+- Your connection is assigned with a public "address" (IP address) by your ISP to your router. Your router will then assign a private (local) IP address to the devices that are connecting to it. On your devices, services which need to connect with another device over a network need to have a "door" (port) opened (such as FTP on port 21, SSH & SFTP on port 22, HTTP on port 80, or HTTPS on port 443, etc.). The IP address and the port number combination (for example - http://192.168.0.1:8080/, where "192.168.0.1" is your private IP address, and "8080" is the port number) can be used to access the service in question.
 
 - Similarly, your torrent client also needs to run on a port on your device's private IP address. However, for anyone on the internet to be able to "see" your torrent client through this port, it has to be forwarded/connected to the equivalent port on your public IP address.
 
