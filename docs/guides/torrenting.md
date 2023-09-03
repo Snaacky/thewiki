@@ -149,7 +149,7 @@ The easy way to do this is with UPnP - though it is considered a security risk b
 
 Alternatively, find your router manufacturer and model [in this list](https://portforward.com/router.htm) for a concise, step-by-step guide for your exact router model.
 
-In case you have unknown issues preventing you from port forwarding despite correctly followed the instructions, try the following:
+In case you have unknown issues preventing you from port forwarding despite having correctly followed the instructions, try the following:
 
 - Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS etc. in your router settings. However, it is generally ill-advised due to security reasons.
 - Sometimes port forwarding will fail if you're doing so through a proxy.
