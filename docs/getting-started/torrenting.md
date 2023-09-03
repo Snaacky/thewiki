@@ -110,9 +110,9 @@ The port forwarding tutorial below is intended for those using home routers. Thi
 
 - Find the port used by your client. In [qBittorrent](/tutorials/qbittorrent/), this can be found under **Tools** > **Options** > **Connection** > **Listening Port**
 - Access your router's default gateway in your browser. You can find this on Windows by running Command Prompt and typing in `ipconfig`. Some common examples are:
-  - `192.168.0.1`
-  - `172.16.0.1`
-  - `10.0.0.1`
+  - [`192.168.0.1`](http://192.168.0.1)
+  - [`172.16.0.1`](http://172.16.0.1)
+  - [`10.0.0.1`](http://10.0.0.1)
 - Locate the port forwarding option for your router. *We recommend using ports from [49152 or higher](https://wikipedia.org/wiki/Ephemeral_port) to avoid interference with other services as well as being blocked by your ISP, which is common on lower ports*
 - After saving/restarting your router and torrent client, go to [CanYouSeeMe.org](https://canyouseeme.org) to check if the port is now open
   - If the port is closed, then you are likely using a NAT. *Unfortunately, this means you will need to use a different ISP or use a [VPN](#vpn) that supports port forwarding*
