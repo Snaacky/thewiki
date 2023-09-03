@@ -56,7 +56,7 @@ Keep in mind that some clients (such as newer versions of uTorrent and BitTorren
 
 - [Jackett](https://github.com/Jackett/Jackett): Meta indexer for torrent sites. Can be used as an addition to qBittorrent search plugins.
 - [Transdrone](https://f-droid.org/packages/org.transdroid.full/) - Remote torrent management app for your torrent client running on your main PC. Supports several torrent clients.
-- [nzb360](https://play.google.com/store/apps/details?id=com.kevinforeman.nzb360) - Remote torrent management app with support for managing Sonarr, Radarr etc.
+- [nzb360](https://play.google.com/store/apps/details?id=com.kevinforeman.nzb360) - Remote torrent management app with support for managing Sonarr, Radarr, etc.
 - [ruTorrent for rTorrent](https://github.com/Novik/ruTorrent) - Web UI for rtorrent.
 - [Flood for rTorrent](https://github.com/Flood-UI/flood) - Sleek web UI for rtorrent.
 - [Sonarr](https://github.com/Sonarr/Sonarr): Automation of downloads through RSS.
@@ -151,7 +151,7 @@ Alternatively, find your router manufacturer and model [in this list](https://po
 
 In case you have unknown issues preventing you from port forwarding despite having correctly followed the instructions, try the following:
 
-- Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS etc. in your router settings. However, it is generally ill-advised due to security reasons.
+- Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS, etc. in your router settings. However, it is generally ill-advised due to security reasons.
 - Sometimes port forwarding will fail if you're doing so through a proxy.
 - Double check your torrent client configurations.
 - Flush your DNS cache by typing "ipconfig /flushdns" in the Windows command prompt. For Linux distributions, it varies slightly from one to another, and there are many ways to do so. A quick Google search should help.
@@ -168,7 +168,7 @@ A seedbox is a server - a computer in a data center with high bandwidth and uplo
 - Utilize a faster download/upload speed than your internet connection.
 - High uptime - a seedbox is on 24/7 seeding your torrents at high speed, that allows you to maintain a good ratio on private (and public) trackers.
 - Avoiding copyright/DMCA problems, especially if you are not using a VPN.
-- Many seedboxes also support third-party plugins such as sonarr, plex etc.
+- Many seedboxes also support third-party plugins such as Sonarr, Plex, etc.
 
 If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything like your own personal computer. This is one of the more luxury options and tend to cost significantly more.
 
