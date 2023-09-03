@@ -170,7 +170,7 @@ A seedbox is a server - a computer in a data center with high bandwidth and uplo
 - Avoiding copyright/DMCA problems, especially if you are not using a VPN.
 - Many seedboxes also support third-party plugins such as Sonarr, Plex, etc.
 
-If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything like your own personal computer. This is one of the more luxury options and tend to cost significantly more.
+If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything you'd be able to set up on your own personal computer. This is one of the more luxurious options and tends to have a significantly higher cost than other simpler options.
 
 !!!info
 Check out [/r/seedboxes](https://www.reddit.com/r/seedboxes/) for more information. They are geared towards private trackers so be sure to check for public tracker support, as well as unlimited bandwidth with any seedbox provider.
