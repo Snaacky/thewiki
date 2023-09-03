@@ -1,7 +1,7 @@
 ---
 label: Comparison
 description: Learn how to compare various sources of a video
-image: /static/hyouka.gif
+image: /static/comparison/hyouka.gif
 ---
 
 # Comparison
