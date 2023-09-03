@@ -7,7 +7,7 @@ image: https://user-images.githubusercontent.com/78981416/247237870-7dd7da8f-cdb
 
 # Torrenting
 
-Torrenting is a peer-to-peer file sharing method that facilitates the distribution and downloading of files over the internet.
+Torrenting is a peer-to-peer file-sharing method that facilitates the distribution and downloading of files over the internet.
 
 Unlike traditional file downloads, where files are obtained from a single source, torrenting leverages the collective resources of numerous participants, known as peers. This collaborative process enhances download speeds and reduces strain on individual servers, providing an efficient and resilient method for file transferring. A [torrent client](#torrent-client) allows you to connect with these peers and download the file in small fragments, which are put together to create the final result.
 
@@ -15,16 +15,16 @@ Unlike traditional file downloads, where files are obtained from a single source
 
 Term               | Definition
 -------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Leecher**        | A user who is currently downloading the file, or has finished downloading only parts of the torrent and is sharing the pieces they have.
-**Magnet link**    | A BitTorrent hyperlink that allows you to download the torrent without the need for a .torrent file.
-**Peer**           | An individual computer or device connected to the swarm.
-**Piece**          | A small segment of the files that was cut up during the torrent creation process, allowing simultaneous downloading and uploading of different pieces across peers.
-**Ratio**          | The ratio between the amount of data uploaded and downloaded by the user.
-**Seeder**         | A user who has completed downloading the files and is sharing it with other peers by uploading the file pieces.
-**Swarm**          | The collective group of peers (seeders and leechers) distributing the files.
-**Torrent client** | The software or application used to download and upload files using the BitTorrent protocol.
-**Torrent file**   | A file (`.torrent`) that contains metadata about the files to be shared and the tracker information required to initiate and coordinate the downloading process.
-**Tracker**        | A server or web service that assists in coordinating the communication between peers in a BitTorrent network by keeping track of which peers possess which pieces of a file.
+**Leecher**        | A user who is currently downloading the file, or has finished downloading some parts of the torrent and is sharing the pieces they have
+**Magnet link**    | A BitTorrent hyperlink that allows you to download the torrent without the need for a `.torrent` file
+**Peer**           | An individual computer or device connected to the swarm
+**Piece**          | A small segment of the files that was cut up during the torrent creation process, allowing simultaneous downloading and uploading of different pieces across peers
+**Ratio**          | The ratio between the amount of data uploaded and downloaded by the user
+**Seeder**         | A user who has completed downloading the files and is sharing them with other peers by uploading the file pieces
+**Swarm**          | The collective group of peers (seeders and leechers) distributing the files
+**Torrent client** | The software or application used to download and upload files using the BitTorrent protocol
+**Torrent file**   | A file (`.torrent`) that contains metadata about the files to be shared and the tracker information required to initiate and coordinate the downloading process
+**Tracker**        | A server or web service that assists in coordinating the communication between peers in a BitTorrent network by keeping track of which peers possess which pieces of a file
 
 ===
 
@@ -32,7 +32,7 @@ For most people, [streaming services](/sourcing/streaming) are more convenient t
 
 - Broad range of qualities and sizes
 - [Significantly better quality](/guides/quality/#quality-comparisons) compared to streaming sites
-- Better and faster availabilty
+- Better and faster availability
 - Better subtitles/[fansubs](/guides/quality/#fansubs) and styling options
 - Access to a larger variety of titles and [Blu-ray releases](/guides/quality/#blu-ray-vs-web)
 - Downloaded files for rewatching with no additional data usage
@@ -63,11 +63,14 @@ You should not use newer versions of uTorrent or BitTorrent, as they are known t
 
 Torrents are shared using `.torrent` files or magnet links, which contain the necessary metadata of the file to be downloaded. These can be obtained through various trackers.
 
-`.torrent` files can be added to your torrent client by opening it or browsing for the file manually. Magnet links can be opened in your browser, where it will prompt you to choose the torrent client to be opened with. Alternatively, you can paste this magnet link in your client.
+`.torrent` files can be added to your torrent client by opening it or browsing for the file manually. Magnet links can be opened in your browser, where it will prompt you to choose the torrent client to be opened with. Alternatively, you can paste this magnet link into your client.
 
-==- Video Tutorial
-[!embed text="Video example of launching a torrent file with qBittorrent"](/static/torrenting/getting-torrents-file.mp4)
-==-
+==- Video example
+
+[!embed text="Launching a torrent file with qBittorrent"](/static/torrenting/getting-torrents-file.mp4)
+
+===
+
 *See the list of [public trackers](/sourcing/public-trackers) or [private trackers](/sourcing/private-trackers) for places to find anime torrents.*
 
 ## Additional Tools
@@ -78,25 +81,26 @@ Port forwarding allows computers on other networks to be able to access services
 
 A quick breakdown of expected performance is below:
 
-Situation                                                                              | Result |
----------------------------------------------------------------------------------------|---------------------|
-<span style="color:#E53E3E">Leecher</span> - <span style="color:#E53E3E">Seeder</span> | No connection¹|
-<span style="color:#36AD99">Leecher</span> - <span style="color:#E53E3E">Seeder</span> | Longer initiation², then normal connection|
-<span style="color:#E53E3E">Leecher</span> - <span style="color:#36AD99">Seeder</span> | Normal connection|
-<span style="color:#36AD99">Leecher</span> - <span style="color:#36AD99">Seeder</span> | Normal connection|
+Situation                                                                              | Result
+---------------------------------------------------------------------------------------|---------------------------------------------
+<span style="color:#E53E3E">Leecher</span> - <span style="color:#E53E3E">Seeder</span> | No connection¹
+<span style="color:#36AD99">Leecher</span> - <span style="color:#E53E3E">Seeder</span> | Longer initiation², then normal connection
+<span style="color:#E53E3E">Leecher</span> - <span style="color:#36AD99">Seeder</span> | Normal connection
+<span style="color:#36AD99">Leecher</span> - <span style="color:#36AD99">Seeder</span> | Normal connection
 
-!!!
-<span style="color:#36AD99">Green peers</span> have open ports. <span style="color:#E53E3E">Red peers</span> have closed ports.
+!!!secondary
+<span style="color:#36AD99">Green peers</span> represent open ports. <span style="color:#E53E3E">Red peers</span> represent closed ports.
+
+¹A connection can be made between 2 unconnectable peers via a connectable third-party through [holepunching](http://bittorrent.org/beps/bep_0055.html).
+
+²The seeder needs to wait until the next tracker update in order to see the new peer.
 !!!
 
 As can be seen, opening your ports enables you to download from seeders with closed ports, and upload to leechers with closed ports much faster.
 
->¹Technically a connection can be made between 2 unconnecable peers via a connectable third party through [holepunching](http://bittorrent.org/beps/bep_0055.html)
->
->²The seeder needs to wait until the next tracker update in order to see the new peer.
-
 ==- Enabling port forwarding
-By default many torrent clients automatically try to forward the current port via UPnP, you can test if it's working by going to a website such as [CanYouSeeMe.org](https://canyouseeme.org/) and entering the port.
+
+By default, most torrent clients automatically try to forward the current port via UPnP. You can test if this is working by using a port checker such as [CanYouSeeMe.org](https://canyouseeme.org) and entering the port.
 
 If UPnP doesn't work, you can try manually forwarding the port through your router settings.
 
@@ -105,10 +109,13 @@ The port forwarding tutorial below is intended for those using home routers. Thi
 !!!
 
 - Find the port used by your client. In [qBittorrent](/tutorials/qbittorrent/), this can be found under **Tools** > **Options** > **Connection** > **Listening Port**
-- Access your router's default gateway in your browser. You can find this on Windows by running Command Prompt and typing in `ipconfig` It will look something like `192.168.0.1`
+- Access your router's default gateway in your browser. You can find this on Windows by running Command Prompt and typing in `ipconfig`. Some common examples are:
+  - `192.168.0.1`
+  - `172.16.0.1`
+  - `10.0.0.1`
 - Locate the port forwarding option for your router. *We recommend using ports from [49152 or higher](https://wikipedia.org/wiki/Ephemeral_port) to avoid interference with other services as well as being blocked by your ISP, which is common on lower ports*
-- After saving and restarting your router and torrent client, go back to [CanYouSeeMe.org](https://canyouseeme.org) to check if the port is now open.
-- If the port is still closed then you are likely a victim of NAT, at which point the only solution is using a VPN that has port forwarding.
+- After saving/restarting your router and torrent client, go to [CanYouSeeMe.org](https://canyouseeme.org) to check if the port is now open
+  - If the port is closed, then you are likely using a NAT. *Unfortunately, this means you will need to use a different ISP or use a [VPN](#vpn) that supports port forwarding*
 
 !!!danger
 Do not enable all ports, as they may interfere with other services or put you at risk. Avoid enabling any [well-known ports](https://wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports) and [registered ports](https://wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports).
@@ -130,13 +137,14 @@ Do not use free VPNs. These services often have limitations, weak security, and 
 If you use qBittorrent, you may want to consider [binding it to your client](/tutorials/qbittorrent/#vpn-binding).
 !!!
 
-#### Forwarding ports
+#### Forwarding Ports
 
-Some VPNs offer the ability to forward ports, this is especially useful if you are not able to port forward normally, as it bypasses ISP restrictions.
+Some VPNs offer the ability to forward ports, which is especially useful if you are not able to [port forward](#port-forwarding) normally as it bypasses ISP restrictions:
 
-[AirVPN](https://airvpn.org/) - Offers 5 static ports. Recommended to use with a third party client such as [Wiresock](https://github.com/wiresock/WireSockUI) as the official one leaves much to be desired.
+- [AirVPN](https://airvpn.org) - Offers 5 static ports. *Recommended to use with a third-party client such as [WireSock](https://github.com/wiresock/WireSockUI)*
 
-[ProtonVPN](https://protonvpn.com/) - Offers 1 dynamic port. Recommended to use with an [automatic port mapping client](https://github.com/maah/ProtonVPN-win-app) to avoid manually updating ports on reconnect.
+- [ProtonVPN](https://protonvpn.com) - Offers 1 dynamic port. *Recommended to use with an [automatic port mapping client](https://github.com/maah/ProtonVPN-win-app) to avoid manually updating ports on reconnect*
+
 #### Split Tunneling
 
 Split tunneling allows you to selectively route your internet traffic through the VPN tunnel or your internet connection simultaneously. With split tunneling, you can choose specific applications, websites, or services to be routed through the VPN while allowing other traffic to bypass the VPN and use the regular internet connection.
