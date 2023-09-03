@@ -77,7 +77,7 @@ Torrents are shared using `.torrent` files or magnet links, which contain the ne
 
 ### Port Forwarding
 
-Port forwarding allows computers on other networks to be able to access services behind your network. Opening ports allows your client to have better connectability, resulting in faster speeds.
+Port forwarding allows computers on other networks to be able to access services behind your network. Opening ports gives your client better connectability, enabling you to download from seeders with closed ports and upload to leechers with closed ports much faster.
 
 A quick breakdown of expected performance is below:
 
@@ -91,12 +91,10 @@ Situation                                                                       
 !!!secondary
 <span style="color:#36AD99">Green peers</span> represent open ports. <span style="color:#E53E3E">Red peers</span> represent closed ports.
 
-¹A connection can be made between 2 unconnectable peers via a connectable third-party through [holepunching](http://bittorrent.org/beps/bep_0055.html).
+¹A connection can be made between two unconnectable peers via a connectable third-party through [holepunching](http://bittorrent.org/beps/bep_0055.html).
 
 ²The seeder needs to wait until the next tracker update in order to see the new peer.
 !!!
-
-As can be seen, opening your ports enables you to download from seeders with closed ports, and upload to leechers with closed ports much faster.
 
 ==- Enabling port forwarding
 

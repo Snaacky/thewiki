@@ -10,16 +10,16 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 ## Streaming
 
 !!!
-See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.
+*See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.*
 
-*Looking for official streaming sites?* See [r/anime's list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams).
+Looking for official streaming sites? *See [r/anime's list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams).*
 !!!
 
 Streaming sites are generally preferred by most anime watchers as they require no additional setup and are easy to use while being convenient.
 
 However, some sites will heavily compress video/audio and may have ads. *We suggest using a reliable content blocker, such as [uBlock Origin](https://ublockorigin.com). Additionally, you may want to consider torrenting if you care about quality.*
 
-Aiming for compatibility, they are also unable to use efficient codecs like x265. *If data limits are a concern, torrenting x265 mini encodes may be a better option. See the [quality comparison between mini encodes and popular streaming sites](https://slow.pics/c/pjYaqdnr).*
+Aiming for compatibility, they are also unable to use efficient codecs like x265. *If data limits are a concern, torrenting x265 mini encodes may be a better option. See the [quality comparisons between mini encodes and popular streaming sites](/guides/quality/#quality-comparisons).*
 
 Official streams have better quality but are also typically larger (~1.3GB per episode for 1080p). *They can be obtained by torrenting from groups like SubsPlease, who rip untouched streams.*
 
@@ -31,7 +31,7 @@ Torrenting, while can sometimes require more setup, allows for more flexibility 
 
 Unlike streaming sites, torrents provide access to better releases, such as [BDs for older shows](/guides/quality/#bd-vs-web) and greater video quality. *Some shows will also have fansubs, which may be preferred over official subtitles.*
 
-Torrenting requires the use of a torrent client, such as [qBittorrent](https://www.qbittorrent.org/download). Shows are shared in the form of .torrent files or magnet links, which can be found on trackers such as [Nyaa](https://nyaa.si). These are used by your torrent client to know what to download. *Download speeds are dependent on the number of seeds available and connection quality.*
+Torrenting requires the use of a torrent client, such as [qBittorrent](/tutorials/qbittorrent). Shows are shared in the form of .torrent files or magnet links, which can be found on trackers such as [Nyaa](https://nyaa.si). These are used by your torrent client to know what to download. *Download speeds are dependent on the number of seeds available and connection quality.*
 
 !!!warning
 Downloading anime torrents may be illegal depending on where you live. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting/#vpn) or [seedbox](/getting-started/torrenting/#seedbox).*

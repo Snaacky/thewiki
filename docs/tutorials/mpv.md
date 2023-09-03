@@ -416,7 +416,7 @@ WHEEL_DOWN    add volume -2
 
 ### Custom Scripts
 
-mpv allows you to load custom scripts, allowing you to further expand the player's functionality.
+mpv supports loading custom scripts, allowing you to further expand the player's functionality.
 
 Below is a list of some popular scripts:
 
