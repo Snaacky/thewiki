@@ -1,7 +1,7 @@
 ---
 label: Comparison
 description: Learn how to compare various sources of a video
-image: https://user-images.githubusercontent.com/78981416/219719610-2ccd06e9-e3ec-4b50-aae3-a7881292887f.gif
+image: /static/comparison/hyouka.gif
 ---
 
 # Comparison
