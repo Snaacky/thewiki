@@ -154,7 +154,7 @@ In case you have unknown issues preventing you from port forwarding despite havi
 - Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS etc. in your router settings. However, it is generally ill-advised due to security reasons.
 - Sometimes port forwarding will fail if you're doing so through a proxy.
 - Double check your torrent client configurations.
-- Flush your DNS cache by typing "ipconfig /flushdns" in the Windows command prompt. For Linux distributions, it varies from each other slightly as well as having many ways to do so. A quick Google search should help.
+- Flush your DNS cache by typing "ipconfig /flushdns" in the Windows command prompt. For Linux distributions, it varies slightly from one to another, and there are many ways to do so. A quick Google search should help.
 - Also make sure to create inbound/outbound rules for your torrent client on your firewall settings.
 
 !!!warning
