@@ -129,7 +129,7 @@ That said, you might be wondering on how to become connectable. This can be achi
 
 - Similarly, your torrent client also needs to run on a port on your device's private IP address. However, for anyone on the internet to be able to "see" your torrent client through this port, it has to be forwarded/connected to the equivalent port on your public IP address.
 
-- Metamorphically, think of your torrent client as a laser pointer. When it runs, it tries to shoot a beam of light (the connection) to another person, but is blocked by a "wall" - which is your router. If your router does not have an appropriate "hole" (port) prepared, nobody from the other side will be able to see the beam of light.
+- Metaphorically, think of your torrent client as a laser pointer. When it runs, it tries to shoot a beam of light (the connection) to another person, but is blocked by a "wall" - which is your router. If your router does not have an appropriate "hole" (port) prepared, nobody from the other side will be able to see the beam of light.
 
 ### How To Port Forward
 
