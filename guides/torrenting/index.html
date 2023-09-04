@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.3.0.747040904773">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.3.0.747158748663">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.3.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.3.0.747040904773" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.3.0.747158748663" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.3.0.747040904773" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.3.0.747158748663" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.3.0.747040904773" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.3.0.747158748663" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -262,7 +262,7 @@
 <ul>
 <li><a href="https://github.com/Jackett/Jackett">Jackett</a>: Meta indexer for torrent sites. Can be used as an addition to qBittorrent search plugins.</li>
 <li><a href="https://f-droid.org/packages/org.transdroid.full/">Transdrone</a> - Remote torrent management app for your torrent client running on your main PC. Supports several torrent clients.</li>
-<li><a href="https://play.google.com/store/apps/details?id=com.kevinforeman.nzb360">nzb360</a> - Remote torrent management app with support for managing Sonarr, Radarr etc.</li>
+<li><a href="https://play.google.com/store/apps/details?id=com.kevinforeman.nzb360">nzb360</a> - Remote torrent management app with support for managing Sonarr, Radarr, etc.</li>
 <li><a href="https://github.com/Novik/ruTorrent">ruTorrent for rTorrent</a> - Web UI for rtorrent.</li>
 <li><a href="https://github.com/Flood-UI/flood">Flood for rTorrent</a> - Sleek web UI for rtorrent.</li>
 <li><a href="https://github.com/Sonarr/Sonarr">Sonarr</a>: Automation of downloads through RSS.</li>
@@ -396,11 +396,11 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li><p>Your connection is assigned with a public &quot;address&quot; (IP address) by your ISP to your router. Your router will then assign a private (local) IP address to the devices that are connecting to it. On your devices, services which need to connect with another deivce over a network needs to have a &quot;door&quot; (port) opened (such as FTP on port 21, SSH &amp; SFTP on port 22, HTTP on port 80, or HTTPS on port 443, etc.). The IP address and the port number combination (for example - <a href="http://192.168.0.1:8080/">http://192.168.0.1:8080/</a>, where &quot;192.168.0.1&quot; is your private IP address, and &quot;8080&quot; is the port number) can be used to access the service in question.</p>
+<li><p>Your connection is assigned with a public &quot;address&quot; (IP address) by your ISP to your router. Your router will then assign a private (local) IP address to the devices that are connecting to it. On your devices, services which need to connect with another device over a network need to have a &quot;door&quot; (port) opened (such as FTP on port 21, SSH &amp; SFTP on port 22, HTTP on port 80, or HTTPS on port 443, etc.). The IP address and the port number combination (for example - <a href="http://192.168.0.1:8080/">http://192.168.0.1:8080/</a>, where &quot;192.168.0.1&quot; is your private IP address, and &quot;8080&quot; is the port number) can be used to access the service in question.</p>
 </li>
 <li><p>Similarly, your torrent client also needs to run on a port on your device&#x27;s private IP address. However, for anyone on the internet to be able to &quot;see&quot; your torrent client through this port, it has to be forwarded/connected to the equivalent port on your public IP address.</p>
 </li>
-<li><p>Metamorphically, think of your torrent client like a laser pointer. When it runs, it tries to shoot a beam of light (the connection) to another person, but is blocked by a &quot;wall&quot; - which is your router. If your router does not have an appropriate &quot;hole&quot; (port) prepared, nobody from the other side will be able to see the beam of light.</p>
+<li><p>Metaphorically, think of your torrent client as a laser pointer. When it runs, it tries to shoot a beam of light (the connection) to another person, but is blocked by a &quot;wall&quot; - which is your router. If your router does not have an appropriate &quot;hole&quot; (port) prepared, nobody from the other side will be able to see the beam of light.</p>
 </li>
 </ul>
 <doc-anchor-target id="how-to-port-forward">
@@ -450,12 +450,12 @@
 </div>
 <p>The easy way to do this is with UPnP - though it is considered a security risk by some, this is something enabled by default on both your router and in qBittorrent. It will automatically open the port needed by your torrent client without needing to manually change router settings. You can find and enable this on your torrent client and your router&#x27;s settings (by logging into it).</p>
 <p>Alternatively, find your router manufacturer and model <a href="https://portforward.com/router.htm">in this list</a> for a concise, step-by-step guide for your exact router model.</p>
-<p>In case you have unknown issues preventing you from port forwarding despite correctly followed the instructions, try the following:</p>
+<p>In case you have unknown issues preventing you from port forwarding despite having correctly followed the instructions, try the following:</p>
 <ul>
-<li>Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS etc. in your router settings. However, it is generally ill-advised due to security reasons.</li>
+<li>Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS, etc. in your router settings. However, it is generally ill-advised due to security reasons.</li>
 <li>Sometimes port forwarding will fail if you&#x27;re doing so through a proxy.</li>
 <li>Double check your torrent client configurations.</li>
-<li>Flush your DNS cache by typing &quot;ipconfig /flushdns&quot; in the Windows command prompt. For Linux distributions, it varies from each other slightly as well as having many ways to do so. A quick Google search should help.</li>
+<li>Flush your DNS cache by typing &quot;ipconfig /flushdns&quot; in the Windows command prompt. For Linux distributions, it varies slightly from one to another, and there are many ways to do so. A quick Google search should help.</li>
 <li>Also make sure to create inbound/outbound rules for your torrent client on your firewall settings.</li>
 </ul>
 <div class="flex mb-6">
@@ -485,9 +485,9 @@
 <li>Utilize a faster download/upload speed than your internet connection.</li>
 <li>High uptime - a seedbox is on 24/7 seeding your torrents at high speed, that allows you to maintain a good ratio on private (and public) trackers.</li>
 <li>Avoiding copyright/DMCA problems, especially if you are not using a VPN.</li>
-<li>Many seedboxes also support third-party plugins such as sonarr, plex etc.</li>
+<li>Many seedboxes also support third-party plugins such as Sonarr, Plex, etc.</li>
 </ul>
-<p>If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything like your own personal computer. This is one of the more luxury options and tend to cost significantly more.</p>
+<p>If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything you&#x27;d be able to set up on your own personal computer. This is one of the more luxurious options and tends to have a significantly higher cost than other simpler options.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
