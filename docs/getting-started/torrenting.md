@@ -18,7 +18,7 @@ Term               | Definition
 **Leecher**        | A user who is currently downloading the file, or has finished downloading some parts of the torrent and is sharing the pieces they have
 **Magnet link**    | A BitTorrent hyperlink that allows you to download the torrent without the need for a `.torrent` file
 **Peer**           | An individual computer or device connected to the swarm
-**Piece**          | A small segment of the files that was cut up during the torrent creation process, allowing simultaneous downloading and uploading of different pieces across peers
+**Piece**          | A small segment of the file(s) that was cut up during the torrent creation process, allowing simultaneous downloading and uploading of different pieces across peers
 **Ratio**          | The ratio between the amount of data uploaded and downloaded by the user
 **Seeder**         | A user who has completed downloading the files and is sharing them with other peers by uploading the file pieces
 **Swarm**          | The collective group of peers (seeders and leechers) distributing the files
