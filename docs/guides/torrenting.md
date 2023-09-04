@@ -56,7 +56,7 @@ Keep in mind that some clients (such as newer versions of uTorrent and BitTorren
 
 - [Jackett](https://github.com/Jackett/Jackett): Meta indexer for torrent sites. Can be used as an addition to qBittorrent search plugins.
 - [Transdrone](https://f-droid.org/packages/org.transdroid.full/) - Remote torrent management app for your torrent client running on your main PC. Supports several torrent clients.
-- [nzb360](https://play.google.com/store/apps/details?id=com.kevinforeman.nzb360) - Remote torrent management app with support for managing Sonarr, Radarr etc.
+- [nzb360](https://play.google.com/store/apps/details?id=com.kevinforeman.nzb360) - Remote torrent management app with support for managing Sonarr, Radarr, etc.
 - [ruTorrent for rTorrent](https://github.com/Novik/ruTorrent) - Web UI for rtorrent.
 - [Flood for rTorrent](https://github.com/Flood-UI/flood) - Sleek web UI for rtorrent.
 - [Sonarr](https://github.com/Sonarr/Sonarr): Automation of downloads through RSS.
@@ -125,11 +125,11 @@ That said, you might be wondering on how to become connectable. This can be achi
 
 ### What Is Port Forwarding?
 
-- Your connection is assigned with a public "address" (IP address) by your ISP to your router. Your router will then assign a private (local) IP address to the devices that are connecting to it. On your devices, services which need to connect with another deivce over a network needs to have a "door" (port) opened (such as FTP on port 21, SSH & SFTP on port 22, HTTP on port 80, or HTTPS on port 443, etc.). The IP address and the port number combination (for example - http://192.168.0.1:8080/, where "192.168.0.1" is your private IP address, and "8080" is the port number) can be used to access the service in question.
+- Your connection is assigned with a public "address" (IP address) by your ISP to your router. Your router will then assign a private (local) IP address to the devices that are connecting to it. On your devices, services which need to connect with another device over a network need to have a "door" (port) opened (such as FTP on port 21, SSH & SFTP on port 22, HTTP on port 80, or HTTPS on port 443, etc.). The IP address and the port number combination (for example - http://192.168.0.1:8080/, where "192.168.0.1" is your private IP address, and "8080" is the port number) can be used to access the service in question.
 
 - Similarly, your torrent client also needs to run on a port on your device's private IP address. However, for anyone on the internet to be able to "see" your torrent client through this port, it has to be forwarded/connected to the equivalent port on your public IP address.
 
-- Metamorphically, think of your torrent client like a laser pointer. When it runs, it tries to shoot a beam of light (the connection) to another person, but is blocked by a "wall" - which is your router. If your router does not have an appropriate "hole" (port) prepared, nobody from the other side will be able to see the beam of light.
+- Metaphorically, think of your torrent client as a laser pointer. When it runs, it tries to shoot a beam of light (the connection) to another person, but is blocked by a "wall" - which is your router. If your router does not have an appropriate "hole" (port) prepared, nobody from the other side will be able to see the beam of light.
 
 ### How To Port Forward
 
@@ -149,12 +149,12 @@ The easy way to do this is with UPnP - though it is considered a security risk b
 
 Alternatively, find your router manufacturer and model [in this list](https://portforward.com/router.htm) for a concise, step-by-step guide for your exact router model.
 
-In case you have unknown issues preventing you from port forwarding despite correctly followed the instructions, try the following:
+In case you have unknown issues preventing you from port forwarding despite having correctly followed the instructions, try the following:
 
-- Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS etc. in your router settings. However, it is generally ill-advised due to security reasons.
+- Disable network rules such as flood protection, DDoS protection, traffic shaping, QOS, etc. in your router settings. However, it is generally ill-advised due to security reasons.
 - Sometimes port forwarding will fail if you're doing so through a proxy.
 - Double check your torrent client configurations.
-- Flush your DNS cache by typing "ipconfig /flushdns" in the Windows command prompt. For Linux distributions, it varies from each other slightly as well as having many ways to do so. A quick Google search should help.
+- Flush your DNS cache by typing "ipconfig /flushdns" in the Windows command prompt. For Linux distributions, it varies slightly from one to another, and there are many ways to do so. A quick Google search should help.
 - Also make sure to create inbound/outbound rules for your torrent client on your firewall settings.
 
 !!!warning
@@ -168,9 +168,9 @@ A seedbox is a server - a computer in a data center with high bandwidth and uplo
 - Utilize a faster download/upload speed than your internet connection.
 - High uptime - a seedbox is on 24/7 seeding your torrents at high speed, that allows you to maintain a good ratio on private (and public) trackers.
 - Avoiding copyright/DMCA problems, especially if you are not using a VPN.
-- Many seedboxes also support third-party plugins such as sonarr, plex etc.
+- Many seedboxes also support third-party plugins such as Sonarr, Plex, etc.
 
-If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything like your own personal computer. This is one of the more luxury options and tend to cost significantly more.
+If you are somewhat tech-savvy, you can run your own virtual private server (VPS) or a dedicated server and use it as a virtual computer that can either be used as a seedbox, a VPN, or just about anything you'd be able to set up on your own personal computer. This is one of the more luxurious options and tends to have a significantly higher cost than other simpler options.
 
 !!!info
 Check out [/r/seedboxes](https://www.reddit.com/r/seedboxes/) for more information. They are geared towards private trackers so be sure to check for public tracker support, as well as unlimited bandwidth with any seedbox provider.
