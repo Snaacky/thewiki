@@ -1,6 +1,6 @@
 ---
 label: Release Standards
-order: -3
+order: -4
 ---
 
 # Release Standards
