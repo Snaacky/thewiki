@@ -17,18 +17,18 @@ There are a few things to keep in mind before creating a torrent:
 
 When creating a torrent, the file is cut into several, smaller pieces, which are then put together by a peer's [torrent client](/getting-started/torrenting/#torrent-client) to create the final result. These pieces are low in size and are used to facilitate peer-to-peer sharing, allowing for downloading and uploading to be much faster and seamless. However, there are some things to keep note of when setting the pieces for your torrent:
 
-- Creating too small pieces can cause more protocol overhead, bigger torrent files, longer hashing times, and possibly higher load on the CPU and drive
-- Creating too large pieces can slow down piece distribution
-- Older torrent clients do not support piece sizes greater than 16 MiB. *Greater piece sizes are only a concern for torrents above ~5 TB*
+- Creating too *small* pieces can cause more protocol overhead, bigger torrent files, longer hashing times, and possibly higher load on the CPU and drive
+- Creating too *large* pieces can slow down piece distribution
+- Older torrent clients do not support piece sizes greater than 16 MiB. *Greater piece sizes are only a concern for torrents above ~5 TiB*
 - Most clients automatically pick too small piece sizes. *[dottorrent-gui](#dottorrent-gui) is an exception, as it aims for 1000-1500 pieces during creation*
 
 We recommend targeting 1000 pieces, with 16 MiB being the upper limit. A quick reference is below:
 
 Torrent Size | Piece Size
 -------------|-------------
-2 to 4 GB    | 4 MiB
-4 to 8 GB    | 8 MiB
-8 to ∞ GB    | 16 MiB
+2 to 4 GiB   | 4 MiB
+4 to 8 GiB   | 8 MiB
+8 to ∞ GiB   | 16 MiB
 
 ### Trackers
 
@@ -39,8 +39,8 @@ http://nyaa.tracker.wf:7777/announce
 http://anidex.moe:6969/announce
 udp://open.stealth.si:80/announce
 udp://tracker.opentrackr.org:1337/announce
+udp://tracker.coppersurfer.tk:6969/announce
 udp://exodus.desync.com:6969/announce
-udp://tracker.torrent.eu.org:451/announce
 ```
 
 ## Creating
@@ -149,9 +149,9 @@ udp://exodus.desync.com:6969/announce \
 
 +++
 
-By default, torf heavily biases 8 MB piece size in situations where 16 MB would be more suitable. *We recommend performing the following edit to more aggressively target 1000 pieces:*
+By default, torf-cli heavily biases 8 MiB piece size in situations where 16 MiB would be more suitable. *We recommend performing the following edit to more aggressively target 1000 pieces:*
 
-- Go to your torf install location (e.g. `%localappdata%\Programs\Python\Python311\Lib\site-packages\torf`)
+- Go to your torf-cli install location (e.g. `%localappdata%\Programs\Python\Python311\Lib\site-packages\torf`)
 - Open `_torrent.py` using your text editor and replace lines 723-728:
 
 ```py

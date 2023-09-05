@@ -54,7 +54,7 @@ To start torrenting, you'll need a torrent client. This is the software that you
 For most users, we recommend using [qBittorrent](https://www.qbittorrent.org). It's a free, open-source, and feature-full client that is easy to use and understand.
 
 !!!warning
-You should not use newer versions of uTorrent or BitTorrent, as they are known to be bundled with malware and adware.
+You should not use newer versions of [μTorrent](https://wikipedia.org/wiki/%CE%9CTorrent) or [BitTorrent](https://wikipedia.org/wiki/BitTorrent_(software)), as they are known to be bundled with malware and adware.
 !!!
 
 *See the [qBittorrent guide](/tutorials/qbittorrent) on how to install and configure the client for your device.*
