@@ -45,3 +45,20 @@ Regex | Meaning                                          | Example Usage
 `-`   | Exclude word/phrase from search                  | `Gochuumon wa Usagi desu ka? BD Hi10P -BLOOM -"Sing For You"`
 
 *See [their help section](https://nyaa.si/help#using-search) for more information.*
+
+### Custom RSS
+
+[Nyaa](https://nyaa.si) supports custom RSS feed creation. This is useful if you plan on automatically downloading releases that do not have existing RSS feeds, such as fansubs for airing shows.
+
+- Search and go to the user's profile you want to create a feed for
+- On the top bar, click on RSS. *Copy this URL and add it to your torrent client*
+
+==- Video tutorial
+
+[!embed text="Creating an RSS feed for Yameii"](/static/torrenting/nyaa/custom-rss.mp4)
+
+==-
+
+!!!warning
+You should always make searches from the profile page, as global searches carry the risk of potentially downloading torrents from imposters using the group's name, which may contain malware or other undesirable content.
+!!!
