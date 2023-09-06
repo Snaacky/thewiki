@@ -30,7 +30,7 @@ We suggest you use a reliable content blocker such as [uBlock Origin](https://ub
 
 #### Categories
 
-Torrents on Nyaa are sorted by category. These can be changed using the second dropdown menu on the search bar.
+Torrents on [Nyaa](https://nyaa.si) are sorted by category. These can be changed using the second dropdown menu on the search bar.
 
 To search for releases in English, use the `- English-translated` option under the various categories.
 
@@ -51,7 +51,7 @@ Regex | Meaning                                          | Example Usage
 [Nyaa](https://nyaa.si) supports custom RSS feed creation. This is useful if you plan on automatically downloading releases that do not have existing RSS feeds, such as fansubs for airing shows.
 
 - Search and go to the user's profile you want to create a feed for
-- On the top bar, click on RSS. *Copy this URL and add it to your torrent client*
+- On the top bar, click on **RSS**. *Copy this URL and add it to your torrent client*
 
 ==- Video tutorial
 
