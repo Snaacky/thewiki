@@ -112,6 +112,12 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 
 ==-
 
+You can also create custom RSS feeds on Nyaa, simply enter your desired search terms, click RSS, and copy the URL.
+For example if you wanted a feed for Yameii's 1080p torrents, you would go onto their profile, search 1080p, then hit the RSS button and copy the URL.
+!!!warning
+You should always make searches from the profile page, as global searches carry the risk of automatically downloading torrents from imposters using the group's name which may contain malware or other undesirable content.
+!!!
+
 +++ Download rules
 
 1. Launch qBittorrent. In the top bar, go to **View** and check *RSS Reader*
