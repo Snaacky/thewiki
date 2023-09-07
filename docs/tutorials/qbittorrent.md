@@ -6,7 +6,7 @@ image: https://user-images.githubusercontent.com/78981416/232305852-17383fd0-c7d
 
 # qBittorrent
 
-[qBittorrent](https://www.qbittorrent.org) is a free, open-source, and cross-platform BitTorrent client. It is often recommened by most users due to its extensive features and ease of use.
+[qBittorrent](https://www.qbittorrent.org) is a free, open-source, and cross-platform BitTorrent client. It is often recommended by most users due to its extensive features and ease of use.
 
 ## Installation
 
@@ -71,7 +71,7 @@ qBittorrent supports automatic detection and can start downloading torrents by s
 
 If you use a [VPN](/getting-started/torrenting/#vpn), you may want to consider binding it to your qBittorrent client. This prevents you from accidentally torrenting when your VPN is inactive or from exposing your IP.
 
-1. Launch qBittorrent. In the top bar, go to **Tools** > **Options**
+1. Launch qBittorrent. In the top bar, go to **Tools** -> **Options**
 2. Head to **Advanced** and locate *Network interface*. In the dropdown menu, select your VPN's network adapter
 3. Click **Apply** in the bottom-right and close the **Options** window
 
@@ -87,7 +87,7 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 
 +++ Enabling RSS
 
-1. Launch qBittorrent. In the top bar, go to **Tools** > **Options**
+1. Launch qBittorrent. In the top bar, go to **Tools** -> **Options**
 2. Head to **RSS**. Under **RSS Reader**, check *Enable fetching RSS feeds*. You can also change how often your RSS feed is updated under *Feeds refresh interval*. *We recommend setting it to 15 minutes*
 3. Under **RSS Torrent Auto Downloader**, check *Enable auto downloading of RSS torrents*
 

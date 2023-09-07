@@ -50,7 +50,7 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 
 If you want to access mpv from the command line, you will need to add it to Windows PATH:
 
-1. In *Windows Settings* > *System* > *About*, locate *Advanced System Settings*. Head to *Advanced* and click on *Environment Variables...*
+1. In *Windows Settings* -> *System* -> *About*, locate *Advanced System Settings*. Head to *Advanced* and click on *Environment Variables...*
 2. Under *System Variables*, select *Path* and click on *Edit...*
 3. Click *New* and point the new variable to the `mpv.exe` located where mpv is installed
 4. Dismiss all of the dialogs by clicking `OK`

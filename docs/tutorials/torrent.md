@@ -236,10 +236,10 @@ for file in *.mkv; do mktorrent -v -l 24 \
 
 ==- Torrent for a single file/directory
 
-- In qBittorrent, go to the top bar and click on **Tools** > **Torrent Creator**
-- Under **Select file/folder to share** > **Path**, paste in the file/directory location of your torrent. *Alternatively, you can search for it using the **Select file**/**Select folder** buttons or dragging them into the **[Drag and drop area]***
+- In qBittorrent, go to the top bar and click on **Tools** -> **Torrent Creator**
+- Under **Select file/folder to share** -> **Path**, paste in the file/directory location of your torrent. *Alternatively, you can search for it using the **Select file**/**Select folder** buttons or dragging them into the **[Drag and drop area]***
 - Under **Settings**, select the [piece size based on the size of your torrent](#pieces)
-- Under **Fields** > **Tracker URLS**, paste in the trackers
+- Under **Fields** -> **Tracker URLS**, paste in the trackers
 
 !!!warning
 Line breaks after each [tracker URL](#trackers) are necessary when creating the torrent.
