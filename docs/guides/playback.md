@@ -11,8 +11,8 @@ image: /static/tohsaka.gif
 
 +++ PC :desktop_computer:
 
-- [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] - [Installation and configuration tutorial](/tutorials/mpv)
-- [MPC-HC](https://github.com/clsid2/mpc-hc/releases) - [Configuration guide with madVR](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
+- [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
+- [MPC-HC](https://github.com/clsid2/mpc-hc/releases) [!badge icon="link-external" variant="info" text="madVR Guide"](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
 - [Potplayer](https://potplayer.daum.net)
 
 +++ Android :robot_face:
@@ -27,7 +27,7 @@ image: /static/tohsaka.gif
 
 +++ TV/Media Servers :tv:
 
-- [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"] - *Can be installed optionally through [LibreELEC OS](https://libreelec.tv).*
+- [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="link-external" variant="info" text="Available on LibreELEC OS"](https://libreelec.tv)
 - [Plex](https://www.plex.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [Emby](https://emby.media)
 - [Jellyfin](https://jellyfin.org)

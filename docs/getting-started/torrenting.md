@@ -45,19 +45,17 @@ Downloading anime torrents may be illegal depending on where you live. *To avoid
 
 To start torrenting, you'll need a torrent client. This is the software that you will use to download torrents. Below is a list of some popular clients:
 
-- [qBittorrent](https://www.qbittorrent.org) [!badge icon=":heart:" variant="primary" text="Recommended"]
-- [Deluge](https://www.deluge-torrent.org)
+- [qBittorrent](https://www.qbittorrent.org) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/qbittorrent)
+- [Deluge](https://www.deluge-torrent.org) [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/deluge)
 - [LibreTorrent](https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent) [!badge variant="secondary" text="Android"]
 - [rTorrent](https://github.com/rakshasa/rtorrent) [!badge variant="secondary" text="Linux"]
-- [Transmission](https://github.com/transmission/transmission)
+- [Transmission](https://github.com/transmission/transmission) [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/transmission)
 
-For most users, we recommend using [qBittorrent](https://www.qbittorrent.org). It's a free, open-source, and feature-full client that is easy to use and understand.
+For most users, we recommend using [qBittorrent](/tutorials/qbittorrent). It's a free, open-source, and feature-full client that is easy to use and understand.
 
 !!!warning
 You should not use newer versions of [μTorrent](https://wikipedia.org/wiki/%CE%9CTorrent) or [BitTorrent](https://wikipedia.org/wiki/BitTorrent_(software)), as they are known to be bundled with malware and adware.
 !!!
-
-*See the [qBittorrent guide](/tutorials/qbittorrent) on how to install and configure the client for your device.*
 
 ## Getting Torrents
 
