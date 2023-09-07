@@ -19,10 +19,7 @@ If you're new to torrenting, see the [torrenting guide](/getting-started/torrent
 
 [AnimeBytes](https://animebytes.tv) (AB) is a closed private BitTorrent tracker for anime.
 
-Users are can join this tracker through recruitments on various top-tier trackers. Unlike other trackers, joining AB is difficult and *not* guaranteed, as several factors can affect your standing, such as receiving bans from other trackers. Below are some examples of ways to be eligible:
-
-- Power User at [RED](https://interviewfor.red) for 12 months
-- Elite Gamer at [GGn](https://gazellegames.net) for 3 months
+Users are can join this tracker through recruitments on various top-tier trackers. Unlike other trackers, however, joining AB is difficult and *not* guaranteed as several factors can affect your standing, such as receiving bans from other trackers.
 
 ## AnimeTorrents
 
