@@ -42,7 +42,7 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 [mpv](https://mpv.io) can also be found in the various forks below:
 
 - [ImPlay](https://github.com/tsl0922/ImPlay)
-- [mpv.net](https://github.com/mpvnet-player/mpv.net) [!button size="xs" variant="primary" icon="apps" text="Microsoft Store" target="blank" margin="0 8 0 0"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
+- [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
 +++
 
