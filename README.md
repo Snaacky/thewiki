@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/Snaacky/thewiki">
-    <img src="https://files.catbox.moe/m1lt04.png" alt="Logo" width="200" height="200">
+    <img src="https://github.com/Snaacky/thewiki/assets/78981416/1958720c-910a-44cf-88ff-76695062ff2d" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">thewiki.moe</h3>
@@ -10,7 +10,7 @@
     Retype docs for thewiki.moe, a wiki for all things related to anime and more.
     <br/>
     <br/>
-    <a href="https://thewiki.moe/"><strong>Explore the docs »</strong></a>
+    <a href="https://thewiki.moe/"><strong>Explore the wiki »</strong></a>
     <br/>
     <br/>
   </p>
@@ -58,7 +58,9 @@ To get a local copy up and running follow these simple steps.
     git clone https://github.com/Snaacky/thewiki.git
     ```
 
-4. Build and run. The `retype start` command automatically opens the default web browser on your machine and loads the website into the browser.
+4. Build and run
+
+    The `retype start` command automatically opens the default web browser on your machine and loads the website into the browser.
 
     ```sh
     retype start thewiki
