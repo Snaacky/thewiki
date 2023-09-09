@@ -38,11 +38,21 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en)
+1. [Node.js](https://nodejs.org/en). You can install this with [`nvm`](https://github.com/nvm-sh/nvm) or [`nvm-windows`](https://github.com/coreybutler/nvm-windows) depending on your OS
+
+2. After installing `nvm` run
+
+    ```sh
+    nvm install latest
+    ```
+
+    ```sh
+    nvm use latest
+    ``` 
 
 ### Installation
 
-1. Install [retypeapp](https://www.npmjs.com/package/retypeapp). You can install it using npm or yarn.
+1. Install [retypeapp](https://www.npmjs.com/package/retypeapp). You can install it using npm or yarn
 
     ```sh
     npm install retypeapp --global
@@ -60,13 +70,13 @@ To get a local copy up and running follow these simple steps.
 
 4. Build and run
 
-    The `retype start` command automatically opens the default web browser on your machine and loads the website into the browser.
-
+    The `retype start` command automatically opens the default web browser on your machine and loads the website into the browser
+   
     ```sh
     retype start thewiki
     ```
     
-    Alternatively, you can use `retype build` to build it without running it.
+    Alternatively, you can use `retype build` to build it without running it
    
     ```sh
     retype build thewiki --output retype
