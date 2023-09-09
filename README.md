@@ -78,19 +78,19 @@ Any contributions you make are **greatly appreciated**.
 1. Fork the Project
 2. Create your Feature Branch
 
-  ```sh
-  git checkout -b feature/NewGuide
-  ```
+    ```sh
+    git checkout -b feature/NewGuide
+    ```
 3. Commit your Changes
 
-  ```sh
-  git commit -m 'Add some NewGuide'
-  ```
+    ```sh
+    git commit -m 'Add some NewGuide'
+    ```
 4. Push to the Branch
 
-  ```sh
-  git push origin feature/NewGuide
-  ```
+    ```sh
+    git push origin feature/NewGuide
+    ```
 5. Open a Pull Request
 
 ## License
