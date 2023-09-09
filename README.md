@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/Snaacky/thewiki">
-    <img src="https://github.com/Snaacky/thewiki/assets/78981416/efdae8dc-2f53-45cd-8a75-6036b81eeafa" alt="Logo">
+    <img src="https://github.com/Snaacky/thewiki/assets/78981416/efdae8dc-2f53-45cd-8a75-6036b81eeafa" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">thewiki.moe</h3>
