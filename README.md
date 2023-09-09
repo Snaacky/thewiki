@@ -58,8 +58,14 @@ To get a local copy up and running follow these simple steps.
     git clone https://github.com/Snaacky/thewiki.git
     ```
 
-4. Build
+4. Build and run. The `retype start` command automatically opens the default web browser on your machine and loads the website into the browser.
 
+    ```sh
+    retype start thewiki
+    ```
+    
+    Alternatively, you can use `retype build` to build it without running it.
+   
     ```sh
     retype build thewiki --output retype
     ```
