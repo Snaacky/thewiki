@@ -16,7 +16,7 @@
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/Snaacky/thewiki?color=dark-green) ![Issues](https://img.shields.io/github/issues/Snaacky/thewiki) ![License](https://img.shields.io/github/license/Snaacky/thewiki) 
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Snaacky/thewiki/retype-action.yml?style=for-the-badge&logo=github)](https://github.com/Snaacky/thewiki/actions) [![GitHub issues](https://img.shields.io/github/issues/Snaacky/thewiki?style=for-the-badge&logo=github)](https://github.com/Snaacky/thewiki/issues) [![License](https://img.shields.io/github/license/Snaacky/thewiki?style=for-the-badge&logo=unlicense)](https://github.com/Snaacky/thewiki/blob/master/LICENSE) [![Discord](https://img.shields.io/discord/974468300304171038?style=for-the-badge&logo=discord)](https://discord.gg/snackbox)
 
 ## Table Of Contents
 
@@ -34,7 +34,7 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
@@ -42,7 +42,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Install [retypeapp](https://www.npmjs.com/package/retypeapp). You can install it using npm, yarn, or the dotnet CLI.
+1. Install [retypeapp](https://www.npmjs.com/package/retypeapp). You can install it using npm or yarn.
 
     ```sh
     npm install retypeapp --global
@@ -50,10 +50,6 @@ To get a local copy up and running follow these simple example steps.
 
     ```sh
     yarn global add retypeapp
-    ```
-
-    ```sh
-    dotnet tool install retypeapp --global
     ```
 
 2. Clone the repo
@@ -72,7 +68,7 @@ To get a local copy up and running follow these simple example steps.
 
 Any contributions you make are **greatly appreciated**.
 
-- If you have suggestions for adding or removing projects, feel free to open an issue to discuss it, or directly create a pull request.
+- If you have any suggestions, feel free to [open an issue](https://github.com/Snaacky/thewiki/issues/new) to discuss it, join our [discord](https://discord.gg/snackbox), or directly create a pull request.
 - Please make sure you check your spelling and grammar.
 - Create individual PR for each suggestion.
 
@@ -80,9 +76,21 @@ Any contributions you make are **greatly appreciated**.
 ### Creating A Pull Request
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/NewGuide`)
-3. Commit your Changes (`git commit -m 'Add some NewGuide'`)
-4. Push to the Branch (`git push origin feature/NewGuide`)
+2. Create your Feature Branch
+
+  ```sh
+  git checkout -b feature/NewGuide
+  ```
+3. Commit your Changes
+
+  ```sh
+  git commit -m 'Add some NewGuide'
+  ```
+4. Push to the Branch
+
+  ```sh
+  git push origin feature/NewGuide
+  ```
 5. Open a Pull Request
 
 ## License
