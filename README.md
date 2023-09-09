@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/Snaacky/thewiki">
-    <img src="https://github.com/Snaacky/thewiki/assets/78981416/1958720c-910a-44cf-88ff-76695062ff2d" alt="Logo" width="200" height="200">
+    <img src="https://github.com/Snaacky/thewiki/assets/78981416/efdae8dc-2f53-45cd-8a75-6036b81eeafa" alt="Logo">
   </a>
 
   <h3 align="center">thewiki.moe</h3>
@@ -16,7 +16,10 @@
   </p>
 </p>
 
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Snaacky/thewiki/retype-action.yml?style=for-the-badge&logo=github)](https://github.com/Snaacky/thewiki/actions) [![GitHub issues](https://img.shields.io/github/issues/Snaacky/thewiki?style=for-the-badge&logo=github)](https://github.com/Snaacky/thewiki/issues) [![License](https://img.shields.io/github/license/Snaacky/thewiki?style=for-the-badge&logo=unlicense)](https://github.com/Snaacky/thewiki/blob/master/LICENSE) [![Discord](https://img.shields.io/discord/974468300304171038?style=for-the-badge&logo=discord)](https://discord.gg/snackbox)
+<div align="center">
+
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Snaacky/thewiki/retype-action.yml?style=flat&logo=github)](https://github.com/Snaacky/thewiki/actions) [![GitHub issues](https://img.shields.io/github/issues/Snaacky/thewiki?style=flat&logo=github)](https://github.com/Snaacky/thewiki/issues) [![License](https://img.shields.io/github/license/Snaacky/thewiki?style=flat&logo=unlicense)](https://github.com/Snaacky/thewiki/blob/master/LICENSE) [![Discord](https://img.shields.io/discord/974468300304171038?style=flat&logo=discord)](https://discord.gg/snackbox)
+</div>
 
 ## Table Of Contents
 
@@ -30,7 +33,7 @@
 
 ## Built With
 
-- [Retype](https://retype.com/)
+[![Retype](https://retype.com/static/retype-logo-dark.svg)](https://retype.com/)
 
 ## Getting Started
 
