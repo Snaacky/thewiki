@@ -75,23 +75,23 @@ Any contributions you make are **greatly appreciated**.
 
 ### Creating A Pull Request
 
-1. Fork the Project
-2. Create your Feature Branch
+1. Fork this repository
+2. Create your feature branch
 
     ```sh
     git checkout -b feature/NewGuide
     ```
-3. Commit your Changes
+3. Commit your changes
 
     ```sh
     git commit -m 'Add some NewGuide'
     ```
-4. Push to the Branch
+4. Push to the branch
 
     ```sh
     git push origin feature/NewGuide
     ```
-5. Open a Pull Request
+5. Open a pull request
 
 ## License
 
