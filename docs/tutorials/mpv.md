@@ -416,7 +416,7 @@ WHEEL_DOWN    add volume -2
 
 ### Custom Scripts
 
-mpv allows you to load custom scripts, allowing you to further expand the player's functionality.
+mpv supports loading custom scripts, allowing you to further expand the player's functionality.
 
 Below is a list of some popular scripts:
 
@@ -424,8 +424,8 @@ Below is a list of some popular scripts:
 - [mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager) - Script to create and manage playlists
 - [mpv-webm](https://github.com/ekisu/mpv-webm) - WebM maker for mpv
 - [pause-when-minimize](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/pause-when-minimize.lua) - Pauses playback when minimizing the window, and resumes playback when brought back
-- [thumbfast](https://github.com/po5/thumbfast) - Display thumbnails when scrubbing video (may be needed for some [Skins](#skins))
-- [trackselect](https://github.com/po5/trackselect) - Select tracks based on their title
+- [thumbfast](https://github.com/l-jared/thumbfast) - Display thumbnails when scrubbing video (may be needed for some [Skins](#skins))
+- [trackselect](https://github.com/l-jared/trackselect) - Select tracks based on their title
 
 ### Skins
 
