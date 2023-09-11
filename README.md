@@ -17,8 +17,11 @@
 
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Snaacky/thewiki/retype-action.yml?style=flat&logo=github)](https://github.com/Snaacky/thewiki/actions) [![GitHub issues](https://img.shields.io/github/issues/Snaacky/thewiki?style=flat&logo=github)](https://github.com/Snaacky/thewiki/issues) [![License](https://img.shields.io/github/license/Snaacky/thewiki?style=flat&logo=unlicense)](https://github.com/Snaacky/thewiki/blob/master/LICENSE) [![Discord](https://img.shields.io/discord/974468300304171038?style=flat&logo=discord)](https://discord.gg/snackbox)
 
-<h3>
-<a href="https://retype.com">Built with <img src="https://retype.com/static/retype-logo-dark.svg" alt="Retype Logo" height="16"></a>
+<h3>Built with
+  <br>
+  <a href="https://retype.com">
+    <img src="https://retype.com/static/retype-logo-dark.svg" alt="Retype Logo" height="32">
+  </a>
 </h3>
 
 </div>
