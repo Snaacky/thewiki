@@ -1,16 +1,16 @@
 <h1>
-<p align="center">
-  <a href="https://thewiki.moe">
-    <img src="https://github.com/Snaacky/thewiki/assets/78981416/efdae8dc-2f53-45cd-8a75-6036b81eeafa" alt="thewiki.moe Logo" width="200" height="200">
-  </a>
-  <h3 align="center">thewiki.moe</h3>
   <p align="center">
-    Retype docs for thewiki.moe, a wiki for all things related to anime and more.
-    <br>
-    <a href="https://thewiki.moe/"><strong>Explore the wiki »</strong></a>
-    <br>
+    <a href="https://thewiki.moe">
+      <img src="https://github.com/Snaacky/thewiki/assets/78981416/efdae8dc-2f53-45cd-8a75-6036b81eeafa" alt="thewiki.moe Logo" width="200" height="200">
+    </a>
+    <h3 align="center">thewiki.moe</h3>
+    <p align="center">
+      Retype docs for thewiki.moe, a wiki for all things related to anime and more.
+      <br>
+      <a href="https://thewiki.moe/"><strong>Explore the wiki »</strong></a>
+      <br>
+    </p>
   </p>
-</p>
 </h1>
 
 <div align="center">
