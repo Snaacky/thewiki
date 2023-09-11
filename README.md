@@ -1,7 +1,7 @@
 <h1>
 <p align="center">
-  <a href="https://github.com/Snaacky/thewiki">
-    <img src="https://github.com/Snaacky/thewiki/assets/78981416/efdae8dc-2f53-45cd-8a75-6036b81eeafa" alt="Logo" width="200" height="200">
+  <a href="https://thewiki.moe">
+    <img src="https://github.com/Snaacky/thewiki/assets/78981416/efdae8dc-2f53-45cd-8a75-6036b81eeafa" alt="thewiki.moe Logo" width="200" height="200">
   </a>
   <h3 align="center">thewiki.moe</h3>
   <p align="center">
@@ -18,7 +18,7 @@
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Snaacky/thewiki/retype-action.yml?style=flat&logo=github)](https://github.com/Snaacky/thewiki/actions) [![GitHub issues](https://img.shields.io/github/issues/Snaacky/thewiki?style=flat&logo=github)](https://github.com/Snaacky/thewiki/issues) [![License](https://img.shields.io/github/license/Snaacky/thewiki?style=flat&logo=unlicense)](https://github.com/Snaacky/thewiki/blob/master/LICENSE) [![Discord](https://img.shields.io/discord/974468300304171038?style=flat&logo=discord)](https://discord.gg/snackbox)
 
 <h3>
-Built with <img src="https://retype.com/static/retype-logo-dark.svg" alt="Logo" height="16">
+<a href="https://retype.com">Built with <img src="https://retype.com/static/retype-logo-dark.svg" alt="Retype Logo" height="16"></a>
 </h3>
 
 </div>
@@ -84,7 +84,7 @@ Learn how to get a local copy up and running:
 
 ## Contributing
 
-Contributions made are **much appreciated**!
+Contributions are **much appreciated**!
 
 - If you have any suggestions, feel free to [open an issue](https://github.com/Snaacky/thewiki/issues/new) to discuss it, join our [Discord](https://discord.gg/snackbox), or create a [pull request](https://github.com/Snaacky/thewiki/pulls)
 - Make sure you check your spelling and grammar
