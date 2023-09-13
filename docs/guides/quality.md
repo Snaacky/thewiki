@@ -211,7 +211,7 @@ While these edits can be an improvement over the original subs, *they may also i
 
 They can be downloaded under the *Subtitles* section of a release:
 
-![AnimeTosho](https://files.catbox.moe/wbychc.gif)
+![AnimeTosho](/static/quality/animetosho.gif)
 
 ===
 
