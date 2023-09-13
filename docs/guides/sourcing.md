@@ -21,7 +21,7 @@ The first one is geared more towards video quality than the best subtitles. A lo
 
 ### Searching
 
-The main source for finding torrents is [Nyaa](nyaa.si), you already have a general idea about the codecs, quality and release groups from the sections above. These 3 things are what we'll use to quickly find the best release for any anime. Nyaa search is simple and limited, but it's enough for finding anything, given that the uploader correctly tags the release.
+The main source for finding torrents is [Nyaa](https://nyaa.si/), you already have a general idea about the codecs, quality and release groups from the sections above. These 3 things are what we'll use to quickly find the best release for any anime. Nyaa search is simple and limited, but it's enough for finding anything, given that the uploader correctly tags the release.
 
 First, change the All Categories option to `Anime - English Translated`. It can be set to just `Anime` to include english, raws and other languages. The two useful search operators are `-` and `|(OR)`, `AND` is already implicit in every search. For example -
 

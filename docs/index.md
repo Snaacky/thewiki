@@ -23,7 +23,7 @@ We also have a Discord server where you can hang out, report, and request things
 
 - [Find the best media player for your device](/guides/playback/)
 - [Source your favorite content in the highest quality possible](/guides/quality/)
-- [Learn how to torrent from scratch](/guides/torrenting/)
+- [Learn how to torrent from scratch](/getting-started/torrenting/)
 
 #### :tv: Learn about the various ways to watch your anime
 
@@ -34,7 +34,7 @@ We also have a Discord server where you can hang out, report, and request things
 #### :scroll: Some helpful tutorials
 
 - [Install and configure mpv](/tutorials/mpv/)
-- [Download your favorite weekly shows automatically using RSS](/tutorials/rss/)
+- [Download your favorite weekly shows automatically using RSS](/tutorials/qbittorrent/#rss)
 - [Compare multiple releases to find what's best for you](/tutorials/comparison/)
 
 #### :floppy_disk: Want to make your own release for others to watch and enjoy?
@@ -47,4 +47,4 @@ We also have a Discord server where you can hang out, report, and request things
 
 #### :sparkling_heart: Want to contribute and help improve this wiki?
 
-- [See how you can contribute](/contributing)
+- [See how you can contribute](https://github.com/Snaacky/thewiki#getting-started)
