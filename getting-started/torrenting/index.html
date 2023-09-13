@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747853320534">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747946300311">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.1">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Torrenting</title>
     <meta name="title" content="Torrenting">
-    <meta name="description" content="Get started with torrenting">
+    <meta name="description" content="Learn how to get started with torrenting">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://thewiki.moe/getting-started/torrenting/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thewiki.moe/getting-started/torrenting/">
     <meta property="og:title" content="Torrenting">
-    <meta property="og:description" content="Get started with torrenting">
+    <meta property="og:description" content="Learn how to get started with torrenting">
     <meta property="og:image" content="https://user-images.githubusercontent.com/78981416/247237870-7dd7da8f-cdbc-48e4-b096-1d790817aa18.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/getting-started/torrenting/">
     <meta property="twitter:title" content="Torrenting">
-    <meta property="twitter:description" content="Get started with torrenting">
+    <meta property="twitter:description" content="Learn how to get started with torrenting">
     <meta property="twitter:image" content="https://user-images.githubusercontent.com/78981416/247237870-7dd7da8f-cdbc-48e4-b096-1d790817aa18.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.1.747853320534" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.1.747946300311" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747853320534" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747946300311" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747853320534" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747946300311" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -157,84 +157,72 @@
         <span>Torrenting</span>
     </h1>
 </doc-anchor-target>
-<p>Torrenting is a peer-to-peer file sharing method that facilitates the distribution and downloading of files over the internet. Unlike traditional file downloads, where files are obtained from a single source, torrenting leverages the collective resources of numerous participants, known as peers.
-When engaging in torrenting, a torrent client allows you to connect with these peers and download files in small fragments. Each peer contributes a portion of the desired file, and the torrenting software intelligently combines these fragments to create the complete file on the user&#x27;s device.
-An inherent advantage of torrenting is its distributed nature, as users simultaneously download and upload fragments of files. This collaborative process enhances download speeds and reduces strain on individual servers, providing an efficient and resilient method for file transfer.</p>
-<doc-panel id="basic-terminology" collapsed>
-    <template #title>Basic Terminology</template>
+<p>Torrenting is a peer-to-peer file-sharing method that facilitates the distribution and downloading of files over the internet.</p>
+<p>Unlike traditional file downloads, where files are obtained from a single source, torrenting leverages the collective resources of numerous participants, known as peers. This collaborative process enhances download speeds and reduces strain on individual servers, providing an efficient and resilient method for file transferring. A <doc-anchor-trigger to="#torrent-client">torrent client</doc-anchor-trigger> allows you to connect with these peers and download the file in small fragments, which are put together to create the final result.</p>
+<doc-panel id="understanding-the-terminology" collapsed>
+    <template #title>Understanding the Terminology</template>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Leecher</strong></td>
+<td>A user who is currently downloading the file, or has finished downloading some parts of the torrent and is sharing the pieces they have</td>
+</tr>
+<tr>
+<td><strong>Magnet link</strong></td>
+<td>A BitTorrent hyperlink that allows you to download the torrent without the need for a <code v-pre>.torrent</code> file</td>
+</tr>
+<tr>
+<td><strong>Peer</strong></td>
+<td>An individual computer or device connected to the swarm</td>
+</tr>
+<tr>
+<td><strong>Piece</strong></td>
+<td>A small segment of the file(s) that was cut up during the torrent creation process, allowing simultaneous downloading and uploading of different pieces across peers</td>
+</tr>
+<tr>
+<td><strong>Ratio</strong></td>
+<td>The ratio between the amount of data uploaded and downloaded by the user</td>
+</tr>
+<tr>
+<td><strong>Seeder</strong></td>
+<td>A user who has completed downloading the files and is sharing them with other peers by uploading the file pieces</td>
+</tr>
+<tr>
+<td><strong>Swarm</strong></td>
+<td>The collective group of peers (seeders and leechers) distributing the files</td>
+</tr>
+<tr>
+<td><strong>Torrent client</strong></td>
+<td>The software or application used to download and upload files using the BitTorrent protocol</td>
+</tr>
+<tr>
+<td><strong>Torrent file</strong></td>
+<td>A file (<code v-pre>.torrent</code>) that contains metadata about the files to be shared and the tracker information required to initiate and coordinate the downloading process</td>
+</tr>
+<tr>
+<td><strong>Tracker</strong></td>
+<td>A server or web service that assists in coordinating the communication between peers in a BitTorrent network by keeping track of which peers possess which pieces of a file</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-panel>
+<p>For most people, <a href="../../sourcing/streaming/">streaming services</a> are more convenient to use. However, torrenting is fairly simple and allows for better flexibility. Some reasons to use torrents are:</p>
 <ul>
-<li><strong>Leecher</strong> - A user who is in the process of downloading a file but has not yet completed the download or is not actively uploading (sharing) the downloaded pieces with others</li>
-<li><strong>Magnet link</strong> - A type of hyperlink used in BitTorrent that allows users to directly connect to the tracker and peers without needing to download a separate torrent file</li>
-<li><strong>Peer</strong> - An individual computer or device connected to a P2P network that participates in sharing and downloading files</li>
-<li><strong>Piece</strong> - A small part of a file that is broken down during the BitTorrent process, allowing simultaneous downloading and uploading of different pieces from different peers</li>
-<li><strong>Ratio</strong> - The ratio between the amount of data uploaded by a user and the amount downloaded</li>
-<li><strong>Seedbox</strong> - A dedicated remote server optimized for high-speed downloading and seeding of torrents</li>
-<li><strong>Seeder</strong> - A user who has completed downloading a file and continues to share it with other users by uploading the file pieces they possess</li>
-<li><strong>Swarm</strong> - The collective group of peers (both seeders and leechers) participating in the distribution of a particular file through BitTorrent</li>
-<li><strong>Torrent client</strong> - Software or application used to download and upload files using the BitTorrent protocol</li>
-<li><strong>Torrent file</strong> - A small file that contains metadata about the files to be shared and the tracker information required to initiate and coordinate the downloading process</li>
-<li><strong>Tracker</strong> - A server or web service that assists in coordinating the communication between peers in a BitTorrent network by keeping track of which peers possess which pieces of a file</li>
+<li>Broad range of qualities and sizes</li>
+<li><a href="../../guides/quality/#quality-comparisons">Significantly better quality</a> compared to streaming sites</li>
+<li>Better and faster availability</li>
+<li>Better subtitles/<a href="../../guides/quality/#fansubs">fansubs</a> and styling options</li>
+<li>Access to a larger variety of titles and <a href="../../guides/quality/#blu-ray-vs-web">Blu-ray releases</a></li>
+<li>Downloaded files for rewatching with no additional data usage</li>
 </ul>
-</doc-panel>
-<doc-anchor-target id="torrent-client">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#torrent-client">#</doc-anchor-trigger>
-        <span>Torrent Client</span>
-    </h2>
-</doc-anchor-target>
-<p>To get started with torrenting, you&#x27;ll need a torrent client. This is the software that you will use to download torrents.
-The recommended client is <a href="../../tutorials/qbittorrent/">qBittorrent</a>. It&#x27;s a free and open source feature-full client with several features like Categories, tags, RSS, Web-UI, and more. Pretty much the best client to get started with.</p>
-<doc-panel id="how-to-download-qbittorrent" collapsed>
-    <template #title>How to download qBittorrent</template>
-<ol>
-<li><p>Go to qBittorrent&#x27;s <a href="https://www.fosshub.com/qBittorrent.html">download page</a></p>
-</li>
-<li><p>Download <code v-pre>qBittorrent Windows x64</code> for Windows, <code v-pre>qBittorrent AppImage</code> for Linux, and <code v-pre>qBittorrent Mac OS X</code> for macOS. You&#x27;ll see a few confusing terms here, like <code v-pre>lt20</code>, <code v-pre>qt5</code>, and <code v-pre>qt6</code>. You don&#x27;t really have to know anything about them besides the fact that they are builds with underlying breaking changes which are not yet widely adopted which is why you should avoid them.</p>
-</li>
-<li><p>Run the installer and you&#x27;re pretty much done. You can look around the settings if you want but the default values are already good.</p>
-</li>
-</ol>
-</doc-panel>
-<doc-anchor-target id="sequential-downloading">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sequential-downloading">#</doc-anchor-trigger>
-        <span>Sequential Downloading</span>
-    </h3>
-</doc-anchor-target>
-<p>Sequential downloading in qBittorrent refers to a feature that allows you to prioritize the order in which pieces of a torrent file are downloaded. Normally, when downloading a torrent, the pieces are retrieved in a random order from different parts of the file. However, with sequential downloading enabled, qBittorrent fetches the pieces in a sequential manner, starting from the beginning of the file and progressing towards the end.
-For example, if you are downloading a video file and want to start watching it before the entire download is complete, enabling sequential downloading ensures that the initial parts of the file, which often include the beginning of the video, are prioritized. This way, you can begin playback sooner, even if the download is still in progress.
-To enable sequential downloading, check the box that says <code v-pre>Download in sequential order</code> and <code v-pre>Download first and last pieces first</code> in the pop-up window when you add a torrent or by right clicking a selected torrent.</p>
-<doc-panel id="enabling-sequential-download-in-qbittorrent" collapsed>
-    <template #title>Enabling sequential download in qBittorrent</template>
-<p><figure class="content-center">
-    <a href="https://user-images.githubusercontent.com/78981416/246656860-016c8815-bea7-4037-ac86-c54c1845a40c.png">
-        <img src="https://user-images.githubusercontent.com/78981416/246656860-016c8815-bea7-4037-ac86-c54c1845a40c.png" alt="">
-    </a>
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p><figure class="content-center">
-    <a href="https://user-images.githubusercontent.com/78981416/246629896-a00c9781-30a2-41b7-a17d-3a885cd01644.png">
-        <img src="https://user-images.githubusercontent.com/78981416/246629896-a00c9781-30a2-41b7-a17d-3a885cd01644.png" alt="">
-    </a>
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-</doc-panel>
-<doc-anchor-target id="rss">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#rss">#</doc-anchor-trigger>
-        <span>RSS</span>
-    </h3>
-</doc-anchor-target>
-<p>Say you want to download weekly uploads but doing that manually is tedious. To automatically download stuff via qBittorrent, you can set up an RSS feed. You can read the RSS guide <a href="/docs/tutorials/rss">here</a></p>
-<doc-anchor-target id="vpn">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vpn">#</doc-anchor-trigger>
-        <span>VPN</span>
-    </h2>
-</doc-anchor-target>
-<p>A VPN helps protect your online privacy and security. When you connect to a VPN, it creates a secure and encrypted tunnel between your device and the internet. It encrypts (locks) your internet traffic (the information you send and receive online) and sends it through a secure tunnel. This means that even if someone tries to intercept or spy on your internet activity, they won&#x27;t be able to understand or access your data because it&#x27;s encrypted. In the case of torrenting, it&#x27;ll hide your torrent traffic from your ISP. Depending on which country you live in, your ISP may send you a DMCA letter or threaten to shut off your internet or do absolutely nothing. If your country is strict about it, you should highly consider buying a VPN. If you&#x27;re in North America or Europe you probably need a VPN, otherwise check your local laws.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -247,49 +235,206 @@ To enable sequential downloading, check the box that says <code v-pre>Download i
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Do not use free VPNs. Free VPNs often have limitations, weak security, and privacy concerns. They may show ads, sell your data, or have slower speeds.</p>
+<p>Downloading anime torrents may be illegal depending on where you live. <em>To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a <doc-anchor-trigger to="#vpn">VPN</doc-anchor-trigger> or <doc-anchor-trigger to="#seedbox">seedbox</doc-anchor-trigger>.</em></p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="vpn-binding">
+<doc-anchor-target id="torrent-client">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#torrent-client">#</doc-anchor-trigger>
+        <span>Torrent Client</span>
+    </h2>
+</doc-anchor-target>
+<p>To start torrenting, you&#x27;ll need a torrent client. This is the software that you will use to download torrents. Below is a list of some popular clients:</p>
+<ul>
+<li><a href="../../tutorials/qbittorrent/">qBittorrent</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span class="docs-emoji mr-2">&#x2764;&#xFE0F;</span>
+    <span>Recommended</span>
+</span></li>
+<li><a href="../../tutorials/deluge/">Deluge</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent">LibreTorrent</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Android</span>
+</span></li>
+<li><a href="https://github.com/rakshasa/rtorrent">rTorrent</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Linux</span>
+</span></li>
+<li><a href="../../tutorials/transmission/">Transmission</a></li>
+</ul>
+<p>For most users, we recommend using <a href="../../tutorials/qbittorrent/">qBittorrent</a>. It&#x27;s a free, open-source, and feature-full client that is easy to use and understand.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>You should not use newer versions of <a href="https://wikipedia.org/wiki/%CE%9CTorrent">μTorrent</a> or <a href="https://wikipedia.org/wiki/BitTorrent_(software)">BitTorrent</a>, as they are known to be bundled with malware and adware.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="getting-torrents">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-torrents">#</doc-anchor-trigger>
+        <span>Getting Torrents</span>
+    </h2>
+</doc-anchor-target>
+<p>Torrents are shared using <code v-pre>.torrent</code> files or magnet links, which contain the necessary metadata of the file to be downloaded. These can be obtained through various trackers.</p>
+<p><code v-pre>.torrent</code> files can be added to your torrent client by opening it or browsing for the file manually. Magnet links can be opened in your browser, where it will prompt you to choose the torrent client to be opened with. Alternatively, you can paste this magnet link into your client.</p>
+<doc-panel id="video-example" collapsed>
+    <template #title>Video example</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/getting-torrents-file.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Launching a torrent file with qBittorrent</figcaption>
+</figure>
+</p>
+</doc-panel>
+<p><em>See the list of <a href="../../sourcing/public-trackers/">public trackers</a> or <a href="../../sourcing/private-trackers/">private trackers</a> for places to find anime torrents.</em></p>
+<doc-anchor-target id="additional-tools">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-tools">#</doc-anchor-trigger>
+        <span>Additional Tools</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="port-forwarding">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vpn-binding">#</doc-anchor-trigger>
-        <span>VPN Binding</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#port-forwarding">#</doc-anchor-trigger>
+        <span>Port Forwarding</span>
     </h3>
 </doc-anchor-target>
-<p>The best way to avoid exposing your IP address is by binding the VPN network interface to the torrent client. This means that you&#x27;ll only be able to download/upload while the VPN tunnel is active, reducing the probability of having a leak to virtually zero.</p>
-<p>To bind your client to your VPN follow these steps:</p>
+<p>Port forwarding allows computers on other networks to be able to access services behind your network. Opening ports gives your client better connectability, enabling you to download from seeders with closed ports and upload to leechers with closed ports much faster.</p>
+<p>A quick breakdown of expected performance is below:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Situation</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:#E53E3E">Leecher</span> - <span style="color:#E53E3E">Seeder</span></td>
+<td>No connection¹</td>
+</tr>
+<tr>
+<td><span style="color:#36AD99">Leecher</span> - <span style="color:#E53E3E">Seeder</span></td>
+<td>Longer initiation², then normal connection</td>
+</tr>
+<tr>
+<td><span style="color:#E53E3E">Leecher</span> - <span style="color:#36AD99">Seeder</span></td>
+<td>Normal connection</td>
+</tr>
+<tr>
+<td><span style="color:#36AD99">Leecher</span> - <span style="color:#36AD99">Seeder</span></td>
+<td>Normal connection</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><span style="color:#36AD99">Green peers</span> represent open ports. <span style="color:#E53E3E">Red peers</span> represent closed ports.</p>
+<p>¹A connection can be made between two unconnectable peers via a connectable third-party through <a href="http://bittorrent.org/beps/bep_0055.html">holepunching</a>.</p>
+<p>²The seeder needs to wait until the next tracker update in order to see the new peer.</p>
+        </div>
+    </div>
+</div>
+<doc-panel id="enabling-port-forwarding" collapsed>
+    <template #title>Enabling port forwarding</template>
+<p>By default, most torrent clients automatically try to forward the current port via UPnP. You can test if this is working by using a port checker such as <a href="https://canyouseeme.org">CanYouSeeMe.org</a> and entering the port.</p>
+<p>If UPnP doesn&#x27;t work, you can try manually forwarding the port through your router settings.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The port forwarding tutorial below is intended for those using home routers. This will not work with <doc-anchor-trigger to="#vpn">VPNs</doc-anchor-trigger>. <em>Check with your provider to see if port forwarding is available.</em></p>
+        </div>
+    </div>
+</div>
 <ul>
-<li>Start the VPN and connect to a location.</li>
-<li>Open qBittorrent. Go to Preferences, and then Advanced tab.</li>
-<li>Change Network interface to the VPN (usually its name, like &quot;Mullvad&quot;).</li>
-<li>Restart qBittorrent.</li>
+<li>Find the port used by your client. In <a href="../../tutorials/qbittorrent/">qBittorrent</a>, this can be found under <strong>Tools</strong> -&gt; <strong>Options</strong> -&gt; <strong>Connection</strong> -&gt; <strong>Listening Port</strong></li>
+<li>Access your router&#x27;s default gateway in your browser. You can find this on Windows by running Command Prompt and typing in <code v-pre>ipconfig</code>. Some common examples are:
+<ul>
+<li><a href="http://192.168.0.1"><code v-pre>192.168.0.1</code></a></li>
+<li><a href="http://172.16.0.1"><code v-pre>172.16.0.1</code></a></li>
+<li><a href="http://10.0.0.1"><code v-pre>10.0.0.1</code></a></li>
+</ul>
+</li>
+<li>Locate the port forwarding option for your router. <em>We recommend using ports from <a href="https://wikipedia.org/wiki/Ephemeral_port">49152 or higher</a> to avoid interference with other services as well as being blocked by your ISP, which is common on lower ports</em></li>
+<li>After saving/restarting your router and torrent client, go to <a href="https://canyouseeme.org">CanYouSeeMe.org</a> to check if the port is now open
+<ul>
+<li>If the port is closed, then you are likely using a NAT. <em>Unfortunately, this means you will need to use a different ISP or use a <doc-anchor-trigger to="#vpn">VPN</doc-anchor-trigger> that supports port forwarding</em></li>
+</ul>
+</li>
 </ul>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-red-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
+                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Visit the <a href="../../tutorials/vpn-binding/">VPN binding</a> guide for more details</p>
+<p>Do not enable all ports, as they may interfere with other services or put you at risk. Avoid enabling any <a href="https://wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports">well-known ports</a> and <a href="https://wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Registered_ports">registered ports</a>.</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="split-tunneling">
+</doc-panel>
+<doc-anchor-target id="vpn">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#split-tunneling">#</doc-anchor-trigger>
-        <span>Split Tunneling</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vpn">#</doc-anchor-trigger>
+        <span>VPN</span>
     </h3>
 </doc-anchor-target>
-<p>Split tunneling allows you to selectively route your internet traffic through either the VPN tunnel or your regular internet connection. It provides the flexibility to divide network traffic between the VPN and the local network simultaneously.
-With split tunneling, you can choose specific applications, websites, or services to be routed through the VPN while allowing other traffic to bypass the VPN and use the regular internet connection.</p>
+<p>A VPN is an encrypted network tunnel between your device and the internet, allowing you to mask your activity from your ISP. In the case of torrenting, this allows you to hide your torrent traffic and prevent someone from trying to spy on you.</p>
+<p>Depending on which country you live in, your ISP may send you a copyright infringement notice, threaten to shut off your internet, or do absolutely nothing. On a good VPN service, this will never reach your ISP, as it is blocked by the VPN protecting your activity. <em>If your country is strict about it, you should highly consider buying a VPN, such as in North America or Europe.</em></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Do not use free VPNs. These services often have limitations, weak security, and questionable privacy concerns. <em>These may put you at greater risk compared to a premium service.</em></p>
+        </div>
+    </div>
+</div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -303,10 +448,46 @@ With split tunneling, you can choose specific applications, websites, or service
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Visit the <a href="../../tutorials/splittunnel/">Split tunneling on any wireguard VPN</a> guide for more details</p>
+<p>If you use qBittorrent, you may want to consider <a href="../../tutorials/qbittorrent/#vpn-binding">binding it to your client</a>.</p>
         </div>
     </div>
 </div>
+<doc-anchor-target id="forwarding-ports">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#forwarding-ports">#</doc-anchor-trigger>
+        <span>Forwarding Ports</span>
+    </h4>
+</doc-anchor-target>
+<p>Some VPNs offer the ability to forward ports, which is especially useful if you are not able to <doc-anchor-trigger to="#port-forwarding">port forward</doc-anchor-trigger> normally as it bypasses ISP restrictions:</p>
+<ul>
+<li><p><a href="https://airvpn.org">AirVPN</a> - Offers 5 static ports. <em>Recommended to use with a third-party client such as <a href="https://github.com/wiresock/WireSockUI">WireSock</a></em></p>
+</li>
+<li><p><a href="https://protonvpn.com">ProtonVPN</a> - Offers 1 dynamic port. <em>Recommended to use with an <a href="https://github.com/maah/ProtonVPN-win-app">automatic port mapping client</a> to avoid manually updating ports on reconnect</em></p>
+</li>
+</ul>
+<doc-anchor-target id="split-tunneling">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#split-tunneling">#</doc-anchor-trigger>
+        <span>Split Tunneling</span>
+    </h4>
+</doc-anchor-target>
+<p>Split tunneling allows you to selectively route your internet traffic through the VPN tunnel or your internet connection simultaneously. With split tunneling, you can choose specific applications, websites, or services to be routed through the VPN while allowing other traffic to bypass the VPN and use the regular internet connection.</p>
+<p><em>See the <a href="../../tutorials/splittunnel/">split tunneling guide for Wireguard</a> on how to set it up.</em></p>
+<doc-anchor-target id="seedbox">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#seedbox">#</doc-anchor-trigger>
+        <span>Seedbox</span>
+    </h3>
+</doc-anchor-target>
+<p>A seedbox is a dedicated server optimized for high-speed downloading and seeding of torrents. Unlike <doc-anchor-trigger to="#vpn">VPNs</doc-anchor-trigger>, seedboxes are separate from your network, allowing for better peace of mind when torrenting.</p>
+<p>Other advantages include:</p>
+<ul>
+<li>Better uptime as it doesn&#x27;t require your PC to run. <em>This is especially useful if you plan to build ratio on various trackers</em></li>
+<li>Higher prioritization when seeding due to their high speed</li>
+<li>Avoiding copyright notices, as they are directed to your box instead (i.e. ignored)</li>
+<li>Synergy and integration with third-party applications/plugins (e.g. <a href="../../guides/playback/#media-servers">media servers</a>)</li>
+</ul>
+<p>Seedboxes can be run on your own virtual private server (VPS) or personal computer. Alternatively, they can be hosted through various seedbox providers.</p>
 
                                 
                                 <!-- Required only on API pages -->

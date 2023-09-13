@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747853320534">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747946300311">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.1">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.1.747853320534" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.1.747946300311" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747853320534" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747946300311" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747853320534" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747946300311" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -157,16 +157,51 @@
         <span>Transmission</span>
     </h1>
 </doc-anchor-target>
-<p><a href="https://transmissionbt.com">Transmission</a> is a free, open source, and cross platform bittorrent client. It&#x27;s a stable and efficient client with minimal resource usage. Lacks alot of features that qBittorrent has but in turn can handle large quantities of torrents with ease. Great for mass seeding.</p>
+<p><a href="https://transmissionbt.com">Transmission</a> is a free, open-source, and cross-platform BitTorrent client. It&#x27;s a stable and efficient client with minimal resource usage which can handle large quantities of torrents easily if you plan to mass seed.</p>
+<doc-anchor-target id="installation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
+        <span>Installation</span>
+    </h2>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab v-cloak id="windows">
+<template #title>Windows</template>
 <ol>
-<li><p>Go to Transmission&#x27;s <a href="https://transmissionbt.com/download">download page</a>.</p>
-</li>
-<li><p>Download the installer for your operating system. You&#x27;ll see two options for Windows, i.e, <code v-pre>transmission-4.0.3-x64.msi</code> and <code v-pre>transmission-4.0.3-x86.msi</code>. Most likely you are on a <code v-pre>x64</code> machine and should install that.</p>
-<p><img src="https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png" alt="" /></p>
-</li>
-<li><p>Run the installer and you&#x27;re pretty much done.</p>
-</li>
+<li>Download the latest <code v-pre>.msi</code> version of <a href="https://transmissionbt.com/download">Transmission</a></li>
+<li>Run the installer and follow the on-screen instructions to complete installation</li>
 </ol>
+<p><figure class="content-center">
+    <img src="https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png" alt="Transmission download page">
+    <figcaption class="caption">Transmission download page</figcaption>
+</figure>
+</p>
+</doc-tab>
+<doc-tab v-cloak id="macos">
+<template #title>macOS</template>
+<ol>
+<li>Download the latest <code v-pre>.dmg</code> version of <a href="https://transmissionbt.com/download">Transmission</a></li>
+<li>Run the installer and follow the on-screen instructions to complete installation</li>
+</ol>
+<p><figure class="content-center">
+    <img src="https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png" alt="Transmission download page">
+    <figcaption class="caption">Transmission download page</figcaption>
+</figure>
+</p>
+</doc-tab>
+<doc-tab v-cloak id="linux">
+<template #title>Linux</template>
+<ol>
+<li>Download the latest <code v-pre>.tar.xz</code> version of <a href="https://transmissionbt.com/download">Transmission</a></li>
+<li>Run the installer and follow the on-screen instructions to complete installation</li>
+</ol>
+<p><figure class="content-center">
+    <img src="https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png" alt="Transmission download page">
+    <figcaption class="caption">Transmission download page</figcaption>
+</figure>
+</p>
+</doc-tab>
+</doc-tabs>
 
                                 
                                 <!-- Required only on API pages -->

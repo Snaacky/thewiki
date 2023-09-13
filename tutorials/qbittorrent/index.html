@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747853320534">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747946300311">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.1">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.1.747853320534" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.1.747946300311" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747853320534" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747946300311" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747853320534" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747946300311" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -157,13 +157,270 @@
         <span>qBittorrent</span>
     </h1>
 </doc-anchor-target>
-<p><a href="https://www.qbittorrent.org">qBittorrent</a> is a free, open source, and cross platform bittorrent client with several features like Categories, tags, RSS, Web-UI, and more.</p>
+<p><a href="https://www.qbittorrent.org">qBittorrent</a> is a free, open-source, and cross-platform BitTorrent client. It is often recommended by most users due to its extensive features and ease of use.</p>
+<doc-anchor-target id="installation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
+        <span>Installation</span>
+    </h2>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab v-cloak id="windows">
+<template #title>Windows</template>
 <ol>
-<li><p>Go to qBittorrent&#x27;s <a href="https://www.fosshub.com/qBittorrent.html">download page</a></p>
-</li>
-<li><p>Download <code v-pre>qBittorrent Windows x64</code> for Windows, <code v-pre>qBittorrent AppImage</code> for Linux, and <code v-pre>qBittorrent Mac OS X</code> for macOS.</p>
-<p><img src="https://user-images.githubusercontent.com/78981416/232291788-1eb92521-c0a1-46ea-a81c-9f00881bc2cb.png" alt="" /></p>
-</li>
+<li>Download the latest version of <a href="https://www.qbittorrent.org">qBittorrent</a> from <a href="https://www.fosshub.com/qBittorrent.html">FOSSHUB</a>. For Windows, you&#x27;ll want to download <em>qBitTorrent Windows x64</em></li>
+<li>Run the installer and follow the on-screen instructions to complete installation</li>
+</ol>
+<doc-panel id="video-tutorial" collapsed>
+    <template #title>Video tutorial</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/installation-windows.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Installing qBittorrent on Windows</figcaption>
+</figure>
+</p>
+</doc-panel>
+</doc-tab>
+<doc-tab v-cloak id="macos">
+<template #title>macOS</template>
+<ol>
+<li>Download the latest version of <a href="https://www.qbittorrent.org">qBittorrent</a> from <a href="https://www.fosshub.com/qBittorrent.html">FOSSHUB</a>. For macOS, you&#x27;ll want to download <em>qBitTorrent Mac OS X</em></li>
+<li>Run the installer and follow the on-screen instructions to complete installation</li>
+</ol>
+</doc-tab>
+<doc-tab v-cloak id="linux">
+<template #title>Linux</template>
+<ol>
+<li>Download the latest version of <a href="https://www.qbittorrent.org">qBittorrent</a> from <a href="https://www.fosshub.com/qBittorrent.html">FOSSHUB</a>. For Linux, you&#x27;ll want to download <em>qBitTorrent AppImage</em></li>
+<li>Run the installer and follow the on-screen instructions to complete installation</li>
+</ol>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="usage">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
+        <span>Usage</span>
+    </h2>
+</doc-anchor-target>
+<p>qBittorrent supports both <code v-pre>.torrent</code> files and magnet links.</p>
+<doc-tabs>
+<doc-tab v-cloak id="automatic">
+<template #title>Automatic</template>
+<p>qBittorrent supports automatic detection and can start downloading torrents by simply opening the <code v-pre>.torrent</code> file or launching magnet links.</p>
+<doc-panel id="video-tutorial" collapsed>
+    <template #title>Video tutorial</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/getting-torrents-file.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Automatically starting from a torrent file</figcaption>
+</figure>
+</p>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/getting-torrents-magnet.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Automatically starting from a magnet link</figcaption>
+</figure>
+</p>
+</doc-panel>
+</doc-tab>
+<doc-tab v-cloak id="manual">
+<template #title>Manual</template>
+<ul>
+<li>Launch qBittorrent. In the top bar, find the <strong>Add Torrent File</strong> or <strong>Add Torrent Link</strong> button</li>
+<li>Locate the <code v-pre>.torrent</code> file or paste in the magnet link</li>
+<li>Once submitted, qBittorrent should immediately start fetching the file metadata and begin downloading</li>
+</ul>
+<doc-panel id="video-tutorial" collapsed>
+    <template #title>Video tutorial</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/usage-file.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Adding a torrent file</figcaption>
+</figure>
+</p>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/usage-magnet.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Adding a magnet link</figcaption>
+</figure>
+</p>
+</doc-panel>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
+        <span>Configuration</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="vpn-binding">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vpn-binding">#</doc-anchor-trigger>
+        <span>VPN Binding</span>
+    </h3>
+</doc-anchor-target>
+<p>If you use a <a href="../../getting-started/torrenting/#vpn">VPN</a>, you may want to consider binding it to your qBittorrent client. This prevents you from accidentally torrenting when your VPN is inactive or from exposing your IP.</p>
+<ol>
+<li>Launch qBittorrent. In the top bar, go to <strong>Tools</strong> -&gt; <strong>Options</strong></li>
+<li>Head to <strong>Advanced</strong> and locate <em>Network interface</em>. In the dropdown menu, select your VPN&#x27;s network adapter</li>
+<li>Click <strong>Apply</strong> in the bottom-right and close the <strong>Options</strong> window</li>
+</ol>
+<doc-panel id="video-tutorial" collapsed>
+    <template #title>Video tutorial</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/vpn-binding.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Using VPN binding</figcaption>
+</figure>
+</p>
+</doc-panel>
+<doc-anchor-target id="rss">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rss">#</doc-anchor-trigger>
+        <span>RSS</span>
+    </h3>
+</doc-anchor-target>
+<p>RSS is an easy way to automatically fetch and download shows to your machine. This may be useful if you plan on downloading airing shows without having to manually add the torrent to your client.</p>
+<doc-tabs>
+<doc-tab v-cloak id="enabling-rss">
+<template #title>Enabling RSS</template>
+<ol>
+<li>Launch qBittorrent. In the top bar, go to <strong>Tools</strong> -&gt; <strong>Options</strong></li>
+<li>Head to <strong>RSS</strong>. Under <strong>RSS Reader</strong>, check <em>Enable fetching RSS feeds</em>. You can also change how often your RSS feed is updated under <em>Feeds refresh interval</em>. <em>We recommend setting it to 15 minutes</em></li>
+<li>Under <strong>RSS Torrent Auto Downloader</strong>, check <em>Enable auto downloading of RSS torrents</em></li>
+</ol>
+<doc-panel id="video-tutorial" collapsed>
+    <template #title>Video tutorial</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/enabling-rss.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Enabling RSS</figcaption>
+</figure>
+</p>
+</doc-panel>
+</doc-tab>
+<doc-tab v-cloak id="adding-feeds">
+<template #title>Adding feeds</template>
+<ol>
+<li>Choose an RSS feed to use. Popular RSS feeds for airing anime:
+<a href="https://www.erai-raws.info/rss-page/" class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-500 hover:bg-gray-600 dark:bg-dark-400 dark:hover:bg-dark-450 text-white px-3 h-8 text-sm rounded" style="margin: 0px 8px 0px 0px;">
+    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="16" height="16" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M3.5 3.25a.75.75 0 0 1 .75-.75C14.053 2.5 22 10.447 22 20.25a.75.75 0 0 1-1.5 0C20.5 11.275 13.225 4 4.25 4a.75.75 0 0 1-.75-.75Zm.75 6.25C10.187 9.5 15 14.313 15 20.25a.75.75 0 0 1-1.5 0A9.25 9.25 0 0 0 4.25 11a.75.75 0 0 1 0-1.5ZM3.5 19a2 2 0 1 1 3.999-.001A2 2 0 0 1 3.5 19Z"/></g></svg></span>
+    <span>Erai-raws</span>
+</a>
+<a href="https://subsplease.org/rss-feeds/" class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-500 hover:bg-gray-600 dark:bg-dark-400 dark:hover:bg-dark-450 text-white px-3 h-8 text-sm rounded">
+    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="16" height="16" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M3.5 3.25a.75.75 0 0 1 .75-.75C14.053 2.5 22 10.447 22 20.25a.75.75 0 0 1-1.5 0C20.5 11.275 13.225 4 4.25 4a.75.75 0 0 1-.75-.75Zm.75 6.25C10.187 9.5 15 14.313 15 20.25a.75.75 0 0 1-1.5 0A9.25 9.25 0 0 0 4.25 11a.75.75 0 0 1 0-1.5ZM3.5 19a2 2 0 1 1 3.999-.001A2 2 0 0 1 3.5 19Z"/></g></svg></span>
+    <span>SubsPlease</span>
+</a></li>
+<li>Launch qBittorrent. In the top bar, go to <strong>View</strong> and check <em>RSS Reader</em></li>
+<li>Select the <strong>RSS</strong> tab near the top bar. Click on <strong>New subscription</strong></li>
+<li>Paste the RSS URL and click <strong>OK</strong>.</li>
+</ol>
+<doc-panel id="video-tutorial" collapsed>
+    <template #title>Video tutorial</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/adding-feeds.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Adding feeds</figcaption>
+</figure>
+</p>
+</doc-panel>
+</doc-tab>
+<doc-tab v-cloak id="download-rules">
+<template #title>Download rules</template>
+<ol>
+<li>Launch qBittorrent. In the top bar, go to <strong>View</strong> and check <em>RSS Reader</em></li>
+<li>Select the <strong>RSS</strong> tab near the top bar. Click on <strong>RSS Downloader...</strong></li>
+<li>Click on the <strong>+</strong> to create a new download rule. Below is a list of important parameters:</li>
+</ol>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Rule</th>
+<th>Meaning</th>
+<th>Example Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Must Contain</strong></td>
+<td>The title of the show to follow the rule</td>
+<td><code v-pre>Shiro Seijo to Kuro Bokushi</code></td>
+</tr>
+<tr>
+<td><strong>Must Not Contain</strong></td>
+<td>Additional text to avoid downloading certain files, such as batch releases</td>
+<td><code v-pre>batch</code></td>
+</tr>
+<tr>
+<td><strong>Save to</strong></td>
+<td>Optional directory to save to when <em>Save to a different directory</em> is checked</td>
+<td><code v-pre>D:\Anime\Shiro Seijo to Kuro Bokushi</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>If your filter works properly, you should see the desired files under <strong>Matching RSS Articles</strong>.</p>
+        </div>
+    </div>
+</div>
+<ol start="4">
+<li>Under <strong>Apply Rule to Feeds</strong>, check off the desired RSS feed for the download rule</li>
+</ol>
+<doc-panel id="video-tutorial" collapsed>
+    <template #title>Video tutorial</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/download-rules.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Download rules</figcaption>
+</figure>
+</p>
+</doc-panel>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="sequential-downloading">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sequential-downloading">#</doc-anchor-trigger>
+        <span>Sequential Downloading</span>
+    </h3>
+</doc-anchor-target>
+<p>Sequential downloading is a feature that allows you to prioritize the order in which the pieces of a torrent file are downloaded.</p>
+<p>Typically, qBittorrent fetches the pieces in a random order from different parts of the file. However, this option forces the client to go in sequential order, starting from the beginning to the end of the file. <em>This feature may be useful if you plan on watching shows immediately while the download is still in progress.</em></p>
+<ol>
+<li>Launch qBittorrent. Send your desired torrent to the client</li>
+<li>Under <strong>Torrent settings</strong>, check <em>Download in sequential order</em> and <em>Download first and last pieces first</em></li>
+<li>Click <strong>OK</strong> to continue downloading the torrent</li>
 </ol>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
@@ -178,13 +435,21 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>You&#x27;ll see a few confusing terms here, like <code v-pre>lt20</code>, <code v-pre>qt5</code>, and <code v-pre>qt6</code>. You don&#x27;t really have to know anything about them besides the fact that they are builds with underlying breaking changes which are not yet widely adopted which is why you should avoid them.</p>
+<p>This can also be enabled in the right-click menu for the torrent.</p>
         </div>
     </div>
 </div>
-<ol start="3">
-<li>Run the installer and you&#x27;re pretty much done. You can look around the settings if you want but the default values are already good.</li>
-</ol>
+<doc-panel id="video-tutorial" collapsed>
+    <template #title>Video tutorial</template>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/sequential-downloading.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Using sequential downloading</figcaption>
+</figure>
+</p>
+</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->

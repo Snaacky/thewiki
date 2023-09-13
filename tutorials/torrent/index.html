@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747853320534">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747946300311">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.1">
 
     <!-- Primary Meta Tags -->
-    <title>Torrent</title>
-    <meta name="title" content="Torrent">
-    <meta name="description" content="A .torrent file is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music, games, or...">
+    <title>Torrents</title>
+    <meta name="title" content="Torrents">
+    <meta name="description" content="In torrenting, a .torrent is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music,...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://thewiki.moe/tutorials/torrent/">
@@ -19,25 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thewiki.moe/tutorials/torrent/">
-    <meta property="og:title" content="Torrent">
-    <meta property="og:description" content="A .torrent file is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music, games, or...">
-    <meta property="og:image" content="https://user-images.githubusercontent.com/78981416/226189863-40578262-dbd9-4bd2-a73c-3c6d7fe15451.png">
+    <meta property="og:title" content="Torrents">
+    <meta property="og:description" content="In torrenting, a .torrent is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music,...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/tutorials/torrent/">
-    <meta property="twitter:title" content="Torrent">
-    <meta property="twitter:description" content="A .torrent file is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music, games, or...">
-    <meta property="twitter:image" content="https://user-images.githubusercontent.com/78981416/226189863-40578262-dbd9-4bd2-a73c-3c6d7fe15451.png">
+    <meta property="twitter:title" content="Torrents">
+    <meta property="twitter:description" content="In torrenting, a .torrent is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music,...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.1.747853320534" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.1.747946300311" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747853320534" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747946300311" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747853320534" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.1.747853320534" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747946300311" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.1.747946300311" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -152,65 +150,144 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="torrent" class="break-words">
+<doc-anchor-target id="torrents" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#torrent">#</doc-anchor-trigger>
-        <span>Torrent</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#torrents">#</doc-anchor-trigger>
+        <span>Torrents</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="what-is-a-torrent-file">
+<p>In <a href="../../getting-started/torrenting/">torrenting</a>, a <code v-pre>.torrent</code> is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music, games, or documents, over the Internet. It contains metadata that describes the to-be-downloaded content and tells BitTorrent where to download the content from, specifying the name, file size, and folder structure of the content.</p>
+<doc-anchor-target id="preface">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-torrent-file">#</doc-anchor-trigger>
-        <span>What is a .torrent file?</span>
-    </h2>
-</doc-anchor-target>
-<p>A <code v-pre>.torrent</code> file is a file that BitTorrent and other peer-to-peer (P2P) file-sharing programs use to download content, such as videos, music, games, or documents, over the Internet. It contains metadata that describes the to-be-downloaded content and tells BitTorrent where to download the content from. For example, <code v-pre>.torrent</code> files specify the name, file size, and folder structure of to-be-downloaded content.</p>
-<doc-anchor-target id="before-you-start">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#before-you-start">#</doc-anchor-trigger>
-        <span>Before you start</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#preface">#</doc-anchor-trigger>
+        <span>Preface</span>
     </h2>
 </doc-anchor-target>
 <p>There are a few things to keep in mind before creating a torrent:</p>
 <ul>
-<li>Newer clients and tools allow you to make three types of <code v-pre>.torrent</code> files which are <code v-pre>v1</code>, <code v-pre>Hybrid</code> and <code v-pre>v2</code>. Always use <code v-pre>v1</code> when making torrents because none of the public or private trackers currently support <code v-pre>Hybrid</code> or <code v-pre>v2</code> as these are <a href="https://blog.libtorrent.org/2020/09/bittorrent-v2/">relatively new</a>.</li>
-<li>Do not make a torrent of a directory containing a single file, instead make a torrent of the file itself.</li>
-<li>When making a torrent file, you&#x27;ll have to select a &quot;piece&quot; size in which your data is sliced up so you can get small amounts of verifiable data from several peers at a time.</li>
-<li>Too small pieces make for more protocol overhead, bigger torrent files, longer hashing times and possibly higher load on the CPU and HDD.</li>
-<li>Too large pieces can slow down piece distribution.</li>
-<li>Older torrent clients do not support 16MiB+ piece sizes. When using 16MiB pieces, torrent size limits are only a concern above ~5TB.</li>
-<li>Most clients automatically pick too small piece sizes, except dottorrent-gui which aims for a reasonable 1000-1500 pieces.</li>
-<li>You can target ~1000 pieces with 16MiB being the upper limit. Here&#x27;s a reference:</li>
+<li>Newer clients and tools allow you to make three types of <code v-pre>.torrent</code> files:  <code v-pre>v1</code>, <code v-pre>Hybrid</code>, and <code v-pre>v2</code>. <em>You should always use <code v-pre>v1</code> when creating torrents, as most public/private trackers do not support <code v-pre>Hybrid</code> or <code v-pre>v2</code> as these are <a href="https://blog.libtorrent.org/2020/09/bittorrent-v2">relatively new</a></em></li>
+<li>Do not create a torrent of a directory containing a single file. <em>Instead, make a torrent of the file itself</em></li>
 </ul>
+<doc-anchor-target id="pieces">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pieces">#</doc-anchor-trigger>
+        <span>Pieces</span>
+    </h3>
+</doc-anchor-target>
+<p>When creating a torrent, the file is cut into several, smaller pieces, which are then put together by a peer&#x27;s <a href="../../getting-started/torrenting/#torrent-client">torrent client</a> to create the final result. These pieces are low in size and are used to facilitate peer-to-peer sharing, allowing for downloading and uploading to be much faster and seamless. However, there are some things to keep note of when setting the pieces for your torrent:</p>
+<ul>
+<li>Creating too <em>small</em> pieces can cause more protocol overhead, bigger torrent files, longer hashing times, and possibly higher load on the CPU and drive</li>
+<li>Creating too <em>large</em> pieces can slow down piece distribution</li>
+<li>Older torrent clients do not support piece sizes greater than 16 MiB. <em>Greater piece sizes are only a concern for torrents above ~5 TiB</em></li>
+<li>Most clients automatically pick too small piece sizes. <em><doc-anchor-trigger to="#dottorrent-gui">dottorrent-gui</doc-anchor-trigger> is an exception, as it aims for 1000-1500 pieces during creation</em></li>
+</ul>
+<p>We recommend targeting 1000 pieces, with 16 MiB being the upper limit. A quick reference is below:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Torrent Size</th>
+<th>Piece Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 to 4 GiB</td>
+<td>4 MiB</td>
+</tr>
+<tr>
+<td>4 to 8 GiB</td>
+<td>8 MiB</td>
+</tr>
+<tr>
+<td>8 to ∞ GiB</td>
+<td>16 MiB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="trackers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#trackers">#</doc-anchor-trigger>
+        <span>Trackers</span>
+    </h3>
+</doc-anchor-target>
+<p>If you plan on sharing your torrent to the public, you&#x27;ll need to set tracker URLs in order to communicate with other peers. Below is a few popular <a href="../../sourcing/public-trackers/">public trackers</a> to use when creating your torrent:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">    2 to 4GB - 4MiB
-    4 to 8GB  - 8MiB
-    8 to ∞ GB - 16MiB</code></pre>
+<pre class="language-none"><code v-pre class="language-none">http://nyaa.tracker.wf:7777/announce
+http://anidex.moe:6969/announce
+udp://open.stealth.si:80/announce
+udp://tracker.opentrackr.org:1337/announce
+udp://tracker.coppersurfer.tk:6969/announce
+udp://exodus.desync.com:6969/announce</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="making-the-torrent">
+<doc-anchor-target id="creating">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#making-the-torrent">#</doc-anchor-trigger>
-        <span>Making the torrent</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#creating">#</doc-anchor-trigger>
+        <span>Creating</span>
     </h2>
 </doc-anchor-target>
-<p>There are several ways to make a torrent:</p>
+<p>There are several tools you can use to make a torrent:</p>
 <ul>
-<li><a href="https://github.com/rndusr/torf-cli">torf-cli</a> - Cross Platform, CLI. <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-6 px-2 text-xs rounded-md">
+<li><a href="https://github.com/rndusr/torf-cli">torf-cli</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span class="docs-emoji mr-2">&#x2764;&#xFE0F;</span>
     <span>Recommended</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Cross-Platform</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>CLI</span>
 </span></li>
-<li><a href="https://github.com/fbdtemme/torrenttools">torrenttools</a> - Cross Platform, CLI.</li>
-<li><a href="https://github.com/pobrn/mktorrent">mktorrent</a> - Linux only, CLI.</li>
-<li><a href="https://github.com/kz26/dottorrent-gui">dottorrent-gui</a> - Windows, GUI.</li>
-<li><a href="https://www.qbittorrent.org/">qBittorrent</a> - Cross Platform, GUI, Slowest of the bunch.</li>
+<li><a href="https://github.com/kz26/dottorrent-gui">dottorrent-gui</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Windows</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>GUI</span>
+</span></li>
+<li><a href="https://github.com/pobrn/mktorrent">mktorrent</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Linux</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>CLI</span>
+</span></li>
+<li><a href="https://www.qbittorrent.org">qBittorrent</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Cross-Platform</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>GUI</span>
+</span></li>
+<li><a href="https://github.com/fbdtemme/torrenttools">torrenttools</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Cross-Platform</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>CLI</span>
+</span></li>
 </ul>
+<doc-anchor-target id="torf-cli">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#torf-cli">#</doc-anchor-trigger>
+        <span>torf-cli</span>
+    </h3>
+</doc-anchor-target>
+<p><a href="https://github.com/rndusr/torf-cli">torf-cli</a> is a cross-platform CLI application for creating torrents.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><em>See the <a href="https://rndusr.github.io/torf-cli/torf.1.html">torf-cli docs</a> for advanced features like <a href="https://rndusr.github.io/torf-cli/torf.1.html#:%7E:text=is%20not%20supported.-,Profiles,-A%20profile%20is">profiles</a>.</em></p>
+        </div>
+    </div>
+</div>
 <doc-tabs>
-<doc-tab v-cloak id="torf-cli">
-<template #title>torf-cli</template>
-<p>Refer to the torf-cli <a href="https://rndusr.github.io/torf-cli/torf.1.html">docs</a> for advanced features like <a href="https://rndusr.github.io/torf-cli/torf.1.html#:%7E:text=is%20not%20supported.-,Profiles,-A%20profile%20is">Profiles</a>.</p>
+<doc-tab v-cloak id="windows">
+<template #title>Windows</template>
 <doc-panels>
-   <doc-panel id="windows-commands" collapsed>
-       <template #title>Windows commands</template>
-<p>Command to make a torrent of a single file or directory</p>
+   <doc-panel id="torrent-for-a-single-file-directory" collapsed>
+       <template #title>Torrent for a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -221,7 +298,9 @@ udp://tracker.coppersurfer.tk:6969/announce,^
 udp://exodus.desync.com:6969/announce ^
 &quot;D:\path\to\root\directory&quot;</code></pre>
 </doc-codeblock></div>
-<p>Command to make a torrent for each subdirectory</p>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-subdirectory" collapsed>
+       <template #title>Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for /d %X in (*) do torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -232,7 +311,9 @@ udp://tracker.coppersurfer.tk:6969/announce,^
 udp://exodus.desync.com:6969/announce ^
 &quot;%X&quot;</code></pre>
 </doc-codeblock></div>
-<p>Command to make a torrent for each file in a directory</p>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
+       <template #title>Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -244,9 +325,13 @@ udp://exodus.desync.com:6969/announce ^
 &quot;%X&quot;</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="linux-commands" collapsed>
-       <template #title>Linux commands</template>
-<p>Command to make a torrent of a single file or directory</p>
+</doc-panels>
+</doc-tab>
+<doc-tab v-cloak id="linux">
+<template #title>Linux</template>
+<doc-panels>
+   <doc-panel id="torrent-for-a-single-file-directory" collapsed>
+       <template #title>Torrent for a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">torf --max-piece-size 16 \
 -t http://nyaa.tracker.wf:7777/announce,\
@@ -257,7 +342,9 @@ udp://tracker.coppersurfer.tk:6969/announce,\
 udp://exodus.desync.com:6969/announce \
 &quot;New Folder&quot;</code></pre>
 </doc-codeblock></div>
-<p>Command to make a torrent for each subdirectory</p>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-subdirectory" collapsed>
+       <template #title>Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do torf --max-piece-size 16 \
 -t http://nyaa.tracker.wf:7777/announce,\
@@ -268,7 +355,9 @@ udp://tracker.coppersurfer.tk:6969/announce,\
 udp://exodus.desync.com:6969/announce \
 &quot;$dir&quot;; done</code></pre>
 </doc-codeblock></div>
-<p>Command to make a torrent for each file in a directory</p>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
+       <template #title>Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do torf --max-piece-size 16 \
 -t http://nyaa.tracker.wf:7777/announce,\
@@ -281,25 +370,187 @@ udp://exodus.desync.com:6969/announce \
 </doc-codeblock></div>
    </doc-panel>
 </doc-panels>
-<p>By default, torf heavily biases 8MB piece size in situations where 16MB would be more suitable. We recommend performing the following edit to more aggresively target 1000 pieces.</p>
-<p>Go to your torf install location, eg <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\torf</code></p>
-<p>Open <code v-pre>_torrent.py</code>, replace lines 723-728 with</p>
+</doc-tab>
+</doc-tabs>
+<p>By default, torf-cli heavily biases 8 MiB piece size in situations where 16 MiB would be more suitable. <em>We recommend performing the following edit to more aggressively target 1000 pieces:</em></p>
+<ul>
+<li>Go to your torf-cli install location (e.g. <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\torf</code>)</li>
+<li>Open <code v-pre>_torrent.py</code> using your text editor and replace lines 723-728:</li>
+</ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">        elif size &lt;= 16 * 2**30:   # 16 GiB / 1024 pieces = 16 MiB max
+<pre class="language-python"><code v-pre class="language-python">        elif size &lt;= 16 * 2**30: # 16 GiB / 1024 pieces = 16 MiB max
             pieces = size / 1024
-        elif size &lt;= 32 * 2**30:   # 32 GiB / 2048 pieces = 16 MiB max
+        elif size &lt;= 32 * 2**30: # 32 GiB / 2048 pieces = 16 MiB max
             pieces = size / 2048
-        elif size &lt;= 64 * 2**30:   # 64 GiB / 2048 pieces = 32 MiB max
+        elif size &lt;= 64 * 2**30: # 64 GiB / 2048 pieces = 32 MiB max
             pieces = size / 2048</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="torrenttools">
-<template #title>torrenttools</template>
-<p>Refer to the torrenttools <a href="https://fbdtemme.github.io/torrenttools/index.html">docs</a> for advanced features like <a href="https://fbdtemme.github.io/torrenttools/configuration.html#named-trackers">Named trackers</a> and <a href="https://fbdtemme.github.io/torrenttools/configuration.html#tracker-groups">Tracker groups</a>.</p>
-<p>Command to make a torrent of a single file or directory</p>
+<doc-anchor-target id="dottorrent-gui">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dottorrent-gui">#</doc-anchor-trigger>
+        <span>dottorrent-gui</span>
+    </h3>
+</doc-anchor-target>
+<p><a href="https://github.com/kz26/dottorrent-gui">dottorrent-gui</a> is a Windows GUI application for creating torrents.</p>
+<doc-panel id="torrent-for-a-single-file-directory" collapsed>
+    <template #title>Torrent for a single file/directory</template>
+<ul>
+<li>In dottorrent-gui, select the file type under <strong>Input path</strong> and locate the file/directory of your torrent. <em>Alternatively, you may drag-and-drop the desired file/directory into the box</em></li>
+<li>Add your tracker URLs under <strong>Seeding</strong>. <em>There should be one <doc-anchor-trigger to="#trackers">tracker URL</doc-anchor-trigger> per line</em></li>
+<li>Under <strong>Torrent options</strong>, select the <doc-anchor-trigger to="#pieces">piece size based on the size of your torrent</doc-anchor-trigger></li>
+</ul>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/dottorrent-gui/creating-torrents-single.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Creating a torrent for a directory</figcaption>
+</figure>
+</p>
+</doc-panel>
+<doc-anchor-target id="mktorrent">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mktorrent">#</doc-anchor-trigger>
+        <span>mktorrent</span>
+    </h3>
+</doc-anchor-target>
+<p><a href="https://github.com/pobrn/mktorrent">mktorrent</a> is a Linux CLI application for creating torrents.</p>
+<p>In mktorrent, piece size is passed as <code v-pre>-l n</code>, where <code v-pre>n</code> is a power of <code v-pre>2</code>, making the piece size equal to <code v-pre>2^(n)</code> bytes.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>n</th>
+<th>Piece Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>22</code></td>
+<td>4 MiB</td>
+</tr>
+<tr>
+<td><code v-pre>23</code></td>
+<td>8 MiB</td>
+</tr>
+<tr>
+<td><code v-pre>24</code></td>
+<td>16 MiB</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-panels>
-   <doc-panel id="windows-commands" collapsed>
-       <template #title>Windows commands</template>
+   <doc-panel id="torrent-for-a-single-file-directory" collapsed>
+       <template #title>Torrent for a single file/directory</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">mktorrent -v -l 24 \
+-a http://nyaa.tracker.wf:7777/announce \
+-a http://anidex.moe:6969/announce \
+-a udp://open.stealth.si:80/announce \
+-a udp://tracker.opentrackr.org:1337/announce \
+-a udp://tracker.coppersurfer.tk:6969/announce \
+-a udp://exodus.desync.com:6969/announce \
+&quot;D:\path\to\root\directory&quot;</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-subdirectory" collapsed>
+       <template #title>Torrent for each subdirectory</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do mktorrent -v -l 24 \
+-a http://nyaa.tracker.wf:7777/announce \
+-a http://anidex.moe:6969/announce \
+-a udp://open.stealth.si:80/announce \
+-a udp://tracker.opentrackr.org:1337/announce \
+-a udp://tracker.coppersurfer.tk:6969/announce \
+-a udp://exodus.desync.com:6969/announce \
+&quot;$dir&quot;; done</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
+       <template #title>Torrent for each file in a directory</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do mktorrent -v -l 24 \
+-a http://nyaa.tracker.wf:7777/announce \
+-a http://anidex.moe:6969/announce \
+-a udp://open.stealth.si:80/announce \
+-a udp://tracker.opentrackr.org:1337/announce \
+-a udp://tracker.coppersurfer.tk:6969/announce \
+-a udp://exodus.desync.com:6969/announce \
+&quot;$file&quot;; done</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="qbittorrent">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#qbittorrent">#</doc-anchor-trigger>
+        <span>qBittorrent</span>
+    </h3>
+</doc-anchor-target>
+<p><a href="https://www.qbittorrent.org">qBittorrent</a> is a cross-platform GUI <a href="../../getting-started/torrenting/#torrent-client">torrent client</a> which can also create torrents.</p>
+<doc-panel id="torrent-for-a-single-file-directory" collapsed>
+    <template #title>Torrent for a single file/directory</template>
+<ul>
+<li>In qBittorrent, go to the top bar and click on <strong>Tools</strong> -&gt; <strong>Torrent Creator</strong></li>
+<li>Under <strong>Select file/folder to share</strong> -&gt; <strong>Path</strong>, paste in the file/directory location of your torrent. <em>Alternatively, you can search for it using the <strong>Select file</strong>/<strong>Select folder</strong> buttons or dragging them into the <strong>[Drag and drop area]</strong></em></li>
+<li>Under <strong>Settings</strong>, select the <doc-anchor-trigger to="#pieces">piece size based on the size of your torrent</doc-anchor-trigger></li>
+<li>Under <strong>Fields</strong> -&gt; <strong>Tracker URLS</strong>, paste in the trackers</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Line breaks after each <doc-anchor-trigger to="#trackers">tracker URL</doc-anchor-trigger> are necessary when creating the torrent.</p>
+        </div>
+    </div>
+</div>
+<p>
+<figure>
+    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
+        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/torrenting/qbittorrent/creating-torrents-single.mp4" allowfullscreen></iframe>
+    </div>
+    <figcaption class="caption">Creating a torrent for a directory</figcaption>
+</figure>
+</p>
+</doc-panel>
+<doc-anchor-target id="torrenttools">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#torrenttools">#</doc-anchor-trigger>
+        <span>torrenttools</span>
+    </h3>
+</doc-anchor-target>
+<p><a href="https://github.com/fbdtemme/torrenttools">torrenttools</a> is a cross-platform CLI application for creating torrents.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><em>See the <a href="https://fbdtemme.github.io/torrenttools/index.html">torrenttools docs</a> for advanced features like <a href="https://fbdtemme.github.io/torrenttools/configuration.html#named-trackers">named trackers</a> and <a href="https://fbdtemme.github.io/torrenttools/configuration.html#tracker-groups">tracker groups</a>.</em></p>
+        </div>
+    </div>
+</div>
+<doc-tabs>
+<doc-tab v-cloak id="windows">
+<template #title>Windows</template>
+<doc-panels>
+   <doc-panel id="torrent-of-a-single-file-directory" collapsed>
+       <template #title>Torrent of a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -310,7 +561,9 @@ udp://tracker.coppersurfer.tk:6969/announce ^
 udp://exodus.desync.com:6969/announce ^
 &quot;D:\path\to\root\directory&quot;</code></pre>
 </doc-codeblock></div>
-<p>Command to make a torrent for each subdirectory</p>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-subdirectory" collapsed>
+       <template #title>Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for /d %X in (*) do torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -321,7 +574,9 @@ udp://tracker.coppersurfer.tk:6969/announce ^
 udp://exodus.desync.com:6969/announce ^
 &quot;%X&quot;</code></pre>
 </doc-codeblock></div>
-<p>Command to make a torrent for each file in a directory</p>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
+       <template #title>Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -333,8 +588,13 @@ udp://exodus.desync.com:6969/announce ^
 &quot;%X&quot;</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="linux-commands" collapsed>
-       <template #title>Linux commands</template>
+</doc-panels>
+</doc-tab>
+<doc-tab v-cloak id="linux">
+<template #title>Linux</template>
+<doc-panels>
+   <doc-panel id="torrent-of-a-single-file-directory" collapsed>
+       <template #title>Torrent of a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -345,7 +605,9 @@ udp://tracker.coppersurfer.tk:6969/announce \
 udp://exodus.desync.com:6969/announce \
 &quot;New Folder&quot;</code></pre>
 </doc-codeblock></div>
-<p>Command to make a torrent for each subdirectory</p>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-subdirectory" collapsed>
+       <template #title>Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -356,7 +618,9 @@ udp://tracker.coppersurfer.tk:6969/announce \
 udp://exodus.desync.com:6969/announce \
 &quot;$dir&quot;; done</code></pre>
 </doc-codeblock></div>
-<p>Command to make a torrent for each file in a directory</p>
+   </doc-panel>
+   <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
+       <template #title>Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -370,96 +634,7 @@ udp://exodus.desync.com:6969/announce \
    </doc-panel>
 </doc-panels>
 </doc-tab>
-<doc-tab v-cloak id="mktorrent">
-<template #title>mktorrent</template>
-<p>For mktorrent, piece size is passed as <code v-pre>-l n</code> where <code v-pre>n</code> is the power of <code v-pre>2</code>, making the piece size equal to <code v-pre>2^(n)</code> bytes.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">n = 22 -&gt; 4MiB
-n = 23 -&gt; 8MiB
-n = 24 -&gt; 16MiB</code></pre>
-</doc-codeblock></div>
-<p>Command to make a torrent of a single file or directory</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">mktorrent -v -l 24 \
--a http://nyaa.tracker.wf:7777/announce \
--a http://anidex.moe:6969/announce \
--a udp://open.stealth.si:80/announce \
--a udp://tracker.opentrackr.org:1337/announce \
--a udp://tracker.coppersurfer.tk:6969/announce \
--a udp://exodus.desync.com:6969/announce \
-&quot;D:\path\to\root\directory&quot;</code></pre>
-</doc-codeblock></div>
-<p>Command to make a torrent for each subdirectory</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do mktorrent -v -l 24 \
--a http://nyaa.tracker.wf:7777/announce \
--a http://anidex.moe:6969/announce \
--a udp://open.stealth.si:80/announce \
--a udp://tracker.opentrackr.org:1337/announce \
--a udp://tracker.coppersurfer.tk:6969/announce \
--a udp://exodus.desync.com:6969/announce \
-&quot;$dir&quot;; done</code></pre>
-</doc-codeblock></div>
-<p>Command to make a torrent for each file in a directory</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do mktorrent -v -l 24 \
--a http://nyaa.tracker.wf:7777/announce \
--a http://anidex.moe:6969/announce \
--a udp://open.stealth.si:80/announce \
--a udp://tracker.opentrackr.org:1337/announce \
--a udp://tracker.coppersurfer.tk:6969/announce \
--a udp://exodus.desync.com:6969/announce \
-&quot;$file&quot;; done</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="dottorrent-gui">
-<template #title>dottorrent-gui</template>
-<p><figure class="content-center">
-    <a href="https://user-images.githubusercontent.com/78981416/226189863-40578262-dbd9-4bd2-a73c-3c6d7fe15451.png" title="3">
-        <img src="https://user-images.githubusercontent.com/78981416/226189863-40578262-dbd9-4bd2-a73c-3c6d7fe15451.png" alt="dottorrent-gui" title="3">
-    </a>
-    <figcaption class="caption">dottorrent-gui</figcaption>
-</figure>
-</p>
-</doc-tab>
-<doc-tab v-cloak id="qbittorrent">
-<template #title>qBittorrent</template>
-<p>Line breaks after each tracker URL are necessary when creating a torrent with qBittorrent.</p>
-<p><figure class="content-center">
-    <a href="https://user-images.githubusercontent.com/78981416/226189888-1fdf6f20-8232-4c37-aca6-2bd5e1d22e88.png" title="1">
-        <img src="https://user-images.githubusercontent.com/78981416/226189888-1fdf6f20-8232-4c37-aca6-2bd5e1d22e88.png" alt="qBittorrent Menu" title="1">
-    </a>
-    <figcaption class="caption">qBittorrent Menu</figcaption>
-</figure>
-</p>
-<p><figure class="content-center">
-    <a href="https://user-images.githubusercontent.com/78981416/226189911-eeeb29ab-9a0b-4c40-8601-a5c106fa7f6c.png" title="2">
-        <img src="https://user-images.githubusercontent.com/78981416/226189911-eeeb29ab-9a0b-4c40-8601-a5c106fa7f6c.png" alt="qBittorrent Torrent Creator" title="2">
-    </a>
-    <figcaption class="caption">qBittorrent Torrent Creator</figcaption>
-</figure>
-</p>
-</doc-tab>
 </doc-tabs>
-<doc-anchor-target id="public-tracker-urls">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#public-tracker-urls">#</doc-anchor-trigger>
-        <span>Public Tracker URLs</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">http://nyaa.tracker.wf:7777/announce
-
-http://anidex.moe:6969/announce
-
-udp://open.stealth.si:80/announce
-
-udp://tracker.opentrackr.org:1337/announce
-
-udp://exodus.desync.com:6969/announce
-
-udp://tracker.torrent.eu.org:451/announce</code></pre>
-</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -511,6 +686,6 @@ udp://tracker.torrent.eu.org:451/announce</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Torrent", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Torrents", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
