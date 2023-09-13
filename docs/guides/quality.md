@@ -15,7 +15,7 @@ Commonly used terminology:
 - **Codec** - The compression format used for the video stream and the biggest factor in compatibility with your system. *HEVC (H.265) and AVC (H.264) are the main ones*
 - **Bit depth** - The maximum colors that can be stored in the video. *Typically in 8-bit, or 10-bit for high-quality anime encodes*
   - Converting an 8-bit source to 10-bit might seem counterintuitive, *[but it can give better results at smaller sizes](https://yukisubs.files.wordpress.com/2016/10/why_does_10bit_save_bandwidth_-_ateme.pdf)*
-- **Frame rate** - The frequency at which frames are displayed. *This will usually be at roughly 23.976 fps*
+- **Frame rate** - The frequency at which frames are displayed. *This will usually be at roughly 23.976 (24000/10001) fps*
   - Many TVs will use [interpolation](https://en.wikipedia.org/wiki/Motion_interpolation) to convert low frame rate content to a higher frame rate like 60 fps, giving you an artificial sense of smoothness. *This is not recommended for anime and should be disabled in settings. 60 fps encodes should also be avoided*
 - **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode*
   - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
