@@ -42,7 +42,7 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 [mpv](https://mpv.io) can also be found in the various forks below:
 
 - [ImPlay](https://github.com/tsl0922/ImPlay)
-- [mpv.net](https://github.com/mpvnet-player/mpv.net) [!button size="xs" variant="primary" icon="apps" text="Microsoft Store" target="blank" margin="0 8 0 0"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
+- [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
 +++
 
@@ -50,7 +50,7 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 
 If you want to access mpv from the command line, you will need to add it to Windows PATH:
 
-1. In *Windows Settings* > *System* > *About*, locate *Advanced System Settings*. Head to *Advanced* and click on *Environment Variables...*
+1. In *Windows Settings* -> *System* -> *About*, locate *Advanced System Settings*. Head to *Advanced* and click on *Environment Variables...*
 2. Under *System Variables*, select *Path* and click on *Edit...*
 3. Click *New* and point the new variable to the `mpv.exe` located where mpv is installed
 4. Dismiss all of the dialogs by clicking `OK`
@@ -62,7 +62,7 @@ If you want to access mpv from the command line, you will need to add it to Wind
 +++ 🔧 Installing mpv
 
 Download the latest macOS build of [mpv](https://mpv.io):
-[!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](ttps://laboratory.stolendata.net/~djinn/mpv_osx/)
+[!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](https://laboratory.stolendata.net/~djinn/mpv_osx/)
 [!button size="s" variant="secondary" icon="download" text="Nightly"](https://github.com/jnozsc/mpv-nightly-build)
 
 +++ 🍺 Installing with Homebrew
@@ -416,7 +416,7 @@ WHEEL_DOWN    add volume -2
 
 ### Custom Scripts
 
-mpv allows you to load custom scripts, allowing you to further expand the player's functionality.
+mpv supports loading custom scripts, allowing you to further expand the player's functionality.
 
 Below is a list of some popular scripts:
 

@@ -6,11 +6,29 @@ image: https://user-images.githubusercontent.com/78981416/232306009-f06499dc-634
 
 # Transmission
 
-[Transmission](https://transmissionbt.com) is a free, open source, and cross platform bittorrent client. It's a stable and efficient client with minimal resource usage. Lacks alot of features that qBittorrent has but in turn can handle large quantities of torrents with ease. Great for mass seeding.
+[Transmission](https://transmissionbt.com) is a free, open-source, and cross-platform BitTorrent client. It's a stable and efficient client with minimal resource usage which can handle large quantities of torrents easily if you plan to mass seed.
 
-1. Go to Transmission's [download page](https://transmissionbt.com/download).
-2. Download the installer for your operating system. You'll see two options for Windows, i.e, `transmission-4.0.3-x64.msi` and `transmission-4.0.3-x86.msi`. Most likely you are on a `x64` machine and should install that.
+## Installation
 
-    ![](https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png)
++++ Windows
 
-3. Run the installer and you're pretty much done.
+1. Download the latest `.msi` version of [Transmission](https://transmissionbt.com/download)
+2. Run the installer and follow the on-screen instructions to complete installation
+
+![Transmission download page](https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png)
+
++++ macOS
+
+1. Download the latest `.dmg` version of [Transmission](https://transmissionbt.com/download)
+2. Run the installer and follow the on-screen instructions to complete installation
+
+![Transmission download page](https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png)
+
++++ Linux
+
+1. Download the latest `.tar.xz` version of [Transmission](https://transmissionbt.com/download)
+2. Run the installer and follow the on-screen instructions to complete installation
+
+![Transmission download page](https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png)
+
++++
