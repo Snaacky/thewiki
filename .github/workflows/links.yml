@@ -30,8 +30,10 @@ jobs:
             --exclude '^https://www.nzbking.com'
             './**/*.md'
 
+#           Public trackers and sites like Crunchyroll, Nyaa, qBittorrent, etc return 403
+#           Nyaa returns 429
 #           ./docs/hidden has unmaintained legacy files
-#           amd fails for reasons unknown to me, exhentai is private, nzbking has bad uptime
+#           AMD fails for reasons unknown to me, exhentai is private, and nzbking has bad uptime
 
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
