@@ -22,9 +22,12 @@ jobs:
             --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
             --max-redirects 10
             --header "accept=*/*"
-            --accept 200,204,206
+            --accept 200,204,206,403,429
             --base 'https://thewiki.moe'
             --exclude-path './docs/hidden'
+            --exclude '^https://www.amd.com' #Times Out
+            --exclude '^https://exhentai.org' #Private Site
+            --exclude '^https://www.nzbking.com' #Bad uptime
             './**/*.md'
 
       - name: Create Issue From File
