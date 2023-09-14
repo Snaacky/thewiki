@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747950903781">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747984064026">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.1">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.1.747950903781" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.1.747984064026" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747950903781" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747984064026" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747950903781" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.1.747950903781" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747984064026" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.1.747984064026" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -446,7 +446,7 @@ cscale=ewa_lanczos</code></pre>
 <li>15 fps: 1 frame is shown for <em>every 4 refreshes</em> (next frame in 66.67 ms)</li>
 </ul>
 <p>These frame rates work because they divide evenly into the monitor&#x27;s 60Hz refresh rate. With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.</p>
-<p>When content plays at 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). <em>However, refreshes cannot be divided, and you cannot have &quot;part&quot; of a refresh show on your monitor without screen tearing.</em></p>
+<p>When content plays at exactly 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). <em>However, refreshes cannot be divided, and you cannot have &quot;part&quot; of a refresh show on your monitor without screen tearing.</em></p>
 <p>Instead, your monitor will try to refresh 2.5 times like this:</p>
 <ul>
 <li>Frame 1 is shown for <em>2 refreshes</em> (next frame in 33.33 ms)</li>
@@ -461,7 +461,7 @@ cscale=ewa_lanczos</code></pre>
 <doc-tabs>
 <doc-tab v-cloak id="high-refresh-rate">
 <template #title>High Refresh Rate</template>
-<p>Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match with each frame, as they are all multiples of 24. Technically, they should be set at 119.88Hz, 143.86Hz, 239.76Hz, or 359.64Hz to perfectly match with the majority of content at 23.976 fps (24000/1001 fps).</p>
+<p>Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match with each frame, as they are all multiples of 24. Technically, they should be set at 119.88Hz, 143.86Hz, 239.76Hz, or 359.64Hz to closely match with the majority of content at around 23.976 fps (24000/1001 fps).</p>
 <p><em>144Hz displays will not display 30/60 fps content properly. Additionally, none of the above will handle 25 fps content correctly.</em></p>
 </doc-tab>
 <doc-tab v-cloak id="adaptive-sync">
