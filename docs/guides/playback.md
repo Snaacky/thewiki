@@ -179,7 +179,7 @@ A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to pl
 
 These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.
 
-When content plays at 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). *However, refreshes cannot be divided, and you cannot have "part" of a refresh show on your monitor without screen tearing.*
+When content plays at exactly 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). *However, refreshes cannot be divided, and you cannot have "part" of a refresh show on your monitor without screen tearing.*
 
 Instead, your monitor will try to refresh 2.5 times like this:
 
@@ -197,7 +197,7 @@ This process is repeated for the entire video. Because each frame is displayed f
 To avoid judder, it is best to try and match your display's refresh rate with the content frame rate via the following methods:
 
 +++ High Refresh Rate
-Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match with each frame, as they are all multiples of 24. Technically, they should be set at 119.88Hz, 143.86Hz, 239.76Hz, or 359.64Hz to perfectly match with the majority of content at 23.976 fps (24000/1001 fps).
+Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match with each frame, as they are all multiples of 24. Technically, they should be set at 119.88Hz, 143.86Hz, 239.76Hz, or 359.64Hz to closely match with the majority of content at around 23.976 fps (24000/1001 fps).
 
 *144Hz displays will not display 30/60 fps content properly. Additionally, none of the above will handle 25 fps content correctly.*
 
