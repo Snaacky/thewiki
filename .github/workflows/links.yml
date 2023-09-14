@@ -30,7 +30,7 @@ jobs:
             --exclude '^https://www.nzbking.com'
             './**/*.md'
 
-#           Public trackers and sites like Crunchyroll, Nyaa, qBittorrent, etc return 403
+#           Public trackers, streaming sites, crunchyroll, kodi, qbittorrent, etc return 403
 #           Nyaa returns 429
 #           ./docs/hidden has unmaintained legacy files
 #           AMD fails for reasons unknown to me, exhentai is private, and nzbking has bad uptime
