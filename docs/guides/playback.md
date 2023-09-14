@@ -206,7 +206,7 @@ Adaptive sync, also known as variable refresh rate, is a technology that dynamic
 
 Most modern GPUs will have adaptive sync functionality, such as through AMD FreeSync or NVIDIA G-SYNC.
 
-The best solution is to use G-SYNC/G-SYNC Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#:~:text=Low%20framerate%20compensation%20(LFC)%2C%20allows,to%20meet%20mandatory%20LFC%20requirements.). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
+The best solution is to use G-SYNC/G-SYNC Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#faq-What-is-Low-Framerate-Compensation?). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
 
 Additionally, you may need to force exclusive fullscreen to activate adaptive sync. In mpv, this can be done by adding `ontop` & `fullscreen` to your `mpv.conf` file. You can tell adaptive sync is active when your cursor feels laggy, as this means your display has dropped its refresh rate to match the content.
 

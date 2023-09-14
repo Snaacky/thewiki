@@ -7,7 +7,7 @@ visibility: hidden
 
 ## How do I torrent?
 
-Check out our [detailed torrenting guide](/guides/torrenting), it's very useful along with [Google](https://www.google.com/).
+Check out our [detailed torrenting guide](/getting-started/torrenting/), it's very useful along with [Google](https://www.google.com/).
 
 ## What torrent clients are recommended?
 
@@ -64,9 +64,9 @@ Check out the [sourcing guide](/guides/sourcing) for more detailed information o
 
 ## What does it mean for a torrent to be "stalled"?
 
-The files you download from torrents are downloaded from [**seeders**](/guides/torrenting), who have already finished downloading the files and are uploading to leechers/peers, who may also upload to each other. In case there aren't enough seeders, or if you are unable to [connect](/guides/torrenting#connectability) to a seeder, you will be unable to download 100% of a torrent. 
+The files you download from torrents are downloaded from [**seeders**](/getting-started/torrenting/), who have already finished downloading the files and are uploading to leechers/peers, who may also upload to each other. In case there aren't enough seeders, or if you are unable to [connect](/getting-started/torrenting/#port-forwarding) to a seeder, you will be unable to download 100% of a torrent. 
 
-This may also be because the initial seeder (the uploader) hasn't uploaded the entirety of the file to the **swarm** yet. Usually, you can wait and you should eventually connect to a seeder, but in case there are no seeders, you can ask someone who has the file to re-seed it so that you can download it. You can also try **reannouncing** to the [tracker](/guides/torrenting#glossary) (manually requesting the tracker for a refresh on peers and seeders) to try and get more seeders.
+This may also be because the initial seeder (the uploader) hasn't uploaded the entirety of the file to the **swarm** yet. Usually, you can wait and you should eventually connect to a seeder, but in case there are no seeders, you can ask someone who has the file to re-seed it so that you can download it. You can also try **reannouncing** to the [tracker](/resources/glossary/) (manually requesting the tracker for a refresh on peers and seeders) to try and get more seeders.
 
 ## What do I do if some files are corrupt/unplayable?
 

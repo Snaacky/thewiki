@@ -111,7 +111,7 @@ Contributions are **much appreciated**!
 
 ## License
 
-Distributed under the [Unlicense](https://opensource.org/license/unlicense/) License. See [LICENSE](https://github.com/Snaacky/thewiki/blob/master/LICENSE) for more information.
+Distributed under the [Unlicense](https://choosealicense.com/licenses/unlicense/) License. See [LICENSE](https://github.com/Snaacky/thewiki/blob/master/LICENSE) for more information.
 
 ## Contributors
 
