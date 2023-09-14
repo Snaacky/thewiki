@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.748036432061">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.748044175130">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.1">
@@ -21,23 +21,23 @@
     <meta property="og:url" content="https://thewiki.moe/advanced/muxing/">
     <meta property="og:title" content="Muxing">
     <meta property="og:description" content="Matroska is a very versatile container. Matroska is usually found as .mkv files (Matroska video), . mka">
-    <meta property="og:image" content="https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png">
+    <meta property="og:image" content="https://thewiki.moe/static/muxing/mkvtoolnix.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/advanced/muxing/">
     <meta property="twitter:title" content="Muxing">
     <meta property="twitter:description" content="Matroska is a very versatile container. Matroska is usually found as .mkv files (Matroska video), . mka">
-    <meta property="twitter:image" content="https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png">
+    <meta property="twitter:image" content="https://thewiki.moe/static/muxing/mkvtoolnix.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.1.748036432061" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.1.748044175130" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.748036432061" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.748044175130" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.748036432061" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.1.748036432061" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.748044175130" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.1.748044175130" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -175,10 +175,10 @@
 </ul>
 <p>On top of them sits <code v-pre>MKVToolNix GUI</code>, an easy-to-use program making the functionality of those command-line tools available as a GUI.</p>
 <doc-anchor-target id="getting-started">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
         <span>Getting started</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <ol>
 <li><p>After installing MKVToolNix, you&#x27;re pretty much ready to go. Once you launch it, you&#x27;ll be greeted with this.
@@ -188,7 +188,7 @@ You&#x27;ll see 3 tabs here:</p>
 <li><code v-pre>Output</code> tab for adding metadata like file title or chapters.</li>
 <li><code v-pre>Attachments</code> tab for additional attachments, commonly used for adding fonts required by the subtitle tracks and things like cover.</li>
 </ul>
-<p><a href="https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png"><img src="https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png" alt="" /></a></p>
+<p><a href="../../static/muxing/mkvtoolnix.png"><img src="../../static/muxing/mkvtoolnix.png" alt="" /></a></p>
 </li>
 <li><p>You can either right-click anywhere in the top &quot;Source Files&quot; box or drag and drop your file in it.</p>
 <ul>
@@ -198,10 +198,10 @@ You&#x27;ll see 3 tabs here:</p>
 <li>By default, anything you won&#x27;t explicitly uncheck will be copied over to the new output file.</li>
 <li>Clicking on any track allows you to modify several properties in the window on the right. It&#x27;s important you get this right and it&#x27;s covered in more details <doc-anchor-trigger to="#correct-tagging">below</doc-anchor-trigger>.</li>
 </ul>
-<p><a href="https://user-images.githubusercontent.com/78981416/242075905-711652cb-8fa5-4d4e-aea4-c44468f12bcc.png"><img src="https://user-images.githubusercontent.com/78981416/242075905-711652cb-8fa5-4d4e-aea4-c44468f12bcc.png" alt="" /></a></p>
+<p><a href="../../static/muxing/mkvtoolnix2.png"><img src="../../static/muxing/mkvtoolnix2.png" alt="" /></a></p>
 </li>
 <li><p>Once you&#x27;re done making your changes, assign a <a href="../release-standards/#naming">name</a> to your file and hit <code v-pre>Start multiplexing</code>. Make sure to check all 3 tabs to ensure what&#x27;s being copied over.</p>
-<p><a href="https://user-images.githubusercontent.com/78981416/242080040-79908193-4bbb-43b2-88e5-1a6a1a937f83.png"><img src="https://user-images.githubusercontent.com/78981416/242080040-79908193-4bbb-43b2-88e5-1a6a1a937f83.png" alt="" /></a></p>
+<p><a href="../../static/muxing/mkvtoolnix3.png"><img src="../../static/muxing/mkvtoolnix3.png" alt="" /></a></p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -215,17 +215,24 @@ You&#x27;ll see 3 tabs here:</p>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>MKVToolNix also allows you to <a href="https://user-images.githubusercontent.com/78981416/242086965-882d8d2d-e88d-4490-8452-31f4ff10f273.png">generate a commandline</a> with all the changes you made in the GUI.</p>
+<p>MKVToolNix also allows you to <a href="../../static/muxing/mkvtoolnix4.png">generate a commandline</a> with all the changes you made in the GUI.</p>
         </div>
     </div>
 </div>
 </li>
 </ol>
+<doc-anchor-target id="fonts">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fonts">#</doc-anchor-trigger>
+        <span>Fonts</span>
+    </h3>
+</doc-anchor-target>
+<p>Fonts used by the <code v-pre>.ass</code> subtitles must be attached to the <code v-pre>.mkv</code> file for displaying subtitles accurately on the user&#x27;s end. This can be easily done by dragging the fonts used by the <code v-pre>.ass</code> file into the <code v-pre>attachments</code> tab. You can usually source the correct fonts from the same fansub release you got the subtitles from. You can also get the fonts used by the <code v-pre>.ass</code> file with <a href="https://github.com/arch1t3cht/Aegisub">Aegisub</a> or <a href="https://github.com/moi15moi/FontCollector">FontCollector</a> if you have them on your system already.</p>
 <doc-anchor-target id="correct-tagging">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#correct-tagging">#</doc-anchor-trigger>
         <span>Correct Tagging</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>The <code v-pre>Properties</code> tab allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing.</p>
 <ul>
