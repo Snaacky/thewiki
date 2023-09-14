@@ -37,7 +37,7 @@ Torrenting requires the use of a torrent client, such as [qBittorrent](/tutorial
 Downloading anime torrents may be illegal depending on where you live. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting/#vpn) or [seedbox](/getting-started/torrenting/#seedbox).*
 !!!
 
-Additionally, you may choose to automatically fetch and download shows using RSS or Sonarr. *Check out the [RSS Tutorial](/tutorials/rss) on how to set up RSS with your torrent client.*
+Additionally, you may choose to automatically fetch and download shows using RSS or Sonarr. *Check out the [RSS Tutorial](/tutorials/qbittorrent/#rss) on how to set up RSS with your torrent client.*
 
 *See the [torrenting guide](/getting-started/torrenting) for more information.*
 
