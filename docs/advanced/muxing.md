@@ -20,7 +20,7 @@ MKVToolNix consists of the following command-line tools:
 
 On top of them sits `MKVToolNix GUI`, an easy-to-use program making the functionality of those command-line tools available as a GUI.
 
-## Getting started
+### Getting started
 
 1. After installing MKVToolNix, you're pretty much ready to go. Once you launch it, you'll be greeted with this.
    You'll see 3 tabs here:
@@ -28,7 +28,7 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
    - `Output` tab for adding metadata like file title or chapters.
    - `Attachments` tab for additional attachments, commonly used for adding fonts required by the subtitle tracks and things like cover.
 
-   [![](https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png)](https://user-images.githubusercontent.com/78981416/241998849-9feff446-44fa-4879-ba59-c62b5912fb81.png)
+   [![](/static/muxing/mkvtoolnix.png)](/static/muxing/mkvtoolnix.png)
 
 
 2. You can either right-click anywhere in the top "Source Files" box or drag and drop your file in it.
@@ -39,17 +39,21 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
    - By default, anything you won't explicitly uncheck will be copied over to the new output file.
    - Clicking on any track allows you to modify several properties in the window on the right. It's important you get this right and it's covered in more details [below](#correct-tagging).
 
-   [![](https://user-images.githubusercontent.com/78981416/242075905-711652cb-8fa5-4d4e-aea4-c44468f12bcc.png)](https://user-images.githubusercontent.com/78981416/242075905-711652cb-8fa5-4d4e-aea4-c44468f12bcc.png)
+   [![](/static/muxing/mkvtoolnix2.png)](/static/muxing/mkvtoolnix2.png)
 
 3. Once you're done making your changes, assign a [name](/advanced/release-standards/#naming) to your file and hit `Start multiplexing`. Make sure to check all 3 tabs to ensure what's being copied over.
 
-   [![](https://user-images.githubusercontent.com/78981416/242080040-79908193-4bbb-43b2-88e5-1a6a1a937f83.png)](https://user-images.githubusercontent.com/78981416/242080040-79908193-4bbb-43b2-88e5-1a6a1a937f83.png)
+   [![](/static/muxing/mkvtoolnix3.png)](/static/muxing/mkvtoolnix3.png)
 
    !!!
-   MKVToolNix also allows you to [generate a commandline](https://user-images.githubusercontent.com/78981416/242086965-882d8d2d-e88d-4490-8452-31f4ff10f273.png) with all the changes you made in the GUI.
+   MKVToolNix also allows you to [generate a commandline](/static/muxing/mkvtoolnix4.png) with all the changes you made in the GUI.
    !!!
 
-## Correct Tagging
+### Fonts
+
+Fonts used by the `.ass` subtitles must be attached to the `.mkv` file for displaying subtitles accurately on the user's end. This can be easily done by dragging the fonts used by the `.ass` file into the `attachments` tab. You can usually source the correct fonts from the same fansub release you got the subtitles from. You can also get the fonts used by the `.ass` file with [Aegisub](https://github.com/arch1t3cht/Aegisub) or [FontCollector](https://github.com/moi15moi/FontCollector) if you have them on your system already.
+
+### Correct Tagging
 
 The `Properties` tab allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing.
 
