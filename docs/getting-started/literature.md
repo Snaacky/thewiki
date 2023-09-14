@@ -80,7 +80,7 @@ Although these are significantly lower quality, not all manga get official digit
 
 [Kavita](https://www.kavitareader.com/) - Free and open source manga, comic, and book server with OPDS support. This means that any reader with OPDS, like Perfect Viewer, [can be used to read manga from the server](https://wiki.kavitareader.com/en/guides/settings/opds). Has support for [CDisplayEX](https://wiki.kavitareader.com/en/guides/misc/cdisplayex), [Tachiyomi](https://wiki.kavitareader.com/en/guides/misc/tachiyomi), and [Paperback](https://wiki.kavitareader.com/en/guides/misc/paperback). It also has an integrated webreader. [DEMO](https://wiki.kavitareader.com/en/kavita-demo).
 
-[Komga](https://komga.org/) - Free and open source manga server with OPDS support. This means that any reader with OPDS, like Perfect Viewer, [can be used to read manga from the server](https://komga.org/guides/opds.html). Tachiyomi and Paperback are supported through their respective [komga extensions](https://komga.org/docs/guides/tachiyomi). It also has an integrated webreader.
+[Komga](https://komga.org/) - Free and open source manga server with OPDS support. This means that any reader with OPDS, like Perfect Viewer, [can be used to read manga from the server](https://komga.org/docs/guides/opds). Tachiyomi and Paperback are supported through their respective [komga extensions](https://komga.org/docs/guides/tachiyomi). It also has an integrated webreader.
 
 [komf](https://github.com/Snd-R/komf) - Komga and Kavita metadata fetcher.
 
