@@ -11,8 +11,8 @@ image: /static/tohsaka.gif
 
 +++ PC :desktop_computer:
 
-- [mpv](https://mpv.io/installation/) [!badge variant="info" text="Recommended"] - [Installation and configuration tutorial](/tutorials/mpv)
-- [MPC-HC](https://github.com/clsid2/mpc-hc/releases) - [Configuration guide with madVR](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
+- [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
+- [MPC-HC](https://github.com/clsid2/mpc-hc/releases) [!badge icon="link-external" variant="info" text="madVR Guide"](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
 - [Potplayer](https://potplayer.daum.net)
 
 +++ Android :robot_face:
@@ -27,8 +27,8 @@ image: /static/tohsaka.gif
 
 +++ TV/Media Servers :tv:
 
-- [Kodi](https://kodi.tv) [!badge variant="info" text="Recommended"] - *Can be installed optionally through [LibreELEC OS](https://libreelec.tv).*
-- [Plex](https://www.plex.tv) [!badge variant="info" text="Recommended"]
+- [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="link-external" variant="info" text="Available on LibreELEC OS"](https://libreelec.tv)
+- [Plex](https://www.plex.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [Emby](https://emby.media)
 - [Jellyfin](https://jellyfin.org)
 
@@ -162,7 +162,7 @@ Debanding is the most commonly used filter, which helps to fix issues with [colo
 We do not recommend detail enhancement, noise reduction, or sharpening filters, as it will negatively affect the quality of your content.
 !!!
 
-*See the [Quality Guide](/guides/quality) for more information.*
+*See the [quality guide](/guides/quality) for more information.*
 
 ### Smooth Playback
 
@@ -206,7 +206,7 @@ Adaptive sync, also known as variable refresh rate, is a technology that dynamic
 
 Most modern GPUs will have adaptive sync functionality, such as through AMD FreeSync or NVIDIA G-SYNC.
 
-The best solution is to use G-SYNC/G-SYNC Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#faq-What-is-Low-Framerate-Compensation?). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
+The best solution is to use G-SYNC/G-SYNC Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#:~:text=Low%20framerate%20compensation%20(LFC)%2C%20allows,to%20meet%20mandatory%20LFC%20requirements.). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
 
 Additionally, you may need to force exclusive fullscreen to activate adaptive sync. In mpv, this can be done by adding `ontop` & `fullscreen` to your `mpv.conf` file. You can tell adaptive sync is active when your cursor feels laggy, as this means your display has dropped its refresh rate to match the content.
 

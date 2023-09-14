@@ -1,6 +1,6 @@
 ---
-label: Torrenting
-order: -3
+label: Torrenting Guide
+visibility: hidden
 ---
 
 # Torrenting

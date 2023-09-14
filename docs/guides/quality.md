@@ -74,7 +74,7 @@ Japanese Blu-rays often have better quality than other countries as they allocat
 
 There are cases where regional discs do offer better quality. This generally applies when Japanese discs have authoring issues, resulting in the alternatives being better by comparison. For instance, Italian discs from Dynit frequently offer the best video even at lower bitrates due to good filtering and better-optimized encode settings.
 
-These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa](https://nyaa.si) (Public) and [Skyeysnow](https://skyeysnow.com) (Private, Open Signup) will have some too. *Release groups don't matter for BDMVs because they are 1:1 copies of the disc and should instead be chosen based on region.*
+These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa](https://nyaa.si) (Public) and [Skyey Snow](https://skyeysnow.com) (Private, Open Signup) will have some too. *Release groups don't matter for BDMVs because they are 1:1 copies of the disc and should instead be chosen based on region.*
 
 +++ BD Remux
 
@@ -211,7 +211,7 @@ While these edits can be an improvement over the original subs, *they may also i
 
 They can be downloaded under the *Subtitles* section of a release:
 
-![AnimeTosho](https://files.catbox.moe/wbychc.gif)
+![AnimeTosho](/static/quality/animetosho.gif)
 
 ===
 

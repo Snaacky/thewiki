@@ -1,35 +1,46 @@
 ---
-label: Private BitTorrent Trackers
+label: Private Trackers
 order: -3
 ---
 
-# Private BitTorrent Trackers
+# Private Trackers
 
-## Private Trackers
+Private trackers are BitTorrent trackers that require user registration in order to access and download torrents.
 
-- [AnimeBytes](https://animebytes.tv/)
-- [BakaBT](http://bakabt.me/)
-- [AnimeTorrents](https://animetorrents.me/)
+If you're new to torrenting, see the [torrenting guide](/getting-started/torrenting) on how to get started. *Additionally, we suggest you stick to [public trackers](/sourcing/public-trackers), as most shows can be found there without being locked behind user signup.*
+
+- [AnimeBytes](https://animebytes.tv)
+- [AnimeTorrents](https://animetorrents.me)
+- [BakaBT](https://bakabt.me)
+- [Skyey Snow](https://skyeysnow.com) [!badge variant="success" icon="sign-in" text="Open Signup"]
 - [U2](https://u2.dmhy.org)
-- [Skyeysnow](https://skyeysnow.com/) (open signup)
 
-## How do I join private trackers?
+## AnimeBytes
 
-Typically by open signups, interviews, applications, recruitment and user invites. The ways to get into common private anime trackers are given below:
+[AnimeBytes](https://animebytes.tv) (AB) is a closed private BitTorrent tracker for anime.
 
-- AnimeBytes (AB):
+Users are can join this tracker through recruitments on various top-tier trackers. Unlike other trackers, however, joining AB is difficult and *not* guaranteed as several factors can affect your standing, such as receiving bans from other trackers.
 
-  - Elite anime tracker, affiliated with the private tracker cabal so bans on other cabal trackers will affect your standing at AB. Recruits from various entry level cabal/cabal-affiliated trackers like RED at 12 months + Power User and GGn at 3 months + Elite Gamer. Has official recruitments at most top tier cabal trackers. Allegedly some quicker routes exist if you know the right path. Users are subject to intense scrutinity by staff and trees bans so user invites are more than likely out of the question for this one.
+## AnimeTorrents
 
-- BakaBT (BBT):
+[AnimeTorrents](https://animetorrents.me) (AnT/AnimeZ) is a closed private BitTorrent tracker for anime.
 
-  - Only allows new registrations from users who successfully pass an interview via IRC. The interview is extremely easy, mostly about the rules, BitTorrent, and other various information you can find on their wiki. Allowed to read their wiki while doing the interview which results in a /comfy/ experience but tracker is somewhat lackluster.
+Users can join this tracker through recruitments. Unfortunately, getting into this tracker is currently impossible, as recruits remain closed.
 
-- AnimeTorrents (AnT/AnimeZ):
+## BakaBT
 
-  - Used to recruit once or twice per year, hasn't recruited since late 2019. Allegedly planning to reopen the site after they complete a revamp that has been years in the making but their SysOp stalls worse than your average anime encoder. Used to allow you to self-invite from other AvistaZ network trackers but since closed. User invite system has been broken for years despite allowing you to buy invites with bonus points. Essentially closed at the moment.
+[BakaBT](https://bakabt.me) (BBT) is a closed private BitTorrent tracker for anime, literature, music, etc.
 
-- U2 (u2.dmhy):
-  - Recruits from AnimeBytes in the class restricted invite forums and various Chinese private trackers. Allegedly a secret BBS exists where you can showcase your anime collection and test your luck getting invited by a stranger. Tree bans are not a thing on U2 so user invites are relatively easy to come by.
+Users can join this tracker after successfully passing an interview via IRC. The interview goes over the basics about torrenting and the site rules, which can be found on [their wiki](https://wiki.bakabt.me).
 
-[This wiki page](https://wiki.installgentoo.com/index.php/Private_trackers) explains private trackers in detail. Note that it's largely written for a shitpost community on /g/ so the content will reflect as such and some of the information is out of date but it is still a good resource for beginners.
+## Skyey Snow
+
+[Skyey Snow](https://skyeysnow.com) is a open private BitTorrent tracker for anime.
+
+Users can join this tracker by completing the account registration process.
+
+## U2
+
+[U2](https://u2.dmhy.org) is a closed private BitTorrent tracker for anime.
+
+Users can join this tracker through recruitments on [AnimeBytes](#animebytes).
