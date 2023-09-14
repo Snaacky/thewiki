@@ -10,60 +10,48 @@ image: https://user-images.githubusercontent.com/78981416/232305852-17383fd0-c7d
 
 ## Installation
 
-+++ Windows
+==- 🖥️ Windows
 
 1. Download the latest version of [qBittorrent](https://www.qbittorrent.org) from [FOSSHUB](https://www.fosshub.com/qBittorrent.html). For Windows, you'll want to download *qBitTorrent Windows x64*
 2. Run the installer and follow the on-screen instructions to complete installation
 
-==- Video tutorial
-
 [!embed text="Installing qBittorrent on Windows"](/static/torrenting/qbittorrent/installation-windows.mp4)
 
-===
-
-+++ macOS
+==- 🍎 macOS
 
 1. Download the latest version of [qBittorrent](https://www.qbittorrent.org) from [FOSSHUB](https://www.fosshub.com/qBittorrent.html). For macOS, you'll want to download *qBitTorrent Mac OS X*
 2. Run the installer and follow the on-screen instructions to complete installation
 
-+++ Linux
+==- 🐧 Linux
 
 1. Download the latest version of [qBittorrent](https://www.qbittorrent.org) from [FOSSHUB](https://www.fosshub.com/qBittorrent.html). For Linux, you'll want to download *qBitTorrent AppImage*
 2. Run the installer and follow the on-screen instructions to complete installation
 
-+++
+==-
 
 ## Usage
 
 qBittorrent supports both `.torrent` files and magnet links.
 
-+++ Automatic
+==- Automatic
 
 qBittorrent supports automatic detection and can start downloading torrents by simply opening the `.torrent` file or launching magnet links.
-
-==- Video tutorial
 
 [!embed text="Automatically starting from a torrent file"](/static/torrenting/getting-torrents-file.mp4)
 
 [!embed text="Automatically starting from a magnet link"](/static/torrenting/getting-torrents-magnet.mp4)
 
-==-
-
-+++ Manual
+==- Manual
 
 - Launch qBittorrent. In the top bar, find the **Add Torrent File** or **Add Torrent Link** button
 - Locate the `.torrent` file or paste in the magnet link
 - Once submitted, qBittorrent should immediately start fetching the file metadata and begin downloading
-
-==- Video tutorial
 
 [!embed text="Adding a torrent file"](/static/torrenting/qbittorrent/usage-file.mp4)
 
 [!embed text="Adding a magnet link"](/static/torrenting/qbittorrent/usage-magnet.mp4)
 
 ==-
-
-+++
 
 ## Configuration
 
@@ -85,19 +73,15 @@ If you use a [VPN](/getting-started/torrenting/#vpn), you may want to consider b
 
 RSS is an easy way to automatically fetch and download shows to your machine. This may be useful if you plan on downloading airing shows without having to manually add the torrent to your client.
 
-+++ Enabling RSS
+==- Enabling RSS
 
 1. Launch qBittorrent. In the top bar, go to **Tools** -> **Options**
 2. Head to **RSS**. Under **RSS Reader**, check *Enable fetching RSS feeds*. You can also change how often your RSS feed is updated under *Feeds refresh interval*. *We recommend setting it to 15 minutes*
 3. Under **RSS Torrent Auto Downloader**, check *Enable auto downloading of RSS torrents*
 
-==- Video tutorial
-
 [!embed text="Enabling RSS"](/static/torrenting/qbittorrent/enabling-rss.mp4)
 
-==-
-
-+++ Adding feeds
+==- Adding feeds
 
 1. Choose an RSS feed to use. Popular RSS feeds for airing anime:
 [!button size="s" variant="secondary" icon="rss" text="Erai-raws" margin="0 8 0 0"](https://www.erai-raws.info/rss-page/)
@@ -106,13 +90,9 @@ RSS is an easy way to automatically fetch and download shows to your machine. Th
 3. Select the **RSS** tab near the top bar. Click on **New subscription**
 4. Paste the RSS URL and click **OK**.
 
-==- Video tutorial
-
 [!embed text="Adding feeds"](/static/torrenting/qbittorrent/adding-feeds.mp4)
 
-==-
-
-+++ Download rules
+==- Download rules
 
 1. Launch qBittorrent. In the top bar, go to **View** and check *RSS Reader*
 2. Select the **RSS** tab near the top bar. Click on **RSS Downloader...**
@@ -129,13 +109,9 @@ If your filter works properly, you should see the desired files under **Matching
 !!!
 4. Under **Apply Rule to Feeds**, check off the desired RSS feed for the download rule
 
-==- Video tutorial
-
 [!embed text="Download rules"](/static/torrenting/qbittorrent/download-rules.mp4)
 
 ==-
-
-+++
 
 ### Sequential Downloading
 
