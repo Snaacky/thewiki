@@ -25,10 +25,13 @@ jobs:
             --accept 200,204,206,403,429
             --base 'https://thewiki.moe'
             --exclude-path './docs/hidden'
-            --exclude '^https://www.amd.com' #Times Out
-            --exclude '^https://exhentai.org' #Private Site
-            --exclude '^https://www.nzbking.com' #Bad uptime
+            --exclude '^https://www.amd.com'
+            --exclude '^https://exhentai.org'
+            --exclude '^https://www.nzbking.com'
             './**/*.md'
+
+#           ./docs/hidden has unmaintained legacy files
+#           amd fails for reasons unknown to me, exhentai is private, nzbking has bad uptime
 
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
