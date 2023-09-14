@@ -1,8 +1,6 @@
 name: Links
 
 on:
-  push:
-  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
 
