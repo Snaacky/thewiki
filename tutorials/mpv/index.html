@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747984064026">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.748031297141">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.1">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.1.747984064026" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.1.748031297141" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747984064026" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.748031297141" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747984064026" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.1.747984064026" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.748031297141" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.1.748031297141" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -171,9 +171,9 @@
         <span>Windows</span>
     </h3>
 </doc-anchor-target>
-<doc-tabs>
-<doc-tab v-cloak id="installing-mpv">
-<template #title><span class="docs-emoji">&#x1F527;</span> Installing mpv</template>
+<doc-panels>
+   <doc-panel id="installing-mpv" collapsed>
+       <template #title><span class="docs-emoji">&#x1F527;</span> Installing mpv</template>
 <ol>
 <li>Download the latest Windows build of <a href="https://mpv.io">mpv</a> from <a href="https://sourceforge.net/projects/mpv-player-windows/files/">SourceForge</a>:
 <a href="https://sourceforge.net/projects/mpv-player-windows/files/64bit/" class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-3 h-8 text-sm rounded" style="margin: 0px 8px 0px 0px;">
@@ -205,8 +205,6 @@
 <ol start="3">
 <li>Navigate to the <code v-pre>installer</code> folder and run <code v-pre>mpv-install.bat</code>. Follow the on-screen instructions to complete installation</li>
 </ol>
-<doc-panel id="video-tutorial" collapsed>
-    <template #title>Video tutorial</template>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -215,10 +213,9 @@
     <figcaption class="caption">Installing mpv on Windows</figcaption>
 </figure>
 </p>
-</doc-panel>
-</doc-tab>
-<doc-tab v-cloak id="installing-a-pre-configured-build">
-<template #title><span class="docs-emoji">&#x1F4E6;</span> Installing a pre-configured build</template>
+   </doc-panel>
+   <doc-panel id="installing-a-pre-configured-build" collapsed>
+       <template #title><span class="docs-emoji">&#x1F4E6;</span> Installing a pre-configured build</template>
 <p>If you don&#x27;t want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the <doc-anchor-trigger to="#basic-config">Basic Config</doc-anchor-trigger> and <doc-anchor-trigger to="#advanced-config">Advanced Config</doc-anchor-trigger>.</p>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
@@ -258,9 +255,9 @@
     <a href="https://github.com/Snaacky/thewiki/releases/latest/download/mpv-uosc.zip" class="absolute block inset-0"></a>
 </div>
 </p>
-</doc-tab>
-<doc-tab v-cloak id="installing-a-fork">
-<template #title><span class="docs-emoji">&#x1F374;</span> Installing a fork</template>
+   </doc-panel>
+   <doc-panel id="installing-a-fork" collapsed>
+       <template #title><span class="docs-emoji">&#x1F374;</span> Installing a fork</template>
 <p><a href="https://mpv.io">mpv</a> can also be found in the various forks below:</p>
 <ul>
 <li><a href="https://github.com/tsl0922/ImPlay">ImPlay</a></li>
@@ -269,8 +266,8 @@
     <span>Microsoft Store</span>
 </a></li>
 </ul>
-</doc-tab>
-</doc-tabs>
+   </doc-panel>
+</doc-panels>
 <doc-panel id="adding-mpv-to-path" collapsed>
     <template #title><span class="docs-emoji">&#x1F4C1;</span> Adding mpv to PATH</template>
 <p>If you want to access mpv from the command line, you will need to add it to Windows PATH:</p>
@@ -287,9 +284,9 @@
         <span>macOS</span>
     </h3>
 </doc-anchor-target>
-<doc-tabs>
-<doc-tab v-cloak id="installing-mpv">
-<template #title><span class="docs-emoji">&#x1F527;</span> Installing mpv</template>
+<doc-panels>
+   <doc-panel id="installing-mpv" collapsed>
+       <template #title><span class="docs-emoji">&#x1F527;</span> Installing mpv</template>
 <p>Download the latest macOS build of <a href="https://mpv.io">mpv</a>:
 <a href="https://laboratory.stolendata.net/%7Edjinn/mpv_osx/" class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-3 h-8 text-sm rounded" style="margin: 0px 8px 0px 0px;">
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="16" height="16" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M4.75 17.25a.75.75 0 0 1 .75.75v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25V18a.75.75 0 0 1 .75-.75Z"/><path d="M5.22 9.97a.749.749 0 0 1 1.06 0l4.97 4.969V2.75a.75.75 0 0 1 1.5 0v12.189l4.97-4.969a.749.749 0 1 1 1.06 1.06l-6.25 6.25a.749.749 0 0 1-1.06 0l-6.25-6.25a.749.749 0 0 1 0-1.06Z"/></g></svg></span>
@@ -299,15 +296,15 @@
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="16" height="16" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M4.75 17.25a.75.75 0 0 1 .75.75v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25V18a.75.75 0 0 1 .75-.75Z"/><path d="M5.22 9.97a.749.749 0 0 1 1.06 0l4.97 4.969V2.75a.75.75 0 0 1 1.5 0v12.189l4.97-4.969a.749.749 0 1 1 1.06 1.06l-6.25 6.25a.749.749 0 0 1-1.06 0l-6.25-6.25a.749.749 0 0 1 0-1.06Z"/></g></svg></span>
     <span>Nightly</span>
 </a></p>
-</doc-tab>
-<doc-tab v-cloak id="installing-with-homebrew">
-<template #title><span class="docs-emoji">&#x1F37A;</span> Installing with Homebrew</template>
+   </doc-panel>
+   <doc-panel id="installing-with-homebrew" collapsed>
+       <template #title><span class="docs-emoji">&#x1F37A;</span> Installing with Homebrew</template>
 <p>Install <a href="https://brew.sh/">Homebrew</a>. Then, run the following command in your terminal:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">brew install mpv</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
+   </doc-panel>
+</doc-panels>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -330,15 +327,13 @@
         <span>Linux</span>
     </h3>
 </doc-anchor-target>
-<doc-tabs>
-<doc-tab v-cloak id="installing-on-ubuntu-debian-apt">
-<template #title><span class="docs-emoji">&#x1F527;</span> Installing on Ubuntu/Debian (APT)</template>
+<doc-panel id="installing-on-ubuntu-debian-apt" collapsed>
+    <template #title><span class="docs-emoji">&#x1F527;</span> Installing on Ubuntu/Debian (APT)</template>
 <p>Run the following command in your terminal:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">apt install mpv</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
+</doc-panel>
 <doc-anchor-target id="config-overview">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#config-overview">#</doc-anchor-trigger>

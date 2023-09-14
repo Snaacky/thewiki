@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.747984064026">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.1.748031297141">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.1">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.1.747984064026" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.1.748031297141" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.747984064026" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.1.748031297141" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.747984064026" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.1.748031297141" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -164,15 +164,13 @@
         <span>Installation</span>
     </h2>
 </doc-anchor-target>
-<doc-tabs>
-<doc-tab v-cloak id="windows">
-<template #title>Windows</template>
+<doc-panels>
+   <doc-panel id="windows" collapsed>
+       <template #title><span class="docs-emoji">&#x1F5A5;&#xFE0F;</span> Windows</template>
 <ol>
 <li>Download the latest version of <a href="https://www.qbittorrent.org">qBittorrent</a> from <a href="https://www.fosshub.com/qBittorrent.html">FOSSHUB</a>. For Windows, you&#x27;ll want to download <em>qBitTorrent Windows x64</em></li>
 <li>Run the installer and follow the on-screen instructions to complete installation</li>
 </ol>
-<doc-panel id="video-tutorial" collapsed>
-    <template #title>Video tutorial</template>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -181,23 +179,22 @@
     <figcaption class="caption">Installing qBittorrent on Windows</figcaption>
 </figure>
 </p>
-</doc-panel>
-</doc-tab>
-<doc-tab v-cloak id="macos">
-<template #title>macOS</template>
+   </doc-panel>
+   <doc-panel id="macos" collapsed>
+       <template #title><span class="docs-emoji">&#x1F34E;</span> macOS</template>
 <ol>
 <li>Download the latest version of <a href="https://www.qbittorrent.org">qBittorrent</a> from <a href="https://www.fosshub.com/qBittorrent.html">FOSSHUB</a>. For macOS, you&#x27;ll want to download <em>qBitTorrent Mac OS X</em></li>
 <li>Run the installer and follow the on-screen instructions to complete installation</li>
 </ol>
-</doc-tab>
-<doc-tab v-cloak id="linux">
-<template #title>Linux</template>
+   </doc-panel>
+   <doc-panel id="linux" collapsed>
+       <template #title><span class="docs-emoji">&#x1F427;</span> Linux</template>
 <ol>
 <li>Download the latest version of <a href="https://www.qbittorrent.org">qBittorrent</a> from <a href="https://www.fosshub.com/qBittorrent.html">FOSSHUB</a>. For Linux, you&#x27;ll want to download <em>qBitTorrent AppImage</em></li>
 <li>Run the installer and follow the on-screen instructions to complete installation</li>
 </ol>
-</doc-tab>
-</doc-tabs>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="usage">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
@@ -205,12 +202,10 @@
     </h2>
 </doc-anchor-target>
 <p>qBittorrent supports both <code v-pre>.torrent</code> files and magnet links.</p>
-<doc-tabs>
-<doc-tab v-cloak id="automatic">
-<template #title>Automatic</template>
+<doc-panels>
+   <doc-panel id="automatic" collapsed>
+       <template #title>Automatic</template>
 <p>qBittorrent supports automatic detection and can start downloading torrents by simply opening the <code v-pre>.torrent</code> file or launching magnet links.</p>
-<doc-panel id="video-tutorial" collapsed>
-    <template #title>Video tutorial</template>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -227,17 +222,14 @@
     <figcaption class="caption">Automatically starting from a magnet link</figcaption>
 </figure>
 </p>
-</doc-panel>
-</doc-tab>
-<doc-tab v-cloak id="manual">
-<template #title>Manual</template>
+   </doc-panel>
+   <doc-panel id="manual" collapsed>
+       <template #title>Manual</template>
 <ul>
 <li>Launch qBittorrent. In the top bar, find the <strong>Add Torrent File</strong> or <strong>Add Torrent Link</strong> button</li>
 <li>Locate the <code v-pre>.torrent</code> file or paste in the magnet link</li>
 <li>Once submitted, qBittorrent should immediately start fetching the file metadata and begin downloading</li>
 </ul>
-<doc-panel id="video-tutorial" collapsed>
-    <template #title>Video tutorial</template>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -254,9 +246,8 @@
     <figcaption class="caption">Adding a magnet link</figcaption>
 </figure>
 </p>
-</doc-panel>
-</doc-tab>
-</doc-tabs>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="configuration">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
@@ -293,16 +284,14 @@
     </h3>
 </doc-anchor-target>
 <p>RSS is an easy way to automatically fetch and download shows to your machine. This may be useful if you plan on downloading airing shows without having to manually add the torrent to your client.</p>
-<doc-tabs>
-<doc-tab v-cloak id="enabling-rss">
-<template #title>Enabling RSS</template>
+<doc-panels>
+   <doc-panel id="enabling-rss" collapsed>
+       <template #title>Enabling RSS</template>
 <ol>
 <li>Launch qBittorrent. In the top bar, go to <strong>Tools</strong> -&gt; <strong>Options</strong></li>
 <li>Head to <strong>RSS</strong>. Under <strong>RSS Reader</strong>, check <em>Enable fetching RSS feeds</em>. You can also change how often your RSS feed is updated under <em>Feeds refresh interval</em>. <em>We recommend setting it to 15 minutes</em></li>
 <li>Under <strong>RSS Torrent Auto Downloader</strong>, check <em>Enable auto downloading of RSS torrents</em></li>
 </ol>
-<doc-panel id="video-tutorial" collapsed>
-    <template #title>Video tutorial</template>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -311,10 +300,9 @@
     <figcaption class="caption">Enabling RSS</figcaption>
 </figure>
 </p>
-</doc-panel>
-</doc-tab>
-<doc-tab v-cloak id="adding-feeds">
-<template #title>Adding feeds</template>
+   </doc-panel>
+   <doc-panel id="adding-feeds" collapsed>
+       <template #title>Adding feeds</template>
 <ol>
 <li>Choose an RSS feed to use. Popular RSS feeds for airing anime:
 <a href="https://www.erai-raws.info/rss-page/" class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-500 hover:bg-gray-600 dark:bg-dark-400 dark:hover:bg-dark-450 text-white px-3 h-8 text-sm rounded" style="margin: 0px 8px 0px 0px;">
@@ -329,8 +317,6 @@
 <li>Select the <strong>RSS</strong> tab near the top bar. Click on <strong>New subscription</strong></li>
 <li>Paste the RSS URL and click <strong>OK</strong>.</li>
 </ol>
-<doc-panel id="video-tutorial" collapsed>
-    <template #title>Video tutorial</template>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -339,10 +325,9 @@
     <figcaption class="caption">Adding feeds</figcaption>
 </figure>
 </p>
-</doc-panel>
-</doc-tab>
-<doc-tab v-cloak id="download-rules">
-<template #title>Download rules</template>
+   </doc-panel>
+   <doc-panel id="download-rules" collapsed>
+       <template #title>Download rules</template>
 <ol>
 <li>Launch qBittorrent. In the top bar, go to <strong>View</strong> and check <em>RSS Reader</em></li>
 <li>Select the <strong>RSS</strong> tab near the top bar. Click on <strong>RSS Downloader...</strong></li>
@@ -396,8 +381,6 @@
 <ol start="4">
 <li>Under <strong>Apply Rule to Feeds</strong>, check off the desired RSS feed for the download rule</li>
 </ol>
-<doc-panel id="video-tutorial" collapsed>
-    <template #title>Video tutorial</template>
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
@@ -406,9 +389,8 @@
     <figcaption class="caption">Download rules</figcaption>
 </figure>
 </p>
-</doc-panel>
-</doc-tab>
-</doc-tabs>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="sequential-downloading">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#sequential-downloading">#</doc-anchor-trigger>
