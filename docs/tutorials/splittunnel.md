@@ -3,6 +3,7 @@ label: Split Tunneling
 description: Split tunneling on any Wireguard VPN
 author:
   name: "guyman"
+  avatar: https://github.com/Snaacky/thewiki/assets/78981416/2045b3c7-90a5-40ce-9d81-a81baa421227
 ---
 
 # Split Tunneling on Any VPN (Wireguard)
