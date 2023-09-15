@@ -12,31 +12,54 @@ Comparisons are frequently used within the enthusiast community to compare the v
 
 ### Installing dependencies
 
-1. Install [Python 3.11](https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe) - During installation tick `Add python.exe to PATH`.
+1. Install [Python 3.11](https://www.python.org/downloads/). During installation tick `Add python.exe to PATH`
 2. Install [Git](https://gitforwindows.org/)
-3. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases/download/R63/VapourSynth64-R63.exe) - Select `Install for me only`.
+3. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases). Select `Install for me only`
 4. Before we install vs-preview, we need to install the following dependencies:
 
-   [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P") [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works "LSMASHSource") [`Subtext`](https://github.com/vapoursynth/subtext "Subtext") [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo") [`libdovi`](https://github.com/quietvoid/dovi_tool/releases/tag/libdovi-1.6.7 "libdovi") [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
+    [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P") [`LSMASHSource`](https://github.com/AkarinVS/L-SMASH-Works "LSMASHSource") [`Subtext`](https://github.com/vapoursynth/subtext "Subtext") [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo") [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
 
-To install LSMASHSource, download [LSMASHSource](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it.
-Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
-To install the rest of the plugins, run the following commands in your terminal:
+    ==- :icon-gear: Installation
 
-```console
-vsrepo.py install libp2p sub placebo dovi_library
-```
+    You can install these with the following commands:
 
-```console
-pip install git+https://github.com/OpusGang/awsmfunc.git
-```
+    ```powershell
+    vsrepo.py install lsmas libp2p sub placebo
+    ```
 
-!!!
-If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python.
-!!!
-5. Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
+    !!!
+    If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python
+    !!!
 
-```console
+    ```powershell
+    pip install git+https://github.com/OpusGang/awsmfunc.git
+    ```
+    ===
+
+5. (Optional) If you're working with Dolby Vision, you'll need to install the following additional dependencies:
+
+    - [`libdovi`](https://github.com/quietvoid/dovi_tool "libdovi")
+
+        ==- :icon-gear: Installation
+        ```powershell
+        vsrepo.py install dovi_library
+        ```
+        ===
+
+    - [HomeOfAviSynthPlusEvolution/L-SMASH-Works](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases/tag/20230716) instead of [Akarin's](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j) because at the time of writing this, Akarin's `L-SMASH-Works` fails on Dolby Vision Profile 5
+
+        ==- :icon-gear: Installation
+    
+        - To install this, download it and open it
+        - Inside the zip, open the `x64` folder
+        - Copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
+        - If you already have Akarin's `libvslsmashsource.dll` in the `plugins64`, first remove it, and then add the `LSMASHSource.dll`
+        ===
+    
+
+6. Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
+
+```powershell
 pip install vspreview
 ```
 
@@ -44,7 +67,7 @@ pip install vspreview
 
 1. Create a new file called `comp.vpy`.
 2. Open `comp.vpy` with a text editor such as Notepad++ and paste the following, edit as required, and save it:
-==- comp.vpy contents
+==- :icon-file-code: comp.vpy
 
 ```python
 ## Boring stuff: Ignore me
@@ -144,7 +167,7 @@ set_output(clip3, name=source3)
 ==-
 3. Now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as `comp.bat`
 
-```console
+```powershell
 vspreview "C:\Path\To\comp.vpy"
 ```
 
@@ -153,7 +176,8 @@ vspreview "C:\Path\To\comp.vpy"
 Now, when making comps you just edit `comp.vpy` to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed, and then run `comp.bat` or run `vspreview comp.vpy` directly from your terminal.
 
 Unsure of how to go about editing the comp script? The panel below will explain how each section works.
-==- Understanding comp.vpy
+
+==- :icon-file: Understanding comp.vpy
 At first, the comparison script may seem daunting, especially since it's a giant wall of text with a lot of technical jargon. It has basic explanations of each section, however, this guide will go over each part in more detail and describe how to properly edit the values.
 
 When comparing, you will want to go through the different sections, uncommenting/commenting the parts you need to use (removing/adding the ## in front of them, which determines whether the line will be used or not), modifying the values to suit your needs and applying them to the correct clip numbers.
@@ -270,7 +294,7 @@ Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolb
    Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
 - Select lines 180-187, delete them, and paste
 
-```console
+```python
 self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
 self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
 self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
@@ -309,7 +333,7 @@ Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolb
 
 - Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).
 
-```console
+```python
 self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
 self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
 self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
@@ -453,7 +477,7 @@ If VS-Preview is too scary to setup, you can simply run a script to generate the
 2. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases) - Select `Install for me only`.
 3. Install dependencies via running the following command in your terminal:
 
-   ```console
+   ```powershell
    pip install pathlib anitopy pyperclip requests requests_toolbelt
    ```
 
@@ -467,7 +491,7 @@ If VS-Preview is too scary to setup, you can simply run a script to generate the
 3. When there's no group, such as BDMV or WEB-DL, use the source/service as the group tag.
    For example:
 
-   ```console
+   ```txt
    /Comparison/
    ├── [JPBD] Youjo Senki - 01.m2ts 
    ├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
