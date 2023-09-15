@@ -294,7 +294,7 @@ Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolb
    Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
 - Select lines 180-187, delete them, and paste
 
-```powershell
+```python
 self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
 self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
 self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
@@ -333,7 +333,7 @@ Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolb
 
 - Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).
 
-```powershell
+```python
 self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
 self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
 self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
