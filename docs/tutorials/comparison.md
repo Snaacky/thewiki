@@ -46,7 +46,7 @@ Comparisons are frequently used within the enthusiast community to compare the v
         ```
         ===
 
-    - [HomeOfAviSynthPlusEvolution/L-SMASH-Works](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases/tag/20230716) instead of [Akarin's](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j) because at the time of writing this, Akarin's `L-SMASH-Works` fails on Dolby Vision Profile 5
+    - [`HomeOfAviSynthPlusEvolution/L-SMASH-Works`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases/tag/20230716) instead of [Akarin's](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j) because at the time of writing this, Akarin's `L-SMASH-Works` fails on Dolby Vision Profile 5
 
         ==- :icon-gear: Installation
     
