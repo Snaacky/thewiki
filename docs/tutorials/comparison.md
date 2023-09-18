@@ -17,7 +17,7 @@ Comparisons are frequently used within the enthusiast community to compare the v
 3. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases). Select `Install for me only`
 4. Before we install vs-preview, we need to install the following dependencies:
 
-    [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P") [`LSMASHSource`](https://github.com/AkarinVS/L-SMASH-Works "LSMASHSource") [`Subtext`](https://github.com/vapoursynth/subtext "Subtext") [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo") [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
+    [`libP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P") [`lsmas`](https://github.com/AkarinVS/L-SMASH-Works "LSMASHSource") [`subtext`](https://github.com/vapoursynth/subtext "Subtext") [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo") [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
 
     ==- :icon-gear: Installation
 
@@ -46,14 +46,14 @@ Comparisons are frequently used within the enthusiast community to compare the v
         ```
         ===
 
-    - [`HomeOfAviSynthPlusEvolution/L-SMASH-Works`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases/tag/20230716) instead of [Akarin's](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j) because at the time of writing this, Akarin's `L-SMASH-Works` fails on Dolby Vision Profile 5
+    - [`lsmas vA.5b`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b) instead of [`lsmas vA.3j`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j). Currently, `vsrepo` installs `A.3x` by default which does not support DV. `A.5x` is experimental and not available on `vsrepo`, so you will have to install it manually.
 
         ==- :icon-gear: Installation
     
-        - To install this, download it and open it
-        - Inside the zip, open the `x64` folder
-        - Copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
-        - If you already have Akarin's `libvslsmashsource.dll` in the `plugins64`, first remove it, and then add the `LSMASHSource.dll`
+        - Download `release-x86_64-cachedir-cwd.zip` and open it
+        - Copy `libvslsmashsource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
+        - If you already have an older `libvslsmashsource.dll` in the `plugins64`, first remove it, and then add the newer `libvslsmashsource.dll`
+
         ===
     
 
