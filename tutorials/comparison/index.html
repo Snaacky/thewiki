@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748354204195">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748354684101">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.748354204195" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.748354684101" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.748354204195" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.748354684101" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.748354204195" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.748354204195" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.748354684101" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.748354684101" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -231,11 +231,11 @@
 </ul>
 </li>
 <li><p>Install <a href="https://github.com/Irrational-Encoding-Wizardry/vs-preview">vs-preview</a>:</p>
-</li>
-</ol>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-powershell"><code v-pre class="language-powershell">pip install vspreview</code></pre>
 </doc-codeblock></div>
+</li>
+</ol>
 <doc-anchor-target id="the-comparison-script">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-comparison-script">#</doc-anchor-trigger>
@@ -344,15 +344,22 @@ set_output(clip3, name=source3)</code></pre>
 </doc-codeblock></div>
 </doc-panel>
 <ol start="3">
-<li>Now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as <code v-pre>comp.bat</code></li>
-</ol>
+<li><p>Now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as <code v-pre>comp.bat</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-powershell"><code v-pre class="language-powershell">vspreview &quot;C:\Path\To\comp.vpy&quot;</code></pre>
 </doc-codeblock></div>
+</li>
+</ol>
 <ul>
 <li>To get the path, shift and right-click the comp.py file you just made, and select <code v-pre>Copy as path</code></li>
 </ul>
 <p>Now, when making comps you just edit <code v-pre>comp.vpy</code> to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed, and then run <code v-pre>comp.bat</code> or run <code v-pre>vspreview comp.vpy</code> directly from your terminal.</p>
+<doc-anchor-target id="understanding-the-comparison-script">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#understanding-the-comparison-script">#</doc-anchor-trigger>
+        <span>Understanding the comparison script</span>
+    </h4>
+</doc-anchor-target>
 <p>Unsure of how to go about editing the comp script? The panel below will explain how each section works.</p>
 <doc-panel id="understanding-comp-vpy" collapsed>
     <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Understanding comp.vpy</template>
@@ -459,17 +466,15 @@ set_output(clip3, name=source3)</code></pre>
 <p>In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
 </li>
 <li><p><strong>Mark screenshots quicker by setting the mark frame button to enter</strong></p>
-</li>
-</ul>
 <p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\comp</code> and edit <code v-pre>toolbar.py</code></p>
 <ul>
-<li><p>Line 552: Replace <code v-pre>QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp</code> with <code v-pre>(Qt.Key_Return), self.add_current_frame_to_comp</code></p>
+<li>Line 552: Replace <code v-pre>QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp</code> with <code v-pre>(Qt.Key_Return), self.add_current_frame_to_comp</code></li>
+</ul>
 </li>
 <li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong></p>
 <p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code></p>
-</li>
-<li><p>Select lines 180-187, delete them, and paste</p>
-</li>
+<ul>
+<li>Select lines 180-187, delete them, and paste</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
@@ -477,6 +482,8 @@ self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to
 self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
 self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
 </doc-codeblock></div>
+</li>
+</ul>
 </doc-tab>
 <doc-tab v-cloak id="bolt-action">
 <template #title>Bolt-action</template>
@@ -504,14 +511,12 @@ self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</cod
 </li>
 <li><p><strong>Take screenshots quicker by setting the save image button to enter</strong></p>
 <p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code></p>
-</li>
-<li><p>Line 166: Replace <code v-pre>QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click</code> with <code v-pre>(Qt.Key_Return), self.save_frame_as_button.click</code>.</p>
-</li>
-<li><p>If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</p>
+<ul>
+<li>Line 166: Replace <code v-pre>QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click</code> with <code v-pre>(Qt.Key_Return), self.save_frame_as_button.click</code>.</li>
+<li>If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</li>
+</ul>
 </li>
 <li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong></p>
-</li>
-</ul>
 <p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code></p>
 <ul>
 <li>Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).</li>
@@ -522,6 +527,8 @@ self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to
 self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
 self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
 </doc-codeblock></div>
+</li>
+</ul>
 <doc-anchor-target id="post-processing">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#post-processing">#</doc-anchor-trigger>
