@@ -19,49 +19,42 @@ Comparisons are frequently used within the enthusiast community to compare the v
 
     [`libP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P") [`lsmas`](https://github.com/AkarinVS/L-SMASH-Works "LSMASHSource") [`subtext`](https://github.com/vapoursynth/subtext "Subtext") [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo") [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
 
-    ==- :icon-gear: Installation
-
     You can install these with the following commands:
 
     ```powershell
     vsrepo.py install lsmas libp2p sub placebo
     ```
 
+    ```powershell
+    pip install git+https://github.com/OpusGang/awsmfunc.git
+    ```
+
     !!!
     If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python
     !!!
 
-    ```powershell
-    pip install git+https://github.com/OpusGang/awsmfunc.git
-    ```
-    ===
-
 5. (Optional) If you're working with Dolby Vision, you'll need to install the following additional dependencies:
 
-    - [`libdovi`](https://github.com/quietvoid/dovi_tool "libdovi")
+==- :large_purple_square:Dolby Vision:large_green_square: Specific Installation
 
-        ==- :icon-gear: Installation
-        ```powershell
-        vsrepo.py install dovi_library
-        ```
-        ===
+- [`libdovi`](https://github.com/quietvoid/dovi_tool "libdovi")
 
-    - [`lsmas vA.5b`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b) instead of [`lsmas vA.3j`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j). Currently, `vsrepo` installs `A.3x` by default which does not support DV. `A.5x` is experimental and not available on `vsrepo`, so you will have to install it manually.
+```powershell
+vsrepo.py install dovi_library
+```
 
-        ==- :icon-gear: Installation
-    
-        - Download `release-x86_64-cachedir-cwd.zip` and open it
-        - Copy `libvslsmashsource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
-        - If you already have an older `libvslsmashsource.dll` in the `plugins64`, first remove it, and then add the newer `libvslsmashsource.dll`
+- [`lsmas vA.5b`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b) instead of [`lsmas vA.3j`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j). Currently, `vsrepo` installs `A.3x` by default which does not support DV. `A.5x` is experimental and not available on `vsrepo`, so you will have to install it manually.
 
-        ===
-    
+- Download `release-x86_64-cachedir-cwd.zip` and open it
+- Copy `libvslsmashsource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
+- If asked, overwite the old `libvslsmashsource.dll` with the new version
+===
 
-6. Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
+Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
 
-    ```powershell
-    pip install vspreview
-    ```
+```powershell
+pip install vspreview
+```
 
 ### The comparison script
 
