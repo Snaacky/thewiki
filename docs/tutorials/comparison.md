@@ -59,9 +59,9 @@ Comparisons are frequently used within the enthusiast community to compare the v
 
 6. Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
 
-```powershell
-pip install vspreview
-```
+    ```powershell
+    pip install vspreview
+    ```
 
 ### The comparison script
 
@@ -167,13 +167,15 @@ set_output(clip3, name=source3)
 ==-
 3. Now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as `comp.bat`
 
-```powershell
-vspreview "C:\Path\To\comp.vpy"
-```
+    ```powershell
+    vspreview "C:\Path\To\comp.vpy"
+    ```
 
 - To get the path, shift and right-click the comp.py file you just made, and select `Copy as path`
 
 Now, when making comps you just edit `comp.vpy` to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed, and then run `comp.bat` or run `vspreview comp.vpy` directly from your terminal.
+
+#### Understanding the comparison script
 
 Unsure of how to go about editing the comp script? The panel below will explain how each section works.
 
@@ -285,21 +287,21 @@ There are 3 methods of screenshotting:
 
 - **Mark screenshots quicker by setting the mark frame button to enter**
 
-Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\comp` and edit `toolbar.py`
+    Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\comp` and edit `toolbar.py`
 
-- Line 552: Replace `QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp` with `(Qt.Key_Return), self.add_current_frame_to_comp`
+    - Line 552: Replace `QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp` with `(Qt.Key_Return), self.add_current_frame_to_comp`
 
 - **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
 
    Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
-- Select lines 180-187, delete them, and paste
+    - Select lines 180-187, delete them, and paste
 
-```python
-self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
-```
+    ```python
+    self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+    self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+    self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+    self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
+    ```
 
 +++ Bolt-action
 
@@ -324,21 +326,21 @@ self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
 - **Take screenshots quicker by setting the save image button to enter**
 
    Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py`
-- Line 166: Replace `QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click` with `(Qt.Key_Return), self.save_frame_as_button.click`.
-- If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
+    - Line 166: Replace `QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click` with `(Qt.Key_Return), self.save_frame_as_button.click`.
+    - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
 
 - **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
 
-Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
+    Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
 
-- Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).
+    - Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).
 
-```python
-self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
-```
+    ```python
+    self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+    self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+    self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+    self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
+    ```
 
 #### Post-processing
 
