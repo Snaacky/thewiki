@@ -190,7 +190,7 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 
 Option                                                                                           | Meaning
 -------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. *We recommend `gpu-hq` for high-quality playback*
+[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings. *We recommend `gpu-hq` for high-quality playback*
 [`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
 [`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *We recommend `vulkan` for most modern hardware*
 [`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
@@ -237,6 +237,10 @@ deband-iterations=4
 deband-threshold=48
 deband-grain=48
 ```
+
+!!!warning
+Your deband settings should be placed after your [`profile`](https://mpv.io/manual/stable/#profiles) or at the end of the file.
+!!!
 
 +++ `input.conf`
 
