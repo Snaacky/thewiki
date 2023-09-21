@@ -1,7 +1,7 @@
 <h1>
   <p align="center">
     <a href="https://thewiki.moe">
-      <img src="https://github.com/Snaacky/thewiki/assets/78981416/efdae8dc-2f53-45cd-8a75-6036b81eeafa" alt="thewiki.moe Logo" width="200" height="200">
+      <img src="https://github.com/Snaacky/thewiki/blob/master/docs/static/readme/logo-thin-border.png" alt="thewiki.moe Logo" width="200" height="200">
     </a>
     <h3 align="center">thewiki.moe</h3>
     <p align="center">
