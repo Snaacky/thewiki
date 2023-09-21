@@ -190,7 +190,7 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 
 Option                                                                                           | Meaning
 -------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. *We recommend `gpu-hq` for high-quality playback*
+[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings. *We recommend `gpu-hq` for high-quality playback*
 [`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
 [`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *We recommend `vulkan` for most modern hardware*
 [`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
@@ -237,6 +237,10 @@ deband-iterations=4
 deband-threshold=48
 deband-grain=48
 ```
+
+!!!warning
+Your deband settings should be placed after your [`profile`](https://mpv.io/manual/stable/#profiles) in order to prevent conflict.
+!!!
 
 +++ `input.conf`
 
@@ -380,7 +384,7 @@ k cycle_values sub-ass-override "force" "no"
 
 Auto profiles allow users to automate actions based on certain conditions. Tasks such as [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) can be applied automatically when these conditions are met, such as file names.
 
-For instance, some seasonal releases may exhibit banding issues and less-appealing subtitles. To address this, we can create a `simulcast` auto profile, which will automatically apply debanding and restyle the subtitles when the filename includes specific keywords, such as the group tag.
+For instance, some seasonal releases may exhibit banding issues and use subjectively less-appealing subtitle fonts. To address this, we can create a `simulcast` auto profile, which automatically applies [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) when playing releases uploaded by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
 
 Add the following to the end of your `mpv.conf`:
 
@@ -395,8 +399,8 @@ sub-ass-override=force
 deband=yes
 ```
 
-!!!
-In this example, the `simulcast` auto profile will automatically apply when you play a release by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
+!!!warning
+Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
 !!!
 
 ### Quality of Life
