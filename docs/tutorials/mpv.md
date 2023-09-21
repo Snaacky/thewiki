@@ -384,7 +384,7 @@ k cycle_values sub-ass-override "force" "no"
 
 Auto profiles allow users to automate actions based on certain conditions. Tasks such as [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) can be applied automatically when these conditions are met, such as file names.
 
-For instance, some seasonal releases may exhibit banding issues and use subjectively less-appealing subtitle fonts. To address this, we can create a `simulcast` auto profile, which automatically applies [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) when playing releases created by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
+For instance, some seasonal releases may exhibit banding issues and use subjectively less-appealing subtitle fonts. To address this, we can create a `simulcast` auto profile, which automatically applies [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) when playing releases uploaded by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
 
 Add the following to the end of your `mpv.conf`:
 
@@ -400,7 +400,7 @@ deband=yes
 ```
 
 !!!warning
-Your auto profile should be placed at the end of your `mpv.conf` in order to prevent conflict.
+Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
 !!!
 
 ### Quality of Life
