@@ -1,5 +1,4 @@
-<h1>
-  <p align="center">
+<p align="center">
     <a href="https://thewiki.moe">
       <img src="https://github.com/Snaacky/thewiki/blob/master/docs/static/readme/logo-thin-border.png" alt="thewiki.moe Logo" width="200" height="200">
     </a>
@@ -11,7 +10,6 @@
       <br>
     </p>
   </p>
-</h1>
 
 <div align="center">
 
