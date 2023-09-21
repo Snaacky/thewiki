@@ -239,7 +239,7 @@ deband-grain=48
 ```
 
 !!!warning
-Your deband settings should be placed after your [`profile`](https://mpv.io/manual/stable/#profiles) or at the end of the file.
+Your deband settings should be placed after your [`profile`](https://mpv.io/manual/stable/#profiles) in order to prevent conflict.
 !!!
 
 +++ `input.conf`
@@ -384,7 +384,7 @@ k cycle_values sub-ass-override "force" "no"
 
 Auto profiles allow users to automate actions based on certain conditions. Tasks such as [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) can be applied automatically when these conditions are met, such as file names.
 
-For instance, some seasonal releases may exhibit banding issues and less-appealing subtitles. To address this, we can create a `simulcast` auto profile, which will automatically apply debanding and restyle the subtitles when the filename includes specific keywords, such as the group tag.
+For instance, some seasonal releases may exhibit banding issues and use subjectively less-appealing subtitle fonts. To address this, we can create a `simulcast` auto profile, which automatically applies [debanding](#debanding) and [subtitle restyling](#subtitle-restyling) when playing releases created by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
 
 Add the following to the end of your `mpv.conf`:
 
@@ -399,8 +399,8 @@ sub-ass-override=force
 deband=yes
 ```
 
-!!!
-In this example, the `simulcast` auto profile will automatically apply when you play a release by SubsPlease, Erai-raws, Tsundere-Raws, VARYG, or HorribleSubs.
+!!!warning
+Your auto profile should be placed at the end of your `mpv.conf` in order to prevent conflict.
 !!!
 
 ### Quality of Life
