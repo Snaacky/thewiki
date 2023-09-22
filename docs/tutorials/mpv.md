@@ -256,9 +256,13 @@ After applying your changes, debanding can be applied at any time by pressing `S
 
 Scaling is the process of taking content that does not match your screen resolution and resizing it to fit your display. *See the [Playback Guide](/guides/playback/#scaling) for more information.*
 
+[mpv](https://mpv.io) has a built-in high-quality profile called `gpu-hq` which enables better upscaling algorithms (`scale=spline36`, `dscale=mitchell`, `cscale=spline36`). By default, mpv uses `spline36`. *This option is necessary to enable even if you use an external shader, as it can act as a fallback.*
+
+!!!warning
+`gpu-hq` enables debanding by default, which is not recommended for high-quality sources. It should be followed by `deband=no`.
 !!!
+
 Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
-!!!
 
 +++ High-End PCs
 For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
