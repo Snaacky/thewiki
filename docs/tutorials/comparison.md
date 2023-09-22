@@ -465,37 +465,4 @@ for link in links:
 ## Automatic Comp Scripts
 
 If VS-Preview is too scary to setup, you can simply run a script to generate the comparisons for you.
-
-### Setup
-
-1. Install [Python 3.10](https://www.python.org/downloads/release/python-3105/)
-2. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases) - Select `Install for me only`.
-3. Install dependencies via running the following command in your terminal:
-
-   ```powershell
-   pip install pathlib anitopy pyperclip requests requests_toolbelt
-   ```
-
-4. Download [LSMASHSource](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it. Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
-5. (Optional) Install [FFmpeg](https://ffmpeg.org/download.html) and add it to PATH.
-
-### Running the script
-
-1. Put `comp.py` into the same folder where the video files you want to compare are located.
-2. Rename your files to have the typical `[Group] Show - EP.mkv` naming, since the script will try to parse the group and show name.
-3. When there's no group, such as BDMV or WEB-DL, use the source/service as the group tag.
-   For example:
-
-   ```txt
-   /Comparison/
-   ├── [JPBD] Youjo Senki - 01.m2ts 
-   ├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
-   ├── [Group] Youjo Senki - 01.mkv
-   └── comp.py
-   ```
-
-   This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.
-4. Adjust the variables in the script accordingly.
-5. Run the script via either double-clicking it or by running `py comp.py` in your terminal.
-
-- [McBaws' Script](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
+- [McBaws' Script](https://github.com/McBaws/comp)
