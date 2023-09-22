@@ -110,9 +110,9 @@ source3 = "ThirdSourceName"
 ##clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
 ## Tonemapping: For HDR/DV content only, src_csp=1 is for HDR (and DV Profile 8), src_csp=3 is for DV (Profile 5) [16 BIT REQUIRED]
-##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=1, dst_csp=0, gamut_mode=0, use_dovi=1)
-##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=3, dst_csp=0, gamut_mode=0, use_dovi=1)
-##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=1, dst_csp=0, gamut_mode=0, use_dovi=1, dst_max=120)
+##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
+##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=3, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
+##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1, dst_max=120)
 
 ##Set Colour Range: Marks the clip as limited (0) or full (1) range, DV clips will need to be set to limited after tonemapping.
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
