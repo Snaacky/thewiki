@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748636663748">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748681648443">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.748636663748" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.748681648443" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.748636663748" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.748681648443" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.748636663748" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.748636663748" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.748681648443" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.748681648443" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -657,56 +657,8 @@ for link in links:
     </h2>
 </doc-anchor-target>
 <p>If VS-Preview is too scary to setup, you can simply run a script to generate the comparisons for you.</p>
-<doc-anchor-target id="setup">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
-        <span>Setup</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li><p>Install <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a></p>
-</li>
-<li><p>Install <a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a> - Select <code v-pre>Install for me only</code>.</p>
-</li>
-<li><p>Install dependencies via running the following command in your terminal:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-powershell"><code v-pre class="language-powershell">pip install pathlib anitopy pyperclip requests requests_toolbelt</code></pre>
-</doc-codeblock></div>
-</li>
-<li><p>Download <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases" title="LSMASHSource">LSMASHSource</a> and open it. Inside the zip, open the x64 folder, copy <code v-pre>LSMASHSource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></p>
-</li>
-<li><p>(Optional) Install <a href="https://ffmpeg.org/download.html">FFmpeg</a> and add it to PATH.</p>
-</li>
-</ol>
-<doc-anchor-target id="running-the-script">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#running-the-script">#</doc-anchor-trigger>
-        <span>Running the script</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li><p>Put <code v-pre>comp.py</code> into the same folder where the video files you want to compare are located.</p>
-</li>
-<li><p>Rename your files to have the typical <code v-pre>[Group] Show - EP.mkv</code> naming, since the script will try to parse the group and show name.</p>
-</li>
-<li><p>When there&#x27;s no group, such as BDMV or WEB-DL, use the source/service as the group tag.
-For example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/Comparison/
-├── [JPBD] Youjo Senki - 01.m2ts 
-├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
-├── [Group] Youjo Senki - 01.mkv
-└── comp.py</code></pre>
-</doc-codeblock></div>
-<p>This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.</p>
-</li>
-<li><p>Adjust the variables in the script accordingly.</p>
-</li>
-<li><p>Run the script via either double-clicking it or by running <code v-pre>py comp.py</code> in your terminal.</p>
-</li>
-</ol>
 <ul>
-<li><a href="https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609">McBaws&#x27; Script</a></li>
+<li><a href="https://github.com/McBaws/comp">McBaws&#x27; Script</a></li>
 </ul>
 
                                 
