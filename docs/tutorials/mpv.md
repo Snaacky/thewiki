@@ -302,11 +302,12 @@ This is included in the [Basic Config](#basic-config) above.
 
 +++ Potato PCs
 For those with integrated GPU, you can stick to mpv's default built-in scalers.
-No need to modify `mpv.conf`. 
+No need to modify `mpv.conf`.
 
 Just remove `profile=high-quality`, and mpv will use default values.
 
 The default values are:
+
 ```properties
 scale=lanczos
 cscale=lanczos
@@ -317,6 +318,7 @@ linear-downscaling=yes
 sigmoid-upscaling=yes
 hdr-compute-peak=yes
 ```
+
 If these values are still too much for you, then you can use `profile=fast` which sacrifices quality for performance.
 
 +++
@@ -409,7 +411,6 @@ deband=yes
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
 !!!
-
 
 ### Custom Scripts
 
