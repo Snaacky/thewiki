@@ -43,7 +43,8 @@ If you decided on iGPU, avoid 6th generation Intel or older. These CPUs are know
 Good Canidates
 +++ dGPU
 
-![OptiPlex 5040](https://github.com/guyman624/thewiki/assets/82007920/bc6a1940-3cda-4bf6-94cd-5c14f72e79a1)This machine has plenty of ram preinstalled, a beefier CPU, and SSD storage included. All it needs is a GPU.
+![OptiPlex 5040](https://github.com/guyman624/thewiki/assets/82007920/bc6a1940-3cda-4bf6-94cd-5c14f72e79a1)
+This machine has plenty of ram preinstalled, a beefier CPU, and SSD storage included. All it needs is a GPU.
 
 Keep your eyes peeled for machines that already have a GPU installed
 ![gpu preinstalled](https://github.com/guyman624/thewiki/assets/82007920/d5ad6390-b4e4-4f31-ad16-0ef33f7411c0)
@@ -57,7 +58,7 @@ SFF machines will need a low profile GPU and bracket.
 !!!
 
 +++ iGPU
-![image](https://github.com/guyman624/thewiki/assets/82007920/5cbe1a4e-7b82-4136-992c-4427597487da)
+![MFF desktop](https://github.com/guyman624/thewiki/assets/82007920/5cbe1a4e-7b82-4136-992c-4427597487da)
 This machine includes the power cord, has a decent amount of ram, and an included SSD. This is an ideal canidate if size is a concern. 
 +++
 
