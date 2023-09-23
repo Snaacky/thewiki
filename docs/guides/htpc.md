@@ -52,6 +52,7 @@ Keep your eyes peeled for machines that already have a GPU installed
 Once you have picked a machine, you can move onto picking a GPU.
 
 The two most popular options are going to be the GT 1030 and the RX 550. If you plan to play 4K or HDR videos, you should pick the GT 1030. Otherwise, the RX 550 should be fine. 
+The most important consideration is the video decoder, and supported resolutions. NVidia has a chart [here](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new) (look at NVDEC not NVENC). For AMD, check TechPowerUp for the Unified Video Decoder version, then check [here](https://en.wikipedia.org/wiki/Unified_Video_Decoder#Format_support) for supported codecs.
 ![gpu](https://github.com/guyman624/thewiki/assets/82007920/6aca03ab-155d-499a-b38c-aadd7c9d0004)
 !!!warning
 SFF machines will need a low profile GPU and bracket.
@@ -64,44 +65,45 @@ This machine includes the power cord, has a decent amount of ram, and an include
 
 # Software
 ## Windows
-I won't go over installing Windows in this guide, but install Windows as you normally would on any other computer. You are also free to install any debloat scripts, such as AtlasOS or ReviOS to increase performance.
+I won't go over installing Windows in this guide, but install Windows as you normally would on any other computer. You are also free to install any debloat scripts, such as AtlasOS or ReviOS to increase performance. Make sure you install the appropriate graphics driver for your system, whether it be NVidia, AMD, or Intel.
 ## MPV
 ### Config
 We already have a [guide](/../tutorials/mpv.md) on setting up mpv, however you may realize that the config there is slow on your machine. Here, I will provide the configuration I use for my 6100T + GT 1030 HTPC.
 ```
 #### General
-[SDR]
-profile-cond=p["video-params/primaries"] and p["video-params/primaries"] ~= "bt.2020"
-vo=gpu
-[HDR]
-profile-cond=p["video-params/primaries"] == "bt.2020"
-vo=gpu-next
-## Above makes use of vo=gpu-next for HDR Content, and vo=gpu for SDR. This is a requirement for blend-subtitles=video.
-
-hwdec=auto-safe    #enable the hardware decoder
+ontop=yes
+blend-subtitles=video
+hwdec=auto-safe
 gpu-api=vulkan
-blend-subtitles=video    #This setting only affects 1080p content on 4K tvs, but it makes subtitles smoother at the cost of a bit clarity.
-target-colorspace-hint=yes    #This setting is required for automatic switching of your TV to HDR during HDR videos.
+target-colorspace-hint=yes
 
-scale=ewa_lanczos    #Drop this to something a bit lighter if you are using iGPU, or just delete this section entirely.
+scale=ewa_lanczos
 dscale=mitchell
 cscale=bilinear
 
-deband=no    #Deband settings, these will be used later on-demand
-deband-iterations=4    
+deband=no
+deband-iterations=4
 deband-threshold=64
 deband-range=20
 deband-grain=64
 
-#### Language Priority
-#Sub
-slang=jpn,eng,en                   #Add enm before eng for honorifics
-alang=jpn,ja,jpn
 
-#Dub                               #uncomment this section to prefer English Dub with subtitles for English Dub.
-#alang=eng,en
-#slang=zxx,auto,eng
-#subs-with-matching-audio=no
+alang=eng,en
+slang=jpn,eng,en
+
+[SDR]
+profile-cond=p["video-params/primaries"] and p["video-params/primaries"] ~= "bt.2020"
+vo=gpu
+
+[HDR]
+profile-cond=p["video-params/primaries"] == "bt.2020"
+vo=gpu-next
+target-contrast=inf
+target-trc=pq
+target-prim=bt.2020
+target-peak=700    ##IF YOU HAVE AN HDR TV, ADJUST THIS TO THE 10% PEAK
+
+## Above makes use of vo=gpu-next for HDR Content, and vo=gpu for SDR. This is a requirement for blend-subtitles=video.
 
 ```
 In my input.conf I have a single line, for deband.
