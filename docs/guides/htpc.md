@@ -68,7 +68,7 @@ This machine includes the power cord, has a decent amount of ram, and an include
 I won't go over installing Windows in this guide, but install Windows as you normally would on any other computer. You are also free to install any debloat scripts, such as AtlasOS or ReviOS to increase performance. Make sure you install the appropriate graphics driver for your system, whether it be NVidia, AMD, or Intel.
 ## MPV
 ### Config
-We already have a [guide](/../tutorials/mpv.md) on setting up mpv, however you may realize that the config there is slow on your machine. Here, I will provide the configuration I use for my 6100T + GT 1030 HTPC.
+We already have a [guide](/../tutorials/mpv/) on setting up mpv, however you may realize that the config there is slow on your machine. Here, I will provide the configuration I use for my 6100T + GT 1030 HTPC.
 ```
 #### General
 ontop=yes
