@@ -253,7 +253,7 @@ Scalers only work when the resolution of your video does not match your display.
 !!!
 
 +++ High-End PCs
-For those with high-end hardware, you can use [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
+If you have high-end hardware, you can use [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
 
 Download the shader file and place it in your `shaders` folder.
 
@@ -270,7 +270,7 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
 ```
 
 +++ Mid-Range PCs
-For those with mid-range hardware, you can use [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
+If you have mid-range hardware, you can use [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
 
 Download the shader file and place it in your `shaders` folder.
 
@@ -287,7 +287,7 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
 ```
 
 +++ Low-End PCs
-For those with low-end but dedicated GPU, you can stick to mpv's built-in high quality scalers.
+If you have a low-end but dedicated GPU, you can stick to mpv's built-in high quality scalers.
 
 In your `mpv.conf`, add the following:
 
@@ -301,7 +301,7 @@ deband=no
 This is included in the [Basic Config](#basic-config) above.
 
 +++ Potato PCs
-For those with integrated GPU, you can stick to mpv's default built-in scalers.
+If you have an integrated GPU, you can stick to mpv's default built-in scalers.
 No need to modify `mpv.conf`.
 
 Just remove `profile=high-quality`, and mpv will use default values.
