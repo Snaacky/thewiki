@@ -179,11 +179,11 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 !!!
 
 Option                                                                                           | Meaning
--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
 [`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
 [`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
-[`deband`](https://mpv.io/manual/master/#options-deband)                                         | `profile=high-quality` implicitly enables deband. We are disabling it because a good encode will already be debanded. Instead using [auto-profiles](#auto-profiles) is recommended to automatically enable it where it's actually needed
+[`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*
 [`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
 [`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
 [`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
@@ -256,7 +256,7 @@ Scaling is the process of taking content that does not match your screen resolut
 Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
 
 +++ High-End PCs
-If you have high-end hardware, you can use [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
+If you use high-end hardware, we suggest using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
 
 Download the shader file and place it in your `shaders` folder.
 
@@ -273,7 +273,7 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
 ```
 
 +++ Mid-Range PCs
-If you have mid-range hardware, you can use [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
+If you use mid-range hardware, we suggest using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
 
 Download the shader file and place it in your `shaders` folder.
 
@@ -290,7 +290,7 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
 ```
 
 +++ Low-End PCs
-If you have a low-end but dedicated GPU, you can stick to mpv's built-in high quality scalers.
+If you use low-end hardware running a dedicated GPU, we suggest sticking to mpv's built-in `high-quality` scalers.
 
 In your `mpv.conf`, add the following:
 
@@ -301,13 +301,12 @@ gpu-api=vulkan
 deband=no
 ```
 
-This is included in the [Basic Config](#basic-config) above.
+This is included in the [Basic Config](#basic-config).
 
 +++ Potato PCs
-If you have an integrated GPU, you can stick to mpv's default built-in scalers.
-No need to modify `mpv.conf`.
+If you use low-end hardware running a integrated GPU, we suggest sticking to mpv's built-in default scalers.
 
-Just remove `profile=high-quality`, and mpv will use default values.
+If you are using the [Basic Config](#basic-config), remove `profile=high-quality`. This will make mpv use the default scalers.
 
 The default values are:
 
@@ -322,7 +321,7 @@ sigmoid-upscaling=yes
 hdr-compute-peak=yes
 ```
 
-If these values are still too much for you, then you can use `profile=fast` which sacrifices quality for performance.
+If these values are too much for your system, you can switch to `profile=fast` which priortizes performance at the cost of quality.
 
 +++
 
