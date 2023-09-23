@@ -87,9 +87,18 @@ deband-threshold=64
 deband-range=20
 deband-grain=64
 
+## Language Priority
 
-alang=eng,en
-slang=jpn,eng,en
+# Sub
+# Add enm before eng for honorifics
+slang=eng,en
+alang=jpn,ja
+
+# Dub
+# Uncomment this section to prefer English dub with subtitles for English dub
+#slang=zxx,eng,en
+#alang=eng,en
+#subs-with-matching-audio=no
 
 [SDR]
 profile-cond=p["video-params/primaries"] and p["video-params/primaries"] ~= "bt.2020"
