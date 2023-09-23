@@ -172,7 +172,7 @@ alang=jpn,ja
 #subs-with-matching-audio=no
 ```
 
-==- :icon-file: Understanding the config
+==- :icon-info: Understanding the config
 
 !!!
 See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation of all the options.
