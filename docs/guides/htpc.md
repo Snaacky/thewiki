@@ -78,8 +78,8 @@ gpu-api=vulkan
 target-colorspace-hint=yes
 
 scale=ewa_lanczos
-dscale=mitchell
-cscale=bilinear
+dscale=hermite
+cscale=catmull-rom
 
 deband=no
 deband-iterations=4
