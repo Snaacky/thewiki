@@ -28,7 +28,7 @@ There are two main considerations for an Anime HTPC. The biggest, will be the CP
   - You are on a tighter budget
   - You want this to be as small as possible
   - You have a 1080p TV or will send your 4K TV a 1080p signal
-
++++
 Once you have decided if you will be using a dGPU, you can pick your CPU.
 
 ## CPU choice
