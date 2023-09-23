@@ -2,7 +2,7 @@
 label: Shana
 ---
 
-**Note**
+# Shana
 
 Hi everyone, I'd like to share a little project I wrote over the past year + a workflow I've personally been using to reduce the manual work involved every season in downloading anime. This helps a lot especially if you're an avid anime watcher and follow 10+ anime per season. Everything from auto-downloading new releases to selecting the "correct" resolution is automated.
 

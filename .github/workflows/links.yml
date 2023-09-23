@@ -1,0 +1,43 @@
+name: Links
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0"
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          args: >-
+            --exclude-all-private
+            --verbose --no-progress
+            --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+            --max-redirects 10
+            --header "accept=*/*"
+            --accept 200,204,206,403,429
+            --base 'https://thewiki.moe'
+            --exclude-path './docs/hidden'
+            --exclude '^https://www.amd.com'
+            --exclude '^https://exhentai.org'
+            --exclude '^https://www.nzbking.com'
+            './**/*.md'
+
+#           Public trackers, streaming sites, crunchyroll, kodi, qbittorrent, etc return 403
+#           Nyaa returns 429
+#           ./docs/hidden has unmaintained legacy files
+#           AMD fails for reasons unknown to me, exhentai is private, and nzbking has bad uptime
+
+      - name: Create Issue From File
+        if: env.lychee_exit_code != 0
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue

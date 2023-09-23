@@ -1,47 +1,64 @@
 ---
-label: Public BitTorrent Trackers
+label: Public Trackers
 order: -2
 ---
 
-# Public BitTorrent Trackers
+# Public Trackers
 
-## Public Trackers
+Public trackers are BitTorrent trackers that allow anyone to access and download torrents without requiring user registration, unlike [private trackers](/sourcing/private-trackers).
 
-!!!
-Make sure to use an adblocker like [uBlock Origin](https://ublockorigin.com/).
-!!!
+If you're new to torrenting, see the [torrenting guide](/getting-started/torrenting) on how to get started.
 
-- [Nyaa.si](https://nyaa.si)
-- [Anidex](https://anidex.info/)
-- [Rutracker](https://rutracker.org/) (Russian, use Google Translate)
-- [Tokyotosho](https://www.tokyotosho.info/?cat=1)
-- [AnimeTosho](https://animetosho.org/) - Scrapes other public trackers, useful for getting information, mediainfo or subtitles and attachments from a torrent.
-- [Dmhy](https://dmhy.org/) - (Chinese, use Google Translate)
-- [ACG.RIP](https://acg.rip/) - (Chinese, use Google Translate)
-- [ACGNX](https://share.acgnx.se/) - (Chinese, use Google Translate)
-
-## Using Nyaa
-
-The main source for finding torrents is [Nyaa](nyaa.si), you already have a general idea about the codecs, quality and release groups from the [quality guide](/guides/quality). These 3 things are what we'll use to quickly find the best release for any anime. Nyaa search is simple and limited, but it's enough for finding anything, given that the uploader correctly tags the release.
-
-First, change the All Categories option to `Anime - English Translated`. It can be set to just `Anime` to include english, raws and other languages. The two useful search operators are `-` and `|(OR)`, `AND` is already implicit in every search. For example -
-
-`"Attack on Titan"|"Shingeki no Kyojin"` will return results that match either
-
-`-` is useful when you want to exclude something. When I try to search for an anime titled just [`Monster`](https://myanimelist.net/anime/19/Monster,), the results are flooded by Pocket Monsters episodes. This can be solved by changing the search to `Monster -pocket`.
-
-!!!
-When searching for a dubbed version of an anime, be sure to add the term `dual audio`
+!!!warning
+We suggest you use a reliable content blocker such as [uBlock Origin](https://ublockorigin.com).
 !!!
 
-Once you have the search results, they are sorted by date (newest) by default. Sorting by seeds or completed downloads might help in finding the best release.
+- [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
+- [AcgnX](https://share.acgnx.se) [!badge variant="secondary" text="Chinese"]
+- [ACG.RIP](https://acg.rip) [!badge variant="secondary" text="Chinese"]
+- [AniDex](https://anidex.info)
+- [AnimeTosho](https://animetosho.org) [!badge variant="danger" icon="search" text="Scraper"]
+- [DMHY](https://dmhy.org) [!badge variant="secondary" text="Chinese"]
+- [RuTracker](https://rutracker.org) [!badge variant="secondary" text="Russian"]
+- [Tokyo Toshokan](https://www.tokyotosho.info/?cat=1)
 
-**Example Search**
+## Nyaa
 
-For a complete example, let's take [KonoSuba](https://myanimelist.net/anime/30831/Kono_Subarashii_Sekai_ni_Shukufuku_wo), the long title is complicated enough to make searching hard. Suppose I want to watch this on a TV, and a compatibility check reveals that I can't play x264 10-bit (hi10p) . For the video, I want to avoid hi10p and prefer hevc/x265 10-bit for potentially smaller sizes. And I want the superior video from a bluray, with fansubs, instead of a web release. For some reason, I also desire flac. So my search becomes
+[Nyaa](https://nyaa.si) is a public BitTorrent tracker for anime, manga, light novels, etc.
 
-`Konosuba BD 1080 hevc flac -hi10`
+### Searching
 
-Most releases are tagged both hevc and x265, explicitly mentioning only 265 like `Konosuba BD 265 flac` will also give you some results where the uploader forgot to tag hevc. If I don't want flac, it'll be `Konosuba BD hevc -flac` or `Konosuba BD hevc opus`. There's still a problem in this search, we used `konosuba` instead of the full name and some results are missing. Changing it to `Kono BD hevc flac` matches everything. Now we can sort the results and immediately see one by kawaiika-raws. Aware of the fact that they usually have the best video and often pick good fansubs, you can safely download it.
+#### Categories
 
-This was just to provide a better idea of the process, most actual searches are easy and rarely need anything beyond `Anime name BD` or `Anime name hevc` for smaller sizes.
+Torrents on [Nyaa](https://nyaa.si) are sorted by category. These can be changed using the second dropdown menu on the search bar.
+
+To search for releases in English, use the `- English-translated` option under the various categories.
+
+#### Regex
+
+Below is a list of useful regex that can help narrow down your search when looking for torrents:
+
+Regex | Meaning                                          | Example Usage
+------|--------------------------------------------------|----------------------------------------------------------------
+`"`   | Only return results that match exact word/phrase | `"Gochuumon wa Usagi desu ka??"`
+`|`   | Return results that match either word/phrase; or | `"Is the Order a Rabbit?"|"Gochuumon wa Usagi desu ka?"`
+`-`   | Exclude word/phrase from search                  | `Gochuumon wa Usagi desu ka? BD Hi10P -BLOOM -"Sing For You"`
+
+*See [their help section](https://nyaa.si/help#using-search) for more information.*
+
+### Custom RSS
+
+[Nyaa](https://nyaa.si) supports custom RSS feed creation. This is useful if you plan on automatically downloading releases that do not have existing RSS feeds, such as fansubs for airing shows.
+
+- Search and go to the user's profile you want to create a feed for
+- On the top bar, click on **RSS**. *Copy this URL and add it to your torrent client*
+
+==- Video tutorial
+
+[!embed text="Creating an RSS feed for Yameii"](/static/torrenting/nyaa/custom-rss.mp4)
+
+==-
+
+!!!warning
+You should always make searches from the profile page, as global searches carry the risk of potentially downloading torrents from imposters using the group's name, which may contain malware or other undesirable content.
+!!!

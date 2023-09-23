@@ -6,40 +6,47 @@ image: https://user-images.githubusercontent.com/78981416/232306295-0e123ed8-c83
 
 # Deluge
 
-[Deluge](https://deluge-torrent.org/) is a free, open source, and cross platform bittorrent client, primarily used by seedboxes for racing. Works as both a stand alone client and a thin client for a remote server.
+[Deluge](https://deluge-torrent.org) is a free, open-source, and cross-platform BitTorrent client. It is often used by seedboxes for racing and works as both a standalone client and a thin client for a remote server.
 
-## Install
+## Installation
 
-1. For Windows, go to Deluge's Windows [download page](https://ftp.osuosl.org/pub/deluge/windows/?C=M;O=D), then download the latest `.exe` file.
++++ Windows
 
-    ![](https://user-images.githubusercontent.com/78981416/232305635-111a14c6-7dba-4ff1-a4b4-90e6dc0e4808.png)
+1. Download the latest `.exe` version of [Deluge](https://ftp.osuosl.org/pub/deluge/windows/?C=M;O=D)
+2. Run the installer and follow the on-screen instructions to complete installation
 
-2. For macOS, go to Deluge's macOS [download page](https://ftp.osuosl.org/pub/deluge/mac_osx/?C=M;O=D), then download the latest `.dmg` file.
+![Latest 64-bit `.exe` for Deluge](https://user-images.githubusercontent.com/78981416/232305635-111a14c6-7dba-4ff1-a4b4-90e6dc0e4808.png)
 
-    ![](https://user-images.githubusercontent.com/78981416/232306677-efd31d7f-57c6-4a19-bf0f-62e354ea0c99.png)
++++ macOS
 
-3. For Linux, go to <https://dev.deluge-torrent.org/wiki/Download#Linux>
+1. Download the latest `.dmg` version of [Deluge](https://ftp.osuosl.org/pub/deluge/mac_osx/?C=M;O=D)
+2. Run the installer and follow the on-screen instructions to complete installation
 
-## ltconfig
+![Latest x64 `.dmg` for Deluge](https://user-images.githubusercontent.com/78981416/232306677-efd31d7f-57c6-4a19-bf0f-62e354ea0c99.png)
 
-[Deluge-ltconfig](https://github.com/ratanakvlun/deluge-ltconfig/releases) is a popular plugin used for racing torrents on seedboxes. It modifies the libtorrent settings directly and comes with presets.
++++ Linux
 
-### Install ltconfig
+1. Download the latest version of [Deluge](https://dev.deluge-torrent.org/wiki/Download#Linux) for your distro
+2. Run the installer and follow the on-screen instructions to complete installation
 
-1. Most seedboxes offer Deluge `1.3.15`. So that's what we'll use.
-2. Download [`ltConfig-0.3.1-py2.7.egg`](https://github.com/ratanakvlun/deluge-ltconfig/releases/tag/v0.3.1)
-3. Click on `Preferences`.
++++
 
-    ![](https://user-images.githubusercontent.com/78981416/232335499-4be73157-341d-4bbc-b463-0c7380bbdaa1.png)
+## Configuration
 
-4. Click on `Plugins` -> `Install` and then upload the `ltConfig-0.3.1-py2.7.egg` you downloaded earlier.
+### ltconfig
 
-    ![](https://user-images.githubusercontent.com/78981416/232335563-7450b9e2-1427-4daf-8f6f-17963f68d047.png)
+[ltConfig](https://github.com/ratanakvlun/deluge-ltconfig) is a popular plugin used for racing torrents on seedboxes. It modifies the libtorrent settings directly and comes with presets.
 
-5. `ltConfig` will appear in your plugin list, select it, apply, and then it'll show up in `Categories` pane.
+1. Download the correct version of [ltConfig](https://github.com/ratanakvlun/deluge-ltconfig/releases) for your version of Deluge:
+    - Deluge v2.x or later: [!button size="s" variant="secondary" icon="download" text="v2.0.0"](https://github.com/ratanakvlun/deluge-ltconfig/releases/download/v2.0.0/ltConfig-2.0.0.egg)
+    - Deluge v1.x: [!button size="s" variant="secondary" icon="download" text="v0.3.1"](https://github.com/ratanakvlun/deluge-ltconfig/releases/download/v0.3.1/ltConfig-0.3.1-py2.7.egg)
+2. Launch Deluge. In the top bar, go to **Edit** -> **Preferences**
+3. Under **Plugins**, click on **Install** and select the ltConfig file
+4. Enable ltConfig from your plugin list and hit **Apply**
+5. Under **ltConfig**, check **Apply settings on startup**. For racing, select the *High Performance Seed* preset -> **Load preset** -> **Apply**
 
-    ![](https://user-images.githubusercontent.com/78981416/232335700-665a5dd9-fd7c-4509-b07a-d5abd682ec02.png)
+==- Video tutorial
 
-6. Check `Apply settings on startup`, select the preset you want which in this case is `High Performace Seed`, click load preset, apply, and you're done.
+[!embed text="Installing ltConfig on Windows"](/static/torrenting/deluge/installing_ltconfig.mp4)
 
-    ![](https://user-images.githubusercontent.com/78981416/232335845-f8464500-c2c8-43dd-9149-2ee5f9579686.png)
+==-
