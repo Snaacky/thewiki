@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748681648443">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748803503699">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.748681648443" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.748803503699" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.748681648443" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.748803503699" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.748681648443" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.748681648443" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.748803503699" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.748803503699" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -418,28 +418,19 @@
 <p>We recommend taking your time to create your own config. If you want to get up and running quickly, we suggest using the generic <code v-pre>mpv.conf</code> config below:</p>
 <doc-panels>
    <doc-panel id="generic-mpv-conf" collapsed>
-       <template #title>Generic <code v-pre>mpv.conf</code></template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H4.75a.75.75 0 0 1 0-1.5H19a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4H5a.5.5 0 0 0-.5.5v6.25a.75.75 0 0 1-1.5 0Zm12-.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/><path d="M4.53 12.24a.75.75 0 0 1-.039 1.06l-2.639 2.45 2.64 2.45a.75.75 0 1 1-1.022 1.1l-3.23-3a.75.75 0 0 1 0-1.1l3.23-3a.75.75 0 0 1 1.06.04Zm3.979 1.06a.75.75 0 1 1 1.02-1.1l3.231 3a.75.75 0 0 1 0 1.1l-3.23 3a.75.75 0 1 1-1.021-1.1l2.639-2.45-2.64-2.45Z"/></g></g></svg> Generic <code v-pre>mpv.conf</code></template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">## Video
-
-profile=gpu-hq
+profile=high-quality
 vo=gpu-next
 gpu-api=vulkan
+deband=no
 
-## Behavior
-
+## Behavior (personal preference)
 keep-open=yes
 save-position-on-quit
 
-## Scaler
-
-# If you encounter problems using ewa_lanczos, change to spline36
-scale=ewa_lanczos
-dscale=mitchell
-cscale=ewa_lanczos
-
 ## Screenshots
-
 screenshot-format=png
 screenshot-high-bit-depth=no
 screenshot-png-compression=9
@@ -447,7 +438,6 @@ screenshot-directory=&quot;~/Pictures/mpv&quot;
 screenshot-template=&quot;%F-%p&quot;
 
 ## Language Priority
-
 # Sub
 # Add enm before eng for honorifics
 slang=eng,en
@@ -461,7 +451,7 @@ alang=jpn,ja
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="understanding-the-config" collapsed>
-       <template #title>Understanding the config</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Understanding the config</template>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -490,15 +480,19 @@ alang=jpn,ja
 <tbody>
 <tr>
 <td><a href="https://mpv.io/manual/stable/#profiles"><code v-pre>profile</code></a></td>
-<td>The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings. <em>We recommend <code v-pre>gpu-hq</code> for high-quality playback</em></td>
+<td>The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/stable/#video-output-drivers"><code v-pre>vo</code></a></td>
-<td>The output driver to be used by mpv. <em>We recommend <code v-pre>gpu-next</code> for most modern hardware</em></td>
+<td>The output driver to be used by mpv. <em><code v-pre>gpu-next</code> is recommended for most modern hardware</em></td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/stable/#options-gpu-api"><code v-pre>gpu-api</code></a></td>
-<td>The graphics API to be used by mpv. <em>We recommend <code v-pre>vulkan</code> for most modern hardware</em></td>
+<td>The graphics API to be used by mpv. <em><code v-pre>vulkan</code> is recommended for most modern hardware</em></td>
+</tr>
+<tr>
+<td><a href="https://mpv.io/manual/master/#options-deband"><code v-pre>deband</code></a></td>
+<td><code v-pre>profile=high-quality</code> implicitly enables deband. We are disabling it because a good encode will already be debanded. Instead using <doc-anchor-trigger to="#auto-profiles">auto-profiles</doc-anchor-trigger> is recommended to automatically enable it where it&#x27;s actually needed</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/stable/#options-keep-open"><code v-pre>keep-open</code></a></td>
@@ -509,20 +503,8 @@ alang=jpn,ja
 <td>Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. <em>Remove this option if you do not want the player to save your position</em></td>
 </tr>
 <tr>
-<td><a href="https://mpv.io/manual/stable/#options-scale"><code v-pre>scale</code></a></td>
-<td>The <doc-anchor-trigger to="#scaling">upscale</doc-anchor-trigger> filter. <em>We recommend <code v-pre>ewa_lanczos</code> for best quality</em></td>
-</tr>
-<tr>
-<td><a href="https://mpv.io/manual/stable/#options-dscale"><code v-pre>dscale</code></a></td>
-<td>The <doc-anchor-trigger to="#scaling">downscale</doc-anchor-trigger> filter. <em>We recommend <code v-pre>mitchell</code> for best quality</em></td>
-</tr>
-<tr>
-<td><a href="https://mpv.io/manual/stable/#options-cscale"><code v-pre>cscale</code></a></td>
-<td>The <doc-anchor-trigger to="#scaling">scale</doc-anchor-trigger> for interpolating chroma information. <em>We recommend <code v-pre>ewa_lanczos</code> for best quality</em></td>
-</tr>
-<tr>
 <td><a href="https://mpv.io/manual/stable/#options-screenshot-format"><code v-pre>screenshot-format</code></a></td>
-<td>File format used for screenshots. <em>We recommend <code v-pre>png</code> for lossless quality</em></td>
+<td>File format used for screenshots. <em><code v-pre>png</code> is recommended for lossless quality</em></td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/stable/#options-screenshot-high-bit-depth"><code v-pre>screenshot-high-bit-depth</code></a></td>
@@ -588,10 +570,11 @@ alang=jpn,ja
     </h3>
 </doc-anchor-target>
 <p>Color banding is a visual artifact that is typically seen in gradients, where the colors can be easily differentiated by the human eye. <em>See <a href="https://youtu.be/h9j89L8eQQk">Tom Scott&#x27;s video explaining color banding</a>.</em></p>
-<p><figure class="content-center">
-    <img src="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png" alt="Banding (left) vs. No banding (right)">
-    <figcaption class="caption">Banding (left) vs. No banding (right)</figcaption>
-</figure>
+<p align="center">
+   <a href="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png">
+   <img src="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png" alt="Banding (left) vs. No banding (right)" width="640" height="360">
+   </a>
+<p align="center">Banding (left) vs. No banding (right)</p>
 </p>
 <p>To enable debanding in mpv, apply the following changes to your config:</p>
 <doc-tabs>
@@ -599,9 +582,7 @@ alang=jpn,ja
 <template #title><code v-pre>mpv.conf</code></template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">## Deband
-
 # Set deband to &quot;no&quot; as we only need to enable it for specific cases
-# If you wish to apply debanding automatically on startup, set it to &quot;yes&quot; (not recommended)
 deband=no
 deband-iterations=4
 deband-threshold=48
@@ -659,7 +640,7 @@ deband-grain=48</code></pre>
 <doc-tabs>
 <doc-tab v-cloak id="high-end-pcs">
 <template #title>High-End PCs</template>
-<p>For those with high-end hardware, we recommend using <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook">nnedi3-nns256-win8x4</a>.</p>
+<p>If you have high-end hardware, you can use <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook">nnedi3-nns256-win8x4</a>.</p>
 <p>Download the shader file and place it in your <code v-pre>shaders</code> folder.</p>
 <p>To use the shader, add the following to your <code v-pre>mpv.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -672,7 +653,7 @@ deband-grain=48</code></pre>
 </doc-tab>
 <doc-tab v-cloak id="mid-range-pcs">
 <template #title>Mid-Range PCs</template>
-<p>For those with mid-range hardware, we recommend using <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook">nnedi3-nns128-win8x4</a>.</p>
+<p>If you have mid-range hardware, you can use <a href="https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook">nnedi3-nns128-win8x4</a>.</p>
 <p>Download the shader file and place it in your <code v-pre>shaders</code> folder.</p>
 <p>To use the shader, add the following to your <code v-pre>mpv.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -685,16 +666,33 @@ deband-grain=48</code></pre>
 </doc-tab>
 <doc-tab v-cloak id="low-end-pcs">
 <template #title>Low-End PCs</template>
-<p>For those with low-end hardware, we recommend sticking to mpv&#x27;s built-in scalers.</p>
+<p>If you have a low-end but dedicated GPU, you can stick to mpv&#x27;s built-in high quality scalers.</p>
 <p>In your <code v-pre>mpv.conf</code>, add the following:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-properties"><code v-pre class="language-properties">vo=gpu-next
-scale=ewa_lanczos
-dscale=mitchell
-cscale=ewa_lanczos</code></pre>
+<pre class="language-properties"><code v-pre class="language-properties">profile=high-quality
+vo=gpu-next
+gpu-api=vulkan
+deband=no</code></pre>
 </doc-codeblock></div>
-<p>This is included in the <doc-anchor-trigger to="#basic-config">Basic Config</doc-anchor-trigger>.</p>
-<p>If these are too heavy for your system, delete these lines from your config. mpv will use <code v-pre>spline36</code> by default with <code v-pre>profile=gpu-hq</code>.</p>
+<p>This is included in the <doc-anchor-trigger to="#basic-config">Basic Config</doc-anchor-trigger> above.</p>
+</doc-tab>
+<doc-tab v-cloak id="potato-pcs">
+<template #title>Potato PCs</template>
+<p>If you have an integrated GPU, you can stick to mpv&#x27;s default built-in scalers.
+No need to modify <code v-pre>mpv.conf</code>.</p>
+<p>Just remove <code v-pre>profile=high-quality</code>, and mpv will use default values.</p>
+<p>The default values are:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-properties"><code v-pre class="language-properties">scale=lanczos
+cscale=lanczos
+dscale=hermite
+dither-depth=auto
+correct-downscaling=yes
+linear-downscaling=yes
+sigmoid-upscaling=yes
+hdr-compute-peak=yes</code></pre>
+</doc-codeblock></div>
+<p>If these values are still too much for you, then you can use <code v-pre>profile=fast</code> which sacrifices quality for performance.</p>
 </doc-tab>
 </doc-tabs>
 <doc-anchor-target id="subtitle-restyling">
@@ -704,7 +702,7 @@ cscale=ewa_lanczos</code></pre>
     </h3>
 </doc-anchor-target>
 <p>Most releases will use their own font for <code v-pre>.ass</code> subtitles. These can be manually overridden by mpv, which can help improve readability or match personal preferences.</p>
-<p>Below are a few commonly used styles:</p>
+<p>Below are a couple of commonly used styles:</p>
 <doc-tabs>
 <doc-tab v-cloak id="gandhi-sans">
 <template #title>Gandhi Sans</template>
@@ -721,9 +719,7 @@ cscale=ewa_lanczos</code></pre>
 <p>Run the <code v-pre>.otf</code> font file to install it system-wide or put it in your <code v-pre>fonts</code> folder. Add the following to your <code v-pre>mpv.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">## Restyle Subtitles
-
 # Set sub-ass-override to &quot;no&quot; as we only need to enable it for specific cases
-# If you wish to use it for all video, set it to &quot;yes&quot;
 sub-ass-override=no
 sub-ass-force-style=playresx=1920,playresy=1080
 sub-font=&quot;Gandhi Sans&quot;
@@ -754,7 +750,6 @@ sub-ass-force-style=Kerning=yes</code></pre>
 <pre class="language-properties"><code v-pre class="language-properties">## Restyle Subtitles
 
 # Set sub-ass-override to &quot;no&quot; as we only need to enable it for specific cases
-# If you wish to use it for all video, set it to &quot;yes&quot;
 sub-ass-override=no
 sub-ass-force-style=playresx=1920,playresy=1080
 sub-font=&quot;Cabin&quot;
@@ -807,23 +802,6 @@ deband=yes</code></pre>
         </div>
     </div>
 </div>
-<doc-anchor-target id="quality-of-life">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quality-of-life">#</doc-anchor-trigger>
-        <span>Quality of Life</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="volume">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#volume">#</doc-anchor-trigger>
-        <span>Volume</span>
-    </h4>
-</doc-anchor-target>
-<p>By default, scrolling the mouse wheel up and down seek the video instead of changing the volume. This behavior can be changed by adding the following to your <code v-pre>input.conf</code>:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-properties"><code v-pre class="language-properties">WHEEL_UP      add volume 2
-WHEEL_DOWN    add volume -2</code></pre>
-</doc-codeblock></div>
 <doc-anchor-target id="custom-scripts">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#custom-scripts">#</doc-anchor-trigger>
@@ -833,6 +811,7 @@ WHEEL_DOWN    add volume -2</code></pre>
 <p>mpv supports loading custom scripts, allowing you to further expand the player&#x27;s functionality.</p>
 <p>Below is a list of some popular scripts:</p>
 <ul>
+<li><a href="https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autocrop.lua">autocrop</a> - Automatically crop the video by using lavfi&#x27;s cropdetect filter to detect black bars</li>
 <li><a href="https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua">autoload</a> - Automatically adds all files present in the folder to a playlist</li>
 <li><a href="https://github.com/jonniek/mpv-playlistmanager">mpv-playlistmanager</a> - Script to create and manage playlists</li>
 <li><a href="https://github.com/ekisu/mpv-webm">mpv-webm</a> - WebM maker for mpv</li>
