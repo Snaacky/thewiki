@@ -1,119 +1,253 @@
 ---
 label: Playback
 order: -2
+description: Learn how to play your anime
+image: /static/tohsaka.gif
 ---
 
 # Playback
 
-## Video players
+## Media Players
 
-#### PC
++++ PC :desktop_computer:
 
-- [MPV](https://mpv.io/installation/) - [Installation and configuration tutorial](/tutorials/mpv) (recommended)
-- [MPC-HC](https://github.com/clsid2/mpc-hc/releases)/[Potplayer](https://potplayer.daum.net) - [Configuration guide with MadVR](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
+- [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
+- [MPC-HC](https://github.com/clsid2/mpc-hc/releases) [!badge icon="link-external" variant="info" text="madVR Guide"](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
+- [Potplayer](https://potplayer.daum.net)
 
-VLC is not recommended because it often displays wrong colours, introduces visual artifacts, and breaks intensive subtitles. Here are some comparisons showing these issues -
++++ Android :robot_face:
 
-https://slow.pics/c/XhbmrYgU (Spice and Wolf by MTBB)
-https://slow.pics/c/vH560pvp
+- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
+- [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
-#### Android
++++ iOS :green_apple:
 
-- [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv&hl=lv&gl=US)
-- [MX player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad&hl=lv&gl=US)
+- [Outplayer](https://apps.apple.com/app/outplayer/id1449923287)
+- [VLC media player](https://apps.apple.com/app/vlc-media-player/id650377962)
 
-#### iOS
++++ TV/Media Servers :tv:
 
-- [MX player](https://apps.apple.com/in/app/mx-player/id1429703801)
-- [Outplayer](https://apps.apple.com/us/app/outplayer/id1449923287)
+- [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="link-external" variant="info" text="Available on LibreELEC OS"](https://libreelec.tv)
+- [Plex](https://www.plex.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
+- [Emby](https://emby.media)
+- [Jellyfin](https://jellyfin.org)
 
-#### TV
++++
 
-- [Kodi](https://kodi.tv), optionally through [LibreElec(Minimal OS)](https://libreelec.tv)
+!!!warning
+VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. We suggest using alternative media players.
+*See the example comparisons to mpv: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)*
+!!!
 
-There are three ways of using Kodi on a TV -
+## Media Servers
 
-**1. Kodi installed on a computer which stores the content and is directly connected to the TV.**
+The setup consists of two parts: the **server** and the **client**. *Both may be installed on the same system, but they are separate applications.*
 
-- No decoding problems with a powerful cpu.
-- Possibility to use high quality shaders that utilize your gpu to improve upscaling with [an external player of your choice.](https://kodi.wiki/view/External_players)
-- Control using a normal mouse+keyboard or through an android app like [Yatse.](https://yatse.tv/)
+- The **client** is a media player that will access the content stored on the server
+- The **server** runs on the device which hosts your content
 
-**2. Kodi on a TV/Android box with the content on a separate computer.**
+In a typical setup, the server is installed on a computer hosted on your home network, with the client being installed on all your devices. Most media players will also come with their own client, as well as including support for using [Kodi](https://kodi.tv) as a client (recommended for anime).
 
-- Works with a simple [SMB share](https://kodi.wiki/view/SMB) from your computer on the same network.
+[!button variant="secondary" text="Emby" margin="0 8 0 0"](https://emby.media)
+[!button variant="secondary" text="Plex" margin="0 8 0 0"](https://www.plex.tv)
+[!button variant="secondary" text="Jellyfin"](https://jellyfin.org)
 
-**3. Kodi on a TV/Android box with the content on a separate computer running a media server.**
+!!!
+Running a media server requires a rigid folder structure and a specific file naming scheme.
+*See the guides for your server: [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/), [Jellyfin](https://jellyfin.org/docs/general/server/media/shows)*
+!!!
 
-- Transcoding support
-- Remote streaming support outside your local network
+### Kodi
 
-Transcoding is only a last resort to deal with compatibility problems. Direct play is always prefereble to transcoding, which affects quality and uses cpu power on your server. More about transcoding on plex - https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream/
+#### Installing Kodi
 
-Here, Kodi acts as a client,increasing compatibility and replacing the default one that comes with Plex, Emby or Jellyfin. This is done through their respective add-ons for kodi.
+There are three ways of installing and configuring Kodi for your TV:
 
-- [PlexKodiConnect](https://github.com/croneter/PlexKodiConnect)
+- **Basic:** Kodi client on your computer, with content also stored on your computer
+- **Intermediate:** Kodi client on a TV/Android Box, with content stored on your computer
+- **Advanced:** Kodi client on a TV/Android Box, with content stored on a media server
+
++++ Basic
+
+- No decoding problems with a powerful CPU
+- The ability to use high-quality shaders that utilize your GPU to improve upscaling with [an external player of your choice](https://kodi.wiki/view/External_players)
+- Control using a normal keyboard and mouse or through an Android app like [Yatse](https://yatse.tv)
+- Your files will be scanned by Kodi. *See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them)*
+
++++ Intermediate
+
+- Works with a simple [SMB share](https://kodi.wiki/view/SMB) from your computer on the same network
+- Your files will be scanned by Kodi. *See [Kodi's documentation on scanning files without renaming them](https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them)*
+
++++ Advanced
+
+- Transcoding support for videos
+- The ability to remotely stream content from devices outside your local network
+- Your files will be scanned by your media server, abiding by your server's folder structure and naming scheme
+
+Transcoding is used as a last resort to deal with compatibility problems. *Direct play is always preferable to transcoding, which affects quality and uses CPU power on your server. See [Plex's article about transcoding](https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream).*
+
+Here, Kodi acts as the client, increasing compatibility and replacing the default one that comes with Emby, Plex, or Jellyfin. This is done through their respective add-ons:
+
 - [Emby for Kodi](https://github.com/MediaBrowser/plugin.video.emby)
+- [PlexKodiConnect](https://github.com/croneter/PlexKodiConnect)
 - [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
 
-## Media Server
++++
 
-The setup consists of two parts - the server and the client. A client is simply a media player that will access the content from a server. The server runs on the device which stores your content. Both may be installed on the same system, but they're separate applications. Usually you'd have the server on a computer connected to other devices in your home network and a client installed on all of those devices. All three of the popular ones come with their own client/player as well as support for using kodi as a client (recommended for anime).
+## Settings
 
-- [Plex](https://www.plex.tv/) - [Guide for Anime](https://docs.google.com/document/d/1sXKZDYzbBDDWS8eqJ3IcaxSWhYKIPDdtChm74CBJ6ig)
-- [Emby](https://emby.media/)
-- [Jellyfin](https://jellyfin.org/)
+### Scaling
 
-### Scanning anime without renaming
+Scaling is the process of taking content that does not match your screen resolution and scaling it to fit your display.
 
-- https://kodi.wiki/view/Anime#Scanning_files_without_renaming_them
-- [Absolute Series Scanner for Plex](https://github.com/ZeroQI/Hama.bundle)
+- Downscaling takes a *large* video and scales *downwards* (e.g. 1080p video to 720p display)
+- Upscaling takes a *small* video and scales *upwards* (e.g. 1080p video to 2160p/4K display)
 
-## Scaling
+For displays that match the content resolution you will only see chroma scaling, as in most video the chroma resolution is half the video resolution. *These shaders only activate when these resolutions don't match. Scaling is not an enhancement and cannot be enabled manually.*
 
-1. Quality is not the same as resolution.
-2. Whenever something with a different resolution than your display is playing on it in full screen mode, then something is scaling it to the resolution of the display.
+[mpv](https://mpv.io) has a built-in high-quality profile called `gpu-hq` which enables better upscaling algorithms (`scale=spline36`, `cscale=spline36`, `dscale=mitchell`). By default, mpv uses `spline36`. *This option is necessary to enable even if you use an external shader, as it can act as a fallback.*
 
-This something is usually the video player. For example, playing a 1080p video on a 2160p monitor means that it has to be upscaled to fill the screen, otherwise it'd simply play in 1/4th of the screen. Upscaling is not a choice that you can enable or disable while in full screen, the only thing that can be changed is the method of scaling. Consequently, upscaling is not something you can use to "enhance" the video when playing back at the same resolution. It is not a way to somehow improve 1080p video playing on a 1080p display. The shaders activate only when the video resolution does not match the screen resolution and scaling is needed.
+!!!
+`gpu-hq` enables debanding by default, which is not recommended for high-quality sources. It should be followed by `deband=no`.
+!!!
 
-The default scaling on most players is bad. Mpv has a built in high quality profile called gpu-hq which enables better upscaling algorithms (scale=spline36, cscale=spline36, dscale=mitchell). This option is necessary even if you use external shaders to act as a fallback. Any scaling options explicitly specified after this will override it. For those with powerful gpus, even higher quality external shaders are available - FSRCNNX, NNEDI etc. The file has to be placed in %appdata%/mpv/shaders and the line `glsl-shader="~~/FSRCNNX_x2_8-0-4-1.glsl"` has to be added to the config. Press shift+I followed by 2 for confirmation that the shader is working. Dropped frames or high frame times (above 25ms) are a signal that your gpu isn't able to keep up and you should switch to a less demanding shader.
+#### Recommended Shaders
 
-The shaders mentioned above are 2x scalers, which means that they always scale by 2x. For 720p to 1080p, the video will first be scaled to 1440p by FSRCNNX and then downscaled to 1080p by dscale=mitchell. For 720p to 2160p, FSRCNNX will do 720p to 1440p and then scale=spline36 will scale it the rest of the way to 2160p. When scaling below a certain threshold is required, FSRCNNX will not activate and mpv will fallback to spline36. There are also scalers like ravu-zoom can upscale to arbitrary ratios, at the cost of slow performance because of rendering to the target resolution directly.
+Below is a brief list of recommended shaders for [mpv](https://mpv.io):
 
-Ravu and NNEDI - https://github.com/bjin/mpv-prescalers
-FSRCNNX - https://github.com/igv/FSRCNN-TensorFlow/releases
++++ High-End PCs
+For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
 
-## Filtering
++++ Mid-Range PCs
+For those with mid-range hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
 
-The same kind of filtering that is used by encoders but in real time. It's not an alternative to a good encode, but rather a temporary fix for web sources. Debanding is the most commonly used and the only one necessary. Detail enhancement, noise reduction, sharpening etc. are not recommended. All these options are available with both mpv and madvr. More about quality, video artifacts and encoding in the [quality guide](/guides/quality).
++++ Low-End PCs
+For those with low-end hardware, we recommend sticking to mpv's built-in scalers.
 
-## Smooth Playback
+In your `mpv.conf`, add the following:
 
-**The problem:** Almost all anime plays back at 23.976fps (technically 24000/1001) but we'll round up to 24fps for convenience. However, displays often run at refresh rates that do not match this frame rate, leading to an effect known as judder.
-Judder is most commonly seen with laptops/desktops that have 60hz displays, because the refresh rate is not an integer multiple of the content frame rate. 60hz/24fps is 2.5, and since you can't refresh 2.5 times per frame, it has to be averaged out over time. In this case the first frame will be held for 2 refreshes, the second frame for 3 refreshes, the third for 2 and so on leading to the 2.5 average. Because of this, each frame is shown for a different amount of time (33.3ms for even frames, 50ms for odd) which leads to motion appearing stuttery/laggy, this is especially noticeable during panning scenes.
-While almost all anime is 24fps, you also may watch other content such as live action (sometimes 25fps) and YouTube (mostly 30/60fps, sometimes 25/50fps) and if you do, it's important to be able to play those frame rates back properly.
+```properties
+vo=gpu
+scale=ewa_lanczos
+dscale=mitchell
+cscale=ewa_lanczos
+```
 
-**The solution:** Matching the display refresh rate to the content frame rate, of which there are many methods
++++
 
-**Adaptive sync:** G-Sync/G-Sync Compatible (Certified)/Freesync Premium is by far the best solution, however requires the correct GPU and monitor to utilise. The display will perfectly match the content regardless of the frame rate. Normal Freesync may work, however only if the monitor supports LFC.
-Be sure to use a player that will activate adaptive sync, such as MPV.
+==- Installing External Shaders in mpv
 
-**Automatic Refresh Rate Adjustment:** Many streaming devices (Apple TV, Shield, Fire stick etc) will have the ability to change a TVs refresh rate to match the content frame rate, either through the device settings itself or a setting in the playback software (Kodi, Plex etc). 24/30/60fps content should all work perfectly, however 25fps content requires 25/50hz support, which some TVs in [NTSC regions](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png) may not support.
+- Head to your shader folder (`%appdata%/mpv/shaders`); *you may need to create one if it doesn't exist*
+- Place your downloaded external shaders in the directory
 
-**High refresh rate displays:** 120hz, 144hz, 240hz, and 360hz are all multiples of 24, and as such will match perfectly since each frame can be repeated for multiple refreshes. However 144hz will not display 30/60fps content properly, and none of the above will handle 25fps content correctly.
+- Add the following line to your `mpv.conf`, replacing `<name>` with the file name of your shader:
+
+```properties
+glsl-shader="~~/shaders/<name>"
+```
+
+- Confirm your shader is working by pressing `Shift` + `I`, followed by `2`
+- Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader; *if this applies to you, we suggest switching to a less-demanding shader*
+
+===
+
+### Filtering
+
+Filters act as a temporary fix to amend issues that may appear when watching anime. These can be applied using the options available in [mpv](https://mpv.io) and [madVR](https://madvr.com).
+
+Debanding is the most commonly used filter, which helps to fix issues with [color banding](/tutorials/mpv/#debanding) in your video.
+
+!!!warning
+We do not recommend detail enhancement, noise reduction, or sharpening filters, as it will negatively affect the quality of your content.
+!!!
+
+*See the [quality guide](/guides/quality) for more information.*
+
+### Smooth Playback
+
+Most modern anime will play close to 24 fps (24000/1001 fps). However, most displays often run at refresh rates that do not match this frame rate, leading to an effect known as **judder**.
+
+Judder is most commonly seen with devices that have 60Hz displays, *as the refresh rate is not an integer multiple of the content frame rate.*
+
+==- Explaining Judder
+A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to play a video or game locked at:
+
+- 60 fps: 1 frame is shown for *every 1 refresh* (next frame in 16.67 ms)
+- 30 fps: 1 frame is shown for *every 2 refreshes* (next frame in 33.33 ms)
+- 15 fps: 1 frame is shown for *every 4 refreshes* (next frame in 66.67 ms)
+
+These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.
+
+When content plays at exactly 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). *However, refreshes cannot be divided, and you cannot have "part" of a refresh show on your monitor without screen tearing.*
+
+Instead, your monitor will try to refresh 2.5 times like this:
+
+- Frame 1 is shown for *2 refreshes* (next frame in 33.33 ms)
+- Frame 2 is shown for *3 refreshes* (next frame in 50 ms)
+- Frame 3 is shown for *2 refreshes* (next frame in 33.33 ms)
+- Frame 4 is shown for *3 refreshes* (next frame in 50 ms)
+
+Every odd frame appears for *2 refreshes*, and every even frame appears for *3 refreshes*.
+
+This process is repeated for the entire video. Because each frame is displayed for a different number of refreshes, plus the time between changing frames is not the same, *it leads to motion appearing stuttery or laggy. This is especially noticeable during panning scenes.*
+
+===
+
+To avoid judder, it is best to try and match your display's refresh rate with the content frame rate via the following methods:
+
++++ High Refresh Rate
+Displays that run at 120Hz, 144Hz, 240Hz, or 360Hz will match with each frame, as they are all multiples of 24. Technically, they should be set at 119.88Hz, 143.86Hz, 239.76Hz, or 359.64Hz to closely match with the majority of content at around 23.976 fps (24000/1001 fps).
+
+*144Hz displays will not display 30/60 fps content properly. Additionally, none of the above will handle 25 fps content correctly.*
+
++++ Adaptive Sync
+Adaptive sync, also known as variable refresh rate, is a technology that dynamically adjusts your display's refresh rate based on the frame rate of the content on your screen.
+
+Most modern GPUs will have adaptive sync functionality, such as through AMD FreeSync or NVIDIA G-SYNC.
+
+The best solution is to use G-SYNC/G-SYNC Compatible or FreeSync Premium. *Normal FreeSync may work if your monitor supports [Low Framerate Compensation (LFC)](https://www.amd.com/en/technologies/free-sync-faq#faq-What-is-Low-Framerate-Compensation?). You will also need to use a media player that supports adaptive sync, such as [mpv](https://mpv.io).*
+
+Additionally, you may need to force exclusive fullscreen to activate adaptive sync. In mpv, this can be done by adding `ontop` & `fullscreen` to your `mpv.conf` file. You can tell adaptive sync is active when your cursor feels laggy, as this means your display has dropped its refresh rate to match the content.
+
++++ Automatic Refresh Rate Adjustment
+Many modern streaming devices (e.g. Amazon Fire TV, Apple TV, NVIDIA SHIELD, etc.) will have the option to change the TV refresh rate to match the content frame rate, either through the device's settings or a setting in the playback software (Kodi, Plex, etc.)
+
+24/30/60 fps content should all work perfectly. 25 fps content requires 25/50Hz support, *which some TVs in [NTSC regions](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/PAL-NTSC-SECAM.svg/2560px-PAL-NTSC-SECAM.svg.png) do not support.*
+
+![NTSC Regions](/static/ntsc-regions.png)
+
++++
 
 ## Compatibility
 
-Decoding is the process of playing the video file. There are two types - hardware and software. Everything can be decoded, the difference is in the amount of work needed to do that. When it's hardware accelerated, it doesn't put any strain on your device cpu.
+### Codecs
 
-Most PC players will decode everything with swdecode as a fallback option. The problem is when this decoding isn't fast enough to play your video in real time. That won't ever be a problem is hwdecode is supported for that codec.
+Decoding is the process of deciphering the encoded video into a format that your device can display.
 
-If you're watching on a TV/+Android box, you'll see a list of supported codecs in their specifications. Plex and other media servers will recognize a format as not supported and start transcoding to h264 8 bit. Kodi player is the better option it'll fallback to software decoding like on a PC, giving you the option to always direct stream or run without a server. However, since the cpu on your tv/box is much weaker compared to a PC, there will be instances of horrible lag when trying to force swdecode. Note that software decoding utilizes your cpu, so the cause of lag isn't limited to decoding. It's anything that might be using your cpu at the time. Like when there's a lot of complicated .ass typesetting which needs to be rendered, that will lag with a weak cpu no matter what the video codec is. Generally -
+There are two ways to handle video decoding:
 
-- h264 8-bit works everywhere
-- h264 10-bit rarely works without a decent cpu. Hardware decode support for this is non-existent.
-- h265 8-bit and 10-bit work when hardware support exists. Most newer devices in the last 5 years support it.
+- **Software decoding** uses your CPU, allowing your system to decode any format, and is only limited by how powerful your chip is
+- **Hardware decoding** uses dedicated decoders on your GPU, making it vastly more efficient and resulting in better performance, lower power usage, and less strain on your CPU. *However, some older devices will not support this option for newer codecs*
+
+For most users, this isn't an issue. Generally:
+
+- H.264 8-bit (AVC) works everywhere
+- H.264 10-bit (Hi10P) works on some hardware. *Recommended to use a decent CPU; hardware decoding support is suboptimal*
+- H.265 8-bit/10-bit (HEVC) works with most modern hardware
+
+Most TVs and boxes will display a list of supported codecs on their specification page.
+
+[Plex](https://www.plex.tv) and other media servers will recognize unsupported formats and start transcoding to a supported format, such as H.264.
+
+[Kodi](https://kodi.tv) can fallback to software decoding like on PC media players, giving you the option to directly stream from your server or run without it. *However, since the CPU on your TV/Android box is much weaker, there may be instances of lag when forcing software decoding. On top of the strain from decoding, any additional CPU activity may further affect your experience, such as rendering complicated `.ass` typesetting.*
 
 ### Typesetting
 
-Anime usually has .ass subtitle styling, while the subs will show up on most TVs and players (plex, emby, jellyfin etc.), the typesetting or overlapping dialogue is sometimes broken. This is especially a problem if you're watching fansubs. **Kodi** is one of the few players which supports proper ass rendering. Note that the player is separate from the kodi media server and can even be used with plex.
+Almost all subbed anime will use `.ass` subtitles, as they allow for extensive styling and typesetting. This comes at the cost of additional system resources, though most modern computers, phones, and media servers will not have an issue.
+
+While subtitles will display on most TVs/media players, the typesetting or overlapping dialogue can sometimes be broken when using certain applications. *This is especially a problem with fansubs, where typesetting is used extensively in various areas (e.g. text on a sign, moving scenes).*
+
+!!!
+Most TVs will have difficulty showing `.ass` subs. You should use an external box, such as Amazon Fire TV, Apple TV, or NVIDIA SHIELD.
+!!!
