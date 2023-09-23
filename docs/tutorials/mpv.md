@@ -148,8 +148,7 @@ vo=gpu-next
 gpu-api=vulkan
 deband=no
 
-## Behavior
-# Largely personal preference
+## Behavior (personal preference)
 keep-open=yes
 save-position-on-quit
 
