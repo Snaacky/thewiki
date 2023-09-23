@@ -146,7 +146,12 @@ We recommend taking your time to create your own config. If you want to get up a
 profile=high-quality
 vo=gpu-next
 gpu-api=vulkan
+scale-antiring=0.5
 deband=no
+
+# Dither
+# This must be set to match your monitor's bit depth
+dither-depth = 8
 
 ## Behavior (personal preference)
 keep-open=yes
@@ -154,8 +159,6 @@ save-position-on-quit
 
 ## Screenshots
 screenshot-format=png
-screenshot-high-bit-depth=no
-screenshot-png-compression=9
 screenshot-directory="~/Pictures/mpv"
 screenshot-template="%F-%p"
 
@@ -184,6 +187,7 @@ Option                                                                          
 [`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
 [`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
 [`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*
+[`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*
 [`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
 [`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
 [`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
@@ -225,7 +229,6 @@ To enable debanding in mpv, apply the following changes to your config:
 # Set deband to "no" as we only need to enable it for specific cases
 deband=no
 deband-iterations=4
-deband-threshold=48
 deband-grain=48
 ```
 
@@ -273,55 +276,37 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
 ```
 
 +++ Mid-Range PCs
-If you use mid-range hardware, we suggest using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
+If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quality` profile.
 
-Download the shader file and place it in your `shaders` folder.
-
-To use the shader, add the following to your `mpv.conf`:
+To use the profile, add the following to the top of your `mpv.conf`:
 
 ```properties
-glsl-shaders="~~/shaders/nnedi3-nns128-win8x4.hook"
-```
-
-To activate it with a key, add the following to your `input.conf`, replacing `G` with the bind of your choice, if necessary (case-sensitive):
-
-```properties
-G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
-```
-
-+++ Low-End PCs
-If you use low-end hardware running a dedicated GPU, we suggest sticking to mpv's built-in `high-quality` scalers.
-
-In your `mpv.conf`, add the following:
-
-```properties
+## Video
 profile=high-quality
 vo=gpu-next
 gpu-api=vulkan
+scale-antiring=0.5
 deband=no
+
+# Dither
+# This must be set to match your monitor's bit depth
+dither-depth = 8
 ```
+
+!!!warning
+`dither-depth` should be set to match your monitor's bit depth to prevent [banding](#debanding).
+!!!
 
 This is included in the [Basic Config](#basic-config).
 
-+++ Potato PCs
-If you use low-end hardware running a integrated GPU, we suggest sticking to mpv's built-in default scalers.
++++ Low-End PCs
+If you use low-end hardware, we suggest sticking to mpv's built-in `fast` profile, which prioritizes performance over quality.
 
-If you are using the [Basic Config](#basic-config), remove `profile=high-quality`. This will make mpv use the default scalers.
-
-The default values are:
+To use the profile, add the following to the top of your `mpv.conf`:
 
 ```properties
-scale=lanczos
-cscale=lanczos
-dscale=hermite
-dither-depth=auto
-correct-downscaling=yes
-linear-downscaling=yes
-sigmoid-upscaling=yes
-hdr-compute-peak=yes
+profile=fast
 ```
-
-If these values are too much for your system, you can switch to `profile=fast` which priortizes performance at the cost of quality.
 
 +++
 
