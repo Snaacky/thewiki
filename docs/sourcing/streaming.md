@@ -36,7 +36,7 @@ A **self-hosted** site is a streaming site that hosts the content on their own s
 
 Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. *However, some self-hosted libraries can be more limited.*
 
-**Examples of self-hosted sites:** [animepahe](https://animepahe.com), [AniWatch](https://aniwatch.to), [AniWave](https://aniwave.to), [Gogoanime](https://gogoanime.lu), [Marin](https://marin.moe)
+**Examples of self-hosted sites:** [animepahe](https://animepahe.com), [AniWatch](https://aniwatch.to), [AniWave](https://aniwave.to), [Gogoanime](https://gogoanime.lu)
 
 +++ Scrapers
 
@@ -71,7 +71,6 @@ Show                                                      | Sources
 +++ Tier 1 (Best)
 
 - [AllAnime](https://allanime.to) - Scraper site with great video quality when scraped from VRV, making them on par with SubsPlease/HorribleSubs torrent releases. *However, not all shows use VRV, resulting in Tier 3 quality*
-- [Marin](https://marin.moe) - Consistently the best video quality with BD releases and good quality for seasonals. *Formerly tenshi*
 
 +++ Tier 2 (Good)
 
@@ -81,7 +80,7 @@ Show                                                      | Sources
 
 +++ Tier 3 (Okay)
 
-- [animepahe](https://animepahe.com) - Quality can be better or worse than Gogoanime. *However, they offer significantly smaller file sizes and use good BD releases whenever available similar to [Marin](https://marin.moe)*
+- [animepahe](https://animepahe.com) - Quality can be better or worse than Gogoanime. *However, they offer significantly smaller file sizes and use good BD releases whenever available
 - [Gogoanime](https://gogoanime.lu) (and its scrapers)
 
 +++
@@ -91,14 +90,14 @@ Show                                                      | Sources
 There are a multitude of other factors that may affect your decision in picking a site. Here are some brief recommendations based on some factors that aren't covered in [The Index](https://theindex.moe) and are often not taken into account:
 
 ==- Fansubs and BD Releases
-[Marin](https://marin.moe) and [animepahe](https://animepahe.com) are very consistent at picking good BD releases with fansubs.
+[Animepahe](https://animepahe.com) is very consistent at picking good BD releases with fansubs.
 
 [AniWave](https://aniwave.to) does this too, *but typically less often and with slightly worse release choice.*
 
 ==- File Size
 [animepahe](https://animepahe.com) has some of the smallest file sizes compared to other streaming sites.
 
-[AniWave's](https://aniwave.to) are also relatively small when compared to sites like [Gogoanime](https://gogoanime.lu) and [Marin](https://marin.moe).
+[AniWave's](https://aniwave.to) are also relatively small when compared to sites like [Gogoanime](https://gogoanime.lu)
 
 ==- Library
 [AniWave](https://aniwave.to) and [Gogoanime](https://gogoanime.lu) have some of the largest libraries available.
