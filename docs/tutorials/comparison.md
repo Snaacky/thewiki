@@ -172,7 +172,7 @@ Now, when making comps you just edit `comp.vpy` to include the necessary file pa
 
 Unsure of how to go about editing the comp script? The panel below will explain how each section works.
 
-==- :icon-file: Understanding comp.vpy
+==- :icon-info: Understanding comp.vpy
 At first, the comparison script may seem daunting, especially since it's a giant wall of text with a lot of technical jargon. It has basic explanations of each section, however, this guide will go over each part in more detail and describe how to properly edit the values.
 
 When comparing, you will want to go through the different sections, uncommenting/commenting the parts you need to use (removing/adding the ## in front of them, which determines whether the line will be used or not), modifying the values to suit your needs and applying them to the correct clip numbers.

@@ -99,58 +99,14 @@ Here, Kodi acts as the client, increasing compatibility and replacing the defaul
 
 ### Scaling
 
-Scaling is the process of taking content that does not match your screen resolution and scaling it to fit your display.
+Scaling is the process of taking content that does not match your screen resolution and resizing it to fit your display.
 
 - Downscaling takes a *large* video and scales *downwards* (e.g. 1080p video to 720p display)
 - Upscaling takes a *small* video and scales *upwards* (e.g. 1080p video to 2160p/4K display)
 
 For displays that match the content resolution you will only see chroma scaling, as in most video the chroma resolution is half the video resolution. *These shaders only activate when these resolutions don't match. Scaling is not an enhancement and cannot be enabled manually.*
 
-[mpv](https://mpv.io) has a built-in high-quality profile called `gpu-hq` which enables better upscaling algorithms (`scale=spline36`, `cscale=spline36`, `dscale=mitchell`). By default, mpv uses `spline36`. *This option is necessary to enable even if you use an external shader, as it can act as a fallback.*
-
-!!!
-`gpu-hq` enables debanding by default, which is not recommended for high-quality sources. It should be followed by `deband=no`.
-!!!
-
-#### Recommended Shaders
-
-Below is a brief list of recommended shaders for [mpv](https://mpv.io):
-
-+++ High-End PCs
-For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
-
-+++ Mid-Range PCs
-For those with mid-range hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
-
-+++ Low-End PCs
-For those with low-end hardware, we recommend sticking to mpv's built-in scalers.
-
-In your `mpv.conf`, add the following:
-
-```properties
-vo=gpu
-scale=ewa_lanczos
-dscale=mitchell
-cscale=ewa_lanczos
-```
-
-+++
-
-==- Installing External Shaders in mpv
-
-- Head to your shader folder (`%appdata%/mpv/shaders`); *you may need to create one if it doesn't exist*
-- Place your downloaded external shaders in the directory
-
-- Add the following line to your `mpv.conf`, replacing `<name>` with the file name of your shader:
-
-```properties
-glsl-shader="~~/shaders/<name>"
-```
-
-- Confirm your shader is working by pressing `Shift` + `I`, followed by `2`
-- Watch for dropped frames or high frame times, as they can be a sign that your GPU is unable to keep up with your shader; *if this applies to you, we suggest switching to a less-demanding shader*
-
-===
+If you use [mpv](https://mpv.io), see the [setup guide](/tutorials/mpv/#scaling) on setting up scalers.
 
 ### Filtering
 

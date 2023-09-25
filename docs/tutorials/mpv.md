@@ -149,6 +149,7 @@ gpu-api=vulkan
 scale-antiring=0.5
 deband=no
 
+# Dither
 # This must be set to match your monitor's bit depth
 dither-depth = 8
 
@@ -174,24 +175,23 @@ alang=jpn,ja
 #subs-with-matching-audio=no
 ```
 
-==- :icon-file: Understanding the config
+==- :icon-info: Understanding the config
 
 !!!
 See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation of all the options.
 !!!
 
 Option                                                                                           | Meaning
--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
 [`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
 [`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
-[`deband`](https://mpv.io/manual/master/#options-deband)                                         | `profile=high-quality` implicitly enables deband. We are disabling it because a good encode will already be debanded. Instead using [auto-profiles](#auto-profiles) is recommended to automatically enable it where it's actually needed
-[`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | This must be set to match your monitor's bit depth, otherwise it can introduce banding
+[`scale-antiring`](https://mpv.io/manual/stable/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*
+[`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*
+[`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*
 [`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
 [`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
 [`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
-[`screenshot-high-bit-depth`](https://mpv.io/manual/stable/#options-screenshot-high-bit-depth)   | Use a bit depth similar to the source for screenshots. *Leave this at `no` as it creates unnecessarily large files*
-[`screenshot-png-compression`](https://mpv.io/manual/stable/#options-screenshot-png-compression) | The compression level for `.png` screenshots. *Can be set between `0` to `9`; a higher number means better compression and longer output time*
 [`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
 [`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
 [`slang`](https://mpv.io/manual/stable/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
@@ -249,12 +249,16 @@ After applying your changes, debanding can be applied at any time by pressing `S
 
 Scaling is the process of taking content that does not match your screen resolution and resizing it to fit your display. *See the [Playback Guide](/guides/playback/#scaling) for more information.*
 
-!!!
-Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
+[mpv](https://mpv.io) has a built-in profile called `high-quality` which enables better upscaling using `ewa_lanczossharp`. By default, mpv uses `lanczos` and `hermite`. *This option is necessary to enable even if you use an external shader, as it can act as a fallback.*
+
+!!!warning
+`high-quality` enables debanding by default, which is not recommended for high-quality sources. It should be followed by `deband=no`.
 !!!
 
+Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
+
 +++ High-End PCs
-If you have high-end hardware, you can use [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
+If you use high-end hardware, we suggest using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
 
 Download the shader file and place it in your `shaders` folder.
 
@@ -271,9 +275,9 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
 ```
 
 +++ Mid-Range PCs
-If you have a mid-range pc, you can stick to mpv's built-in `high-quality` profile.
+If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quality` profile.
 
-In your `mpv.conf`, add the following:
+To use the profile, add the following to the top of your `mpv.conf`:
 
 ```properties
 ## Video
@@ -283,25 +287,24 @@ gpu-api=vulkan
 scale-antiring=0.5
 deband=no
 
+# Dither
 # This must be set to match your monitor's bit depth
 dither-depth = 8
 ```
 
 !!!warning
-Do not forget to change `dither-depth` to match your monitor's bit depth, otherwise it can introduce banding
+`dither-depth` should be set to match your monitor's bit depth to prevent [banding](#debanding).
 !!!
 
-This is included in the [Basic Config](#basic-config) above.
+This is included in the [Basic Config](#basic-config).
 
 +++ Low-End PCs
-If you have a low end, you can use to mpv's built-in `fast` profile.
-This profile prioritizes performance over quality.
+If you use low-end hardware, we suggest sticking to mpv's built-in `fast` profile, which prioritizes performance over quality.
 
-Put this at the top of your config file:
+To use the profile, add the following to the top of your `mpv.conf`:
 
 ```properties
 profile=fast
-
 ```
 
 +++
