@@ -139,37 +139,30 @@ mpv is a great player out-of-the-box which can be extensively customized to your
 
 We recommend taking your time to create your own config. If you want to get up and running quickly, we suggest using the generic `mpv.conf` config below:
 
-==- Generic `mpv.conf`
+==- :icon-file-code: Generic `mpv.conf`
 
 ```properties
 ## Video
-
-profile=gpu-hq
+profile=high-quality
 vo=gpu-next
 gpu-api=vulkan
+scale-antiring=0.5
+deband=no
 
-## Behavior
+# Dither
+# This must be set to match your monitor's bit depth
+dither-depth = 8
 
+## Behavior (personal preference)
 keep-open=yes
 save-position-on-quit
 
-## Scaler
-
-# If you encounter problems using ewa_lanczos, change to spline36
-scale=ewa_lanczos
-dscale=mitchell
-cscale=ewa_lanczos
-
 ## Screenshots
-
 screenshot-format=png
-screenshot-high-bit-depth=no
-screenshot-png-compression=9
 screenshot-directory="~/Pictures/mpv"
 screenshot-template="%F-%p"
 
 ## Language Priority
-
 # Sub
 # Add enm before eng for honorifics
 slang=eng,en
@@ -182,25 +175,23 @@ alang=jpn,ja
 #subs-with-matching-audio=no
 ```
 
-==- Understanding the config
+==- :icon-info: Understanding the config
 
 !!!
 See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation of all the options.
 !!!
 
 Option                                                                                           | Meaning
--------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings. *We recommend `gpu-hq` for high-quality playback*
-[`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *We recommend `gpu-next` for most modern hardware*
-[`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *We recommend `vulkan` for most modern hardware*
+-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
+[`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
+[`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
+[`scale-antiring`](https://mpv.io/manual/stable/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*
+[`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*
+[`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*
 [`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
 [`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
-[`scale`](https://mpv.io/manual/stable/#options-scale)                                           | The [upscale](#scaling) filter. *We recommend `ewa_lanczos` for best quality*
-[`dscale`](https://mpv.io/manual/stable/#options-dscale)                                         | The [downscale](#scaling) filter. *We recommend `mitchell` for best quality*
-[`cscale`](https://mpv.io/manual/stable/#options-cscale)                                         | The [scale](#scaling) for interpolating chroma information. *We recommend `ewa_lanczos` for best quality*
-[`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *We recommend `png` for lossless quality*
-[`screenshot-high-bit-depth`](https://mpv.io/manual/stable/#options-screenshot-high-bit-depth)   | Use a bit depth similar to the source for screenshots. *Leave this at `no` as it creates unnecessarily large files*
-[`screenshot-png-compression`](https://mpv.io/manual/stable/#options-screenshot-png-compression) | The compression level for `.png` screenshots. *Can be set between `0` to `9`; a higher number means better compression and longer output time*
+[`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
 [`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
 [`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
 [`slang`](https://mpv.io/manual/stable/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
@@ -221,7 +212,12 @@ This guide assumes you know the location of your config folder. *See [Config Ove
 
 Color banding is a visual artifact that is typically seen in gradients, where the colors can be easily differentiated by the human eye. *See [Tom Scott's video explaining color banding](https://youtu.be/h9j89L8eQQk).*
 
-![Banding (left) vs. No banding (right)](https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png)
+<p align="center">
+   <a href="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png">
+   <img src="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png" alt="Banding (left) vs. No banding (right)" width="640" height="360">
+   </a>
+<p align="center">Banding (left) vs. No banding (right)</p>
+</p>
 
 To enable debanding in mpv, apply the following changes to your config:
 
@@ -229,12 +225,9 @@ To enable debanding in mpv, apply the following changes to your config:
 
 ```properties
 ## Deband
-
 # Set deband to "no" as we only need to enable it for specific cases
-# If you wish to apply debanding automatically on startup, set it to "yes" (not recommended)
 deband=no
 deband-iterations=4
-deband-threshold=48
 deband-grain=48
 ```
 
@@ -256,12 +249,16 @@ After applying your changes, debanding can be applied at any time by pressing `S
 
 Scaling is the process of taking content that does not match your screen resolution and resizing it to fit your display. *See the [Playback Guide](/guides/playback/#scaling) for more information.*
 
-!!!
-Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
+[mpv](https://mpv.io) has a built-in profile called `high-quality` which enables better upscaling using `ewa_lanczossharp`. By default, mpv uses `lanczos` and `hermite`. *This option is necessary to enable even if you use an external shader, as it can act as a fallback.*
+
+!!!warning
+`high-quality` enables debanding by default, which is not recommended for high-quality sources. It should be followed by `deband=no`.
 !!!
 
+Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
+
 +++ High-End PCs
-For those with high-end hardware, we recommend using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
+If you use high-end hardware, we suggest using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
 
 Download the shader file and place it in your `shaders` folder.
 
@@ -278,44 +275,45 @@ G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
 ```
 
 +++ Mid-Range PCs
-For those with mid-range hardware, we recommend using [nnedi3-nns128-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns128-win8x4.hook).
+If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quality` profile.
 
-Download the shader file and place it in your `shaders` folder.
-
-To use the shader, add the following to your `mpv.conf`:
+To use the profile, add the following to the top of your `mpv.conf`:
 
 ```properties
-glsl-shaders="~~/shaders/nnedi3-nns128-win8x4.hook"
-```
-
-To activate it with a key, add the following to your `input.conf`, replacing `G` with the bind of your choice, if necessary (case-sensitive):
-
-```properties
-G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns128-win8x4.hook"
-```
-
-+++ Low-End PCs
-For those with low-end hardware, we recommend sticking to mpv's built-in scalers.
-
-In your `mpv.conf`, add the following:
-
-```properties
+## Video
+profile=high-quality
 vo=gpu-next
-scale=ewa_lanczos
-dscale=mitchell
-cscale=ewa_lanczos
+gpu-api=vulkan
+scale-antiring=0.5
+deband=no
+
+# Dither
+# This must be set to match your monitor's bit depth
+dither-depth = 8
 ```
+
+!!!warning
+`dither-depth` should be set to match your monitor's bit depth to prevent [banding](#debanding).
+!!!
 
 This is included in the [Basic Config](#basic-config).
 
-If these are too heavy for your system, delete these lines from your config. mpv will use `spline36` by default with `profile=gpu-hq`.
++++ Low-End PCs
+If you use low-end hardware, we suggest sticking to mpv's built-in `fast` profile, which prioritizes performance over quality.
+
+To use the profile, add the following to the top of your `mpv.conf`:
+
+```properties
+profile=fast
+```
+
 +++
 
 ### Subtitle Restyling
 
 Most releases will use their own font for `.ass` subtitles. These can be manually overridden by mpv, which can help improve readability or match personal preferences.
 
-Below are a few commonly used styles:
+Below are a couple of commonly used styles:
 
 +++ Gandhi Sans
 
@@ -329,9 +327,7 @@ Run the `.otf` font file to install it system-wide or put it in your `fonts` fol
 
 ```properties
 ## Restyle Subtitles
-
 # Set sub-ass-override to "no" as we only need to enable it for specific cases
-# If you wish to use it for all video, set it to "yes"
 sub-ass-override=no
 sub-ass-force-style=playresx=1920,playresy=1080
 sub-font="Gandhi Sans"
@@ -359,7 +355,6 @@ Run the `.ttf` font file to install it system-wide or put it in your `fonts` fol
 ## Restyle Subtitles
 
 # Set sub-ass-override to "no" as we only need to enable it for specific cases
-# If you wish to use it for all video, set it to "yes"
 sub-ass-override=no
 sub-ass-force-style=playresx=1920,playresy=1080
 sub-font="Cabin"
@@ -403,23 +398,13 @@ deband=yes
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
 !!!
 
-### Quality of Life
-
-#### Volume
-
-By default, scrolling the mouse wheel up and down seek the video instead of changing the volume. This behavior can be changed by adding the following to your `input.conf`:
-
-```properties
-WHEEL_UP      add volume 2
-WHEEL_DOWN    add volume -2
-```
-
 ### Custom Scripts
 
 mpv supports loading custom scripts, allowing you to further expand the player's functionality.
 
 Below is a list of some popular scripts:
 
+- [autocrop](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autocrop.lua) - Automatically crop the video by using lavfi's cropdetect filter to detect black bars
 - [autoload](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua) - Automatically adds all files present in the folder to a playlist
 - [mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager) - Script to create and manage playlists
 - [mpv-webm](https://github.com/ekisu/mpv-webm) - WebM maker for mpv
