@@ -6,70 +6,98 @@ image: /static/comparison/hyouka.gif
 
 # Comparison
 
-Comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources, be that official releases or user made encodes. This guide goes through the process of setting up and effectively utilising Vapoursynth-Preview to produce useful comparisons that will allow you to ascertain which release offers the best visual experience.
+Quality comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources/releases. This guide goes through the process of setting up and effectively utilising [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) to produce useful comparisons that will allow you to ascertain which release offers the best visual experience.
 
-## Initial setup
+## Setup
 
-### Installing dependencies
+### VapourSynth
 
-1. Install [Python 3.11](https://www.python.org/downloads/). During installation tick `Add python.exe to PATH`
-2. Install [Git](https://gitforwindows.org/)
-3. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases). Select `Install for me only`
-4. Before we install vs-preview, we need to install the following dependencies:
+Download and install [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). You will also need its dependencies:
 
-    [`libP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth "LibP2P") [`lsmas`](https://github.com/AkarinVS/L-SMASH-Works "LSMASHSource") [`subtext`](https://github.com/vapoursynth/subtext "Subtext") [`vs-placebo`](https://github.com/Lypheo/vs-placebo "vs-placebo") [`awsmfunc`](https://github.com/OpusGang/awsmfunc "awsmfunc")
+- [Python](https://www.python.org/downloads/) - *Select `Add python.exe to PATH` during installation*
+- [Git](https://gitforwindows.org/)
 
-    You can install these with the following commands:
+### VSPreview
 
-    ```powershell
-    vsrepo.py install lsmas libp2p sub placebo
-    ```
++++ Basic Setup
 
-    ```powershell
-    pip install git+https://github.com/OpusGang/awsmfunc.git
-    ```
+[VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) requires the following dependencies on top of [VapourSynth](#vapoursynth):
 
-    !!!
-    If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python
-    !!!
+- [awsmfunc](https://github.com/OpusGang/awsmfunc)
+- [LibP2P](https://github.com/DJATOM/LibP2P-Vapoursynth)
+- [LSMASHSource](https://github.com/AkarinVS/L-SMASH-Works)
+- [Subtext](https://github.com/vapoursynth/subtext)
+- [vs-placebo](https://github.com/Lypheo/vs-placebo)
 
-5. (Optional) If you're working with Dolby Vision, you'll need to install the following additional dependencies:
+==- :icon-gear: Installation
 
-==- :large_purple_square:Dolby Vision:large_green_square: Specific Installation
-
-- [`libdovi`](https://github.com/quietvoid/dovi_tool "libdovi")
+You can install the following dependencies using `vsrepo.py` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases):
 
 ```powershell
-vsrepo.py install dovi_library
+vsrepo.py install lsmas libp2p sub placebo
 ```
 
-- [`lsmas vA.5b`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b) instead of [`lsmas vA.3j`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j). Currently, `vsrepo` installs `A.3x` by default which does not support DV. `A.5x` is experimental and not available on `vsrepo`, so you will have to install it manually.
+!!!
+If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python.
+!!!
 
-- Download `release-x86_64-cachedir-cwd.zip` and open it
-- Copy `libvslsmashsource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
-- If asked, overwite the old `libvslsmashsource.dll` with the new version
-===
+```powershell
+pip install git+https://github.com/OpusGang/awsmfunc.git
+```
 
-Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
+==-
+
++++ Dolby Vision
+
+If you're working with Dolby Vision content, you will also need to install the following dependencies:
+
+- [libdovi](https://github.com/quietvoid/dovi_tool)
+  ==- :icon-gear: Installation
+
+  ```powershell
+  vsrepo.py install dovi_library
+  ```
+
+  ==-
+
+- [lsmas vA.5b](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b)
+  - *`vsrepo` installs `A.3x` by default which does not support DV. `A.5x` is experimental and not available on `vsrepo`, so you will have to install it manually*
+  ==- :icon-gear: Installation
+
+  - Download and extract the correct version for your operating system. *For most users, this will be `release-x86_64-cachedir-cwd.zip`*
+  - Copy `libvslsmashsource.dll` and paste it in `%appdata%\VapourSynth\plugins64\`
+    - If you currently have an older `libvslsmashsource.dll` in the `plugins64`, replace it with the newer `libvslsmashsource.dll`
+
+  ==-
+
++++
+
+### Installation
+
+Install [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) using `pip`:
 
 ```powershell
 pip install vspreview
 ```
 
-### The comparison script
+## Usage
 
-1. Create a new file called `comp.vpy`.
-2. Open `comp.vpy` with a text editor such as Notepad++ and paste the following, edit as required, and save it:
-==- :icon-file-code: comp.vpy
+### Scripting
+
+In order to create a comparison, you will need to create a `.vpy` script. This script outlines the parameters and files which [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) will use when generating your comparison.
+
+Create a file called `comp.vpy`. Launch it in your text editor and input the example script below:
+
+==- :icon-file-code: Sample `comp.vpy`
 
 ```python
-## Boring stuff: Ignore me
+## Dependencies
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
 from vspreview import set_output
 
-## File paths: Hold shift and right-click your file, select copy as path, and paste it here
+## File paths: Hold shift + right-click your file and select copy as path, then paste it here
 clip1 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
 clip2 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
 clip3 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
@@ -79,17 +107,17 @@ source1 = "FirstSourceName"
 source2 = "SecondSourceName"
 source3 = "ThirdSourceName"
 
-## FieldBased: Sets the content as either progressive (0) or interlaced (1/2), required for progressive content tagged as interlaced
+## FieldBased: Sets the content as either progressive (0) or interlaced (1/2); required for progressive content tagged as interlaced
 ##clip1 = core.std.SetFieldBased(clip1, 0)
 ##clip2 = core.std.SetFieldBased(clip2, 1)
 ##clip3 = core.std.SetFieldBased(clip3, 2)
 
-## Convert: Convert clip to 16bit 444 (Only for filters that need it such as tonemapping and gamma fixing)
+## Convert: Convert clip to 16-bit 444 (used only for filters that need it such as tonemapping and gamma fixing)
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
-## Cropping: Removes letterboxing (Black bars) [16 BIT REQUIRED FOR ODD NUMBERS]
+## Cropping: Removes letterboxing/black bars [16-bit required for odd numbers]
 ##clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
 ##clip2 = core.std.Crop(clip2, left=0, right=0, top=276, bottom=276)
 ##clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
@@ -104,32 +132,32 @@ source3 = "ThirdSourceName"
 ##clip2 = clip2[24:]
 ##clip3 = clip3[0:]
 
-## Set FPS: Change fps to match other sources, only needed when the previewer doesn't automatically keep them in sync
+## FPS: Change fps to match other sources (needed when the previewer doesn't automatically keep them in sync)
 ##clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
 ##clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
 ##clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
-## Tonemapping: For HDR/DV content only, src_csp=1 is for HDR (and DV Profile 8), src_csp=3 is for DV (Profile 5) [16 BIT REQUIRED]
+## Tonemapping: For HDR/DV content only, src_csp=1 is for HDR (and DV Profile 8), src_csp=3 is for DV (Profile 5) [16-bit required]
 ##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=1, dst_csp=0, gamut_mode=0, use_dovi=1)
 ##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=3, dst_csp=0, gamut_mode=0, use_dovi=1)
 ##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=1, src_csp=1, dst_csp=0, gamut_mode=0, use_dovi=1, dst_max=120)
 
-##Set Colour Range: Marks the clip as limited (0) or full (1) range, DV clips will need to be set to limited after tonemapping.
+## Color Range: Marks the clip as limited (0) or full (1) range; DV clips will need to be set to limited after tonemapping
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 
-## Gamma: Fix Gamma bug (When one source is much brighter than others) [16 BIT REQUIRED]
+## Gamma: Fix gamma bug (when one source is much brighter than others) [16-bit required]
 ##clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 ##clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 ##clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 
-## Set Matrix: If source has incorrect/missing metadata, usually applies to 4K SDR and content you're up/downscaling. (Colours will be off, particularly reds, greens, and blues)
+## Matrix: If source has incorrect/missing metadata, usually applies to 4K SDR and content you're up/downscaling. (Colours will be off, particularly reds, greens, and blues)
 ##clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
 ##clip2 = core.std.SetFrameProp(clip2, prop="_Matrix", intval=6)
 ##clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
 
-## Correct Matrix: If the colours cannot be corrected with the above command [16 BIT REQUIRED]
+## Correct Matrix: Extra parameters if colors are not corrected with Matrix [16-bit required]
 ##clip1 = core.resize.Point(clip1, matrix=5)
 ##clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
 ##clip2 = core.resize.Point(clip2, matrix=6)
@@ -137,113 +165,86 @@ source3 = "ThirdSourceName"
 ##clip3 = core.resize.Point(clip3, matrix=4)
 ##clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=1)
 
-## Fix Double range compression: When one source looks very washed out
+## Fix DRC: Used when one source looks very washed out
 ##clip1 = core.resize.Point(clip1, range_in=0, range=1, dither_type="error_diffusion")
 ##clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
-## Frameinfo: Displays the frame number, type, and group name in the top left corner (Leave these lines untouched, it reads the source from the top)
-clip1= FrameInfo(clip1, source1)
-clip2= FrameInfo(clip2, source2)
-clip3= FrameInfo(clip3, source3)
+## FrameInfo: Displays the frame number, type, and group name in the top-left corner (leave these lines untouched, it reads the source from the top)
+clip1 = FrameInfo(clip1, source1)
+clip2 = FrameInfo(clip2, source2)
+clip3 = FrameInfo(clip3, source3)
 
-## FrameProp: Slow.pics/file name labelling (Leave these lines untouched, it reads the source from the top)
+## FrameProp: slow.pics/file name labeling (leave these lines untouched, it reads the source from the top)
 clip1 = clip1.std.SetFrameProp('Name', data = source1)
 clip2 = clip2.std.SetFrameProp('Name', data = source2)
 clip3 = clip3.std.SetFrameProp('Name', data = source3)
 
-## Output: Comment/Uncomment as needed depending on how many clips you're comparing
-set_output(clip1, name=source1)
-set_output(clip2, name=source2)
-set_output(clip3, name=source3)
+## Output: Comment/uncomment as needed, depending on how many sources you're comparing
+set_output(clip1, name = source1)
+set_output(clip2, name = source2)
+set_output(clip3, name = source3)
 ```
 
-==-
-3. Now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as `comp.bat`
+==- :icon-info: Understanding the script
 
-    ```powershell
-    vspreview "C:\Path\To\comp.vpy"
-    ```
+Section            | Description
+-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Dependencies**   | Dependencies required to run [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
+**File paths**     | The location of your source file
+**Source**         | The name of each source. [We recommend following the naming scheme here.](/static/comparison/source-name.png) *If you use slow.pics, this will be the name that will be displayed in comparisons*
+**FieldBased**     | Sets the content as progressive or interlaced. *This should be used for incorrectly flagged sources*
+**Convert**        | Converts the video to a different color space for better precision. *This should only be used with a filter that requires it, such as tonemapping*
+**Cropping**       | Crops certain pixels from any side of the video. *This should be used for sources that use letterboxing or other form of crop*
+**Scaling**        | Downscales or upscales the video. *This should be used when using multiple sources that have differing resolutions*
+**Trimming**       | Removes a set number of frames from the source. *This should be used when the source is off-sync*
+**FPS**            | Sets the source frame rate. *This should be used for sources that have different frame rates*
+**Tonemapping**    | Sets the source to a different tonemap (e.g. HDR/DV -> SDR). Requires **Convert** parameters to be enabled. *For washed-out colors on HDR, use `src_csp=1.` For green/purple colors in DV, use `src_csp=3`*
+**Color Range**    | Sets the color range for the source. *This should be used for sources with incorrect metadata or DV tonemapping (set to limited)*
+**Gamma**          | Adjusts the gamma of the video
+**Matrix**         | Sets the metadata to fix colors for your sources. [See the guide here.](/static/comparison/matrix.png) *This should be used for sources with colors that are slightly off*
+**Correct Matrix** | Extra parameters to fix **Matrix**
+**Fix DRC**        | Fixes double range compression washed out sources
+**FrameInfo**      | Lists the frame number, type, and source name in the top left of the videos
+**FrameProp**      | Sets the source name entered under **Source** for correct labelling on slow.pics
+**Output**         | Parameter to allow clips to appear in [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
 
-- To get the path, shift and right-click the comp.py file you just made, and select `Copy as path`
-
-Now, when making comps you just edit `comp.vpy` to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed, and then run `comp.bat` or run `vspreview comp.vpy` directly from your terminal.
-
-#### Understanding the comparison script
-
-Unsure of how to go about editing the comp script? The panel below will explain how each section works.
-
-==- :icon-file: Understanding comp.vpy
-At first, the comparison script may seem daunting, especially since it's a giant wall of text with a lot of technical jargon. It has basic explanations of each section, however, this guide will go over each part in more detail and describe how to properly edit the values.
-
-When comparing, you will want to go through the different sections, uncommenting/commenting the parts you need to use (removing/adding the ## in front of them, which determines whether the line will be used or not), modifying the values to suit your needs and applying them to the correct clip numbers.
-
-**Boring stuff**: Just the requirements to make the script work, can be safely ignored.
-
-**File paths**: The location of the video files you want to compare, you just need to hold shift and right-click the video file, select copy as path, then paste it into this section.
-
-**Source:** The name for each video, this will be shown on the slowpics page, frameinfo in the top left, and file name if you save manually. Recommended to set as the encoder name (not necessarily the release group) in the case of encodes, the region and type in the case of discs/remuxes, or the streaming service in the case of WEB-DLs. Some examples for each respective category would be Beatrice-Raws for one of their encodes, JPN BD for a Japanese Blu-ray or Remux, and DSNP for a WEB-DL from Disney+. If your source is HDR/DV it's best to specify that too.
-
-**FieldBased:** Only required when the content is flagged as interlaced, it may actually be progressive which would require you to set a value of 0 to tell VS-Preview that it's progressive, otherwise the quality will look worse than it is.
-
-**Convert:** Converts the video from 8/10 bit to 16 bit and full chroma, which allows for better precision with certain filters. Should only be enabled when you're using a filter that requires it, such as tonemapping, gamma fixing, or cropping an odd number of pixels.
-
-**Cropping:** Crops pixels from any side of the video, should be used on any content that has letterboxing (black borders) on the top/bottom or sides. Generally encodes do this already, so it will only apply to Blurays/Remuxes and WEB-DLs. To calculate the value you need to enter, you can use the crop feature in the Misc section at the bottom right of VS-Preview, keep on increasing the value until the black bars are completely gone, turn it off then copy the numbers into comp.vpy. Alternatively, you can quickly count the pixels with a tool such as ShareX.
-
-**Scaling:** When you have multiple clips of different resolutions, you need to scale them to match each other. Generally, this means getting the resolution of the highest res video and upscaling the rest to match it. In VS-Preview at the bottom left you can see the video resolution, so for example, if you're comparing a 1920x1080 video to a 1280x720 video, you would set the 1280x720 video to 1920, 1080.
-
-**Trimming:** Often your videos will not be in sync, so you need to cut a certain amount of frames from one of the clips in order for them to match. To easily calculate the value required, navigate to a unique frame such as a scene change in one source, note the frame number, then navigate to the exact same unique frame in your other source and note that frame number, then simply work out the difference between the two numbers, and delay the further ahead video by that amount. Usually, the difference is just 24 black frames at the start. After reloading VS-Preview (Control+R) they should both be perfectly in sync, however, it's possible that they may de-sync later on due to small differences in cuts. In those situations, you can either figure out the new delay as you go along (Bolt-Action) or find all the delays first and set the whole clip to be in sync (Auto/Semi-auto). An example of chaining together trims would be `clip4 = clip4[0:8705]+clip4[8706:25894]+clip4[25895:]`
-
-**Set FPS:** Sometimes you will find that different videos have different frame rates, visible at the bottom left of VS-Preview. This framerate difference usually causes your sources to slowly become more and more out of sync, so you'll need to set the FPS of the outlier to make it match the rest. In rarer circumstances VS-Preview will keep the sources in sync despite there being a difference in frame rate, in those scenarios you can ignore this section, but do note that this means that one of the sources either has dropped or duplicated frames, which should be noted when posting the comp.
-
-**Tonemapping:** For HDR or DV content, by default they won't display correctly so they need to be tonemapped to SDR to look normal. This filter requires you to uncomment the Convert section mentioned earlier. If the content appears as washed out, it's HDR and you should use src_csp=1, if it appears green/purple then it's DV and you need to use src_csp=3. Most other values can remain unchanged unless you wish to play around with different tone mapping algorithms. dst_max forces a certain brightness, it can be used to make HDR/DV clips appear brighter for easier comparison to SDR.
-
-**Set Colour Range:** When content has the wrong metadata or you're tonemapping a DV clip (needs to be set to limited)
-
-**Gamma:** Allows you to adjust the gamma of the videos, most commonly used to correct what's known as the "Gamma bug" that you'll sometimes come across, where one source is much brighter than the rest.
-
-**Set Matrix:** If you notice that certain colours are slightly off between sources (Most notably reds/greens/blues) then your source likely has incorrect or missing matrix metadata. Most commonly you encounter this when upscaling content (eg DVDs to 1080p, BDs to 4K) and 4K SDR WEB releases. Generally speaking, HD SDR content (BDs, 720p-4K WEB) should be set as intval=1 (BT.709), SD content (DVDs) should be set as 5 (BT.601), HDR/DV content should be set as intval=9 (BT.2020 NCL). If this does not fix your issue, see below.
-
-**Correct Matrix:** Sometimes simply setting the correct Matrix does not work, and this is because the video has undergone an incorrect conversion which you need to reverse.
-
-**Fix Double range compression:** Some sources will have undergone range compression twice, and will appear as very washed out. To fix this simply uncomment the lines and enter the correct clip number.
-
-**Frameinfo:** Lists the frame number, type, and source name in the top left of the videos.
-
-**FrameProp:** Sets the source name you entered earlier, for correct labelling on slow.pics.
-
-**Output:** Simply makes the clips appear in VS-Preview.
 ==-
 
-## Screenshotting
+### Running
 
-There are 3 methods of screenshotting:
+To run your comparison script, launch a terminal window in your working directory and run the following:
 
-**Full-auto:** Allowing VS-Preview to do everything for you, by far the fastest option.
+```powershell
+vspreview comp.vpy
+```
 
-**Semi-auto:** Manually marking the frame numbers as you go through the clips, then letting VS-Preview automatically extract, compress, and upload them to slow.pics. Generally the recommended option.
+Alternatively, you can create a create a `comp.bat` file, replacing `C:\Path\To\comp.vpy` with the file path to your script:
 
-**Bolt-action:** Saving the images locally as you go through the clips, then uploading them manually later. Mainly useful for uploading to other sites and keeping the comparison archived locally, but also has other benefits like faster and more efficient compression.
+```powershell
+vspreview "C:\Path\To\comp.vpy"
+```
 
-+++ Full-auto
+## Usage
 
-- Click the `comp` button in the bottom right of the toolbar.
-- Untick `I` so only `P` and `B` are selected, or only select `B` if you want matching frame-types.
-- Tick the `public` box to make the comparison available on the slow.pics homepage.
-- Name the collection appropriately for Slow.pics, get the TMDB ID from <https://www.themoviedb.org/> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.
-- Set the tag to the same name as listed on TMDB.
-- Set "Delete After" to your desired value, by default comps expire after 2 years of not being viewed.
-- Under `random` enter a frame count amount, you should use a large number of images to make the comparison as effective as possible, ideally at least 40 since not all frames will be useful.
+VSPreview offers three methods for creating comparisons:
+
+- **Automatic** - VSPreview will automatically select, capture, and upload frames for you; *fastest option*
+- **Semi-automatic** - VSPreview will capture and upload manually marked frames; *recommended*
+- **Manual** - All actions are performed manually by the user through VSPreview
+
++++ Automatic
+
+- Click the `comp` button in the bottom right of the toolbar
+- Untick `I` so only `P` and `B` are selected, or only select `B` if you want matching frame-types
+- Tick the `public` box to make the comparison available on the slow.pics homepage
+- Name the collection appropriately for Slow.pics, get the TMDB ID from <https://www.themoviedb.org/> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content
+- Set the tag to the same name as listed on TMDB
+- Set "Delete After" to your desired value, by default comps expire after 2 years of not being viewed
+- Under `random` enter a frame count amount, you should use a large number of images to make the comparison as effective as possible, ideally at least 40 since not all frames will be useful
 - Make sure your PNG compression is set to 0 (Max) under Settings -> Main*
-- Hit `Start Upload` and patiently wait while VS-Preview collects the frames and uploads the comparison.
+- Hit `Start Upload` and patiently wait while VSPreview collects the frames and uploads the comparison
 
-**If you wish to upload to a slow.pics account for comp history and ability to edit comps, do the following:**
-
-- Make sure you're logged into slow.pics
-- Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browserId.
-- Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.
-- Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.
-
-+++ Semi-auto
++++ Semi-automatic
 
 ### Marking the frames
 
@@ -261,7 +262,7 @@ There are 3 methods of screenshotting:
 - Name the collection appropriately for Slow.pics, get the TMDB ID from <https://www.themoviedb.org/> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.
 - Set the tag to the same name as listed on TMDB.
 - Set "Delete After" to your desired value, by default comps expire after 2 years of not being viewed.
-- Under `random` you may specify an additional frame amount for VS-Preview to pick at random, recommended to help fill the comparison with more frames.
+- Under `random` you may specify an additional frame amount for VSPreview to pick at random, recommended to help fill the comparison with more frames.
 - Untick `Current frame` as you likely don't want that included.
 - Make sure your PNG compression is set to 0 (Max) under Settings -> Main
 
@@ -270,13 +271,13 @@ There are 3 methods of screenshotting:
 - Make sure you're logged into slow.pics
 - Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browserId.
 - Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.
-- Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.
+- Back in VSPreview, go to settings, Comp, and paste the two IDs in the relevant boxes.
 
 ### QOL Changes
 
 - **Jump through frames quickly**
 
-   In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
+   In VSPreview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
 
 - **Mark screenshots quicker by setting the mark frame button to enter**
 
@@ -296,7 +297,7 @@ There are 3 methods of screenshotting:
     self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
     ```
 
-+++ Bolt-action
++++ Manual
 
 - Press `Shift` & `Right Arrow` keys to move forward a set amount of frames (configurable in playback section of the toolbar)
 - `Number` keys to switch between video sources and compare quality.
@@ -305,35 +306,6 @@ There are 3 methods of screenshotting:
 - Aim to screenshot a variety of scenes, light/dark, low/high motion, etc.
 - Try and match frame type when screenshotting, e.g. all sources on a `B` frame, single frame jump comes in handy for when they don't match (`Arrow keys`).
 - *Note: If a source file does not have `B` frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no `B` frames.*
-
-#### QOL Improvements
-
-- **Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automatically sorted, with comparison names intact.**
-
-   In VS-Preview on the bottom bar select Misc, and set file name template to `{frame}_{index}_{Name}`.
-
-- **Jump through frames quickly**
-
-   In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
-
-- **Take screenshots quicker by setting the save image button to enter**
-
-   Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py`
-    - Line 166: Replace `QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click` with `(Qt.Key_Return), self.save_frame_as_button.click`.
-    - If you can't spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).
-
-- **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
-
-    Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
-
-    - Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).
-
-    ```python
-    self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-    self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-    self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-    self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
-    ```
 
 #### Post-processing
 
@@ -462,40 +434,61 @@ for link in links:
 ==-
 +++
 
-## Automatic Comp Scripts
+## QoL Changes
 
-If VS-Preview is too scary to setup, you can simply run a script to generate the comparisons for you.
+### Slowpoke Pics
 
-### Setup
+#### Fetching Account Tokens
 
-1. Install [Python 3.10](https://www.python.org/downloads/release/python-3105/)
-2. Install [Vapoursynth](https://github.com/vapoursynth/vapoursynth/releases) - Select `Install for me only`.
-3. Install dependencies via running the following command in your terminal:
+If you plan on uploading to [Slowpoke Pics](https://slow.pics) (slow.pics) under your account, you will need to provide VSPreview with your account tokens.
 
-   ```powershell
-   pip install pathlib anitopy pyperclip requests requests_toolbelt
-   ```
++++ Chrome
 
-4. Download [LSMASHSource](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works/releases "LSMASHSource") and open it. Inside the zip, open the x64 folder, copy `LSMASHSource.dll` and paste it in `%appdata%\VapourSynth\plugins64`
-5. (Optional) Install [FFmpeg](https://ffmpeg.org/download.html) and add it to PATH.
+- Visit [Slowpoke Pics](https://slow.pics) in your browser and log into your account
+- Open your browser's **Developer Tools**
+  - To get your `browserId`, go to the **Application** tab and locate **Storage** -> **Local Storage** -> `https://slow.pics`. Copy the key listed there
+  - To get your `sessionId`, go to the **Network** tab and locate the slow.pics entry. Scroll until you find `SLPSESSION` and copy the key stored there
+- Paste the two values in VSPreview under **Settings** -> **Comp**
 
-### Running the script
++++ Firefox
 
-1. Put `comp.py` into the same folder where the video files you want to compare are located.
-2. Rename your files to have the typical `[Group] Show - EP.mkv` naming, since the script will try to parse the group and show name.
-3. When there's no group, such as BDMV or WEB-DL, use the source/service as the group tag.
-   For example:
+- Visit [Slowpoke Pics](https://slow.pics) in your browser and log into your account
+- Open your browser's **Developer Tools**
+  - To get your `browserId`, go to the **Storage** tab and locate **Local Storage** -> `https://slow.pics`. Copy the key listed there
+  - To get your `sessionId`, go to the **Storage** tab and locate **Cookies** -> `https://slow.pics`. Copy the `SLPSESSION` value
+- Paste the two values in VSPreview under **Settings** -> **Comp**
 
-   ```txt
-   /Comparison/
-   ├── [JPBD] Youjo Senki - 01.m2ts 
-   ├── [Crunchyroll WEB-DL] Youjo Senki - 01.mkv
-   ├── [Group] Youjo Senki - 01.mkv
-   └── comp.py
-   ```
++++
 
-   This will result in images named as JPBD.png, Crunchyroll WEB-DL.png, and Group.png from JPBD, Crunchyroll WEB-DL, and Group respectively.
-4. Adjust the variables in the script accordingly.
-5. Run the script via either double-clicking it or by running `py comp.py` in your terminal.
+#### Friendly File Naming
 
-- [McBaws' Script](https://gist.github.com/McBaws/a5dcbb244c91bcfdedababf3ee652609)
+In VSPreview on the bottom bar select Misc, and set file name template to `{frame}_{index}_{Name}`.
+
+- **Jump through frames quickly**
+
+   In VSPreview on the bottom bar select Playback, directly right of the playback keys set the `1` value to `120`.
+
+- **Take screenshots quicker by setting the save image button to enter**
+
+   Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc` and edit `toolbar.py`
+    - Line 166: Replace `QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click` with `(Qt.Key_Return), self.save_frame_as_button.click`.
+    - If you can't spam fast enough, in VSPreview click settings and set PNG compression to a lower level (higher value).
+
+- **Swap binds to save your pinky finger, so you no longer have to hold shift all the time**
+
+    Open `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\` and edit `toolbar.py`
+
+    - Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).
+
+    ```python
+    self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
+    self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
+    self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+    self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
+    ```
+
+### Automation
+
+If VSPreview is too complicated to setup, you can run a completed script to generate the comparisons for you.
+
+- [McBaws Script](https://github.com/McBaws/comp)
