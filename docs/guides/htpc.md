@@ -110,8 +110,9 @@ For most HTPC users, Windows is the recommended operating system. *Optionally, y
 Make sure you install the appropriate graphics driver for your system:
 
 [!button variant="secondary" icon="download" text="AMD" margin="0 8 0 0"](https://www.amd.com/en/support)
-[!button variant="secondary" icon="download" text="NVIDIA" margin="0 8 0 0"](https://www.nvidia.com/download/index.aspx)
-[!button variant="secondary" icon="download" text="Intel"](https://www.intel.com/content/www/us/en/download-center)
+[!button variant="secondary" icon="download" text="Intel" margin="0 8 0 0"](https://www.intel.com/content/www/us/en/download-center)
+[!button variant="secondary" icon="download" text="NVIDIA"](https://www.nvidia.com/download/index.aspx)
+
 !!!
 
 ### mpv
