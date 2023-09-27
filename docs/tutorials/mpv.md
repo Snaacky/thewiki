@@ -406,6 +406,7 @@ Below is a list of some popular scripts:
 
 - [autocrop](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autocrop.lua) - Automatically crop the video by using lavfi's cropdetect filter to detect black bars
 - [autoload](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua) - Automatically adds all files present in the folder to a playlist
+- [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh) - Script to automatically change the refresh rate of the display to reflect the current video
 - [mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager) - Script to create and manage playlists
 - [mpv-webm](https://github.com/ekisu/mpv-webm) - WebM maker for mpv
 - [pause-when-minimize](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/pause-when-minimize.lua) - Pauses playback when minimizing the window, and resumes playback when brought back
