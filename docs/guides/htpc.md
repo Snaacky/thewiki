@@ -25,7 +25,7 @@ Generally, a dedicated graphics card (dGPU) will almost always be better than th
 
 +++ Dedicated
 
-A dGPU is a dedicated piece of hardware which will be used to handle video decoding. Cards in this category are usually from *AMD* or *NVIDIA*, with *Intel* potentially for newer codecs.
+A dGPU is a dedicated piece of hardware which will be used to handle video decoding. Cards in this category are usually from *AMD* or *NVIDIA*.
 
 You may want to consider a dGPU if:
 
@@ -171,6 +171,10 @@ target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
 
 ## Above makes use of vo=gpu-next for HDR Content, and vo=gpu for SDR. This is a requirement for blend-subtitles=video
 ```
+
+!!!
+`deband` should be toggled as needed and is set to `off` in the config. [See how to bind debanding to a hotkey.](/tutorials/mpv/#input-conf)
+!!!
 
 ==-
 
