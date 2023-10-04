@@ -68,13 +68,13 @@ thewiki is built using [Retype](https://retype.com). See how you can host a loca
    - The `retype start` command automatically prepares and loads the website into the browser:
 
      ```sh
-     retype start thewiki
+     retype start
      ```
 
    - Alternatively, you can use `retype build` to build it without running it:
 
      ```sh
-     retype build thewiki --output retype
+     retype build --output retype
      ```
 
 ## Contributing
