@@ -27,7 +27,7 @@ Now we'll be setting up a network so that our containers can communicate with ea
 ## Generating a Wireguard configuration file
 
 For maximum privacy and security we'll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Jackett however won't go
-through that, as some trackers and indexers might not like it if you send requests from a random VPN IP.
+through that, as some trackers and indexers might not like it if you send requests from a random non-whitelisted IP.
 
 The process for getting a configuration file is different from provider to provider, so we'd recommend looking around your provider's website,
 forum and support articles if you can't find it immediately.
@@ -45,7 +45,7 @@ We would also recommend sorting your media-related folders in the following way 
 - `/home/user/data/media` - where Sonarr and Radarr will hardlink files so that they can be read by Plex/Jellyfin/etc. later on.
 
 ```yml
-# Some notes about some important things so so that they don't ned to be repeated for every container.
+# Some notes about some important things so that they don't need to be repeated for every container.
 #
 # 1. The usage of a VPN
 #
@@ -117,7 +117,7 @@ services:
       - wireguard
     volumes:
       - './sabnzbd:/config'
-      - /home/user/data/usenet:/downloads'
+      - '/home/user/data/usenet:/downloads'
     network_mode: "service:wireguard"
     restart: unless-stopped
   transmission:
@@ -208,13 +208,14 @@ in a detached mode, but since it's your first time running them, Docker will pul
 Once all of that's done, you'll want to run `docker compose down`, which will shut down each of the containers.
 
 Now you'll want to take that Wireguard configuration file you got from earlier, rename it to `wg0.conf` and place it in
-`/home/user/projects/automation/wireguard`. Your VPN will now be functional the next time you run your stack!
+`/home/user/projects/automation/wireguard` (newly created folder after we deployed the containers). Your VPN will now be functional the next time
+you run your stack!
 
 ## Setting up a killswitch
 
 While we've gotten our VPN working, we still don't have a killswitch yet. That's where this bit comes in.
 
-```conf
+```bash
 PostUp = DROUTE=$(ip route | grep default | awk '{print $3}'); HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; ip route add $HOMENET3 via $DROUTE; ip route add $HOMENET2 via $DROUTE; ip route add $HOMENET via $DROUTE; iptables -I OUTPUT -d $HOMENET -j ACCEPT; iptables -A OUTPUT -d $HOMENET2 -j ACCEPT; iptables -A OUTPUT -d $HOMENET3 -j ACCEPT; iptables -A OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT
 PreDown = HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; ip route del $HOMENET3 via $DROUTE; ip route del $HOMENET2 via $DROUTE; ip route del $HOMENET via $DROUTE; iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT; iptables -D OUTPUT -d $HOMENET -j ACCEPT; iptables -D OUTPUT -d $HOMENET2 -j ACCEPT; iptables -D OUTPUT -d $HOMENET3 -j ACCEPT
 ```
@@ -222,7 +223,7 @@ PreDown = HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; i
 You'll want to copy it and paste it into `/home/user/projects/automation/wireguard/wg0.conf`, right between the `DNS` and `Peer` lines.
 Your file should look something like this by the end:
 
-```conf
+```bash
 [Interface]
 Address = xxx.xxx.xxx.xxx/xxx, abcd:abcd:abcd:abcd:abcd:abcd:abcd:abcd/128
 PrivateKey = private-key
