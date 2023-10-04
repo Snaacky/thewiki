@@ -1,7 +1,7 @@
 ---
 label: Docker automation
 order: -2
-description: Learn how to deploy a Docker stack for common media automation software.
+description: Learn how to deploy a Docker stack for common media automation software
 image: /static/tohsaka.gif
 ---
 
@@ -11,7 +11,8 @@ Docker is a piece of software that allows you to virtualize applications into co
 management and can carry around a solution that's easily deployable anywhere you go.
 
 This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a
-VPN with a killswitch, Sonarr, Radarr, and Jackett.
+VPN with a killswitch, Sonarr, Radarr, and Jackett. While we've opted for Jackett here, you could also switch it out for Prowlarr if you'd
+prefer something more flexible. It's compose file is very similar to Radarr/Sonarr.
 
 ## Installing Docker
 
@@ -117,7 +118,7 @@ services:
       - wireguard
     volumes:
       - './sabnzbd:/config'
-      - '/home/user/data/usenet:/downloads'
+      - '/home/user/data/usenet:/data/usenet'
     network_mode: "service:wireguard"
     restart: unless-stopped
   transmission:
@@ -133,7 +134,7 @@ services:
       - wireguard
     volumes:
       - './transmission:/config'
-      - '/home/user/data/torrents:/downloads'
+      - '/home/user/data/torrents:/data/torrents/'
     network_mode: "service:wireguard"
     restart: unless-stopped
   autobrr:
