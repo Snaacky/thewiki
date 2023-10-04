@@ -4,8 +4,8 @@ order: -5
 description: Learn how and where to find your favorite hentai
 image: https://user-images.githubusercontent.com/78981416/229375640-a48e0150-2558-40f5-b42b-dad17ff6729b.gif
 author:  
-  name: "scourgeofgrozny"
-  link: https://github.com/scourgeofgrozny
+  name: "zeraf1m"
+  link: https://github.com/zeraf1m
   avatar: https://avatars.githubusercontent.com/u/124029849
 ---
 
@@ -47,6 +47,9 @@ author:
 - Requires an E-Hentai account to be logged in to access; if the site remains blank after this, clear your browser's cookies or open a private tab and log in through there. 
 
 - Top place to look for content that may have been taken down from E-Hentai.
+
+[Koshoku](https://ksk.moe/)
+- If neither E-Hentai nor Ex-Hentai have what you're looking for, there's a fair chance it may be on here. This site boasts an ever-growing collection of English-published doujinshi that oftentimes is from a blacklisted publisher on the aforementioned sites.
 
 [Nhentai](https://nhentai.net/) - Scrapes and packages E-Hentai's content into a simple, cleaner design. Preferred by many for its minimalistic feel and easy navigation.
 
