@@ -15,7 +15,10 @@ VPN with a killswitch, Sonarr, Radarr, and Jackett.
 
 ## Installing Docker
 
-First we need to install Docker onto our system. Windows users can do so by downloading [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/), while Linux users can follow the instructions outlined[here](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository), after which they can proceed onto the [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall).
+First we need to install Docker onto our system. Windows users can do so by downloading
+[Docker Desktop](https://docs.docker.com/desktop/install/windows-install/), while Linux users can follow the instructions outlined
+[here](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository), after which they can proceed onto the
+[post-installation steps](https://docs.docker.com/engine/install/linux-postinstall).
 
 ## Setting up a Docker network
 
@@ -41,7 +44,7 @@ We would also recommend sorting your media-related folders in the following way 
 - `/home/user/data/usenet` - where your usenet client will save files.
 - `/home/user/data/media` - where Sonarr and Radarr will hardlink files so that they can be read by Plex/Jellyfin/etc. later on.
 
-```
+```yml
 # Some notes about some important things so so that they don't ned to be repeated for every container.
 #
 # 1. The usage of a VPN
@@ -211,7 +214,7 @@ Now you'll want to take that Wireguard configuration file you got from earlier, 
 
 While we've gotten our VPN working, we still don't have a killswitch yet. That's where this bit comes in.
 
-```
+```conf
 PostUp = DROUTE=$(ip route | grep default | awk '{print $3}'); HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; ip route add $HOMENET3 via $DROUTE; ip route add $HOMENET2 via $DROUTE; ip route add $HOMENET via $DROUTE; iptables -I OUTPUT -d $HOMENET -j ACCEPT; iptables -A OUTPUT -d $HOMENET2 -j ACCEPT; iptables -A OUTPUT -d $HOMENET3 -j ACCEPT; iptables -A OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT
 PreDown = HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; ip route del $HOMENET3 via $DROUTE; ip route del $HOMENET2 via $DROUTE; ip route del $HOMENET via $DROUTE; iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT; iptables -D OUTPUT -d $HOMENET -j ACCEPT; iptables -D OUTPUT -d $HOMENET2 -j ACCEPT; iptables -D OUTPUT -d $HOMENET3 -j ACCEPT
 ```
@@ -219,7 +222,7 @@ PreDown = HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; i
 You'll want to copy it and paste it into `/home/user/projects/automation/wireguard/wg0.conf`, right between the `DNS` and `Peer` lines.
 Your file should look something like this by the end:
 
-```
+```conf
 [Interface]
 Address = xxx.xxx.xxx.xxx/xxx, abcd:abcd:abcd:abcd:abcd:abcd:abcd:abcd/128
 PrivateKey = private-key
