@@ -97,7 +97,7 @@ services:
       - '51820:51820/udp' # Default WireGuard listening port
       - '8080:8080' # SABnzbd UI
       - '9091:9091' # Transmission ui
-	  - '7474:7474' # Autobrr
+	    - '7474:7474' # Autobrr
     dns:
       - 1.1.1.1
     volumes:
@@ -220,8 +220,9 @@ PostUp = DROUTE=$(ip route | grep default | awk '{print $3}'); HOMENET=192.168.1
 PreDown = HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; ip route del $HOMENET3 via $DROUTE; ip route del $HOMENET2 via $DROUTE; ip route del $HOMENET via $DROUTE; iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT; iptables -D OUTPUT -d $HOMENET -j ACCEPT; iptables -D OUTPUT -d $HOMENET2 -j ACCEPT; iptables -D OUTPUT -d $HOMENET3 -j ACCEPT
 ```
 
-You'll want to copy it and paste it into `/home/user/projects/automation/wireguard/wg0.conf`, right between the `DNS` and `Peer` lines.
-Your file should look something like this by the end:
+You'll want to copy it and paste it into `/home/user/projects/automation/wireguard/wg0.conf`, right between the `DNS` and `Peer` lines. You should
+also keep in mind that you need to check what your home network subnet is for `HOMENET`, don't just blindly use the one in the code block as it can
+be different for each person. Your file should look something like this by the end:
 
 ```bash
 [Interface]
