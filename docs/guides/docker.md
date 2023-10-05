@@ -45,6 +45,8 @@ We would also recommend sorting your media-related folders in the following way 
 - `/home/user/data/usenet` - where your usenet client will save files.
 - `/home/user/data/media` - where Sonarr and Radarr will hardlink files so that they can be read by Plex/Jellyfin/etc. later on.
 
+Paths for Docker are extremely important as configuring them incorrectly can break hardlinking and cause you to waste space!
+
 ```yml
 # Some notes about some important things so that they don't need to be repeated for every container.
 #
@@ -98,7 +100,7 @@ services:
       - '51820:51820/udp' # Default WireGuard listening port
       - '8080:8080' # SABnzbd UI
       - '9091:9091' # Transmission ui
-	    - '7474:7474' # Autobrr
+      - '7474:7474' # Autobrr
     dns:
       - 1.1.1.1
     volumes:
@@ -118,7 +120,7 @@ services:
       - wireguard
     volumes:
       - './sabnzbd:/config'
-      - '/home/user/data/usenet:/data/usenet'
+      - '/home/user/data:/data'
     network_mode: "service:wireguard"
     restart: unless-stopped
   transmission:
@@ -134,7 +136,7 @@ services:
       - wireguard
     volumes:
       - './transmission:/config'
-      - '/home/user/data/torrents:/data/torrents/'
+      - '/home/user/data:/data'
     network_mode: "service:wireguard"
     restart: unless-stopped
   autobrr:
