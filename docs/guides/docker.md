@@ -43,7 +43,11 @@ this file being a directory that is purely for this Docker stack, such as `/home
 We would also recommend sorting your media-related folders in the following way for ease of use:
 - `/home/user/data/torrents/` - where you torrent client will save files.
 - `/home/user/data/usenet` - where your usenet client will save files.
-- `/home/user/data/media` - where Sonarr and Radarr will hardlink files so that they can be read by Plex/Jellyfin/etc. later on.
+- `/home/user/data/media` - where your hardlinked files will reside, so that they can be read by your media server (Plex/Jellyfin/etc.)
+  - `/home/user/data/media/tv` - where Sonarr will hardlink files.
+  - `/home/user/data/media/movies` - where Radarr will hardlink files.
+  - You take this concept further and make more subfolders in `media` if you'd like to have one more than one Sonarr or Radarr instance. People
+  sometimes do this if they'd like both a 4K and an HD version of a piece of media, as both the *arrs can only hardlink one version at a time.
 
 Paths for Docker are extremely important as configuring them incorrectly can break hardlinking and cause you to waste space!
 
