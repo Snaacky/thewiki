@@ -3,6 +3,13 @@ label: Docker automation
 order: -2
 description: Learn how to deploy a Docker stack for common media automation software
 image: /static/tohsaka.gif
+author:
+  name: "guyman"
+  avatar: "https://github.com/Snaacky/thewiki/assets/78981416/2045b3c7-90a5-40ce-9d81-a81baa421227"
+  link: "https://github.com/guyman624"
+  name: "bankai_phonk"
+  avatar: "https://avatars.githubusercontent.com/u/144029261?v=4"
+  link: "https://github.com/grutrissheit"
 ---
 
 # Setting up a Docker automation stack
