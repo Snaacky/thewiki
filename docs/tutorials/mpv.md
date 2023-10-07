@@ -84,7 +84,7 @@ Run the following command in your terminal:
 ```sh
 apt install mpv
 ```
-==- 🔧 Installing on Fedora (APT)
+==- 🔧 Installing on Fedora (DNF)
 
 Run the following command in your terminal:
 
