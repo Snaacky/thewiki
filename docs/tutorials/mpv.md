@@ -87,6 +87,16 @@ apt install mpv
 
 ==-
 
+==- 🔧 Installing on Fedora (APT)
+
+Run the following command in your terminal:
+
+```sh
+dnf install mpv
+```
+
+==-
+
 ## Config Overview
 
 By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder named `portable_config` next to where `mpv.exe` is stored can override this location as the config folder.
