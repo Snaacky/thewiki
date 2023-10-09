@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750143316659">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750191650047">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.750143316659" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.750191650047" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.750143316659" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.750191650047" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.750143316659" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.750143316659" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.750191650047" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.750191650047" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -295,6 +295,11 @@ source3 = &quot;ThirdSourceName&quot;
 ##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=3, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
 ##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1, dst_max=120)
 
+## Retagging video to 709 after tonemapping (Otherwise you'll get horrible blue images)
+##clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
+##clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
+##clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
+
 ##Set Colour Range: Marks the clip as limited (0) or full (1) range, DV clips will need to be set to limited after tonemapping.
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
@@ -370,6 +375,7 @@ set_output(clip3, name=source3)</code></pre>
 <p><strong>Trimming:</strong> Often your videos will not be in sync, so you need to cut a certain amount of frames from one of the clips in order for them to match. To easily calculate the value required, navigate to a unique frame such as a scene change in one source, note the frame number, then navigate to the exact same unique frame in your other source and note that frame number, then simply work out the difference between the two numbers, and delay the further ahead video by that amount. Usually, the difference is just 24 black frames at the start. After reloading VS-Preview (Control+R) they should both be perfectly in sync, however, it&#x27;s possible that they may de-sync later on due to small differences in cuts. In those situations, you can either figure out the new delay as you go along (Bolt-Action) or find all the delays first and set the whole clip to be in sync (Auto/Semi-auto). An example of chaining together trims would be <code v-pre>clip4 = clip4[0:8705]+clip4[8706:25894]+clip4[25895:]</code></p>
 <p><strong>Set FPS:</strong> Sometimes you will find that different videos have different frame rates, visible at the bottom left of VS-Preview. This framerate difference usually causes your sources to slowly become more and more out of sync, so you&#x27;ll need to set the FPS of the outlier to make it match the rest. In rarer circumstances VS-Preview will keep the sources in sync despite there being a difference in frame rate, in those scenarios you can ignore this section, but do note that this means that one of the sources either has dropped or duplicated frames, which should be noted when posting the comp.</p>
 <p><strong>Tonemapping:</strong> For HDR or DV content, by default they won&#x27;t display correctly so they need to be tonemapped to SDR to look normal. This filter requires you to uncomment the Convert section mentioned earlier. If the content appears as washed out, it&#x27;s HDR and you should use src_csp=1, if it appears green/purple then it&#x27;s DV and you need to use src_csp=3. Most other values can remain unchanged unless you wish to play around with different tone mapping algorithms. dst_max forces a certain brightness, it can be used to make HDR/DV clips appear brighter for easier comparison to SDR.</p>
+<p><strong>Retagging video to 709 after tonemapping</strong> vs-placebo, which is used for tonemapping, doesn&#x27;t set the right props after tonemapping, so we need to manually set them here so VS-Preview doesn&#x27;t still assume it&#x27;s an HDR video and display the incorrect colors.</p>
 <p><strong>Set Colour Range:</strong> When content has the wrong metadata or you&#x27;re tonemapping a DV clip (needs to be set to limited)</p>
 <p><strong>Gamma:</strong> Allows you to adjust the gamma of the videos, most commonly used to correct what&#x27;s known as the &quot;Gamma bug&quot; that you&#x27;ll sometimes come across, where one source is much brighter than the rest.</p>
 <p><strong>Set Matrix:</strong> If you notice that certain colours are slightly off between sources (Most notably reds/greens/blues) then your source likely has incorrect or missing matrix metadata. Most commonly you encounter this when upscaling content (eg DVDs to 1080p, BDs to 4K) and 4K SDR WEB releases. Generally speaking, HD SDR content (BDs, 720p-4K WEB) should be set as intval=1 (BT.709), SD content (DVDs) should be set as 5 (BT.601), HDR/DV content should be set as intval=9 (BT.2020 NCL). If this does not fix your issue, see below.</p>
