@@ -114,6 +114,11 @@ source3 = "ThirdSourceName"
 ##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=3, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
 ##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1, dst_max=120)
 
+## Retagging video to 709 after tonemapping (Otherwise you'll get horrible blue images)
+##clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
+##clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
+##clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
+
 ##Set Colour Range: Marks the clip as limited (0) or full (1) range, DV clips will need to be set to limited after tonemapping.
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
@@ -196,6 +201,8 @@ When comparing, you will want to go through the different sections, uncommenting
 **Set FPS:** Sometimes you will find that different videos have different frame rates, visible at the bottom left of VS-Preview. This framerate difference usually causes your sources to slowly become more and more out of sync, so you'll need to set the FPS of the outlier to make it match the rest. In rarer circumstances VS-Preview will keep the sources in sync despite there being a difference in frame rate, in those scenarios you can ignore this section, but do note that this means that one of the sources either has dropped or duplicated frames, which should be noted when posting the comp.
 
 **Tonemapping:** For HDR or DV content, by default they won't display correctly so they need to be tonemapped to SDR to look normal. This filter requires you to uncomment the Convert section mentioned earlier. If the content appears as washed out, it's HDR and you should use src_csp=1, if it appears green/purple then it's DV and you need to use src_csp=3. Most other values can remain unchanged unless you wish to play around with different tone mapping algorithms. dst_max forces a certain brightness, it can be used to make HDR/DV clips appear brighter for easier comparison to SDR.
+
+**Retagging video to 709 after tonemapping** vs-placebo, which is used for tonemapping, doesn't set the right props after tonemapping, so we need to manually set them here so VS-Preview doesn't still assume it's an HDR video and display the incorrect colors.
 
 **Set Colour Range:** When content has the wrong metadata or you're tonemapping a DV clip (needs to be set to limited)
 
