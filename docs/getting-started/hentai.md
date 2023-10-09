@@ -48,9 +48,6 @@ author:
 
 - Top place to look for content that may have been taken down from E-Hentai.
 
-[Koshoku](https://ksk.moe/)
-- If neither E-Hentai nor Ex-Hentai have what you're looking for, there's a fair chance it may be on here. This site boasts an ever-growing collection of English-published doujinshi that oftentimes is from a blacklisted publisher on the aforementioned sites.
-
 [Nhentai](https://nhentai.net/) - Scrapes and packages E-Hentai's content into a simple, cleaner design. Preferred by many for its minimalistic feel and easy navigation.
 
 [hitomi](https://hitomi.la/) - Solid nhentai alternative with sizeable amounts of content. Contains a simple yet useful feature within its homepage that allows recently uploaded doujinshi to be filtered by 40+ languages.
