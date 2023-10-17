@@ -24,7 +24,7 @@ Commonly used terminology:
 
 The file name for a release will typically look like one of the following:
 
-![Example File Names of Common Releases](https://files.catbox.moe/hn6135.png)
+![Example file names of common releases](/static/quality/example-releases.png)
 
 Key                                                        | Meaning
 -----------------------------------------------------------|-----------------------------------------------------------
