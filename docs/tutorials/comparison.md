@@ -94,11 +94,11 @@ pip install vspreview
 
 In order to create a comparison, you will need to create a `.vpy` script. This script outlines the parameters and files which [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) will use when generating your comparison.
 
-Create a file called `comp.vpy`. Launch it in your text editor and input the sample script below:
+Create a file called `comp.vpy`. Launch it in your text editor and add to the script based on what you need:
 
-==- :icon-file-code: Initial Script [!badge variant="danger" text="Required"]
+==- :icon-file-code: Initial script [!badge variant="danger" text="Required"]
 
-The basic `comp.vpy` script to get started. This script includes the minimum dependencies and features required to get the best experience out of VSPreview.
+The basic `comp.vpy` script to get started. This script includes the required dependencies and features to run and get the best experience out of VSPreview.
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
@@ -136,9 +136,48 @@ set_output(clip2, name=source2)
 set_output(clip3, name=source3)
 ```
 
-==- :icon-file-code: Cropping and Scaling
+Section             | Description
+--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Dependencies**    | Dependencies required to run [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
+**File paths**      | The location of your source file
+**Source**          | The name of each source. [We recommend following the naming scheme here.](#recommended-source-naming) *If you plan to use [Slowpoke Pics](#slowpoke-pics), this will be the name that will be displayed in comparisons*
+**FrameInfo**       | Lists the frame number, type, and source name in the top left of the videos
+**FrameProp**       | Sets the source name entered under **Source** for correct labelling on [Slowpoke Pics](#slowpoke-pics)
+**Output**          | Parameter to allow clips to appear in [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
+
+==- :icon-play: Playback (frame rate, FieldBased)
+
+#### Frame rate
+
+Sets the source frame rate (fps) based on fractions (`fpsnum`/`fpsden`). For example, `fpsnum=24000` and `fpsden=1000` forces the clip frame rate to 24.000 fps. *This should be used for sources that have different frame rates.*
+
+```py
+## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
+clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
+clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
+clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
+```
+
+#### FieldBased
+
+Sets the content as progressive (`0`) or interlaced (`1`/`2`). *This should be used for incorrectly flagged sources.*
+
+```py
+## FieldBased: Sets the content as either progressive (0) or interlaced (1/2); required for progressive content tagged as interlaced
+clip1 = core.std.SetFieldBased(clip1, 0)
+clip2 = core.std.SetFieldBased(clip2, 1)
+clip3 = core.std.SetFieldBased(clip3, 2)
+```
+
+==- :icon-file-media: Framing (cropping, scaling, trimming)
 
 #### Cropping
+
+Crops the source video by *n* pixels from the selected direction. For example, `left=20` will remove 20 horizonal pixels starting from the left side. *This should be used for sources that use letterboxing or other form of crop.*
+
+!!!warning
+16-bit is required for odd numbers. [Make sure you are using the 16-bit color depth.](#convert)
+!!!
 
 ```py
 ## Cropping: Removes letterboxing (black bars) [16-bit required for odd numbers]
@@ -149,6 +188,8 @@ clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
 
 #### Scaling
 
+Downscales or upscales the video. *This should be used to match multiple sources that have differing resolutions.*
+
 ```py
 ## Scaling: Upscale/downscale clips to match; recommended to scale to the highest resolution
 clip1 = core.resize.Spline36(clip1, 1920, 1080)
@@ -156,9 +197,133 @@ clip2 = core.resize.Spline36(clip2, 1920, 1080)
 clip3 = core.resize.Spline36(clip3, 3840, 2160)
 ```
 
+#### Trimming
+
+Removes the first *n* frames from the source. For example, `[24:]` will skip the first 24 frames and start the source at frame 24. *This should be used when a source is off-sync.*
+
+```py
+## Trimming: Trim frames to match clips (calculate the frame difference and enter the number here)
+clip1 = clip1[0:]
+clip2 = clip2[24:]
+clip3 = clip3[0:]
+```
+
+==- :icon-paintbrush: Color & contrast (depth, tonemapping, range, gamma, matrix, DRC)
+
+#### Depth
+
+Converts the video to a different color depth (16-bit 444) for better precision. *This should only be used with filters that require it, such as [tonemapping](#tonemapping) or [gamma](#gamma).*
+
+```py
+## Depth: Convert clip to 16-bit 444 (only for filters that need it such as tonemapping and gamma fixing)
+clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
+clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
+clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
+```
+
+#### Tonemapping
+
+Sets the source to a different tone map (i.e. HDR/DV -> SDR).
+
+- For washed-out colors on a high-dynamic range (HDR) source, use `src_csp=1`
+- For overly green/purple colors on a Dolby Vision (DV) source, use `src_csp=3`
+
+!!!warning
+16-bit is required. [Make sure you are using the 16-bit color depth.](#convert)
+!!!
+
+!!!
+`dst_max` forces a certain brightness, which can be used to make HDR/DV clips appear brighter for easier comparison to SDR.
+!!!
+
+```py
+## Tonemapping: For HDR/DV content only; src_csp=1 is for HDR/DV Profile 8), src_csp=3 is for DV Profile 5 [16-bit required]
+clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
+clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=3, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
+clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1, dst_max=120)
+```
+
+```py
+## Fix tonemapping: Retags the video to 709 after tonemapping to resolve blue images
+clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
+clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
+clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
+```
+
+#### Range
+
+Sets the color range of the clip as limited (`0`) or full (`1`). *This should be used for sources with incorrect metadata or DV tonemapping (set to limited).*
+
+```py
+## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping.
+clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
+clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
+clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
+```
+
+#### Gamma
+
+Adjusts the brightness level of the video.
+
+!!!warning
+16-bit is required. [Make sure you are using the 16-bit color depth.](#convert)
+!!!
+
+```py
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
+clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+```
+
+#### Matrix
+
+Sets the color gamut to fix the colors of your sources. This is most commonly used on upscaled sources or 4K SDR content. *This should be used on sources with incorrect/missing metadata or colors that are off.*
+
+Generally:
+
+Type                    | Gamut       | Parameter
+------------------------|-------------|-------------
+SDR: BD/WEB (720p - 4K) | BT.709      | `intval=1`
+SDR: DVD                | BT.601      | `intval=5`
+HDR/DV                  | BT.2020 NCL | `intval=9`
+
+```py
+## Matrix: Repairs sources with incorrect/missing metadata; typically used for 4K SDR and upscaled/downscaled content (colors will be off, particularly reds, greens, and blues)
+clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
+clip2 = core.std.SetFrameProp(clip2, prop="_Matrix", intval=6)
+clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
+```
+
+If you are unable to correct the colors with the initial matrix command, apply the additional filters below:
+
+!!!warning
+16-bit is required. [Make sure you are using the 16-bit color depth.](#convert)
+!!!
+
+```py
+## Correct matrix: If the colors cannot be corrected with the matrix command [16-bit required]
+clip1 = core.resize.Point(clip1, matrix=5)
+clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
+clip2 = core.resize.Point(clip2, matrix=6)
+clip2 = core.std.SetFrameProp(clip2, prop="_Matrix", intval=1)
+clip3 = core.resize.Point(clip3, matrix=4)
+clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=1)
+```
+
+#### Double-Range Compression (DRC)
+
+Fixes washed out colors on selected sources.
+
+```py
+## Fix DRC: Repairs sources with very washed out colors
+clip1 = core.resize.Point(clip1, range_in=0, range=1, dither_type="error_diffusion")
+clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
+```
+
 ==-
 
-==- Full `comp.vpy`
+==- :icon-file-code: Full script
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
@@ -177,15 +342,15 @@ source1 = "FirstSourceName"
 source2 = "SecondSourceName"
 source3 = "ThirdSourceName"
 
+## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
+##clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
+##clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
+##clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
+
 ## FieldBased: Sets the content as either progressive (0) or interlaced (1/2); required for progressive content tagged as interlaced
 ##clip1 = core.std.SetFieldBased(clip1, 0)
 ##clip2 = core.std.SetFieldBased(clip2, 1)
 ##clip3 = core.std.SetFieldBased(clip3, 2)
-
-## Convert: Convert clip to 16-bit 444 (only for filters that need it such as tonemapping and gamma fixing)
-##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
-##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
-##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
 ## Cropping: Removes letterboxing (black bars) [16-bit required for odd numbers]
 ##clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
@@ -202,10 +367,10 @@ source3 = "ThirdSourceName"
 ##clip2 = clip2[24:]
 ##clip3 = clip3[0:]
 
-## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
-##clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
-##clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
-##clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
+## Depth: Convert clip to 16-bit 444 (only for filters that need it such as tonemapping and gamma fixing)
+##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
+##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
+##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
 ## Tonemapping: For HDR/DV content only; src_csp=1 is for HDR/DV Profile 8), src_csp=3 is for DV Profile 5 [16-bit required]
 ##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
@@ -222,7 +387,7 @@ source3 = "ThirdSourceName"
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 
-## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) 16-bit required]
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
 ##clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 ##clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 ##clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
@@ -232,7 +397,7 @@ source3 = "ThirdSourceName"
 ##clip2 = core.std.SetFrameProp(clip2, prop="_Matrix", intval=6)
 ##clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
 
-## Correct matrix: If the colors cannot be corrected with the above command [16-bit required]
+## Correct matrix: If the colors cannot be corrected with the matrix command [16-bit required]
 ##clip1 = core.resize.Point(clip1, matrix=5)
 ##clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
 ##clip2 = core.resize.Point(clip2, matrix=6)
@@ -259,32 +424,6 @@ set_output(clip1, name=source1)
 set_output(clip2, name=source2)
 set_output(clip3, name=source3)
 ```
-
-==-
-
-==- :icon-info: Understanding the script
-
-Section             | Description
---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Dependencies**    | Dependencies required to run [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
-**File paths**      | The location of your source file
-**Source**          | The name of each source. [We recommend following the naming scheme here.](/static/comparison/source-name.png) *If you plan to use [Slowpoke Pics](#slowpoke-pics), this will be the name that will be displayed in comparisons*
-**FieldBased**      | Sets the content as progressive or interlaced. *This should be used for incorrectly flagged sources*
-**Convert**         | Converts the video to a different color space for better precision. *This should only be used with a filter that requires it, such as tonemapping*
-**Cropping**        | Crops certain pixels from any side of the video. *This should be used for sources that use letterboxing or other form of crop*
-**Scaling**         | Downscales or upscales the video. *This should be used when using multiple sources that have differing resolutions*
-**Trimming**        | Removes a set number of frames from the source. *This should be used when the source is off-sync*
-**Frame rate**      | Sets the source frame rate. *This should be used for sources that have different frame rates*
-**Tonemapping**     | Sets the source to a different tonemap (e.g. HDR/DV -> SDR). Requires **Convert** parameters to be enabled. *For washed-out colors on HDR, use `src_csp=1.` For green/purple colors in DV, use `src_csp=3`*
-**Fix tonemapping** | Retags the video to 709 after applying tonemapping to resolve blue images
-**Color range**     | Sets the color range for the source. *This should be used for sources with incorrect metadata or DV tonemapping (set to limited)*
-**Gamma**           | Adjusts the gamma of the video
-**Matrix**          | Sets the metadata to fix colors for your sources. [See the guide here.](/static/comparison/matrix.png) *This should be used for sources with colors that are slightly off*
-**Correct Matrix**  | Extra parameters to fix **Matrix**
-**Fix DRC**         | Fixes double range compression washed out sources
-**FrameInfo**       | Lists the frame number, type, and source name in the top left of the videos
-**FrameProp**       | Sets the source name entered under **Source** for correct labelling on [Slowpoke Pics](#slowpoke-pics)
-**Output**          | Parameter to allow clips to appear in [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
 
 ==-
 
@@ -335,10 +474,11 @@ Key | Description
 5   | Source frame rate
 6   | Picture type of current frame
 
-## Creating
+## Comparing
 
 ### Tips
 
+- *[Name your sources clearly to the user](#recommended-source-naming)*
 - Try to capture a large variety of scenes (e.g. low/high detail, bright/dark, low/high motion)
 - Try to capture frames of the same type
   - We recommend taking `P` or `B` type frames
@@ -348,12 +488,12 @@ Key | Description
 ### Basic Keybinds
 
 Key              | Action
------------------|------------------------------------------------------------------------------------------------------
+-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 `Left arrow`     | Move back *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
 `Right arrow`    | Move forward *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
 Number keys      | Switches to source *n* (e.g. `2` switches to `clip2`)
 `Shift` + `S`    | Take and save screenshot of the current frame
-`Ctrl` + `Space` | Mark current frame number for [automatic](#automatic)/[semi-automatic](#semi-automatic) comparisons
+`Ctrl` + `Space` | Mark current frame number for [automatic](#automatic-badge-variant-secondary-text-fastest-option)/[semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons
 
 ### Process
 
@@ -404,6 +544,22 @@ By default, all frames are stored within your working directory unless manually 
 ## QoL Changes
 
 ### VSPreview
+
+==- Recommended source naming
+
+You can name your sources in any way you'd like. However, we recommend trying to follow any of the naming schemes below for better clarity:
+
+![Example source names](/static/comparison/example-sources.png)
+
+Key                                                        | Meaning
+-----------------------------------------------------------|---------------------------------------------
+![#ed8796](https://placehold.co/14x14/ed8796/ed8796.png) 1 | The name of the source/release group
+![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) 2 | The video resolution
+![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) 3 | The video codec
+![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | The file size
+![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | Additional tags, such as scaling or HDR/DV
+
+Depending on what you are trying to compare will depend on how you should name your sources. For example, if you are trying to compare HDR vs. SDR sources, you should include the type in the source name. *Generally, the first three will cover most comparisons you make, and you are free to include more as needed.*
 
 ==- Change frame increment
 
