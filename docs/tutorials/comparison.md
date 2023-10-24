@@ -186,7 +186,7 @@ clip1 = core.vivtc.VDecimate(clip1)
 Crops the source video by *n* pixels from the selected direction. For example, `left=20` will remove 20 horizonal pixels starting from the left side. *This should be used for sources that use letterboxing or other form of crop.*
 
 !!!warning
-16-bit is required for odd numbers. [Make sure you are using the 16-bit color depth.](#convert)
+16-bit is required for odd numbers. [Make sure you are using the 16-bit color depth.](#depth)
 !!!
 
 ```py
@@ -236,7 +236,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 Sets the source to a different tone map (i.e. HDR/DV -> SDR).
 
 !!!warning
-16-bit is required. [Make sure you are using the 16-bit color depth.](#convert)
+16-bit is required. [Make sure you are using the 16-bit color depth.](#depth)
 !!!
 
 You will first need to import the following dependencies at the top of your script:
@@ -287,7 +287,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 Adjusts the brightness level of the video.
 
 !!!warning
-16-bit is required. [Make sure you are using the 16-bit color depth.](#convert)
+16-bit is required. [Make sure you are using the 16-bit color depth.](#depth)
 !!!
 
 ```py
@@ -319,7 +319,7 @@ clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
 If you are unable to correct the colors with the initial matrix command, apply the additional filters below:
 
 !!!warning
-16-bit is required. [Make sure you are using the 16-bit color depth.](#convert)
+16-bit is required. [Make sure you are using the 16-bit color depth.](#depth)
 !!!
 
 ```py
