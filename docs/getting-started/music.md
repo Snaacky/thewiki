@@ -4,8 +4,8 @@ order: -4
 description: Learn how and where to find your favorite music
 image: https://user-images.githubusercontent.com/78981416/215862523-7c39ad32-2656-4e88-81a7-346428bc41f2.gif
 author:  
-  name: "scourgeofgrozny"
-  link: https://github.com/scourgeofgrozny
+  name: "zeraf1m"
+  link: https://github.com/zeraf1m
   avatar: https://avatars.githubusercontent.com/u/124029849
 ---
 

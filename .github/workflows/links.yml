@@ -27,6 +27,7 @@ jobs:
             --exclude '^https://www.amd.com'
             --exclude '^https://exhentai.org'
             --exclude '^https://www.nzbking.com'
+            --exclude '^https://chan.sankakucomplex.com'
             './**/*.md'
 
 #           Public trackers, streaming sites, crunchyroll, kodi, qbittorrent, etc return 403
