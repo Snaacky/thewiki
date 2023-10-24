@@ -145,7 +145,7 @@ Section             | Description
 **FrameProp**       | Sets the source name entered under **Source** for correct labelling on [Slowpoke Pics](#slowpoke-pics)
 **Output**          | Parameter to allow clips to appear in [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
 
-==- :icon-play: Playback (frame rate, FieldBased)
+==- :icon-play: Playback (frame rate, FieldBased, deinterlace)
 
 #### Frame rate
 
@@ -160,13 +160,23 @@ clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
 #### FieldBased
 
-Sets the content as progressive (`0`) or interlaced (`1`/`2`). *This should be used for incorrectly flagged sources.*
+Tags the content as progressive (`0`) or interlaced (`1`/`2`). *This should be used for incorrectly flagged sources.*
 
 ```py
 ## FieldBased: Sets the content as either progressive (0) or interlaced (1/2); required for progressive content tagged as interlaced
 clip1 = core.std.SetFieldBased(clip1, 0)
 clip2 = core.std.SetFieldBased(clip2, 1)
 clip3 = core.std.SetFieldBased(clip3, 2)
+```
+
+#### Deinterlace
+
+Quick deinterlace filter for interlaced clips set in [FieldBased](#fieldbased).
+
+```py
+## Deinterlace: Convert interlaced video to progressive; use for clips marked interlaced in FieldBased
+clip1 = core.vivtc.VFM(clip1, 1)
+clip1 = core.vivtc.VDecimate(clip1)
 ```
 
 ==- :icon-file-media: Framing (cropping, scaling, trimming)
@@ -225,30 +235,41 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
 Sets the source to a different tone map (i.e. HDR/DV -> SDR).
 
-- For washed-out colors on a high-dynamic range (HDR) source, use `src_csp=1`
-- For overly green/purple colors on a Dolby Vision (DV) source, use `src_csp=3`
-
 !!!warning
 16-bit is required. [Make sure you are using the 16-bit color depth.](#convert)
 !!!
 
+You will first need to import the following dependencies at the top of your script:
+
+```py
+## Tonemapping dependencies: Allows for tonemapping filters to work (required)
+from awsmfunc.types.placebo import PlaceboColorSpace as csp
+from awsmfunc.types.placebo import PlaceboTonemapMode as TMmode
+from awsmfunc.types.placebo import PlaceboTonemapFunction as TMfunc
+from awsmfunc.types.placebo import PlaceboGamutMode as GMTmode
+from awsmfunc.types.placebo import PlaceboTonemapOpts as TMopts
+```
+
+After importing the necessary dependencies, apply tonemapping:
+
+- For converting HDR (high-dynamic range) -> SDR, set `source_colorspace=csp.HDR10`
+- For converting DV (Dolby Vision) -> SDR, set `source_colorspace=csp.DOVI`
+
+```py
+## Tonemapping: Sets the source to a different tone map
+## Specify the arguments based on your sources; ideally try to get it as close as possible to the SDR source
+clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
+clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
+clip3args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.Hybrid, tone_map_function=TMfunc.Spline, gamut_mode=GMTmode.Darken, peak_detect=True, use_dovi=True, dst_max=120)
+## Apply tonemapping
+clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
+clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
+clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
+```
+
 !!!
 `dst_max` forces a certain brightness, which can be used to make HDR/DV clips appear brighter for easier comparison to SDR.
 !!!
-
-```py
-## Tonemapping: For HDR/DV content only; src_csp=1 is for HDR/DV Profile 8), src_csp=3 is for DV Profile 5 [16-bit required]
-clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
-clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=3, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
-clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1, dst_max=120)
-```
-
-```py
-## Fix tonemapping: Retags the video to 709 after tonemapping to resolve blue images
-clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
-clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
-clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
-```
 
 #### Range
 
@@ -332,6 +353,13 @@ from vapoursynth import core
 from awsmfunc import FrameInfo
 from vspreview import set_output
 
+## Tonemapping dependencies: Allows for tonemapping filters to work (required)
+##from awsmfunc.types.placebo import PlaceboColorSpace as csp
+##from awsmfunc.types.placebo import PlaceboTonemapMode as TMmode
+##from awsmfunc.types.placebo import PlaceboTonemapFunction as TMfunc
+##from awsmfunc.types.placebo import PlaceboGamutMode as GMTmode
+##from awsmfunc.types.placebo import PlaceboTonemapOpts as TMopts
+
 ## File paths: Hold shift and right-click your file, select copy as path, and paste it here
 clip1 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
 clip2 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
@@ -351,6 +379,10 @@ source3 = "ThirdSourceName"
 ##clip1 = core.std.SetFieldBased(clip1, 0)
 ##clip2 = core.std.SetFieldBased(clip2, 1)
 ##clip3 = core.std.SetFieldBased(clip3, 2)
+
+## Deinterlace: Convert interlaced video to progressive; use for clips marked interlaced in FieldBased
+##clip1 = core.vivtc.VFM(clip1, 1)
+##clip1 = core.vivtc.VDecimate(clip1)
 
 ## Cropping: Removes letterboxing (black bars) [16-bit required for odd numbers]
 ##clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
@@ -372,15 +404,15 @@ source3 = "ThirdSourceName"
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
-## Tonemapping: For HDR/DV content only; src_csp=1 is for HDR/DV Profile 8), src_csp=3 is for DV Profile 5 [16-bit required]
-##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
-##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=3, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
-##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1, dst_max=120)
-
-## Fix tonemapping: Retags the video to 709 after tonemapping to resolve blue images
-##clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
-##clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
-##clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
+## Tonemapping: Sets the source to a different tone map
+## Specify the arguments based on your sources; ideally try to get it as close as possible to the SDR source
+##clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
+##clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
+##clip3args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.Hybrid, tone_map_function=TMfunc.Spline, gamut_mode=GMTmode.Darken, peak_detect=True, use_dovi=True, dst_max=120)
+## Apply tonemapping
+##clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
+##clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
+##clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
 
 ## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping.
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
