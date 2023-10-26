@@ -79,7 +79,7 @@ Do not under any circumstances ask people to invite you. This is forbidden by pr
 
 - You can find detailed explanations on each option flag [here](https://sox.sourceforge.net/sox.html) as well a plethora of additional ones to fine-tune your spectrogram to your desire.
 
-- If you're looking for something that can produce spectrograms of various files and directories quickly, [sox-spectrogram](https://https://github.com/zeraf1m/sox-spectrogram) is a GitHub repo containing a useful script that takes away most of the heavy lifting. Feel free to fork or download the source code and customize it to fit your own uses and preferences.
+- If you're looking for something that can produce spectrograms of various files and directories quickly, [sox-spectrogram](https://github.com/zeraf1m/sox-spectrogram) is a GitHub repo containing a useful script that takes away most of the heavy lifting. Feel free to fork or download the source code and customize it to fit your own uses and preferences.
 
 ## Comprehensive Guides
 
