@@ -134,7 +134,7 @@ MKVToolNix allows you to set crop values for the video stream. This is quite hel
 Advantages of cropping and why you should do it:
 
 - Cropping black bars allows the video to fill the entire screen. A couple of common examples would be letterboxed content on ultrawide displays or pillarboxed content on 4:3 displays, where black bars would otherwise prevent the video from filling the entire screen
-- On 16:9 displays where cropping would result in black bars regardless, it's still beneficial because it avoids dirty lines caused by scaling
+- On 16:9 displays where cropping would result in black bars regardless, it's still beneficial because it avoids [dirty lines](https://silentaperture.gitlab.io/mdbook-guide/filtering/dirty_lines.html) caused by scaling
 
 Cropping is quite simple via the MKVToolNixGUI, simply click on the video stream, go to the `Properties` tab on the right, and then navigate to the `Video Properties`.
 
