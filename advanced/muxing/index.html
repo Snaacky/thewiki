@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751653845370">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751825680187">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,23 +21,23 @@
     <meta property="og:url" content="https://thewiki.moe/advanced/muxing/">
     <meta property="og:title" content="Muxing">
     <meta property="og:description" content="Muxing files with MKVToolNix">
-    <meta property="og:image" content="https://thewiki.moe/static/muxing/mkvtoolnix.png">
+    <meta property="og:image" content="https://thewiki.moe/static/muxing/muxingembed.gif">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/advanced/muxing/">
     <meta property="twitter:title" content="Muxing">
     <meta property="twitter:description" content="Muxing files with MKVToolNix">
-    <meta property="twitter:image" content="https://thewiki.moe/static/muxing/mkvtoolnix.png">
+    <meta property="twitter:image" content="https://thewiki.moe/static/muxing/muxingembed.gif">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.751653845370" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.751825680187" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751653845370" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751825680187" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751653845370" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.751653845370" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751825680187" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.751825680187" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,13 +221,6 @@ You&#x27;ll see 3 tabs here:</p>
 </div>
 </li>
 </ol>
-<doc-anchor-target id="fonts">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fonts">#</doc-anchor-trigger>
-        <span>Fonts</span>
-    </h3>
-</doc-anchor-target>
-<p>Fonts used by the <code v-pre>.ass</code> subtitles must be attached to the <code v-pre>.mkv</code> file for displaying subtitles accurately on the user&#x27;s end. This can be easily done by dragging the fonts used by the <code v-pre>.ass</code> file into the <code v-pre>attachments</code> tab. You can usually source the correct fonts from the same fansub release you got the subtitles from. You can also get the fonts used by the <code v-pre>.ass</code> file with <a href="https://github.com/arch1t3cht/Aegisub">Aegisub</a> or <a href="https://github.com/moi15moi/FontCollector">FontCollector</a> if you have them on your system already.</p>
 <doc-anchor-target id="correct-tagging">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#correct-tagging">#</doc-anchor-trigger>
@@ -357,7 +350,8 @@ You&#x27;ll see 3 tabs here:</p>
         </div>
     </div>
 </div>
-<p><strong>Command to tag everything properly for an existing file without remuxing (assuming the order of tracks is correct):</strong></p>
+<doc-panel id="command-to-tag-everything-properly-for-an-existing-file-without-remuxing-assuming-the-order-of-tracks-is-correct" collapsed>
+    <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.25 12a.75.75 0 0 1-.22.53l-2.75 2.75a.75.75 0 0 1-1.06-1.06L7.44 12 5.22 9.78a.75.75 0 1 1 1.06-1.06l2.75 2.75c.141.14.22.331.22.53Zm2 2a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z"/><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"/></g></g></svg> Command to tag everything properly for an existing file without remuxing (assuming the order of tracks is correct)</template>
 <doc-tabs>
 <doc-tab v-cloak id="windows">
 <template #title>Windows</template>
@@ -388,6 +382,70 @@ done</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
+</doc-panel>
+<doc-anchor-target id="fonts">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fonts">#</doc-anchor-trigger>
+        <span>Fonts</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <a href="../../static/muxing/mkvtoolnix6.png">
+        <img src="../../static/muxing/mkvtoolnix6.png" alt="Font attachments">
+    </a>
+    <figcaption class="caption">Font attachments</figcaption>
+</figure>
+</p>
+<p>Fonts used by the <code v-pre>.ass</code> subtitles must be attached to the <code v-pre>.mkv</code> file for displaying subtitles accurately on the user&#x27;s end. This can be easily done by dragging the fonts used by the <code v-pre>.ass</code> file into the <code v-pre>attachments</code> tab. You can usually source the correct fonts from the same fansub release you got the subtitles from. You can also get the fonts used by the <code v-pre>.ass</code> file with <a href="https://github.com/arch1t3cht/Aegisub">Aegisub</a> or <a href="https://github.com/moi15moi/FontCollector">FontCollector</a> if you have them on your system already.</p>
+<doc-anchor-target id="mkv-cropping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mkv-cropping">#</doc-anchor-trigger>
+        <span>MKV Cropping</span>
+    </h3>
+</doc-anchor-target>
+<p>MKVToolNix allows you to set crop values for the video stream. This is quite helpful for cropping black bars without having to encode. Players that support MKV crop values, such as mpv, will display the video as intended (without black bars), while players that do not support these values will continue to play it normally (with black bars) without any adverse effects.</p>
+<p>Advantages of cropping and why you should do it:</p>
+<ul>
+<li>Cropping black bars allows the video to fill the entire screen. A couple of common examples would be letterboxed movies on ultrawide displays or SD content on 4:3 displays, where black bars would otherwise prevent the video from filling the entire screen</li>
+<li>On 16:9 displays where cropping would result in black bars regardless, it&#x27;s still beneficial because it avoids dirty lines caused by scaling</li>
+</ul>
+<p>Cropping is quite simple via the MKVToolNixGUI, simply click on the video stream, go to the <code v-pre>Properties</code> tab on the right, and then navigate to the <code v-pre>Video Properties</code>.</p>
+<p><figure class="content-center">
+    <a href="../../static/muxing/mkvcropping1.png">
+        <img src="../../static/muxing/mkvcropping1.png" alt="The crop values are ordered as follows: LEFT, TOP, RIGHT, BOTTOM">
+    </a>
+    <figcaption class="caption">The crop values are ordered as follows: <code v-pre>LEFT</code>, <code v-pre>TOP</code>, <code v-pre>RIGHT</code>, <code v-pre>BOTTOM</code></figcaption>
+</figure>
+</p>
+<p>Here&#x27;s an example of said feature in action:</p>
+<p><figure class="content-center">
+    <a href="../../static/muxing/mkvcropping2.png">
+        <img src="../../static/muxing/mkvcropping2.png" alt="Uncropped">
+    </a>
+    <figcaption class="caption">Uncropped</figcaption>
+</figure>
+</p>
+<p><figure class="content-center">
+    <a href="../../static/muxing/mkvcropping3.png">
+        <img src="../../static/muxing/mkvcropping3.png" alt="MKV Cropped">
+    </a>
+    <figcaption class="caption">MKV Cropped</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="container-delays">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#container-delays">#</doc-anchor-trigger>
+        <span>Container Delays</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <a href="../../static/muxing/mkvtoolnix5.png">
+        <img src="../../static/muxing/mkvtoolnix5.png" alt="Container Delay">
+    </a>
+    <figcaption class="caption">Container Delay</figcaption>
+</figure>
+</p>
+<p>MKVToolNix allows you to set positive or negative delays on each track in order to synchronize them with the designated video track. This is usually the easiest way to sync different tracks together, but you should be careful with it. Avoid delays exceeding 1000ms, as they may lead to playback problems on different media players. Instead, consider syncing each track using their specific tools and only utilize container delays for smaller adjustments as a final resort.</p>
 
                                 
                                 <!-- Required only on API pages -->
