@@ -140,6 +140,10 @@ Cropping is quite simple via the MKVToolNixGUI, simply click on the video stream
 
 [![The crop values are ordered as follows: `LEFT`, `TOP`, `RIGHT`, `BOTTOM`](/static/muxing/mkvcropping1.png)](/static/muxing/mkvcropping1.png)
 
+Alternatively, you can use the `Header Editor` in the left pane to add the crop values and then press `CTRL+S` to save without the need to remux the file.
+
+[![MKVToolNixGUI Header Editor](/static/muxing/mkvtoolnix_header_editor.png)](/static/muxing/mkvtoolnix_header_editor.png)
+
 Here's an example of said feature in action:
 
 [![Uncropped](/static/muxing/mkvcropping2.png)](/static/muxing/mkvcropping2.png)
