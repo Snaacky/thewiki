@@ -136,13 +136,13 @@ Advantages of cropping and why you should do it:
 - Cropping black bars allows the video to fill the entire screen. A couple of common examples would be letterboxed content on ultrawide displays or pillarboxed content on 4:3 displays, where black bars would otherwise prevent the video from filling the entire screen
 - On 16:9 displays where cropping would result in black bars regardless, it's still beneficial because it avoids [dirty lines](https://silentaperture.gitlab.io/mdbook-guide/filtering/dirty_lines.html) caused by scaling
 
-Cropping is quite simple via the MKVToolNixGUI, simply click on the video stream, go to the `Properties` tab on the right, and then navigate to the `Video Properties`.
+Cropping is quite simple via the MKVToolNix GUI, simply click on the video stream, go to the `Properties` tab on the right, and then navigate to the `Video Properties`.
 
 [![The crop values are ordered as follows: `LEFT`, `TOP`, `RIGHT`, `BOTTOM`](/static/muxing/mkvcropping1.png)](/static/muxing/mkvcropping1.png)
 
 Alternatively, you can use the `Header Editor` in the left pane to add the crop values and then press `CTRL+S` to save without the need to remux the file.
 
-[![MKVToolNixGUI Header Editor](/static/muxing/mkvtoolnix_header_editor.png)](/static/muxing/mkvtoolnix_header_editor.png)
+[![MKVToolNix GUI Header Editor](/static/muxing/mkvtoolnix_header_editor.png)](/static/muxing/mkvtoolnix_header_editor.png)
 
 Here's an example of said feature in action:
 
