@@ -39,7 +39,7 @@ Do not under any circumstances ask people to invite you. This is forbidden by pr
   
   +++
 
-- (Recommended) Spectrogram generation can be achieved using popular audio command-line utility [SoX](https://sox.sourceforge.net/). Some basic options to generate spectrograms like the ones shown above are:
+- (Recommended) Spectrogram generation can be achieved using popular audio command-line utility [SoX](https://sourceforge.net/projects/sox/files/sox/14.4.2/). Some basic options to generate spectrograms like the ones shown above are:
 
   +++ Full Size
   
@@ -77,7 +77,7 @@ Do not under any circumstances ask people to invite you. This is forbidden by pr
   
 - How this works, in a nutshell, is that the user's input audio file gets downmixed into a singular channel with `remix 1`, followed by the input track being replaced with a null file by flag `-n` (since spectrogram is a command that returns audio information and does not modify it, the audio itself isn't needed for much else). `-X,`, `-y`, and `-z` is used to specify the spectrogram's dimensions, where `X` is the length, `y` is the height (both in pixels), and `z` is the range in decibels. `-w Kaiser` produces the spectrogram calculated with the Kaiser window function. `-S` and `-d` are options that allow for the analysis of audio snippets, where S is the start and d is the end of the audio snippet. Finally, `-o "filename"` changes the name of the spectrogram.
 
-- You can find detailed explanations on each option flag [here](https://sox.sourceforge.net/sox.html) as well a plethora of additional ones to fine-tune your spectrogram to your desire.
+- You can find detailed explanations on each option flag [here](https://sourceforge.net/projects/sox/files/sox/14.4.2/) as well a plethora of additional ones to fine-tune your spectrogram to your desire.
 
 - If you're looking for something that can produce spectrograms of various files and directories quickly, [sox-spectrogram](https://github.com/zeraf1m/sox-spectrogram) is a GitHub repo containing a useful script that takes away most of the heavy lifting. Feel free to fork or download the source code and customize it to fit your own uses and preferences.
 
