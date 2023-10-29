@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751923020476">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751923476069">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.751923020476" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.751923476069" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751923020476" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751923476069" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751923020476" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.751923020476" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751923476069" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.751923476069" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -327,22 +327,19 @@
         <span>Linux</span>
     </h3>
 </doc-anchor-target>
-<doc-panels>
-   <doc-panel id="installing-on-ubuntu-debian-apt" collapsed>
-       <template #title><span class="docs-emoji">&#x1F527;</span> Installing on Ubuntu/Debian (APT)</template>
-<p>Run the following command in your terminal:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">apt install mpv</code></pre>
-</doc-codeblock></div>
-   </doc-panel>
-   <doc-panel id="installing-on-fedora-dnf" collapsed>
-       <template #title><span class="docs-emoji">&#x1F527;</span> Installing on Fedora (DNF)</template>
-<p>Run the following command in your terminal:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">dnf install mpv</code></pre>
-</doc-codeblock></div>
-   </doc-panel>
-</doc-panels>
+<p>Distributions usually package outdated, unmaintained, and unsupported versions of mpv. This is especially true for popular distros like Debian and Ubuntu. You are recommended to use mpv-build or third-party packages instead.</p>
+<doc-panel id="installing-on-various-distributions" collapsed>
+    <template #title><span class="docs-emoji">&#x1F527;</span> Installing on various distributions</template>
+<p>All of these packages are unofficial:</p>
+<ul>
+<li><a href="https://archlinux.org/packages/extra/x86_64/mpv/">Arch (official package)</a></li>
+<li><a href="https://packages.gentoo.org/packages/media-video/mpv">Gentoo (official package)</a></li>
+<li><a href="https://aur.archlinux.org/packages/mpv-git/">Arch (AUR, git package)</a></li>
+<li><a href="https://aur.archlinux.org/packages/mpv-build-git/">Arch (AUR, mpv-build package)</a></li>
+<li><a href="https://deb-multimedia.org/dists/testing/main/binary-amd64/package/mpv">Debian multimedia</a></li>
+<li><a href="https://fruit.je/apt">Ubuntu and Debian (apt repository)</a></li>
+</ul>
+</doc-panel>
 <doc-anchor-target id="config-overview">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#config-overview">#</doc-anchor-trigger>
