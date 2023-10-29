@@ -50,7 +50,7 @@ vsrepo.py install dovi_library
 - If asked, overwite the old `libvslsmashsource.dll` with the new version
 ===
 
-Install [vs-preview](https://github.com/Irrational-Encoding-Wizardry/vs-preview):
+Install [vs-preview](https://github.com/Setsugennoao/vs-preview):
 
 ```powershell
 pip install vspreview
