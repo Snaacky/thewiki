@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751921507518">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751921796835">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.751921507518" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.751921796835" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751921507518" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751921796835" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751921507518" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.751921507518" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751921796835" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.751921796835" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,7 +221,7 @@
 </doc-tab>
 </doc-tabs>
 </li>
-<li><p>(Recommended) Spectrogram generation can be achieved using popular audio command-line utility <a href="https://sox.sourceforge.net/">SoX</a>. Some basic options to generate spectrograms like the ones shown above are:</p>
+<li><p>(Recommended) Spectrogram generation can be achieved using popular audio command-line utility <a href="https://sourceforge.net/projects/sox/files/sox/14.4.2/">SoX</a>. Some basic options to generate spectrograms like the ones shown above are:</p>
 <doc-tabs>
 <doc-tab v-cloak id="full-size">
 <template #title>Full Size</template>
@@ -257,7 +257,7 @@
 </li>
 <li><p>How this works, in a nutshell, is that the user&#x27;s input audio file gets downmixed into a singular channel with <code v-pre>remix 1</code>, followed by the input track being replaced with a null file by flag <code v-pre>-n</code> (since spectrogram is a command that returns audio information and does not modify it, the audio itself isn&#x27;t needed for much else). <code v-pre>-X,</code>, <code v-pre>-y</code>, and <code v-pre>-z</code> is used to specify the spectrogram&#x27;s dimensions, where <code v-pre>X</code> is the length, <code v-pre>y</code> is the height (both in pixels), and <code v-pre>z</code> is the range in decibels. <code v-pre>-w Kaiser</code> produces the spectrogram calculated with the Kaiser window function. <code v-pre>-S</code> and <code v-pre>-d</code> are options that allow for the analysis of audio snippets, where S is the start and d is the end of the audio snippet. Finally, <code v-pre>-o &quot;filename&quot;</code> changes the name of the spectrogram.</p>
 </li>
-<li><p>You can find detailed explanations on each option flag <a href="https://sox.sourceforge.net/sox.html">here</a> as well a plethora of additional ones to fine-tune your spectrogram to your desire.</p>
+<li><p>You can find detailed explanations on each option flag <a href="https://sourceforge.net/projects/sox/files/sox/14.4.2/">here</a> as well a plethora of additional ones to fine-tune your spectrogram to your desire.</p>
 </li>
 <li><p>If you&#x27;re looking for something that can produce spectrograms of various files and directories quickly, <a href="https://github.com/zeraf1m/sox-spectrogram">sox-spectrogram</a> is a GitHub repo containing a useful script that takes away most of the heavy lifting. Feel free to fork or download the source code and customize it to fit your own uses and preferences.</p>
 </li>
