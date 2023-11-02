@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752103384854">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752270692510">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,22 +21,22 @@
     <meta property="og:url" content="https://thewiki.moe/tutorials/splittunnel/">
     <meta property="og:title" content="Split Tunneling on Any VPN (Wireguard)">
     <meta property="og:description" content="Split tunneling on any Wireguard VPN">
-    <meta property="og:image" content="https://github.com/guyman624/thewiki/assets/82007920/d2ba5e4f-ecdd-422e-b645-dd8d76635861">
+    <meta property="og:image" content="https://thewiki.moe/static/tutorials/wireguard.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/tutorials/splittunnel/">
     <meta property="twitter:title" content="Split Tunneling on Any VPN (Wireguard)">
     <meta property="twitter:description" content="Split tunneling on any Wireguard VPN">
-    <meta property="twitter:image" content="https://github.com/guyman624/thewiki/assets/82007920/d2ba5e4f-ecdd-422e-b645-dd8d76635861">
+    <meta property="twitter:image" content="https://thewiki.moe/static/tutorials/wireguard.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.752103384854" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.752270692510" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.752103384854" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.752270692510" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.752103384854" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.752270692510" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,7 +188,7 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li><p>Download WireSockUI. Extract the exe and config file to a folder where it wont be deleted by accident.</p>
+<li><p>Download WireSockUI. Extract the exe and config file to a folder where it wont be deleted by accident</p>
 </li>
 <li><p>Run the program</p>
 </li>
@@ -196,36 +196,30 @@
 </li>
 <li><p>In settings, enable <code v-pre>Virtual Network Adapter mode</code> and click save</p>
 </li>
-<li><p>Now click Add Tunnel (bottom left). Browse for your VPN configuration file.</p>
+<li><p>Now click Add Tunnel (bottom left). Browse for your VPN configuration file</p>
 </li>
 <li><p>Select your configuration and click Edit at the bottom right of the window</p>
 </li>
-<li><p>A text file should open. Add <code v-pre>AllowedApps = qbittorrent</code> to the bottom of this file, then click Save. If you would like to add more programs, add a comma and a space. For example, <code v-pre>AllowedApps = qbittorrent, firefox</code><img src="https://github.com/guyman624/thewiki/assets/82007920/d2ba5e4f-ecdd-422e-b645-dd8d76635861" alt="image" />
-7a. If instead of whitlisting only qBittorrent, you would prefer blacklisting other applications, for example have everything route through the VPN except the browser, you can instead use something like <code v-pre>DisallowedApps = firefox</code> or <code v-pre>DisallowedApps = chrome</code>.</p>
+<li><p>A text file should open. Add <code v-pre>AllowedApps = qbittorrent</code> to the bottom of this file, then click Save. If you would like to add more programs, add a comma and a space. For example, <code v-pre>AllowedApps = qbittorrent, firefox</code>
+<img src="https://github.com/guyman624/thewiki/assets/82007920/d2ba5e4f-ecdd-422e-b645-dd8d76635861" alt="image" />
+7a. If instead of whitlisting only qBittorrent, you would prefer blacklisting other applications, for example have everything route through the VPN except the browser, you can instead use something like <code v-pre>DisallowedApps = firefox</code> or <code v-pre>DisallowedApps = chrome</code></p>
 </li>
 <li><p>Activate the tunnel</p>
 </li>
 </ol>
 <p>At this point, you should be torrenting through the VPN as long as WireSockUI is running and Activated. However, you may be concered about accidentally disabling the VPN while a torrent is running. To fix this, we can change a setting in qBittorrent.</p>
 <ol>
-<li><p>Open qBittorrent settings</p>
-</li>
-<li><p>On the left hand bar, click Advanced</p>
-</li>
-<li><p>Look for <code v-pre>Network Interface</code>. The default setting is <code v-pre>Any Interface</code></p>
-</li>
-<li><p>Expand the drop down. If you are lucky, the correct interface will be <code v-pre>Local Area Connection</code>. If you have more than one <code v-pre>Local Area Connection</code>, continue on. If you don&#x27;t, skip to step 8.</p>
-</li>
-<li><p>Press Windows + R key together. Paste in <code v-pre>ncpa.cpl</code></p>
-</li>
-<li><p>In the window that shows up, you should see all your network adapters, including virtual ones. Find the one that says <code v-pre>WireSock Virtual Adapter</code> on the third line. Write down it&#x27;s name, or rename it to WireSock.<img src="https://github.com/guyman624/thewiki/assets/82007920/f17e1c3c-1ca8-4d3d-b98b-edce36b5b6da" alt="image" /></p>
-</li>
-<li><p>Back in qBittorrent, look at <code v-pre>Network Interface</code>. You may have to close and open the settings window if you renamed the adapter to WireSock.</p>
-</li>
-<li><p>Set <code v-pre>Network Interface</code> to <code v-pre>WireSock</code> or <code v-pre>Local Area Network x</code> or whatever other name you wrote down.<img src="https://github.com/guyman624/thewiki/assets/82007920/5125b8de-309c-425a-b1a0-70ca1b775081" alt="image" /></p>
-</li>
-<li><p>Hit Apply then OK.</p>
-</li>
+<li>Open qBittorrent settings</li>
+<li>On the left hand bar, click Advanced</li>
+<li>Look for <code v-pre>Network Interface</code>. The default setting is <code v-pre>Any Interface</code></li>
+<li>Expand the drop down. If you are lucky, the correct interface will be <code v-pre>Local Area Connection</code>. If you have more than one <code v-pre>Local Area Connection</code>, continue on. If you don&#x27;t, skip to step 8</li>
+<li>Press Windows + R key together. Paste in <code v-pre>ncpa.cpl</code></li>
+<li>In the window that shows up, you should see all your network adapters, including virtual ones. Find the one that says <code v-pre>WireSock Virtual Adapter</code> on the third line. Write down it&#x27;s name, or rename it to WireSock
+<img src="https://github.com/guyman624/thewiki/assets/82007920/f17e1c3c-1ca8-4d3d-b98b-edce36b5b6da" alt="image" /></li>
+<li>Back in qBittorrent, look at <code v-pre>Network Interface</code>. You may have to close and open the settings window if you renamed the adapter to WireSock</li>
+<li>Set <code v-pre>Network Interface</code> to <code v-pre>WireSock</code> or <code v-pre>Local Area Network x</code> or whatever other name you wrote down
+<img src="https://github.com/guyman624/thewiki/assets/82007920/5125b8de-309c-425a-b1a0-70ca1b775081" alt="image" /></li>
+<li>Hit Apply then OK</li>
 </ol>
 <p>You should be properly configured now. If you would like to test your configuration, continue on.</p>
 <doc-anchor-target id="testing-split-tunneling">
@@ -236,10 +230,10 @@
 </doc-anchor-target>
 <ol>
 <li>Go to <a href="https://ipleak.net">ipleak.net</a></li>
-<li>At the top, you should see your home ip address. Remember this.</li>
-<li>Scroll down to <code v-pre>Torrent Address detection</code>. Click Activate.</li>
-<li>Click the <code v-pre>this Magnet Link</code> button and add the torrent to qbittorrent.</li>
-<li>Wait a few minutes. ipleak should show some ip addresses under the torrent section.</li>
+<li>At the top, you should see your home ip address. Remember this</li>
+<li>Scroll down to <code v-pre>Torrent Address detection</code>. Click Activate</li>
+<li>Click the <code v-pre>this Magnet Link</code> button and add the torrent to qbittorrent</li>
+<li>Wait a few minutes. ipleak should show some ip addresses under the torrent section</li>
 <li>Compare both the IPv4 and IPv6 that show up to the ones that show at the top for your home IP. If it is different, congratulations! You have successfully set up split tunneling!
 <figure class="content-center">
     <img src="https://github.com/guyman624/thewiki/assets/82007920/c2ceef0d-5858-4dcd-b951-0c73bfc7e4e7" alt="image">
