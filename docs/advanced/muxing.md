@@ -1,6 +1,7 @@
 ---
 label: Muxing
 description: Muxing files with MKVToolNix
+image: /static/muxing/muxingembed.gif
 order: -2
 ---
 
@@ -31,7 +32,6 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
 
    [![](/static/muxing/mkvtoolnix.png)](/static/muxing/mkvtoolnix.png)
 
-
 2. You can either right-click anywhere in the top "Source Files" box or drag and drop your file in it.
 
    - Once you add your source file, all the tracks in your file will show up in the box below, along with other relevant things in each tab. 
@@ -49,10 +49,6 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
    !!!
    MKVToolNix also allows you to [generate a commandline](/static/muxing/mkvtoolnix4.png) with all the changes you made in the GUI.
    !!!
-
-### Fonts
-
-Fonts used by the `.ass` subtitles must be attached to the `.mkv` file for displaying subtitles accurately on the user's end. This can be easily done by dragging the fonts used by the `.ass` file into the `attachments` tab. You can usually source the correct fonts from the same fansub release you got the subtitles from. You can also get the fonts used by the `.ass` file with [Aegisub](https://github.com/arch1t3cht/Aegisub) or [FontCollector](https://github.com/moi15moi/FontCollector) if you have them on your system already.
 
 ### Correct Tagging
 
@@ -92,8 +88,9 @@ Here's an example of what a properly tagged file would look like:
 Newer mkvtoolnix versions automatically set the default flag to `yes` on all streams. This is technically the correct use for the flag but all players do not have the intended results with this kind of tagging.
 !!!
 
-**Command to tag everything properly for an existing file without remuxing (assuming the order of tracks is correct):**
+==- :icon-terminal: Command to tag everything properly for an existing file without remuxing (assuming the order of tracks is correct)
 +++ Windows
+
 ```batch
 for %X in (*.mkv) do mkvpropedit "%X" --add-track-statistics-tags --edit info --delete title ^
 --edit track:v1 --set name="Encode Group"              --set language=jpn --set flag-default=1 ^
@@ -104,7 +101,9 @@ for %X in (*.mkv) do mkvpropedit "%X" --add-track-statistics-tags --edit info --
 --edit track:s3 --set name="Signs/Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 ^
 --edit track:s4 --set name="Full Subtitles [Official]" --set language=eng --set flag-default=0 --set flag-forced=0
 ```
+
 +++ Linux
+
 ```shell
 for file in *.mkv; do
   mkvpropedit "${file}" --add-track-statistics-tags --edit info --delete title \
@@ -117,4 +116,42 @@ for file in *.mkv; do
   --edit track:s4 --set name="Full Subtitles [Official]" --set language=eng --set flag-default=0 --set flag-forced=0
 done
 ```
+
 +++
+
+===
+
+### Fonts
+
+[![Font attachments](/static/muxing/mkvtoolnix6.png)](/static/muxing/mkvtoolnix6.png)
+
+Fonts used by the `.ass` subtitles must be attached to the `.mkv` file for displaying subtitles accurately on the user's end. This can be easily done by dragging the fonts used by the `.ass` file into the `attachments` tab. You can usually source the correct fonts from the same fansub release you got the subtitles from. You can also get the fonts used by the `.ass` file with [Aegisub](https://github.com/arch1t3cht/Aegisub) or [FontCollector](https://github.com/moi15moi/FontCollector) if you have them on your system already.
+
+### MKV Cropping
+
+MKVToolNix allows you to set crop values for the video stream. This is quite helpful for cropping black bars without having to encode. Players that support MKV crop values, such as mpv, will display the video as intended (without black bars), while players that do not support these values will continue to play it normally (with black bars) without any adverse effects.
+
+Advantages of cropping and why you should do it:
+
+- Cropping black bars allows the video to fill the entire screen. A couple of common examples would be letterboxed content on ultrawide displays or pillarboxed content on 4:3 displays, where black bars would otherwise prevent the video from filling the entire screen
+- On 16:9 displays where cropping would result in black bars regardless, it's still beneficial because it avoids [dirty lines](https://silentaperture.gitlab.io/mdbook-guide/filtering/dirty_lines.html) caused by scaling
+
+Cropping is quite simple via the MKVToolNix GUI, simply click on the video stream, go to the `Properties` tab on the right, and then navigate to the `Video Properties`.
+
+[![The crop values are ordered as follows: `LEFT`, `TOP`, `RIGHT`, `BOTTOM`](/static/muxing/mkvcropping1.png)](/static/muxing/mkvcropping1.png)
+
+Alternatively, you can use the `Header Editor` in the left pane to add the crop values and then press `CTRL+S` to save without the need to remux the file.
+
+[![MKVToolNix GUI Header Editor](/static/muxing/mkvtoolnix_header_editor.png)](/static/muxing/mkvtoolnix_header_editor.png)
+
+Here's an example of said feature in action:
+
+[![Uncropped](/static/muxing/mkvcropping2.png)](/static/muxing/mkvcropping2.png)
+
+[![MKV Cropped](/static/muxing/mkvcropping3.png)](/static/muxing/mkvcropping3.png)
+
+### Container Delays
+
+[![Container Delay](/static/muxing/mkvtoolnix5.png)](/static/muxing/mkvtoolnix5.png)
+
+MKVToolNix allows you to set positive or negative delays on each track in order to synchronize them with the designated video track. This is usually the easiest way to sync different tracks together, but you should be careful with it. Avoid delays exceeding 1000ms, as they may lead to playback problems on different media players. Instead, consider syncing each track using their specific tools and only utilize container delays for smaller adjustments as a final resort.

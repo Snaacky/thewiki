@@ -77,13 +77,17 @@ brew install mpv
 
 ### Linux
 
-==- 🔧 Installing on Ubuntu/Debian (APT)
+Distributions usually package outdated, unmaintained, and unsupported versions of mpv. This is especially true for popular distros like Debian and Ubuntu. You are recommended to use mpv-build or third-party packages instead.
 
-Run the following command in your terminal:
+==- 🔧 Installing on various distributions
 
-```sh
-apt install mpv
-```
+All of these packages are unofficial:
+- [Arch (official package)](https://archlinux.org/packages/extra/x86_64/mpv/)
+- [Gentoo (official package)](https://packages.gentoo.org/packages/media-video/mpv)
+- [Arch (AUR, git package)](https://aur.archlinux.org/packages/mpv-git/)
+- [Arch (AUR, mpv-build package)](https://aur.archlinux.org/packages/mpv-build-git/)
+- [Debian multimedia](https://deb-multimedia.org/dists/testing/main/binary-amd64/package/mpv)
+- [Ubuntu and Debian (apt repository)](https://fruit.je/apt)
 
 ==-
 
