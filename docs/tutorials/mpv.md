@@ -164,7 +164,7 @@ save-position-on-quit
 ## Screenshots
 screenshot-format=png
 screenshot-directory="~/Pictures/mpv"
-screenshot-template="%F-%p"
+screenshot-template="%F-%p-%n"
 
 ## Language Priority
 # Sub
