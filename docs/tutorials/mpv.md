@@ -334,7 +334,7 @@ Run the `.otf` font file to install it system-wide or put it in your `fonts` fol
 ## Restyle Subtitles
 # Set sub-ass-override to "no" as we only need to enable it for specific cases
 sub-ass-override=no
-sub-ass-force-style=playresx=1920,playresy=1080
+sub-ass-style-overrides=playresx=1920,playresy=1080
 sub-font="Gandhi Sans"
 sub-font-size=50
 sub-color="#FFFFFF"
@@ -343,7 +343,7 @@ sub-border-color="#FF000000"
 sub-shadow-color="#A0000000"
 sub-shadow-offset=0.75
 sub-bold=yes
-sub-ass-force-style=Kerning=yes
+sub-ass-style-overrides=Kerning=yes
 ```
 
 +++ Cabin
@@ -361,7 +361,7 @@ Run the `.ttf` font file to install it system-wide or put it in your `fonts` fol
 
 # Set sub-ass-override to "no" as we only need to enable it for specific cases
 sub-ass-override=no
-sub-ass-force-style=playresx=1920,playresy=1080
+sub-ass-style-overrides=playresx=1920,playresy=1080
 sub-font="Cabin"
 sub-font-size=50
 sub-color="#FFFFFFFF"
@@ -369,7 +369,7 @@ sub-border-size=2.4
 sub-border-color="#FF000000"
 sub-shadow-color="#A0000000"
 sub-shadow-offset=0.8
-sub-ass-force-style=Kerning=yes
+sub-ass-style-overrides=Kerning=yes
 ```
 
 +++
