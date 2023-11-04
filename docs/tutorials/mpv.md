@@ -82,6 +82,7 @@ Distributions usually package outdated, unmaintained, and unsupported versions o
 ==- 🔧 Installing on various distributions
 
 All of these packages are unofficial:
+
 - [Arch (official package)](https://archlinux.org/packages/extra/x86_64/mpv/)
 - [Gentoo (official package)](https://packages.gentoo.org/packages/media-video/mpv)
 - [Arch (AUR, git package)](https://aur.archlinux.org/packages/mpv-git/)
@@ -163,7 +164,7 @@ save-position-on-quit
 
 ## Screenshots
 screenshot-format=png
-screenshot-directory="~/Pictures/mpv"
+screenshot-dir="~/Pictures/mpv"
 screenshot-template="%F-%p-%n"
 
 ## Language Priority
@@ -187,20 +188,20 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 
 Option                                                                                           | Meaning
 -------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
-[`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
-[`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
-[`scale-antiring`](https://mpv.io/manual/stable/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*
+[`profile`](https://mpv.io/manual/master/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
+[`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
+[`gpu-api`](https://mpv.io/manual/master/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
+[`scale-antiring`](https://mpv.io/manual/master/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*
 [`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*
 [`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*
-[`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
-[`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
-[`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
-[`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
-[`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
-[`slang`](https://mpv.io/manual/stable/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
-[`alang`](https://mpv.io/manual/stable/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
-[`subs-with-matching-audio`](https://mpv.io/manual/stable/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
+[`keep-open`](https://mpv.io/manual/master/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
+[`save-position-on-quit`](https://mpv.io/manual/master/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
+[`screenshot-format`](https://mpv.io/manual/master/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
+[`screenshot-dir`](https://mpv.io/manual/master/#options-screenshot-dir)                         | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
+[`screenshot-template`](https://mpv.io/manual/master/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
+[`slang`](https://mpv.io/manual/master/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
+[`alang`](https://mpv.io/manual/master/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
+[`subs-with-matching-audio`](https://mpv.io/manual/master/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
 
 ===
 
@@ -236,7 +237,7 @@ deband-grain=48
 ```
 
 !!!warning
-Your deband settings should be placed after your [`profile`](https://mpv.io/manual/stable/#profiles) in order to prevent conflict.
+Your deband settings should be placed after your [`profile`](https://mpv.io/manual/master/#profiles) in order to prevent conflict.
 !!!
 
 +++ `input.conf`
