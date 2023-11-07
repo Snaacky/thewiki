@@ -6,11 +6,15 @@ image: /static/comparison/hyouka.gif
 
 # Comparison
 
-Quality comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources/releases. This guide goes through the process of setting up and effectively utilizing [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) to produce useful comparisons that will allow you to ascertain which release offers the best visual experience.
+Quality comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources/releases. [It serves as a great way to distinguish the differences between a bad source and a good source](/guides/quality/#types-of-releases), and can help you determine which one to go for your watching needs.
+
+This guide goes through the process of setting up and effectively utilizing [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview), a previewer utility for [VapourSynth](https://github.com/vapoursynth/vapoursynth), to produce effective quality comparisons that will allow you to ascertain which release offers the best visual experience.
 
 ## Setup
 
 ### VapourSynth
+
+VapourSynth is an open-source video processing framework. It handles all of your sources, playback, and filtering options in conjunction with VSPreview.
 
 #### Dependencies
 
@@ -19,17 +23,19 @@ Quality comparisons are frequently used within the enthusiast community to compa
 
 #### Installation
 
-Download and install `VapourSynth-x64-RXX.exe` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). During installation, select `Install for me only`.
+Download and install `VapourSynth-x64-RXX.exe` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). *During installation, select `Install for me only`.*
 
 ![Vapoursynth release](/static/comparison/vs-download.png)
 
 ### VSPreview
 
+VSPreview is a previewer application for scripts created in VapourSynth. It features a simple graphical interface to allow you to use VapourSynth's features (and create comparisons) with ease.
+
 #### Dependencies
 
 +++ General Setup
 
-[VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) requires the following dependencies on top of [VapourSynth](#vapoursynth):
+[VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) requires the following dependencies on top of [VapourSynth](#vapoursynth):
 
 - [awsmfunc](https://github.com/OpusGang/awsmfunc)
 - [LibP2P](https://github.com/DJATOM/LibP2P-Vapoursynth)
@@ -82,7 +88,7 @@ If you're working with Dolby Vision (DV) content, you will also need to install 
 
 #### Installation
 
-Install [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) using `pip`:
+Download and install [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) using `pip` in a terminal window:
 
 ```powershell
 pip install vspreview
@@ -92,9 +98,9 @@ pip install vspreview
 
 ### Scripting
 
-In order to create a comparison, you will need to create a `.vpy` script. This script outlines the parameters and files which [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview) will use when generating your comparison.
+In order to create a comparison, you will need to create a VapourSynth script (`.vpy`). This script outlines the parameters and files which VSPreview will use when generating your comparison.
 
-Create a file called `comp.vpy`. Launch it in your text editor and add to the script based on what you need:
+Create a file called `comp.vpy`. Launch it in your text editor and add to the script depending on what you need:
 
 ==- :icon-file-code: Initial script [!badge variant="danger" text="Required"]
 
@@ -138,18 +144,18 @@ set_output(clip3, name=source3)
 
 Section             | Description
 --------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Dependencies**    | Dependencies required to run [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
+**Dependencies**    | Dependencies required to run VSPreview
 **File paths**      | The location of your source file
 **Source**          | The name of each source. [We recommend following the naming scheme here.](#recommended-source-naming) *If you plan to use [Slowpoke Pics](#slowpoke-pics), this will be the name that will be displayed in comparisons*
 **FrameInfo**       | Lists the frame number, type, and source name in the top left of the videos
-**FrameProp**       | Sets the source name entered under **Source** for correct labelling on [Slowpoke Pics](#slowpoke-pics)
-**Output**          | Parameter to allow clips to appear in [VSPreview](https://github.com/Irrational-Encoding-Wizardry/vs-preview)
+**FrameProp**       | Sets the source name entered under **Source** for correct labeling on [Slowpoke Pics](#slowpoke-pics)
+**Output**          | Parameter that allows clips to appear in VSPreview
 
 ==- :icon-play: Playback (frame rate, FieldBased, deinterlace)
 
-#### Frame rate
+#### Frame Rate
 
-Sets the source frame rate (fps) based on fractions (`fpsnum`/`fpsden`). For example, `fpsnum=24000` and `fpsden=1000` forces the clip frame rate to 24.000 fps. *This should be used for sources that have different frame rates.*
+Sets the source frame rate (fps) based on fractional input (`fpsnum`/`fpsden`). For example, `fpsnum=24000` and `fpsden=1000` forces the clip frame rate to 24.000 fps. *This should be used for sources that have different frame rates.*
 
 ```py
 ## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
@@ -160,7 +166,7 @@ clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
 #### FieldBased
 
-Tags the content as progressive (`0`) or interlaced (`1`/`2`). *This should be used for incorrectly flagged sources.*
+Tags the content as progressive (`0`) or interlaced (`1`/`2`). *This should be used for incorrectly tagged sources.*
 
 ```py
 ## FieldBased: Sets the content as either progressive (0) or interlaced (1/2); required for progressive content tagged as interlaced
@@ -183,10 +189,10 @@ clip1 = core.vivtc.VDecimate(clip1)
 
 #### Cropping
 
-Crops the source video by *n* pixels from the selected direction. For example, `left=20` will remove 20 horizonal pixels starting from the left side. *This should be used for sources that use letterboxing or other form of crop.*
+Crops the source video by *n* pixels from the selected side. For example, `left=20` will remove 20 horizonal pixels starting from the left side. *This should be used for sources that use letterboxing or other form of crop.*
 
 !!!warning
-16-bit is required for odd numbers. [Make sure you are using the 16-bit color depth.](#depth)
+16-bit is required for odd frame numbers. [Make sure you are using the 16-bit color depth.](#depth)
 !!!
 
 ```py
@@ -256,7 +262,7 @@ After importing the necessary dependencies, apply tonemapping:
 - For converting DV (Dolby Vision) -> SDR, set `source_colorspace=csp.DOVI`
 
 ```py
-## Tonemapping: Sets the source to a different tone map
+## Tonemapping: Sets the source to a different tone map [16-bit required]
 ## Specify the arguments based on your sources; ideally try to get it as close as possible to the SDR source
 clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
 clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
@@ -268,7 +274,7 @@ clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
 ```
 
 !!!
-`dst_max` forces a certain brightness, which can be used to make HDR/DV clips appear brighter for easier comparison to SDR.
+`dst_max` forces a set brightness, which can be used to make HDR/DV clips appear brighter for easier comparison to SDR.
 !!!
 
 #### Range
@@ -276,7 +282,7 @@ clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
 Sets the color range of the clip as limited (`0`) or full (`1`). *This should be used for sources with incorrect metadata or DV tonemapping (set to limited).*
 
 ```py
-## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping.
+## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping
 clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
 clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
 clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
@@ -346,6 +352,8 @@ clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
 ==- :icon-file-code: Full script
 
+The full `comp.vpy` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above. *Comment/uncomment filters as needed.*
+
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
 import vapoursynth as vs
@@ -404,7 +412,7 @@ source3 = "ThirdSourceName"
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
-## Tonemapping: Sets the source to a different tone map
+## Tonemapping: Sets the source to a different tone map [16-bit required]
 ## Specify the arguments based on your sources; ideally try to get it as close as possible to the SDR source
 ##clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
 ##clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
@@ -414,7 +422,7 @@ source3 = "ThirdSourceName"
 ##clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
 ##clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
 
-## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping.
+## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
@@ -487,9 +495,113 @@ Key                                                        | Section           |
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | Scening           | Tools for creating and modifying scene markers
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | Pipette           | The color information for the current frame
 ![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) 6 | Benchmark         | The benchmark tool for testing device performance
-![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) 7 | Misc              | Miscellaneous settings for VSPreview
-![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) 8 | Comp              | The comparison creator
+![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) 7 | [Misc](#misc)     | Miscellaneous settings for VSPreview
+![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) 8 | [Comp](#comp)     | The comparison creator
 ![#f4dbd6](https://placehold.co/14x14/f4dbd6/f4dbd6.png) 9 | [Status](#status) | Various information about the current source
+
+### Misc
+
+The misc bar contains additional settings for VSPreview.
+
+![VSPreview misc bar](/static/comparison/vsp-misc.png)
+
+==- 1 - Cropper
+
+A simple VSPreview cropping tool. To enable the cropper, set the toggle from *OFF* to *ON*.
+
+#### Relative cropping
+
+Relative cropping removes lines of pixels from the side you select. For example, if you set *Left* to `500` in a `1920x1080` source, VSPreview will remove 500 vertical lines starting from the *left-hand side* of the video stream, creating a cropped resolution of `1420x1080`.
+
+#### Absolute cropping
+
+Absolute cropping removes lines of pixels starting from the right side (horizontal) or the top/bottom side (vertical). For example, if you set *Width* to `1420` in a `1920x1080` source, VSPreview will remove 500 vertical lines starting from the *right-hand side* of the video stream, creating a cropped resolution of `1420x1080`.
+
+==- 2 - Frame saving
+
+Functions for saving frames.
+
+#### File name
+
+By default, VSPreview uses the format `{script_name}_{frame}` when saving frames.
+
+Below is a table of placeholders VSPreview uses:
+
+Placeholder      | Description                                      | Example
+-----------------|--------------------------------------------------|---------------------------------
+`{script_name}`  | The name of your script file                     | `comp`
+`{index}`        | The number of the source, from `0` to `n - 1`    | `4`
+`{Name}`         | The name of the current source                   | `OZR (1080p, H.265, 3.10 GiB)`
+`{total_frames}` | The total number of frames in the current source | `34072`
+`{frame}`        | The current frame number                         | `20798`
+`{fps_num}`      | The frame rate numerator                         | `24000`
+`{fps_den}`      | The frame rate denominator                       | `1001`
+`{width}`        | The width of the current frame in pixels         | `1920`
+`{height}`       | The height of the current frame in pixels        | `1080`
+`{format}`       | The video format                                 | `YUV420P10`
+
+!!!
+We recommend changing this to `{frame}_{index}_{Name}`, which is a more friendly naming scheme.
+!!!
+
+!!!warning
+The `{Name}` placeholder may include extraneous data in newer versions of VSPreview (e.g. `b'sourceName'` instead of `sourceName`).
+!!!
+
+==-
+
+### Comp
+
+The comp bar is primarily used for creating [automatic](#automatic-badge-variant-secondary-text-fastest-option)/[semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons to [Slowpoke Pics](https://slow.pics):
+
+![VSPreview comp bar](/static/comparison/vsp-comp.png)
+
+==- 1 - Comparison title
+
+The title of your comparison.
+
+#### Naming scheme
+
+When creating your comparison, we recommend naming it with the show title and sources used. Some examples are:
+
+- By video source: `The Eminence in Shadow - BD vs. WEB`
+- By release type: `Watashi no Oshi wa Akuyaku Reijou. - Minis vs. Streams`
+- By release group: `Miss Kobayashi's Dragon Maid - Okay-Subs vs. Beatrice-Raws`
+
+==- 2 - Framing parameters
+
+#### Random
+
+The *Random* parameter sets the number of frames to skip before screenshotting. *This is a setting used when creating [automatic](#automatic-badge-variant-secondary-text-fastest-option)/[semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons.*
+
+For example, a value of `48` means VSPreview will take a screenshot for every 48 frames in all sources.
+
+==- 3 - Picture type
+
+Sets the frame type to capture. *This is a setting used when creating [automatic](#automatic-badge-variant-secondary-text-fastest-option)/[semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons.*
+
+Only checked frames are captured. For instance, if `I` is unchecked, then VSPreview will only capture `P` or `B` frames.
+
+==- 4 - TheMovieDB info
+
+The TMDB ID found at [TheMovieDB](https://www.themoviedb.org).
+
+- For TV shows, set the box to `TV`
+- For movies, set the box to `Movie`
+
+==- 5 - Collection tags
+
+Tags for Slowpoke Pics collections.
+
+==- 6 - Slowpoke Pics parameters
+
+Parameter      | Description
+---------------|--------------------------------------------------------------------------------------------------------------------------
+`Public`       | Sets whether the comparison link is publicly visible on the front page and search on [Slowpoke Pics](https://slow.pics)
+`NSFW`         | Sets whether the comparison displays an NSFW warning before showing images
+`Delete After` | Sets the number of days for when the comparison will expire and be deleted from [Slowpoke Pics](https://slow.pics)
+
+==-
 
 ### Status
 
@@ -497,25 +609,42 @@ The status bar displays several information about the current source:
 
 ![VSPreview status bar](/static/comparison/vsp-status.png)
 
-Key | Description
-----|----------------------------------------
-1   | Total number of frames
-2   | Video stream length
-3   | Video stream resolution
-4   | Chroma subsampling type and bit depth
-5   | Source frame rate
-6   | Picture type of current frame
+==- 1 - Total number of frames
+
+The total number of frames in the video stream.
+
+==- 2 - Video stream length
+
+The playback length of the video stream.
+
+==- 3 - Video stream resolution
+
+The content resolution of the video stream.
+
+==- 4 - Video format
+
+The chroma subsampling type and bit depth.
+
+==- 5 - Source frame rate
+
+The frame rate of the video stream, represented by a fraction and approximate decimal.
+
+==- 6 - Picture type of current frame
+
+The picture type of the current frame.
+
+==-
 
 ## Comparing
 
 ### Tips
 
-- *[Name your sources clearly to the user](#recommended-source-naming)*
+- *[Label your sources clearly to the user](#2-frame-saving)*
 - Try to capture a large variety of scenes (e.g. low/high detail, bright/dark, low/high motion)
 - Try to capture frames of the same type
-  - We recommend taking `P` or `B` type frames
+  - We recommend taking `P` or `B` type frames when possible
   - This may be harder to accomplish with particular sources, such as streams or WEB-DLs
-  - *[See how to set a specific frame type](#setting-specific-frame-type)*
+  - *[See how to set a specific frame type](#3-picture-type)*
 
 ### Basic Keybinds
 
@@ -535,6 +664,24 @@ VSPreview offers three methods for creating comparisons:
 
 Automatic comparisons are created completely without any additional user input. VSPreview will automatically select, capture, and upload frames for you. *This is the fastest method for creating comparisons.*
 
+#### Capturing
+
+1. In VSPreview, navigate to the bottom bar and toggle the *Comp* section
+
+2. Set your parameters. The following parameters should be filled:
+   ![VSPreview comp bar](/static/comparison/vsp-comp.png)
+
+   Key | Description
+   ----|-----------------------------------------------------------------------------------------------------
+   1   | The title of your comparison/show
+   2   | The random frame interval to capture. *This should be set to a value higher or equal to 40 frames*
+   3   | The picture type
+   4   | The [TMDB ID](https://www.themoviedb.org) for the show
+
+   - *See [Comp](#comp) for more detail on what each one is used for*
+
+3. Hit the *Start Upload* button under *Comp* to begin creating your comparison
+
 ==- Semi-automatic [!badge icon=":heart:" variant="primary" text="Recommended"]
 
 Semi-automatic comparisons are created with minor user input. VSPreview will automatically capture and upload frame manually marked by the user. *This is the recommended method for creating comparisons.*
@@ -547,6 +694,22 @@ Semi-automatic comparisons are created with minor user input. VSPreview will aut
   
 2. Once you find a frame, mark the current frame
    - Default keybind: `Ctrl` + `Space`
+
+#### Capturing
+
+1. In VSPreview, navigate to the bottom bar and toggle the *Comp* section
+
+2. Set your parameters. The following parameters should be filled:
+   ![VSPreview comp bar](/static/comparison/vsp-comp.png)
+
+   Key | Description
+   ----|---------------------------------------------------------
+   1   | The title of your comparison/show
+   4   | The [TMDB ID](https://www.themoviedb.org) for the show
+
+   - *See [Comp](#comp) for more detail on what each one is used for*
+
+3. Hit the *Start Upload* button under *Comp* to begin creating your comparison
 
 ==- Manual
 
@@ -571,6 +734,10 @@ Manual comparison are created completely by the user. VSPreview displays and han
 By default, all frames are stored within your working directory unless manually changed to a different destination.
 !!!
 
+!!!secondary
+*See [Post-processing](#post-processing) for additional scripts to apply after creating your comparison.*
+!!!
+
 ==-
 
 ## QoL Changes
@@ -591,7 +758,7 @@ Key                                                        | Meaning
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | The file size
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | Additional tags, such as scaling or HDR/DV
 
-Depending on what you are trying to compare will depend on how you should name your sources. For example, if you are trying to compare HDR vs. SDR sources, you should include the type in the source name. *Generally, the first three will cover most comparisons you make, and you are free to include more as needed.*
+Depending on what you are trying to compare will depend on how you should name your sources. For example, if you are trying to compare HDR vs. SDR sources, you should include the type in the source name. *Generally, the first three will cover most comparisons you make, but you are free to include more as needed.*
 
 ==- Change frame increment
 
@@ -622,16 +789,6 @@ The following guide changes the screenshot key from `Shift` + `S` to `Enter`:
             (Qt.Key_Return), self.save_frame_as_button.click
         )
   ```
-
-==- Friendly file naming
-
-- In VSPreview, navigate to the bottom bar and toggle the *Misc* section
-- In *Misc*, set file name template to `{frame}_{index}_{Name}`
-
-==- Setting specific frame type
-
-- In VSPreview, navigate to the bottom bar and toggle the *Comp* section
-- In *Comp*, go to *Picture types* and uncheck/check the available boxes depending on the frame type(s) you want to use
 
 ==- Swap binds for seeking frames
 
@@ -710,7 +867,7 @@ The following scripts are best used with [manual comparisons](#manual).
 
 ==- Compressing
 
-Compresses all `.png` image files in the current directory with Oxipng compression (level 1). Runs fast (typically less than a minute to iterate hundreds of images)
+Compresses all `.png` image files in the current directory with Oxipng compression (level 1). Runs fast (typically less than a minute to iterate hundreds of images).
 
 ```py
 import os
