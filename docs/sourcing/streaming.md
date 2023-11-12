@@ -5,6 +5,10 @@ order: -1
 
 # Streaming Sites
 
+!!!
+If you're planning to watch content on your computer, consider using [Miru](https://github.com/ThaUnknown/miru) which lets you stream anime torrents, giving you both the convenience of streaming sites and quality of torrents.
+!!!
+
 !!!warning
 Majority of unofficial streaming sites will contain unwanted or annoying pop-ups and ads that may interfere with your experience. *We suggest you use a reliable content blocker such as [uBlock Origin](https://ublockorigin.com).*
 !!!
