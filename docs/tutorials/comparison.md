@@ -35,28 +35,32 @@ VSPreview is a previewer application for scripts created in VapourSynth. It feat
 
 +++ General Setup
 
-[VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) requires the following dependencies on top of [VapourSynth](#vapoursynth):
+We recommend installing the following additional dependencies for creating comparisons with [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview):
 
 - [awsmfunc](https://github.com/OpusGang/awsmfunc)
 - [LibP2P](https://github.com/DJATOM/LibP2P-Vapoursynth)
 - [LSMASHSource](https://github.com/AkarinVS/L-SMASH-Works)
 - [Subtext](https://github.com/vapoursynth/subtext)
+- [vs-kernels](https://github.com/Jaded-Encoding-Thaumaturgy/vs-kernels)
 - [vs-placebo](https://github.com/Lypheo/vs-placebo)
 
 ==- :icon-gear: Installation
 
-You can install the following dependencies using `vsrepo.py` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases):
+You can install `LibP2P`, `LSMASHSource`, `Subtext`, and `vs-placebo` using `vsrepo` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). In your terminal, run the following:
 
 ```powershell
-vsrepo.py install lsmas libp2p sub placebo
+vsrepo.py install libp2p lsmas sub placebo
 ```
 
 !!!
-If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python.
+If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python. *[You may also need to add it to the `PATHEXT` environment variable.](/static/comparison/python-pathext.png)*
 !!!
+
+`awsmfunc` and `vs-kernels` can be installed using `pip`:
 
 ```powershell
 pip install git+https://github.com/OpusGang/awsmfunc.git
+pip install vskernels --no-cache-dir -U
 ```
 
 ==-
@@ -68,14 +72,16 @@ If you're working with Dolby Vision (DV) content, you will also need to install 
 - [libdovi](https://github.com/quietvoid/dovi_tool)
   ==- :icon-gear: Installation
 
+  In your terminal, install `libdovi` using `vsrepo`:
+
   ```powershell
   vsrepo.py install dovi_library
   ```
 
   ==-
 
-- [lsmas vA.5b](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b)
-  - `vsrepo` installs `A.3x` by default which does not support DV. *`A.5x` is experimental and is not available on `vsrepo`, so you will have to install it manually*
+- [lsmas (vA.5b)](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b)
+  - `vsrepo` installs `vA.3x` by default which does not support DV. *`vA.5x` is experimental and is not available on `vsrepo`, so you will have to install it manually*
   ==- :icon-gear: Installation
 
   - Download and extract the correct version for your operating system. *For most users, this will be `release-x86_64-cachedir-cwd.zip`*
@@ -88,7 +94,7 @@ If you're working with Dolby Vision (DV) content, you will also need to install 
 
 #### Installation
 
-Download and install [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) using `pip` in a terminal window:
+Download and install [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) using `pip` in your terminal:
 
 ```powershell
 pip install vspreview
@@ -104,7 +110,7 @@ Create a file called `comp.vpy`. Launch it in your text editor and add to the sc
 
 ==- :icon-file-code: Initial script [!badge variant="danger" text="Required"]
 
-The basic `comp.vpy` script to get started. This script includes the required dependencies and features to run and get the best experience out of VSPreview.
+The basic `comp.vpy` script to get started. This script includes the required dependencies and features to run and get the best experience out of VSPreview for creating your comparisons.
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
@@ -112,6 +118,10 @@ import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
 from vspreview import set_output
+
+## <Additional dependencies>
+## Place any additional dependencies you want to use in your comp here
+## <End of additional dependencies>
 
 ## File paths: Hold shift and right-click your file, select copy as path, and paste it here
 clip1 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
@@ -123,8 +133,9 @@ source1 = "FirstSourceName"
 source2 = "SecondSourceName"
 source3 = "ThirdSourceName"
 
-## Additional comp settings
-## Place any additional parameters you want to use in your comp here
+## <Additional comp settings>
+## Place any additional settings you want to use in your comp here
+## <End of additional comp settings>
 
 ## Frameinfo: Displays the frame number, type, and group name in the top left corner (no modification required; add/remove lines as needed)
 clip1 = FrameInfo(clip1, source1)
@@ -144,14 +155,14 @@ set_output(clip3, name=source3)
 
 Section             | Description
 --------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Dependencies**    | Dependencies required to run VSPreview
+**Dependencies**    | Dependencies required to create comparisons in VSPreview
 **File paths**      | The location of your source file
 **Source**          | The name of each source. [We recommend following the naming scheme here.](#recommended-source-naming) *If you plan to use [Slowpoke Pics](#slowpoke-pics), this will be the name that will be displayed in comparisons*
 **FrameInfo**       | Lists the frame number, type, and source name in the top left of the videos
 **FrameProp**       | Sets the source name entered under **Source** for correct labeling on [Slowpoke Pics](#slowpoke-pics)
 **Output**          | Parameter that allows clips to appear in VSPreview
 
-==- :icon-play: Playback (frame rate, FieldBased, deinterlace)
+==- :icon-play: Playback (frame rate, FieldBased, inverse telecine)
 
 #### Frame Rate
 
@@ -169,18 +180,18 @@ clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 Tags the content as progressive (`0`) or interlaced (`1`/`2`). *This should be used for incorrectly tagged sources.*
 
 ```py
-## FieldBased: Sets the content as either progressive (0) or interlaced (1/2); required for progressive content tagged as interlaced
+## FieldBased: Tags the content as progressive (0) or interlaced (1/2); used for progressive content incorrectly tagged as interlaced
 clip1 = core.std.SetFieldBased(clip1, 0)
 clip2 = core.std.SetFieldBased(clip2, 1)
 clip3 = core.std.SetFieldBased(clip3, 2)
 ```
 
-#### Deinterlace
+#### Inverse Telecine
 
-Quick deinterlace filter for interlaced clips set in [FieldBased](#fieldbased).
+Quick inverse telecine filter for telecined clips set in [FieldBased](#fieldbased).
 
 ```py
-## Deinterlace: Convert interlaced video to progressive; use for clips marked interlaced in FieldBased
+## Inverse telecine: Fixes telecined video; used for clips marked as interlaced in FieldBased
 clip1 = core.vivtc.VFM(clip1, 1)
 clip1 = core.vivtc.VDecimate(clip1)
 ```
@@ -192,7 +203,7 @@ clip1 = core.vivtc.VDecimate(clip1)
 Crops the source video by *n* pixels from the selected side. For example, `left=20` will remove 20 horizonal pixels starting from the left side. *This should be used for sources that use letterboxing or other form of crop.*
 
 !!!warning
-16-bit is required for odd frame numbers. [Make sure you are using the 16-bit color depth.](#depth)
+16-bit is required for odd frame numbers. [Make sure you are using the 16-bit color depth.](#color-contrast-depth-tonemapping-range-gamma-matrix-drc)
 !!!
 
 ```py
@@ -206,11 +217,20 @@ clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
 
 Downscales or upscales the video. *This should be used to match multiple sources that have differing resolutions.*
 
+You will first need to import the scaling dependency at the top of your script:
+
 ```py
-## Scaling: Upscale/downscale clips to match; recommended to scale to the highest resolution
-clip1 = core.resize.Spline36(clip1, 1920, 1080)
-clip2 = core.resize.Spline36(clip2, 1920, 1080)
-clip3 = core.resize.Spline36(clip3, 3840, 2160)
+## Scaling dependency: Allows for scaling filters to work (required)
+from vskernels import EwaLanczos
+```
+
+After importing the necessary dependency, apply scaling:
+
+```py
+## Scaling: Upscale/downscale clips to match using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended to scale to the highest resolution (additional dependency required)
+clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=True)
+clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
+clip3 = EwaLanczos.scale(clip2, 3840, 2160, sigmoid=True)
 ```
 
 #### Trimming
@@ -242,7 +262,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 Sets the source to a different tone map (i.e. HDR/DV -> SDR).
 
 !!!warning
-16-bit is required. [Make sure you are using the 16-bit color depth.](#depth)
+16-bit is required. [Make sure you are using the 16-bit color depth.](#color-contrast-depth-tonemapping-range-gamma-matrix-drc)
 !!!
 
 You will first need to import the following dependencies at the top of your script:
@@ -262,7 +282,7 @@ After importing the necessary dependencies, apply tonemapping:
 - For converting DV (Dolby Vision) -> SDR, set `source_colorspace=csp.DOVI`
 
 ```py
-## Tonemapping: Sets the source to a different tone map [16-bit required]
+## Tonemapping: Sets the source to a different tone map [16-bit required] (additional dependencies required)
 ## Specify the arguments based on your sources; ideally try to get it as close as possible to the SDR source
 clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
 clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
@@ -271,6 +291,10 @@ clip3args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_
 clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
 clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
 clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
+## Retag video to 709 after tonemapping
+clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
+clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
+clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
 ```
 
 !!!
@@ -293,7 +317,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 Adjusts the brightness level of the video.
 
 !!!warning
-16-bit is required. [Make sure you are using the 16-bit color depth.](#depth)
+16-bit is required. [Make sure you are using the 16-bit color depth.](#color-contrast-depth-tonemapping-range-gamma-matrix-drc)
 !!!
 
 ```py
@@ -325,7 +349,7 @@ clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
 If you are unable to correct the colors with the initial matrix command, apply the additional filters below:
 
 !!!warning
-16-bit is required. [Make sure you are using the 16-bit color depth.](#depth)
+16-bit is required. [Make sure you are using the 16-bit color depth.](#color-contrast-depth-tonemapping-range-gamma-matrix-drc)
 !!!
 
 ```py
@@ -352,7 +376,7 @@ clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
 ==- :icon-file-code: Full script
 
-The full `comp.vpy` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above. *Comment/uncomment filters as needed.*
+The full `comp.vpy` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above. *Comment/uncomment parameters as needed.*
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
@@ -361,12 +385,19 @@ from vapoursynth import core
 from awsmfunc import FrameInfo
 from vspreview import set_output
 
+## <Additional dependencies>
+
+## Scaling dependency: Allows for scaling filters to work (required)
+##from vskernels import EwaLanczos
+
 ## Tonemapping dependencies: Allows for tonemapping filters to work (required)
 ##from awsmfunc.types.placebo import PlaceboColorSpace as csp
 ##from awsmfunc.types.placebo import PlaceboTonemapMode as TMmode
 ##from awsmfunc.types.placebo import PlaceboTonemapFunction as TMfunc
 ##from awsmfunc.types.placebo import PlaceboGamutMode as GMTmode
 ##from awsmfunc.types.placebo import PlaceboTonemapOpts as TMopts
+
+## <End of additional dependencies>
 
 ## File paths: Hold shift and right-click your file, select copy as path, and paste it here
 clip1 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
@@ -378,17 +409,19 @@ source1 = "FirstSourceName"
 source2 = "SecondSourceName"
 source3 = "ThirdSourceName"
 
+## <Additional comp settings>
+
 ## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
 ##clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
 ##clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
 ##clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
-## FieldBased: Sets the content as either progressive (0) or interlaced (1/2); required for progressive content tagged as interlaced
+## FieldBased: Tags the content as progressive (0) or interlaced (1/2); used for progressive content incorrectly tagged as interlaced
 ##clip1 = core.std.SetFieldBased(clip1, 0)
 ##clip2 = core.std.SetFieldBased(clip2, 1)
 ##clip3 = core.std.SetFieldBased(clip3, 2)
 
-## Deinterlace: Convert interlaced video to progressive; use for clips marked interlaced in FieldBased
+## Inverse telecine: Fixes telecined video; used for clips marked as interlaced in FieldBased
 ##clip1 = core.vivtc.VFM(clip1, 1)
 ##clip1 = core.vivtc.VDecimate(clip1)
 
@@ -397,10 +430,10 @@ source3 = "ThirdSourceName"
 ##clip2 = core.std.Crop(clip2, left=0, right=0, top=276, bottom=276)
 ##clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
 
-## Scaling: Upscale/downscale clips to match; recommended to scale to the highest resolution
-##clip1 = core.resize.Spline36(clip1, 1920, 1080)
-##clip2 = core.resize.Spline36(clip2, 1920, 1080)
-##clip3 = core.resize.Spline36(clip3, 3840, 2160)
+## Scaling: Upscale/downscale clips to match using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended to scale to the highest resolution (additional dependency required)
+##clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=True)
+##clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
+##clip3 = EwaLanczos.scale(clip2, 3840, 2160, sigmoid=True)
 
 ## Trimming: Trim frames to match clips (calculate the frame difference and enter the number here)
 ##clip1 = clip1[0:]
@@ -412,7 +445,7 @@ source3 = "ThirdSourceName"
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
-## Tonemapping: Sets the source to a different tone map [16-bit required]
+## Tonemapping: Sets the source to a different tone map [16-bit required] (additional dependencies required)
 ## Specify the arguments based on your sources; ideally try to get it as close as possible to the SDR source
 ##clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
 ##clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
@@ -421,6 +454,10 @@ source3 = "ThirdSourceName"
 ##clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
 ##clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
 ##clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
+## Retag video to 709 after tonemapping
+##clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
+##clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
+##clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
 
 ## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
@@ -448,6 +485,8 @@ source3 = "ThirdSourceName"
 ## Fix DRC: Repairs sources with very washed out colors
 ##clip1 = core.resize.Point(clip1, range_in=0, range=1, dither_type="error_diffusion")
 ##clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
+
+## <End of additional comp settings>
 
 ## Frameinfo: Displays the frame number, type, and group name in the top left corner (no modification required; add/remove lines as needed)
 clip1 = FrameInfo(clip1, source1)
@@ -488,9 +527,9 @@ VSPreview's user-friendly interface allows you to perform many actions while bei
 ![VSPreview interface](/static/comparison/vsp-interface.png)
 
 Key                                                        | Section           | Description
------------------------------------------------------------|-------------------|----------------------------------------------------------------------
+-----------------------------------------------------------|-------------------|---------------------------------------------------------------------------
 ![#ed8796](https://placehold.co/14x14/ed8796/ed8796.png) 1 | Preview           | The video preview window for viewing frames in your sources
-![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) 2 | Timeline          | The video timeline and source/clip selection
+![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) 2 | Timeline          | The video timeline, source/clip selection, settings, and section toggles
 ![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) 3 | Playback          | Buttons for controlling playback and scrolling through the timeline
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | Scening           | Tools for creating and modifying scene markers
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | Pipette           | The color information for the current frame
@@ -498,6 +537,8 @@ Key                                                        | Section           |
 ![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) 7 | [Misc](#misc)     | Miscellaneous settings for VSPreview
 ![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) 8 | [Comp](#comp)     | The comparison creator
 ![#f4dbd6](https://placehold.co/14x14/f4dbd6/f4dbd6.png) 9 | [Status](#status) | Various information about the current source
+
+Want to jump straight to making comparisons? *See [Comparing](#comparing).*
 
 ### Misc
 
@@ -562,7 +603,7 @@ The title of your comparison.
 
 #### Naming scheme
 
-When creating your comparison, we recommend naming it with the show title and sources used. Some examples are:
+When creating your comparison, we recommend naming it with the show title and sources used. This makes it easier for the user to understand what you are comparing. Some examples are:
 
 - By video source: `The Eminence in Shadow - BD vs. WEB`
 - By release type: `Watashi no Oshi wa Akuyaku Reijou. - Minis vs. Streams`
@@ -572,9 +613,9 @@ When creating your comparison, we recommend naming it with the show title and so
 
 #### Random
 
-The *Random* parameter sets the number of frames to skip before screenshotting. *This is a setting used when creating [automatic](#automatic-badge-variant-secondary-text-fastest-option)/[semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons.*
+The *Random* parameter sets the number of frames to randomly capture during screenshotting. *This is a setting used when creating [automatic](#automatic-badge-variant-secondary-text-fastest-option)/[semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons.*
 
-For example, a value of `48` means VSPreview will take a screenshot for every 48 frames in all sources.
+For example, a value of `48` means VSPreview will take 48 randomly selected frames from each source when generating the comparison.
 
 ==- 3 - Picture type
 
@@ -596,10 +637,10 @@ Tags for Slowpoke Pics collections.
 ==- 6 - Slowpoke Pics parameters
 
 Parameter      | Description
----------------|--------------------------------------------------------------------------------------------------------------------------
+---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 `Public`       | Sets whether the comparison link is publicly visible on the front page and search on [Slowpoke Pics](https://slow.pics)
 `NSFW`         | Sets whether the comparison displays an NSFW warning before showing images
-`Delete After` | Sets the number of days for when the comparison will expire and be deleted from [Slowpoke Pics](https://slow.pics)
+`Delete After` | Sets the number of days for when the comparison will expire and be deleted from [Slowpoke Pics](https://slow.pics). *By default, comparisons are deleted after two years of inactivity*
 
 ==-
 
@@ -639,7 +680,7 @@ The picture type of the current frame.
 
 ### Tips
 
-- *[Label your sources clearly to the user](#2-frame-saving)*
+- *[Label your sources clearly to the user](#recommended-source-naming)*
 - Try to capture a large variety of scenes (e.g. low/high detail, bright/dark, low/high motion)
 - Try to capture frames of the same type
   - We recommend taking `P` or `B` type frames when possible
@@ -690,6 +731,7 @@ Semi-automatic comparisons are created with minor user input. VSPreview will aut
 
 1. Locate the frame(s) you want to compare
    - By default, `Left arrow` and `Right arrow` navigates between frames
+   - *See how to [skip frames faster](#change-frame-increment)*
    - *See [tips](#tips) on what you should look for*
   
 2. Once you find a frame, mark the current frame
@@ -719,6 +761,7 @@ Manual comparison are created completely by the user. VSPreview displays and han
 
 1. Locate the frame(s) you want to compare
    - By default, `Left arrow` and `Right arrow` navigates between frames
+   - *See how to [skip frames faster](#change-frame-increment)*
    - *See [tips](#tips) on what you should look for*
 
 2. Once you find a frame, take a screenshot of the current frame
@@ -746,7 +789,7 @@ By default, all frames are stored within your working directory unless manually 
 
 ==- Recommended source naming
 
-You can name your sources in any way you'd like. However, we recommend trying to follow any of the naming schemes below for better clarity:
+You can name your sources in any way you'd like. However, we recommend naming your sources in a way that makes it easy to understand what you're trying to compare the user:
 
 ![Example source names](/static/comparison/example-sources.png)
 
@@ -763,9 +806,11 @@ Depending on what you are trying to compare will depend on how you should name y
 ==- Change frame increment
 
 - In VSPreview, navigate to the bottom bar and toggle the *Playback* section
-- In *Playback*, set the number of frames to skip when scrubbing by adjusting the first field:
+- In *Playback*, set the number of frames to skip (*n*) when scrubbing by adjusting the first field:
 
 ![Adjust frames in the playback bar](/static/comparison/vsp-playback-frames.png)
+
+- To skip *n* frames backward/forward, press `Shift` + `Left arrow`/`Right arrow`
 
 ==- Changing the screenshot key
 
@@ -780,7 +825,7 @@ The following guide changes the screenshot key from `Shift` + `S` to `Enter`:
         self.main.add_shortcut(
             QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click
         )
-  ``
+  ```
 
 - Replace the lines with the following:
 
@@ -836,7 +881,7 @@ If you plan on uploading to [Slowpoke Pics](https://slow.pics) (slow.pics) under
 - Visit [Slowpoke Pics](https://slow.pics) in your browser and log into your account
 - Open your browser's **Developer Tools**. You will need to get two values:
   - To get your `browserId`, go to **Application** -> **Storage** -> **Local Storage** -> `https://slow.pics`. Copy the key listed there
-  - To get your `sessionId`, go to **Network** -> slow.pics. Copy the key listed under `SLPSESSION`
+  - To get your `sessionId`, go to **Network** -> `slow.pics`. Copy the key listed under `SLPSESSION`
 - In VSPreview, go to **Settings** -> **Comp**
 - Paste the two values in the boxes provided
 
