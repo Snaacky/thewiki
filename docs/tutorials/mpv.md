@@ -27,7 +27,7 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 ==- 📦 Installing mpv via scoop
 
-[Scoop](https://scoop.sh) is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `~\scoop` and automatically adds them to your PATH.
+[Scoop](https://scoop.sh) is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `C:\Users\username\scoop` and automatically adds them to your PATH.
 
 +++ Installing scoop
 
@@ -125,11 +125,25 @@ By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder 
     └── mpv.conf
 ```
 
-+++ Modified (`portable_config`)
++++ Portable (`portable_config`)
 
 ```properties
 .
 ├── mpv.exe
+└── portable_config/
+    ├── fonts/
+    ├── script-opts/
+    ├── scripts/
+    ├── shaders/
+    ├── input.conf
+    └── mpv.conf
+```
+
++++ Scoop (`~/scoop/persist/mpv-git/portable_config`)
+
+```properties
+
+C:/Users/username/scoop/persist/mpv-git/
 └── portable_config/
     ├── fonts/
     ├── script-opts/
