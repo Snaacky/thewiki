@@ -25,13 +25,29 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 [!embed text="Installing mpv on Windows"](/static/playback/mpv/installation-windows.mp4)
 
-==- 📦 Installing a pre-configured build
+==- 📦 Installing mpv via scoop
 
-If you don't want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
+[Scoop](https://scoop.sh) is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `~\scoop` and automatically adds them to your PATH.
 
-[!file mpv (Default OSC)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-default.zip)
-[!file mpv (ModernX)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-modernx.zip)
-[!file mpv (uosc)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-uosc.zip)
++++ Installing scoop
+
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+    irm get.scoop.sh | iex
+
++++ Installing mpv
+
+    scoop bucket add extras
+    scoop install extras/mpv-git
+
++++ Updating mpv
+
+    scoop update mpv-git
+
++++ Uninstalling mpv
+
+    scoop uninstall mpv-git
+
++++
 
 ==- 🍴 Installing a fork
 
