@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753276094374">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753283386036">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.753276094374" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.753283386036" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.753276094374" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.753283386036" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.753276094374" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.753276094374" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.753283386036" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.753283386036" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -216,7 +216,7 @@
    </doc-panel>
    <doc-panel id="installing-mpv-via-scoop" collapsed>
        <template #title><span class="docs-emoji">&#x1F4E6;</span> Installing mpv via scoop</template>
-<p><a href="https://scoop.sh">Scoop</a> is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in <code v-pre>~\scoop</code> and automatically adds them to your PATH.</p>
+<p><a href="https://scoop.sh">Scoop</a> is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in <code v-pre>C:\Users\username\scoop</code> and automatically adds them to your PATH.</p>
 <doc-tabs>
 <doc-tab v-cloak id="installing-scoop">
 <template #title>Installing scoop</template>
@@ -351,11 +351,25 @@ scoop install extras/mpv-git</code></pre>
     └── mpv.conf</code></pre>
 </doc-codeblock></div>
 </doc-tab>
-<doc-tab v-cloak id="modified-portable-config">
-<template #title>Modified (<code v-pre>portable_config</code>)</template>
+<doc-tab v-cloak id="portable-portable-config">
+<template #title>Portable (<code v-pre>portable_config</code>)</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">.
 ├── mpv.exe
+└── portable_config/
+    ├── fonts/
+    ├── script-opts/
+    ├── scripts/
+    ├── shaders/
+    ├── input.conf
+    └── mpv.conf</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="scoop-scoop-persist-mpv-git-portable-config">
+<template #title>Scoop (<code v-pre>~/scoop/persist/mpv-git/portable_config</code>)</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-properties"><code v-pre class="language-properties">
+C:/Users/username/scoop/persist/mpv-git/
 └── portable_config/
     ├── fonts/
     ├── script-opts/
