@@ -35,60 +35,39 @@ VSPreview is a previewer application for scripts created in VapourSynth. It feat
 
 +++ General Setup
 
-We recommend installing the following additional dependencies for creating comparisons with [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview):
+In order to create comparisons with VSPreview, you will need to install its necessary dependencies.
 
-- [awsmfunc](https://github.com/OpusGang/awsmfunc)
-- [LibP2P](https://github.com/DJATOM/LibP2P-Vapoursynth)
-- [LSMASHSource](https://github.com/AkarinVS/L-SMASH-Works)
-- [Subtext](https://github.com/vapoursynth/subtext)
-- [vs-kernels](https://github.com/Jaded-Encoding-Thaumaturgy/vs-kernels)
-- [vs-placebo](https://github.com/Lypheo/vs-placebo)
+- [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth), [`LSMASHSource`](https://github.com/AkarinVS/L-SMASH-Works), [`Subtext`](https://github.com/vapoursynth/subtext), and [`vs-placebo`](https://github.com/Lypheo/vs-placebo) can be installed using `vsrepo` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). In your terminal, run the following:
 
-==- :icon-gear: Installation
+  ```powershell
+  vsrepo.py install libp2p lsmas sub placebo
+  ```
 
-You can install `LibP2P`, `LSMASHSource`, `Subtext`, and `vs-placebo` using `vsrepo` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). In your terminal, run the following:
+  !!!
+  If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python. *[You may also need to add it to the `PATHEXT` environment variable.](/static/comparison/python-pathext.png)*
+  !!!
 
-```powershell
-vsrepo.py install libp2p lsmas sub placebo
-```
+- [`awsmfunc`](https://github.com/OpusGang/awsmfunc) and [`vs-kernels`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-kernels) can be installed using `pip`:
 
-!!!
-If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python. *[You may also need to add it to the `PATHEXT` environment variable.](/static/comparison/python-pathext.png)*
-!!!
-
-`awsmfunc` and `vs-kernels` can be installed using `pip`:
-
-```powershell
-pip install git+https://github.com/OpusGang/awsmfunc.git
-pip install vskernels --no-cache-dir -U
-```
-
-==-
+  ```powershell
+  pip install git+https://github.com/OpusGang/awsmfunc.git
+  pip install vskernels --no-cache-dir -U
+  ```
 
 +++ Dolby Vision
 
-If you're working with Dolby Vision (DV) content, you will also need to install the following dependencies:
+If you're working with Dolby Vision (DV) content, you will need to install additional dependencies.
 
-- [libdovi](https://github.com/quietvoid/dovi_tool)
-  ==- :icon-gear: Installation
-
-  In your terminal, install `libdovi` using `vsrepo`:
+- [`libdovi`](https://github.com/quietvoid/dovi_tool) can be installed using `vsrepo` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). In your terminal, run the following:
 
   ```powershell
   vsrepo.py install dovi_library
   ```
 
-  ==-
-
-- [lsmas (vA.5b)](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b)
-  - `vsrepo` installs `vA.3x` by default which does not support DV. *`vA.5x` is experimental and is not available on `vsrepo`, so you will have to install it manually*
-  ==- :icon-gear: Installation
-
+- You will need to install [`vA.5b`](https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b) of `LSMASHSource`. By default, `vsrepo` installs `vA.3x` which does not support DV. `vA.5x` is an experimental version which is not available on `vsrepo` and requires manual installation:
   - Download and extract the correct version for your operating system. *For most users, this will be `release-x86_64-cachedir-cwd.zip`*
   - Copy `libvslsmashsource.dll` and paste it in `%appdata%\VapourSynth\plugins64\`
     - If you have an existing `libvslsmashsource.dll` in the `plugins64`, replace it with the newer `libvslsmashsource.dll`
-
-  ==-
 
 +++
 
@@ -166,7 +145,7 @@ Section             | Description
 
 #### Frame Rate
 
-Sets the source frame rate (fps) based on fractional input (`fpsnum`/`fpsden`). For example, `fpsnum=24000` and `fpsden=1000` forces the clip frame rate to 24.000 fps. *This should be used for sources that have different frame rates.*
+Sets the source frame rate (fps) based on fractional input (`fpsnum`/`fpsden`). For example, `fpsnum=24000` and `fpsden=1000` forces the clip frame rate to 24.000 fps. *This should be used on sources that have different frame rates.*
 
 ```py
 ## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
@@ -177,7 +156,7 @@ clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
 #### FieldBased
 
-Tags the content as progressive (`0`) or interlaced (`1`/`2`). *This should be used for incorrectly tagged sources.*
+Tags the content as progressive (`0`) or interlaced (`1`/`2`). *This should be used on incorrectly tagged sources.*
 
 ```py
 ## FieldBased: Tags the content as progressive (0) or interlaced (1/2); used for progressive content incorrectly tagged as interlaced
@@ -188,7 +167,7 @@ clip3 = core.std.SetFieldBased(clip3, 2)
 
 #### Inverse Telecine
 
-Quick inverse telecine filter for telecined clips set in [FieldBased](#fieldbased).
+Quick inverse telecine filter for fixing telecined clips set by [FieldBased](#fieldbased).
 
 ```py
 ## Inverse telecine: Fixes telecined video; used for clips marked as interlaced in FieldBased
@@ -200,7 +179,7 @@ clip1 = core.vivtc.VDecimate(clip1)
 
 #### Cropping
 
-Crops the source video by *n* pixels from the selected side. For example, `left=20` will remove 20 horizonal pixels starting from the left side. *This should be used for sources that use letterboxing or other form of crop.*
+Crops the source video by *n* pixels from the selected side. For example, `left=20` will remove 20 horizontal pixels starting from the left side. *This should be used on sources that use letterboxing or other form of crop.*
 
 !!!warning
 16-bit is required for odd frame numbers. [Make sure you are using the 16-bit color depth.](#color-contrast-depth-tonemapping-range-gamma-matrix-drc)
@@ -215,27 +194,42 @@ clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
 
 #### Scaling
 
-Downscales or upscales the video. *This should be used to match multiple sources that have differing resolutions.*
+Downscales or upscales the video. *This should be used to match sources that have differing resolutions.*
 
-You will first need to import the scaling dependency at the top of your script:
-
-```py
-## Scaling dependency: Allows for scaling filters to work (required)
-from vskernels import EwaLanczos
-```
-
-After importing the necessary dependency, apply scaling:
+You will first need to import the scaling dependencies at the top of your script:
 
 ```py
-## Scaling: Upscale/downscale clips to match using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended to scale to the highest resolution (additional dependency required)
-clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=True)
-clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
-clip3 = EwaLanczos.scale(clip2, 3840, 2160, sigmoid=True)
+## Scaling dependencies: Allows for scaling filters to work (required)
+from vskernels import Hermite, EwaLanczos
 ```
+
+After importing the necessary dependencies, apply scaling:
+
+- For upscaling (e.g. 720p -> 1080p), use `EwaLanczos`:
+
+  ```py
+  ## Upscaling: Increases the resolution of clips to match the highest resolution using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended (additional dependencies required)
+  clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=True)
+  clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
+  clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)
+  ```
+
+- For downscaling (e.g. 2160p/4K -> 1080p), use `Hermite`:
+
+  ```py
+  ## Downscaling: Decreases the resolution of clips to match the loest resolution using Hermite (equivalent scaling to mpv's high-quality profile); not recommended (additional dependencies required)
+  clip1 = Hermite.scale(clip1, 1920, 1080, linear=True)
+  clip2 = Hermite.scale(clip2, 1920, 1080, linear=True)
+  clip3 = Hermite.scale(clip3, 3840, 2160, linear=True)
+  ```
+
+!!!warning
+Downscaling sources is not recommended for most comparisons. We suggest upscaling your sources to match the highest resolution instead.
+!!!
 
 #### Trimming
 
-Removes the first *n* frames from the source. For example, `[24:]` will skip the first 24 frames and start the source at frame 24. *This should be used when a source is off-sync.*
+Removes the first *n* frames from the source. For example, `[24:]` will skip the first 24 frames and start the source at frame 24. *This should be used on sources that are out of sync.*
 
 ```py
 ## Trimming: Trim frames to match clips (calculate the frame difference and enter the number here)
@@ -303,7 +297,7 @@ clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
 
 #### Range
 
-Sets the color range of the clip as limited (`0`) or full (`1`). *This should be used for sources with incorrect metadata or DV tonemapping (set to limited).*
+Sets the color range of the clip as limited (`0`) or full (`1`). *This should be used on sources containing incorrect metadata or using DV tonemapping (setting to limited).*
 
 ```py
 ## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping
@@ -376,7 +370,7 @@ clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
 ==- :icon-file-code: Full script
 
-The full `comp.vpy` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above. *Comment/uncomment parameters as needed.*
+The complete `comp.vpy` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above. *Comment/uncomment parameters as needed.*
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
@@ -387,8 +381,8 @@ from vspreview import set_output
 
 ## <Additional dependencies>
 
-## Scaling dependency: Allows for scaling filters to work (required)
-##from vskernels import EwaLanczos
+## Scaling dependencies: Allows for scaling filters to work (required)
+##from vskernels import Hermite, EwaLanczos
 
 ## Tonemapping dependencies: Allows for tonemapping filters to work (required)
 ##from awsmfunc.types.placebo import PlaceboColorSpace as csp
@@ -430,10 +424,15 @@ source3 = "ThirdSourceName"
 ##clip2 = core.std.Crop(clip2, left=0, right=0, top=276, bottom=276)
 ##clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
 
-## Scaling: Upscale/downscale clips to match using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended to scale to the highest resolution (additional dependency required)
+## Upscaling: Increases the resolution of clips to match the highest resolution using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended (additional dependencies required)
 ##clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=True)
 ##clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
-##clip3 = EwaLanczos.scale(clip2, 3840, 2160, sigmoid=True)
+##clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)
+
+## Downscaling: Decreases the resolution of clips to match the loest resolution using Hermite (equivalent scaling to mpv's high-quality profile); not recommended (additional dependencies required)
+##clip1 = Hermite.scale(clip1, 1920, 1080, linear=True)
+##clip2 = Hermite.scale(clip2, 1920, 1080, linear=True)
+##clip3 = Hermite.scale(clip3, 3840, 2160, linear=True)
 
 ## Trimming: Trim frames to match clips (calculate the frame difference and enter the number here)
 ##clip1 = clip1[0:]
@@ -689,13 +688,13 @@ The picture type of the current frame.
 
 ### Basic Keybinds
 
-Key              | Action
------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`Left arrow`     | Move back *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
-`Right arrow`    | Move forward *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
-Number keys      | Switches to source *n* (e.g. `2` switches to `clip2`)
-`Shift` + `S`    | Take and save screenshot of the current frame
-`Ctrl` + `Space` | Mark current frame number for [automatic](#automatic-badge-variant-secondary-text-fastest-option)/[semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons
+Key                | Action
+-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`Left arrow` (<-)  | Move back *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
+`Right arrow` (->) | Move forward *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
+Number keys        | Switches to source *n* (e.g. `2` switches to `clip2`)
+`Shift` + `S`      | Take and save screenshot of the current frame
+`Ctrl` + `Space`   | Mark current frame number for [automatic](#automatic-badge-variant-secondary-text-fastest-option)/[semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons
 
 ### Process
 
