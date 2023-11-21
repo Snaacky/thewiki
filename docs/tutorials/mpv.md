@@ -178,6 +178,7 @@ We recommend taking your time to create your own config. If you want to get up a
 
 ```properties
 ## Video
+## Set the gpu-api=auto if the video player crashes
 profile=high-quality
 vo=gpu-next
 gpu-api=vulkan
