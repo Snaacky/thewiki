@@ -5,6 +5,8 @@ permissions:
 
 on:
   push:
+      branches:
+        - master
       paths:
           - "docs/static/tutorials/mpv/portable_config/**/*.*"
           - "docs/tutorials/mpv.md"
