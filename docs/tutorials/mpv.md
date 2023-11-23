@@ -66,10 +66,10 @@ scoop uninstall mpv-git
 
 ==- 📦 Installing a pre-configured build
 
-If you don't want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
+If you don't want to setup mpv yourself, a portable build of mpv is available below. This is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config) and is updated daily. You can also just grab the `portable_config` folder and add it to your existing mpv installation.
 
-[!file text="mpv" icon="play"](https://github.com/Snaacky/thewiki/tag/mpv)
-[!file text="portable_config" icon="package"](https://github.com/Snaacky/thewiki/releases/download/mpv/portable_config.7z)
+[!file text="mpv" icon="play"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
+[!file text="portable_config" icon="package"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
 
 ===
 
