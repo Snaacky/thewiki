@@ -8,9 +8,9 @@ on:
       branches:
         - master
       paths:
-          - "docs/static/tutorials/mpv/portable_config/**/*.*"
-          - "docs/tutorials/mpv.md"
-          - ".github/workflows/mpv.yml"
+        - "docs/static/tutorials/mpv/portable_config/**/*.*"
+        - "docs/tutorials/mpv.md"
+        - ".github/workflows/mpv.yml"
   schedule:
     - cron: "0 0 * * *" # daily
   workflow_dispatch:
