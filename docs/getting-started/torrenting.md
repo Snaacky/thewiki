@@ -31,10 +31,10 @@ Term               | Definition
 For most people, [streaming services](/sourcing/streaming) are more convenient to use. However, torrenting is fairly simple and allows for better flexibility. Some reasons to use torrents are:
 
 - Broad range of qualities and sizes
-- [Significantly better quality](/guides/quality/#quality-comparisons) compared to streaming sites
+- [Significantly better quality](/guides/quality#quality-comparisons) compared to streaming sites
 - Better and faster availability
-- Better subtitles/[fansubs](/guides/quality/#fansubs) and styling options
-- Access to a larger variety of titles and [Blu-ray releases](/guides/quality/#blu-ray-vs-web)
+- Better subtitles/[fansubs](/guides/quality#fansubs) and styling options
+- Access to a larger variety of titles and [Blu-ray releases](/guides/quality#blu-ray-vs-web)
 - Downloaded files for rewatching with no additional data usage
 
 !!!warning

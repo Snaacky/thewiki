@@ -23,7 +23,6 @@ Check out our [detailed torrenting guide](/getting-started/torrenting/), it's ve
 Do your own research on the clients you use but these are generally the most widely accepted clients. Keep in mind that some clients (such as newer versions of uTorrent and BitTorrent) have been known to be bundled with crypto miners and adware.
 !!!
 
-
 ## Is torrenting illegal?
 
 Torrenting itself isn't illegal. However, sharing and downloading copyrighted material may be illegal depending on your local laws. Copyright organizations can send takedown notices to the internet service provider (ISP) of the file transfer participants and start lawsuits against them for infringement.
@@ -41,15 +40,16 @@ Torrenting itself isn't illegal. However, sharing and downloading copyrighted ma
 |Takes up local storage|No storage is used|
 
 ## Do I need a VPN to torrent?
+
 If you live in a developed country, you most likely need a VPN or seedbox for torrenting and if you live in a developing country, you probably don't need to care about VPNs. Obviously this is a generalization, so make sure to do further research on the topic.
 
 ## Where can I find anime torrents?
 
-- [Nyaa](https://nyaa.si)
+* [Nyaa](https://nyaa.si)
 
-- [AniDex](https://anidex.info/)
+* [AniDex](https://anidex.info/)
 
-- [TokyoTosho](https://www.tokyotosho.info/?cat=1)
+* [TokyoTosho](https://www.tokyotosho.info/?cat=1)
 
 ## What group should I get releases from?
 
@@ -57,22 +57,21 @@ P2P groups `SubsPlease` and `Erai-raws` and scene groups `SUGOI` and `SENPAI` up
 
 However, they're not the best source for older anime or anime that has been released to Blu-ray. For the absolute best video quality or the best fansubs, try searching for the releases mentioned in:
 
-- [SeaSmoke's Anime Index](https://releases.moe)
+* [SeaSmoke's Anime Index](https://releases.moe)
 
-
-- [A Certain Fansubber's Index](https://docs.google.com/spreadsheets/d/1PJYwhjzLNPXV2X1np-S4rdZE4fb7pxp-QbHY1O0jH6Q/htmlview)
+* [A Certain Fansubber's Index](https://docs.google.com/spreadsheets/d/1PJYwhjzLNPXV2X1np-S4rdZE4fb7pxp-QbHY1O0jH6Q/htmlview)
 
 Check out the [sourcing guide](/guides/sourcing) for more detailed information on finding the best release for any particular anime.
 
 ## How large should a typical high quality 1080p anime episode be?
 
-For airing anime ripped from official streams, the size is always 1.3-1.4 GB. Mini encodes or the versions on streaming sites are encoded from this and are in the range of 200-400 MB. None of those can be called "high quality". A good encode using the blu-ray as a source is usually between 1 and 2 GB, and as high as 4-5 GB where it's needed. 
+For airing anime ripped from official streams, the size is always 1.3-1.4 GB. Mini encodes or the versions on streaming sites are encoded from this and are in the range of 200-400 MB. None of those can be called "high quality". A good encode using the blu-ray as a source is usually between 1 and 2 GB, and as high as 4-5 GB where it's needed.
 
-Size can be used to judge web sources, but it's not the best measure of quality for BDRips. Even though the raw BDMV is larger, a good encode will give you the better experience. Check out [Sourcing - Quality](/guides/sourcing#quality) for more.
+Size can be used to judge web sources, but it's not the best measure of quality for BDRips. Even though the raw BDMV is larger, a good encode will give you the better experience. Check out [Guides - Quality](/guides/quality/) for more.
 
 ## What does it mean for a torrent to be "stalled"?
 
-The files you download from torrents are downloaded from [**seeders**](/getting-started/torrenting/), who have already finished downloading the files and are uploading to leechers/peers, who may also upload to each other. In case there aren't enough seeders, or if you are unable to [connect](/getting-started/torrenting/#port-forwarding) to a seeder, you will be unable to download 100% of a torrent. 
+The files you download from torrents are downloaded from [**seeders**](/getting-started/torrenting/), who have already finished downloading the files and are uploading to leechers/peers, who may also upload to each other. In case there aren't enough seeders, or if you are unable to [connect](/getting-started/torrenting/#port-forwarding) to a seeder, you will be unable to download 100% of a torrent.
 
 This may also be because the initial seeder (the uploader) hasn't uploaded the entirety of the file to the **swarm** yet. Usually, you can wait and you should eventually connect to a seeder, but in case there are no seeders, you can ask someone who has the file to re-seed it so that you can download it. You can also try **reannouncing** to the [tracker](/resources/glossary/) (manually requesting the tracker for a refresh on peers and seeders) to try and get more seeders.
 
@@ -95,6 +94,7 @@ For those low on data or storage, HEVC mini encodes on Nyaa are the best option.
 ## What do the things in brackets mean at the end of a torrent?
 
 Example filenames:
+
 ```
 [Group] Anime Name - S01E01 - (BD 1080p HEVC 10-bit FLAC) [Dual Audio] [CRC32].mkv
 Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [Group].mkv
@@ -119,4 +119,4 @@ Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10p-Group.mkv
 | Dual Audio      | Has two audio tracks. Typically English and Japanese              |
 | [F0EAA72E]      | Random string at the end of the filename is typically CRC32.      |
 
-For more details, check out the sourcing guide - [basics](/guides/sourcing#basics) and [CRC32.](/guides/sourcing#crc32)
+For more details, check out the sourcing guide - [Torrenting](/getting-started/torrenting/) and [CRC32.](/advanced/release-standards#crc)

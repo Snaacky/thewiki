@@ -19,7 +19,7 @@ Streaming sites are generally preferred by most anime watchers as they require n
 
 However, some sites will heavily compress video/audio and may have ads. *We suggest using a reliable content blocker, such as [uBlock Origin](https://ublockorigin.com). Additionally, you may want to consider torrenting if you care about quality.*
 
-Aiming for compatibility, they are also unable to use efficient codecs like x265. *If data limits are a concern, torrenting x265 mini encodes may be a better option. See the [quality comparisons between mini encodes and popular streaming sites](/guides/quality/#quality-comparisons).*
+Aiming for compatibility, they are also unable to use efficient codecs like x265. *If data limits are a concern, torrenting x265 mini encodes may be a better option. See the [quality comparisons between mini encodes and popular streaming sites](/guides/quality#quality-comparisons).*
 
 Official streams have better quality but are also typically larger (~1.3GB per episode for 1080p). *They can be obtained by torrenting from groups like SubsPlease, who rip untouched streams.*
 
@@ -29,7 +29,7 @@ Official streams have better quality but are also typically larger (~1.3GB per e
 
 Torrenting, while can sometimes require more setup, allows for more flexibility and accessibility for watching your shows.
 
-Unlike streaming sites, torrents provide access to better releases, such as [BDs for older shows](/guides/quality/#bd-vs-web) and greater video quality. *Some shows will also have fansubs, which may be preferred over official subtitles.*
+Unlike streaming sites, torrents provide access to better releases, such as [BDs for older shows](/guides/quality#bd-vs-web) and greater video quality. *Some shows will also have fansubs, which may be preferred over official subtitles.*
 
 Torrenting requires the use of a torrent client, such as [qBittorrent](/tutorials/qbittorrent). Shows are shared in the form of .torrent files or magnet links, which can be found on trackers such as [Nyaa](https://nyaa.si). These are used by your torrent client to know what to download. *Download speeds are dependent on the number of seeds available and connection quality.*
 
