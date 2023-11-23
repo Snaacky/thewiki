@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754028550282">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754071690933">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754028550282" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754071690933" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754028550282" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754071690933" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754028550282" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.754028550282" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754071690933" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.754071690933" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -215,33 +215,33 @@
 </p>
    </doc-panel>
    <doc-panel id="installing-mpv-via-scoop" collapsed>
-       <template #title><span class="docs-emoji">&#x1F4E6;</span> Installing mpv via scoop</template>
+       <template #title><span class="docs-emoji">&#x1F368;</span> Installing mpv via scoop</template>
 <p><a href="https://scoop.sh">Scoop</a> is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in <code v-pre>%userprofile%/scoop</code> and automatically adds them to your PATH.</p>
 <doc-tabs>
 <doc-tab v-cloak id="installing-scoop">
 <template #title>Installing scoop</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+<pre class="language-powershell"><code v-pre class="language-powershell">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="installing-mpv">
 <template #title>Installing mpv</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">scoop bucket add extras
+<pre class="language-powershell"><code v-pre class="language-powershell">scoop bucket add extras
 scoop install extras/mpv-git</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="updating-mpv">
 <template #title>Updating mpv</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">scoop update mpv-git</code></pre>
+<pre class="language-powershell"><code v-pre class="language-powershell">scoop update mpv-git</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="uninstalling-mpv">
 <template #title>Uninstalling mpv</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">scoop uninstall mpv-git</code></pre>
+<pre class="language-powershell"><code v-pre class="language-powershell">scoop uninstall mpv-git</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
@@ -256,6 +256,36 @@ scoop install extras/mpv-git</code></pre>
     <span>Microsoft Store</span>
 </a></li>
 </ul>
+   </doc-panel>
+   <doc-panel id="installing-a-pre-configured-build" collapsed>
+       <template #title><span class="docs-emoji">&#x1F4E6;</span> Installing a pre-configured build</template>
+<p>If you don&#x27;t want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the <doc-anchor-trigger to="#basic-config">Basic Config</doc-anchor-trigger> and <doc-anchor-trigger to="#advanced-config">Advanced Config</doc-anchor-trigger>.</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"/><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5Z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">mpv</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>mpv</span>
+    </div>
+    <a href="https://github.com/Snaacky/thewiki/tag/mpv" class="absolute block inset-0"></a>
+</div>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path d="M12.876.64V.639l8.25 4.763c.541.313.875.89.875 1.515v9.525a1.75 1.75 0 0 1-.875 1.516l-8.25 4.762a1.748 1.748 0 0 1-1.75 0l-8.25-4.763a1.75 1.75 0 0 1-.875-1.515V6.917c0-.625.334-1.202.875-1.515L11.126.64a1.748 1.748 0 0 1 1.75 0Zm-1 1.298L4.251 6.34l7.75 4.474 7.75-4.474-7.625-4.402a.248.248 0 0 0-.25 0Zm.875 19.123 7.625-4.402a.25.25 0 0 0 .125-.216V7.639l-7.75 4.474ZM3.501 7.64v8.803c0 .09.048.172.125.216l7.625 4.402v-8.947Z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">portable_config</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>portable_config.7z</span>
+    </div>
+    <a href="https://github.com/Snaacky/thewiki/releases/download/mpv/portable_config.7z" class="absolute block inset-0"></a>
+</div>
+</p>
    </doc-panel>
 </doc-panels>
 <doc-panel id="adding-mpv-to-path" collapsed>
@@ -460,7 +490,8 @@ alang=jpn,ja
 # Uncomment this section to prefer English dub with subtitles for English dub
 #slang=zxx,eng,en
 #alang=eng,en
-#subs-with-matching-audio=no</code></pre>
+#subs-with-matching-audio=no
+</code></pre>
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="understanding-the-config" collapsed>
@@ -598,7 +629,8 @@ alang=jpn,ja
 # Set deband to &quot;no&quot; as we only need to enable it for specific cases
 deband=no
 deband-iterations=4
-deband-grain=48</code></pre>
+deband-grain=48
+</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
@@ -620,7 +652,8 @@ deband-grain=48</code></pre>
 <doc-tab v-cloak id="input-conf">
 <template #title><code v-pre>input.conf</code></template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-properties"><code v-pre class="language-properties">D cycle deband</code></pre>
+<pre class="language-properties"><code v-pre class="language-properties">D cycle deband
+</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
@@ -678,7 +711,8 @@ deband=no
 
 # Dither
 # This must be set to match your monitor's bit depth
-dither-depth = 8</code></pre>
+dither-depth = 8
+</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
@@ -742,7 +776,8 @@ sub-border-color=&quot;#FF000000&quot;
 sub-shadow-color=&quot;#A0000000&quot;
 sub-shadow-offset=0.75
 sub-bold=yes
-sub-ass-style-overrides=Kerning=yes</code></pre>
+sub-ass-style-overrides=Kerning=yes
+</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="cabin">
@@ -760,7 +795,6 @@ sub-ass-style-overrides=Kerning=yes</code></pre>
 <p>Run the <code v-pre>.ttf</code> font file to install it system-wide or put it in your <code v-pre>fonts</code> folder. Add the following to your <code v-pre>mpv.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">## Restyle Subtitles
-
 # Set sub-ass-override to &quot;no&quot; as we only need to enable it for specific cases
 sub-ass-override=no
 sub-ass-style-overrides=playresx=1920,playresy=1080
@@ -790,7 +824,6 @@ sub-ass-style-overrides=Kerning=yes</code></pre>
 <p>Add the following to the end of your <code v-pre>mpv.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">## Auto profiles
-
 [simulcast]
 profile-cond=string.match(p.filename, &quot;SubsPlease&quot;) or string.match(p.filename, &quot;Erai%-raws&quot;) or string.match(p.filename, &quot;Tsundere%-Raws&quot;) or string.match(p.filename, &quot;%-VARYG&quot;) or string.match(p.filename, &quot;HorribleSubs&quot;)
 profile-restore=copy
