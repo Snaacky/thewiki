@@ -25,27 +25,35 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 [!embed text="Installing mpv on Windows"](/static/playback/mpv/installation-windows.mp4)
 
-==- 📦 Installing mpv via scoop
+==- 🍨 Installing mpv via scoop
 
 [Scoop](https://scoop.sh) is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `%userprofile%/scoop` and automatically adds them to your PATH.
 
 +++ Installing scoop
 
-    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-    irm get.scoop.sh | iex
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+```
 
 +++ Installing mpv
 
-    scoop bucket add extras
-    scoop install extras/mpv-git
+```powershell
+scoop bucket add extras
+scoop install extras/mpv-git
+```
 
 +++ Updating mpv
 
-    scoop update mpv-git
+```powershell
+scoop update mpv-git
+```
 
 +++ Uninstalling mpv
 
-    scoop uninstall mpv-git
+```powershell
+scoop uninstall mpv-git
+```
 
 +++
 
@@ -56,7 +64,14 @@ This folder cannot be changed after installation. If you wish to change it in th
 - [ImPlay](https://github.com/tsl0922/ImPlay)
 - [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
-==-
+==- 📦 Installing a pre-configured build
+
+If you don't want to setup mpv yourself, a portable build of mpv is available below. This is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config) and is updated daily. You can also just grab the `portable_config` folder and add it to your existing mpv installation.
+
+[!file text="mpv" icon="play"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
+[!file text="portable_config" icon="package"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
+
+===
 
 ==- 📁 Adding mpv to PATH
 
@@ -176,39 +191,7 @@ We recommend taking your time to create your own config. If you want to get up a
 
 ==- :icon-file-code: Generic `mpv.conf`
 
-```properties
-## Video
-profile=high-quality
-vo=gpu-next
-gpu-api=vulkan
-scale-antiring=0.5
-deband=no
-
-# Dither
-# This must be set to match your monitor's bit depth
-dither-depth = 8
-
-## Behavior (personal preference)
-keep-open=yes
-save-position-on-quit
-
-## Screenshots
-screenshot-format=png
-screenshot-dir="~/Pictures/mpv"
-screenshot-template="%F-%p-%n"
-
-## Language Priority
-# Sub
-# Add enm before eng for honorifics
-slang=eng,en
-alang=jpn,ja
-
-# Dub
-# Uncomment this section to prefer English dub with subtitles for English dub
-#slang=zxx,eng,en
-#alang=eng,en
-#subs-with-matching-audio=no
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-32" language="properties":::
 
 ==- :icon-info: Understanding the config
 
@@ -258,13 +241,7 @@ To enable debanding in mpv, apply the following changes to your config:
 
 +++ `mpv.conf`
 
-```properties
-## Deband
-# Set deband to "no" as we only need to enable it for specific cases
-deband=no
-deband-iterations=4
-deband-grain=48
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="33-38" language="properties":::
 
 !!!warning
 Your deband settings should be placed after your [`profile`](https://mpv.io/manual/master/#profiles) in order to prevent conflict.
@@ -272,9 +249,7 @@ Your deband settings should be placed after your [`profile`](https://mpv.io/manu
 
 +++ `input.conf`
 
-```properties
-D cycle deband
-```
+:::code source="/static/tutorials/mpv/portable_config/input.conf" range="2-3" language="properties":::
 
 +++
 
@@ -314,18 +289,7 @@ If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quali
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
-```properties
-## Video
-profile=high-quality
-vo=gpu-next
-gpu-api=vulkan
-scale-antiring=0.5
-deband=no
-
-# Dither
-# This must be set to match your monitor's bit depth
-dither-depth = 8
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-11" language="properties":::
 
 !!!warning
 `dither-depth` should be set to match your monitor's bit depth to prevent [banding](#debanding).
@@ -360,21 +324,7 @@ Below are a couple of commonly used styles:
 
 Run the `.otf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
-```properties
-## Restyle Subtitles
-# Set sub-ass-override to "no" as we only need to enable it for specific cases
-sub-ass-override=no
-sub-ass-style-overrides=playresx=1920,playresy=1080
-sub-font="Gandhi Sans"
-sub-font-size=50
-sub-color="#FFFFFF"
-sub-border-size=2.4
-sub-border-color="#FF000000"
-sub-shadow-color="#A0000000"
-sub-shadow-offset=0.75
-sub-bold=yes
-sub-ass-style-overrides=Kerning=yes
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="39-52" language="properties":::
 
 +++ Cabin
 
@@ -388,7 +338,6 @@ Run the `.ttf` font file to install it system-wide or put it in your `fonts` fol
 
 ```properties
 ## Restyle Subtitles
-
 # Set sub-ass-override to "no" as we only need to enable it for specific cases
 sub-ass-override=no
 sub-ass-style-overrides=playresx=1920,playresy=1080
@@ -406,9 +355,7 @@ sub-ass-style-overrides=Kerning=yes
 
 To activate it with a key, add the following to your `input.conf`, replacing `k` with the bind of your choice, if necessary (case-sensitive):
 
-```properties
-k cycle_values sub-ass-override "force" "no"
-```
+:::code source="/static/tutorials/mpv/portable_config/input.conf" range="5" language="properties":::
 
 ### Auto Profiles
 
@@ -418,16 +365,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-```properties
-## Auto profiles
-
-[simulcast]
-profile-cond=string.match(p.filename, "SubsPlease") or string.match(p.filename, "Erai%-raws") or string.match(p.filename, "Tsundere%-Raws") or string.match(p.filename, "%-VARYG") or string.match(p.filename, "HorribleSubs")
-profile-restore=copy
-sub-fix-timing=yes
-sub-ass-override=force
-deband=yes
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="53-59" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
