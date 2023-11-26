@@ -50,6 +50,10 @@ Either lossless or lossy audio can be used for a good release but with a few thi
 - Never downmix multichannel audio to stereo.
 - Never transcode a lossy track.
 
+!!!warning
+If you're making a remux, you must not do any lossy conversions. Remuxes are meant to be lossless copies of the source and only lossless conversions should be done (e.g, PCM to FLAC). For example, converting 24bit FLAC to 16bit FLAC is a lossy process and should not be done for a remux.
+!!!
+
 ### eac3to
 
 Once you have eac3to with updated libraries, you can start with this simple command:
