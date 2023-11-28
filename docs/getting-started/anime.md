@@ -7,7 +7,11 @@ image: https://user-images.githubusercontent.com/78981416/215166522-1d7358e8-bec
 
 # Anime
 
-## Streaming
+## Sources
+
+There are multiple ways you can start watching anime, depending on your preferences. Learn what works best for you:
+
+### Streaming
 
 !!!
 *See [The Index](https://theindex.moe) for a comprehensive list of unofficial anime streaming sites.*
@@ -17,23 +21,59 @@ Looking for official streaming sites? *See [r/anime's list of legal streams](htt
 
 Streaming is the process of downloading and playing back content live from the server.
 
-Unlike [torrenting](#torrenting), streaming sites can be easily accessed through your web browser. This makes it convenient to access across all of your devices and makes it easy to start watching without having to worry about additional setup or configuration. Some streaming services will also have dedicated applications for a more fluent user experience, such as [Crunchyroll](https://www.crunchyroll.com).
+Streaming sites can be easily accessed access across all of your devices. They are often easy to use and navigate, making it easy to start watching without having to worry about additional setup or configuration. Some streaming services will also have dedicated applications for a more fluent user experience, such as [Crunchyroll](https://www.crunchyroll.com).
 
-However, most streaming sites will compress the video and audio to save bandwidth. With unofficial streaming sites in particular, video and audio are often heavily compressed, combined with intrusive ads/pop-ups across the site. *If you plan to use these sites, we suggest using a reliable content blocker, such as [uBlock Origin](https://ublockorigin.com).*
+However, most streaming sites will compress the video and audio to save bandwidth. Though this may negligible on official streaming sites, unofficial streaming sites will tend to heavily compress video and audio, combined with intrusive ads/pop-ups across the site. *If you plan to use these sites, we suggest using a reliable content blocker, such as [uBlock Origin](https://ublockorigin.com).*
 
 If you like convenience, streaming sites can be a perfectly fine option for your watching needs. They offer access to a large library of shows with ease and do not require much technical knowledge to get started. *If you want to consider streaming, we suggest starting by looking at [various quality comparisons](/guides/quality/#quality-comparisons) to see whether it is fine for you.*
 
+||| Pros
+
+- No or minimal setup required
+- Easy to use and access from all your devices
+- No VPN required; no copyright infringement notices from your ISP
+- Can be completely free
+
+||| Cons
+
+- [Video and audio quality may be worse than other sources](/guides/quality/#quality-comparisons), such as Blu-rays
+- May not permit downloading/offline playback
+- Limited show availability; some shows may be unavailable in your region
+- May have ads or pop-ups
+|||
+
 *See the [streaming sites](/sourcing/streaming/) sourcing guide and [quality guide](/guides/quality) for more information.*
 
-## Torrenting
+### Torrenting
 
 Torrenting is the process of sharing and downloading files over the internet.
 
-Unlike [streaming](#streaming), torrents provide access to better releases, such as [Blu-rays whenever they're available](/guides/quality/#blu-ray-vs-web) and greater video quality. These releases can sometimes be better than official streaming services, as they allow for more quality options and easy access to shows that may otherwise be unavailable in your region. Some shows will also have [fansubbed releases](/guides/quality/#fansubs), which may be preferred over official subtitles.
+This allows users to access better releases for their shows, such as [Blu-rays whenever they're available](/guides/quality/#blu-ray-vs-web) and greater video quality. These releases can sometimes be better than official streaming services, as they can be locally stored for offline playback and provide easy access to shows that may otherwise be unavailable in your region. Some shows will also have [fansubbed releases](/guides/quality/#fansubs), which may be preferred over official subtitles.
 
-However, torrenting requires some time to setup as opposed to streaming, making it more inconvenient for most users. To start, torrenting requires the use of a torrent client and access to a torrent tracker. Additionally, downloading anime torrents may be illegal in your region. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting/#vpn) or [seedbox](/getting-started/torrenting/#seedbox) while torrenting.*
+However, torrenting requires some time to prepare. This setup is very simple, as all you need to get started is a torrent client and access to a torrent tracker, with optional features like RSS requiring the most setup. Additionally, downloading anime torrents may be illegal in your region. *To avoid receiving a copyright infringement notice from your ISP, you may want to consider using a [VPN](/getting-started/torrenting/#vpn) or [seedbox](/getting-started/torrenting/#seedbox) while torrenting.*
 
-If you like to prioritize quality, torrenting can be an amazing option for your watching needs. They offer more flexibility with how you want to watch your shows and can be better than official streaming services.
+If you like to prioritize quality, torrenting can be an amazing option for your watching needs. They offer more flexibility with how you want to watch your shows and provide you with more control over your media.
+
+||| Pros
+
+- Better video and quality options
+- More control over your media (e.g. offline playback, [subtitle fonts](/tutorials/mpv/#subtitle-restyling), [better scaling](/tutorials/mpv/#scaling))
+- Access to shows that are unavailable in your region
+- No ads or pop-ups¹
+- Access to [fansubbed releases](/guides/quality/#fansubs) for some shows
+
+||| Cons
+
+- Requires some setup
+- May hard to access or impossible on certain devices, such as TVs
+- May be illegal where you live; *a [VPN](/getting-started/torrenting/#vpn) may be necessary*
+- May require some payment, such as a premium VPN subscription
+
+|||
+
+!!!secondary
+¹Torrent trackers may contain ads or pop-ups. *Downloaded files will not contain ads.*
+!!!
 
 *See the [torrenting guide](/getting-started/torrenting) for more information.*
 
