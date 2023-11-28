@@ -28,7 +28,7 @@ Term               | Definition
 
 ===
 
-For most people, [streaming services](/sourcing/streaming) are more convenient to use. However, torrenting is fairly simple and allows for better flexibility. Some reasons to use torrents are:
+For most people, [streaming services](/sourcing/streaming) are enough and more convenient to use. However, torrenting is fairly simple and allows for better flexibility. Some reasons to torrent include:
 
 - Broad range of qualities and sizes
 - [Significantly better quality](/guides/quality#quality-comparisons) compared to streaming sites
