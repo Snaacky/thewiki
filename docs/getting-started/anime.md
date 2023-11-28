@@ -19,7 +19,7 @@ There are multiple ways you can start watching anime, depending on your preferen
 Looking for official streaming sites? *See [r/anime's list of legal streams](https://www.reddit.com/r/anime/wiki/legal_streams).*
 !!!
 
-Streaming is the process of downloading and playing back content live from the server.
+Streaming involves retrieving and playing back content in real-time directly from a server without the need to download the entire file beforehand.
 
 Streaming sites can be easily accessed access across all of your devices. They are often easy to use and navigate, making it easy to start watching without having to worry about additional setup or configuration. Some streaming services will also have dedicated applications for a more fluent user experience, such as [Crunchyroll](https://www.crunchyroll.com).
 
@@ -46,7 +46,7 @@ If you like convenience, streaming sites can be a perfectly fine option for your
 
 ### Torrenting
 
-Torrenting is the process of sharing and downloading files over the internet.
+Torrenting is a peer-to-peer file-sharing method that facilitates the distribution and downloading of files over the internet.
 
 This allows users to access better releases for their shows, such as [Blu-rays whenever they're available](/guides/quality/#blu-ray-vs-web) and greater video quality. These releases can sometimes be better than official streaming services, as they can be locally stored for offline playback and provide easy access to shows that may otherwise be unavailable in your region. Some shows will also have [fansubbed releases](/guides/quality/#fansubs), which may be preferred over official subtitles.
 
@@ -65,7 +65,7 @@ If you like to prioritize quality, torrenting can be an amazing option for your 
 ||| Cons
 
 - Requires some setup
-- May hard to access or impossible on certain devices, such as TVs
+- May be hard to access or impossible on certain devices, such as TVs
 - May be illegal where you live; *a [VPN](/getting-started/torrenting/#vpn) may be necessary*
 - May require some payment, such as a premium VPN subscription
 
