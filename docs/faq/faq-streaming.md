@@ -6,13 +6,15 @@ order: -3
 # Streaming FAQ
 
 ## How do I request my site to be put on the [index](https://theindex.moe/)?
- 
+
 You can do so by go to [our Discord](https://discord.gg/snackbox) and fill in the form in the `#index` channel.
 
 ## Do I need a VPN to stream ?
+
 No, you do not need a VPN to stream content from streaming sites,
 
 ## Where can I find X? What app has X? What's the best X?
+
 If you're looking for a streaming site or app, check out [the index](https://theindex.moe/). If you're looking for a torrent, check Nyaa. These types of posts violate our subreddit rules and will be removed. If you still can't find the answer you're looking for, or looking for a service with some specific feature, these questions are allowed in [our Discord server](https://discord.gg/snackbox).
 
 ## Which official streaming sites are available for me?
@@ -44,7 +46,7 @@ Please refer to [TheIndex](https://theindex.moe/) in the 'Application' section f
 You’re always taking a gamble when sideloading apps on your phone. Do your research about the app you're installing.
 
 ## Site X is dead, site Y is no longer ad-free but the index says otherwise. How do I suggest an edit?
- 
+
 Same process applies, go to the `#index` channel in our [Discord](https://discord.gg/snackbox) and leave us a message.
 
 ## Why is there no OP/ED playing for a particular anime on a streaming site?
@@ -59,4 +61,4 @@ Note that these "rips" are not screen captures, they're unaltered WEB-DLs. You c
 
 ## Why are the subtitles for this anime on streaming site X different from site Y or torrent Z?
 
-It depends on which source is used by different streaming sites. The most common one is subtitles from the official stream. Fansubbers often take this as a base and improve upon it by adding effects, translating signs and making edits. Some sites may be using these fansubs as a source. For more information -  [Sourcing - Fansubs.](/guides/sourcing#fansubs)
+It depends on which source is used by different streaming sites. The most common one is subtitles from the official stream. Fansubbers often take this as a base and improve upon it by adding effects, translating signs and making edits. Some sites may be using these fansubs as a source. For more information -  [Quality - Fansubs.](/guides/quality#fansubs)

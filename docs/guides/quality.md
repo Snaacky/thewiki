@@ -20,7 +20,7 @@ Commonly used terminology:
 - **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode*
   - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
 
-==- Reading the File Name
+==- :icon-note: Reading the File Name
 
 The file name for a release will typically look like one of the following:
 
@@ -129,7 +129,7 @@ Some may not notice the differences between a good mini encode and its alternati
 
 +++
 
-==- Quality Comparisons
+==- :icon-file-media: Quality Comparisons
 
 !!!
 Most streams and WEB minis are re-encodes. These are marked in <span style="color:#E53E3E">red</span>. *See [Types of Releases](#types-of-releases).*
@@ -205,9 +205,9 @@ Fansubs are fan-produced versions of subtitles. They will often edit the officia
 
 While these edits can be an improvement over the original subs, *they may also introduce more errors than they fix.* A degree of localization is always involved with translation to make sure the dialogue flows smoothly. Localization is the process of changing cultural references and puns to fit the target audience's context. Fansubs can range from excessive localization by completely eradicating and replacing the idea of Japan, to the untranslation of random phrases and lines back to Japanese, damaging the concept of subtitles. Most good fansubs lie somewhere in between these extremes. After looking at the work of these groups, you'll be able to figure out who tends to do what.
 
-==- Getting Subs with AnimeTosho
+==- :icon-desktop-download: Getting Subs with AnimeTosho
 
-[AnimeTosho](https://animetosho.org) is a useful resource for grabbing just the subtitles from any release on [Nyaa](https://nyaa.si). *Note that only uploads that are less than 16GB will have downloadable attachments on AnimeTosho.*
+[AnimeTosho](https://animetosho.org) is a useful resource for grabbing subtitles from any release on [Nyaa](https://nyaa.si). *Note that only uploads that are less than 16GB will have downloadable attachments on AnimeTosho.*
 
 They can be downloaded under the *Subtitles* section of a release:
 

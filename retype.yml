@@ -2,6 +2,9 @@ url: thewiki.moe
 
 input: ./docs
 
+exclude:
+  - "hidden/"
+
 branding:
   title: The Wiki
 

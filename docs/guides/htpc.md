@@ -181,7 +181,7 @@ target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
 
 #### Scripts
 
-Most modern TVs are not capable of using [adaptive sync](/guides/playback/#adaptive-sync), causing [judder](/guides/playback/#explaining-judder) and negatively impacting your viewing experience.
+Most modern TVs are not capable of using [adaptive sync](/guides/playback/#adaptive-sync), causing [judder](/guides/playback#explaining-judder) and negatively impacting your viewing experience.
 
 To resolve this, we suggest using [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh), a script that automatically sets the TV's refresh rate to match the current video and prevent judder.
 
