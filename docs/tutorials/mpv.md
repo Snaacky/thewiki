@@ -191,7 +191,7 @@ We recommend taking your time to create your own config. If you want to get up a
 
 ==- :icon-file-code: Generic `mpv.conf`
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-32" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-31" language="properties":::
 
 ==- :icon-info: Understanding the config
 
@@ -203,7 +203,6 @@ Option                                                                          
 -------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [`profile`](https://mpv.io/manual/master/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
 [`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
-[`gpu-api`](https://mpv.io/manual/master/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
 [`scale-antiring`](https://mpv.io/manual/master/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*
 [`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*
 [`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*
@@ -241,7 +240,7 @@ To enable debanding in mpv, apply the following changes to your config:
 
 +++ `mpv.conf`
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="33-38" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="32-37" language="properties":::
 
 !!!warning
 Your deband settings should be placed after your [`profile`](https://mpv.io/manual/master/#profiles) in order to prevent conflict.
@@ -289,7 +288,7 @@ If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quali
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-11" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-10" language="properties":::
 
 !!!warning
 `dither-depth` should be set to match your monitor's bit depth to prevent [banding](#debanding).
@@ -316,7 +315,7 @@ Below are a couple of commonly used styles:
 
 +++ Gandhi Sans
 
-![Gandhi Sans](https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png)
+![Gandhi Sans](/static/tutorials/mpv/gandhi-sans-cropped.png)
 
 [Download this font here](https://fontmeme.com/fonts/gandhi-sans-font) or use the button below:
 
@@ -324,11 +323,11 @@ Below are a couple of commonly used styles:
 
 Run the `.otf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="39-52" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="38-51" language="properties":::
 
 +++ Cabin
 
-![Cabin](https://user-images.githubusercontent.com/78981416/248583220-ac376f74-ce9f-4c3c-800b-370355a841f0.png)
+![Cabin](/static/tutorials/mpv/cabin-cropped.png)
 
 [Download this font here](https://fontmeme.com/fonts/cabin-font) or use the button below:
 
@@ -342,6 +341,33 @@ Run the `.ttf` font file to install it system-wide or put it in your `fonts` fol
 sub-ass-override=no
 sub-ass-style-overrides=playresx=1920,playresy=1080
 sub-font="Cabin"
+sub-font-size=50
+sub-color="#FFFFFFFF"
+sub-border-size=2.4
+sub-border-color="#FF000000"
+sub-shadow-color="#A0000000"
+sub-shadow-offset=0.8
+sub-ass-style-overrides=Kerning=yes
+```
+
++++ Cabin F
+
+![Cabin F](/static/tutorials/mpv/cabin-f-cropped.png)
+
+!!!
+This is a modified version of Cabin made by **@astolfo69 (RaptoR)** on the [SeaDex discord server](https://discord.com/invite/jPeeZewWRn)
+!!!
+
+[!button icon="download" variant="primary" text="Cabin"](/static/playback/fonts/cabin-f.zip)
+
+Run the `.ttf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
+
+```properties
+## Restyle Subtitles
+# Set sub-ass-override to "no" as we only need to enable it for specific cases
+sub-ass-override=no
+sub-ass-style-overrides=playresx=1920,playresy=1080
+sub-font="Cabin F"
 sub-font-size=50
 sub-color="#FFFFFFFF"
 sub-border-size=2.4
@@ -365,7 +391,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="53-59" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="52-58" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
