@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754460091847">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754818453443">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754460091847" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754818453443" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754460091847" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754818453443" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754460091847" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.754460091847" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754818453443" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.754818453443" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -463,8 +463,7 @@ scoop install extras/mpv-git</code></pre>
 <pre class="language-properties"><code v-pre class="language-properties">## Video
 profile=high-quality
 vo=gpu-next
-gpu-api=vulkan
-scale-antiring=0.5
+scale-antiring=0.6
 deband=no
 
 # Dither
@@ -529,10 +528,6 @@ alang=jpn,ja
 <tr>
 <td><a href="https://mpv.io/manual/master/#video-output-drivers"><code v-pre>vo</code></a></td>
 <td>The output driver to be used by mpv. <em><code v-pre>gpu-next</code> is recommended for most modern hardware</em></td>
-</tr>
-<tr>
-<td><a href="https://mpv.io/manual/master/#options-gpu-api"><code v-pre>gpu-api</code></a></td>
-<td>The graphics API to be used by mpv. <em><code v-pre>vulkan</code> is recommended for most modern hardware</em></td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-scale-antiring"><code v-pre>scale-antiring</code></a></td>
@@ -705,8 +700,7 @@ deband-grain=48
 <pre class="language-properties"><code v-pre class="language-properties">## Video
 profile=high-quality
 vo=gpu-next
-gpu-api=vulkan
-scale-antiring=0.5
+scale-antiring=0.6
 deband=no
 
 # Dither
@@ -753,7 +747,7 @@ dither-depth = 8
 <doc-tab v-cloak id="gandhi-sans">
 <template #title>Gandhi Sans</template>
 <p><figure class="content-center">
-    <img src="https://user-images.githubusercontent.com/78981416/248583226-18cece1d-4cd6-4a55-8fbf-8fa587399262.png" alt="Gandhi Sans">
+    <img src="../../static/tutorials/mpv/gandhi-sans-cropped.png" alt="Gandhi Sans">
     <figcaption class="caption">Gandhi Sans</figcaption>
 </figure>
 </p>
@@ -783,7 +777,7 @@ sub-ass-style-overrides=Kerning=yes
 <doc-tab v-cloak id="cabin">
 <template #title>Cabin</template>
 <p><figure class="content-center">
-    <img src="https://user-images.githubusercontent.com/78981416/248583220-ac376f74-ce9f-4c3c-800b-370355a841f0.png" alt="Cabin">
+    <img src="../../static/tutorials/mpv/cabin-cropped.png" alt="Cabin">
     <figcaption class="caption">Cabin</figcaption>
 </figure>
 </p>
@@ -799,6 +793,50 @@ sub-ass-style-overrides=Kerning=yes
 sub-ass-override=no
 sub-ass-style-overrides=playresx=1920,playresy=1080
 sub-font=&quot;Cabin&quot;
+sub-font-size=50
+sub-color=&quot;#FFFFFFFF&quot;
+sub-border-size=2.4
+sub-border-color=&quot;#FF000000&quot;
+sub-shadow-color=&quot;#A0000000&quot;
+sub-shadow-offset=0.8
+sub-ass-style-overrides=Kerning=yes</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="cabin-f">
+<template #title>Cabin F</template>
+<p><figure class="content-center">
+    <img src="../../static/tutorials/mpv/cabin-f-cropped.png" alt="Cabin F">
+    <figcaption class="caption">Cabin F</figcaption>
+</figure>
+</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>This is a modified version of Cabin made by <strong>@astolfo69 (RaptoR)</strong> on the <a href="https://discord.com/invite/jPeeZewWRn">SeaDex discord server</a></p>
+        </div>
+    </div>
+</div>
+<p><a href="../../static/playback/fonts/cabin-f.zip" class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-4 h-10 text-sm rounded-md">
+    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="18" height="18" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M4.75 17.25a.75.75 0 0 1 .75.75v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25V18a.75.75 0 0 1 .75-.75Z"/><path d="M5.22 9.97a.749.749 0 0 1 1.06 0l4.97 4.969V2.75a.75.75 0 0 1 1.5 0v12.189l4.97-4.969a.749.749 0 1 1 1.06 1.06l-6.25 6.25a.749.749 0 0 1-1.06 0l-6.25-6.25a.749.749 0 0 1 0-1.06Z"/></g></svg></span>
+    <span>Cabin</span>
+</a></p>
+<p>Run the <code v-pre>.ttf</code> font file to install it system-wide or put it in your <code v-pre>fonts</code> folder. Add the following to your <code v-pre>mpv.conf</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-properties"><code v-pre class="language-properties">## Restyle Subtitles
+# Set sub-ass-override to &quot;no&quot; as we only need to enable it for specific cases
+sub-ass-override=no
+sub-ass-style-overrides=playresx=1920,playresy=1080
+sub-font=&quot;Cabin F&quot;
 sub-font-size=50
 sub-color=&quot;#FFFFFFFF&quot;
 sub-border-size=2.4
