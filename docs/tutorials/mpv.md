@@ -355,7 +355,7 @@ sub-ass-style-overrides=Kerning=yes
 ![Cabin F](/static/tutorials/mpv/cabin-f-cropped.png)
 
 !!!
-This is a modified version of Cabin made by **@astolfo69 (RaptoR)** on the [SeaDex discord server](https://discord.com/invite/jPeeZewWRn)
+This is a modified version of Cabin made by **@astolfo69 (RaptoR)** in the [SeaDex discord server](https://discord.com/invite/jPeeZewWRn)
 !!!
 
 [!button icon="download" variant="primary" text="Cabin"](/static/playback/fonts/cabin-f.zip)
