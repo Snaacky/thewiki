@@ -28,13 +28,13 @@ Term               | Definition
 
 ===
 
-For most people, [streaming services](/sourcing/streaming) are more convenient to use. However, torrenting is fairly simple and allows for better flexibility. Some reasons to use torrents are:
+For most people, [streaming services](/sourcing/streaming) are enough and more convenient to use. However, torrenting is fairly simple and allows for better flexibility. Some reasons to torrent include:
 
 - Broad range of qualities and sizes
-- [Significantly better quality](/guides/quality/#quality-comparisons) compared to streaming sites
+- [Significantly better quality](/guides/quality#quality-comparisons) compared to streaming sites
 - Better and faster availability
-- Better subtitles/[fansubs](/guides/quality/#fansubs) and styling options
-- Access to a larger variety of titles and [Blu-ray releases](/guides/quality/#blu-ray-vs-web)
+- Better subtitles/[fansubs](/guides/quality#fansubs) and styling options
+- Access to a larger variety of titles and [Blu-ray releases](/guides/quality#blu-ray-vs-web)
 - Downloaded files for rewatching with no additional data usage
 
 !!!warning
@@ -139,7 +139,7 @@ Some VPNs offer the ability to forward ports, which is especially useful if you 
 
 - [AirVPN](https://airvpn.org) - Offers 5 static ports. *Recommended to use with a third-party client such as [WireSock](https://github.com/wiresock/WireSockUI)*
 
-- [ProtonVPN](https://protonvpn.com) - Offers 1 dynamic port. *Recommended to use with an [automatic port mapping client](https://github.com/maah/ProtonVPN-win-app) to avoid manually updating ports on reconnect*
+- [ProtonVPN](https://protonvpn.com) - Offers 1 dynamic port. *Recommended to use with an [automatic port mapping client](https://github.com/ravesheep/ProtonVPN-windows) to avoid manually updating ports on reconnect*
 
 #### Split Tunneling
 

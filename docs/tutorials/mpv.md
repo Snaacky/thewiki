@@ -25,13 +25,37 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 [!embed text="Installing mpv on Windows"](/static/playback/mpv/installation-windows.mp4)
 
-==- 📦 Installing a pre-configured build
+==- 🍨 Installing mpv via scoop
 
-If you don't want to setup mpv yourself, portable builds of mpv are available below. They are pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config).
+[Scoop](https://scoop.sh) is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `%userprofile%/scoop` and automatically adds them to your PATH.
 
-[!file mpv (Default OSC)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-default.zip)
-[!file mpv (ModernX)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-modernx.zip)
-[!file mpv (uosc)](https://github.com/Snaacky/thewiki/releases/latest/download/mpv-uosc.zip)
++++ Installing scoop
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+```
+
++++ Installing mpv
+
+```powershell
+scoop bucket add extras
+scoop install extras/mpv-git
+```
+
++++ Updating mpv
+
+```powershell
+scoop update mpv-git
+```
+
++++ Uninstalling mpv
+
+```powershell
+scoop uninstall mpv-git
+```
+
++++
 
 ==- 🍴 Installing a fork
 
@@ -40,7 +64,14 @@ If you don't want to setup mpv yourself, portable builds of mpv are available be
 - [ImPlay](https://github.com/tsl0922/ImPlay)
 - [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
-==-
+==- 📦 Installing a pre-configured build
+
+If you don't want to setup mpv yourself, a portable build of mpv is available below. This is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config) and is updated daily. You can also just grab the `portable_config` folder and add it to your existing mpv installation.
+
+[!file text="mpv" icon="play"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
+[!file text="portable_config" icon="package"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
+
+===
 
 ==- 📁 Adding mpv to PATH
 
@@ -82,6 +113,7 @@ Distributions usually package outdated, unmaintained, and unsupported versions o
 ==- 🔧 Installing on various distributions
 
 All of these packages are unofficial:
+
 - [Arch (official package)](https://archlinux.org/packages/extra/x86_64/mpv/)
 - [Gentoo (official package)](https://packages.gentoo.org/packages/media-video/mpv)
 - [Arch (AUR, git package)](https://aur.archlinux.org/packages/mpv-git/)
@@ -108,11 +140,25 @@ By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder 
     └── mpv.conf
 ```
 
-+++ Modified (`portable_config`)
++++ Portable (`portable_config`)
 
 ```properties
 .
 ├── mpv.exe
+└── portable_config/
+    ├── fonts/
+    ├── script-opts/
+    ├── scripts/
+    ├── shaders/
+    ├── input.conf
+    └── mpv.conf
+```
+
++++ Scoop (`%userprofile%/scoop/persist/mpv-git/portable_config`)
+
+```properties
+
+%userprofile%/scoop/persist/mpv-git/
 └── portable_config/
     ├── fonts/
     ├── script-opts/
@@ -145,39 +191,7 @@ We recommend taking your time to create your own config. If you want to get up a
 
 ==- :icon-file-code: Generic `mpv.conf`
 
-```properties
-## Video
-profile=high-quality
-vo=gpu-next
-gpu-api=vulkan
-scale-antiring=0.5
-deband=no
-
-# Dither
-# This must be set to match your monitor's bit depth
-dither-depth = 8
-
-## Behavior (personal preference)
-keep-open=yes
-save-position-on-quit
-
-## Screenshots
-screenshot-format=png
-screenshot-directory="~/Pictures/mpv"
-screenshot-template="%F-%p"
-
-## Language Priority
-# Sub
-# Add enm before eng for honorifics
-slang=eng,en
-alang=jpn,ja
-
-# Dub
-# Uncomment this section to prefer English dub with subtitles for English dub
-#slang=zxx,eng,en
-#alang=eng,en
-#subs-with-matching-audio=no
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-32" language="properties":::
 
 ==- :icon-info: Understanding the config
 
@@ -187,20 +201,20 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 
 Option                                                                                           | Meaning
 -------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[`profile`](https://mpv.io/manual/stable/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
-[`vo`](https://mpv.io/manual/stable/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
-[`gpu-api`](https://mpv.io/manual/stable/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
-[`scale-antiring`](https://mpv.io/manual/stable/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*
+[`profile`](https://mpv.io/manual/master/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
+[`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
+[`gpu-api`](https://mpv.io/manual/master/#options-gpu-api)                                       | The graphics API to be used by mpv. *`vulkan` is recommended for most modern hardware*
+[`scale-antiring`](https://mpv.io/manual/master/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*
 [`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*
 [`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*
-[`keep-open`](https://mpv.io/manual/stable/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
-[`save-position-on-quit`](https://mpv.io/manual/stable/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
-[`screenshot-format`](https://mpv.io/manual/stable/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
-[`screenshot-directory`](https://mpv.io/manual/stable/#options-screenshot-directory)             | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
-[`screenshot-template`](https://mpv.io/manual/stable/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
-[`slang`](https://mpv.io/manual/stable/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
-[`alang`](https://mpv.io/manual/stable/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
-[`subs-with-matching-audio`](https://mpv.io/manual/stable/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
+[`keep-open`](https://mpv.io/manual/master/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
+[`save-position-on-quit`](https://mpv.io/manual/master/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
+[`screenshot-format`](https://mpv.io/manual/master/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
+[`screenshot-dir`](https://mpv.io/manual/master/#options-screenshot-dir)                         | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
+[`screenshot-template`](https://mpv.io/manual/master/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
+[`slang`](https://mpv.io/manual/master/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
+[`alang`](https://mpv.io/manual/master/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
+[`subs-with-matching-audio`](https://mpv.io/manual/master/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
 
 ===
 
@@ -227,23 +241,15 @@ To enable debanding in mpv, apply the following changes to your config:
 
 +++ `mpv.conf`
 
-```properties
-## Deband
-# Set deband to "no" as we only need to enable it for specific cases
-deband=no
-deband-iterations=4
-deband-grain=48
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="33-38" language="properties":::
 
 !!!warning
-Your deband settings should be placed after your [`profile`](https://mpv.io/manual/stable/#profiles) in order to prevent conflict.
+Your deband settings should be placed after your [`profile`](https://mpv.io/manual/master/#profiles) in order to prevent conflict.
 !!!
 
 +++ `input.conf`
 
-```properties
-D cycle deband
-```
+:::code source="/static/tutorials/mpv/portable_config/input.conf" range="2-3" language="properties":::
 
 +++
 
@@ -283,18 +289,7 @@ If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quali
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
-```properties
-## Video
-profile=high-quality
-vo=gpu-next
-gpu-api=vulkan
-scale-antiring=0.5
-deband=no
-
-# Dither
-# This must be set to match your monitor's bit depth
-dither-depth = 8
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-11" language="properties":::
 
 !!!warning
 `dither-depth` should be set to match your monitor's bit depth to prevent [banding](#debanding).
@@ -329,21 +324,7 @@ Below are a couple of commonly used styles:
 
 Run the `.otf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
-```properties
-## Restyle Subtitles
-# Set sub-ass-override to "no" as we only need to enable it for specific cases
-sub-ass-override=no
-sub-ass-force-style=playresx=1920,playresy=1080
-sub-font="Gandhi Sans"
-sub-font-size=50
-sub-color="#FFFFFF"
-sub-border-size=2.4
-sub-border-color="#FF000000"
-sub-shadow-color="#A0000000"
-sub-shadow-offset=0.75
-sub-bold=yes
-sub-ass-force-style=Kerning=yes
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="39-52" language="properties":::
 
 +++ Cabin
 
@@ -357,10 +338,9 @@ Run the `.ttf` font file to install it system-wide or put it in your `fonts` fol
 
 ```properties
 ## Restyle Subtitles
-
 # Set sub-ass-override to "no" as we only need to enable it for specific cases
 sub-ass-override=no
-sub-ass-force-style=playresx=1920,playresy=1080
+sub-ass-style-overrides=playresx=1920,playresy=1080
 sub-font="Cabin"
 sub-font-size=50
 sub-color="#FFFFFFFF"
@@ -368,16 +348,14 @@ sub-border-size=2.4
 sub-border-color="#FF000000"
 sub-shadow-color="#A0000000"
 sub-shadow-offset=0.8
-sub-ass-force-style=Kerning=yes
+sub-ass-style-overrides=Kerning=yes
 ```
 
 +++
 
 To activate it with a key, add the following to your `input.conf`, replacing `k` with the bind of your choice, if necessary (case-sensitive):
 
-```properties
-k cycle_values sub-ass-override "force" "no"
-```
+:::code source="/static/tutorials/mpv/portable_config/input.conf" range="5" language="properties":::
 
 ### Auto Profiles
 
@@ -387,16 +365,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-```properties
-## Auto profiles
-
-[simulcast]
-profile-cond=string.match(p.filename, "SubsPlease") or string.match(p.filename, "Erai%-raws") or string.match(p.filename, "Tsundere%-Raws") or string.match(p.filename, "%-VARYG") or string.match(p.filename, "HorribleSubs")
-profile-restore=copy
-sub-fix-timing=yes
-sub-ass-override=force
-deband=yes
-```
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="53-59" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
