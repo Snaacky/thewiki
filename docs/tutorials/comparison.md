@@ -669,8 +669,8 @@ The status bar displays several information about the current source:
 
 Key                | Action
 -------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`Left arrow` (<-)  | Move back *n* frames based on [config](#change-frame-increment) (default: `n = 1`)
-`Right arrow` (->) | Move forward *n* frames based on [config](#change-frame-increment) (default: `n = 1`)
+`Left arrow` (<-)  | Move back *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
+`Right arrow` (->) | Move forward *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
 Number keys        | Switches to source *n* (e.g. `2` switches to `clip2`)
 `Shift` + `S`      | Take and save screenshot of the current frame
 `Ctrl` + `Space`   | Mark current frame number for [semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons
@@ -863,7 +863,7 @@ If you plan on uploading to [Slowpoke Pics](https://slow.pics) (slow.pics) under
 - Visit [Slowpoke Pics](https://slow.pics) in your browser and log into your account
 - Open your browser's **Developer Tools**. You will need to get two values:
   - To get your `browserId`, go to **Application** -> **Storage** -> **Local Storage** -> `https://slow.pics`. Copy the key listed there
-  - To get your `sessionId`, go to **Network** -> refresh the page -> `slow.pics`. Copy the key listed under `SLPSESSION`
+  - To get your `sessionId`, go to **Network**. Refresh the page, then find `slow.pics`. Copy the key listed under `SLPSESSION`
 - In VSPreview, go to **Settings** -> **Comp**
 - Paste the two values in the boxes provided
 
