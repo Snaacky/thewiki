@@ -85,12 +85,15 @@ pip install vspreview
 
 In order to create a comparison, you will need to create a VapourSynth script. This script outlines the parameters and files which VSPreview will use when generating your comparison.
 
-Create a file called `comp.py`. Launch it in your favorite text editor and add the sections that you desire.
+Create a file called `comp.py`. Launch it in your favorite text editor and add sections as desired:
 
 ==- :icon-file-code: Initial script [!badge variant="danger" text="Required"]
 
 The basic `comp.py` script to get started. This script includes the required dependencies and features to run and get the best experience out of VSPreview for creating your comparisons.
-*Make sure to comment (add ##) and uncomment lines as required.*
+
+!!!
+Make sure to comment (add `##` to the beginning of the line) and uncomment lines as needed.
+!!!
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
@@ -119,7 +122,7 @@ source1 = "FirstSourceName"
 source2 = "SecondSourceName"
 source3 = "ThirdSourceName"
 
-## Depth: Convert clip to 16-bit 444 for greater precision
+## Depth: Convert clip to 16-bit 4:4:4 for greater precision
 clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
 clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
 clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
@@ -149,7 +152,7 @@ Section             | Description
 **Dependencies**    | Dependencies required to create comparisons in VSPreview
 **File paths**      | The location of your source file
 **Source**          | The name of each source. [We recommend following the naming scheme here.](#recommended-source-naming) *If you plan to use [Slowpoke Pics](#slowpoke-pics), this will be the name that will be displayed in comparisons*
-**Depth**           | Converts the video to 16 bit depth 444 chroma subsampling, which allows for greater precision and is a requirement for some filters.
+**Depth**           | Converts the video to 16-bit depth with 4:4:4 chroma subsampling for greater precision. *Required for some filters*
 **FrameInfo**       | Lists the frame number, type, and source name in the top left of the videos
 **FrameProp**       | Sets the source name entered under **Source** for correct labeling on [Slowpoke Pics](#slowpoke-pics)
 **Output**          | Parameter that allows clips to appear in VSPreview
@@ -158,7 +161,11 @@ Section             | Description
 
 #### Frame Rate
 
-Sets the source frame rate (fps) based on fractional input (`fpsnum`/`fpsden`). For example, `fpsnum=24000` and `fpsden=1001` forces the clip frame rate to 23.976 fps. *This should be used on sources that have different frame rates that don't automatically stay in sync, if they stay in sync without changing this when skipping around manaully then you should note that the source has dropped/duplicate frames.*
+Sets the source frame rate (fps) based on fractional input (`fpsnum`/`fpsden`). For example, `fpsnum=24000` and `fpsden=1001` forces the clip frame rate to 23.976 fps. *This should be used on sources that have different frame rates that don't automatically stay in sync.*
+
+!!!
+If a clip stays in sync without changing during scrubbing, you should note that the specific source has dropped or duplicate frames.
+!!!
 
 ```py
 ## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
@@ -169,7 +176,7 @@ clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
 #### FieldBased
 
-Allows you to set interlaced flagged content that's actually progressive as progressive, which results in higher quality chroma upscaling
+Sets interlaced flagged content that may be progressive as progressive for higher quality chroma upscaling.
 
 ```py
 ## FieldBased: Tags the content as progressive (0); used for progressive content tagged as interlaced
@@ -180,7 +187,7 @@ clip3 = core.std.SetFieldBased(clip3, 0)
 
 #### Inverse Telecine
 
-Quick inverse telecine filter for converting telecined clips (usually 30fps interlaced video) back to the original framerate (24fps progressive)
+Quick inverse telecine filter for converting telecined clips (usually 30 fps interlaced video) back to the original framerate (24 fps progressive).
 
 ```py
 ## Inverse telecine: Fixes telecined video
@@ -192,7 +199,11 @@ clip1 = core.vivtc.VDecimate(clip1)
 
 #### Cropping
 
-Crops the source video by *n* pixels from the selected side. For example, `left=20` will remove 20 horizontal pixels starting from the left side. *This should be used on sources that use letterboxing or other form of borders, make sure to check for variable aspect ratios throughout the file and only crop the smallest border.* ShareX recommended for quickly calculating border size.
+Crops the source video by *n* pixels from the selected side. For example, `left=20` will remove 20 horizontal pixels starting from the left side. *This should be used on sources that use letterboxing or other form of borders.*
+
+!!!
+Make sure to check for variable aspect ratios throughout the file and only crop the smallest border. We recommend using [ShareX](https://getsharex.com) for quickly calculating border size.
+!!!
 
 ```py
 ## Cropping: Removes letterboxing (black bars) [16-bit required for odd numbers]
@@ -224,12 +235,14 @@ Downscales or upscales the video. *This should be used to match sources that hav
   ```
 
 !!!warning
-Downscaling is generally not recommended, we suggest upscaling your sources to match the highest resolution unless you are specifically trying to demonstrate how a higher resolution file would compare on a lower resolution display.  
+Downscaling is generally not recommended. We suggest upscaling your sources to match the highest resolution unless you have a specific reason (e.g. comparing how a higher resolution file would compare on a lower resolution display).  
 !!!
 
 #### Trimming
 
-Removes the first *n* frames from the source. For example, `[24:]` will skip the first 24 frames and start the source at frame 25. *This should be used on sources that are out of sync.* To get the difference simply find a unique frame (such as a scene change) in both sources, note the frame numbers, and enter the difference.
+Removes the first *n* frames from the source. For example, `[24:]` will skip the first 24 frames and start the source at frame 25. *This should be used on sources that are out of sync.*
+
+To get the frame difference, find a unique frame (e.g. scene changes) in the correct and incorrect source. Note the frame numbers each one begin at, then set the difference of the two for the incorrect source.
 
 ```py
 ## Trimming: Trim frames to match clips (calculate the frame difference and enter the number here)
@@ -238,9 +251,9 @@ clip2 = clip2[24:]
 clip3 = clip3[0:]
 ```
 
-  !!!
-  For more advanced trimming involving chaining, splicing and looping, see [the official docs](https://www.vapoursynth.com/doc/pythonreference.html#slicing-and-other-syntactic-sugar)
-  !!!
+!!!secondary
+For more advanced trimming such as chaining, splicing, and looping, see [Vapoursynth's docs](https://www.vapoursynth.com/doc/pythonreference.html#slicing-and-other-syntactic-sugar).
+!!!
 
 ==- :icon-paintbrush: Color & contrast (tonemapping, range, gamma, matrix, DRC)
 
@@ -248,8 +261,8 @@ clip3 = clip3[0:]
 
 Converts the dynamic range of the source (i.e. HDR/DV -> SDR).
 
-- For converting HDR (Will look washed out) -> SDR, set `source_colorspace=csp.HDR10`
-- For converting DV (Will look green/purple) -> SDR, set `source_colorspace=csp.DOVI`
+- For converting HDR (washed out colors) -> SDR, set `source_colorspace=csp.HDR10`
+- For converting DV (green/purple hue) -> SDR, set `source_colorspace=csp.DOVI`
 
 ```py
 ## Tonemapping: Converts the dynamic range of the source [16-bit required]
@@ -261,7 +274,7 @@ clip3args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_
 clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
 clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
 clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
-## Retag video to 709 after tonemapping [REQUIRED]
+## Retag video to 709 after tonemapping [required]
 clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
 clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
 clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
@@ -273,7 +286,7 @@ clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
 
 #### Range
 
-Sets the color range of the clip as limited (`0`) or full (`1`). *This should be used on sources containing incorrect metadata, or after tonemapping DV content (set it to limited).*
+Sets the color range of the clip as limited (`0`) or full (`1`). *This should be used on sources containing incorrect metadata or after tonemapping DV content (set it to limited).*
 
 ```py
 ## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping
@@ -284,7 +297,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 
 #### Gamma
 
-Adjusts the gamma level of the video, should only be used to fix the quicktime gamma bug or similar where one source will appear much brighter than the rest.
+Adjusts the gamma level of the video. *This should only be used to fix the QuickTime gamma bug or similar where one source will appear much brighter than the rest.*
 
 ```py
 ## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
@@ -295,7 +308,7 @@ clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=40
 
 #### Matrix
 
-Sets the color gamut to fix the colors of your sources. This is most commonly used on sources you're upscaling or 4K SDR content. *This should be used on sources with incorrect/missing metadata or colors that are off, particulary greens and reds.*
+Sets the color gamut to fix the colors of your sources. This is most commonly used on sources you're upscaling or 4K SDR content. *This should be used on sources with incorrect/missing metadata or colors that are off, particularly reds and greens.*
 
 Generally:
 
@@ -312,10 +325,10 @@ clip2 = core.std.SetFrameProp(clip2, prop="_Matrix", intval=6)
 clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
 ```
 
-If you are unable to correct the colors with the initial matrix command then it indicates a source flaw rather than a metadata issue, at which point you should instead try the filters below:
+If you are unable to correct the source's colors with the initial matrix command, the source is likely flawed rather than an issue with the metadata. If this is the case, you should use the filters below:
 
 ```py
-## Correct matrix: If the colors cannot be corrected with the matrix command [16-bit required]
+## Correct matrix: If the colors cannot be corrected with the initial matrix command [16-bit required]
 clip1 = core.resize.Point(clip1, matrix=5)
 clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
 clip2 = core.resize.Point(clip2, matrix=6)
@@ -338,7 +351,11 @@ clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
 ==- :icon-file-code: Full script
 
-The complete `comp.py` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above. *Make sure to comment (add ##) and uncomment lines as required.*
+The complete `comp.py` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above.
+
+!!!
+Make sure to comment (add `##` to the beginning of the line) and uncomment lines as needed.
+!!!
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
@@ -367,7 +384,7 @@ source1 = "FirstSourceName"
 source2 = "SecondSourceName"
 source3 = "ThirdSourceName"
 
-## Depth: Convert clip to 16-bit 444 for greater precision
+## Depth: Convert clip to 16-bit 4:4:4 for greater precision
 clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
 clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
 clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
@@ -381,8 +398,8 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
 ## FieldBased: Tags the content as progressive (0); used for progressive content tagged as interlaced
 ##clip1 = core.std.SetFieldBased(clip1, 0)
-##clip2 = core.std.SetFieldBased(clip2, 1)
-##clip3 = core.std.SetFieldBased(clip3, 2)
+##clip2 = core.std.SetFieldBased(clip2, 0)
+##clip3 = core.std.SetFieldBased(clip3, 0)
 
 ## Inverse telecine: Fixes telecined video
 ##clip1 = core.vivtc.VFM(clip1, 1)
@@ -398,7 +415,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 ##clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
 ##clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)
 
-## Downscaling: Decreases the resolution of clips to match the loest resolution using Hermite (equivalent scaling to mpv's high-quality profile); not recommended
+## Downscaling: Decreases the resolution of clips to match the lowest resolution using Hermite (equivalent scaling to mpv's high-quality profile); not recommended
 ##clip1 = Hermite.scale(clip1, 1920, 1080, linear=True)
 ##clip2 = Hermite.scale(clip2, 1920, 1080, linear=True)
 ##clip3 = Hermite.scale(clip3, 3840, 2160, linear=True)
@@ -417,7 +434,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 ##clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
 ##clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
 ##clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
-## Retag video to 709 after tonemapping
+## Retag video to 709 after tonemapping [required]
 ##clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
 ##clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
 ##clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
@@ -437,7 +454,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 ##clip2 = core.std.SetFrameProp(clip2, prop="_Matrix", intval=6)
 ##clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
 
-## Correct matrix: If the colors cannot be corrected with the matrix command [16-bit required]
+## Correct matrix: If the colors cannot be corrected with the initial matrix command [16-bit required]
 ##clip1 = core.resize.Point(clip1, matrix=5)
 ##clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
 ##clip2 = core.resize.Point(clip2, matrix=6)
@@ -483,11 +500,13 @@ Alternatively, you can create a create a `comp.bat` file, replacing `C:\path\to\
 vspreview "C:\path\to\comp.py"
 ```
 
+!!!
 Want to jump straight to making comparisons? *See [Comparing](#comparing).*
+!!!
 
 ## Interface
 
-==- UI
+==- :icon-table: Basic Overview
 
 VSPreview's user-friendly interface allows you to perform many actions while being able to compare sources with ease:
 
@@ -534,7 +553,7 @@ Functions for saving frames.
 By default, VSPreview uses the format `{script_name}_{frame}` when saving frames.
 
 !!!
-We recommend changing this to `{frame}_{index}_{Name}`, which is a more friendly naming scheme.
+We recommend changing the file naming scheme to `{frame}_{index}_{Name}`, which is more friendly.
 !!!
 
 !!!warning
@@ -617,17 +636,23 @@ The status bar displays several information about the current source:
 
 ![VSPreview status bar](/static/comparison/vsp-status.png)
 
-1 - **Total number of frames:** The total number of frames in the video stream.
+1 - Total number of frames
+:   The total number of frames in the video stream.
 
-2 - **Video stream length:** The playback length of the video stream.
+2 - Video stream length
+:   The playback length of the video stream.
 
-3 - **Video stream resolution:** The content resolution of the video stream.
+3 - Video stream resolution
+:   The content resolution of the video stream.
 
-4 - **Video format:** The chroma subsampling type and bit depth.
+4 - Video format
+:   The chroma subsampling type and bit depth.
 
-5 - **Source frame rate:** The frame rate of the video stream, represented by a fraction and approximate decimal.
+5 - Source frame rate
+:   The frame rate of the video stream, represented by a fraction and approximate decimal.
 
-6 - **Picture type of current frame:** The picture type of the current frame.
+6 - Picture type of current frame
+:   The picture type of the current frame.
 
 ## Comparing
 
@@ -644,8 +669,8 @@ The status bar displays several information about the current source:
 
 Key                | Action
 -------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`Left arrow` (<-)  | Move back *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
-`Right arrow` (->) | Move forward *n* frames based on [config](#change-frame-increment) (default: *n = 1*)
+`Left arrow` (<-)  | Move back *n* frames based on [config](#change-frame-increment) (default: `n = 1`)
+`Right arrow` (->) | Move forward *n* frames based on [config](#change-frame-increment) (default: `n = 1`)
 Number keys        | Switches to source *n* (e.g. `2` switches to `clip2`)
 `Shift` + `S`      | Take and save screenshot of the current frame
 `Ctrl` + `Space`   | Mark current frame number for [semi-automatic](#semi-automatic-badge-icon-variant-primary-text-recommended) comparisons
@@ -654,7 +679,7 @@ Number keys        | Switches to source *n* (e.g. `2` switches to `clip2`)
 
 VSPreview offers three methods for creating comparisons:
 
-==- Automatic [!badge variant="secondary" text="Fastest Option"]
+==- :icon-cpu: Automatic [!badge variant="secondary" text="Fastest Option"]
 
 Automatic comparisons are created completely without any additional user input. VSPreview will automatically select, capture, and upload frames for you. *This is the fastest method for creating comparisons.*
 
@@ -676,7 +701,7 @@ Automatic comparisons are created completely without any additional user input. 
 
 3. Hit the *Start Upload* button under *Comp* to begin creating your comparison
 
-==- Semi-automatic [!badge icon=":heart:" variant="primary" text="Recommended"]
+==- :icon-gear: Semi-automatic [!badge icon=":heart:" variant="primary" text="Recommended"]
 
 Semi-automatic comparisons are created with minor user input. VSPreview will automatically capture and upload frame manually marked by the user. *This is the recommended method for creating comparisons.*
 
@@ -706,9 +731,9 @@ Semi-automatic comparisons are created with minor user input. VSPreview will aut
 
 3. Hit the *Start Upload* button under *Comp* to begin creating your comparison
 
-==- Manual
+==- :icon-tools: Manual
 
-Manual comparison are created completely by the user. VSPreview displays and handles frame capture, while the main actions are performed manually by the user through the previewer.
+Manual comparisons are created completely by the user. VSPreview displays and handles frame capture, while the main actions are performed by the user through the previewer.
 
 #### Capturing
 
@@ -721,12 +746,12 @@ Manual comparison are created completely by the user. VSPreview displays and han
    - Default keybind: `Shift` + `S`
 
 !!!
-  Be sure to set your file naming to [`{frame}_{index}_{Name}`](#misc) for automatic slowpics sorting
+If you want to use automatic [Slowpoke Pics](#slowpoke-pics) sorting, make sure your file naming scheme is set to [`{frame}_{index}_{Name}`](#2-frame-saving).
 !!!
 
 3. Switch to the other sources and take screenshots of their current frame
-   - Press the number keys to change sources (e.g. `1` for `clip1`, `2` for `clip2`) and press the screenshot keybind
-   - *You may need to readjust the position using the arrow keys*
+   - Press the number keys to change sources (e.g. `1` for `clip1`, `2` for `clip2`)
+   - *You may need to finely readjust the position using the arrow keys*
 
 4. Repeat process for the next frames in your comparison
 
@@ -758,7 +783,7 @@ Key                                                        | Meaning
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) 4 | The file size
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) 5 | Additional tags, such as scaling or HDR/DV
 
-How you name your sources will depend on the content you're comparing. For example, if you are trying to compare HDR vs. SDR sources, you should include the type in the source name. *Generally, the first three will cover most comparisons you make, but you are free to include more as needed.*
+How you should name your sources will depend on the content you're comparing. For example, if you are trying to compare HDR and SDR sources, you should include the type in the source name. *Generally, the first three will cover most comparisons you make, but you are free to include more as needed.*
 
 ==- Change frame increment
 
@@ -838,7 +863,7 @@ If you plan on uploading to [Slowpoke Pics](https://slow.pics) (slow.pics) under
 - Visit [Slowpoke Pics](https://slow.pics) in your browser and log into your account
 - Open your browser's **Developer Tools**. You will need to get two values:
   - To get your `browserId`, go to **Application** -> **Storage** -> **Local Storage** -> `https://slow.pics`. Copy the key listed there
-  - To get your `sessionId`, go to **Network**, Refresh, -> `slow.pics`. Copy the key listed under `SLPSESSION`
+  - To get your `sessionId`, go to **Network** -> refresh the page -> `slow.pics`. Copy the key listed under `SLPSESSION`
 - In VSPreview, go to **Settings** -> **Comp**
 - Paste the two values in the boxes provided
 
@@ -891,7 +916,7 @@ for process in processes:
 
 ==- Padding
 
-Zero pads the frame numbers on images in the current directory and removes extraneous data from the file name. This allows for automatic numerical sorting on [Slowpoke Pics](#slowpoke-pics) and filling of comparison names based on `comp.py`
+Zero pads frame numbers on images in the current directory and removes extraneous data from file names. *This allows for automatic numerical sorting on [Slowpoke Pics](#slowpoke-pics) and filling of comparison names based on `comp.py`.*
 
 ```py
 import os
@@ -977,6 +1002,7 @@ for link in links:
 for link in links:
     print("%s %s"%(link))
 ```
+
 ==-
 
 ## Additional Scripts
