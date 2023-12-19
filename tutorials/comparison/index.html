@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755720409004">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756325913553">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.755720409004" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.756325913553" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.755720409004" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756325913553" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.755720409004" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.755720409004" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756325913553" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.756325913553" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -158,34 +158,64 @@
         <span>Comparison</span>
     </h1>
 </doc-anchor-target>
-<p>Comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources, be that official releases or user made encodes. This guide goes through the process of setting up and effectively utilising Vapoursynth-Preview to produce useful comparisons that will allow you to ascertain which release offers the best visual experience.</p>
-<doc-anchor-target id="initial-setup">
+<p>Quality comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources/releases. <a href="../../guides/quality/#types-of-releases">It serves as a great way to distinguish the differences between good and bad sources</a>, and can help you determine which one to download.</p>
+<p>This guide goes through the process of setting up and effectively utilizing <a href="https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview">VSPreview</a>, a previewer utility for <a href="https://github.com/vapoursynth/vapoursynth">VapourSynth</a>, to produce useful quality comparisons that will allow you to ascertain which release offers the best visual experience.</p>
+<doc-anchor-target id="setup">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#initial-setup">#</doc-anchor-trigger>
-        <span>Initial setup</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
+        <span>Setup</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="installing-dependencies">
+<doc-anchor-target id="vapoursynth">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-dependencies">#</doc-anchor-trigger>
-        <span>Installing dependencies</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vapoursynth">#</doc-anchor-trigger>
+        <span>VapourSynth</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li><p>Install <a href="https://www.python.org/downloads/">Python 3.11</a>. During installation tick <code v-pre>Add python.exe to PATH</code></p>
-</li>
-<li><p>Install <a href="https://gitforwindows.org/">Git</a></p>
-</li>
-<li><p>Install <a href="https://github.com/vapoursynth/vapoursynth/releases">Vapoursynth</a>. Select <code v-pre>Install for me only</code></p>
-</li>
-<li><p>Before we install vs-preview, we need to install the following dependencies:</p>
-<p><a href="https://github.com/DJATOM/LibP2P-Vapoursynth" title="LibP2P"><code v-pre>libP2P</code></a> <a href="https://github.com/AkarinVS/L-SMASH-Works" title="LSMASHSource"><code v-pre>lsmas</code></a> <a href="https://github.com/vapoursynth/subtext" title="Subtext"><code v-pre>subtext</code></a> <a href="https://github.com/Lypheo/vs-placebo" title="vs-placebo"><code v-pre>vs-placebo</code></a> <a href="https://github.com/OpusGang/awsmfunc" title="awsmfunc"><code v-pre>awsmfunc</code></a></p>
-<p>You can install these with the following commands:</p>
+<p>VapourSynth is an open-source video processing framework. It handles all of your sources, playback, and filtering options in conjunction with VSPreview.</p>
+<doc-anchor-target id="dependencies">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dependencies">#</doc-anchor-trigger>
+        <span>Dependencies</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="https://www.python.org/downloads/">Python 3.11</a> - <em>Select <code v-pre>Add python.exe to PATH</code> during installation</em></li>
+<li><a href="https://gitforwindows.org/">Git</a></li>
+</ul>
+<doc-anchor-target id="installation">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
+        <span>Installation</span>
+    </h4>
+</doc-anchor-target>
+<p>Download and install <code v-pre>VapourSynth-x64-RXX.exe</code> from <a href="https://github.com/vapoursynth/vapoursynth/releases">VapourSynth</a>. <em>During installation, select <code v-pre>Install for me only</code>.</em></p>
+<p><figure class="content-center">
+    <img src="../../static/comparison/vs-download.png" alt="Vapoursynth release">
+    <figcaption class="caption">Vapoursynth release</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="vspreview">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vspreview">#</doc-anchor-trigger>
+        <span>VSPreview</span>
+    </h3>
+</doc-anchor-target>
+<p>VSPreview is a previewer application for scripts created in VapourSynth. It features a simple graphical interface to allow you to use VapourSynth&#x27;s features (and create comparisons) with ease.</p>
+<doc-anchor-target id="dependencies-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dependencies-1">#</doc-anchor-trigger>
+        <span>Dependencies</span>
+    </h4>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab v-cloak id="general-setup">
+<template #title>General Setup</template>
+<p>In order to create comparisons with VSPreview, you will need to install its necessary dependencies.</p>
+<ul>
+<li><p><a href="https://github.com/DJATOM/LibP2P-Vapoursynth"><code v-pre>LibP2P</code></a>, <a href="https://github.com/AkarinVS/L-SMASH-Works"><code v-pre>LSMASHSource</code></a>, <a href="https://github.com/vapoursynth/subtext"><code v-pre>Subtext</code></a>, and <a href="https://github.com/Lypheo/vs-placebo"><code v-pre>vs-placebo</code></a> can be installed using <code v-pre>vsrepo</code> from <a href="https://github.com/vapoursynth/vapoursynth/releases">VapourSynth</a>. In your terminal, run the following:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-powershell"><code v-pre class="language-powershell">vsrepo.py install lsmas libp2p sub placebo</code></pre>
-</doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-powershell"><code v-pre class="language-powershell">pip install git+https://github.com/OpusGang/awsmfunc.git</code></pre>
+<pre class="language-powershell"><code v-pre class="language-powershell">vsrepo.py install libp2p lsmas sub placebo</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
@@ -200,55 +230,104 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>If <code v-pre>vsrepo.py</code> command doesn&#x27;t work, make sure Windows is set to open <code v-pre>.py</code> files with Python</p>
+<p>If <code v-pre>vsrepo.py</code> command doesn&#x27;t work, make sure Windows is set to open <code v-pre>.py</code> files with Python. <em><a href="../../static/comparison/python-pathext.png">You may also need to add it to the <code v-pre>PATHEXT</code> environment variable.</a></em></p>
         </div>
     </div>
 </div>
 </li>
-<li><p>(Optional) If you&#x27;re working with Dolby Vision, you&#x27;ll need to install the following additional dependencies:</p>
+<li><p><a href="https://github.com/OpusGang/awsmfunc"><code v-pre>awsmfunc</code></a> and <a href="https://github.com/Jaded-Encoding-Thaumaturgy/vs-kernels"><code v-pre>vs-kernels</code></a> can be installed using <code v-pre>pip</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-powershell"><code v-pre class="language-powershell">pip install git+https://github.com/OpusGang/awsmfunc.git
+pip install vskernels --no-cache-dir -U</code></pre>
+</doc-codeblock></div>
 </li>
-</ol>
-<doc-panel id="dolby-vision-specific-installation" collapsed>
-    <template #title><span class="docs-emoji">&#x1F7EA;</span>Dolby Vision<span class="docs-emoji">&#x1F7E9;</span> Specific Installation</template>
-<ul>
-<li><a href="https://github.com/quietvoid/dovi_tool" title="libdovi"><code v-pre>libdovi</code></a></li>
 </ul>
+</doc-tab>
+<doc-tab v-cloak id="dolby-vision">
+<template #title>Dolby Vision</template>
+<p>If you&#x27;re working with Dolby Vision (DV) content, you will need to install additional dependencies.</p>
+<ul>
+<li><p><a href="https://github.com/quietvoid/dovi_tool"><code v-pre>libdovi</code></a> can be installed using <code v-pre>vsrepo</code> from <a href="https://github.com/vapoursynth/vapoursynth/releases">VapourSynth</a>. In your terminal, run the following:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-powershell"><code v-pre class="language-powershell">vsrepo.py install dovi_library</code></pre>
 </doc-codeblock></div>
+</li>
+<li><p>You will need to install <a href="https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b"><code v-pre>vA.5b</code></a> of <code v-pre>LSMASHSource</code>. By default, <code v-pre>vsrepo</code> installs <code v-pre>vA.3x</code> which does not support DV. <code v-pre>vA.5x</code> is an experimental version which is not available on <code v-pre>vsrepo</code> and requires manual installation:</p>
 <ul>
-<li><p><a href="https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.5b"><code v-pre>lsmas vA.5b</code></a> instead of <a href="https://github.com/AkarinVS/L-SMASH-Works/releases/tag/vA.3j"><code v-pre>lsmas vA.3j</code></a>. Currently, <code v-pre>vsrepo</code> installs <code v-pre>A.3x</code> by default which does not support DV. <code v-pre>A.5x</code> is experimental and not available on <code v-pre>vsrepo</code>, so you will have to install it manually.</p>
-</li>
-<li><p>Download <code v-pre>release-x86_64-cachedir-cwd.zip</code> and open it</p>
-</li>
-<li><p>Copy <code v-pre>libvslsmashsource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64</code></p>
-</li>
-<li><p>If asked, overwite the old <code v-pre>libvslsmashsource.dll</code> with the new version</p>
+<li>Download and extract the correct version for your operating system. <em>For most users, this will be <code v-pre>release-x86_64-cachedir-cwd.zip</code></em></li>
+<li>Copy <code v-pre>libvslsmashsource.dll</code> and paste it in <code v-pre>%appdata%\VapourSynth\plugins64\</code>
+<ul>
+<li>If you have an existing <code v-pre>libvslsmashsource.dll</code> in the <code v-pre>plugins64</code>, replace it with the newer <code v-pre>libvslsmashsource.dll</code></li>
+</ul>
 </li>
 </ul>
-</doc-panel>
-<p>Install <a href="https://github.com/Setsugennoao/vs-preview">vs-preview</a>:</p>
+</li>
+</ul>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="installation-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installation-1">#</doc-anchor-trigger>
+        <span>Installation</span>
+    </h4>
+</doc-anchor-target>
+<p>Download and install <a href="https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview">VSPreview</a> using <code v-pre>pip</code> in your terminal:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-powershell"><code v-pre class="language-powershell">pip install vspreview</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="the-comparison-script">
+<doc-anchor-target id="usage">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
+        <span>Usage</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="scripting">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-comparison-script">#</doc-anchor-trigger>
-        <span>The comparison script</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scripting">#</doc-anchor-trigger>
+        <span>Scripting</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li>Create a new file called <code v-pre>comp.vpy</code>.</li>
-<li>Open <code v-pre>comp.vpy</code> with a text editor such as Notepad++ and paste the following, edit as required, and save it:</li>
-</ol>
-<doc-panel id="comp-vpy" collapsed>
-    <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H4.75a.75.75 0 0 1 0-1.5H19a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4H5a.5.5 0 0 0-.5.5v6.25a.75.75 0 0 1-1.5 0Zm12-.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/><path d="M4.53 12.24a.75.75 0 0 1-.039 1.06l-2.639 2.45 2.64 2.45a.75.75 0 1 1-1.022 1.1l-3.23-3a.75.75 0 0 1 0-1.1l3.23-3a.75.75 0 0 1 1.06.04Zm3.979 1.06a.75.75 0 1 1 1.02-1.1l3.231 3a.75.75 0 0 1 0 1.1l-3.23 3a.75.75 0 1 1-1.021-1.1l2.639-2.45-2.64-2.45Z"/></g></g></svg> comp.vpy</template>
+<p>In order to create a comparison, you will need to create a VapourSynth script. This script outlines the parameters and files which VSPreview will use when generating your comparison.</p>
+<p>Create a file called <code v-pre>comp.py</code>. Launch it in your favorite text editor and add sections as desired:</p>
+<doc-panels>
+   <doc-panel id="initial-script-badge-variant-danger-text-required" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H4.75a.75.75 0 0 1 0-1.5H19a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4H5a.5.5 0 0 0-.5.5v6.25a.75.75 0 0 1-1.5 0Zm12-.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/><path d="M4.53 12.24a.75.75 0 0 1-.039 1.06l-2.639 2.45 2.64 2.45a.75.75 0 1 1-1.022 1.1l-3.23-3a.75.75 0 0 1 0-1.1l3.23-3a.75.75 0 0 1 1.06.04Zm3.979 1.06a.75.75 0 1 1 1.02-1.1l3.231 3a.75.75 0 0 1 0 1.1l-3.23 3a.75.75 0 1 1-1.021-1.1l2.639-2.45-2.64-2.45Z"/></g></g></svg> Initial script <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>Required</span>
+</span></template>
+<p>The basic <code v-pre>comp.py</code> script to get started. This script includes the required dependencies and features to run and get the best experience out of VSPreview for creating your comparisons.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Make sure to comment (add <code v-pre>##</code> to the beginning of the line) and uncomment lines as needed.</p>
+        </div>
+    </div>
+</div>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">## Boring stuff: Ignore me
+<pre class="language-python"><code v-pre class="language-python">## Dependencies: Allows vspreview to run (required; do not remove)
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
+from vskernels import Hermite, EwaLanczos
 from vspreview import set_output
+from awsmfunc.types.placebo import PlaceboColorSpace as csp
+from awsmfunc.types.placebo import PlaceboTonemapMode as TMmode
+from awsmfunc.types.placebo import PlaceboTonemapFunction as TMfunc
+from awsmfunc.types.placebo import PlaceboGamutMode as GMTmode
+from awsmfunc.types.placebo import PlaceboTonemapOpts as TMopts
+
+## &lt;Additional dependencies&gt;
+## Place any additional dependencies you want to use in your comp here
+## &lt;End of additional dependencies&gt;
 
 ## File paths: Hold shift and right-click your file, select copy as path, and paste it here
 clip1 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;)
@@ -260,62 +339,489 @@ source1 = &quot;FirstSourceName&quot;
 source2 = &quot;SecondSourceName&quot;
 source3 = &quot;ThirdSourceName&quot;
 
-## FieldBased: Sets the content as either progressive (0) or interlaced (1/2), required for progressive content tagged as interlaced
-##clip1 = core.std.SetFieldBased(clip1, 0)
-##clip2 = core.std.SetFieldBased(clip2, 1)
-##clip3 = core.std.SetFieldBased(clip3, 2)
+## Depth: Convert clip to 16-bit 4:4:4 for greater precision
+clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
+clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
+clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
-## Convert: Convert clip to 16bit 444 (Only for filters that need it such as tonemapping and gamma fixing)
-##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
-##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
-##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
+## &lt;Additional comp settings&gt;
+## Place any additional settings you want to use in your comp here
+## &lt;End of additional comp settings&gt;
 
-## Cropping: Removes letterboxing (Black bars) [16 BIT REQUIRED FOR ODD NUMBERS]
-##clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
-##clip2 = core.std.Crop(clip2, left=0, right=0, top=276, bottom=276)
-##clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
+## Frameinfo: Displays the frame number, type, and group name in the top left corner (no modification required; add/remove lines as needed)
+clip1 = FrameInfo(clip1, source1)
+clip2 = FrameInfo(clip2, source2)
+clip3 = FrameInfo(clip3, source3)
 
-## Scaling: Up/downscale clips to match, recommended to scale to the highest resolution
-##clip1 = core.resize.Spline36(clip1, 1920, 1080)
-##clip2 = core.resize.Spline36(clip2, 1920, 1080)
-##clip3 = core.resize.Spline36(clip3, 3840, 2160)
+## FrameProp: Slowpoke Pics/file-name labeling (no modification required; add/remove lines as needed)
+clip1 = clip1.std.SetFrameProp('Name', data = source1)
+clip2 = clip2.std.SetFrameProp('Name', data = source2)
+clip3 = clip3.std.SetFrameProp('Name', data = source3)
 
-## Trimming: Trim frames to match clips (Calculate the frame difference and enter the number here)
-##clip1 = clip1[0:]
-##clip2 = clip2[24:]
-##clip3 = clip3[0:]
+## Output: Comment/uncomment as needed depending on how many clips you're comparing
+set_output(clip1, name=source1)
+set_output(clip2, name=source2)
+set_output(clip3, name=source3)</code></pre>
+</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Section</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>Dependencies required to create comparisons in VSPreview</td>
+</tr>
+<tr>
+<td><strong>File paths</strong></td>
+<td>The location of your source file</td>
+</tr>
+<tr>
+<td><strong>Source</strong></td>
+<td>The name of each source. <doc-anchor-trigger to="#recommended-source-naming">We recommend following the naming scheme here.</doc-anchor-trigger> <em>If you plan to use <doc-anchor-trigger to="#slowpoke-pics">Slowpoke Pics</doc-anchor-trigger>, this will be the name that will be displayed in comparisons</em></td>
+</tr>
+<tr>
+<td><strong>Depth</strong></td>
+<td>Converts the video to 16-bit depth with 4:4:4 chroma subsampling for greater precision. <em>Required for some filters</em></td>
+</tr>
+<tr>
+<td><strong>FrameInfo</strong></td>
+<td>Lists the frame number, type, and source name in the top left of the videos</td>
+</tr>
+<tr>
+<td><strong>FrameProp</strong></td>
+<td>Sets the source name entered under <strong>Source</strong> for correct labeling on <doc-anchor-trigger to="#slowpoke-pics">Slowpoke Pics</doc-anchor-trigger></td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>Parameter that allows clips to appear in VSPreview</td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+   <doc-panel id="playback-frame-rate-fieldbased-inverse-telecine" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"/><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5Z"/></g></g></svg> Playback (frame rate, FieldBased, inverse telecine)</template>
+<doc-anchor-target id="frame-rate">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#frame-rate">#</doc-anchor-trigger>
+        <span>Frame Rate</span>
+    </h4>
+</doc-anchor-target>
+<p>Sets the source frame rate (fps) based on fractional input (<code v-pre>fpsnum</code>/<code v-pre>fpsden</code>). For example, <code v-pre>fpsnum=24000</code> and <code v-pre>fpsden=1001</code> forces the clip frame rate to 23.976 fps. <em>This should be used on sources that have different frame rates that don&#x27;t automatically stay in sync.</em></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>If a clip stays in sync without changing during scrubbing, you should note that the specific source has dropped or duplicate frames.</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
+clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
+clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
+clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="fieldbased">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fieldbased">#</doc-anchor-trigger>
+        <span>FieldBased</span>
+    </h4>
+</doc-anchor-target>
+<p>Sets interlaced flagged content that may be progressive as progressive for higher quality chroma upscaling.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## FieldBased: Tags the content as progressive (0); used for progressive content tagged as interlaced
+clip1 = core.std.SetFieldBased(clip1, 0)
+clip2 = core.std.SetFieldBased(clip2, 0)
+clip3 = core.std.SetFieldBased(clip3, 0)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="inverse-telecine">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inverse-telecine">#</doc-anchor-trigger>
+        <span>Inverse Telecine</span>
+    </h4>
+</doc-anchor-target>
+<p>Quick inverse telecine filter for converting telecined clips (usually 30 fps interlaced video) back to the original framerate (24 fps progressive).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Inverse telecine: Fixes telecined video
+clip1 = core.vivtc.VFM(clip1, 1)
+clip1 = core.vivtc.VDecimate(clip1)</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="framing-cropping-scaling-trimming" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M21.75 21.5H2.25A1.75 1.75 0 0 1 .5 19.75V4.25c0-.966.784-1.75 1.75-1.75h19.5c.966 0 1.75.784 1.75 1.75v15.5a1.75 1.75 0 0 1-1.75 1.75ZM2.25 4a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h3.178L14 10.977a1.749 1.749 0 0 1 2.506-.032L22 16.44V4.25a.25.25 0 0 0-.25-.25ZM22 19.75v-1.19l-6.555-6.554a.248.248 0 0 0-.18-.073.247.247 0 0 0-.178.077L7.497 20H21.75a.25.25 0 0 0 .25-.25ZM10.5 9.25a3.25 3.25 0 1 1-6.5 0 3.25 3.25 0 0 1 6.5 0Zm-1.5 0a1.75 1.75 0 1 0-3.501.001A1.75 1.75 0 0 0 9 9.25Z"/></g></g></svg> Framing (cropping, scaling, trimming)</template>
+<doc-anchor-target id="cropping">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cropping">#</doc-anchor-trigger>
+        <span>Cropping</span>
+    </h4>
+</doc-anchor-target>
+<p>Crops the source video by <em>n</em> pixels from the selected side. For example, <code v-pre>left=20</code> will remove 20 horizontal pixels starting from the left side. <em>This should be used on sources that use letterboxing or other form of borders.</em></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Make sure to check for variable aspect ratios throughout the file and only crop the smallest border. We recommend using <a href="https://getsharex.com">ShareX</a> for quickly calculating border size.</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Cropping: Removes letterboxing (black bars) [16-bit required for odd numbers]
+clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
+clip2 = core.std.Crop(clip2, left=0, right=0, top=276, bottom=276)
+clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="scaling">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scaling">#</doc-anchor-trigger>
+        <span>Scaling</span>
+    </h4>
+</doc-anchor-target>
+<p>Downscales or upscales the video. <em>This should be used to match sources that have differing resolutions.</em></p>
+<ul>
+<li><p>For upscaling (e.g. 720p -&gt; 1080p), use <code v-pre>EwaLanczos</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Upscaling: Increases the resolution of clips to match the highest resolution using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended
+clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=True)
+clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
+clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>For downscaling (e.g. 2160p/4K -&gt; 1080p), use <code v-pre>Hermite</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Downscaling: Decreases the resolution of clips to match the lowest resolution using Hermite (equivalent scaling to mpv's high-quality profile); not recommended
+clip1 = Hermite.scale(clip1, 1920, 1080, linear=True)
+clip2 = Hermite.scale(clip2, 1920, 1080, linear=True)
+clip3 = Hermite.scale(clip3, 3840, 2160, linear=True)</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Downscaling is generally not recommended. We suggest upscaling your sources to match the highest resolution unless you have a specific reason (e.g. comparing how a higher resolution file would compare on a lower resolution display).</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="trimming">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#trimming">#</doc-anchor-trigger>
+        <span>Trimming</span>
+    </h4>
+</doc-anchor-target>
+<p>Removes the first <em>n</em> frames from the source. For example, <code v-pre>[24:]</code> will skip the first 24 frames and start the source at frame 25. <em>This should be used on sources that are out of sync.</em></p>
+<p>To get the frame difference, find a unique frame (e.g. scene changes) in the correct and incorrect source. Note the frame numbers each one begin at, then set the difference of the two for the incorrect source.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Trimming: Trim frames to match clips (calculate the frame difference and enter the number here)
+clip1 = clip1[0:]
+clip2 = clip2[24:]
+clip3 = clip3[0:]</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>For more advanced trimming such as chaining, splicing, and looping, see <a href="https://www.vapoursynth.com/doc/pythonreference.html#slicing-and-other-syntactic-sugar">Vapoursynth&#x27;s docs</a>.</p>
+        </div>
+    </div>
+</div>
+   </doc-panel>
+   <doc-panel id="color-contrast-tonemapping-range-gamma-matrix-drc" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="paintbrush-icon-symbol" viewBox="0 0 16 16"><path d="M11.134 1.535c.7-.509 1.416-.942 2.076-1.155.649-.21 1.463-.267 2.069.34.603.601.568 1.411.368 2.07-.202.668-.624 1.39-1.125 2.096-1.011 1.424-2.496 2.987-3.775 4.249-1.098 1.084-2.132 1.839-3.04 2.3a3.744 3.744 0 0 1-1.055 3.217c-.431.431-1.065.691-1.657.861-.614.177-1.294.287-1.914.357A21.151 21.151 0 0 1 .797 16H.743l.007-.75H.749L.742 16a.75.75 0 0 1-.743-.742l.743-.008-.742.007v-.054a21.25 21.25 0 0 1 .13-2.284c.067-.647.187-1.287.358-1.914.17-.591.43-1.226.86-1.657a3.746 3.746 0 0 1 3.227-1.054c.466-.893 1.225-1.907 2.314-2.982 1.271-1.255 2.833-2.75 4.245-3.777ZM1.62 13.089c-.051.464-.086.929-.104 1.395.466-.018.932-.053 1.396-.104a10.511 10.511 0 0 0 1.668-.309c.526-.151.856-.325 1.011-.48a2.25 2.25 0 1 0-3.182-3.182c-.155.155-.329.485-.48 1.01a10.515 10.515 0 0 0-.309 1.67Zm10.396-10.34c-1.224.89-2.605 2.189-3.822 3.384l1.718 1.718c1.21-1.205 2.51-2.597 3.387-3.833.47-.662.78-1.227.912-1.662.134-.444.032-.551.009-.575h-.001V1.78c-.014-.014-.113-.113-.548.027-.432.14-.995.462-1.655.942Zm-4.832 7.266-.001.001a9.859 9.859 0 0 0 1.63-1.142L7.155 7.216a9.7 9.7 0 0 0-1.161 1.607c.482.302.889.71 1.19 1.192Z"/></symbol><use xlink:href="#paintbrush-icon-symbol" /></g></g></svg> Color &amp; contrast (tonemapping, range, gamma, matrix, DRC)</template>
+<doc-anchor-target id="tonemapping">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tonemapping">#</doc-anchor-trigger>
+        <span>Tonemapping</span>
+    </h4>
+</doc-anchor-target>
+<p>Converts the dynamic range of the source (i.e. HDR/DV -&gt; SDR).</p>
+<ul>
+<li>For converting HDR (washed out colors) -&gt; SDR, set <code v-pre>source_colorspace=csp.HDR10</code></li>
+<li>For converting DV (green/purple hue) -&gt; SDR, set <code v-pre>source_colorspace=csp.DOVI</code></li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Tonemapping: Converts the dynamic range of the source [16-bit required]
+## Specify the arguments based on your sources; ideally play around with different values when comparing against an SDR source to best match it
+clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
+clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
+clip3args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.Hybrid, tone_map_function=TMfunc.Spline, gamut_mode=GMTmode.Darken, peak_detect=True, use_dovi=True, dst_max=120)
+## Apply tonemapping
+clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
+clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
+clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
+## Retag video to 709 after tonemapping [required]
+clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
+clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
+clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><code v-pre>dst_max</code> forces a set brightness, which can be used to make HDR/DV clips appear brighter for easier comparison to SDR.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="range">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#range">#</doc-anchor-trigger>
+        <span>Range</span>
+    </h4>
+</doc-anchor-target>
+<p>Sets the color range of the clip as limited (<code v-pre>0</code>) or full (<code v-pre>1</code>). <em>This should be used on sources containing incorrect metadata or after tonemapping DV content (set it to limited).</em></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping
+clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
+clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
+clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="gamma">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gamma">#</doc-anchor-trigger>
+        <span>Gamma</span>
+    </h4>
+</doc-anchor-target>
+<p>Adjusts the gamma level of the video. <em>This should only be used to fix the QuickTime gamma bug or similar where one source will appear much brighter than the rest.</em></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
+clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="matrix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#matrix">#</doc-anchor-trigger>
+        <span>Matrix</span>
+    </h4>
+</doc-anchor-target>
+<p>Sets the color gamut to fix the colors of your sources. This is most commonly used on sources you&#x27;re upscaling or 4K SDR content. <em>This should be used on sources with incorrect/missing metadata or colors that are off, particularly reds and greens.</em></p>
+<p>Generally:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Type</th>
+<th>Gamut</th>
+<th>Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SDR: BD/WEB (720p - 4K)</td>
+<td>BT.709</td>
+<td><code v-pre>intval=1</code></td>
+</tr>
+<tr>
+<td>SDR: DVD</td>
+<td>BT.601</td>
+<td><code v-pre>intval=5</code></td>
+</tr>
+<tr>
+<td>HDR/DV</td>
+<td>BT.2020 NCL</td>
+<td><code v-pre>intval=9</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Matrix: Repairs sources with incorrect/missing metadata; typically used for 4K SDR and upscaled/downscaled content (colors will be off, particularly reds, greens, and blues)
+clip1 = core.std.SetFrameProp(clip1, prop=&quot;_Matrix&quot;, intval=1)
+clip2 = core.std.SetFrameProp(clip2, prop=&quot;_Matrix&quot;, intval=6)
+clip3 = core.std.SetFrameProp(clip3, prop=&quot;_Matrix&quot;, intval=5)</code></pre>
+</doc-codeblock></div>
+<p>If you are unable to correct the source&#x27;s colors with the initial matrix command, the source is likely flawed rather than an issue with the metadata. If this is the case, you should use the filters below:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Correct matrix: If the colors cannot be corrected with the initial matrix command [16-bit required]
+clip1 = core.resize.Point(clip1, matrix=5)
+clip1 = core.std.SetFrameProp(clip1, prop=&quot;_Matrix&quot;, intval=1)
+clip2 = core.resize.Point(clip2, matrix=6)
+clip2 = core.std.SetFrameProp(clip2, prop=&quot;_Matrix&quot;, intval=1)
+clip3 = core.resize.Point(clip3, matrix=4)
+clip3 = core.std.SetFrameProp(clip3, prop=&quot;_Matrix&quot;, intval=1)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="double-range-compression-drc">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#double-range-compression-drc">#</doc-anchor-trigger>
+        <span>Double-Range Compression (DRC)</span>
+    </h4>
+</doc-anchor-target>
+<p>Fixes washed out colors on selected sources.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Fix DRC: Repairs sources with very washed out colors
+clip1 = core.resize.Point(clip1, range_in=0, range=1, dither_type=&quot;error_diffusion&quot;)
+clip1 = core.std.SetFrameProp(clip1, prop=&quot;_ColorRange&quot;, intval=1)</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+</doc-panels>
+<doc-panel id="full-script" collapsed>
+    <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H4.75a.75.75 0 0 1 0-1.5H19a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4H5a.5.5 0 0 0-.5.5v6.25a.75.75 0 0 1-1.5 0Zm12-.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/><path d="M4.53 12.24a.75.75 0 0 1-.039 1.06l-2.639 2.45 2.64 2.45a.75.75 0 1 1-1.022 1.1l-3.23-3a.75.75 0 0 1 0-1.1l3.23-3a.75.75 0 0 1 1.06.04Zm3.979 1.06a.75.75 0 1 1 1.02-1.1l3.231 3a.75.75 0 0 1 0 1.1l-3.23 3a.75.75 0 1 1-1.021-1.1l2.639-2.45-2.64-2.45Z"/></g></g></svg> Full script</template>
+<p>The complete <code v-pre>comp.py</code> script. This script includes the <doc-anchor-trigger to="#initial-script-badge-variant-danger-text-required">initial script</doc-anchor-trigger> and all of the additional filters mentioned above.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Make sure to comment (add <code v-pre>##</code> to the beginning of the line) and uncomment lines as needed.</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">## Dependencies: Allows vspreview to run (required; do not remove)
+import vapoursynth as vs
+from vapoursynth import core
+from awsmfunc import FrameInfo
+from vskernels import Hermite, EwaLanczos
+from vspreview import set_output
+from awsmfunc.types.placebo import PlaceboColorSpace as csp
+from awsmfunc.types.placebo import PlaceboTonemapMode as TMmode
+from awsmfunc.types.placebo import PlaceboTonemapFunction as TMfunc
+from awsmfunc.types.placebo import PlaceboGamutMode as GMTmode
+from awsmfunc.types.placebo import PlaceboTonemapOpts as TMopts
 
-## Set FPS: Change fps to match other sources, only needed when the previewer doesn't automatically keep them in sync
+## &lt;Additional dependencies&gt;
+## Place any additional dependencies you want to use in your comp here
+## &lt;End of additional dependencies&gt;
+
+## File paths: Hold shift and right-click your file, select copy as path, and paste it here
+clip1 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;)
+clip2 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;)
+clip3 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;)
+
+## Source: Name of the source
+source1 = &quot;FirstSourceName&quot;
+source2 = &quot;SecondSourceName&quot;
+source3 = &quot;ThirdSourceName&quot;
+
+## Depth: Convert clip to 16-bit 4:4:4 for greater precision
+clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
+clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
+clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
+
+## &lt;Additional comp settings&gt;
+
+## Frame rate: Change fps to match other sources (needed for when the previewer is unable to automatically keep them in sync)
 ##clip1 = core.std.AssumeFPS(clip1, fpsnum=24000, fpsden=1001)
 ##clip2 = core.std.AssumeFPS(clip2, fpsnum=25000, fpsden=1000)
 ##clip3 = core.std.AssumeFPS(clip3, fpsnum=24000, fpsden=1000)
 
-## Tonemapping: For HDR/DV content only, src_csp=1 is for HDR (and DV Profile 8), src_csp=3 is for DV (Profile 5) [16 BIT REQUIRED]
-##clip1 = core.placebo.Tonemap(clip1, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
-##clip2 = core.placebo.Tonemap(clip2, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=3, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1)
-##clip3 = core.placebo.Tonemap(clip3, dynamic_peak_detection=1, tone_mapping_function=2, tone_mapping_mode=3, src_csp=1, dst_csp=0, gamut_mode=2, intent=0, use_dovi=1, dst_max=120)
+## FieldBased: Tags the content as progressive (0); used for progressive content tagged as interlaced
+##clip1 = core.std.SetFieldBased(clip1, 0)
+##clip2 = core.std.SetFieldBased(clip2, 0)
+##clip3 = core.std.SetFieldBased(clip3, 0)
 
-## Retagging video to 709 after tonemapping (Otherwise you'll get horrible blue images)
+## Inverse telecine: Fixes telecined video
+##clip1 = core.vivtc.VFM(clip1, 1)
+##clip1 = core.vivtc.VDecimate(clip1)
+
+## Cropping: Removes letterboxing (black bars) [16-bit required for odd numbers]
+##clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
+##clip2 = core.std.Crop(clip2, left=0, right=0, top=276, bottom=276)
+##clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
+
+## Upscaling: Increases the resolution of clips to match the highest resolution using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended
+##clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=True)
+##clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
+##clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)
+
+## Downscaling: Decreases the resolution of clips to match the lowest resolution using Hermite (equivalent scaling to mpv's high-quality profile); not recommended
+##clip1 = Hermite.scale(clip1, 1920, 1080, linear=True)
+##clip2 = Hermite.scale(clip2, 1920, 1080, linear=True)
+##clip3 = Hermite.scale(clip3, 3840, 2160, linear=True)
+
+## Trimming: Trim frames to match clips (calculate the frame difference and enter the number here)
+##clip1 = clip1[0:]
+##clip2 = clip2[24:]
+##clip3 = clip3[0:]
+
+## Tonemapping: Converts the dynamic range of the source [16-bit required]
+## Specify the arguments based on your sources; ideally play around with different values when comparing against an SDR source to best match it
+##clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
+##clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
+##clip3args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.Hybrid, tone_map_function=TMfunc.Spline, gamut_mode=GMTmode.Darken, peak_detect=True, use_dovi=True, dst_max=120)
+## Apply tonemapping
+##clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
+##clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
+##clip3 = core.placebo.Tonemap(clip3, **clip3args.vsplacebo_dict())
+## Retag video to 709 after tonemapping [required]
 ##clip1 = core.std.SetFrameProps(clip1, _Matrix=1, _Transfer=1, _Primaries=1)
 ##clip2 = core.std.SetFrameProps(clip2, _Matrix=1, _Transfer=1, _Primaries=1)
 ##clip3 = core.std.SetFrameProps(clip3, _Matrix=1, _Transfer=1, _Primaries=1)
 
-##Set Colour Range: Marks the clip as limited (0) or full (1) range, DV clips will need to be set to limited after tonemapping.
+## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping
 ##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16, range=0)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 
-## Gamma: Fix Gamma bug (When one source is much brighter than others) [16 BIT REQUIRED]
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
 ##clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 ##clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 ##clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
 
-## Set Matrix: If source has incorrect/missing metadata, usually applies to 4K SDR and content you're up/downscaling. (Colours will be off, particularly reds, greens, and blues)
+## Matrix: Repairs sources with incorrect/missing metadata; typically used for 4K SDR and upscaled/downscaled content (colors will be off, particularly reds, greens, and blues)
 ##clip1 = core.std.SetFrameProp(clip1, prop=&quot;_Matrix&quot;, intval=1)
 ##clip2 = core.std.SetFrameProp(clip2, prop=&quot;_Matrix&quot;, intval=6)
 ##clip3 = core.std.SetFrameProp(clip3, prop=&quot;_Matrix&quot;, intval=5)
 
-## Correct Matrix: If the colours cannot be corrected with the above command [16 BIT REQUIRED]
+## Correct matrix: If the colors cannot be corrected with the initial matrix command [16-bit required]
 ##clip1 = core.resize.Point(clip1, matrix=5)
 ##clip1 = core.std.SetFrameProp(clip1, prop=&quot;_Matrix&quot;, intval=1)
 ##clip2 = core.resize.Point(clip2, matrix=6)
@@ -323,246 +829,860 @@ source3 = &quot;ThirdSourceName&quot;
 ##clip3 = core.resize.Point(clip3, matrix=4)
 ##clip3 = core.std.SetFrameProp(clip3, prop=&quot;_Matrix&quot;, intval=1)
 
-## Fix Double range compression: When one source looks very washed out
+## Fix DRC: Repairs sources with very washed out colors
 ##clip1 = core.resize.Point(clip1, range_in=0, range=1, dither_type=&quot;error_diffusion&quot;)
 ##clip1 = core.std.SetFrameProp(clip1, prop=&quot;_ColorRange&quot;, intval=1)
 
-## Frameinfo: Displays the frame number, type, and group name in the top left corner (Leave these lines untouched, it reads the source from the top)
-clip1= FrameInfo(clip1, source1)
-clip2= FrameInfo(clip2, source2)
-clip3= FrameInfo(clip3, source3)
+## &lt;End of additional comp settings&gt;
 
-## FrameProp: Slow.pics/file name labelling (Leave these lines untouched, it reads the source from the top)
+## Frameinfo: Displays the frame number, type, and group name in the top left corner (no modification required; add/remove lines as needed)
+clip1 = FrameInfo(clip1, source1)
+clip2 = FrameInfo(clip2, source2)
+clip3 = FrameInfo(clip3, source3)
+
+## FrameProp: Slowpoke Pics/file-name labeling (no modification required; add/remove lines as needed)
 clip1 = clip1.std.SetFrameProp('Name', data = source1)
 clip2 = clip2.std.SetFrameProp('Name', data = source2)
 clip3 = clip3.std.SetFrameProp('Name', data = source3)
 
-## Output: Comment/Uncomment as needed depending on how many clips you're comparing
+## Output: Comment/uncomment as needed depending on how many clips you're comparing
 set_output(clip1, name=source1)
 set_output(clip2, name=source2)
 set_output(clip3, name=source3)</code></pre>
 </doc-codeblock></div>
 </doc-panel>
-<ol start="3">
-<li><p>Now to use VS-Preview you just need to run this command in your terminal, or paste it into a text file and save it as <code v-pre>comp.bat</code></p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-powershell"><code v-pre class="language-powershell">vspreview &quot;C:\Path\To\comp.vpy&quot;</code></pre>
-</doc-codeblock></div>
-</li>
-</ol>
-<ul>
-<li>To get the path, shift and right-click the comp.py file you just made, and select <code v-pre>Copy as path</code></li>
-</ul>
-<p>Now, when making comps you just edit <code v-pre>comp.vpy</code> to include the necessary file paths, comment/uncomment lines as required, edit the crop, trim, upscale, etc values when needed, and then run <code v-pre>comp.bat</code> or run <code v-pre>vspreview comp.vpy</code> directly from your terminal.</p>
-<doc-anchor-target id="understanding-the-comparison-script">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#understanding-the-comparison-script">#</doc-anchor-trigger>
-        <span>Understanding the comparison script</span>
-    </h4>
+<doc-anchor-target id="running">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#running">#</doc-anchor-trigger>
+        <span>Running</span>
+    </h3>
 </doc-anchor-target>
-<p>Unsure of how to go about editing the comp script? The panel below will explain how each section works.</p>
-<doc-panel id="understanding-comp-vpy" collapsed>
-    <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Understanding comp.vpy</template>
-<p>At first, the comparison script may seem daunting, especially since it&#x27;s a giant wall of text with a lot of technical jargon. It has basic explanations of each section, however, this guide will go over each part in more detail and describe how to properly edit the values.</p>
-<p>When comparing, you will want to go through the different sections, uncommenting/commenting the parts you need to use (removing/adding the ## in front of them, which determines whether the line will be used or not), modifying the values to suit your needs and applying them to the correct clip numbers.</p>
-<p><strong>Boring stuff</strong>: Just the requirements to make the script work, can be safely ignored.</p>
-<p><strong>File paths</strong>: The location of the video files you want to compare, you just need to hold shift and right-click the video file, select copy as path, then paste it into this section.</p>
-<p><strong>Source:</strong> The name for each video, this will be shown on the slowpics page, frameinfo in the top left, and file name if you save manually. Recommended to set as the encoder name (not necessarily the release group) in the case of encodes, the region and type in the case of discs/remuxes, or the streaming service in the case of WEB-DLs. Some examples for each respective category would be Beatrice-Raws for one of their encodes, JPN BD for a Japanese Blu-ray or Remux, and DSNP for a WEB-DL from Disney+. If your source is HDR/DV it&#x27;s best to specify that too.</p>
-<p><strong>FieldBased:</strong> Only required when the content is flagged as interlaced, it may actually be progressive which would require you to set a value of 0 to tell VS-Preview that it&#x27;s progressive, otherwise the quality will look worse than it is.</p>
-<p><strong>Convert:</strong> Converts the video from 8/10 bit to 16 bit and full chroma, which allows for better precision with certain filters. Should only be enabled when you&#x27;re using a filter that requires it, such as tonemapping, gamma fixing, or cropping an odd number of pixels.</p>
-<p><strong>Cropping:</strong> Crops pixels from any side of the video, should be used on any content that has letterboxing (black borders) on the top/bottom or sides. Generally encodes do this already, so it will only apply to Blurays/Remuxes and WEB-DLs. To calculate the value you need to enter, you can use the crop feature in the Misc section at the bottom right of VS-Preview, keep on increasing the value until the black bars are completely gone, turn it off then copy the numbers into comp.vpy. Alternatively, you can quickly count the pixels with a tool such as ShareX.</p>
-<p><strong>Scaling:</strong> When you have multiple clips of different resolutions, you need to scale them to match each other. Generally, this means getting the resolution of the highest res video and upscaling the rest to match it. In VS-Preview at the bottom left you can see the video resolution, so for example, if you&#x27;re comparing a 1920x1080 video to a 1280x720 video, you would set the 1280x720 video to 1920, 1080.</p>
-<p><strong>Trimming:</strong> Often your videos will not be in sync, so you need to cut a certain amount of frames from one of the clips in order for them to match. To easily calculate the value required, navigate to a unique frame such as a scene change in one source, note the frame number, then navigate to the exact same unique frame in your other source and note that frame number, then simply work out the difference between the two numbers, and delay the further ahead video by that amount. Usually, the difference is just 24 black frames at the start. After reloading VS-Preview (Control+R) they should both be perfectly in sync, however, it&#x27;s possible that they may de-sync later on due to small differences in cuts. In those situations, you can either figure out the new delay as you go along (Bolt-Action) or find all the delays first and set the whole clip to be in sync (Auto/Semi-auto). An example of chaining together trims would be <code v-pre>clip4 = clip4[0:8705]+clip4[8706:25894]+clip4[25895:]</code></p>
-<p><strong>Set FPS:</strong> Sometimes you will find that different videos have different frame rates, visible at the bottom left of VS-Preview. This framerate difference usually causes your sources to slowly become more and more out of sync, so you&#x27;ll need to set the FPS of the outlier to make it match the rest. In rarer circumstances VS-Preview will keep the sources in sync despite there being a difference in frame rate, in those scenarios you can ignore this section, but do note that this means that one of the sources either has dropped or duplicated frames, which should be noted when posting the comp.</p>
-<p><strong>Tonemapping:</strong> For HDR or DV content, by default they won&#x27;t display correctly so they need to be tonemapped to SDR to look normal. This filter requires you to uncomment the Convert section mentioned earlier. If the content appears as washed out, it&#x27;s HDR and you should use src_csp=1, if it appears green/purple then it&#x27;s DV and you need to use src_csp=3. Most other values can remain unchanged unless you wish to play around with different tone mapping algorithms. dst_max forces a certain brightness, it can be used to make HDR/DV clips appear brighter for easier comparison to SDR.</p>
-<p><strong>Retagging video to 709 after tonemapping</strong> vs-placebo, which is used for tonemapping, doesn&#x27;t set the right props after tonemapping, so we need to manually set them here so VS-Preview doesn&#x27;t still assume it&#x27;s an HDR video and display the incorrect colors.</p>
-<p><strong>Set Colour Range:</strong> When content has the wrong metadata or you&#x27;re tonemapping a DV clip (needs to be set to limited)</p>
-<p><strong>Gamma:</strong> Allows you to adjust the gamma of the videos, most commonly used to correct what&#x27;s known as the &quot;Gamma bug&quot; that you&#x27;ll sometimes come across, where one source is much brighter than the rest.</p>
-<p><strong>Set Matrix:</strong> If you notice that certain colours are slightly off between sources (Most notably reds/greens/blues) then your source likely has incorrect or missing matrix metadata. Most commonly you encounter this when upscaling content (eg DVDs to 1080p, BDs to 4K) and 4K SDR WEB releases. Generally speaking, HD SDR content (BDs, 720p-4K WEB) should be set as intval=1 (BT.709), SD content (DVDs) should be set as 5 (BT.601), HDR/DV content should be set as intval=9 (BT.2020 NCL). If this does not fix your issue, see below.</p>
-<p><strong>Correct Matrix:</strong> Sometimes simply setting the correct Matrix does not work, and this is because the video has undergone an incorrect conversion which you need to reverse.</p>
-<p><strong>Fix Double range compression:</strong> Some sources will have undergone range compression twice, and will appear as very washed out. To fix this simply uncomment the lines and enter the correct clip number.</p>
-<p><strong>Frameinfo:</strong> Lists the frame number, type, and source name in the top left of the videos.</p>
-<p><strong>FrameProp:</strong> Sets the source name you entered earlier, for correct labelling on slow.pics.</p>
-<p><strong>Output:</strong> Simply makes the clips appear in VS-Preview.</p>
-</doc-panel>
-<doc-anchor-target id="screenshotting">
+<p>To run your comparison script, launch a terminal window in your working directory and run the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-powershell"><code v-pre class="language-powershell">vspreview comp.py</code></pre>
+</doc-codeblock></div>
+<p>Alternatively, you can create a create a <code v-pre>comp.bat</code> file, replacing <code v-pre>C:\path\to\comp.py</code> with the exact file path to your script:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-powershell"><code v-pre class="language-powershell">vspreview &quot;C:\path\to\comp.py&quot;</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Want to jump straight to making comparisons? <em>See <doc-anchor-trigger to="#comparing">Comparing</doc-anchor-trigger>.</em></p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="interface">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#screenshotting">#</doc-anchor-trigger>
-        <span>Screenshotting</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#interface">#</doc-anchor-trigger>
+        <span>Interface</span>
     </h2>
 </doc-anchor-target>
-<p>There are 3 methods of screenshotting:</p>
-<p><strong>Full-auto:</strong> Allowing VS-Preview to do everything for you, by far the fastest option.</p>
-<p><strong>Semi-auto:</strong> Manually marking the frame numbers as you go through the clips, then letting VS-Preview automatically extract, compress, and upload them to slow.pics. Generally the recommended option.</p>
-<p><strong>Bolt-action:</strong> Saving the images locally as you go through the clips, then uploading them manually later. Mainly useful for uploading to other sites and keeping the comparison archived locally, but also has other benefits like faster and more efficient compression.</p>
-<doc-tabs>
-<doc-tab v-cloak id="full-auto">
-<template #title>Full-auto</template>
-<ul>
-<li>Click the <code v-pre>comp</code> button in the bottom right of the toolbar.</li>
-<li>Untick <code v-pre>I</code> so only <code v-pre>P</code> and <code v-pre>B</code> are selected, or only select <code v-pre>B</code> if you want matching frame-types.</li>
-<li>Tick the <code v-pre>public</code> box to make the comparison available on the slow.pics homepage.</li>
-<li>Name the collection appropriately for Slow.pics, get the TMDB ID from <a href="https://www.themoviedb.org/">https://www.themoviedb.org/</a> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.</li>
-<li>Set the tag to the same name as listed on TMDB.</li>
-<li>Set &quot;Delete After&quot; to your desired value, by default comps expire after 2 years of not being viewed.</li>
-<li>Under <code v-pre>random</code> enter a frame count amount, you should use a large number of images to make the comparison as effective as possible, ideally at least 40 since not all frames will be useful.</li>
-<li>Make sure your PNG compression is set to 0 (Max) under Settings -&gt; Main*</li>
-<li>Hit <code v-pre>Start Upload</code> and patiently wait while VS-Preview collects the frames and uploads the comparison.</li>
-</ul>
-<p><strong>If you wish to upload to a slow.pics account for comp history and ability to edit comps, do the following:</strong></p>
-<ul>
-<li>Make sure you&#x27;re logged into slow.pics</li>
-<li>Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browserId.</li>
-<li>Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.</li>
-<li>Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.</li>
-</ul>
-</doc-tab>
-<doc-tab v-cloak id="semi-auto">
-<template #title>Semi-auto</template>
-<doc-anchor-target id="marking-the-frames">
+<doc-panel id="basic-overview" collapsed>
+    <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25ZM9 9v11.5h11.25a.25.25 0 0 0 .25-.25V9Zm11.5-1.5V3.75a.25.25 0 0 0-.25-.25H9v4ZM3.5 9v11.25c0 .138.112.25.25.25H7.5V9Zm4-1.5v-4H3.75a.25.25 0 0 0-.25.25V7.5Z"/></g></g></svg> Basic Overview</template>
+<p>VSPreview&#x27;s user-friendly interface allows you to perform many actions while being able to compare sources with ease:</p>
+<p><figure class="content-center">
+    <img src="../../static/comparison/vsp-interface.png" alt="VSPreview interface">
+    <figcaption class="caption">VSPreview interface</figcaption>
+</figure>
+</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Key</th>
+<th>Section</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://placehold.co/14x14/ed8796/ed8796.png" alt="#ed8796" /> 1</td>
+<td>Preview</td>
+<td>The video preview window for viewing frames in your sources</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/f5a97f/f5a97f.png" alt="#f5a97f" /> 2</td>
+<td>Timeline</td>
+<td>The video timeline, source/clip selection, settings, and section toggles</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/eed49f/eed49f.png" alt="#eed49f" /> 3</td>
+<td>Playback</td>
+<td>Buttons for controlling playback and scrolling through the timeline</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/a6da95/a6da95.png" alt="#a6da95" /> 4</td>
+<td>Scening</td>
+<td>Tools for creating and modifying scene markers</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/91d7e3/91d7e3.png" alt="#91d7e3" /> 5</td>
+<td>Pipette</td>
+<td>The color information for the current frame</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/8aadf4/8aadf4.png" alt="#8aadf4" /> 6</td>
+<td>Benchmark</td>
+<td>The benchmark tool for testing device performance</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/c6a0f6/c6a0f6.png" alt="#c6a0f6" /> 7</td>
+<td><doc-anchor-trigger to="#misc">Misc</doc-anchor-trigger></td>
+<td>Miscellaneous settings for VSPreview</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/f5bde6/f5bde6.png" alt="#f5bde6" /> 8</td>
+<td><doc-anchor-trigger to="#comp">Comp</doc-anchor-trigger></td>
+<td>The comparison creator</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/f4dbd6/f4dbd6.png" alt="#f4dbd6" /> 9</td>
+<td><doc-anchor-trigger to="#status">Status</doc-anchor-trigger></td>
+<td>Various information about the current source</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-panel>
+<doc-anchor-target id="misc">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#marking-the-frames">#</doc-anchor-trigger>
-        <span>Marking the frames</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#misc">#</doc-anchor-trigger>
+        <span>Misc</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li>Press <code v-pre>Shift</code> &amp; <code v-pre>Right Arrow</code> keys to move forward a set amount of frames (configurable in playback section of the toolbar)</li>
-<li><code v-pre>Number</code> keys to switch between video sources and compare quality.</li>
-<li>Press <code v-pre>Control</code> &amp; <code v-pre>Space</code> keys to mark the frame numbers. (Configurable in cfg files)</li>
-<li>Aim to screenshot a variety of scenes, light/dark, low/high motion, etc.</li>
-<li>Try and match frame type when screenshotting, e.g. all sources on a <code v-pre>B</code> frame, single frame jump comes in handy for when they don&#x27;t match (<code v-pre>Arrow keys</code>).</li>
-<li>If a source file does not have <code v-pre>B</code> frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no <code v-pre>B</code> frames.</li>
-</ul>
-<doc-anchor-target id="uploading-the-comp">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#uploading-the-comp">#</doc-anchor-trigger>
-        <span>Uploading the comp</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Once you are done marking frames, click the <code v-pre>comp</code> button in the bottom right of the toolbar.</li>
-<li>Tick the <code v-pre>public</code> box to make the comparison available on the slow.pics homepage.</li>
-<li>Name the collection appropriately for Slow.pics, get the TMDB ID from <a href="https://www.themoviedb.org/">https://www.themoviedb.org/</a> and paste it in the TMDB box, with it correctly set to Movie/TV depending on the content.</li>
-<li>Set the tag to the same name as listed on TMDB.</li>
-<li>Set &quot;Delete After&quot; to your desired value, by default comps expire after 2 years of not being viewed.</li>
-<li>Under <code v-pre>random</code> you may specify an additional frame amount for VS-Preview to pick at random, recommended to help fill the comparison with more frames.</li>
-<li>Untick <code v-pre>Current frame</code> as you likely don&#x27;t want that included.</li>
-<li>Make sure your PNG compression is set to 0 (Max) under Settings -&gt; Main</li>
-</ul>
-<p><strong>If you wish to upload to a slow.pics account for comp history and the ability to edit comps do the following:</strong></p>
-<ul>
-<li>Make sure you&#x27;re logged into slow.pics</li>
-<li>Open the developer menu, go to Application at the top, then Storage on the left, open Local Storage and select slow.pics. Copy the browserId.</li>
-<li>Still in the developer menu, go to Network, refresh the page to populate the list, select the slow.pics entry and scroll until you see SLPSESSION and copy the ID.</li>
-<li>Back in VS-Preview, go to settings, Comp, and paste the two IDs in the relevant boxes.</li>
-</ul>
-<doc-anchor-target id="qol-changes">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#qol-changes">#</doc-anchor-trigger>
-        <span>QOL Changes</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><p><strong>Jump through frames quickly</strong></p>
-<p>In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
-</li>
-<li><p><strong>Mark screenshots quicker by setting the mark frame button to enter</strong></p>
-<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\comp</code> and edit <code v-pre>toolbar.py</code></p>
-<ul>
-<li>Line 552: Replace <code v-pre>QKeyCombination(Qt.Modifier.CTRL, Qt.Key.Key_Space).toCombined(), self.add_current_frame_to_comp</code> with <code v-pre>(Qt.Key_Return), self.add_current_frame_to_comp</code></li>
-</ul>
-</li>
-<li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong></p>
-<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code></p>
-<ul>
-<li>Select lines 180-187, delete them, and paste</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
-</doc-codeblock></div>
-</li>
-</ul>
-</doc-tab>
-<doc-tab v-cloak id="bolt-action">
-<template #title>Bolt-action</template>
-<ul>
-<li>Press <code v-pre>Shift</code> &amp; <code v-pre>Right Arrow</code> keys to move forward a set amount of frames (configurable in playback section of the toolbar)</li>
-<li><code v-pre>Number</code> keys to switch between video sources and compare quality.</li>
-<li>Press <code v-pre>Shift</code> &amp; <code v-pre>S</code> keys to take and save screenshots. (Configurable in cfg files)</li>
-<li><em>Note: Make sure your PNG compression is enabled under Settings -&gt; Main (0-50 depending on speed impact), or disabled (100) if you plan to compress with a tool such as Oxipng later</em></li>
-<li>Aim to screenshot a variety of scenes, light/dark, low/high motion, etc.</li>
-<li>Try and match frame type when screenshotting, e.g. all sources on a <code v-pre>B</code> frame, single frame jump comes in handy for when they don&#x27;t match (<code v-pre>Arrow keys</code>).</li>
-<li><em>Note: If a source file does not have <code v-pre>B</code> frames for you to match, you should skip matching frame type entirely for that source. This is usually true for Crunchyroll WEB-DLs, which have no <code v-pre>B</code> frames.</em></li>
-</ul>
-<doc-anchor-target id="qol-improvements">
+<p>The misc bar contains additional settings for VSPreview.</p>
+<p><figure class="content-center">
+    <img src="../../static/comparison/vsp-misc.png" alt="VSPreview misc bar">
+    <figcaption class="caption">VSPreview misc bar</figcaption>
+</figure>
+</p>
+<doc-panels>
+   <doc-panel id="1-cropper" collapsed>
+       <template #title>1 - Cropper</template>
+<p>A simple VSPreview cropping tool. To enable the cropper, set the toggle from <em>OFF</em> to <em>ON</em>.</p>
+<doc-anchor-target id="relative-cropping">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#qol-improvements">#</doc-anchor-trigger>
-        <span>QOL Improvements</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#relative-cropping">#</doc-anchor-trigger>
+        <span>Relative cropping</span>
     </h4>
 </doc-anchor-target>
+<p>Relative cropping removes lines of pixels from the side you select. For example, if you set <em>Left</em> to <code v-pre>500</code> in a <code v-pre>1920x1080</code> source, VSPreview will remove 500 vertical lines starting from the <em>left-hand side</em> of the video stream, creating a cropped resolution of <code v-pre>1420x1080</code>.</p>
+<doc-anchor-target id="absolute-cropping">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#absolute-cropping">#</doc-anchor-trigger>
+        <span>Absolute cropping</span>
+    </h4>
+</doc-anchor-target>
+<p>Absolute cropping removes lines of pixels starting from the right side (horizontal) or the top/bottom side (vertical). For example, if you set <em>Width</em> to <code v-pre>1420</code> in a <code v-pre>1920x1080</code> source, VSPreview will remove 500 vertical lines starting from the <em>right-hand side</em> of the video stream, creating a cropped resolution of <code v-pre>1420x1080</code>.</p>
+   </doc-panel>
+   <doc-panel id="2-frame-saving" collapsed>
+       <template #title>2 - Frame saving</template>
+<p>Functions for saving frames.</p>
+<doc-anchor-target id="file-name">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#file-name">#</doc-anchor-trigger>
+        <span>File name</span>
+    </h4>
+</doc-anchor-target>
+<p>By default, VSPreview uses the format <code v-pre>{script_name}_{frame}</code> when saving frames.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>We recommend changing the file naming scheme to <code v-pre>{frame}_{index}_{Name}</code>, which is more friendly.</p>
+        </div>
+    </div>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The <code v-pre>{Name}</code> placeholder may include extraneous data in newer versions of VSPreview (e.g. <code v-pre>b'sourceName'</code> instead of <code v-pre>sourceName</code>).</p>
+        </div>
+    </div>
+</div>
+<p>Below is a table of placeholders VSPreview uses:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{script_name}</code></td>
+<td>The name of your script file</td>
+<td><code v-pre>comp</code></td>
+</tr>
+<tr>
+<td><code v-pre>{index}</code></td>
+<td>The number of the source, from <code v-pre>0</code> to <code v-pre>n - 1</code></td>
+<td><code v-pre>4</code></td>
+</tr>
+<tr>
+<td><code v-pre>{Name}</code></td>
+<td>The name of the current source</td>
+<td><code v-pre>OZR (1080p, H.265, 3.10 GiB)</code></td>
+</tr>
+<tr>
+<td><code v-pre>{total_frames}</code></td>
+<td>The total number of frames in the current source</td>
+<td><code v-pre>34072</code></td>
+</tr>
+<tr>
+<td><code v-pre>{frame}</code></td>
+<td>The current frame number</td>
+<td><code v-pre>20798</code></td>
+</tr>
+<tr>
+<td><code v-pre>{fps_num}</code></td>
+<td>The frame rate numerator</td>
+<td><code v-pre>24000</code></td>
+</tr>
+<tr>
+<td><code v-pre>{fps_den}</code></td>
+<td>The frame rate denominator</td>
+<td><code v-pre>1001</code></td>
+</tr>
+<tr>
+<td><code v-pre>{width}</code></td>
+<td>The width of the current frame in pixels</td>
+<td><code v-pre>1920</code></td>
+</tr>
+<tr>
+<td><code v-pre>{height}</code></td>
+<td>The height of the current frame in pixels</td>
+<td><code v-pre>1080</code></td>
+</tr>
+<tr>
+<td><code v-pre>{format}</code></td>
+<td>The video format</td>
+<td><code v-pre>YUV420P10</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="comp">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comp">#</doc-anchor-trigger>
+        <span>Comp</span>
+    </h3>
+</doc-anchor-target>
+<p>The comp bar is primarily used for creating <doc-anchor-trigger to="#automatic-badge-variant-secondary-text-fastest-option">automatic</doc-anchor-trigger>/<doc-anchor-trigger to="#semi-automatic-badge-icon-variant-primary-text-recommended">semi-automatic</doc-anchor-trigger> comparisons to <a href="https://slow.pics">Slowpoke Pics</a>:</p>
+<p><figure class="content-center">
+    <img src="../../static/comparison/vsp-comp.png" alt="VSPreview comp bar">
+    <figcaption class="caption">VSPreview comp bar</figcaption>
+</figure>
+</p>
+<doc-panels>
+   <doc-panel id="1-comparison-title" collapsed>
+       <template #title>1 - Comparison title</template>
+<p>The title of your comparison.</p>
+<doc-anchor-target id="naming-scheme">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#naming-scheme">#</doc-anchor-trigger>
+        <span>Naming scheme</span>
+    </h4>
+</doc-anchor-target>
+<p>When creating your comparison, we recommend naming it with the show title and sources used. This makes it easier for the user to understand what you are comparing. Some examples are:</p>
 <ul>
-<li><p><strong>Use slow.pics friendly file naming, so you can drag all the images onto the site and have them automatically sorted, with comparison names intact.</strong></p>
-<p>In VS-Preview on the bottom bar select Misc, and set file name template to <code v-pre>{frame}_{index}_{Name}</code>.</p>
-</li>
-<li><p><strong>Jump through frames quickly</strong></p>
-<p>In VS-Preview on the bottom bar select Playback, directly right of the playback keys set the <code v-pre>1</code> value to <code v-pre>120</code>.</p>
-</li>
-<li><p><strong>Take screenshots quicker by setting the save image button to enter</strong></p>
-<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc</code> and edit <code v-pre>toolbar.py</code></p>
+<li>By video source: <code v-pre>The Eminence in Shadow - BD vs. WEB</code></li>
+<li>By release type: <code v-pre>Watashi no Oshi wa Akuyaku Reijou. - Minis vs. Streams</code></li>
+<li>By release group: <code v-pre>Miss Kobayashi's Dragon Maid - Okay-Subs vs. Beatrice-Raws</code></li>
+</ul>
+   </doc-panel>
+   <doc-panel id="2-framing-parameters" collapsed>
+       <template #title>2 - Framing parameters</template>
+<doc-anchor-target id="random">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#random">#</doc-anchor-trigger>
+        <span>Random</span>
+    </h4>
+</doc-anchor-target>
+<p>The <em>Random</em> parameter sets the number of frames to randomly capture during screenshotting. <em>This is a setting used when creating <doc-anchor-trigger to="#automatic-badge-variant-secondary-text-fastest-option">automatic</doc-anchor-trigger>/<doc-anchor-trigger to="#semi-automatic-badge-icon-variant-primary-text-recommended">semi-automatic</doc-anchor-trigger> comparisons.</em></p>
+<p>For example, a value of <code v-pre>48</code> means VSPreview will take 48 randomly selected frames from each source when generating the comparison.</p>
+   </doc-panel>
+   <doc-panel id="3-picture-type" collapsed>
+       <template #title>3 - Picture type</template>
+<p>Sets the frame type to capture. <em>This is a setting used when creating <doc-anchor-trigger to="#automatic-badge-variant-secondary-text-fastest-option">automatic</doc-anchor-trigger>/<doc-anchor-trigger to="#semi-automatic-badge-icon-variant-primary-text-recommended">semi-automatic</doc-anchor-trigger> comparisons.</em></p>
+<p>Only checked frames are captured. For instance, if <code v-pre>I</code> is unchecked, then VSPreview will only capture <code v-pre>P</code> or <code v-pre>B</code> frames.</p>
+   </doc-panel>
+   <doc-panel id="4-themoviedb-info" collapsed>
+       <template #title>4 - TheMovieDB info</template>
+<p>The TMDB ID found at <a href="https://www.themoviedb.org">TheMovieDB</a>.</p>
 <ul>
-<li>Line 166: Replace <code v-pre>QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click</code> with <code v-pre>(Qt.Key_Return), self.save_frame_as_button.click</code>.</li>
-<li>If you can&#x27;t spam fast enough, in vs-preview click settings and set PNG compression to a lower level (higher value).</li>
+<li>For TV shows, set the box to <code v-pre>TV</code></li>
+<li>For movies, set the box to <code v-pre>Movie</code></li>
+</ul>
+   </doc-panel>
+   <doc-panel id="5-collection-tags" collapsed>
+       <template #title>5 - Collection tags</template>
+<p>Tags for Slowpoke Pics collections.</p>
+   </doc-panel>
+   <doc-panel id="6-slowpoke-pics-parameters" collapsed>
+       <template #title>6 - Slowpoke Pics parameters</template>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>Public</code></td>
+<td>Sets whether the comparison link is publicly visible on the front page and search on <a href="https://slow.pics">Slowpoke Pics</a></td>
+</tr>
+<tr>
+<td><code v-pre>NSFW</code></td>
+<td>Sets whether the comparison displays an NSFW warning before showing images</td>
+</tr>
+<tr>
+<td><code v-pre>Delete After</code></td>
+<td>Sets the number of days for when the comparison will expire and be deleted from <a href="https://slow.pics">Slowpoke Pics</a>. <em>By default, comparisons are deleted after two years of inactivity</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="status">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#status">#</doc-anchor-trigger>
+        <span>Status</span>
+    </h3>
+</doc-anchor-target>
+<p>The status bar displays several information about the current source:</p>
+<p><figure class="content-center">
+    <img src="../../static/comparison/vsp-status.png" alt="VSPreview status bar">
+    <figcaption class="caption">VSPreview status bar</figcaption>
+</figure>
+</p>
+<dl>
+<dt>1 - Total number of frames</dt>
+<dd>The total number of frames in the video stream.</dd>
+<dt>2 - Video stream length</dt>
+<dd>The playback length of the video stream.</dd>
+<dt>3 - Video stream resolution</dt>
+<dd>The content resolution of the video stream.</dd>
+<dt>4 - Video format</dt>
+<dd>The chroma subsampling type and bit depth.</dd>
+<dt>5 - Source frame rate</dt>
+<dd>The frame rate of the video stream, represented by a fraction and approximate decimal.</dd>
+<dt>6 - Picture type of current frame</dt>
+<dd>The picture type of the current frame.</dd>
+</dl>
+<doc-anchor-target id="comparing">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comparing">#</doc-anchor-trigger>
+        <span>Comparing</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="tips">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tips">#</doc-anchor-trigger>
+        <span>Tips</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><em><doc-anchor-trigger to="#recommended-source-naming">Label your sources clearly to the user</doc-anchor-trigger></em></li>
+<li>Try to capture a large variety of scenes (e.g. low/high detail, bright/dark, low/high motion)</li>
+<li>Try to capture frames of the same type
+<ul>
+<li>We recommend taking <code v-pre>P</code> or <code v-pre>B</code> type frames when possible</li>
+<li>This may be harder to accomplish with particular sources, such as streams or WEB-DLs</li>
+<li><em><doc-anchor-trigger to="#3-picture-type">See how to set a specific frame type</doc-anchor-trigger></em></li>
 </ul>
 </li>
-<li><p><strong>Swap binds to save your pinky finger, so you no longer have to hold shift all the time</strong></p>
-<p>Open <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback\</code> and edit <code v-pre>toolbar.py</code></p>
+</ul>
+<doc-anchor-target id="basic-keybinds">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#basic-keybinds">#</doc-anchor-trigger>
+        <span>Basic Keybinds</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>Left arrow</code> (&lt;-)</td>
+<td>Move back <em>n</em> frames based on <doc-anchor-trigger to="#change-frame-increment">config</doc-anchor-trigger> (default: <em>n = 1</em>)</td>
+</tr>
+<tr>
+<td><code v-pre>Right arrow</code> (-&gt;)</td>
+<td>Move forward <em>n</em> frames based on <doc-anchor-trigger to="#change-frame-increment">config</doc-anchor-trigger> (default: <em>n = 1</em>)</td>
+</tr>
+<tr>
+<td>Number keys</td>
+<td>Switches to source <em>n</em> (e.g. <code v-pre>2</code> switches to <code v-pre>clip2</code>)</td>
+</tr>
+<tr>
+<td><code v-pre>Shift</code> + <code v-pre>S</code></td>
+<td>Take and save screenshot of the current frame</td>
+</tr>
+<tr>
+<td><code v-pre>Ctrl</code> + <code v-pre>Space</code></td>
+<td>Mark current frame number for <doc-anchor-trigger to="#semi-automatic-badge-icon-variant-primary-text-recommended">semi-automatic</doc-anchor-trigger> comparisons</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="process">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#process">#</doc-anchor-trigger>
+        <span>Process</span>
+    </h3>
+</doc-anchor-target>
+<p>VSPreview offers three methods for creating comparisons:</p>
+<doc-panels>
+   <doc-panel id="automatic-badge-variant-secondary-text-fastest-option" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M8.75 8h6.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-.75.75h-6.5a.75.75 0 0 1-.75-.75v-6.5A.75.75 0 0 1 8.75 8Zm.75 6.5h5v-5h-5Z"/><path d="M15.25 1a.75.75 0 0 1 .75.75V4h2.25c.966 0 1.75.784 1.75 1.75V8h2.25a.75.75 0 0 1 0 1.5H20v5h2.25a.75.75 0 0 1 0 1.5H20v2.25A1.75 1.75 0 0 1 18.25 20H16v2.25a.75.75 0 0 1-1.5 0V20h-5v2.25a.75.75 0 0 1-1.5 0V20H5.75A1.75 1.75 0 0 1 4 18.25V16H1.75a.75.75 0 0 1 0-1.5H4v-5H1.75a.75.75 0 0 1 0-1.5H4V5.75C4 4.784 4.784 4 5.75 4H8V1.75a.75.75 0 0 1 1.5 0V4h5V1.75a.75.75 0 0 1 .75-.75Zm3 17.5a.25.25 0 0 0 .25-.25V5.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25Z"/></g></g></svg> Automatic <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
+    <span>Fastest Option</span>
+</span></template>
+<p>Automatic comparisons are created completely without any additional user input. VSPreview will automatically select, capture, and upload frames for you. <em>This is the fastest method for creating comparisons.</em></p>
+<doc-anchor-target id="capturing">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#capturing">#</doc-anchor-trigger>
+        <span>Capturing</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p>In VSPreview, navigate to the bottom bar and toggle the <em>Comp</em> section</p>
+</li>
+<li><p>Set your parameters. The following parameters should be filled:
+<img src="../../static/comparison/vsp-comp.png" alt="VSPreview comp bar" /></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The title of your comparison/show</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The random frame interval to capture. <em>This should be set to a value higher or equal to 40 frames</em></td>
+</tr>
+<tr>
+<td>3</td>
+<td>The picture type</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The <a href="https://www.themoviedb.org">TMDB ID</a> for the show</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
-<li>Select lines 180-187, delete them, and paste the following, making sure the indentation of the lines match (using spaces).</li>
+<li><em>See <doc-anchor-trigger to="#comp">Comp</doc-anchor-trigger> for more detail on what each one is used for</em></li>
+</ul>
+</li>
+<li><p>Hit the <em>Start Upload</em> button under <em>Comp</em> to begin creating your comparison</p>
+</li>
+</ol>
+   </doc-panel>
+   <doc-panel id="semi-automatic-badge-icon-variant-primary-text-recommended" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm-1.5 0a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/><path d="M12 1c.266 0 .532.009.797.028.763.055 1.345.617 1.512 1.304l.352 1.45c.019.078.09.171.225.221.247.089.49.19.728.302.13.061.246.044.315.002l1.275-.776c.603-.368 1.411-.353 1.99.147.402.349.78.726 1.128 1.129.501.578.515 1.386.147 1.99l-.776 1.274c-.042.069-.058.185.002.315.112.238.213.481.303.728.048.135.142.205.22.225l1.45.352c.687.167 1.249.749 1.303 1.512.038.531.038 1.063 0 1.594-.054.763-.616 1.345-1.303 1.512l-1.45.352c-.078.019-.171.09-.221.225-.089.248-.19.491-.302.728-.061.13-.044.246-.002.315l.776 1.275c.368.603.353 1.411-.147 1.99-.349.402-.726.78-1.129 1.128-.578.501-1.386.515-1.99.147l-1.274-.776c-.069-.042-.185-.058-.314.002a8.606 8.606 0 0 1-.729.303c-.135.048-.205.142-.225.22l-.352 1.45c-.167.687-.749 1.249-1.512 1.303-.531.038-1.063.038-1.594 0-.763-.054-1.345-.616-1.512-1.303l-.352-1.45c-.019-.078-.09-.171-.225-.221a8.138 8.138 0 0 1-.728-.302c-.13-.061-.246-.044-.315-.002l-1.275.776c-.603.368-1.411.353-1.99-.147-.402-.349-.78-.726-1.128-1.129-.501-.578-.515-1.386-.147-1.99l.776-1.274c.042-.069.058-.185-.002-.314a8.606 8.606 0 0 1-.303-.729c-.048-.135-.142-.205-.22-.225l-1.45-.352c-.687-.167-1.249-.749-1.304-1.512a11.158 11.158 0 0 1 0-1.594c.055-.763.617-1.345 1.304-1.512l1.45-.352c.078-.019.171-.09.221-.225.089-.248.19-.491.302-.728.061-.13.044-.246.002-.315l-.776-1.275c-.368-.603-.353-1.411.147-1.99.349-.402.726-.78 1.129-1.128.578-.501 1.386-.515 1.99-.147l1.274.776c.069.042.185.058.315-.002.238-.112.481-.213.728-.303.135-.048.205-.142.225-.22l.352-1.45c.167-.687.749-1.249 1.512-1.304C11.466 1.01 11.732 1 12 1Zm-.69 1.525c-.055.004-.135.05-.161.161l-.353 1.45a1.832 1.832 0 0 1-1.172 1.277 7.147 7.147 0 0 0-.6.249 1.833 1.833 0 0 1-1.734-.074l-1.274-.776c-.098-.06-.186-.036-.228 0a9.774 9.774 0 0 0-.976.976c-.036.042-.06.131 0 .228l.776 1.274c.314.529.342 1.18.074 1.734a7.147 7.147 0 0 0-.249.6 1.831 1.831 0 0 1-1.278 1.173l-1.45.351c-.11.027-.156.107-.16.162a9.63 9.63 0 0 0 0 1.38c.004.055.05.135.161.161l1.45.353a1.832 1.832 0 0 1 1.277 1.172c.074.204.157.404.249.6.268.553.24 1.204-.074 1.733l-.776 1.275c-.06.098-.036.186 0 .228.301.348.628.675.976.976.042.036.131.06.228 0l1.274-.776a1.83 1.83 0 0 1 1.734-.075c.196.093.396.176.6.25a1.831 1.831 0 0 1 1.173 1.278l.351 1.45c.027.11.107.156.162.16a9.63 9.63 0 0 0 1.38 0c.055-.004.135-.05.161-.161l.353-1.45a1.834 1.834 0 0 1 1.172-1.278 6.82 6.82 0 0 0 .6-.248 1.831 1.831 0 0 1 1.733.074l1.275.776c.098.06.186.036.228 0 .348-.301.675-.628.976-.976.036-.042.06-.131 0-.228l-.776-1.275a1.834 1.834 0 0 1-.075-1.733c.093-.196.176-.396.25-.6a1.831 1.831 0 0 1 1.278-1.173l1.45-.351c.11-.027.156-.107.16-.162a9.63 9.63 0 0 0 0-1.38c-.004-.055-.05-.135-.161-.161l-1.45-.353c-.626-.152-1.08-.625-1.278-1.172a6.576 6.576 0 0 0-.248-.6 1.833 1.833 0 0 1 .074-1.734l.776-1.274c.06-.098.036-.186 0-.228a9.774 9.774 0 0 0-.976-.976c-.042-.036-.131-.06-.228 0l-1.275.776a1.831 1.831 0 0 1-1.733.074 6.88 6.88 0 0 0-.6-.249 1.835 1.835 0 0 1-1.173-1.278l-.351-1.45c-.027-.11-.107-.156-.162-.16a9.63 9.63 0 0 0-1.38 0Z"/></g></g></svg> Semi-automatic <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span class="docs-emoji mr-2">&#x2764;&#xFE0F;</span>
+    <span>Recommended</span>
+</span></template>
+<p>Semi-automatic comparisons are created with minor user input. VSPreview will automatically capture and upload frame manually marked by the user. <em>This is the recommended method for creating comparisons.</em></p>
+<doc-anchor-target id="setup-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-1">#</doc-anchor-trigger>
+        <span>Setup</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p>Locate the frame(s) you want to compare</p>
+<ul>
+<li>By default, <code v-pre>Left arrow</code> and <code v-pre>Right arrow</code> navigates between frames</li>
+<li><em>See how to <doc-anchor-trigger to="#change-frame-increment">skip frames faster</doc-anchor-trigger></em></li>
+<li><em>See <doc-anchor-trigger to="#tips">tips</doc-anchor-trigger> on what you should look for</em></li>
+</ul>
+</li>
+<li><p>Once you find a frame, mark the current frame</p>
+<ul>
+<li>Default keybind: <code v-pre>Ctrl</code> + <code v-pre>Space</code></li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="capturing-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#capturing-1">#</doc-anchor-trigger>
+        <span>Capturing</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p>In VSPreview, navigate to the bottom bar and toggle the <em>Comp</em> section</p>
+</li>
+<li><p>Set your parameters. The following parameters should be filled:
+<img src="../../static/comparison/vsp-comp.png" alt="VSPreview comp bar" /></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The title of your comparison/show</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The <a href="https://www.themoviedb.org">TMDB ID</a> for the show</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><em>See <doc-anchor-trigger to="#comp">Comp</doc-anchor-trigger> for more detail on what each one is used for</em></li>
+</ul>
+</li>
+<li><p>Hit the <em>Start Upload</em> button under <em>Comp</em> to begin creating your comparison</p>
+</li>
+</ol>
+   </doc-panel>
+   <doc-panel id="manual" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M7.875 2.292a.114.114 0 0 0-.032.018A7.239 7.239 0 0 0 4.75 8.25a7.248 7.248 0 0 0 3.654 6.297c.57.327.982.955.941 1.682v.002l-.317 6.058a.75.75 0 1 1-1.498-.078l.317-6.062v-.004c.006-.09-.047-.215-.188-.296A8.749 8.749 0 0 1 3.25 8.25a8.738 8.738 0 0 1 3.732-7.169 1.547 1.547 0 0 1 1.709-.064c.484.292.809.835.809 1.46v4.714a.25.25 0 0 0 .119.213l2.25 1.385c.08.05.182.05.262 0l2.25-1.385a.25.25 0 0 0 .119-.213V2.478c0-.626.325-1.169.81-1.461a1.547 1.547 0 0 1 1.708.064 8.741 8.741 0 0 1 3.732 7.17 8.747 8.747 0 0 1-4.41 7.598c-.14.081-.193.206-.188.296v.004l.318 6.062a.75.75 0 1 1-1.498.078l-.317-6.058v-.002c-.041-.727.37-1.355.94-1.682A7.247 7.247 0 0 0 19.25 8.25a7.239 7.239 0 0 0-3.093-5.94.114.114 0 0 0-.032-.018l-.01-.001c-.003 0-.014 0-.031.01-.036.022-.084.079-.084.177V7.19c0 .608-.315 1.172-.833 1.49l-2.25 1.385a1.75 1.75 0 0 1-1.834 0l-2.25-1.384A1.752 1.752 0 0 1 8 7.192V2.477c0-.098-.048-.155-.084-.176a.068.068 0 0 0-.031-.011l-.01.001Z"/></g></g></svg> Manual</template>
+<p>Manual comparisons are created completely by the user. VSPreview displays and handles frame capture, while the main actions are performed by the user through the previewer.</p>
+<doc-anchor-target id="capturing-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#capturing-2">#</doc-anchor-trigger>
+        <span>Capturing</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p>Locate the frame(s) you want to compare</p>
+<ul>
+<li>By default, <code v-pre>Left arrow</code> and <code v-pre>Right arrow</code> navigates between frames</li>
+<li><em>See how to <doc-anchor-trigger to="#change-frame-increment">skip frames faster</doc-anchor-trigger></em></li>
+<li><em>See <doc-anchor-trigger to="#tips">tips</doc-anchor-trigger> on what you should look for</em></li>
+</ul>
+</li>
+<li><p>Once you find a frame, take a screenshot of the current frame</p>
+<ul>
+<li>Default keybind: <code v-pre>Shift</code> + <code v-pre>S</code></li>
+</ul>
+</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>If you want to use automatic <doc-anchor-trigger to="#slowpoke-pics">Slowpoke Pics</doc-anchor-trigger> sorting, make sure your file naming scheme is set to <doc-anchor-trigger to="#2-frame-saving"><code v-pre>{frame}_{index}_{Name}</code></doc-anchor-trigger>.</p>
+        </div>
+    </div>
+</div>
+<ol start="3">
+<li><p>Switch to the other sources and take screenshots of their current frame</p>
+<ul>
+<li>Press the number keys to change sources (e.g. <code v-pre>1</code> for <code v-pre>clip1</code>, <code v-pre>2</code> for <code v-pre>clip2</code>)</li>
+<li><em>You may need to finely readjust the position using the arrow keys</em></li>
+</ul>
+</li>
+<li><p>Repeat process for the next frames in your comparison</p>
+</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>By default, all frames are stored within your working directory unless manually changed to a different destination.</p>
+        </div>
+    </div>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><em>See <doc-anchor-trigger to="#post-processing">Post-processing</doc-anchor-trigger> for additional scripts to apply after creating your comparison.</em></p>
+        </div>
+    </div>
+</div>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="qol-changes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#qol-changes">#</doc-anchor-trigger>
+        <span>QoL Changes</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="vspreview-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vspreview-1">#</doc-anchor-trigger>
+        <span>VSPreview</span>
+    </h3>
+</doc-anchor-target>
+<doc-panels>
+   <doc-panel id="recommended-source-naming" collapsed>
+       <template #title>Recommended source naming</template>
+<p>You can name your sources in any way you&#x27;d like. However, we recommend naming your sources in a way that makes it easy to understand:</p>
+<p><figure class="content-center">
+    <img src="../../static/comparison/example-sources.png" alt="Example source names">
+    <figcaption class="caption">Example source names</figcaption>
+</figure>
+</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Key</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://placehold.co/14x14/ed8796/ed8796.png" alt="#ed8796" /> 1</td>
+<td>The name of the source/release group</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/f5a97f/f5a97f.png" alt="#f5a97f" /> 2</td>
+<td>The video resolution</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/eed49f/eed49f.png" alt="#eed49f" /> 3</td>
+<td>The video codec</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/a6da95/a6da95.png" alt="#a6da95" /> 4</td>
+<td>The file size</td>
+</tr>
+<tr>
+<td><img src="https://placehold.co/14x14/91d7e3/91d7e3.png" alt="#91d7e3" /> 5</td>
+<td>Additional tags, such as scaling or HDR/DV</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>How you should name your sources will depend on the content you&#x27;re comparing. For example, if you are trying to compare HDR and SDR sources, you should include the type in the source name. <em>Generally, the first three will cover most comparisons you make, but you are free to include more as needed.</em></p>
+   </doc-panel>
+   <doc-panel id="change-frame-increment" collapsed>
+       <template #title>Change frame increment</template>
+<ul>
+<li>In VSPreview, navigate to the bottom bar and toggle the <em>Playback</em> section</li>
+<li>In <em>Playback</em>, set the number of frames to skip (<em>n</em>) when scrubbing by adjusting the first field:</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../../static/comparison/vsp-playback-frames.png" alt="Adjust frames in the playback bar">
+    <figcaption class="caption">Adjust frames in the playback bar</figcaption>
+</figure>
+</p>
+<ul>
+<li>To skip <em>n</em> frames backward/forward, press <code v-pre>Shift</code> + <code v-pre>Left arrow</code>/<code v-pre>Right arrow</code></li>
+</ul>
+   </doc-panel>
+   <doc-panel id="changing-the-screenshot-key" collapsed>
+       <template #title>Changing the screenshot key</template>
+<p>The following guide changes the screenshot key from <code v-pre>Shift</code> + <code v-pre>S</code> to <code v-pre>Enter</code>:</p>
+<ul>
+<li><p>Launch <em>File Explorer</em> and go to <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc</code></p>
+</li>
+<li><p>In a text editor, open <code v-pre>toolbar.py</code></p>
+</li>
+<li><p>Locate the lines below (approximately line 143):</p>
+<ul>
+<li><em>Use the Find command to locate text (<code v-pre>Ctrl</code> + <code v-pre>F</code>)</em></li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click)
-self.main.add_shortcut(QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click)
-self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
-self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
+<pre class="language-python"><code v-pre class="language-python">      self.main.add_shortcut(
+          QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_S).toCombined(), self.save_frame_as_button.click
+      )</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Replace the lines with the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">      self.main.add_shortcut(
+          (Qt.Key_Return), self.save_frame_as_button.click
+      )</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
-<doc-anchor-target id="post-processing">
+   </doc-panel>
+   <doc-panel id="swap-binds-for-seeking-frames" collapsed>
+       <template #title>Swap binds for seeking frames</template>
+<p>The following guide switches the binds for <code v-pre>Left arrow</code>/<code v-pre>Right arrow</code> and <code v-pre>Shift</code> + <code v-pre>Left arrow</code>/<code v-pre>Shift</code> + <code v-pre>Right arrow</code>:</p>
+<ul>
+<li><p>Launch <em>File Explorer</em> and go to <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback</code></p>
+</li>
+<li><p>In a text editor, open <code v-pre>toolbar.py</code></p>
+</li>
+<li><p>Locate the lines below (approximately line 178):</p>
+<ul>
+<li><em>Use the Find command to locate text (<code v-pre>Ctrl</code> + <code v-pre>F</code>)</em></li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">      self.main.add_shortcut(Qt.Key.Key_Left, self.seek_to_prev_button.click)
+      self.main.add_shortcut(Qt.Key.Key_Right, self.seek_to_next_button.click)
+      self.main.add_shortcut(
+          QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_Left).toCombined(), self.seek_n_frames_b_button.click
+      )
+      self.main.add_shortcut(
+          QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_Right).toCombined(), self.seek_n_frames_f_button.click
+      )</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Replace the lines with the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">      self.main.add_shortcut(
+          QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click
+      )
+      self.main.add_shortcut(
+          QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click
+      )
+      self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
+      self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="slowpoke-pics">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#slowpoke-pics">#</doc-anchor-trigger>
+        <span>Slowpoke Pics</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="fetching-account-tokens">
     <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fetching-account-tokens">#</doc-anchor-trigger>
+        <span>Fetching Account Tokens</span>
+    </h4>
+</doc-anchor-target>
+<p>If you plan on uploading to <a href="https://slow.pics">Slowpoke Pics</a> (slow.pics) under your account, you will need to provide VSPreview with your account tokens.</p>
+<doc-tabs>
+<doc-tab v-cloak id="chrome">
+<template #title>Chrome</template>
+<ul>
+<li>Visit <a href="https://slow.pics">Slowpoke Pics</a> in your browser and log into your account</li>
+<li>Open your browser&#x27;s <strong>Developer Tools</strong>. You will need to get two values:
+<ul>
+<li>To get your <code v-pre>browserId</code>, go to <strong>Application</strong> -&gt; <strong>Storage</strong> -&gt; <strong>Local Storage</strong> -&gt; <code v-pre>https://slow.pics</code>. Copy the key listed there</li>
+<li>To get your <code v-pre>sessionId</code>, go to <strong>Network</strong>. Refresh the page, then find <code v-pre>slow.pics</code>. Copy the key listed under <code v-pre>SLPSESSION</code></li>
+</ul>
+</li>
+<li>In VSPreview, go to <strong>Settings</strong> -&gt; <strong>Comp</strong></li>
+<li>Paste the two values in the boxes provided</li>
+</ul>
+</doc-tab>
+<doc-tab v-cloak id="firefox">
+<template #title>Firefox</template>
+<ul>
+<li>Visit <a href="https://slow.pics">Slowpoke Pics</a> in your browser and log into your account</li>
+<li>Open your browser&#x27;s <strong>Developer Tools</strong>. You will need to get two values:
+<ul>
+<li>To get your <code v-pre>browserId</code>, go to <strong>Storage</strong> -&gt; <strong>Local Storage</strong> -&gt; <code v-pre>https://slow.pics</code>. Copy the key listed there</li>
+<li>To get your <code v-pre>sessionId</code>, go to <strong>Storage</strong> -&gt; <strong>Cookies</strong> -&gt; <code v-pre>https://slow.pics</code>. Copy the key listed under <code v-pre>SLPSESSION</code></li>
+</ul>
+</li>
+<li>In VSPreview, go to <strong>Settings</strong> -&gt; <strong>Comp</strong></li>
+<li>Paste the two values in the boxes provided</li>
+</ul>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="post-processing">
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#post-processing">#</doc-anchor-trigger>
         <span>Post-processing</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
-<p>The Bolt-action method is best paired with some scripts to run after you&#x27;ve saved all the frames. The following scripts are generated by chatgpt as I cannot code <span class="docs-emoji">&#x1F44D;</span>
-Generally, I just run all 3 with a .bat file, or just the first 2 if I&#x27;m not uploading to ptpimg.</p>
-<doc-panel id="zero-padding" collapsed>
-    <template #title>Zero padding</template>
-<p>Zero pads all frames in the current directory and removes some of the garbage from the name. Allows for automatic numerical sorting on slow.pics and automatic filling of comparison names based on comp.vpy</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import os
-
-def zero_pad_and_clean_file_names():
-    current_directory = os.getcwd()
-    for filename in os.listdir(current_directory):
-        base_name, extension = os.path.splitext(filename)
-        parts = base_name.split('_')
-
-        if len(parts) &gt; 2 and parts[0].isdigit():
-            parts[0] = parts[0].zfill(5)
-            parts[2] = parts[2].replace(&quot;b'&quot;, &quot;&quot;).replace(&quot;'&quot;, &quot;&quot;)
-            new_filename = '_'.join(parts) + extension
-            os.rename(os.path.join(current_directory, filename), os.path.join(current_directory, new_filename))
-
-# Usage example
-zero_pad_and_clean_file_names()</code></pre>
-</doc-codeblock></div>
-</doc-panel>
-<doc-panel id="compressing" collapsed>
-    <template #title>Compressing</template>
-<p>Compresses all png files in the current directory with Oxipng compression level 1, very fast and should take less than a minute to iterate over hundreds of images.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The following scripts are best used with <doc-anchor-trigger to="#manual">manual comparisons</doc-anchor-trigger>.</p>
+        </div>
+    </div>
+</div>
+<doc-panels>
+   <doc-panel id="compressing" collapsed>
+       <template #title>Compressing</template>
+<p>Compresses all <code v-pre>.png</code> image files in the current directory with Oxipng compression (level 1). Runs fast (typically less than a minute to iterate over hundreds of images).</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">import os
 import glob
@@ -588,10 +1708,32 @@ for images in image_chunks:
 for process in processes:
     process.wait()</code></pre>
 </doc-codeblock></div>
-</doc-panel>
-<doc-panel id="uploading-to-ptpimg" collapsed>
-    <template #title>Uploading to ptpimg</template>
-<p>Uploads all png files in the current directory to ptpimg. Requires your ptpimg API key in <code v-pre>%USERPROFILE%\.ptpimg.key</code>.</p>
+   </doc-panel>
+   <doc-panel id="padding" collapsed>
+       <template #title>Padding</template>
+<p>Zero pads frame numbers on images in the current directory and removes extraneous data from file names. <em>This allows for automatic numerical sorting on <doc-anchor-trigger to="#slowpoke-pics">Slowpoke Pics</doc-anchor-trigger> and filling of comparison names based on <code v-pre>comp.py</code>.</em></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import os
+
+def zero_pad_and_clean_file_names():
+    current_directory = os.getcwd()
+    for filename in os.listdir(current_directory):
+        base_name, extension = os.path.splitext(filename)
+        parts = base_name.split('_')
+
+        if len(parts) &gt; 2 and parts[0].isdigit():
+            parts[0] = parts[0].zfill(5)
+            parts[2] = parts[2].replace(&quot;b'&quot;, &quot;&quot;).replace(&quot;'&quot;, &quot;&quot;)
+            new_filename = '_'.join(parts) + extension
+            os.rename(os.path.join(current_directory, filename), os.path.join(current_directory, new_filename))
+
+# Usage example
+zero_pad_and_clean_file_names()</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="uploading-to-ptpimg" collapsed>
+       <template #title>Uploading to ptpimg</template>
+<p>Uploads all <code v-pre>.png</code> image files in the current directory to <a href="https://ptpimg.me">ptpimg</a>. <em>Requires your ptpimg API key in <code v-pre>%USERPROFILE%\.ptpimg.key</code>.</em></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">#!/usr/bin/python
 #Windows wildcard support fork - use at your own peril
@@ -653,18 +1795,23 @@ for link in links:
 for link in links:
     print(&quot;%s %s&quot;%(link))</code></pre>
 </doc-codeblock></div>
-</doc-panel>
-</doc-tab>
-</doc-tabs>
-<doc-anchor-target id="automatic-comp-scripts">
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="additional-scripts">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-comp-scripts">#</doc-anchor-trigger>
-        <span>Automatic Comp Scripts</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-scripts">#</doc-anchor-trigger>
+        <span>Additional Scripts</span>
     </h2>
 </doc-anchor-target>
-<p>If VS-Preview is too scary to setup, you can simply run a script to generate the comparisons for you.</p>
+<doc-anchor-target id="automation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automation">#</doc-anchor-trigger>
+        <span>Automation</span>
+    </h3>
+</doc-anchor-target>
+<p>If VSPreview is too complicated to setup, you can run a completed script to automatically generate the comparisons for you.</p>
 <ul>
-<li><a href="https://github.com/McBaws/comp">McBaws&#x27; Script</a></li>
+<li><a href="https://github.com/McBaws/comp">McBaws Script</a></li>
 </ul>
 
                                 
