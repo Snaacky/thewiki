@@ -813,7 +813,7 @@ The following guide changes the screenshot key from `Shift` + `S` to `Enter`:
 
   ```py
         self.main.add_shortcut(
-            (Qt.Key_Return), self.save_frame_as_button.click
+            (Qt.Key.Key_Return), self.save_frame_as_button.click
         )
   ```
 
@@ -841,10 +841,10 @@ The following guide switches the binds for `Left arrow`/`Right arrow` and `Shift
 
   ```py
         self.main.add_shortcut(
-            QKeyCombination(Qt.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click
+            QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_Left), self.seek_to_prev_button.click
         )
         self.main.add_shortcut(
-            QKeyCombination(Qt.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click
+            QKeyCombination(Qt.Modifier.SHIFT, Qt.Key.Key_Right), self.seek_to_next_button.click
         )
         self.main.add_shortcut(Qt.Key.Key_Left, self.seek_n_frames_b_button.click)
         self.main.add_shortcut(Qt.Key.Key_Right, self.seek_n_frames_f_button.click)
