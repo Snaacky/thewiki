@@ -63,18 +63,22 @@ thewiki is built using [Retype](https://retype.com). See how you can host a loca
    git clone https://github.com/Snaacky/thewiki.git
    ```
 
+   ``` sh
+   cd thewiki
+   ```
+
 3. Build and run:
 
    - The `retype start` command automatically prepares and loads the website into the browser:
 
      ```sh
-     retype start thewiki
+     retype start
      ```
 
    - Alternatively, you can use `retype build` to build it without running it:
 
      ```sh
-     retype build thewiki --output retype
+     retype build --output retype
      ```
 
 ## Contributing
