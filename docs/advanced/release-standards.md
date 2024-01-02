@@ -457,7 +457,7 @@ Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name
 
 ## Patches/Revisions
 
-- For making patches, use [dan0v/xdelta3-cross-gui](https://github.com/dan0v/xdelta3-cross-gui).
+- For making patches, see the [xDelta guide](/tutorials/xdelta).
 - Append `v2` at the end of `SXXEYY`, e.g, `S01E01v2`.
 - Do **NOT** alter episode files that don't need a revision.
 - This will also change the `CRC32` value of the file.
