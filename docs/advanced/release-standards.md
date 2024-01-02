@@ -194,7 +194,7 @@ for file in *.flac; do opusenc --bitrate 192 "${file}" "${file%.*}.opus"; done
 ### Recommended Tools
 
 - [arch1t3cht/Aegisub](https://github.com/arch1t3cht/Aegisub) for all subtitle work.
-- [SubKt](https://github.com/Myaamori/SubKt) is a highly configurable toolkit for fansubbing automation.
+- [muxtools](https://github.com/Jaded-Encoding-Thaumaturgy/muxtools) is an automation package for everything related to encoding and subbing.
 - [Myaamori-Aegisub-Scripts](https://github.com/TypesettingTools/Myaamori-Aegisub-Scripts) includes several helpful scripts for processing `.ASS` subtitles.
 - [Prass](https://github.com/tp7/Prass) is another Console processor for `.ASS` subtitles.
 - [tp7/Sushi](https://github.com/tp7/Sushi) is an automatic subtitle shifter based on audio.
@@ -236,7 +236,7 @@ Once you have prepared the individual files, you'll have to put them together in
 ### Recommended Tools
 
 - [MKVToolNix](https://mkvtoolnix.download/downloads.html)
-- [SubKt](https://github.com/Myaamori/SubKt)
+- [muxtools](https://github.com/Jaded-Encoding-Thaumaturgy/muxtools)
 - [MKVToolNix-Sequential-Batch-Mapper](https://github.com/McBaws/MKVToolNix-Sequential-Batch-Mapper)
 - [Inviska-MKV-Extract](https://www.videohelp.com/software/Inviska-MKV-Extract)
 
