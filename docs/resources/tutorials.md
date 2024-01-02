@@ -14,6 +14,7 @@ order: -3
 - [How To Use IRC/XDCC](/tutorials/irc)
 - [Manage LN/WN using Calibre](/tutorials/calibre)
 - [mpv Setup and Config](/tutorials/mpv)
+- [Patching files with xDelta](/tutorials/xdelta)
 - [Plex Player Modding](/tutorials/plex)
 - [Propolis](/tutorials/propolis)
 - [qBittorrent](/tutorials/qbittorrent)
