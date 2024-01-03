@@ -28,7 +28,7 @@ author:
 #### General-Purpose Content
 
 [Yande.re](https://yande.re/)/[Gelbooru](https://gelbooru.com/) 
-- Well-established sites with vast amounts of user-uploaded content easily searchable due to their usage of various filter tags. Note: Gelbooru has many tags blacklisted by default; to access them, click [Here](https://gelbooru.com/index.php?page=account&s=options), check the box that says "Display all site content" and click "Save at the bottom of the page.
+- Well-established sites with vast amounts of user-uploaded content easily searchable due to their usage of various filter tags. Note: Gelbooru has many tags blacklisted by default; to access them, click [here](https://gelbooru.com/index.php?page=account&s=options), check the box that says "Display all site content" and click "Save" at the bottom of the page.
 
 - If you can't find what you're looking for on either of these sites, consider checking [Sankaku Channel](https://chan.sankakucomplex.com/) for it. Note: some content requires you to make an account to access, but account registrations are open.
 
@@ -44,7 +44,7 @@ author:
 - If a certain query doesn't return an expected upload, head to "Show Advanced Options" and click on "Browse Expunged Galleries"; uploads removed by users will be shown. However, keep in mind that the site is frequently subject to bothersome copyright takedowns.
 
 [Ex-Hentai](https://exhentai.org/) 
-- Requires an E-Hentai account to be logged in to access; if the site remains blank after this, clear your browser's cookies or open a private tab and log in through there. 
+- Requires an E-Hentai account to be logged in to access. If the site remains blank after this, clear your browser's cookies or open a private tab and log in through there. 
 
 - Top place to look for content that may have been taken down from E-Hentai.
 
