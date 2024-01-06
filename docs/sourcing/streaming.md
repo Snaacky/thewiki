@@ -23,6 +23,8 @@ Most unofficial streaming sites contain unwanted or annoying pop-ups/ads that ma
 
 [AniWave](https://aniwave.to) (previously *9anime*)
 :   Self-hosted site with one of the largest and oldest anime libraries. Releases are often updated to include fansubs and BD releases for older content
+[Animerulz](https://animerulz.in) 
+:   Self-hosted site with quality similar to AniWave while maintaining an extensive library. One of the only unofficial streaming sites with soft subtitles and with Indian Languages Audio like Hindi Telugu Tamil Malayalam.
 
 *See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.*
 
