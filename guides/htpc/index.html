@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.757566014453">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758119553654">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.757566014453" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.758119553654" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.757566014453" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758119553654" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.757566014453" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.757566014453" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758119553654" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.758119553654" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -268,7 +268,8 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Small form factor machines will require a low-profile GPU and bracket.</p>
+<p>Small form factor machines will require a low-profile GPU and bracket.
+Make sure to double check the height of the card, as passive cooled cards have much bigger heatsinks that may not fit in the case.</p>
         </div>
     </div>
 </div>
@@ -364,19 +365,15 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties"># General
 ontop=yes
+profile=high-quality
 blend-subtitles=video
 hwdec=auto-safe
 gpu-api=vulkan
 target-colorspace-hint=yes
 
-# Scaling
-scale=ewa_lanczos
-dscale=hermite
-cscale=catmull-rom
-
 # Deband
 deband=no
-deband-iterations=4
+deband-iterations=2
 deband-threshold=64
 deband-range=20
 deband-grain=64
@@ -401,12 +398,13 @@ vo=gpu
 [HDR]
 profile-cond=p[&quot;video-params/primaries&quot;] == &quot;bt.2020&quot;
 vo=gpu-next
-target-contrast=inf
+target-contrast=inf ##inf is for OLED, for LCD get the contrast value from rtings or similar
 target-trc=pq
-target-prim=bt.2020
+target-prim=dci-p3
 target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
 
-## Above makes use of vo=gpu-next for HDR Content, and vo=gpu for SDR. This is a requirement for blend-subtitles=video</code></pre>
+## Above makes use of vo=gpu-next for HDR Content, and vo=gpu for SDR. This is a requirement for blend-subtitles=video
+## blend-subtitles=video is used to avoid performance issues with rendering 1080p subtitles at 2160p.</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
@@ -432,8 +430,8 @@ target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
         <span>Scripts</span>
     </h4>
 </doc-anchor-target>
-<p>Most modern TVs are not capable of using <a href="../playback/#adaptive-sync">adaptive sync</a>, causing <a href="../playback/#explaining-judder">judder</a> and negatively impacting your viewing experience.</p>
-<p>To resolve this, we suggest using <a href="https://github.com/CogentRedTester/mpv-changerefresh">change-refresh</a>, a script that automatically sets the TV&#x27;s refresh rate to match the current video and prevent judder.</p>
+<p>Most modern TVs are capable of changing refresh rate to match the frame rate of the content, which removes <a href="../playback/#explaining-judder">judder</a>.</p>
+<p>However this is not default behaviour in Windows, and as such we recommend <a href="https://github.com/CogentRedTester/mpv-changerefresh">change-refresh</a>, a script that automatically accomplishes this.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -468,6 +466,48 @@ target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
         </div>
     </div>
 </div>
+<doc-anchor-target id="kodi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kodi">#</doc-anchor-trigger>
+        <span>Kodi</span>
+    </h3>
+</doc-anchor-target>
+<p><a href="https://kodi.tv/download/windows/">Kodi</a> is the recommended media navigator for HTPC setups.</p>
+<p>We recommend using Kodi to neatly display and easily navigate your library with a remote, while utilising mpv as the external player for actually displaying the content.</p>
+<doc-anchor-target id="library">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#library">#</doc-anchor-trigger>
+        <span>Library</span>
+    </h4>
+</doc-anchor-target>
+<p>Kodi offers many ways to import your content, with the easiest being the <a href="https://github.com/croneter/PlexKodiConnect">PlexKodiConnect</a> addon which simply allows you to access your existing Plex library through Kodi.</p>
+<p>Alternatively you can use network shares like SMB, or even just your HDD if the files are local.</p>
+<doc-anchor-target id="mpv-external-player-config">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mpv-external-player-config">#</doc-anchor-trigger>
+        <span>mpv External Player Config</span>
+    </h4>
+</doc-anchor-target>
+<p>After installing Kodi, go to <code v-pre>%appdata%\Kodi\userdata</code>, make a file called <code v-pre>playercorefactory.xml</code> and paste the following into it, making sure to add the location of your mpv.exe</p>
+<doc-panel id="playercorefactory-xml" collapsed>
+    <template #title>playercorefactory.xml</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-markup"><code v-pre class="language-markup">&lt;playercorefactory&gt;
+ &lt;players&gt;
+ 	&lt;player name=&quot;mpv&quot; type=&quot;ExternalPlayer&quot; audio=&quot;true&quot; video=&quot;true&quot;&gt;
+       &lt;filename&gt;Path\To\mpv.exe&lt;/filename&gt;
+       &lt;hidexbmc&gt;true&lt;/hidexbmc&gt;
+       &lt;hideconsole&gt;false&lt;/hideconsole&gt;
+       &lt;warpcursor&gt;topright&lt;/warpcursor&gt;
+       &lt;playcountminimumtime&gt;1200&lt;/playcountminimumtime&gt;
+ 	&lt;/player&gt;
+ &lt;/players&gt;
+&lt;rules action=&quot;prepend&quot;&gt;
+  &lt;rule filetypes=&quot;*&quot; filename=&quot;*&quot; player=&quot;mpv&quot;/&gt;
+&lt;/rules&gt;
+&lt;/playercorefactory&gt;</code></pre>
+</doc-codeblock></div>
+</doc-panel>
 
                                 
                                 <!-- Required only on API pages -->
