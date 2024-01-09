@@ -81,6 +81,7 @@ The most important factor to consider when choosing a GPU is the video decoder h
 
 !!!warning
 Small form factor machines will require a low-profile GPU and bracket.
+Make sure to double check the height of the card, as passive cooled cards have much bigger heatsinks that may not fit in the case.
 !!!
 
 ==- Systems using an iGPU
@@ -128,19 +129,15 @@ Depending on your hardware, the [example mpv configs](/tutorials/mpv/#basic-conf
 ```properties
 # General
 ontop=yes
+profile=high-quality
 blend-subtitles=video
 hwdec=auto-safe
 gpu-api=vulkan
 target-colorspace-hint=yes
 
-# Scaling
-scale=ewa_lanczos
-dscale=hermite
-cscale=catmull-rom
-
 # Deband
 deband=no
-deband-iterations=4
+deband-iterations=2
 deband-threshold=64
 deband-range=20
 deband-grain=64
@@ -165,12 +162,13 @@ vo=gpu
 [HDR]
 profile-cond=p["video-params/primaries"] == "bt.2020"
 vo=gpu-next
-target-contrast=inf
+target-contrast=inf ##inf is for OLED, for LCD get the contrast value from rtings or similar
 target-trc=pq
-target-prim=bt.2020
+target-prim=dci-p3
 target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
 
 ## Above makes use of vo=gpu-next for HDR Content, and vo=gpu for SDR. This is a requirement for blend-subtitles=video
+## blend-subtitles=video is used to avoid performance issues with rendering 1080p subtitles at 2160p.
 ```
 
 !!!
@@ -181,9 +179,9 @@ target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
 
 #### Scripts
 
-Most modern TVs are not capable of using [adaptive sync](/guides/playback/#adaptive-sync), causing [judder](/guides/playback#explaining-judder) and negatively impacting your viewing experience.
+Most modern TVs are capable of changing refresh rate to match the frame rate of the content, which removes [judder](/guides/playback#explaining-judder).
 
-To resolve this, we suggest using [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh), a script that automatically sets the TV's refresh rate to match the current video and prevent judder.
+However this is not default behaviour in Windows, and as such we recommend [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh), a script that automatically accomplishes this.
 
 !!!
 Make sure you set `auto = true` for automatic switching.
@@ -192,3 +190,39 @@ Make sure you set `auto = true` for automatic switching.
 !!!
 [nircmd](https://www.nirsoft.net/utils/nircmd-x64.zip) is required for [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh). Download and copy `nircmd.exe` to your `Windows` folder (i.e. `C:\Windows`).
 !!!
+
+### Kodi
+
+[Kodi](https://kodi.tv/download/windows/) is the recommended media navigator for HTPC setups.
+
+We recommend using Kodi to neatly display and easily navigate your library with a remote, while utilising mpv as the external player for actually displaying the content.
+
+#### Library
+
+Kodi offers many ways to import your content, with the easiest being the [PlexKodiConnect](https://github.com/croneter/PlexKodiConnect) addon which simply allows you to access your existing Plex library through Kodi.
+
+Alternatively you can use network shares like SMB, or even just your HDD if the files are local.
+
+#### mpv External Player Config
+
+After installing Kodi, go to `%appdata%\Kodi\userdata`, make a file called `playercorefactory.xml` and paste the following into it, making sure to add the location of your mpv.exe
+==- playercorefactory.xml
+
+```xml
+<playercorefactory>
+ <players>
+ 	<player name="mpv" type="ExternalPlayer" audio="true" video="true">
+       <filename>Path\To\mpv.exe</filename>
+       <hidexbmc>true</hidexbmc>
+       <hideconsole>false</hideconsole>
+       <warpcursor>topright</warpcursor>
+       <playcountminimumtime>1200</playcountminimumtime>
+ 	</player>
+ </players>
+<rules action="prepend">
+  <rule filetypes="*" filename="*" player="mpv"/>
+</rules>
+</playercorefactory>
+```
+
+==-
