@@ -83,7 +83,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   - Regular `Japanese` audio must be tagged as `jpn` and marked as `Default`.
   - Regular `English` audio must be tagged as `eng` and marked as `Default`.
   - Any and all other regular audio tracks (e.g Spanish dub, German dub, etc) must be tagged with their respective language tag and marked as `Default`.
-  - If you have multiple dialects of the same language, they must be tagged with the dialect. For example, Castilian Spanish must be tagged as `es-ES` while Latin American Spanish must be tagged as `es-419`.
+  - If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the `Name` field. For example, Castilian Spanish must be tagged as `es-ES` while Latin American Spanish must be tagged as `es-419`.
   - Any and all non-Regular/Specialized tracks (e.g `commentary`, `descriptive audio`, etc) must be tagged with their respective flags and language but must not be marked as `Default`
 
 ==- :icon-log: Subtitle Tracks
@@ -93,7 +93,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   - The forced track (i.e, `Signs/Songs`) must be tagged with the appropriate language and marked as `Forced`. This track should not be marked as `Default` because it is not a "regular" track; instead, it is a specialized one meant to be used with dubs. The language tag must be identical to the language tag of the audio track it is intended to be used with.
   - There should only be one `Forced` track per language.
   - `Honorifics` track must be tagged as `enm` and `Default` but not `Forced`. *Note: This isn't a Matroska standard but a widely accepted convention in the anime community. Commercial software like [Plex](https://www.plex.tv/) also support this convention.*
-  - If you have multiple dialects of the same language, they must be tagged with the dialect. For example, Castilian Spanish must be tagged as `es-ES` while Latin American Spanish must be tagged as `es-419`.
+  - If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the `Name` field. For example, Castilian Spanish must be tagged as `es-ES` while Latin American Spanish must be tagged as `es-419`.
   - Any and all non-regular/specialized tracks (e.g `commentary`, `SDH`, etc) must be tagged with their respective flags and language but must not be marked as `Default`.
 
 ==- :icon-list-ordered: Track Order
@@ -111,22 +111,22 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
 ==- :icon-checklist: Practical Example
 
-  | Track       | Language | Name                             | Default | Forced | Additional Flags |
-  |-------------|----------|----------------------------------|---------|--------|------------------|
-  | Video       | jpn      | Group                            | yes     | no     | None             |
-  | Audio #1    | jpn      | FLAC 5.1                         | yes     | no     | None             |
-  | Audio #2    | jpn      | FLAC 2.0                         | yes     | no     | None             |
-  | Audio #3    | eng      | Opus 5.1 @ 320kb/s               | yes     | no     | None             |
-  | Audio #4    | eng      | Opus 2.0 @ 192kb/s - Commentary  | no      | no     | Commentary       |
-  | Audio #5    | eng      | Opus 2.0 @ 192kb/s - Descriptive | no      | no     | Visual-impaired  |
-  | Subtitle #1 | eng      | Full Subtitles [Fansub]          | yes     | no     | None             |
-  | Subtitle #2 | es-ES    | Full Subtitles [SPA BD]          | yes     | no     | None             |
-  | Subtitle #3 | es-419   | Full Subtitles [SPA BD]          | yes     | no     | None             |
-  | Subtitle #4 | de       | Full Subtitles [GER BD]          | yes     | no     | None             |
-  | Subtitle #5 | enm      | Honorifics [Fansub]              | yes     | no     | None             |
-  | Subtitle #6 | eng      | Signs/Songs [Fansub]             | no      | yes    | None             |
-  | Subtitle #7 | eng      | SDH [USBD]                       | no      | no     | Hearing-impaired |
-  | Subtitle #8 | eng      | Commentary [USBD]                | no      | no     | Commentary       |
+  | Track       | Language | Name                                    | Default | Forced | Additional Flags |
+  |-------------|----------|-----------------------------------------|---------|--------|------------------|
+  | Video       | jpn      | Group                                   | yes     | no     | None             |
+  | Audio #1    | jpn      | FLAC 5.1                                | yes     | no     | None             |
+  | Audio #2    | jpn      | FLAC 2.0                                | yes     | no     | None             |
+  | Audio #3    | eng      | Opus 5.1 @ 320kb/s                      | yes     | no     | None             |
+  | Audio #4    | eng      | Opus 2.0 @ 192kb/s - Commentary         | no      | no     | Commentary       |
+  | Audio #5    | eng      | Opus 2.0 @ 192kb/s - Descriptive        | no      | no     | Visual-impaired  |
+  | Subtitle #1 | eng      | Full Subtitles [Fansub]                 | yes     | no     | None             |
+  | Subtitle #2 | es-ES    | Full Subtitles (Castilian) [SPA BD]     | yes     | no     | None             |
+  | Subtitle #3 | es-419   | Full Subtitles (Latin American)[SPA BD] | yes     | no     | None             |
+  | Subtitle #4 | de       | Full Subtitles [GER BD]                 | yes     | no     | None             |
+  | Subtitle #5 | enm      | Honorifics [Fansub]                     | yes     | no     | None             |
+  | Subtitle #6 | eng      | Signs/Songs [Fansub]                    | no      | yes    | None             |
+  | Subtitle #7 | eng      | SDH [USBD]                              | no      | no     | Hearing-impaired |
+  | Subtitle #8 | eng      | Commentary [USBD]                       | no      | no     | Commentary       |
 
 ===
 
