@@ -231,76 +231,7 @@ for file in *.ass do; python -m subdigest -i "${file}" --selection-set "text" "\
 
 ## Muxing and Tagging
 
-Once you have prepared the individual files, you'll have to put them together in a container, preferably [Matroska](https://www.matroska.org/index.html), commonly seen as files with the extension `.mkv`.
-
-### Recommended Tools
-
-- [MKVToolNix](https://mkvtoolnix.download/downloads.html)
-- [muxtools](https://github.com/Jaded-Encoding-Thaumaturgy/muxtools)
-- [MKVToolNix-Sequential-Batch-Mapper](https://github.com/McBaws/MKVToolNix-Sequential-Batch-Mapper)
-- [Inviska-MKV-Extract](https://www.videohelp.com/software/Inviska-MKV-Extract)
-
-### Forced Subtitles
-
-Forced here **DOES NOT** mean that these subs will be permanently on the screen, which is a common misconception.
-Forced subtitles only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. In our case, it's supposed to be displayed whenever the English dub has untranslated things like Japanese Signs and Songs like Opening/Ending or Inserts.
-
-### Correct Tagging
-
-Proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix Header Editor or mkvpropedit without remuxing.
-
-- **Video track:**
-  - Language tag is optional.
-  - Mention the name of the `Encoder/Encode group` or simply region like `JPBD` or `ITABD` if it's untouched BluRay Remux.
-- **Audio Tracks:**
-  - Mention the Codec, Channels, and Bitrate in the `Name` field.
-  - `Japanese` audio should always be tagged as `jpn` and marked as `Default`
-  - `English` audio should always be tagged as `eng` but should not be marked as `Default` or `Forced`. This is to make sure auto-selection works well for both dub and sub watchers.
-- **Subtitle Tracks:**
-  - Language tag must be used appropriately reflecting the language of the subtitles.
-  - Tag the best `Full Subtitles` as `eng` and `Default`
-  - Tag the `Signs/Songs` track as `eng` and `forced`. This is to make sure auto-selection works well for both dub and sub watchers.
-  - Tag the `Honorifics` track as `enm` but neither `Default` nor `Forced`.
-  - Tag any and all additional subtitle tracks as neither `Default` nor `Forced`.
-
-**Note:** Newer mkvtoolnix versions automatically set the default flag to `yes` on all streams. This is technically the correct use for the flag but all players do not have the intended results with this kind of tagging.
-
-| Track        | Language | Name                      | Default | Forced |
-| ------------ | -------- | ------------------------- | ------- | ------ |
-| Video        | jpn      | Encode Group              | yes     | no     |
-| Audio #1     | jpn      | FLAC 2.0                  | yes     | no     |
-| Audio #2     | eng      | Opus 5.1 @ 320kb/s        | no      | no     |
-| Subtitles #1 | eng      | Full Subtitles [Fansub]   | yes     | no     |
-| Subtitles #2 | enm      | Honorifics [Fansub]       | no      | no     |
-| Subtitles #3 | eng      | Signs/Songs [Fansub]      | no      | yes    |
-| Subtitles #4 | eng      | Full Subtitles [Official] | no      | no     |
-
-**Command to tag everything properly (assuming the order of tracks is correct):**
-+++ Windows
-```batch
-for %X in (*.mkv) do mkvpropedit "%X" --add-track-statistics-tags --edit info --delete title ^
---edit track:v1 --set name="Encode Group"              --set language=jpn --set flag-default=1 ^
---edit track:a1 --set name="FLAC 2.0"                  --set language=jpn --set flag-default=1 ^
---edit track:a2 --set name="Opus 5.1 @ 320kb/s"        --set language=eng --set flag-default=0 ^
---edit track:s1 --set name="Full Subtitles [Fansub]"   --set language=eng --set flag-default=1 --set flag-forced=0 ^
---edit track:s2 --set name="Honorifics [Fansub]"       --set language=enm --set flag-default=0 --set flag-forced=0 ^
---edit track:s3 --set name="Signs/Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 ^
---edit track:s4 --set name="Full Subtitles [Official]" --set language=eng --set flag-default=0 --set flag-forced=0
-```
-+++ Linux
-```shell
-for file in *.mkv; do
-  mkvpropedit "${file}" --add-track-statistics-tags --edit info --delete title \
-  --edit track:v1 --set name="Encode Group"              --set language=jpn --set flag-default=1 \
-  --edit track:a1 --set name="FLAC 2.0"                  --set language=jpn --set flag-default=1 \
-  --edit track:a2 --set name="Opus 5.1 @ 320kb/s"        --set language=eng --set flag-default=0 \
-  --edit track:s1 --set name="Full Subtitles [Fansub]"   --set language=eng --set flag-default=1 --set flag-forced=0 \
-  --edit track:s2 --set name="Honorifics [Fansub]"       --set language=enm --set flag-default=0 --set flag-forced=0 \
-  --edit track:s3 --set name="Signs/Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 \
-  --edit track:s4 --set name="Full Subtitles [Official]" --set language=eng --set flag-default=0 --set flag-forced=0
-done
-```
-+++
+Refer to the [Muxing](/advanced/muxing) page.
 
 ## Naming
 
