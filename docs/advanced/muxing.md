@@ -99,38 +99,48 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 ==- :icon-list-ordered: Track Order
   - The track order also plays an important part in the automatic selection of tracks.
   - Tracks should be grouped by language, with the regular track being the first within its language group.
-  - Recommended track order is: 
-      1. `Video`
-      2. `Original audio language group`
-          1. `Original regular audio`
-          2. `Original non-regular audio`
-      3. `Regular audio tracks (Dubs)`
-      4. `Non-regular/Specialized audio tracks (commentary, descriptive, etc)`
-      5. `Regular Subtitle tracks (full subtitles)`
-      6. `Non-regular/Specialized Subtitle tracks (forced, commentary, sdh, etc)`
+  - Recommended track order is:
+      1. Video
+      2. Original audio group
+          1. Original regular audio
+          2. Original Specialized audio (commentary, descriptive, etc)
+      3. Dub audio group
+          1. Regular dub audio
+          2. Specialized dub audio (commentary, descriptive, etc)
+      4. Subtitle group related to Original audio
+          1. Regular subtitle tracks for regular original audio
+          2. Specialized subtitle track for audio tracks in the original audio group
+      5. Subtitle group related to dub audio
+          1. Regular subtitle tracks for the regular dub audio
+          2. Specialized subtitle track for audio tracks in the dub audio group (forced, commentary, sdh, etc)
   - When you have two regular tracks of the same language, let's say a `Japanese 2.0` track and a `Japanese 5.1` track, and you have correctly tagged them, you'll notice that these end up being tagged identically. In this case, players will fall back to using track order to select the audio track. Now, it's pretty much up to your personal preference as to which one goes first and ends up being the real default for the end user.
+
+  !!!
+  Refer to the [Practical Example](#practical-example) to better understand the track ordering
+  !!!
 
 ===
 
 ==- :icon-checklist: Practical Example
 
-  | Track       | Language | Name                                    | Default | Forced | Additional Flags |
-  |-------------|----------|-----------------------------------------|---------|--------|------------------|
-  | Video       | jpn      | Group                                   | yes     | no     | None             |
-  | Audio #1    | jpn      | FLAC 5.1                                | yes     | no     | None             |
-  | Audio #2    | jpn      | FLAC 2.0                                | yes     | no     | None             |
-  | Audio #3    | eng      | Opus 5.1 @ 320kb/s                      | yes     | no     | None             |
-  | Audio #4    | eng      | Opus 2.0 @ 192kb/s - Commentary         | no      | no     | Commentary       |
-  | Audio #5    | eng      | Opus 2.0 @ 192kb/s - Descriptive        | no      | no     | Visual-impaired  |
-  | Subtitle #1 | eng      | Full Subtitles [Fansub]                 | yes     | no     | None             |
-  | Subtitle #2 | enm      | Honorifics [Fansub]                     | yes     | no     | None             |
-  | Subtitle #3 | eng      | Signs/Songs [Fansub]                    | no      | yes    | None             |
-  | Subtitle #4 | eng      | SDH [USBAD]                             | no      | no     | Hearing-impaired |
-  | Subtitle #5 | eng      | Commentary [USABD]                      | no      | no     | Commentary       |
-  | Subtitle #6 | es-ES    | Full Subtitles (Castilian) [SPABD]      | yes     | no     | None             |
-  | Subtitle #7 | es-419   | Full Subtitles (Latin American) [SPABD] | yes     | no     | None             |
-  | Subtitle #8 | de       | Full Subtitles [GERBD]                  | yes     | no     | None             |
-
+  | Track        | Language | Name                                    | Default | Forced | Additional Flags |
+  |--------------|----------|-----------------------------------------|---------|--------|------------------|
+  | Video        | jpn      | Group                                   | yes     | no     | None             |
+  | Audio #1     | jpn      | FLAC 5.1                                | yes     | no     | None             |
+  | Audio #2     | jpn      | FLAC 2.0                                | yes     | no     | None             |
+  | Audio #3     | jpn      | FLAC 2.0 - Japanese Commentary          | no      | no     | Commentary       |
+  | Audio #4     | eng      | Opus 5.1 @ 320kb/s                      | yes     | no     | None             |
+  | Audio #5     | eng      | Opus 2.0 @ 192kb/s - Commentary         | no      | no     | Commentary       |
+  | Audio #6     | eng      | Opus 2.0 @ 192kb/s - Descriptive        | no      | no     | Visual-impaired  |
+  | Subtitle #1  | eng      | Full Subtitles [Fansub]                 | yes     | no     | None             |
+  | Subtitle #2  | enm      | Honorifics [Fansub]                     | yes     | no     | None             |
+  | Subtitle #3  | eng      | Japanese Commentary [USABD]             | no      | no     | Commentary       |
+  | Subtitle #4  | eng      | Signs/Songs [Fansub]                    | no      | yes    | None             |
+  | Subtitle #5  | eng      | SDH [USABD]                             | no      | no     | Hearing-impaired |
+  | Subtitle #6  | eng      | English Commentary [USABD]              | no      | no     | Commentary       |
+  | Subtitle #7  | es-ES    | Full Subtitles (Castilian) [SPABD]      | yes     | no     | None             |
+  | Subtitle #8  | es-419   | Full Subtitles (Latin American) [SPABD] | yes     | no     | None             |
+  | Subtitle #9  | de       | Full Subtitles [GERBD]                  | yes     | no     | None             |
 
 ===
 
