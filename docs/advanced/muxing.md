@@ -34,7 +34,16 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
     [![](/static/advanced/muxing/mkvtoolnix.png)](/static/advanced/muxing/mkvtoolnix.png)
     ===
 
-2. You can either right-click anywhere in the top "Source Files" box or drag and drop your file in it.
+2. When you first add a file in MKVToolNix, you'll get a pop to select it's behavior.
+    - Select `Add as new source files to the current multiplex settings`
+    - Check `Always use the action selected above and don't ask again`
+    - Click `OK`
+
+    ==- :icon-file-media: Screenshot
+    [![](/static/advanced/muxing/mkvtoolnix-gui_first_time_popup.png)](/static/advanced/muxing/mkvtoolnix-gui_first_time_popup.png)
+    ===
+
+3. Now, You can either right-click anywhere in the top "Source Files" box or drag and drop your file in it.
 
    - Once you add your source file, all the tracks in your file will show up in the box below, along with other relevant things in each tab. 
    - Tracks will be randomly assigned a color to indicate what source they belong to.
@@ -46,7 +55,7 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
     [![](/static/advanced/muxing/mkvtoolnix2.png)](/static/advanced/muxing/mkvtoolnix2.png)
     ===
 
-3. Once you're done making your changes, assign a [name](/advanced/release-standards/#naming) to your file and hit `Start multiplexing`. Make sure to check all 3 tabs to ensure what's being copied over.
+4. Once you're done making your changes, assign a [name](/advanced/release-standards/#naming) to your file and hit `Start multiplexing`. Make sure to check all 3 tabs to ensure what's being copied over.
 
    ==- :icon-file-media: Screenshot
    [![](/static/advanced/muxing/mkvtoolnix3.png)](/static/advanced/muxing/mkvtoolnix3.png)
@@ -64,11 +73,11 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
   - You can leave the language tag as `und`. There's not much documentation about this but the official examples leave it as `und` and I haven't found any issues with or without the language tag on a video track. Feel free to correct me if you find otherwise.
   - Mark it as `Default`.
-  - Mention the name of the `Encoder/Group` or simply region like `JPBD` or `ITABD` if it's untouched BluRay Remux.
+  - Mention the name of the `Encoder/Group` or simply region like `JPNBD` or `ITABD` if it's untouched BluRay Remux.
 
 ==- :icon-unmute: Audio Tracks
 
-  - Mention the Codec, Channels, and Bitrate in the `Name` field.
+  - Mention the codec, channels, and quality in the `Name` field.
   - Language tag must be used appropriately reflecting the language of the audio.
   - Audio tracks must not be marked as `Forced`.
   - Regular `Japanese` audio must be tagged as `jpn` and marked as `Default`.
@@ -140,11 +149,11 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   | Player                                             | Respects Matroska Tags | Additional Notes                                                                                                                                                 |
   |----------------------------------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
   | [mpv](https://mpv.io/)                             | Yes                    |                                                                                                                                                                  |
-  | [VLC](https://www.videolan.org/vlc/)               | Yes                    |                                                                                                                                                                  |
+  | [VLC](https://www.videolan.org/vlc/)               | Mostly                 | Doesn't respect the `Forced` flag.                                                                                                                               |
   | [Plex](https://www.plex.tv/)                       | Mostly                 | Plex respects Matroska tags (such as Forced, SDH, language, etc) with the exception of the `Default` flag. Track order takes precedence over the `Default` flag. |
   | [Jellyfin](https://jellyfin.org/)                  | Yes                    |                                                                                                                                                                  |
   | [Kodi](https://kodi.tv/)                           | Yes                    |                                                                                                                                                                  |
-  | [clsid2/MPC-HC](https://github.com/clsid2/mpc-hc/) | Yes                    |                                                                                                                                                                  |
+  | [clsid2/MPC-HC](https://github.com/clsid2/mpc-hc/) | Mostly                 | Doesn't respect the `Forced` flag.                                                                                                                               |
 
   !!!
   The latest version of each player was tested on 2024-09-01
@@ -159,7 +168,8 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
 [![Font attachments](/static/advanced/muxing/mkvtoolnix6.png)](/static/advanced/muxing/mkvtoolnix6.png)
 
-Fonts used by the `.ass` subtitles must be attached to the `.mkv` file for displaying subtitles accurately on the user's end. This can be easily done by dragging the fonts used by the `.ass` file into the `attachments` tab. You can usually source the correct fonts from the same fansub release you got the subtitles from. You can also get the fonts used by the `.ass` file with [Aegisub](https://github.com/arch1t3cht/Aegisub) or [FontCollector](https://github.com/moi15moi/FontCollector) if you have them on your system already.
+Fonts used by the `.ass` subtitles must be attached to the `.mkv` file for displaying subtitles accurately on the user's end. This can be easily done by dragging the fonts used by the `.ass` file into the `attachments` tab. You can usually source the correct fonts from the same fansub release you got the subtitles from. Alternatively, dropping the original fansub release in MKVToolNix will automatically carry over all the fonts in it. You can also get the fonts used by the `.ass` file with [Aegisub](https://github.com/arch1t3cht/Aegisub) or [FontCollector](https://github.com/moi15moi/FontCollector) if you have them on your system already.
+
 
 ### MKV Cropping
 
@@ -169,6 +179,10 @@ Advantages of cropping and why you should do it:
 
 - Cropping black bars allows the video to fill the entire screen. A couple of common examples would be letterboxed content on ultrawide displays or pillarboxed content on 4:3 displays, where black bars would otherwise prevent the video from filling the entire screen
 - On 16:9 displays where cropping would result in black bars regardless, it's still beneficial because it avoids [dirty lines](https://silentaperture.gitlab.io/mdbook-guide/filtering/dirty_lines.html) caused by scaling
+
+!!!warning
+You must check that the aspect ratio is consistent throughout the entire file and only crop the smallest value. It's possible that the video might switch aspect ratio during its runtime, in which case a careless crop can result in the unintended removal of content. Thoroughly check for such changes before making any adjustments.
+!!!
 
 #### Two ways to crop
 
@@ -202,6 +216,11 @@ Advantages of cropping and why you should do it:
 [![Container Delay](/static/advanced/muxing/mkvtoolnix5.png)](/static/advanced/muxing/mkvtoolnix5.png)
 
 MKVToolNix allows you to set positive or negative delays on each track in order to synchronize them with the designated video track. This is usually the easiest way to sync different tracks together, but you should be careful with it. Avoid delays exceeding 1001ms, as they may lead to playback problems on different media players. Instead, consider syncing each track using their specific tools and only utilize container delays for smaller adjustments as a final resort.
+
+!!!
+The only exception to this is `TrueHD` audio, where container delay is your only option. Multi-channel `TrueHD` streams contain alternative presentations (downmixes): 2.0, 5.1 and 7.1. These are embeded either as discrete channels or derived through custom coefficients.
+These alternative presentations are lost once decoded, even if they were to be encoded/transcoded back to TrueHD.
+!!!
 
 ### QoL stuff
 
