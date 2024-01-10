@@ -16,6 +16,12 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
 [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
 :   Public torrent tracker with the most scanlations and official digital rips
 
+==- Searching tips
+**Official Digital Rips:** Search for the English title and add Digital for the best rips. For example - `Attack on Titan Digital`. In the rare cases where multiple groups release the same manga, prioritise the newer release as it's likely to have been ripped from a superior source.
+
+**Scanlation Rips:** Search both the English and Japanese title by adding | in between. For example - `Attack on Titan|Shingeki no Kyojin` and sort by file size. Although these are significantly lower quality, not all manga get official digital releases, and downloading as opposed to reading online allows you to utilise the better scaling that standalone readers can provide.
+==-
+
 +++ Aggregators
 
 [MangaDex](https://mangadex.org)
@@ -56,7 +62,7 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
     N no-osd add contrast 4; no-osd add brightness -4; show-text "Black Level: ${brightness}"
     ```
     !!!
-    This should only be used on sources where [obvious blacks may appear gray](https://user-images.githubusercontent.com/78981416/233718453-c358222b-384e-45f5-9ff5-151aad32c94f.png).
+    This should only be used on sources where [obvious blacks appear gray](https://user-images.githubusercontent.com/78981416/233718453-c358222b-384e-45f5-9ff5-151aad32c94f.png).
     !!!
     !!!
     The black level value should be decreased [until they become black](https://user-images.githubusercontent.com/78981416/233718539-a670d966-9ab7-4f23-8abd-a1a8f2cb93f4.png). *Generally, `-16` works for most sources.*
@@ -92,9 +98,9 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
 [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) [!badge icon=":heart:" variant="primary" text="Best Quality"]
 :   Standalone reader with the [highest quality scaling](https://slow.pics/c/y737QBlP) on Android
 
-    ==- :icon-file-media: Recommended scaling settings
+    !!!secondary
     To get the best quality, set the [Image smooth filter to *Lanczos3*](https://user-images.githubusercontent.com/78981416/233718601-dbdd3303-d96a-474e-aed5-7d4c22a8e8da.png).
-    ==-
+    !!!
 
 [Tachiyomi](https://tachiyomi.org) [!badge variant="secondary" text="Most Convenient"] [!badge icon="link-external" variant="info" text="Forks"](https://tachiyomi.org/forks)
 :   All-in-one manga reader with support for external sources and manga trackers
