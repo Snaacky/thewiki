@@ -1,8 +1,8 @@
 ---
 label: Literature
 order: -3
-description: Learn How and Where to Read Your Favorite Stuff
-image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-4377-4bb4-baea-72516953c85f.gif
+description: Learn how and where to read your favorite stuff
+image: /static/literature/kujou.gif
 ---
 
 # Literature
@@ -14,15 +14,23 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
 +++ Downloads
 
 [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
-:   Public torrent tracker with the most scanlations and official digital rips
+:   Public torrent tracker with the most high-quality official digital rips
 
-==- Searching tips
-**Official Digital Rips:** Search for the English title and add Digital for the best rips. For example - `Attack on Titan Digital`. In the rare cases where multiple groups release the same manga, prioritise the newer release as it's likely to have been ripped from a superior source.
+    Sources are generally much higher in quality compared to aggregators. Scanlations can also be found here, though Nyaa may have fewer scanlations compared to most manga aggregator sites.
 
-**Scanlation Rips:** Search both the English and Japanese title by adding | in between. For example - `Attack on Titan|Shingeki no Kyojin` and sort by file size. Although these are significantly lower quality, not all manga get official digital releases, and downloading as opposed to reading online allows you to utilise the better scaling that standalone readers can provide.
-==-
+    ==- :icon-search: Searching tips
+    - **Official Digital Rips:** Search for the English title and add `Digital` to your search (e.g. `Attack on Titan Digital`). When searching, prioritize newer releases, as they're likely from better sources compared to older releases.
+    - **Scanlation Rips:** Search for both the English and Japanese/native title by [adding the `|` regex](/sourcing/public-trackers/#regex) in between (e.g. `Attack on Titan|Shingeki no Kyojin`) and sort by file size. Although these can be significantly lower in quality, note that not all manga get official digital releases and scanlations may be your only option.
+    ==-
+
+[AnimeBytes](https://animebytes.tv) [!badge icon="lock" variant="danger" text="Private"]
+:   Private torrent tracker with a more organized layout and access to old and rare rips
 
 +++ Aggregators
+
+!!!
+Aggregators tend to use compressed and lower quality images as opposed to most digital rips. We recommend using the download sources instead.
+!!!
 
 [MangaDex](https://mangadex.org)
 :   Browser aggregator with the most convenient scanlations
@@ -61,15 +69,10 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
     B no-osd add contrast -4; no-osd add brightness 4; show-text "Black Level: ${brightness}"
     N no-osd add contrast 4; no-osd add brightness -4; show-text "Black Level: ${brightness}"
     ```
-    !!!
-    This should only be used on sources where [obvious blacks appear gray](https://user-images.githubusercontent.com/78981416/233718453-c358222b-384e-45f5-9ff5-151aad32c94f.png).
-    !!!
-    !!!
-    The black level value should be decreased [until they become black](https://user-images.githubusercontent.com/78981416/233718539-a670d966-9ab7-4f23-8abd-a1a8f2cb93f4.png). *Generally, `-16` works for most sources.*
-    !!!
+    This should only be used on sources where [obvious blacks appear gray](/static/literature/incorrect-black-levels.png). The black level value should also be decreased [until they become black](/static/literature/correct-black-levels.png). *Generally, `-16` works for most sources.*
     ==-
     ==- :icon-sparkle-fill: Touchscreen support
-    mpv's bundled touchscreen controls are suboptimal. We recommend using third-party programs for adding touchscreen functionality to mpv, such as [GestureSign](https://gesturesign.win), a tool which allows you to convert gestures to keypresses ([example setup](https://user-images.githubusercontent.com/92121005/295617506-d14043f1-0229-4e94-8d11-0158fbc5089f.png)).  
+    mpv's bundled touchscreen controls are suboptimal. We recommend using third-party programs for adding touchscreen functionality to mpv, such as [GestureSign](https://gesturesign.win), a tool which allows you to convert gestures to keypresses ([example setup](/static/literature/gesturesign-example.png)).  
     You should also add the following into your `mpv.conf` to avoid triggering the OSD when swiping:
     ```properties
     no-osc
@@ -84,13 +87,13 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
 :   Standalone reader with the [second highest quality scaling](https://slow.pics/c/y737QBlP) on PC
 
     ==- :icon-file-media: Recommended scaling settings
-    To get the best quality, set the [*Resizing Algorithm to Lanczos*](https://user-images.githubusercontent.com/78981416/233718226-57d36d09-fe1d-40bb-b1d6-415c66272d74.png) and the [*Lanczos quality slider to level 2*](https://user-images.githubusercontent.com/78981416/233718286-67f29d7f-53bf-47df-a41a-24fcd96a66f7.png).
+    To get the best quality, set the [*Resizing Algorithm to Lanczos*](/static/literature/cdisplayex-scaling.png) and the [*Lanczos quality slider to level 2*](/static/literature/cdisplayex-scaling2.png).
     ==-
     ==- :icon-sliders: Fixing black levels
-    CDisplayEx features an [*Auto Colors*](https://user-images.githubusercontent.com/78981416/233718417-d994059b-b18d-4fa1-92cf-e2f7a51bd072.png) setting, which allows you to fix black levels. *This should only be used on sources where [obvious blacks appear gray](https://user-images.githubusercontent.com/78981416/233718453-c358222b-384e-45f5-9ff5-151aad32c94f.png). White level sensitivity should be increased slightly [until they become black](https://user-images.githubusercontent.com/78981416/233718539-a670d966-9ab7-4f23-8abd-a1a8f2cb93f4.png).*
+    CDisplayEx features an [*Auto Colors*](/static/literature/cdisplayex-auto-colors.png) setting, which allows you to fix black levels. This should only be used on sources where [obvious blacks appear gray](/static/literature/incorrect-black-levels.png). White level sensitivity should be increased slightly [until they become black](/static/literature/correct-black-levels.png).
     ==-
     !!!warning
-    For laptops or high-resolution displays, you may need to [disable Windows DPI scaling](https://user-images.githubusercontent.com/78981416/233718346-e66ff623-abcf-4c3a-8541-23fb840e65c9.png). Go to `C:\Program Files\CDisplayEx`, right-click on `CDisplayEx.exe` and select *Properties* -> *Compatibility* -> *Change high DPI settings.*
+    For laptops or high-resolution displays, you may need to [disable Windows DPI scaling](/static/literature/cdisplayex-dpi.png). Go to `C:\Program Files\CDisplayEx`, right-click on `CDisplayEx.exe` and select *Properties* -> *Compatibility* -> *Change high DPI settings.*
     !!!
 
 +++ Android
@@ -98,8 +101,8 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
 [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) [!badge icon=":heart:" variant="primary" text="Best Quality"]
 :   Standalone reader with the [highest quality scaling](https://slow.pics/c/y737QBlP) on Android
 
-    !!!secondary
-    To get the best quality, set the [Image smooth filter to *Lanczos3*](https://user-images.githubusercontent.com/78981416/233718601-dbdd3303-d96a-474e-aed5-7d4c22a8e8da.png).
+    !!!
+    To get the best quality, set the [Image smooth filter to *Lanczos3*](/static/literature/perfect-viewer-scaling.png).
     !!!
 
 [Tachiyomi](https://tachiyomi.org) [!badge variant="secondary" text="Most Convenient"] [!badge icon="link-external" variant="info" text="Forks"](https://tachiyomi.org/forks)
@@ -141,7 +144,7 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
 +++ Downloads
 
 [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
-:   Public torrent tracker with the most light novel rips
+:   Public torrent tracker with the most high-quality light novel rips
 
 +++
 
