@@ -69,7 +69,7 @@ image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-437
     !!!
     ==-
     ==- :icon-sparkle-fill: Touchscreen support
-    mpv's bundled touchscreen controls are suboptimal. We recommend using third-party programs for adding touchscreen functionality to mpv, such as [GestureSign](https://gesturesign.win), a tool which allows you to convert gestures to keypresses ([example setup](https://i.imgur.com/kLFtLdr.png)).  
+    mpv's bundled touchscreen controls are suboptimal. We recommend using third-party programs for adding touchscreen functionality to mpv, such as [GestureSign](https://gesturesign.win), a tool which allows you to convert gestures to keypresses ([example setup](https://user-images.githubusercontent.com/92121005/295617506-d14043f1-0229-4e94-8d11-0158fbc5089f.png)).  
     You should also add the following into your `mpv.conf` to avoid triggering the OSD when swiping:
     ```properties
     no-osc
