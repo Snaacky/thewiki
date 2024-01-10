@@ -25,18 +25,18 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 [!embed text="Installing mpv on Windows"](/static/playback/mpv/installation-windows.mp4)
 
-==- 🍨 Installing mpv via scoop
+==- 🍨 Installing mpv via Scoop
 
-[Scoop](https://scoop.sh) is a command line package manager for Windows. We can use it to install and manage mpv. Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `%userprofile%/scoop` and automatically adds them to your PATH.
+[Scoop](https://scoop.sh) is a command line package manager for Windows. Unlike other installation methods, Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `%userprofile%/scoop` and automatically adding them to your PATH.
 
-+++ Installing scoop
+Scoop can be installed using their install script in a PowerShell window:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
 ```
 
-+++ Installing mpv
+Then, install mpv using `scoop`:
 
 ```powershell
 scoop bucket add extras
@@ -66,10 +66,10 @@ scoop uninstall mpv-git
 
 ==- 📦 Installing a pre-configured build
 
-If you don't want to setup mpv yourself, a portable build of mpv is available below. This is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config) and is updated daily. You can also just grab the `portable_config` folder and add it to your existing mpv installation.
+If you don't want to setup mpv yourself, a portable build of mpv is available below. This is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config) and is automatically updated daily. The `portable_config` folder can also be downloaded separately if you wish to add it to your existing mpv installation.
 
 [!file text="mpv" icon="play"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
-[!file text="portable_config" icon="package"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
+[!file text="portable_config" icon="package"](https://github.com/Snaacky/thewiki/releases/download/mpv/portable_config.7z)
 
 ===
 
@@ -108,18 +108,20 @@ brew install mpv
 
 ### Linux
 
-Distributions usually package outdated, unmaintained, and unsupported versions of mpv. This is especially true for popular distros like Debian and Ubuntu. You are recommended to use mpv-build or third-party packages instead.
+!!!warning
+Distributions usually package outdated, unmaintained, and/or unsupported versions of mpv. We recommend using mpv-build or third-party packages instead.
+!!!
 
-==- 🔧 Installing on various distributions
+==- 🔧 Installing mpv with unofficial packages
 
-All of these packages are unofficial:
+The following packages are unofficial:
 
-- [Arch (official package)](https://archlinux.org/packages/extra/x86_64/mpv/)
-- [Gentoo (official package)](https://packages.gentoo.org/packages/media-video/mpv)
-- [Arch (AUR, git package)](https://aur.archlinux.org/packages/mpv-git/)
-- [Arch (AUR, mpv-build package)](https://aur.archlinux.org/packages/mpv-build-git/)
-- [Debian multimedia](https://deb-multimedia.org/dists/testing/main/binary-amd64/package/mpv)
-- [Ubuntu and Debian (apt repository)](https://fruit.je/apt)
+- [Arch](https://archlinux.org/packages/extra/x86_64/mpv/) [!badge variant="primary" text="Official"]
+- [Gentoo](https://packages.gentoo.org/packages/media-video/mpv) [!badge variant="primary" text="Official"]
+- [Arch](https://aur.archlinux.org/packages/mpv-git/) [!badge variant="secondary" text="AUR"] [!badge variant="secondary" text="git"]
+- [Arch](https://aur.archlinux.org/packages/mpv-build-git/) [!badge variant="secondary" text="AUR"] [!badge variant="secondary" text="mpv-build"]
+- [Debian](https://deb-multimedia.org/dists/testing/main/binary-amd64/package/mpv)
+- [Ubuntu/Debian](https://fruit.je/apt) [!badge variant="secondary" text="APT"]
 
 ==-
 
@@ -154,11 +156,10 @@ By default, mpv's config can be found under `%APPDATA%/mpv/`. However, a folder 
     └── mpv.conf
 ```
 
-+++ Scoop (`%userprofile%/scoop/persist/mpv-git/portable_config`)
++++ Scoop (`%userprofile%/scoop/persist/mpv-git`)
 
 ```properties
-
-%userprofile%/scoop/persist/mpv-git/
+.
 └── portable_config/
     ├── fonts/
     ├── script-opts/
@@ -291,7 +292,7 @@ To use the profile, add the following to the top of your `mpv.conf`:
 :::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-10" language="properties":::
 
 !!!warning
-`dither-depth` should be set to match your monitor's bit depth to prevent [banding](#debanding).
+`dither-depth` should match your monitor's bit depth to prevent [banding](#debanding).
 !!!
 
 This is included in the [Basic Config](#basic-config).
@@ -355,10 +356,10 @@ sub-ass-style-overrides=Kerning=yes
 ![Cabin F](/static/tutorials/mpv/cabin-f-cropped.png)
 
 !!!
-This is a modified version of Cabin made by **@astolfo69 (RaptoR)** in the [SeaDex discord server](https://discord.com/invite/jPeeZewWRn)
+This is a modified version of Cabin made by *@astolfo69 (RaptoR)* in the [SeaDex Discord server](https://discord.com/invite/jPeeZewWRn).
 !!!
 
-[!button icon="download" variant="primary" text="Cabin"](/static/playback/fonts/cabin-f.zip)
+[!button icon="download" variant="primary" text="Cabin F"](/static/playback/fonts/cabin-f.zip)
 
 Run the `.ttf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
@@ -411,6 +412,16 @@ Below is a list of some popular scripts:
 - [pause-when-minimize](https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/pause-when-minimize.lua) - Pauses playback when minimizing the window, and resumes playback when brought back
 - [thumbfast](https://github.com/po5/thumbfast) - Display thumbnails when scrubbing video (may be needed for some [Skins](#skins))
 - [trackselect](https://github.com/po5/trackselect) - Select tracks based on their title
+
+==- :icon-gear: Installation
+
+1. Navigate to your mpv [config directory](#config-overview)
+2. Locate the `scripts` folder. *You may need to create this folder if it doesn't exist*
+3. Drag your script file(s) (e.g. `.lua`) into the folder
+
+Your scripts are automatically loaded when you launch mpv. *If mpv is currently open, you will need to relaunch it in order for your script(s) to take effect.*
+
+==-
 
 ### Skins
 
