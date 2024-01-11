@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758119553654">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758257308289">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.758119553654" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.758257308289" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758119553654" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758257308289" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758119553654" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.758119553654" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758257308289" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.758257308289" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -466,154 +466,7 @@ Done.</code></pre>
         <span>Muxing and Tagging</span>
     </h2>
 </doc-anchor-target>
-<p>Once you have prepared the individual files, you&#x27;ll have to put them together in a container, preferably <a href="https://www.matroska.org/index.html">Matroska</a>, commonly seen as files with the extension <code v-pre>.mkv</code>.</p>
-<doc-anchor-target id="recommended-tools-2">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-tools-2">#</doc-anchor-trigger>
-        <span>Recommended Tools</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><a href="https://mkvtoolnix.download/downloads.html">MKVToolNix</a></li>
-<li><a href="https://github.com/Jaded-Encoding-Thaumaturgy/muxtools">muxtools</a></li>
-<li><a href="https://github.com/McBaws/MKVToolNix-Sequential-Batch-Mapper">MKVToolNix-Sequential-Batch-Mapper</a></li>
-<li><a href="https://www.videohelp.com/software/Inviska-MKV-Extract">Inviska-MKV-Extract</a></li>
-</ul>
-<doc-anchor-target id="forced-subtitles">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#forced-subtitles">#</doc-anchor-trigger>
-        <span>Forced Subtitles</span>
-    </h3>
-</doc-anchor-target>
-<p>Forced here <strong>DOES NOT</strong> mean that these subs will be permanently on the screen, which is a common misconception.
-Forced subtitles only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. In our case, it&#x27;s supposed to be displayed whenever the English dub has untranslated things like Japanese Signs and Songs like Opening/Ending or Inserts.</p>
-<doc-anchor-target id="correct-tagging">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#correct-tagging">#</doc-anchor-trigger>
-        <span>Correct Tagging</span>
-    </h3>
-</doc-anchor-target>
-<p>Proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix Header Editor or mkvpropedit without remuxing.</p>
-<ul>
-<li><strong>Video track:</strong>
-<ul>
-<li>Language tag is optional.</li>
-<li>Mention the name of the <code v-pre>Encoder/Encode group</code> or simply region like <code v-pre>JPBD</code> or <code v-pre>ITABD</code> if it&#x27;s untouched BluRay Remux.</li>
-</ul>
-</li>
-<li><strong>Audio Tracks:</strong>
-<ul>
-<li>Mention the Codec, Channels, and Bitrate in the <code v-pre>Name</code> field.</li>
-<li><code v-pre>Japanese</code> audio should always be tagged as <code v-pre>jpn</code> and marked as <code v-pre>Default</code></li>
-<li><code v-pre>English</code> audio should always be tagged as <code v-pre>eng</code> but should not be marked as <code v-pre>Default</code> or <code v-pre>Forced</code>. This is to make sure auto-selection works well for both dub and sub watchers.</li>
-</ul>
-</li>
-<li><strong>Subtitle Tracks:</strong>
-<ul>
-<li>Language tag must be used appropriately reflecting the language of the subtitles.</li>
-<li>Tag the best <code v-pre>Full Subtitles</code> as <code v-pre>eng</code> and <code v-pre>Default</code></li>
-<li>Tag the <code v-pre>Signs/Songs</code> track as <code v-pre>eng</code> and <code v-pre>forced</code>. This is to make sure auto-selection works well for both dub and sub watchers.</li>
-<li>Tag the <code v-pre>Honorifics</code> track as <code v-pre>enm</code> but neither <code v-pre>Default</code> nor <code v-pre>Forced</code>.</li>
-<li>Tag any and all additional subtitle tracks as neither <code v-pre>Default</code> nor <code v-pre>Forced</code>.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Note:</strong> Newer mkvtoolnix versions automatically set the default flag to <code v-pre>yes</code> on all streams. This is technically the correct use for the flag but all players do not have the intended results with this kind of tagging.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Track</th>
-<th>Language</th>
-<th>Name</th>
-<th>Default</th>
-<th>Forced</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Video</td>
-<td>jpn</td>
-<td>Encode Group</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Audio #1</td>
-<td>jpn</td>
-<td>FLAC 2.0</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Audio #2</td>
-<td>eng</td>
-<td>Opus 5.1 @ 320kb/s</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Subtitles #1</td>
-<td>eng</td>
-<td>Full Subtitles [Fansub]</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Subtitles #2</td>
-<td>enm</td>
-<td>Honorifics [Fansub]</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Subtitles #3</td>
-<td>eng</td>
-<td>Signs/Songs [Fansub]</td>
-<td>no</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>Subtitles #4</td>
-<td>eng</td>
-<td>Full Subtitles [Official]</td>
-<td>no</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Command to tag everything properly (assuming the order of tracks is correct):</strong></p>
-<doc-tabs>
-<doc-tab v-cloak id="windows">
-<template #title>Windows</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do mkvpropedit &quot;%X&quot; --add-track-statistics-tags --edit info --delete title ^
---edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 ^
---edit track:a1 --set name=&quot;FLAC 2.0&quot;                  --set language=jpn --set flag-default=1 ^
---edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=0 ^
---edit track:s1 --set name=&quot;Full Subtitles [Fansub]&quot;   --set language=eng --set flag-default=1 --set flag-forced=0 ^
---edit track:s2 --set name=&quot;Honorifics [Fansub]&quot;       --set language=enm --set flag-default=0 --set flag-forced=0 ^
---edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 ^
---edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=eng --set flag-default=0 --set flag-forced=0</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="linux">
-<template #title>Linux</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do
-  mkvpropedit &quot;${file}&quot; --add-track-statistics-tags --edit info --delete title \
-  --edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 \
-  --edit track:a1 --set name=&quot;FLAC 2.0&quot;                  --set language=jpn --set flag-default=1 \
-  --edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=0 \
-  --edit track:s1 --set name=&quot;Full Subtitles [Fansub]&quot;   --set language=eng --set flag-default=1 --set flag-forced=0 \
-  --edit track:s2 --set name=&quot;Honorifics [Fansub]&quot;       --set language=enm --set flag-default=0 --set flag-forced=0 \
-  --edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 \
-  --edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=eng --set flag-default=0 --set flag-forced=0
-done</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
+<p>Refer to the <a href="../muxing/">Muxing</a> page.</p>
 <doc-anchor-target id="naming">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#naming">#</doc-anchor-trigger>
@@ -622,9 +475,9 @@ done</code></pre>
 </doc-anchor-target>
 <p>This guide aims to somewhat standardize naming schemes used for Anime in an effort to make them work beyond File Explorer and work well with Usenet, XDCC, automation software, and media servers.
 <strong>Everything mentioned here aims to work with everything and if something isn&#x27;t mentioned, it&#x27;s very likely because it breaks support for one thing or another.</strong> Adopting all of it will ensure compatibility with basically everything, for example, not only will your releases be snatched by auto-downloaders but will also be parsed and matched accurately and people can drop your releases in media servers without having to rename and break seeding.</p>
-<doc-anchor-target id="recommended-tools-3">
+<doc-anchor-target id="recommended-tools-2">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-tools-3">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-tools-2">#</doc-anchor-trigger>
         <span>Recommended Tools</span>
     </h3>
 </doc-anchor-target>
