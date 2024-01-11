@@ -1,119 +1,172 @@
 ---
 label: Literature
 order: -3
-description: Learn How and Where to Read Your Favorite Stuff
-image: https://user-images.githubusercontent.com/78981416/215575718-9d206b3c-4377-4bb4-baea-72516953c85f.gif
+description: Learn how and where to read your favorite stuff
+image: /static/literature/kujou.gif
 ---
 
 # Literature
 
 ## Manga
 
-### Sourcing Files (for standalone readers)
+### Sourcing
 
-[Nyaa](https://nyaa.si) - The best public source for downloading manga
++++ Downloads
 
-#### Official Digital Rips
+[Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
+:   Public torrent tracker with the most high-quality official digital rips
 
-Search for the English title and add `Digital` for the best rips. For example - `Attack on Titan Digital`.
-In the rare cases where multiple groups release the same manga, prioritise the newer release as it's likely to have been ripped from a superior source.
-If the files are dead on public trackers, you may have luck with DDL links in their descriptions, or alternatively setting up [DC++](https://www.reddit.com/r/trackers/comments/p1z313/comic_trackers_other_than_32pages/h8iu5uh/)
+    Sources are generally much higher in quality compared to aggregators. Scanlations can also be found here, though Nyaa may have fewer scanlations compared to most manga aggregator sites.
 
-#### Scanlation Rips
+    ==- :icon-search: Searching tips
+    - **Official Digital Rips:** Search for the English title and add `Digital` to your search (e.g. `Attack on Titan Digital`). When searching, prioritize newer releases, as they're likely from better sources compared to older releases.
+    - **Scanlation Rips:** Search for both the English and Japanese/native title by [adding the `|` operator](/sourcing/public-trackers/#search-operators) in between (e.g. `Attack on Titan|Shingeki no Kyojin`) and sort by file size. Although these can be significantly lower in quality, note that not all manga get official digital releases and scanlations may be your only option.
+    ==-
 
-Search both the English and Japanese title by adding `|` in between. For example - `Attack on Titan|Shingeki no Kyojin` and sort by file size.
-Although these are significantly lower quality, not all manga get official digital releases, and downloading as opposed to reading online allows you to utilise the better scaling that standalone readers can provide.
+[AnimeBytes](https://animebytes.tv) [!badge icon="lock" variant="danger" text="Private"]
+:   Private torrent tracker with a more organized layout and access to old and rare rips
+
++++ Aggregators
+
+!!!
+Aggregators tend to use compressed and lower quality images as opposed to most digital rips. We recommend using the download sources instead.
+!!!
+
+[MangaDex](https://mangadex.org)
+:   Browser aggregator with the most convenient scanlations
+
+[MangaLife](https://manga4life.com)
+:   Browser aggregator with the most convenient official rips
+
+[MangaSee](https://mangasee123.com)
+:   Browser aggregator with the most convenient official rips
+
++++
 
 ### Reading
 
-#### Windows
++++ PC
 
-[CDisplayEx](https://www.cdisplayex.com/) (Highest Quality)
+[mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Best Quality"]
+:   Standalone reader with the highest quality scaling on PC
 
-- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/y737QBlP) scaling available on PC with [Resizing Algorithm set to Lanczos](https://user-images.githubusercontent.com/78981416/233718226-57d36d09-fe1d-40bb-b1d6-415c66272d74.png), and the [Lanczos slider set to level 2](https://user-images.githubusercontent.com/78981416/233718286-67f29d7f-53bf-47df-a41a-24fcd96a66f7.png).
+    This should be used with the [mpv-manga-reader script](https://github.com/Dudemanguy/mpv-manga-reader) in order to enable basic manga reader functionality. *See [how to install custom scripts in mpv](/tutorials/mpv/#custom-scripts).*
 
-- For laptops or high resolution displays, you will likely need to [disable Windows DPI scaling](https://user-images.githubusercontent.com/78981416/233718346-e66ff623-abcf-4c3a-8541-23fb840e65c9.png). Go to `C:\Program Files\CDisplayEx`, right click `CDisplayEx.exe` and select Properties -> Compatibility -> Change high DPI settings
+    ==- :icon-file-media: Recommended scaling settings
+    We recommend using the following scaling config for reading manga. This config will not affect standard video playback. To use it, add the following to your `mpv.conf`:
+    ```properties
+    [Manga]
+    profile-desc="Read Manga"
+    profile-cond=filename and filename:match('%.cbz$') or filename:match('%.cbr$') or filename:match('%.zip$') or filename:match('%.rar$') ~= nil
+    profile=high-quality
+    dscale=mitchell
+    deband=no
+    ```
+    ==-
+    ==- :icon-sliders: Fixing black levels
+    mpv allows you to manually fix black levels with the brightness and contrast controls. To use them, add the following to your `input.conf` and customise the values to your liking (default keybinds are `B` and `N`):
+    ```properties
+    B no-osd add contrast -4; no-osd add brightness 4; show-text "Black Level: ${brightness}"
+    N no-osd add contrast 4; no-osd add brightness -4; show-text "Black Level: ${brightness}"
+    ```
+    This should only be used on sources where [obvious blacks appear gray](/static/literature/incorrect-black-levels.png). The black level value should be decreased [until the grays become black](/static/literature/correct-black-levels.png). *Generally, `-16` works for most sources.*
+    ==-
+    ==- :icon-sparkle-fill: Touchscreen support
+    mpv's bundled touchscreen controls are suboptimal. We recommend using third-party programs for adding touchscreen functionality to mpv, such as [GestureSign](https://gesturesign.win), a tool which allows you to convert gestures to keypresses ([example setup](/static/literature/gesturesign-example.png)).  
+    You should also add the following into your `mpv.conf` to avoid triggering the OSD when swiping:
+    ```properties
+    no-osc
+    no-window-dragging
+    ```
+    ==-
 
-- Offers an ["Auto Colors"](https://user-images.githubusercontent.com/78981416/233718417-d994059b-b18d-4fa1-92cf-e2f7a51bd072.png) option which allows you to fix black levels, however requires manual tweaking depending on the source. Should only be enabled when [obvious blacks are appearing as grey](https://user-images.githubusercontent.com/78981416/233718453-c358222b-384e-45f5-9ff5-151aad32c94f.png), at which point you should increase the white level sensitivity slightly [until they become black](https://user-images.githubusercontent.com/78981416/233718539-a670d966-9ab7-4f23-8abd-a1a8f2cb93f4.png).
+[Tachidesk](https://github.com/Suwayomi/Tachidesk-Server) [!badge variant="secondary" text="Most Convenient"]
+:   All-in-one manga reader with support for external sources and manga trackers.
 
-[Tachidesk](https://github.com/Suwayomi/Tachidesk-Server) (Most Convenient)
+[CDisplayEx](https://www.cdisplayex.com)
+:   Standalone reader with the [second highest quality scaling](https://slow.pics/c/y737QBlP) on PC
 
-- Tachiyomi fork for PC
+    ==- :icon-file-media: Recommended scaling settings
+    To get the best quality, set the [*Resizing Algorithm to Lanczos*](/static/literature/cdisplayex-scaling.png) and the [*Lanczos quality slider to level 2*](/static/literature/cdisplayex-scaling2.png).
+    ==-
+    ==- :icon-sliders: Fixing black levels
+    CDisplayEx features an [*Auto Colors*](/static/literature/cdisplayex-auto-colors.png) setting, which allows you to fix black levels. This should only be used on sources where [obvious blacks appear gray](/static/literature/incorrect-black-levels.png). White level sensitivity should be increased slightly [until they become black](/static/literature/correct-black-levels.png).
+    ==-
+    !!!warning
+    For laptops or high-resolution displays, you may need to [disable Windows DPI scaling](/static/literature/cdisplayex-dpi.png). Go to `C:\Program Files\CDisplayEx`, right-click on `CDisplayEx.exe` and select *Properties* -> *Compatibility* -> *Change high DPI settings.*
+    !!!
 
-#### Android
++++ Android
 
-[Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) (Highest Quality)
+[Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) [!badge icon=":heart:" variant="primary" text="Best Quality"]
+:   Standalone reader with the [highest quality scaling](https://slow.pics/c/y737QBlP) on Android
 
-- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/y737QBlP) scaling available on Android with Image smooth filter set to [Lanczos 3](https://user-images.githubusercontent.com/78981416/233718601-dbdd3303-d96a-474e-aed5-7d4c22a8e8da.png)
+    !!!
+    To get the best quality, set the [Image smooth filter to *Lanczos3*](/static/literature/perfect-viewer-scaling.png).
+    !!!
 
-[Tachiyomi](https://tachiyomi.org/) (Most Convenient)
+[Tachiyomi](https://tachiyomi.org) [!badge variant="secondary" text="Most Convenient"] [!badge icon="link-external" variant="info" text="Forks"](https://tachiyomi.org/forks)
+:   All-in-one manga reader with support for external sources and manga trackers
 
-- All in one package with sourcing, tracking and a reader.
-  In settings -> reader enable 32 bit color to [avoid banding](https://slow.pics/c/eOC7j5nI)
-  Under Browse, add Mangasee and Mangadex. The former will provide official rips whilst the latter will provide scanlations.
+    !!!secondary
+    We recommend enabling 32-bit color mode to [avoid banding](https://slow.pics/c/eOC7j5nI). This can be found under *Settings* -> *Reader*.
+    !!!
 
-[TachiyomiSY](https://tachiyomi.org/forks/TachiyomiSY/)/[TachiyomiJ2K](https://tachiyomi.org/forks/TachiyomiJ2K/)/[TachiyomiAZ](https://tachiyomi.org/forks/TachiyomiAZ/)/[Neko](https://tachiyomi.org/forks/Neko/)
++++ iOS
 
-- Tachiyomi forks with added features.
+[Sidebooks](https://apps.apple.com/app/id409777225) [!badge icon=":heart:" variant="primary" text="Best Quality"]
+:   Standalone reader with the [highest quality scaling](https://slow.pics/c/gUsyOomL) on iOS
 
-#### iOS
+[Aidoku](https://aidoku.app) [!badge variant="secondary" text="Most Convenient"]
+:   All-in-one manga reader with support for external sources and manga trackers. *Requires TestFlight or sideloading*
 
-[Sidebooks](https://apps.apple.com/us/app/sidebooks/id409777225) (Highest Quality)
+[Paperback](https://paperback.moe)
+:   All-in-one manga reader with support for external sources
 
-- Standalone reader that requires you to bring your own manga, provides the [highest quality](https://slow.pics/c/gUsyOomL) scaling available on iOS.
++++ Media Servers
 
-[Paperback](https://paperback.moe/) (Most Convenient)
+[Kavita](https://www.kavitareader.com)
+:   Free and open-source manga, comic, and book server. *Includes an integrated web reader ([demo](https://wiki.kavitareader.com/en/kavita-demo)) and support for OPDS (e.g. [CDisplayEx](https://www.cdisplayex.com), [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer))*
 
-- Tachiyomi alternative that supports adding sources.
+[Komga](https://komga.org)
+:   Free and open-source manga server. *Includes an integrated web reader support for OPDS (e.g. [CDisplayEx](https://www.cdisplayex.com), [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer))*
 
-#### Browser (Any platform)
+    !!!secondary
+    See [Readers](https://komga.org/docs/category/readers) on Komga docs to set it up with your existing reading client.
+    !!!
 
-[MangaDex](https://mangadex.org/) (Most Convenient Scanlation)
-
-- Most scanlators upload here, which are then taken by aggregator sites. However, not everything is uploaded and official translations are never uploaded here.
-
-[Mangasee](https://mangasee123.com/) or [Manga4life](https://manga4life.com/) (Most Convenient Official)
-
-- These sites upload downscaled official rips with the highest quality among online sites. The original rips can be found on nyaa.
-
-### Organization and Manga Servers
-
-[Kavita](https://www.kavitareader.com/) - Free and open source manga, comic, and book server with OPDS support. This means that any reader with OPDS, like Perfect Viewer, [can be used to read manga from the server](https://wiki.kavitareader.com/en/guides/settings/opds). Has support for [CDisplayEX](https://wiki.kavitareader.com/en/guides/misc/cdisplayex), [Tachiyomi](https://wiki.kavitareader.com/en/guides/misc/tachiyomi), and [Paperback](https://wiki.kavitareader.com/en/guides/misc/paperback). It also has an integrated webreader. [DEMO](https://wiki.kavitareader.com/en/kavita-demo).
-
-[Komga](https://komga.org/) - Free and open source manga server with OPDS support. This means that any reader with OPDS, like Perfect Viewer, [can be used to read manga from the server](https://komga.org/docs/guides/opds). Tachiyomi and Paperback are supported through their respective [komga extensions](https://komga.org/docs/guides/tachiyomi). It also has an integrated webreader.
-
-[komf](https://github.com/Snd-R/komf) - Komga and Kavita metadata fetcher.
-
-[Mango](https://github.com/getmango/Mango) - An open-source manga server and web reader.
-
-[FMD2](https://github.com/FreeMangaDownloader/FMD2) - Free Manga Downloader 2
-
-[Manga Tagger](https://github.com/Inpacchi/Manga-Tagger) - Tool to rename and write metadata to manga. It scrapes metadata from Anilist and MyAnimeList and has direct integration with FMD2.
-
-[HakuNeko](https://hakuneko.download/) - cross-platform downloader for manga and anime from various websites
++++
 
 ## Light Novels
 
-Official vs Fan Translations - In general, official translations are more consistent, localized and flow better as a result of having professional translators and editors working on the project. At the same time, some readers may not prefer the excessive localization, editing or censorship in certain novels, which is where fan translations become the better choice. Seven Seas was guilty of doing this with Mushoku Tensei and Classroom of the Elite under the guise of localization - [1](https://www.animenewsnetwork.com/news/2021-02-17/seven-seas-addresses-mushoku-tensei-classroom-of-the-elite-light-novel-localization-changes/.169582), [2](https://www.animenewsnetwork.com/feature/2021-04-26/why-seven-seas-altered-its-light-novels/.171956), [3](https://boundingintocomics.com/2021/02/21/seven-seas-admits-to-heavy-handed-censorship-of-classroom-of-the-elite-and-mushoku-tensei-jobless-reincarnation/). The problems were apparently fixed later in revised releases.
-
-Fan translations can range from better than official to unreadable machine translated garbage. It's best to consult the community of each series to determine what their preferred version is, and go with that. In most cases, going with official is a safe bet.
-
 ### Sourcing
 
-[Nyaa](https://nyaa.si/) is the first place you should check for official releases.
++++ Downloads
 
-Fan TLs can be found from novelupdates or from the reddit/discord communities of the series. Not all communites will allow sharing these, make sure to check their wiki and pins for information.
+[Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
+:   Public torrent tracker with the most high-quality light novel rips
 
-[Novelupdates](https://www.novelupdates.com/) - provides information about translation groups, their status and progress, links to their sites, as well as lots of other things about the series - genres, categories, tags, ratings, reviews etc.
+[AnimeBytes](https://animebytes.tv) [!badge icon="lock" variant="danger" text="Private"]
+:   Private torrent tracker with a more organized layout and access to old and rare rips
 
-[WebToEpub](https://github.com/dteviot/WebToEpub) - An extension to convert Web Novels into EPUB.
++++
 
-### Reading and Organization
+### Reading
 
-[Calibre](https://calibre-ebook.com/) is a complete e-book management solution. It can be used to read, transfer and convert ebooks for all sorts of readers. It can also modify styling and download/edit/create metadata. The [calibre content server](https://manual.calibre-ebook.com/server.html) can be used to host and remotely access your library.
++++ PC
 
-[Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader)
+[Calibre](https://calibre-ebook.com)
+:   Standalone reader with support for various file types and includes additional e-book management features
 
-[LNReader](https://github.com/LNReader/lnreader)
+[Sumatra PDF](https://www.sumatrapdfreader.org)
+:   Standalone reader with support for various file types
+
++++ Android
 
 [Moon+ Reader](https://play.google.com/store/apps/details?id=com.flyersoft.moonreader)
+:   Standalone reader with support for various file types
+
+[LNReader](https://github.com/LNReader/lnreader)
+:   All-in-one light novel reader with support for external sources
+
++++

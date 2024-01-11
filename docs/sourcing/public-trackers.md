@@ -34,9 +34,9 @@ Torrents on [Nyaa](https://nyaa.si) are sorted by category. These can be changed
 
 To search for releases in English, use the `- English-translated` option under the various categories.
 
-#### Regex
+#### Search Operators
 
-Below is a list of useful regex that can help narrow down your search when looking for torrents:
+Below is a list of useful operators that can help narrow down your search when looking for torrents:
 
 Regex | Meaning                                          | Example Usage
 ------|--------------------------------------------------|----------------------------------------------------------------
