@@ -20,7 +20,7 @@ image: /static/literature/kujou.gif
 
     ==- :icon-search: Searching tips
     - **Official Digital Rips:** Search for the English title and add `Digital` to your search (e.g. `Attack on Titan Digital`). When searching, prioritize newer releases, as they're likely from better sources compared to older releases.
-    - **Scanlation Rips:** Search for both the English and Japanese/native title by [adding the `|` regex](/sourcing/public-trackers/#regex) in between (e.g. `Attack on Titan|Shingeki no Kyojin`) and sort by file size. Although these can be significantly lower in quality, note that not all manga get official digital releases and scanlations may be your only option.
+    - **Scanlation Rips:** Search for both the English and Japanese/native title by [adding the `|` operator](/sourcing/public-trackers/#search-operators) in between (e.g. `Attack on Titan|Shingeki no Kyojin`) and sort by file size. Although these can be significantly lower in quality, note that not all manga get official digital releases and scanlations may be your only option.
     ==-
 
 [AnimeBytes](https://animebytes.tv) [!badge icon="lock" variant="danger" text="Private"]
@@ -69,7 +69,7 @@ Aggregators tend to use compressed and lower quality images as opposed to most d
     B no-osd add contrast -4; no-osd add brightness 4; show-text "Black Level: ${brightness}"
     N no-osd add contrast 4; no-osd add brightness -4; show-text "Black Level: ${brightness}"
     ```
-    This should only be used on sources where [obvious blacks appear gray](/static/literature/incorrect-black-levels.png). The black level value should also be decreased [until they become black](/static/literature/correct-black-levels.png). *Generally, `-16` works for most sources.*
+    This should only be used on sources where [obvious blacks appear gray](/static/literature/incorrect-black-levels.png). The black level value should be decreased [until the grays become black](/static/literature/correct-black-levels.png). *Generally, `-16` works for most sources.*
     ==-
     ==- :icon-sparkle-fill: Touchscreen support
     mpv's bundled touchscreen controls are suboptimal. We recommend using third-party programs for adding touchscreen functionality to mpv, such as [GestureSign](https://gesturesign.win), a tool which allows you to convert gestures to keypresses ([example setup](/static/literature/gesturesign-example.png)).  
@@ -81,7 +81,7 @@ Aggregators tend to use compressed and lower quality images as opposed to most d
     ==-
 
 [Tachidesk](https://github.com/Suwayomi/Tachidesk-Server) [!badge variant="secondary" text="Most Convenient"]
-:   All-in-one manga reader with support for external sources and manga trackers. *Fork of [Tachiyomi](https://tachiyomi.org) for PC*
+:   All-in-one manga reader with support for external sources and manga trackers.
 
 [CDisplayEx](https://www.cdisplayex.com)
 :   Standalone reader with the [second highest quality scaling](https://slow.pics/c/y737QBlP) on PC
@@ -145,6 +145,9 @@ Aggregators tend to use compressed and lower quality images as opposed to most d
 
 [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
 :   Public torrent tracker with the most high-quality light novel rips
+
+[AnimeBytes](https://animebytes.tv) [!badge icon="lock" variant="danger" text="Private"]
+:   Private torrent tracker with a more organized layout and access to old and rare rips
 
 +++
 
