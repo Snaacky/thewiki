@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758263663119">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758346410264">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.758263663119" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.758346410264" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758263663119" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758346410264" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758263663119" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.758263663119" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758346410264" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.758346410264" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -175,15 +175,7 @@
    <doc-panel id="installing-mpv" collapsed>
        <template #title><span class="docs-emoji">&#x1F527;</span> Installing mpv</template>
 <ol>
-<li>Download the latest Windows build of <a href="https://mpv.io">mpv</a> from <a href="https://sourceforge.net/projects/mpv-player-windows/files/">SourceForge</a>:
-<a href="https://sourceforge.net/projects/mpv-player-windows/files/64bit/" class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-500 hover:bg-blue-700 text-white px-3 h-8 text-sm rounded" style="margin: 0px 8px 0px 0px;">
-    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="16" height="16" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M4.75 17.25a.75.75 0 0 1 .75.75v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25V18a.75.75 0 0 1 .75-.75Z"/><path d="M5.22 9.97a.749.749 0 0 1 1.06 0l4.97 4.969V2.75a.75.75 0 0 1 1.5 0v12.189l4.97-4.969a.749.749 0 1 1 1.06 1.06l-6.25 6.25a.749.749 0 0 1-1.06 0l-6.25-6.25a.749.749 0 0 1 0-1.06Z"/></g></svg></span>
-    <span>64-bit</span>
-</a>
-<a href="https://sourceforge.net/projects/mpv-player-windows/files/32bit/" class="no-link inline-flex align-middle items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-gray-500 hover:bg-gray-600 dark:bg-dark-400 dark:hover:bg-dark-450 text-white px-3 h-8 text-sm rounded">
-    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="16" height="16" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M4.75 17.25a.75.75 0 0 1 .75.75v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25V18a.75.75 0 0 1 .75-.75Z"/><path d="M5.22 9.97a.749.749 0 0 1 1.06 0l4.97 4.969V2.75a.75.75 0 0 1 1.5 0v12.189l4.97-4.969a.749.749 0 1 1 1.06 1.06l-6.25 6.25a.749.749 0 0 1-1.06 0l-6.25-6.25a.749.749 0 0 1 0-1.06Z"/></g></svg></span>
-    <span>32-bit</span>
-</a></li>
+<li>Download the latest Windows build of <a href="https://mpv.io">mpv</a> from <a href="https://github.com/zhongfly/mpv-winbuild/releases/latest">zhongfly/mpv-winbuild</a>. Make sure you&#x27;re grabbing the correct architecture for your computer (most likely <code v-pre>mpv-x86_64-YYYYMMDD-git-abcxyz.7z</code>).</li>
 <li>Once downloaded, extract the archive&#x27;s contents to your specified location</li>
 </ol>
 <div class="flex mb-6">
@@ -205,14 +197,6 @@
 <ol start="3">
 <li>Navigate to the <code v-pre>installer</code> folder and run <code v-pre>mpv-install.bat</code>. Follow the on-screen instructions to complete installation</li>
 </ol>
-<p>
-<figure>
-    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
-        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/playback/mpv/installation-windows.mp4" allowfullscreen></iframe>
-    </div>
-    <figcaption class="caption">Installing mpv on Windows</figcaption>
-</figure>
-</p>
    </doc-panel>
    <doc-panel id="installing-mpv-via-scoop" collapsed>
        <template #title><span class="docs-emoji">&#x1F368;</span> Installing mpv via Scoop</template>
