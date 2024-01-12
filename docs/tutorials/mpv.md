@@ -14,16 +14,12 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 ==- 🔧 Installing mpv
 
-1. Download the latest Windows build of [mpv](https://mpv.io) from [SourceForge](https://sourceforge.net/projects/mpv-player-windows/files/):
-[!button size="s" variant="primary" icon="download" text="64-bit" margin="0 8 0 0"](https://sourceforge.net/projects/mpv-player-windows/files/64bit/)
-[!button size="s" variant="secondary" icon="download" text="32-bit"](https://sourceforge.net/projects/mpv-player-windows/files/32bit/)
+1. Download the latest Windows build of [mpv](https://mpv.io) from [zhongfly/mpv-winbuild](https://github.com/zhongfly/mpv-winbuild/releases/latest). Make sure you're grabbing the correct architecture for your computer (most likely `mpv-x86_64-YYYYMMDD-git-abcxyz.7z`).
 2. Once downloaded, extract the archive's contents to your specified location
 !!!warning
 This folder cannot be changed after installation. If you wish to change it in the future, you will need to uninstall it first.
 !!!
 3. Navigate to the `installer` folder and run `mpv-install.bat`. Follow the on-screen instructions to complete installation
-
-[!embed text="Installing mpv on Windows"](/static/playback/mpv/installation-windows.mp4)
 
 ==- 🍨 Installing mpv via Scoop
 
