@@ -392,7 +392,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="52-58" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="52-67" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
