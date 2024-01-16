@@ -14,12 +14,14 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 ==- 🔧 Installing mpv
 
-1. Download the latest Windows build of [mpv](https://mpv.io) from [zhongfly/mpv-winbuild](https://github.com/zhongfly/mpv-winbuild/releases/latest). Make sure you're grabbing the correct architecture for your computer (most likely `mpv-x86_64-YYYYMMDD-git-abcxyz.7z`).
+1. Download the latest Windows build of [mpv](https://mpv.io) from [mpv-winbuild](https://github.com/zhongfly/mpv-winbuild/releases/latest). *For most users, this should be `mpv-x86_64-YYYYMMDD-git-abcxyz.7z`*
 2. Once downloaded, extract the archive's contents to your specified location
 !!!warning
 This folder cannot be changed after installation. If you wish to change it in the future, you will need to uninstall it first.
 !!!
 3. Navigate to the `installer` folder and run `mpv-install.bat`. Follow the on-screen instructions to complete installation
+
+[!embed text="Installing mpv-winbuild"](/static/tutorials/mpv/mpv-winbuild-installation.mp4)
 
 ==- 🍨 Installing mpv via Scoop
 
@@ -75,8 +77,10 @@ If you want to access mpv from the command line, you will need to add it to Wind
 
 1. In *Windows Settings* -> *System* -> *About*, locate *Advanced System Settings*. Head to *Advanced* and click on *Environment Variables...*
 2. Under *System Variables*, select *Path* and click on *Edit...*
-3. Click *New* and point the new variable to the `mpv.exe` located where mpv is installed
-4. Dismiss all of the dialogs by clicking `OK`
+3. Click *New* and point the variable to the folder where `mpv.exe` is located/installed
+4. Launch a new terminal window. *mpv can be accessed from the command line using `mpv`*
+
+![Adding mpv to PATH](/static/tutorials/mpv/mpv-path.png)
 
 ==-
 
@@ -351,7 +355,7 @@ sub-ass-style-overrides=Kerning=yes
 
 ![Cabin F](/static/tutorials/mpv/cabin-f-cropped.png)
 
-!!!
+!!!secondary
 This is a modified version of Cabin made by *@astolfo69 (RaptoR)* in the [SeaDex Discord server](https://discord.com/invite/jPeeZewWRn).
 !!!
 
