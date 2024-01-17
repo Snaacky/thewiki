@@ -312,9 +312,13 @@ profile=fast
 
 Most releases will use their own font for `.ass` subtitles. These can be manually overridden by mpv, which can help improve readability or match personal preferences.
 
+!!!warning
+Restyling subtitles may lead to incorrect rendering in some cases.
+!!!
+
 Below are a couple of commonly used styles:
 
-+++ Gandhi Sans
+==- :icon-project-roadmap: Gandhi Sans
 
 ![Gandhi Sans](/static/tutorials/mpv/gandhi-sans-cropped.png)
 
@@ -324,9 +328,22 @@ Below are a couple of commonly used styles:
 
 Run the `.otf` font file to install it system-wide or put it in your `fonts` folder. Add the following to your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="38-51" language="properties":::
+```properties
+# Set sub-ass-override to "no" as we only need to enable it for specific cases
+sub-ass-override=no
+sub-ass-style-overrides=playresx=1920,playresy=1080
+sub-font="Gandhi Sans"
+sub-font-size=50
+sub-color="#FFFFFF"
+sub-border-size=2.4
+sub-border-color="#FF000000"
+sub-shadow-color="#A0000000"
+sub-shadow-offset=0.75
+sub-bold=yes
+sub-ass-style-overrides=Kerning=yes
+```
 
-+++ Cabin
+==- :icon-project-roadmap: Cabin
 
 ![Cabin](/static/tutorials/mpv/cabin-cropped.png)
 
@@ -351,7 +368,7 @@ sub-shadow-offset=0.8
 sub-ass-style-overrides=Kerning=yes
 ```
 
-+++ Cabin F
+==- :icon-project-roadmap: Cabin F
 
 ![Cabin F](/static/tutorials/mpv/cabin-f-cropped.png)
 
@@ -378,7 +395,7 @@ sub-shadow-offset=0.8
 sub-ass-style-overrides=Kerning=yes
 ```
 
-+++
+===
 
 To activate it with a key, add the following to your `input.conf`, replacing `k` with the bind of your choice, if necessary (case-sensitive):
 
@@ -392,7 +409,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="52-67" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="38-48" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
