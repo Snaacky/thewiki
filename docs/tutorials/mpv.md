@@ -114,10 +114,10 @@ Distributions usually package outdated, unmaintained, and/or unsupported version
 
 ==- 🔧 Installing mpv with unofficial packages
 
-The following packages are unofficial:
+The following packages are not maintained by the mpv developers:
 
-- [Arch](https://archlinux.org/packages/extra/x86_64/mpv/) [!badge variant="primary" text="Official"]
-- [Gentoo](https://packages.gentoo.org/packages/media-video/mpv) [!badge variant="primary" text="Official"]
+- [Arch](https://archlinux.org/packages/extra/x86_64/mpv/)
+- [Gentoo](https://packages.gentoo.org/packages/media-video/mpv)
 - [Arch](https://aur.archlinux.org/packages/mpv-git/) [!badge variant="secondary" text="AUR"] [!badge variant="secondary" text="git"]
 - [Arch](https://aur.archlinux.org/packages/mpv-build-git/) [!badge variant="secondary" text="AUR"] [!badge variant="secondary" text="mpv-build"]
 - [Debian](https://deb-multimedia.org/dists/testing/main/binary-amd64/package/mpv)
@@ -409,7 +409,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="37-47" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="37-46" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
