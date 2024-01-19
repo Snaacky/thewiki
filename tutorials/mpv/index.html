@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758962375334">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758964081857">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.758962375334" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.758964081857" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758962375334" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758964081857" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758962375334" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.758962375334" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758964081857" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.758964081857" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -358,14 +358,10 @@ scoop install extras/mpv-git</code></pre>
 </div>
 <doc-panel id="installing-mpv-with-unofficial-packages" collapsed>
     <template #title><span class="docs-emoji">&#x1F527;</span> Installing mpv with unofficial packages</template>
-<p>The following packages are unofficial:</p>
+<p>The following packages are not maintained by the mpv developers:</p>
 <ul>
-<li><a href="https://archlinux.org/packages/extra/x86_64/mpv/">Arch</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>Official</span>
-</span></li>
-<li><a href="https://packages.gentoo.org/packages/media-video/mpv">Gentoo</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>Official</span>
-</span></li>
+<li><a href="https://archlinux.org/packages/extra/x86_64/mpv/">Arch</a></li>
+<li><a href="https://packages.gentoo.org/packages/media-video/mpv">Gentoo</a></li>
 <li><a href="https://aur.archlinux.org/packages/mpv-git/">Arch</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
     <span>AUR</span>
 </span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-6 px-2 text-xs rounded-md">
@@ -900,10 +896,9 @@ sub-ass-style-overrides=Kerning=yes</code></pre>
 profile-cond=filename:match(&quot;SubsPlease&quot;) or filename:match(&quot;Erai%-raws&quot;)
 profile-restore=copy
 sub-ass-vsfilter-blur-compat=no
-deband=yes
 
 [simulcast]
-profile-cond=filename:match(&quot;Tsundere%-Raws&quot;) or filename:match(&quot;%-VARYG&quot;) or filename:match(&quot;HorribleSubs&quot;) or filename:match(&quot;SubsPlus%+&quot;)
+profile-cond=filename:match(&quot;SubsPlease&quot;) or filename:match(&quot;Erai%-raws&quot;) or filename:match(&quot;Tsundere%-Raws&quot;) or filename:match(&quot;%-VARYG&quot;) or filename:match(&quot;HorribleSubs&quot;) or filename:match(&quot;SubsPlus%+&quot;)
 profile-restore=copy
 deband=yes</code></pre>
 </doc-codeblock></div>
