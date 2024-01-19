@@ -192,7 +192,7 @@ We recommend taking your time to create your own config. If you want to get up a
 
 ==- :icon-file-code: Generic `mpv.conf`
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-31" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-30" language="properties":::
 
 ==- :icon-info: Understanding the config
 
@@ -409,7 +409,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="36-48" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="37-47" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
