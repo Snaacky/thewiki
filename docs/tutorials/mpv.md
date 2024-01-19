@@ -241,7 +241,7 @@ To enable debanding in mpv, apply the following changes to your config:
 
 +++ `mpv.conf`
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="32-37" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="31-36" language="properties":::
 
 !!!warning
 Your deband settings should be placed after your [`profile`](https://mpv.io/manual/master/#profiles) in order to prevent conflict.
@@ -409,7 +409,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="38-48" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="36-48" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
