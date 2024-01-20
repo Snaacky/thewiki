@@ -97,6 +97,7 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
+import vstools
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
@@ -300,10 +301,15 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 Adjusts the gamma level of the video. *This should only be used to fix the QuickTime gamma bug or similar where one source will appear much brighter than the rest.*
 
 ```py
-## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
-clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
-clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
-clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+# Convert the clips to 32bit [Required for gamma fix]
+clip1 = vstools.depth(clip1, 32)
+clip2 = vstools.depth(clip2, 32)
+clip3 = vstools.depth(clip3, 32)
+
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
+clip1 = core.std.Levels(clip1, gamma=0.88, planes=0)
+clip2 = core.std.Levels(clip2, gamma=0.88, planes=0)
+clip3 = core.std.Levels(clip3, gamma=0.88, planes=0)
 ```
 
 #### Matrix
@@ -359,6 +365,7 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 
 ```py
 ## Dependencies: Allows vspreview to run (required; do not remove)
+import vstools
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
@@ -444,10 +451,15 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 
-## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
-##clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
-##clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
-##clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+# Convert the clips to 32bit [Required for gamma fix]
+##clip1 = vstools.depth(clip1, 32)
+##clip2 = vstools.depth(clip2, 32)
+##clip3 = vstools.depth(clip3, 32)
+
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
+##clip1 = core.std.Levels(clip1, gamma=0.88, planes=0)
+##clip2 = core.std.Levels(clip2, gamma=0.88, planes=0)
+##clip3 = core.std.Levels(clip3, gamma=0.88, planes=0)
 
 ## Matrix: Repairs sources with incorrect/missing metadata; typically used for 4K SDR and upscaled/downscaled content (colors will be off, particularly reds, greens, and blues)
 ##clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
