@@ -301,12 +301,12 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 Adjusts the gamma level of the video. *This should only be used to fix the QuickTime gamma bug or similar where one source will appear much brighter than the rest.*
 
 ```py
-# Convert the clips to 32bit [Required for gamma fix]
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
+## Convert clips to 32-bit [required for gamma fix]
 clip1 = vstools.depth(clip1, 32)
 clip2 = vstools.depth(clip2, 32)
 clip3 = vstools.depth(clip3, 32)
-
-## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
+## Apply fix
 clip1 = core.std.Levels(clip1, gamma=0.88, planes=0)
 clip2 = core.std.Levels(clip2, gamma=0.88, planes=0)
 clip3 = core.std.Levels(clip3, gamma=0.88, planes=0)
@@ -451,12 +451,12 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 
-# Convert the clips to 32bit [Required for gamma fix]
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
+## Convert clips to 32-bit [required for gamma fix]
 ##clip1 = vstools.depth(clip1, 32)
 ##clip2 = vstools.depth(clip2, 32)
 ##clip3 = vstools.depth(clip3, 32)
-
-## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
+## Apply fix
 ##clip1 = core.std.Levels(clip1, gamma=0.88, planes=0)
 ##clip2 = core.std.Levels(clip2, gamma=0.88, planes=0)
 ##clip3 = core.std.Levels(clip3, gamma=0.88, planes=0)
