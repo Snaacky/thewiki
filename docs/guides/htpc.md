@@ -195,7 +195,7 @@ Kodi is a home-theater software which neatly displays your library and allows fo
 
 #### Library
 
-Kodi offers many ways to import your content, with the easiest being the [PlexKodiConnect](https://github.com/croneter/PlexKodiConnect) addon, a plugin simply allows you to access your existing Plex library through Kodi.
+Kodi offers many ways to import your content, with the easiest being the [PlexKodiConnect](https://github.com/croneter/PlexKodiConnect) addon, a plugin that allows you to access your existing Plex library through Kodi.
 
 Alternatively, you can use network shares like SMB or local drives such as an internal/external HDD.
 
