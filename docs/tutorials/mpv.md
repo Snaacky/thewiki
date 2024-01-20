@@ -114,7 +114,7 @@ Distributions usually package outdated, unmaintained, and/or unsupported version
 
 ==- 🔧 Installing mpv with unofficial packages
 
-The following packages are not maintained by the mpv developers:
+The following packages are not maintained by official mpv developers:
 
 - [Arch](https://archlinux.org/packages/extra/x86_64/mpv/)
 - [Gentoo](https://packages.gentoo.org/packages/media-video/mpv)
@@ -375,6 +375,8 @@ sub-ass-style-overrides=Kerning=yes
 !!!secondary
 This is a modified version of Cabin made by *@astolfo69 (RaptoR)* in the [SeaDex Discord server](https://discord.com/invite/jPeeZewWRn).
 !!!
+
+Download this font using the button below:
 
 [!button icon="download" variant="primary" text="Cabin F"](/static/playback/fonts/cabin-f.zip)
 

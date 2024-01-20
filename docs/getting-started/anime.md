@@ -81,23 +81,23 @@ If you like to prioritize quality, torrenting can be an amazing option for your 
 
 Below is a brief list of recommended media player applications:
 
-+++ PC :desktop_computer:
++++ :desktop_computer: PC
 
 - [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
 - [Potplayer](https://potplayer.daum.net)
 
-+++ Android :robot_face:
++++ :robot_face: Android
 
 - [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
-+++ iOS :green_apple:
++++ :green_apple: iOS
 
 - [Outplayer](https://apps.apple.com/app/outplayer/id1449923287)
 - [VLC media player](https://apps.apple.com/app/vlc-media-player/id650377962)
 
-+++ TV/Media Servers :tv:
++++ :tv: TV/Media Servers
 
 - [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [Plex](https://www.plex.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]

@@ -20,7 +20,7 @@ Commonly used terminology:
 - **Level/profile** - The maximum resolution and bitrate specified within the AVC/HEVC standard. *A higher level/profile means lower compatibility and more processing power required to decode*
   - *See [Levels for AVC (H.264)](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) and [Levels for HEVC (H.265)](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels#Levels)*
 
-==- :icon-note: Reading the File Name
+==- :icon-info: Understanding the file name
 
 The file name for a release will typically look like one of the following:
 
@@ -68,22 +68,22 @@ The encoding guides above should give you a general idea of the workflow, *but d
 Also known as: [!badge variant="info" text="Blu-ray Disc" margin="0 8 0 0"]
 [!badge variant="info" text="Untouched Blu-ray"]
 
-A complete copy of the original Blu-ray, including menus, extras, adverts, etc. Used as a source for making other releases or encodes. *These are not practical for watching.*
+A complete copy of the original Blu-ray used as a source for making other releases or encodes, including menus, extras, adverts, etc. *These are not practical for watching.*
 
 Japanese Blu-rays often have better quality than other countries as they allocate far more bitrate to the video. This is not necessarily intentional, but a side effect of having fewer episodes per disc and not including dub tracks, in contrast to other regions which tend to cram more episodes onto a single disc and have large 5.1 dubs.
 
 There are cases where regional discs do offer better quality. This generally applies when Japanese discs have authoring issues, resulting in the alternatives being better by comparison. For instance, Italian discs from Dynit frequently offer the best video even at lower bitrates due to good filtering and better-optimized encode settings.
 
-These can be mainly found on [U2](https://u2.dmhy.org) (Private), however [Nyaa](https://nyaa.si) (Public) and [Skyey Snow](https://skyeysnow.com) (Private, Open Signup) will have some too. *Release groups don't matter for BDMVs because they are 1:1 copies of the disc and should instead be chosen based on region.*
+These can be mainly found on [U2](https://u2.dmhy.org) (private), however [Nyaa](https://nyaa.si) (public) and [Skyey Snow](https://skyeysnow.com) (private, open signup) will have some too. *Release groups don't matter for BDMVs because they are 1:1 copies of the disc and should instead be chosen based on region.*
 
 +++ BD Remux
 
 Also known as: [!badge variant="info" text="Remux" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray Remux"]
 
-A losslessly packaged version of the BDMV put into `.mkv` files, allowing for slightly lower sizes (`.mkv` files have less overhead than `.m2ts`), much better ease of use, lossless compression of audio, and tracks from other sources.
+A losslessly packaged version of the BDMV put into `.mkv` files, allowing for slightly lower sizes (`.mkv` files have less overhead than `.m2ts`), much better ease of use, lossless compression of audio, and bundling tracks from other sources.
 
-A Blu-ray Remux is generally the best version to get quality-wise, unless a properly filtered release exists.
+A Blu-ray remux is generally the best version to get quality-wise, unless the original Blu-ray introduces several problems and/or a properly filtered release exists.
 
 +++ BD Encode
 
@@ -91,7 +91,9 @@ Also known as: [!badge variant="info" text="BD" margin="0 8 0 0"]
 [!badge variant="info" text="BDRip" margin="0 8 0 0"]
 [!badge variant="info" text="Blu-ray"]
 
-An encode made directly from the BDMV or BD Remux. Generally, the goal is to retain visual transparency to the source while reducing file size, however many good encoders will aim to make their release better than the source via filtering.
+An encode made directly from the original Blu-ray or remux. Generally, the goal is to retain visual transparency to the source while reducing file size, however many good encoders will aim to make their release better than the source via filtering.
+
+While Blu-ray remuxes are generally the best option, encodes can sometimes be more preferred over remuxes depending on the show, such as fixing video artifacts introduced from a bad Blu-ray. Additionally, they tend to be considerably smaller over remuxes (around 1-2 GB an episode vs. 6GB), without sacrificing too much in quality compared to other sources such as mini encodes.
 
 Most can be found on [Nyaa](https://nyaa.si), with some rare stuff on places like [RuTracker](https://rutracker.org).
 
@@ -115,7 +117,7 @@ Some encoders will merge multiple WEB sources, resulting in significantly better
 
 Re-encodes are encodes of an existing Blu-ray or WEB encode. These are common on [streaming sites](/sourcing/streaming/), where they convert the original encode to a supported file format while also trying to save space, but can also be found in some mini encodes.
 
-The process of re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process and information is lost at every stage. As a result, it introduces artifacts like blocking and banding. *Because of this, re-encodes are not recommended if you want quality and should be avoided.*
+The process of re-encoding is generally considered a bad practice due to quality loss, as encoding is a lossy process and information is lost at every stage. As a result, it introduces artifacts like blocking and banding. *Because of this, re-encodes are not recommended if you want the best quality and should be avoided.*
 
 On [Nyaa](https://nyaa.si), these are marked in <span style="color:#E53E3E">red</span>. *You can see the difference with re-encodes from the comparisons below.*
 
@@ -123,7 +125,7 @@ On [Nyaa](https://nyaa.si), these are marked in <span style="color:#E53E3E">red<
 
 Mini encodes are releases designed to save on space and bandwidth while retaining some quality. *These are not the same as re-encodes, as some minis encode from the original BD or WEB source.*
 
-While re-encoding is a bad process, re-encoded minis will often use the original WEB source. With BDs, some will use the best encode/raw available for their release. They also usually opt for alternative and efficient codecs such as H.265 and apply various filters to compensate. As a result, they can be a better option when compared to [streams](/sourcing/streaming/) of similar size or bad encodes.
+While re-encoding is a bad process, re-encoded minis will often use the original WEB source. With Blu-rays, some will use the best encode/raw available for their release. They also usually opt for alternative and efficient codecs such as HEVC and apply various filters to compensate. As a result, they can be a better option when compared to [streams](/sourcing/streaming/) of similar size or bad encodes.
 
 Some may not notice the differences between a good mini encode and its alternatives. *See how minis compare in the quality comparisons below.*
 
@@ -132,37 +134,38 @@ Some may not notice the differences between a good mini encode and its alternati
 ==- :icon-file-media: Quality Comparisons
 
 !!!
-Most streams and WEB minis are re-encodes. These are marked in <span style="color:#E53E3E">red</span>. *See [Types of Releases](#types-of-releases).*
+Most streams and minis are re-encodes. These are marked in <span style="color:#E53E3E">red</span>. *See [Types of Releases](#types-of-releases).*
 !!!
 
-Show                                                      | Type | Sources
-----------------------------------------------------------|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-[Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | BD   | Raw (Reinforce) vs. Official (HorribleSubs/Crunchyroll) vs. Stream (<span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Gogoanime</span>) vs. Mini (<span style="color:#E53E3E">EMBER</span>)
-[Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs)         | WEB  | Official (NanakoRaws, SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix) vs. Mini (<span style="color:#E53E3E">A-L</span>, <span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, Breeze, DKB, <span style="color:#E53E3E">Judas</span>, Sokudo, <span style="color:#E53E3E">Valenciano</span>)
-[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | WEB  | Encode (smol) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWatch</span>, <span style="color:#E53E3E">AniWave</span>, <span style="color:#E53E3E">Gogoanime</span>, <span style="color:#E53E3E">Marin</span>) vs. Mini (<span style="color:#E53E3E">ASW</span>, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>)
-[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | WEB  | Encode (Setsugen) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:#E53E3E">AniWatch (Zoro)</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Gogoanime</span>, <span style="color:#E53E3E">Marin</span>)
-[Senran Kagura](https://slow.pics/c/QLtX61qx)             | BD   | Raw (BDMV, Snow-Raws) vs. Stream (<span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWatch (Zoro)</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Gogoanime</span>)
-[Space Dandy](https://slow.pics/c/d5hU8mnp)               | BD   | Encode (MTBB) vs. Mini (<span style="color:#E53E3E">AnimeRG</span>, Cleo 1080p/720p, Commie 720p, DHD)
-[SukiMega](https://slow.pics/c/vpcExtLb)                  | WEB  | Official (SubsPlease/Crunchyroll 1080p/720p) vs. Mini (<span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>, <span style="color:#E53E3E">Valenciano</span>)
-[Vinland Saga S2](https://slow.pics/c/GjhwBwo3)           | WEB  | Encode (Foxtrot) vs. Official (SubsPlease/Crunchyroll) vs. Stream (<span style="color:#E53E3E">Gogoanime</span>, <span style="color:#E53E3E">Marin</span>) vs. Mini (<span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, Breeze, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>, <span style="color:#E53E3E">Trix</span>)
+{.compact}
+Show                                                      | Type                                    | Sources
+----------------------------------------------------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | [!badge variant="primary" text="BD"]    | **Raw:** Reinforce <br>**Official:** HorribleSubs/Crunchyroll <br>**Stream:** <span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Anitaku (Gogoanime)</span> <br>**Mini:** <span style="color:#E53E3E">EMBER</span>
+[Jujutsu Kaisen S2](https://slow.pics/c/HZeCzBjs)         | [!badge variant="secondary" text="WEB"] | **Official:** NanakoRaws, SubsPlease/Crunchyroll 1080p/720p, VARYG/Netflix <br>**Mini:** <span style="color:#E53E3E">A-L</span>, <span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, Breeze, DKB, <span style="color:#E53E3E">Judas</span>, Sokudo, <span style="color:#E53E3E">Valenciano</span>
+[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | [!badge variant="secondary" text="WEB"] | **Encode:** smol <br>**Official:** SubsPlease/Crunchyroll <br>**Stream:** <span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWatch</span>, <span style="color:#E53E3E">AniWave</span>, <span style="color:#E53E3E">Anitaku (Gogoanime)</span> <br>**Mini:** <span style="color:#E53E3E">ASW</span>, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>
+[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | [!badge variant="secondary" text="WEB"] | **Encode:** Setsugen <br>**Official:** SubsPlease/Crunchyroll <br>**Stream:** <span style="color:#E53E3E">AniWatch (Zoro)</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Anitaku (Gogoanime)</span>
+[Senran Kagura](https://slow.pics/c/QLtX61qx)             | [!badge variant="primary" text="BD"]    | **Raw:** BDMV <br>**Encode:** Snow-Raws <br>**Stream:** <span style="color:#E53E3E">animepahe</span>, <span style="color:#E53E3E">AniWatch (Zoro)</span>, <span style="color:#E53E3E">AniWave (9anime)</span>, <span style="color:#E53E3E">Anitaku (Gogoanime)</span>
+[Space Dandy](https://slow.pics/c/d5hU8mnp)               | [!badge variant="primary" text="BD"]    | **Encode:** MTBB <br>**Mini:** <span style="color:#E53E3E">AnimeRG</span>, Cleo 1080p/720p, Commie 720p, DHD
+[SukiMega](https://slow.pics/c/vpcExtLb)                  | [!badge variant="secondary" text="WEB"] | **Official:** SubsPlease/Crunchyroll 1080p/720p <br>**Mini:** <span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>, <span style="color:#E53E3E">Valenciano</span>
+[Vinland Saga S2](https://slow.pics/c/GjhwBwo3)           | [!badge variant="secondary" text="WEB"] | **Encode:** Foxtrot <br>**Official:** SubsPlease/Crunchyroll <br>**Stream:** <span style="color:#E53E3E">Anitaku (Gogoanime)</span> <br>**Mini:** <span style="color:#E53E3E">Anime Time</span>, <span style="color:#E53E3E">ASW</span>, Breeze, DKB, <span style="color:#E53E3E">EMBER</span>, <span style="color:#E53E3E">Judas</span>, <span style="color:#E53E3E">Trix</span>
 
 ===
 
 ### Blu-ray vs WEB
 
-Blu-rays are usually a better source than WEB. *However, there are some cases where WEB is better than the Blu-ray.*
+Generally, Blu-rays are usually better overall compared to WEB sources. With Blu-rays, you can expect improvements such as:
 
-The advantages of BD are:
+1. **Better Quality** - An average Blu-ray episode is around 6GB compared to 1.3GB for a WEB episode. This makes it a better source even for mini encodes, as they have more data to work with; *a same size encode made from both sources will show the Blu-ray version to be superior*
 
-1. **Better Quality** - An average BD episode is around 6GB compared to 1.3GB on WEB. This makes it a better source even for mini encodes, as they have more data to work with; *a same size encode made from both sources will show the BD version to be superior*
+2. **No Censorship** - Blu-rays will often remove or reduce censorship that may be present on WEB releases, ranging from minor changes within scenes to whole new scenes being added
 
-2. **No Censorship** - BDs will remove or reduce censorship that may be present on WEB releases, ranging from minor changes within scenes to whole new scenes being added
+3. **Additional Content** - Blu-rays allow studios to add as much content as they want and fix any previous mistakes made in the WEB release due to budget/time/airing duration constraints
 
-3. **Additional Content** - BDs allow studios to add as much content as they want and fix any mistakes made due to budget/time/airing duration constraints
+4. **Improvements** - Fully redrawn scenes, add extra details, introduce shading improvements, dimming/brightness changes, etc.
 
-4. **Improvements** - Fully redrawn scenes, extra details, shading improvements, dimming/brightness changes, etc.
+However, there are some cases where a WEB source will outperform the Blu-ray. A bad Blu-ray may introduce blurring, use aggressive sharpening filters, or include other visual artifacts that may affect your viewing experience.
 
-See the comparisons below between BD and WEB:
+See the comparisons between Blu-ray and WEB sources:
 
 - [Demon Slayer](https://slow.pics/c/UMxyTZ7T)
 - [Saiki Kusuo no Ψ-nan](https://slow.pics/c/GxJxekoN)
@@ -205,7 +208,7 @@ Fansubs are fan-produced versions of subtitles. They will often edit the officia
 
 While these edits can be an improvement over the original subs, *they may also introduce more errors than they fix.* A degree of localization is always involved with translation to make sure the dialogue flows smoothly. Localization is the process of changing cultural references and puns to fit the target audience's context. Fansubs can range from excessive localization by completely eradicating and replacing the idea of Japan, to the untranslation of random phrases and lines back to Japanese, damaging the concept of subtitles. Most good fansubs lie somewhere in between these extremes. After looking at the work of these groups, you'll be able to figure out who tends to do what.
 
-==- :icon-desktop-download: Getting Subs with AnimeTosho
+==- :icon-desktop-download: Getting subtitles with AnimeTosho
 
 [AnimeTosho](https://animetosho.org) is a useful resource for grabbing subtitles from any release on [Nyaa](https://nyaa.si). *Note that only uploads that are less than 16GB will have downloadable attachments on AnimeTosho.*
 
@@ -215,10 +218,14 @@ They can be downloaded under the *Subtitles* section of a release:
 
 ===
 
+!!!
+Looking for fansubbed seasonal anime? Check [FansubDB](https://fansubdb.com)'s list of release groups that are working on current shows.
+!!!
+
 ## Releases
 
 With so many options for every show, it can be hard to find which one to download.
 
-Although most re-encoded releases (marked in <span style="color:#E53E3E">red</span> on [Nyaa](https://nyaa.si/help#torrent-colors)) should be avoided, the best release group varies per show, and there's no foolproof way to tell without [comparing the different sources](https://slow.pics/c/J8ow4zap).
+Although most [re-encoded releases](#types-of-releases) (marked in <span style="color:#E53E3E">red</span> on [Nyaa](https://nyaa.si/help#torrent-colors)) should be avoided, the best release group varies per show, and there's no foolproof way to tell without [comparing the different sources](#quality-comparisons).
 
 [SeaDex](https://releases.moe) is a quick and easy way to find the best releases for your shows. It is actively maintained to stay up-to-date on what's best, backed by quality comparisons.

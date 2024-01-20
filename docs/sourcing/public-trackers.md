@@ -53,7 +53,7 @@ Regex | Meaning                                          | Example Usage
 - Search and go to the user's profile you want to create a feed for
 - On the top bar, click on **RSS**. *Copy this URL and add it to your torrent client*
 
-==- Video tutorial
+==- :icon-video: Video tutorial
 
 [!embed text="Creating an RSS feed for Yameii"](/static/torrenting/nyaa/custom-rss.mp4)
 

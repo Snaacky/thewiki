@@ -10,21 +10,21 @@ image: https://user-images.githubusercontent.com/78981416/232306295-0e123ed8-c83
 
 ## Installation
 
-+++ Windows
++++ 🖥️ Windows
 
 1. Download the latest `.exe` version of [Deluge](https://ftp.osuosl.org/pub/deluge/windows/?C=M;O=D)
 2. Run the installer and follow the on-screen instructions to complete installation
 
 ![Latest 64-bit `.exe` for Deluge](https://user-images.githubusercontent.com/78981416/232305635-111a14c6-7dba-4ff1-a4b4-90e6dc0e4808.png)
 
-+++ macOS
++++ 🍎 macOS
 
 1. Download the latest `.dmg` version of [Deluge](https://ftp.osuosl.org/pub/deluge/mac_osx/?C=M;O=D)
 2. Run the installer and follow the on-screen instructions to complete installation
 
 ![Latest x64 `.dmg` for Deluge](https://user-images.githubusercontent.com/78981416/232306677-efd31d7f-57c6-4a19-bf0f-62e354ea0c99.png)
 
-+++ Linux
++++ 🐧 Linux
 
 1. Download the latest version of [Deluge](https://dev.deluge-torrent.org/wiki/Download#Linux) for your distro
 2. Run the installer and follow the on-screen instructions to complete installation
@@ -45,7 +45,7 @@ image: https://user-images.githubusercontent.com/78981416/232306295-0e123ed8-c83
 4. Enable ltConfig from your plugin list and hit **Apply**
 5. Under **ltConfig**, check **Apply settings on startup**. For racing, select the *High Performance Seed* preset -> **Load preset** -> **Apply**
 
-==- Video tutorial
+==- :icon-video: Video tutorial
 
 [!embed text="Installing ltConfig on Windows"](/static/torrenting/deluge/installing_ltconfig.mp4)
 

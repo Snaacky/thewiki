@@ -13,19 +13,19 @@ This guide will show you how to use [xDelta3 Cross GUI](https://github.com/dan0v
 
 ## Installation
 
-+++ Windows
++++ 🖥️ Windows
 
 1. Download the latest release of [xDelta3 Cross GUI](https://github.com/dan0v/xdelta3-cross-gui/releases). *For Windows, this will be `xdelta3-cross-gui_win_x86.zip`*
 
 2. Extract the `.zip` archive's contents. In the destination folder, find and launch `xdelta3_cross_gui.exe`
 
-+++ macOS
++++ 🍎 macOS
 
 1. Download the latest release of [xDelta3 Cross GUI](https://github.com/dan0v/xdelta3-cross-gui/releases). *For macOS, this will be `xdelta3-cross-gui_macOS_x86_64.tar.gz`*
 
 2. Extract the `.tar.gz` archive's contents. In the destination folder, find and launch `xDelta3 Cross GUI.app`
 
-+++ Linux
++++ 🐧 Linux
 
 1. Download the latest release of [xDelta3 Cross GUI](https://github.com/dan0v/xdelta3-cross-gui/releases). *For Linux, this will be `xdelta3-cross-gui_linux_AppImage_x86_64.tar.gz`*
 
@@ -95,7 +95,7 @@ Patches created using [xDelta3 Cross GUI](https://github.com/dan0v/xdelta3-cross
 
 4. Launch a terminal window in your working directory. Run the following command, replacing `<input_file>` with the location of the current file, `<diff_name>` with the name of the `.vcdiff` or `.xdelta` patch, and `<output_file>` with the name of the final file:
 
-   ==- Windows
+   ==- 🖥️ Windows
 
    Single file:
 
