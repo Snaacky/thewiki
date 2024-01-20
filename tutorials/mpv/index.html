@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758964081857">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759095856999">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.758964081857" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.759095856999" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758964081857" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759095856999" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758964081857" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.758964081857" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759095856999" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759095856999" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -502,10 +502,10 @@ screenshot-template=&quot;%F-%p-%n&quot;
 slang=eng,en
 alang=jpn,ja
 
-# Dub
-# Uncomment this section to prefer English dub with subtitles for English dub
+## Dub
 #slang=zxx,eng,en
 #alang=eng,en
+#subs-with-matching-audio=forced
 </code></pre>
 </doc-codeblock></div>
    </doc-panel>
@@ -893,12 +893,12 @@ sub-ass-style-overrides=Kerning=yes</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-properties"><code v-pre class="language-properties">## Auto profiles
 [crunchyroll]
-profile-cond=filename:match(&quot;SubsPlease&quot;) or filename:match(&quot;Erai%-raws&quot;)
+profile-cond=(function(a)for b,c in ipairs(a)do if filename:match(c)then return true end end end)({&quot;SubsPlease&quot;,&quot;Erai%-raws&quot;})
 profile-restore=copy
 sub-ass-vsfilter-blur-compat=no
 
 [simulcast]
-profile-cond=filename:match(&quot;SubsPlease&quot;) or filename:match(&quot;Erai%-raws&quot;) or filename:match(&quot;Tsundere%-Raws&quot;) or filename:match(&quot;%-VARYG&quot;) or filename:match(&quot;HorribleSubs&quot;) or filename:match(&quot;SubsPlus%+&quot;)
+profile-cond=(function(a)for b,c in ipairs(a)do if filename:match(c)then return true end end end)({&quot;SubsPlease&quot;,&quot;Erai%-raws&quot;,&quot;Tsundere%-Raws&quot;,&quot;%-VARYG&quot;,&quot;HorribleSubs&quot;,&quot;SubsPlus%+&quot;})
 profile-restore=copy
 deband=yes</code></pre>
 </doc-codeblock></div>
