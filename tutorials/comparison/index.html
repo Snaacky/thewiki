@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759095856999">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759098619207">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.759095856999" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.759098619207" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759095856999" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759098619207" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759095856999" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759095856999" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759098619207" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759098619207" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -314,6 +314,7 @@ pip install vskernels --no-cache-dir -U</code></pre>
 </div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">## Dependencies: Allows vspreview to run (required; do not remove)
+import vstools
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
@@ -633,10 +634,15 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)</code></pre>
 </doc-anchor-target>
 <p>Adjusts the gamma level of the video. <em>This should only be used to fix the QuickTime gamma bug or similar where one source will appear much brighter than the rest.</em></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
-clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
-clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
-clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)</code></pre>
+<pre class="language-python"><code v-pre class="language-python"># Convert the clips to 32bit [Required for gamma fix]
+clip1 = vstools.depth(clip1, 32)
+clip2 = vstools.depth(clip2, 32)
+clip3 = vstools.depth(clip3, 32)
+
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
+clip1 = core.std.Levels(clip1, gamma=0.88, planes=0)
+clip2 = core.std.Levels(clip2, gamma=0.88, planes=0)
+clip3 = core.std.Levels(clip3, gamma=0.88, planes=0)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="matrix">
     <h4>
@@ -726,6 +732,7 @@ clip1 = core.std.SetFrameProp(clip1, prop=&quot;_ColorRange&quot;, intval=1)</co
 </div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">## Dependencies: Allows vspreview to run (required; do not remove)
+import vstools
 import vapoursynth as vs
 from vapoursynth import core
 from awsmfunc import FrameInfo
@@ -811,10 +818,15 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 ##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16, range=0)
 ##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16, range=1)
 
-## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [16-bit required]
-##clip1 = core.std.Levels(clip1, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
-##clip2 = core.std.Levels(clip2, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
-##clip3 = core.std.Levels(clip3, gamma=0.88, min_in=4096, max_in=60160, min_out=4096, max_out=60160, planes=0)
+# Convert the clips to 32bit [Required for gamma fix]
+##clip1 = vstools.depth(clip1, 32)
+##clip2 = vstools.depth(clip2, 32)
+##clip3 = vstools.depth(clip3, 32)
+
+## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
+##clip1 = core.std.Levels(clip1, gamma=0.88, planes=0)
+##clip2 = core.std.Levels(clip2, gamma=0.88, planes=0)
+##clip3 = core.std.Levels(clip3, gamma=0.88, planes=0)
 
 ## Matrix: Repairs sources with incorrect/missing metadata; typically used for 4K SDR and upscaled/downscaled content (colors will be off, particularly reds, greens, and blues)
 ##clip1 = core.std.SetFrameProp(clip1, prop=&quot;_Matrix&quot;, intval=1)
