@@ -781,7 +781,7 @@ By default, all frames are stored within your working directory unless manually 
 
 ### VSPreview
 
-==- Recommended source naming
+==- :icon-project-roadmap: Recommended source naming
 
 You can name your sources in any way you'd like. However, we recommend naming your sources in a way that makes it easy to understand:
 
@@ -797,7 +797,7 @@ Key                                                        | Meaning
 
 How you should name your sources will depend on the content you're comparing. For example, if you are trying to compare HDR and SDR sources, you should include the type in the source name. *Generally, the first three will cover most comparisons you make, but you are free to include more as needed.*
 
-==- Change frame increment
+==- :icon-versions: Change frame increment
 
 - In VSPreview, navigate to the bottom bar and toggle the *Playback* section
 - In *Playback*, set the number of frames to skip (*n*) when scrubbing by adjusting the first field:
@@ -806,7 +806,7 @@ How you should name your sources will depend on the content you're comparing. Fo
 
 - To skip *n* frames backward/forward, press `Shift` + `Left arrow`/`Right arrow`
 
-==- Changing the screenshot key
+==- :icon-file-media: Changing the screenshot key
 
 The following guide changes the screenshot key from `Shift` + `S` to `Enter`:
 
@@ -829,7 +829,7 @@ The following guide changes the screenshot key from `Shift` + `S` to `Enter`:
         )
   ```
 
-==- Swap binds for seeking frames
+==- :icon-copy: Swap binds for seeking frames
 
 The following guide switches the binds for `Left arrow`/`Right arrow` and `Shift` + `Left arrow`/`Shift` + `Right arrow`:
 
@@ -896,7 +896,7 @@ If you plan on uploading to [Slowpoke Pics](https://slow.pics) (slow.pics) under
 The following scripts are best used with [manual comparisons](#manual).
 !!!
 
-==- Compressing
+==- :icon-file-zip: Compressing
 
 Compresses all `.png` image files in the current directory with Oxipng compression (level 1). Runs fast (typically less than a minute to iterate over hundreds of images).
 
@@ -926,7 +926,7 @@ for process in processes:
     process.wait()
 ```
 
-==- Padding
+==- :icon-file-media: Padding
 
 Zero pads frame numbers on images in the current directory and removes extraneous data from file names. *This allows for automatic numerical sorting on [Slowpoke Pics](#slowpoke-pics) and filling of comparison names based on `comp.py`.*
 
@@ -949,7 +949,7 @@ def zero_pad_and_clean_file_names():
 zero_pad_and_clean_file_names()
 ```
 
-==- Uploading to ptpimg
+==- :icon-upload: Uploading to ptpimg
 
 Uploads all `.png` image files in the current directory to [ptpimg](https://ptpimg.me). *Requires your ptpimg API key in `%USERPROFILE%\.ptpimg.key`.*
 
