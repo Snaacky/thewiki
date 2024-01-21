@@ -148,6 +148,7 @@ set_output(clip2, name=source2)
 set_output(clip3, name=source3)
 ```
 
+{.compact}
 Section             | Description
 --------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Dependencies**    | Dependencies required to create comparisons in VSPreview
@@ -236,7 +237,7 @@ Downscales or upscales the video. *This should be used to match sources that hav
   ```
 
 !!!warning
-Downscaling is generally not recommended. We suggest upscaling your sources to match the highest resolution unless you have a specific reason (e.g. comparing how a higher resolution file would compare on a lower resolution display).  
+Downscaling is generally not recommended. We suggest upscaling your sources to match the highest resolution unless you have a specific reason (e.g. comparing how a higher resolution file would look on a lower resolution display).  
 !!!
 
 #### Trimming
@@ -318,6 +319,7 @@ Sets the color gamut to fix the colors of your sources. This is most commonly us
 
 Generally:
 
+{.compact}
 Type                    | Gamut       | Parameter
 ------------------------|-------------|-------------
 SDR: BD/WEB (720p - 4K) | BT.709      | `intval=1`

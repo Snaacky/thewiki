@@ -7,7 +7,9 @@ order: -2
 
 Public trackers are BitTorrent trackers that allow anyone to access and download torrents without requiring user registration, unlike [private trackers](/sourcing/private-trackers).
 
-If you're new to torrenting, see the [torrenting guide](/getting-started/torrenting) on how to get started.
+!!!
+New to torrenting? See the [torrenting guide](/getting-started/torrenting) on how to get started.
+!!!
 
 !!!warning
 We suggest you use a reliable content blocker such as [uBlock Origin](https://ublockorigin.com).
