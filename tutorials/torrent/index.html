@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759306685705">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759307245452">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.759306685705" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.759307245452" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759306685705" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759307245452" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759306685705" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759306685705" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759307245452" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759307245452" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -287,7 +287,7 @@ udp://exodus.desync.com:6969/announce</code></pre>
 <template #title>Windows</template>
 <doc-panels>
    <doc-panel id="torrent-for-a-single-file-directory" collapsed>
-       <template #title>Torrent for a single file/directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Torrent for a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -300,7 +300,7 @@ udp://exodus.desync.com:6969/announce ^
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-subdirectory" collapsed>
-       <template #title>Torrent for each subdirectory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971a1.75 1.75 0 0 1 1.447.765l1.404 2.063a.25.25 0 0 0 .207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H4.75a.75.75 0 0 1 0-1.5h15.5a.25.25 0 0 0 .25-.25V7.688a.25.25 0 0 0-.25-.25h-8.471a1.751 1.751 0 0 1-1.447-.766L8.928 4.609a.252.252 0 0 0-.207-.109H3.75a.25.25 0 0 0-.25.25v3.5a.75.75 0 0 1-1.5 0v-3.5Z"/><path d="m9.308 12.5-2.104-2.236a.75.75 0 1 1 1.092-1.028l3.294 3.5a.75.75 0 0 1 0 1.028l-3.294 3.5a.75.75 0 1 1-1.092-1.028L9.308 14H4.09a2.59 2.59 0 0 0-2.59 2.59v3.16a.75.75 0 0 1-1.5 0v-3.16a4.09 4.09 0 0 1 4.09-4.09h5.218Z"/></g></g></svg> Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for /d %X in (*) do torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -313,7 +313,7 @@ udp://exodus.desync.com:6969/announce ^
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
-       <template #title>Torrent for each file in a directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063c.046.069.124.11.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H3.75A1.75 1.75 0 0 1 2 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V7.687a.25.25 0 0 0-.25-.25h-8.471a1.75 1.75 0 0 1-1.447-.765L8.928 4.61a.252.252 0 0 0-.208-.11Z"/></g></g></svg> Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do torf --max-piece-size 16 ^
 -t http://nyaa.tracker.wf:7777/announce,^
@@ -331,7 +331,7 @@ udp://exodus.desync.com:6969/announce ^
 <template #title>Linux</template>
 <doc-panels>
    <doc-panel id="torrent-for-a-single-file-directory" collapsed>
-       <template #title>Torrent for a single file/directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Torrent for a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">torf --max-piece-size 16 \
 -t http://nyaa.tracker.wf:7777/announce,\
@@ -344,7 +344,7 @@ udp://exodus.desync.com:6969/announce \
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-subdirectory" collapsed>
-       <template #title>Torrent for each subdirectory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971a1.75 1.75 0 0 1 1.447.765l1.404 2.063a.25.25 0 0 0 .207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H4.75a.75.75 0 0 1 0-1.5h15.5a.25.25 0 0 0 .25-.25V7.688a.25.25 0 0 0-.25-.25h-8.471a1.751 1.751 0 0 1-1.447-.766L8.928 4.609a.252.252 0 0 0-.207-.109H3.75a.25.25 0 0 0-.25.25v3.5a.75.75 0 0 1-1.5 0v-3.5Z"/><path d="m9.308 12.5-2.104-2.236a.75.75 0 1 1 1.092-1.028l3.294 3.5a.75.75 0 0 1 0 1.028l-3.294 3.5a.75.75 0 1 1-1.092-1.028L9.308 14H4.09a2.59 2.59 0 0 0-2.59 2.59v3.16a.75.75 0 0 1-1.5 0v-3.16a4.09 4.09 0 0 1 4.09-4.09h5.218Z"/></g></g></svg> Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do torf --max-piece-size 16 \
 -t http://nyaa.tracker.wf:7777/announce,\
@@ -357,7 +357,7 @@ udp://exodus.desync.com:6969/announce \
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
-       <template #title>Torrent for each file in a directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063c.046.069.124.11.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H3.75A1.75 1.75 0 0 1 2 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V7.687a.25.25 0 0 0-.25-.25h-8.471a1.75 1.75 0 0 1-1.447-.765L8.928 4.61a.252.252 0 0 0-.208-.11Z"/></g></g></svg> Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do torf --max-piece-size 16 \
 -t http://nyaa.tracker.wf:7777/announce,\
@@ -393,7 +393,7 @@ udp://exodus.desync.com:6969/announce \
 </doc-anchor-target>
 <p><a href="https://github.com/kz26/dottorrent-gui">dottorrent-gui</a> is a Windows GUI application for creating torrents.</p>
 <doc-panel id="torrent-for-a-single-file-directory" collapsed>
-    <template #title>Torrent for a single file/directory</template>
+    <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Torrent for a single file/directory</template>
 <ul>
 <li>In dottorrent-gui, select the file type under <strong>Input path</strong> and locate the file/directory of your torrent. <em>Alternatively, you may drag-and-drop the desired file/directory into the box</em></li>
 <li>Add your tracker URLs under <strong>Seeding</strong>. <em>There should be one <doc-anchor-trigger to="#trackers">tracker URL</doc-anchor-trigger> per line</em></li>
@@ -442,7 +442,7 @@ udp://exodus.desync.com:6969/announce \
 </div>
 <doc-panels>
    <doc-panel id="torrent-for-a-single-file-directory" collapsed>
-       <template #title>Torrent for a single file/directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Torrent for a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">mktorrent -v -l 24 \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -455,7 +455,7 @@ udp://exodus.desync.com:6969/announce \
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-subdirectory" collapsed>
-       <template #title>Torrent for each subdirectory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971a1.75 1.75 0 0 1 1.447.765l1.404 2.063a.25.25 0 0 0 .207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H4.75a.75.75 0 0 1 0-1.5h15.5a.25.25 0 0 0 .25-.25V7.688a.25.25 0 0 0-.25-.25h-8.471a1.751 1.751 0 0 1-1.447-.766L8.928 4.609a.252.252 0 0 0-.207-.109H3.75a.25.25 0 0 0-.25.25v3.5a.75.75 0 0 1-1.5 0v-3.5Z"/><path d="m9.308 12.5-2.104-2.236a.75.75 0 1 1 1.092-1.028l3.294 3.5a.75.75 0 0 1 0 1.028l-3.294 3.5a.75.75 0 1 1-1.092-1.028L9.308 14H4.09a2.59 2.59 0 0 0-2.59 2.59v3.16a.75.75 0 0 1-1.5 0v-3.16a4.09 4.09 0 0 1 4.09-4.09h5.218Z"/></g></g></svg> Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do mktorrent -v -l 24 \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -468,7 +468,7 @@ udp://exodus.desync.com:6969/announce \
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
-       <template #title>Torrent for each file in a directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063c.046.069.124.11.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H3.75A1.75 1.75 0 0 1 2 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V7.687a.25.25 0 0 0-.25-.25h-8.471a1.75 1.75 0 0 1-1.447-.765L8.928 4.61a.252.252 0 0 0-.208-.11Z"/></g></g></svg> Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do mktorrent -v -l 24 \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -489,7 +489,7 @@ udp://exodus.desync.com:6969/announce \
 </doc-anchor-target>
 <p><a href="https://www.qbittorrent.org">qBittorrent</a> is a cross-platform GUI <a href="../../getting-started/torrenting/#torrent-client">torrent client</a> which can also create torrents.</p>
 <doc-panel id="torrent-for-a-single-file-directory" collapsed>
-    <template #title>Torrent for a single file/directory</template>
+    <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Torrent for a single file/directory</template>
 <ul>
 <li>In qBittorrent, go to the top bar and click on <strong>Tools</strong> -&gt; <strong>Torrent Creator</strong></li>
 <li>Under <strong>Select file/folder to share</strong> -&gt; <strong>Path</strong>, paste in the file/directory location of your torrent. <em>Alternatively, you can search for it using the <strong>Select file</strong>/<strong>Select folder</strong> buttons or dragging them into the <strong>[Drag and drop area]</strong></em></li>
@@ -550,7 +550,7 @@ udp://exodus.desync.com:6969/announce \
 <template #title>Windows</template>
 <doc-panels>
    <doc-panel id="torrent-of-a-single-file-directory" collapsed>
-       <template #title>Torrent of a single file/directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Torrent of a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -563,7 +563,7 @@ udp://exodus.desync.com:6969/announce ^
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-subdirectory" collapsed>
-       <template #title>Torrent for each subdirectory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971a1.75 1.75 0 0 1 1.447.765l1.404 2.063a.25.25 0 0 0 .207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H4.75a.75.75 0 0 1 0-1.5h15.5a.25.25 0 0 0 .25-.25V7.688a.25.25 0 0 0-.25-.25h-8.471a1.751 1.751 0 0 1-1.447-.766L8.928 4.609a.252.252 0 0 0-.207-.109H3.75a.25.25 0 0 0-.25.25v3.5a.75.75 0 0 1-1.5 0v-3.5Z"/><path d="m9.308 12.5-2.104-2.236a.75.75 0 1 1 1.092-1.028l3.294 3.5a.75.75 0 0 1 0 1.028l-3.294 3.5a.75.75 0 1 1-1.092-1.028L9.308 14H4.09a2.59 2.59 0 0 0-2.59 2.59v3.16a.75.75 0 0 1-1.5 0v-3.16a4.09 4.09 0 0 1 4.09-4.09h5.218Z"/></g></g></svg> Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for /d %X in (*) do torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -576,7 +576,7 @@ udp://exodus.desync.com:6969/announce ^
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
-       <template #title>Torrent for each file in a directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063c.046.069.124.11.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H3.75A1.75 1.75 0 0 1 2 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V7.687a.25.25 0 0 0-.25-.25h-8.471a1.75 1.75 0 0 1-1.447-.765L8.928 4.61a.252.252 0 0 0-.208-.11Z"/></g></g></svg> Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
@@ -594,7 +594,7 @@ udp://exodus.desync.com:6969/announce ^
 <template #title>Linux</template>
 <doc-panels>
    <doc-panel id="torrent-of-a-single-file-directory" collapsed>
-       <template #title>Torrent of a single file/directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3 3a2 2 0 0 1 2-2h9.982a2 2 0 0 1 1.414.586l4.018 4.018A2 2 0 0 1 21 7.018V21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v18a.5.5 0 0 0 .5.5h14a.5.5 0 0 0 .5-.5V8.5h-4a2 2 0 0 1-2-2v-4Zm10 0v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0-.146-.336l-4.018-4.018A.5.5 0 0 0 15 2.5Z"/></g></g></svg> Torrent of a single file/directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -607,7 +607,7 @@ udp://exodus.desync.com:6969/announce \
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-subdirectory" collapsed>
-       <template #title>Torrent for each subdirectory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971a1.75 1.75 0 0 1 1.447.765l1.404 2.063a.25.25 0 0 0 .207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H4.75a.75.75 0 0 1 0-1.5h15.5a.25.25 0 0 0 .25-.25V7.688a.25.25 0 0 0-.25-.25h-8.471a1.751 1.751 0 0 1-1.447-.766L8.928 4.609a.252.252 0 0 0-.207-.109H3.75a.25.25 0 0 0-.25.25v3.5a.75.75 0 0 1-1.5 0v-3.5Z"/><path d="m9.308 12.5-2.104-2.236a.75.75 0 1 1 1.092-1.028l3.294 3.5a.75.75 0 0 1 0 1.028l-3.294 3.5a.75.75 0 1 1-1.092-1.028L9.308 14H4.09a2.59 2.59 0 0 0-2.59 2.59v3.16a.75.75 0 0 1-1.5 0v-3.16a4.09 4.09 0 0 1 4.09-4.09h5.218Z"/></g></g></svg> Torrent for each subdirectory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for dir in ./*/; do torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
@@ -620,7 +620,7 @@ udp://exodus.desync.com:6969/announce \
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="torrent-for-each-file-in-a-directory" collapsed>
-       <template #title>Torrent for each file in a directory</template>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063c.046.069.124.11.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H3.75A1.75 1.75 0 0 1 2 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V7.687a.25.25 0 0 0-.25-.25h-8.471a1.75 1.75 0 0 1-1.447-.765L8.928 4.61a.252.252 0 0 0-.208-.11Z"/></g></g></svg> Torrent for each file in a directory</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">for file in *.mkv; do torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \

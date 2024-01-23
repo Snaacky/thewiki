@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759306685705">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759307245452">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.759306685705" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.759307245452" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759306685705" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759307245452" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759306685705" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759307245452" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -165,7 +165,7 @@
 </doc-anchor-target>
 <doc-tabs>
 <doc-tab v-cloak id="pc">
-<template #title>PC <span class="docs-emoji">&#x1F5A5;&#xFE0F;</span></template>
+<template #title><span class="docs-emoji">&#x1F5A5;&#xFE0F;</span> PC</template>
 <ul>
 <li><a href="https://mpv.io/installation/">mpv</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span class="docs-emoji mr-2">&#x2764;&#xFE0F;</span>
@@ -182,21 +182,21 @@
 </ul>
 </doc-tab>
 <doc-tab v-cloak id="android">
-<template #title>Android <span class="docs-emoji">&#x1F916;</span></template>
+<template #title><span class="docs-emoji">&#x1F916;</span> Android</template>
 <ul>
 <li><a href="https://play.google.com/store/apps/details?id=is.xyz.mpv">mpv-android</a></li>
 <li><a href="https://play.google.com/store/apps/details?id=org.videolan.vlc">VLC for Android</a></li>
 </ul>
 </doc-tab>
 <doc-tab v-cloak id="ios">
-<template #title>iOS <span class="docs-emoji">&#x1F34F;</span></template>
+<template #title><span class="docs-emoji">&#x1F34F;</span> iOS</template>
 <ul>
 <li><a href="https://apps.apple.com/app/outplayer/id1449923287">Outplayer</a></li>
 <li><a href="https://apps.apple.com/app/vlc-media-player/id650377962">VLC media player</a></li>
 </ul>
 </doc-tab>
 <doc-tab v-cloak id="tv-media-servers">
-<template #title>TV/Media Servers <span class="docs-emoji">&#x1F4FA;</span></template>
+<template #title><span class="docs-emoji">&#x1F4FA;</span> TV/Media Servers</template>
 <ul>
 <li><a href="https://kodi.tv">Kodi</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span class="docs-emoji mr-2">&#x2764;&#xFE0F;</span>
@@ -237,7 +237,7 @@
         <span>Media Servers</span>
     </h2>
 </doc-anchor-target>
-<p>The setup consists of two parts: the <strong>server</strong> and the <strong>client</strong>. <em>Both may be installed on the same system, but they are separate applications.</em></p>
+<p>The setup consists of two parts: the <strong>server</strong> and the <strong>client</strong>. <em>Both may be installed on the same system, but they are separate applications:</em></p>
 <ul>
 <li>The <strong>client</strong> is a media player that will access the content stored on the server</li>
 <li>The <strong>server</strong> runs on the device which hosts your content</li>
@@ -360,7 +360,7 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>We do not recommend detail enhancement, noise reduction, or sharpening filters, as it will negatively affect the quality of your content.</p>
+<p>We do not recommend using detail enhancement, noise reduction, or sharpening filters, as it can negatively affect the quality of your content.</p>
         </div>
     </div>
 </div>
@@ -374,24 +374,39 @@
 <p>Most modern anime will play close to 24 fps (24000/1001 fps). However, most displays often run at refresh rates that do not match this frame rate, leading to an effect known as <strong>judder</strong>.</p>
 <p>Judder is most commonly seen with devices that have 60Hz displays, <em>as the refresh rate is not an integer multiple of the content frame rate.</em></p>
 <doc-panel id="explaining-judder" collapsed>
-    <template #title>Explaining Judder</template>
+    <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Explaining judder</template>
 <p>A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to play a video or game locked at:</p>
 <ul>
 <li>60 fps: 1 frame is shown for <em>every 1 refresh</em> (next frame in 16.67 ms)</li>
 <li>30 fps: 1 frame is shown for <em>every 2 refreshes</em> (next frame in 33.33 ms)</li>
 <li>15 fps: 1 frame is shown for <em>every 4 refreshes</em> (next frame in 66.67 ms)</li>
 </ul>
-<p>These frame rates work because they divide evenly into the monitor&#x27;s 60Hz refresh rate. With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.</p>
-<p>When content plays at exactly 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). <em>However, refreshes cannot be divided, and you cannot have &quot;part&quot; of a refresh show on your monitor without screen tearing.</em></p>
-<p>Instead, your monitor will try to refresh 2.5 times like this:</p>
+<p><figure class="content-center">
+    <img src="../../static/playback/smooth_playback.png" alt="Perfect frame rates">
+    <figcaption class="caption">Perfect frame rates</figcaption>
+</figure>
+</p>
+<p>These frame rates work because they divide evenly into the monitor&#x27;s 60Hz refresh rate. Every frame shows for the same amount of time; the next frame in a 60 fps video <em>always</em> appears 16.67 ms later than the first on a 60Hz monitor.</p>
+<p>When content plays at exactly 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps):</p>
+<p><figure class="content-center">
+    <img src="../../static/playback/smooth_playback_2.png" alt="Imperfect frame rate">
+    <figcaption class="caption">Imperfect frame rate</figcaption>
+</figure>
+</p>
+<p>However, refreshes cannot be divided. A single refresh is limited to a single frame, therefore, you cannot have half of a frame in a single refresh. Instead, your monitor will try to refresh 2.5 times like this:</p>
 <ul>
 <li>Frame 1 is shown for <em>2 refreshes</em> (next frame in 33.33 ms)</li>
 <li>Frame 2 is shown for <em>3 refreshes</em> (next frame in 50 ms)</li>
 <li>Frame 3 is shown for <em>2 refreshes</em> (next frame in 33.33 ms)</li>
 <li>Frame 4 is shown for <em>3 refreshes</em> (next frame in 50 ms)</li>
 </ul>
+<p><figure class="content-center">
+    <img src="../../static/playback/smooth_playback_3.png" alt="Frame rate compensation">
+    <figcaption class="caption">Frame rate compensation</figcaption>
+</figure>
+</p>
 <p>Every odd frame appears for <em>2 refreshes</em>, and every even frame appears for <em>3 refreshes</em>.</p>
-<p>This process is repeated for the entire video. Because each frame is displayed for a different number of refreshes, plus the time between changing frames is not the same, <em>it leads to motion appearing stuttery or laggy. This is especially noticeable during panning scenes.</em></p>
+<p>This process is repeated for the entire video. Because each frame is displayed for a different number of refreshes (i.e. the time between changing frames is not the same), <em>it leads to motion appearing stuttery or laggy. This is especially noticeable during panning scenes.</em></p>
 </doc-panel>
 <p>To avoid judder, it is best to try and match your display&#x27;s refresh rate with the content frame rate via the following methods:</p>
 <doc-tabs>
