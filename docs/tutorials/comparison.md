@@ -123,11 +123,6 @@ source1 = "FirstSourceName"
 source2 = "SecondSourceName"
 source3 = "ThirdSourceName"
 
-## Depth: Convert clip to 16-bit 4:4:4 for greater precision
-clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
-clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
-clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
-
 ## <Additional comp settings>
 ## Place any additional settings you want to use in your comp here
 ## <End of additional comp settings>
@@ -208,6 +203,12 @@ Make sure to check for variable aspect ratios throughout the file and only crop 
 !!!
 
 ```py
+## Depth: Convert clip to 16-bit 4:4:4 for cropping odd numbers
+## This not required if you're only cropping even numbers
+clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
+clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
+clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
+
 ## Cropping: Removes letterboxing (black bars) [16-bit required for odd numbers]
 clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
 clip2 = core.std.Crop(clip2, left=0, right=0, top=276, bottom=276)
@@ -267,6 +268,12 @@ Converts the dynamic range of the source (i.e. HDR/DV -> SDR).
 - For converting DV (green/purple hue) -> SDR, set `source_colorspace=csp.DOVI`
 
 ```py
+## Depth: Convert clip to 16-bit 4:4:4 for vs-placebo tonemapping
+## This is required because vs-placebo v1.4.4 requires a YUV clip
+clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
+clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
+clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
+
 ## Tonemapping: Converts the dynamic range of the source [16-bit required]
 ## Specify the arguments based on your sources; ideally play around with different values when comparing against an SDR source to best match it
 clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
@@ -336,7 +343,7 @@ clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
 If you are unable to correct the source's colors with the initial matrix command, the source is likely flawed rather than an issue with the metadata. If this is the case, you should use the filters below:
 
 ```py
-## Correct matrix: If the colors cannot be corrected with the initial matrix command [16-bit required]
+## Correct matrix: If the colors cannot be corrected with the initial matrix command
 clip1 = core.resize.Point(clip1, matrix=5)
 clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
 clip2 = core.resize.Point(clip2, matrix=6)
