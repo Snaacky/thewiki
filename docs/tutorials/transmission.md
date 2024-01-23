@@ -10,21 +10,21 @@ image: https://user-images.githubusercontent.com/78981416/232306009-f06499dc-634
 
 ## Installation
 
-+++ Windows
++++ 🖥️ Windows
 
 1. Download the latest `.msi` version of [Transmission](https://transmissionbt.com/download)
 2. Run the installer and follow the on-screen instructions to complete installation
 
 ![Transmission download page](https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png)
 
-+++ macOS
++++ 🍎 macOS
 
 1. Download the latest `.dmg` version of [Transmission](https://transmissionbt.com/download)
 2. Run the installer and follow the on-screen instructions to complete installation
 
 ![Transmission download page](https://user-images.githubusercontent.com/78981416/232301133-868bcb3d-a26b-447a-aeea-5bb96eb8c50a.png)
 
-+++ Linux
++++ 🐧 Linux
 
 1. Download the latest `.tar.xz` version of [Transmission](https://transmissionbt.com/download)
 2. Run the installer and follow the on-screen instructions to complete installation

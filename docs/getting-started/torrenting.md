@@ -11,7 +11,7 @@ Torrenting is a peer-to-peer file-sharing method that facilitates the distributi
 
 Unlike traditional file downloads, where files are obtained from a single source, torrenting leverages the collective resources of numerous participants, known as peers. This collaborative process enhances download speeds and reduces strain on individual servers, providing an efficient and resilient method for file transferring. A [torrent client](#torrent-client) allows you to connect with these peers and download the file in small fragments, which are put together to create the final result.
 
-==- Understanding the Terminology
+==- :icon-info: Understanding the terminology
 
 Term               | Definition
 -------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ Torrents are shared using `.torrent` files or magnet links, which contain the ne
 
 `.torrent` files can be added to your torrent client by opening it or browsing for the file manually. Magnet links can be opened in your browser, where it will prompt you to choose the torrent client to be opened with. Alternatively, you can paste this magnet link into your client.
 
-==- Video example
+==- :icon-video: Video example
 
 [!embed text="Launching a torrent file with qBittorrent"](/static/torrenting/getting-torrents-file.mp4)
 
@@ -94,7 +94,7 @@ Situation                                                                       
 ²The seeder needs to wait until the next tracker update in order to see the new peer.
 !!!
 
-==- Enabling port forwarding
+==- :icon-git-merge: Enabling port forwarding
 
 By default, most torrent clients automatically try to forward the current port via UPnP. You can test if this is working by using a port checker such as [CanYouSeeMe.org](https://canyouseeme.org) and entering the port.
 

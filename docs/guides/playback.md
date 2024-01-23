@@ -9,23 +9,23 @@ image: /static/tohsaka.gif
 
 ## Media Players
 
-+++ PC :desktop_computer:
++++ :desktop_computer: PC
 
 - [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases) [!badge icon="link-external" variant="info" text="madVR Guide"](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
 - [Potplayer](https://potplayer.daum.net)
 
-+++ Android :robot_face:
++++ :robot_face: Android
 
 - [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
 
-+++ iOS :green_apple:
++++ :green_apple: iOS
 
 - [Outplayer](https://apps.apple.com/app/outplayer/id1449923287)
 - [VLC media player](https://apps.apple.com/app/vlc-media-player/id650377962)
 
-+++ TV/Media Servers :tv:
++++ :tv: TV/Media Servers
 
 - [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="link-external" variant="info" text="Available on LibreELEC OS"](https://libreelec.tv)
 - [Plex](https://www.plex.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
@@ -41,7 +41,7 @@ VLC is not recommended as it introduces visual artifacts, displays wrong colors,
 
 ## Media Servers
 
-The setup consists of two parts: the **server** and the **client**. *Both may be installed on the same system, but they are separate applications.*
+The setup consists of two parts: the **server** and the **client**. *Both may be installed on the same system, but they are separate applications:*
 
 - The **client** is a media player that will access the content stored on the server
 - The **server** runs on the device which hosts your content
@@ -115,7 +115,7 @@ Filters act as a temporary fix to amend issues that may appear when watching ani
 Debanding is the most commonly used filter, which helps to fix issues with [color banding](/tutorials/mpv/#debanding) in your video.
 
 !!!warning
-We do not recommend detail enhancement, noise reduction, or sharpening filters, as it will negatively affect the quality of your content.
+We do not recommend using detail enhancement, noise reduction, or sharpening filters, as it can negatively affect the quality of your content.
 !!!
 
 *See the [quality guide](/guides/quality) for more information.*
@@ -126,27 +126,33 @@ Most modern anime will play close to 24 fps (24000/1001 fps). However, most disp
 
 Judder is most commonly seen with devices that have 60Hz displays, *as the refresh rate is not an integer multiple of the content frame rate.*
 
-==- Explaining Judder
+==- :icon-info: Explaining judder
 A 60Hz monitor can refresh up to 60 frames every second. Thus, if you were to play a video or game locked at:
 
 - 60 fps: 1 frame is shown for *every 1 refresh* (next frame in 16.67 ms)
 - 30 fps: 1 frame is shown for *every 2 refreshes* (next frame in 33.33 ms)
 - 15 fps: 1 frame is shown for *every 4 refreshes* (next frame in 66.67 ms)
 
-These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. With 60 fps video, for instance, each frame is shown per refresh on a 60Hz monitor, with the next frame always appearing 16.67 ms later than the first.
+![Perfect frame rates](/static/playback/smooth_playback.png)
 
-When content plays at exactly 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps). *However, refreshes cannot be divided, and you cannot have "part" of a refresh show on your monitor without screen tearing.*
+These frame rates work because they divide evenly into the monitor's 60Hz refresh rate. Every frame shows for the same amount of time; the next frame in a 60 fps video *always* appears 16.67 ms later than the first on a 60Hz monitor.
 
-Instead, your monitor will try to refresh 2.5 times like this:
+When content plays at exactly 24 fps, your monitor will need to show 1 frame for every 2.5 refreshes (60Hz divided by 24 fps):
+
+![Imperfect frame rate](/static/playback/smooth_playback_2.png)
+
+However, refreshes cannot be divided. A single refresh is limited to a single frame, therefore, you cannot have half of a frame in a single refresh. Instead, your monitor will try to refresh 2.5 times like this:
 
 - Frame 1 is shown for *2 refreshes* (next frame in 33.33 ms)
 - Frame 2 is shown for *3 refreshes* (next frame in 50 ms)
 - Frame 3 is shown for *2 refreshes* (next frame in 33.33 ms)
 - Frame 4 is shown for *3 refreshes* (next frame in 50 ms)
 
+![Frame rate compensation](/static/playback/smooth_playback_3.png)
+
 Every odd frame appears for *2 refreshes*, and every even frame appears for *3 refreshes*.
 
-This process is repeated for the entire video. Because each frame is displayed for a different number of refreshes, plus the time between changing frames is not the same, *it leads to motion appearing stuttery or laggy. This is especially noticeable during panning scenes.*
+This process is repeated for the entire video. Because each frame is displayed for a different number of refreshes (i.e. the time between changing frames is not the same), *it leads to motion appearing stuttery or laggy. This is especially noticeable during panning scenes.*
 
 ===
 

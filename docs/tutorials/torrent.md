@@ -63,7 +63,7 @@ There are several tools you can use to make a torrent:
 
 +++ Windows
 
-==- Torrent for a single file/directory
+==- :icon-file: Torrent for a single file/directory
 
 ```batch
 torf --max-piece-size 16 ^
@@ -76,7 +76,7 @@ udp://exodus.desync.com:6969/announce ^
 "D:\path\to\root\directory"
 ```
 
-==- Torrent for each subdirectory
+==- :icon-file-directory-symlink: Torrent for each subdirectory
 
 ```batch
 for /d %X in (*) do torf --max-piece-size 16 ^
@@ -89,7 +89,7 @@ udp://exodus.desync.com:6969/announce ^
 "%X"
 ```
 
-==- Torrent for each file in a directory
+==- :icon-file-directory: Torrent for each file in a directory
 
 ```batch
 for %X in (*.mkv) do torf --max-piece-size 16 ^
@@ -106,7 +106,7 @@ udp://exodus.desync.com:6969/announce ^
 
 +++ Linux
 
-==- Torrent for a single file/directory
+==- :icon-file: Torrent for a single file/directory
 
 ```shell
 torf --max-piece-size 16 \
@@ -119,7 +119,7 @@ udp://exodus.desync.com:6969/announce \
 "New Folder"
 ```
 
-==- Torrent for each subdirectory
+==- :icon-file-directory-symlink: Torrent for each subdirectory
 
 ```shell
 for dir in ./*/; do torf --max-piece-size 16 \
@@ -132,7 +132,7 @@ udp://exodus.desync.com:6969/announce \
 "$dir"; done
 ```
 
-==- Torrent for each file in a directory
+==- :icon-file-directory: Torrent for each file in a directory
 
 ```shell
 for file in *.mkv; do torf --max-piece-size 16 \
@@ -167,7 +167,7 @@ By default, torf-cli heavily biases 8 MiB piece size in situations where 16 MiB 
 
 [dottorrent-gui](https://github.com/kz26/dottorrent-gui) is a Windows GUI application for creating torrents.
 
-==- Torrent for a single file/directory
+==- :icon-file: Torrent for a single file/directory
 
 - In dottorrent-gui, select the file type under **Input path** and locate the file/directory of your torrent. *Alternatively, you may drag-and-drop the desired file/directory into the box*
 - Add your tracker URLs under **Seeding**. *There should be one [tracker URL](#trackers) per line*
@@ -189,7 +189,7 @@ n    | Piece Size
 `23` | 8 MiB
 `24` | 16 MiB
 
-==- Torrent for a single file/directory
+==- :icon-file: Torrent for a single file/directory
 
 ```shell
 mktorrent -v -l 24 \
@@ -202,7 +202,7 @@ mktorrent -v -l 24 \
 "D:\path\to\root\directory"
 ```
 
-==- Torrent for each subdirectory
+==- :icon-file-directory-symlink: Torrent for each subdirectory
 
 ```shell
 for dir in ./*/; do mktorrent -v -l 24 \
@@ -215,7 +215,7 @@ for dir in ./*/; do mktorrent -v -l 24 \
 "$dir"; done
 ```
 
-==- Torrent for each file in a directory
+==- :icon-file-directory: Torrent for each file in a directory
 
 ```shell
 for file in *.mkv; do mktorrent -v -l 24 \
@@ -234,7 +234,7 @@ for file in *.mkv; do mktorrent -v -l 24 \
 
 [qBittorrent](https://www.qbittorrent.org) is a cross-platform GUI [torrent client](/getting-started/torrenting/#torrent-client) which can also create torrents.
 
-==- Torrent for a single file/directory
+==- :icon-file: Torrent for a single file/directory
 
 - In qBittorrent, go to the top bar and click on **Tools** -> **Torrent Creator**
 - Under **Select file/folder to share** -> **Path**, paste in the file/directory location of your torrent. *Alternatively, you can search for it using the **Select file**/**Select folder** buttons or dragging them into the **[Drag and drop area]***
@@ -259,7 +259,7 @@ Line breaks after each [tracker URL](#trackers) are necessary when creating the 
 
 +++ Windows
 
-==- Torrent of a single file/directory
+==- :icon-file: Torrent of a single file/directory
 
 ```batch
 torrenttools create -l 16MiB ^
@@ -272,7 +272,7 @@ udp://exodus.desync.com:6969/announce ^
 "D:\path\to\root\directory"
 ```
 
-==- Torrent for each subdirectory
+==- :icon-file-directory-symlink: Torrent for each subdirectory
 
 ```batch
 for /d %X in (*) do torrenttools create -l 16MiB ^
@@ -285,7 +285,7 @@ udp://exodus.desync.com:6969/announce ^
 "%X"
 ```
 
-==- Torrent for each file in a directory
+==- :icon-file-directory: Torrent for each file in a directory
 
 ```batch
 for %X in (*.mkv) do torrenttools create -l 16MiB ^
@@ -302,7 +302,7 @@ udp://exodus.desync.com:6969/announce ^
 
 +++ Linux
 
-==- Torrent of a single file/directory
+==- :icon-file: Torrent of a single file/directory
 
 ```shell
 torrenttools create -l 16MiB \
@@ -315,7 +315,7 @@ udp://exodus.desync.com:6969/announce \
 "New Folder"
 ```
 
-==- Torrent for each subdirectory
+==- :icon-file-directory-symlink: Torrent for each subdirectory
 
 ```shell
 for dir in ./*/; do torrenttools create -l 16MiB \
@@ -328,7 +328,7 @@ udp://exodus.desync.com:6969/announce \
 "$dir"; done
 ```
 
-==- Torrent for each file in a directory
+==- :icon-file-directory: Torrent for each file in a directory
 
 ```shell
 for file in *.mkv; do torrenttools create -l 16MiB \

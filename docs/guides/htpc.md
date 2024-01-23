@@ -65,9 +65,7 @@ You should also keep your eyes peeled for machines that have a dGPU preinstalled
 
 If it includes a dGPU, you might not need to find one for your HTPC. Check to see beforehand if it can handle the various codecs/video you plan to run on it.
 
-Once you have picked a machine, you can move onto picking a GPU.
-
-We recommend choosing relatively recent, low-powered graphics cards as this will allow you to handle most modern shows without issue. Some examples of popular budget cards are:
+Once you have picked a machine, you can move onto picking a GPU. We recommend choosing relatively recent, low-powered graphics cards as this will allow you to handle most modern shows without issue. Some examples of popular budget cards are:
 
 - AMD Radeon RX 550
 - NVIDIA GT 1030 (GDDR5) [!badge variant="info" text="Preferred for 4K/HDR"]
@@ -80,8 +78,7 @@ The most important factor to consider when choosing a GPU is the video decoder h
 ![An example listing for a NVIDIA GeForce GT 1030 from MSI](/static/htpc/example-nvidia-gpu.png)
 
 !!!warning
-Small form factor machines will require a low-profile GPU and bracket.
-Make sure to double check the height of the card, as passive cooled cards have much bigger heatsinks that may not fit in the case.
+Small form factor machines will require a low-profile GPU and bracket. Make sure to double-check the height of the card prior to installation, as passively-cooled cards tend to use larger heatsinks that may not fit in your case.
 !!!
 
 ==- Systems using an iGPU
@@ -113,7 +110,6 @@ Make sure you install the appropriate graphics driver for your system:
 [!button variant="secondary" icon="download" text="AMD" margin="0 8 0 0"](https://www.amd.com/en/support)
 [!button variant="secondary" icon="download" text="Intel" margin="0 8 0 0"](https://www.intel.com/content/www/us/en/download-center)
 [!button variant="secondary" icon="download" text="NVIDIA"](https://www.nvidia.com/download/index.aspx)
-
 !!!
 
 ### mpv
@@ -184,29 +180,30 @@ Most modern TVs are capable of changing refresh rate to match the frame rate of 
 However this is not default behaviour in Windows, and as such we recommend [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh), a script that automatically accomplishes this.
 
 !!!
-Make sure you set `auto = true` for automatic switching.
+Make sure you set `auto` to `yes` for automatic switching in `changerefresh.conf`.
 !!!
 
-!!!
+!!!warning
 [nircmd](https://www.nirsoft.net/utils/nircmd-x64.zip) is required for [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh). Download and copy `nircmd.exe` to your `Windows` folder (i.e. `C:\Windows`).
 !!!
 
 ### Kodi
 
-[Kodi](https://kodi.tv/download/windows/) is the recommended media navigator for HTPC setups.
+For HTPC setups, we recommend using [Kodi](https://kodi.tv/download/windows/).
 
-We recommend using Kodi to neatly display and easily navigate your library with a remote, while utilising mpv as the external player for actually displaying the content.
+Kodi is a home-theater software which neatly displays your library and allows for easy navigation with a remote, while utilising mpv as the player for playing content.
 
 #### Library
 
-Kodi offers many ways to import your content, with the easiest being the [PlexKodiConnect](https://github.com/croneter/PlexKodiConnect) addon which simply allows you to access your existing Plex library through Kodi.
+Kodi offers many ways to import your content, with the easiest being the [PlexKodiConnect](https://github.com/croneter/PlexKodiConnect) addon, a plugin that allows you to access your existing Plex library through Kodi.
 
-Alternatively you can use network shares like SMB, or even just your HDD if the files are local.
+Alternatively, you can use network shares like SMB or local drives such as an internal/external HDD.
 
 #### mpv External Player Config
 
-After installing Kodi, go to `%appdata%\Kodi\userdata`, make a file called `playercorefactory.xml` and paste the following into it, making sure to add the location of your mpv.exe
-==- playercorefactory.xml
+After installing Kodi, go to `%appdata%\Kodi\userdata`, make a file called `playercorefactory.xml` and paste the following into it, replacing `Path\To\mpv.exe` with the location of your `mpv.exe`:
+
+==- :icon-file-code: `playercorefactory.xml`
 
 ```xml
 <playercorefactory>

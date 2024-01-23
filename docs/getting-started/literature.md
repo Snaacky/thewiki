@@ -80,8 +80,8 @@ Aggregators tend to use compressed and lower quality images as opposed to most d
     ```
     ==-
 
-[Tachidesk](https://github.com/Suwayomi/Tachidesk-Server) [!badge variant="secondary" text="Most Convenient"]
-:   All-in-one manga reader with support for external sources and manga trackers.
+[Suwayomi](https://github.com/Suwayomi/Suwayomi-Server) [!badge variant="secondary" text="Most Convenient"]
+:   All-in-one manga reader server with support for external sources and manga trackers
 
 [CDisplayEx](https://www.cdisplayex.com)
 :   Standalone reader with the [second highest quality scaling](https://slow.pics/c/y737QBlP) on PC
@@ -105,8 +105,15 @@ Aggregators tend to use compressed and lower quality images as opposed to most d
     To get the best quality, set the [Image smooth filter to *Lanczos3*](/static/literature/perfect-viewer-scaling.png).
     !!!
 
-[Tachiyomi](https://tachiyomi.org) [!badge variant="secondary" text="Most Convenient"] [!badge icon="link-external" variant="info" text="Forks"](https://tachiyomi.org/forks)
+[Mihon](https://github.com/mihonapp/mihon) [!badge variant="secondary" text="Most Convenient"]
 :   All-in-one manga reader with support for external sources and manga trackers
+
+[Tachiyomi](https://tachiyomi.org)
+:   All-in-one manga reader with support for external sources and manga trackers
+
+    !!!warning
+    Tachiyomi is no longer in active development. [You can download the last release here.](https://github.com/tachiyomiorg/tachiyomi/releases/latest)
+    !!!
 
     !!!secondary
     We recommend enabling 32-bit color mode to [avoid banding](https://slow.pics/c/eOC7j5nI). This can be found under *Settings* -> *Reader*.

@@ -6,7 +6,7 @@ order: -1
 # Streaming Sites
 
 !!!
-If you're planning to stream content from your computer, we suggest using [Miru](https://github.com/ThaUnknown/miru), an anime streaming application which lets you stream torrents, giving you both the convenience of streaming and quality of torrents.
+If you're planning to stream content from your computer, we suggest using [Miru](https://github.com/ThaUnknown/miru), an application which lets you stream anime torrents, giving you both the convenience of streaming and quality of torrents.
 !!!
 
 !!!warning
@@ -97,25 +97,30 @@ Show                                                      | Sources
 
 There are a multitude of other factors that may affect your decision in picking a site. Here are some brief recommendations based on some factors that aren't covered in [The Index](https://theindex.moe) and are often not taken into account:
 
-==- :icon-device-camera-video: Fansubs and BD Releases
+==- :icon-device-camera-video: Fansubs and BD releases
+
 [Animepahe](https://animepahe.com) is very consistent at picking good BD releases with fansubs.
 
 [AniWave](https://aniwave.to) does this too, *but typically less often and with slightly worse release choice.*
 
-==- :icon-file-directory: File Size
+==- :icon-file-directory: File size
+
 [animepahe](https://animepahe.com) has some of the smallest file sizes compared to other streaming sites.
 
-[AniWave's](https://aniwave.to) are also relatively small when compared to sites like [Anitaku](https://anitaku.to)
+[Anitaku's](https://anitaku.to) are also relatively small when compared to sites like [AniWave](https://aniwave.to).
 
 ==- :icon-apps: Library
+
 [AniWave](https://aniwave.to) and [Anitaku](https://anitaku.to) have some of the largest libraries available.
 
 Additionally, [AniWave](https://aniwave.to) has one of the best libraries when it comes to older and rarer shows.
 
-==- :icon-note: Soft Subtitles
+==- :icon-note: Soft subtitles
+
 [AniWatch](https://aniwatch.to) is one of the only streaming sites that use soft subtitles, with the other alternatives being legal streaming sites.
 
-==- :icon-versions: UI and Features
+==- :icon-versions: UI and features
+
 Users often care about the UI and site features. *As this is completely subjective, we suggest you visit and try out the collection of sites from [The Index](https://theindex.moe) and find what you like best.*
 
 ===
