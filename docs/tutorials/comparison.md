@@ -368,8 +368,8 @@ clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
 The complete `comp.py` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above.
 
-!!!
-Make sure to comment (add `##` to the beginning of the line) and uncomment lines as needed.
+!!!warning
+Do not copy-paste this. This only serves as an example for you to look at. Only copy the relevant things from the above sections for your comparisons.
 !!!
 
 ```py
@@ -475,7 +475,7 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 ##clip2 = core.std.SetFrameProp(clip2, prop="_Matrix", intval=6)
 ##clip3 = core.std.SetFrameProp(clip3, prop="_Matrix", intval=5)
 
-## Correct matrix: If the colors cannot be corrected with the initial matrix command [16-bit required]
+## Correct matrix: If the colors cannot be corrected with the initial matrix command
 ##clip1 = core.resize.Point(clip1, matrix=5)
 ##clip1 = core.std.SetFrameProp(clip1, prop="_Matrix", intval=1)
 ##clip2 = core.resize.Point(clip2, matrix=6)
