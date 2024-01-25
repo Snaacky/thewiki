@@ -19,6 +19,7 @@ image: /static/tohsaka.gif
 
 - [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
+- [Kodi (for hi10 playback)](https://play.google.com/store/apps/details?id=org.xbmc.kodi)
 
 +++ :green_apple: iOS
 
