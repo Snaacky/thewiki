@@ -96,7 +96,7 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 !!!
 
 ```py
-## Dependencies: Allows vspreview to run (required; do not remove)
+## Dependencies: Allows vspreview to run [required; do not remove]
 import vstools
 import vapoursynth as vs
 from vapoursynth import core
@@ -149,7 +149,6 @@ Section             | Description
 **Dependencies**    | Dependencies required to create comparisons in VSPreview
 **File paths**      | The location of your source file
 **Source**          | The name of each source. [We recommend following the naming scheme here.](#recommended-source-naming) *If you plan to use [Slowpoke Pics](#slowpoke-pics), this will be the name that will be displayed in comparisons*
-**Depth**           | Converts the video to 16-bit depth with 4:4:4 chroma subsampling for greater precision. *Required for some filters*
 **FrameInfo**       | Lists the frame number, type, and source name in the top left of the videos
 **FrameProp**       | Sets the source name entered under **Source** for correct labeling on [Slowpoke Pics](#slowpoke-pics)
 **Output**          | Parameter that allows clips to appear in VSPreview
@@ -198,22 +197,20 @@ clip1 = core.vivtc.VDecimate(clip1)
 
 Crops the source video by *n* pixels from the selected side. For example, `left=20` will remove 20 horizontal pixels starting from the left side. *This should be used on sources that use letterboxing or other form of borders.*
 
-!!!
-Make sure to check for variable aspect ratios throughout the file and only crop the smallest border. We recommend using [ShareX](https://getsharex.com) for quickly calculating border size.
+!!!warning
+If you are cropping with odd numbers, you will need to change the color depth to 16-bit (see [Color & contrast](#color-contrast-depth-tonemapping-range-gamma-matrix-drc) -> *Depth*).
 !!!
 
 ```py
-## Depth: Convert clip to 16-bit 4:4:4 for cropping odd numbers
-## This not required if you're only cropping even numbers
-clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
-clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
-clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
-
 ## Cropping: Removes letterboxing (black bars) [16-bit required for odd numbers]
 clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
 clip2 = core.std.Crop(clip2, left=0, right=0, top=276, bottom=276)
 clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)
 ```
+
+!!!
+Make sure to check for variable aspect ratios throughout the file and only crop the smallest border. We recommend using [ShareX](https://getsharex.com) for quickly calculating border size.
+!!!
 
 #### Scaling
 
@@ -258,7 +255,18 @@ clip3 = clip3[0:]
 For more advanced trimming such as chaining, splicing, and looping, see [Vapoursynth's docs](https://www.vapoursynth.com/doc/pythonreference.html#slicing-and-other-syntactic-sugar).
 !!!
 
-==- :icon-paintbrush: Color & contrast (tonemapping, range, gamma, matrix, DRC)
+==- :icon-paintbrush: Color & contrast (depth, tonemapping, range, gamma, matrix, DRC)
+
+#### Depth
+
+Converts clips to 16-bit depth with 4:4:4 chroma subsampling. *Required for filters such as cropping (with odd numbers) or tonemapping.*
+
+```py
+## Depth: Convert clips to 16-bit 4:4:4 [required for cropping with odd numbers or tonemapping]
+clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
+clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
+clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
+```
 
 #### Tonemapping
 
@@ -267,15 +275,13 @@ Converts the dynamic range of the source (i.e. HDR/DV -> SDR).
 - For converting HDR (washed out colors) -> SDR, set `source_colorspace=csp.HDR10`
 - For converting DV (green/purple hue) -> SDR, set `source_colorspace=csp.DOVI`
 
-```py
-## Depth: Convert clip to 16-bit 4:4:4 for vs-placebo tonemapping
-## This is required because vs-placebo v1.4.4 requires a YUV clip
-clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
-clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
-clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
+!!!warning
+If you want to use tonemapping, you will need to change the color depth to 16-bit (see [above](#depth)).
+!!!
 
+```py
 ## Tonemapping: Converts the dynamic range of the source [16-bit required]
-## Specify the arguments based on your sources; ideally play around with different values when comparing against an SDR source to best match it
+## Specify the arguments based on your sources; play with different values when comparing against an SDR source to best match it
 clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
 clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
 clip3args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.Hybrid, tone_map_function=TMfunc.Spline, gamut_mode=GMTmode.Darken, peak_detect=True, use_dovi=True, dst_max=120)
@@ -364,16 +370,16 @@ clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
 ==-
 
-==- :icon-file-code: Full script
+==- :icon-file-code: Full/example script
 
 The complete `comp.py` script. This script includes the [initial script](#initial-script-badge-variant-danger-text-required) and all of the additional filters mentioned above.
 
 !!!warning
-Do not copy-paste this. This only serves as an example for you to look at. Only copy the relevant things from the above sections for your comparisons.
+This script serves as an example for you to reference. We recommend creating your own script and copying only the things you need from the above sections for your comparisons.
 !!!
 
 ```py
-## Dependencies: Allows vspreview to run (required; do not remove)
+## Dependencies: Allows vspreview to run [required; do not remove]
 import vstools
 import vapoursynth as vs
 from vapoursynth import core
@@ -399,11 +405,6 @@ clip3 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
 source1 = "FirstSourceName"
 source2 = "SecondSourceName"
 source3 = "ThirdSourceName"
-
-## Depth: Convert clip to 16-bit 4:4:4 for greater precision
-clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
-clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
-clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 
 ## <Additional comp settings>
 
@@ -441,8 +442,13 @@ clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
 ##clip2 = clip2[24:]
 ##clip3 = clip3[0:]
 
+## Depth: Convert clips to 16-bit 4:4:4 [required for cropping with odd numbers or tonemapping]
+##clip1 = core.resize.Bicubic(clip1, format=vs.YUV444P16)
+##clip2 = core.resize.Bicubic(clip2, format=vs.YUV444P16)
+##clip3 = core.resize.Bicubic(clip3, format=vs.YUV444P16)
+
 ## Tonemapping: Converts the dynamic range of the source [16-bit required]
-## Specify the arguments based on your sources; ideally play around with different values when comparing against an SDR source to best match it
+## Specify the arguments based on your sources; play with different values when comparing against an SDR source to best match it
 ##clip1args = TMopts(source_colorspace=csp.DOVI, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
 ##clip2args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.RGB, tone_map_function=TMfunc.ST2094_40, gamut_mode=GMTmode.Clip, peak_detect=True, use_dovi=True)
 ##clip3args = TMopts(source_colorspace=csp.HDR10, target_colorspace=csp.SDR, tone_map_mode=TMmode.Hybrid, tone_map_function=TMfunc.Spline, gamut_mode=GMTmode.Darken, peak_detect=True, use_dovi=True, dst_max=120)
