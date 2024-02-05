@@ -16,7 +16,7 @@ image: /static/literature/kujou.gif
 [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
 :   Public torrent tracker with the most high-quality official digital rips
 
-    Sources are generally much higher in quality compared to aggregators. Scanlations can also be found here, though Nyaa may have fewer scanlations compared to most manga aggregator sites.
+    Scanlations can also be found here, though significantly less than aggregator sites.
 
     ==- :icon-search: Searching tips
     - **Official Digital Rips:** Search for the English title and add `Digital` to your search (e.g. `Attack on Titan Digital`). When searching, prioritize newer releases, as they're likely from better sources compared to older releases.
@@ -24,22 +24,22 @@ image: /static/literature/kujou.gif
     ==-
 
 [AnimeBytes](https://animebytes.tv) [!badge icon="lock" variant="danger" text="Private"]
-:   Private torrent tracker with a more organized layout and access to old and rare rips
+:   Private torrent tracker with better organisation, retention, and access to older rips.
 
 +++ Aggregators
 
-!!!
-Aggregators tend to use compressed and lower quality images as opposed to most digital rips. We recommend using the download sources instead.
-!!!
+[ComicK](https://comick.cc/)
+:   Browser aggregator with the least compressed official rips
 
 [MangaDex](https://mangadex.org)
 :   Browser aggregator with the most convenient scanlations
 
-[MangaLife](https://manga4life.com)
+[MangaLife](https://manga4life.com)/[MangaSee](https://mangasee123.com)
 :   Browser aggregator with the most convenient official rips
 
-[MangaSee](https://mangasee123.com)
-:   Browser aggregator with the most convenient official rips
+!!!
+Aggregators use downscaled and compressed images, resulting in lower image quality than digital rips.
+!!!
 
 +++
 
