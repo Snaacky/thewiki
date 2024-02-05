@@ -31,11 +31,12 @@ Unless you are making your own encode, you'll have to stick to the available opt
 
 ## Audio
 
-### Recommended Tools
+### Useful Tools
 
 - [eac3to](https://forum.doom9.org/showthread.php?t=125966) with [updated libraries](https://mega.nz/#!dFAmEC4Y!WMTQvzLkfTDHPfhTXURSLaFWbmDMVaq3dKfk4ucjYrI) for extracting and transcoding.
 - [SoX](http://sox.sourceforge.net/) for resampling and bit depth reduction.
 - [opus-tools](https://opus-codec.org/downloads/) for transcoding lossless audio to Opus.
+- [muxtools](https://github.com/Jaded-Encoding-Thaumaturgy/muxtools) is an automation package for everything related to encoding and subbing.
 - [acsuite](https://github.com/OrangeChannel/acsuite) for frame-based cutting/trimming/splicing of audio files using VapourSynth clip information.
 - [sync-audio-tracks](https://github.com/alopatindev/sync-audio-tracks) calculates a delay between two audios and produces a shifted audio.
 - [downsampler-threaded](https://gitlab.com/beep_street/downsampler-threaded) is a multi-process sox frontend for automatically resampling FLAC files.
@@ -158,11 +159,11 @@ sox input.flac -R -G -b 16 output.flac rate -v -L 48000 dither
 ```
 +++ Windows
 ```batch
-for %I in (*.flac) do sox "%I" -G -b 16 "%~nI.flac" rate -v -L 48000 dither
+for %I in (*.flac) do sox "%I" -G -b 16 "%~nI.16bit.flac" rate -v -L 48000 dither
 ```
 +++ Linux
 ```shell
-for file in *.flac; do sox -S "${file}" -R -G -b 16 "${file%.*}.flac" rate -v -L 48000 dither; done
+for file in *.flac; do sox -S "${file}" -R -G -b 16 "${file%.*}.16bit.flac" rate -v -L 48000 dither; done
 ```
 +++
 
@@ -191,7 +192,7 @@ for file in *.flac; do opusenc --bitrate 192 "${file}" "${file%.*}.opus"; done
 
 ## Subtitles
 
-### Recommended Tools
+### Useful Tools
 
 - [arch1t3cht/Aegisub](https://github.com/arch1t3cht/Aegisub) for all subtitle work.
 - [muxtools](https://github.com/Jaded-Encoding-Thaumaturgy/muxtools) is an automation package for everything related to encoding and subbing.
