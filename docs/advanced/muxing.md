@@ -2,7 +2,7 @@
 label: Muxing
 description: Muxing files with MKVToolNix
 image: /static/advanced/muxing/muxingembed.gif
-order: -2
+order: -1
 ---
 
 # Muxing
@@ -266,7 +266,7 @@ These alternative presentations are lost once decoded, even if they were to be e
   --edit track:a1 --set name="FLAC 2.0"                  --set language=jpn --set flag-default=1 ^
   --edit track:a2 --set name="Opus 5.1 @ 320kb/s"        --set language=eng --set flag-default=0 ^
   --edit track:s1 --set name="Full Subtitles [Fansub]"   --set language=eng --set flag-default=1 --set flag-forced=0 ^
-  --edit track:s2 --set name="Honorifics [Fansub]"       --set language=enm --set flag-default=0 --set flag-forced=0 ^
+  --edit track:s2 --set name="Honorifics [Fansub]"       --set language=enm --set flag-default=1 --set flag-forced=0 ^
   --edit track:s3 --set name="Signs/Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 ^
   --edit track:s4 --set name="Full Subtitles [Official]" --set language=eng --set flag-default=0 --set flag-forced=0
   ```
@@ -280,7 +280,7 @@ These alternative presentations are lost once decoded, even if they were to be e
     --edit track:a1 --set name="FLAC 2.0"                  --set language=jpn --set flag-default=1 \
     --edit track:a2 --set name="Opus 5.1 @ 320kb/s"        --set language=eng --set flag-default=0 \
     --edit track:s1 --set name="Full Subtitles [Fansub]"   --set language=eng --set flag-default=1 --set flag-forced=0 \
-    --edit track:s2 --set name="Honorifics [Fansub]"       --set language=enm --set flag-default=0 --set flag-forced=0 \
+    --edit track:s2 --set name="Honorifics [Fansub]"       --set language=enm --set flag-default=1 --set flag-forced=0 \
     --edit track:s3 --set name="Signs/Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 \
     --edit track:s4 --set name="Full Subtitles [Official]" --set language=eng --set flag-default=0 --set flag-forced=0
   done

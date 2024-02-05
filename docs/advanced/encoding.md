@@ -2,7 +2,7 @@
 label: Encoding
 description: Resources related to Encoding
 image: /static/tohsaka.gif
-order: -1
+order: -3
 ---
 
 # Encoding
@@ -16,6 +16,7 @@ None of the maintainers of this wiki know how to encode, so we won't be covering
 | [guide.encode.moe](https://guide.encode.moe/encoding/preparation.html)                                  | Encoding guide. Still under construction but sparsely updated.                            |
 | [Silentaperture's Guide](https://silentaperture.gitlab.io/mdbook-guide)                                 | Encoding guide. Sparsely updated.                                                         |
 | [Jaded Encoding Thaumaturgy](https://github.com/Jaded-Encoding-Thaumaturgy)                             | Actively maintained repository of Vapoursynth related packages.                           |
+| [fieldbased.media](https://fieldbased.media)                                                            | An overview of different types of field-based video content.                              |
 
 !!!
 All of these guides assume you already know [Python](https://docs.python.org/3/).
