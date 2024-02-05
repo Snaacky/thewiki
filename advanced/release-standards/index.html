@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760424111090">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760466189266">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.760424111090" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.760466189266" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760424111090" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760466189266" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760424111090" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760424111090" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760466189266" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760466189266" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -197,16 +197,17 @@ MiniTheatre, Mr.Deadpool, NemDiggers, NoobSubs, project-gxs, SSA, youshikibi</co
         <span>Audio</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="recommended-tools">
+<doc-anchor-target id="useful-tools">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-tools">#</doc-anchor-trigger>
-        <span>Recommended Tools</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#useful-tools">#</doc-anchor-trigger>
+        <span>Useful Tools</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li><a href="https://forum.doom9.org/showthread.php?t=125966">eac3to</a> with <a href="https://mega.nz/#!dFAmEC4Y!WMTQvzLkfTDHPfhTXURSLaFWbmDMVaq3dKfk4ucjYrI">updated libraries</a> for extracting and transcoding.</li>
 <li><a href="http://sox.sourceforge.net/">SoX</a> for resampling and bit depth reduction.</li>
 <li><a href="https://opus-codec.org/downloads/">opus-tools</a> for transcoding lossless audio to Opus.</li>
+<li><a href="https://github.com/Jaded-Encoding-Thaumaturgy/muxtools">muxtools</a> is an automation package for everything related to encoding and subbing.</li>
 <li><a href="https://github.com/OrangeChannel/acsuite">acsuite</a> for frame-based cutting/trimming/splicing of audio files using VapourSynth clip information.</li>
 <li><a href="https://github.com/alopatindev/sync-audio-tracks">sync-audio-tracks</a> calculates a delay between two audios and produces a shifted audio.</li>
 <li><a href="https://gitlab.com/beep_street/downsampler-threaded">downsampler-threaded</a> is a multi-process sox frontend for automatically resampling FLAC files.</li>
@@ -356,13 +357,13 @@ Done.</code></pre>
 <doc-tab v-cloak id="windows">
 <template #title>Windows</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-batch"><code v-pre class="language-batch">for %I in (*.flac) do sox &quot;%I&quot; -G -b 16 &quot;%~nI.flac&quot; rate -v -L 48000 dither</code></pre>
+<pre class="language-batch"><code v-pre class="language-batch">for %I in (*.flac) do sox &quot;%I&quot; -G -b 16 &quot;%~nI.16bit.flac&quot; rate -v -L 48000 dither</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="linux">
 <template #title>Linux</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">for file in *.flac; do sox -S &quot;${file}&quot; -R -G -b 16 &quot;${file%.*}.flac&quot; rate -v -L 48000 dither; done</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">for file in *.flac; do sox -S &quot;${file}&quot; -R -G -b 16 &quot;${file%.*}.16bit.flac&quot; rate -v -L 48000 dither; done</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 </doc-tabs>
@@ -403,10 +404,10 @@ Done.</code></pre>
         <span>Subtitles</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="recommended-tools-1">
+<doc-anchor-target id="useful-tools-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-tools-1">#</doc-anchor-trigger>
-        <span>Recommended Tools</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#useful-tools-1">#</doc-anchor-trigger>
+        <span>Useful Tools</span>
     </h3>
 </doc-anchor-target>
 <ul>
