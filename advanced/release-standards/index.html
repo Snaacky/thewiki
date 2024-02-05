@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760193777589">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760424111090">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.760193777589" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.760424111090" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760193777589" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760424111090" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760193777589" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760193777589" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760424111090" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760424111090" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -473,169 +473,7 @@ Done.</code></pre>
         <span>Naming</span>
     </h2>
 </doc-anchor-target>
-<p>This guide aims to somewhat standardize naming schemes used for Anime in an effort to make them work beyond File Explorer and work well with Usenet, XDCC, automation software, and media servers.
-<strong>Everything mentioned here aims to work with everything and if something isn&#x27;t mentioned, it&#x27;s very likely because it breaks support for one thing or another.</strong> Adopting all of it will ensure compatibility with basically everything, for example, not only will your releases be snatched by auto-downloaders but will also be parsed and matched accurately and people can drop your releases in media servers without having to rename and break seeding.</p>
-<doc-anchor-target id="recommended-tools-2">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-tools-2">#</doc-anchor-trigger>
-        <span>Recommended Tools</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><a href="https://www.advancedrenamer.com/">Advanced Renamer</a></li>
-<li><a href="https://github.com/barry-allen07/FB-Mod">Filebot-mod</a></li>
-<li><a href="https://www.bulkrenameutility.co.uk/">Bulk Rename Utility</a></li>
-<li><a href="https://github.com/dbr/tvnamer">tvnamer</a></li>
-</ul>
-<doc-anchor-target id="general-3">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general-3">#</doc-anchor-trigger>
-        <span>General</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Must contain the name of the Anime.</li>
-<li>Must contain <code v-pre>(year)</code> when there are multiple versions, e.g, <code v-pre>Hunter x Hunter (1999)</code> and <code v-pre>Hunter x Hunter (2011)</code>. <strong>Note:</strong> <em>Including year is required for all movies, regardless of whether multiple versions exist or not.</em></li>
-<li>Must contain source information, i.e, <code v-pre>BD/BluRay</code>, <code v-pre>WEB/WEB-DL/WEBRip</code>, or <code v-pre>DVD</code>. Append the word <code v-pre>Remux</code> to <code v-pre>BD/BluRay</code> or <code v-pre>DVD</code> if it&#x27;s a Remux.</li>
-<li>For <code v-pre>WEB/WEB-DL/WEBRip</code>, you must include source tags. <code v-pre>AMZN</code> for Amazon, <code v-pre>DSNP</code> for Disney+, and <code v-pre>NF</code> for Netflix.</li>
-<li>Must contain resolution, i.e, <code v-pre>1080</code>, <code v-pre>720</code>, <code v-pre>576</code> or <code v-pre>480</code> together with scan type, i.e, <code v-pre>p</code> if the content is fully Progressive or <code v-pre>i</code> if it’s Interlaced. So finally it looks like this: <code v-pre>1080p</code>, <code v-pre>720p</code>, <code v-pre>576p</code>, <code v-pre>480i</code>. Different aspect ratios do not change this resolution, e.g. <code v-pre>1440x1080</code> and <code v-pre>1920x800</code> are both still 1080p.</li>
-<li>Must mention the Video and Audio Codec.</li>
-<li>Always add a group tag to your release, ideally placing it at the end for both easier parsing and human readability.</li>
-<li>You should use <code v-pre>.</code> or <code v-pre>-</code> as a delimiter.</li>
-</ul>
-<doc-anchor-target id="filename">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#filename">#</doc-anchor-trigger>
-        <span>Filename</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Must contain Season and Episode information in the format <code v-pre>SXXEYY</code> following <a href="https://thetvdb.com/">TVDB</a>.</li>
-<li>Absolute Episode Numbers may be used together with <code v-pre>SXXEYY</code>.</li>
-<li>Special Episodes must follow the format <code v-pre>S00EXX</code>.</li>
-<li><code v-pre>Group</code> tag can be at the start or the end of the filename.</li>
-</ul>
-<p>Examples:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">[Group] Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [CRC32].mkv
-Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [CRC32] [Group].mkv
-Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [CRC32]-Group.mkv
-Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [Group].mkv
-Anime Name - S00E01 - (AMZN WEB-DL 1080p H.264 EAC3) [Dual Audio] [Group].mkv
-Anime Name - 18.5 - S00E05 - (BD 1080p HEVC FLAC) [Dual Audio]-Group.mkv
-Anime Name (2022) - S01E01 - (BD Remux 1080p HEVC FLAC) [Dual Audio]-Group.mkv
-Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10P-Group.mkv</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="specialsova-filename">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#specialsova-filename">#</doc-anchor-trigger>
-        <span>Specials/OVA Filename</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>These are wildly inconsistent across different databases which means you need to be more careful when naming these to avoid any confusion while also keeping it both human and machine readable. Databases like <a href="https://thetvdb.com/">thetvdb</a> use <code v-pre>S00EXX</code> for specials while databases like <a href="https://myanimelist.net/">MAL</a> simply use the episode name for specials.</li>
-<li>A common thing in anime releases is Specials/OVAs numbered as <code v-pre>0.5</code>, e.g. <code v-pre>Anime Name - 18.5</code>. This is not recommended at all.</li>
-<li><code v-pre>0.5</code> Episodes are not supported by a single piece of software or database but they usually make it easier for the person watching to know where it chronologically lands in the show. You may or may not include this in the filename.</li>
-<li><code v-pre>S00EXX</code> isn&#x27;t very user friendly, because it doesn&#x27;t really tell much on its own but it guarantees automatic parsing and correct identification. You must include this in the filename. Refer to <a href="https://thetvdb.com/">thetvdb</a> to find this for your episode.</li>
-<li>Including the Episode title is highly recommended in this case as it makes identification significantly easier and understandable for anyone who downloads it. Neither <code v-pre>S00EXX</code> or <code v-pre>0.5</code> provides this information at a glance which is why the episode title is really helpful in this case. Refer to either <a href="https://thetvdb.com/">thetvdb</a> or <a href="https://myanimelist.net/">MAL</a> to find the episode name.</li>
-<li>You may include the absolute number of the episode as long as it&#x27;s not a decimal episode that lands between any two existing ones. Optional and really just down to preference. It&#x27;s much better than decimal episode numbering but still not ideal.</li>
-<li>This means we need a name that is easily readable, parsable, and identifiable. This is achieved by using a combo of the above.</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Anime Name - S00E04 - Title of the Episode</code></pre>
-</doc-codeblock></div>
-<ul>
-<li>This is an example of a well named special episode. <code v-pre>Anime Name</code> tells us the name of the anime, <code v-pre>S00E04</code> tells us the episode number in the <code v-pre>SXXEXX</code> standard which makes it easily identifiable, and <code v-pre>Title of the Episode</code> makes it significantly more human readable.</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Anime Name - 18.5 - S00E05 - Title of the Episode</code></pre>
-</doc-codeblock></div>
-<ul>
-<li>Another good example, this tells us the name of the anime, where it lands chronologically, what episode it is with reference to databases and the name of the episode to aid with identifying the episode without much effort.</li>
-</ul>
-<doc-anchor-target id="more-examples">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#more-examples">#</doc-anchor-trigger>
-        <span>More Examples</span>
-    </h4>
-</doc-anchor-target>
-<p>Bad, do not use:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">[Group] Anime Name - S02OVA02.mkv
-[Group] Anime Name - 18.5 [BD 1080p FLAC] [CRC].mkv
-[Group] Anime Name - 06.5 (SP) [BD 1080p FLAC].mkv
-[Group] Anime Name - Title of the Episode [CRC].mkv
-[Group] Anime Name - 17.5 (OVA) [CRC].mkv</code></pre>
-</doc-codeblock></div>
-<p>Good names:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Anime Name - 06.5 - S00E04 - Title of the Episode (BD 1080p HEVC FLAC) [Dual Audio] [CRC32] [Group].mkv
-Anime Name - S00E01 - Title of the Episode (AMZN WEB-DL 1080p H.264 EAC3) [Dual Audio] [Group].mkv
-Anime Name - 18.5 - S00E05 - Title of the Episode (BD 1080p HEVC FLAC) [Dual Audio]-Group.mkv
-Anime Name (2022) - S00E01 - Title of the Episode (BD Remux 1080p HEVC FLAC) [Dual Audio]-Group.mkv
-Anime.Name.S00E09.Title.of.the.Episode.1080p.BluRay.Opus2.0.x264-Hi10P-Group.mkv</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="folder">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#folder">#</doc-anchor-trigger>
-        <span>Folder</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Must contain Season information in the format: <code v-pre>S0X</code> or <code v-pre>Season X</code>.</li>
-<li>Make one folder for each Season following all the guidelines. This is due to the fact that most trackers do not allow multi-season batch torrents.</li>
-<li>Put <code v-pre>Group</code> tag at the end of the folder name to allow alphabetical sorting and easier parsing.</li>
-<li><strong>Everything</strong> that isn&#x27;t an episode, e.g Creditless Intro/Outro, PVs, etc <strong>must</strong> be put in a subfolder called <code v-pre>Extras</code> (not <code v-pre>Extra</code>). Do <strong>not</strong> use subfolders like <code v-pre>NC</code>, <code v-pre>Creditless</code>, etc.</li>
-<li>Special Episode/OVA must be put in the same folder if it&#x27;s singular or a subfolder called <code v-pre>Specials</code> if there are multiple of them.</li>
-<li>Anime that are a single season split between two cours, e.g. Eighty-Six aired in two cours, <a href="https://anilist.co/anime/116589/">cour 1</a> and <a href="https://anilist.co/anime/131586/">cour 2</a>, but is a <a href="https://thetvdb.com/series/eighty-six/seasons/official/1">single season</a>, must be named in a way that satisfies both which is achieved by adding the episode range after the season info (<code v-pre>S0X</code>). For example, <code v-pre>Eighty-Six S01 E01-E11</code> and <code v-pre>Eighty-Six S01 E12-E23</code>.</li>
-</ul>
-<p>Examples:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Anime Name Season 2 (BD Remux 1080p H.264 FLAC) [Dual Audio] [Group]
-Anime Name (2022) S01 (BD 1080p HEVC Opus) [Dual Audio]-Group
-Anime.Name.2022.S01.1080p.AMZN.WEB-DL.DDP2.0.H.264-Group
-Anime Name S02 E01-E24 (BD Remux 1080p x264 8-bit DTS-HD) [Dual-Audio] [Group]
-Anime Name S01 E25-E48 (BD Remux 1080p x264 8-bit DTS-HD) [Dual-Audio] [Group]
-Anime.Name.2022.S01.E01-E11.1080p.BluRay.FLAC2.0.H.265-Group
-Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="nyaa">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nyaa">#</doc-anchor-trigger>
-        <span>Nyaa</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="title">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#title">#</doc-anchor-trigger>
-        <span>Title</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>Same guidelines as Folder, simply add more aliases at the end for easier searching.</li>
-<li>You can also put the group tag before everything else in the Nyaa title.</li>
-</ul>
-<p>Examples:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Anime Name Season 2 (BD 1080p Hi10 Opus) [Dual Audio] [Group] | Alternate Name
-[Group] Anime Name Season 2 (BD Remux 1080p H.264 FLAC) [Dual Audio] | Alternate Name
-Anime Name (2022) S01 (BD 1080p HEVC Opus) [Dual Audio]-Group | Alternate Name
-Anime.Name.2022.S01.1080p.AMZN.WEB-DL.DDP2.0.H.264-Group | Alternate Name
-[Group] Anime Name S02 E01-E24 (BD Remux 1080p x264 8-bit DTS-HD) [Dual-Audio] | Alternate Name
-[Group] Anime Name S01 E25-E48 (BD Remux 1080p x264 8-bit DTS-HD) [Dual-Audio] | Alternate Name
-Anime.Name.2022.S01.E01-E11.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name
-Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="description">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
-        <span>Description</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>Always include <a href="https://mediaarea.net/en/MediaInfo">MediaInfo</a>.</li>
-<li>Always include a link to a <a href="../../tutorials/comparison/">comparison</a> of the video used in the release.</li>
-</ul>
+<p>Refer to the <a href="../naming/">Naming</a> page.</p>
 <doc-anchor-target id="qc">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#qc">#</doc-anchor-trigger>
@@ -699,11 +537,11 @@ Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name</c
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../advanced/typesetting/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../advanced/fansubbing/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Typesetting</span>
+                                                <span class="block mt-1">Fansubbing</span>
                                             </span>
                                         </a>
                                     </div>
