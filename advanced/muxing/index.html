@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760466818381">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760738709486">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.760466818381" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.760738709486" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760466818381" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760738709486" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760466818381" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760466818381" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760738709486" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760738709486" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -735,11 +735,11 @@ These alternative presentations are lost once decoded, even if they were to be e
 <pre class="language-batch"><code v-pre class="language-batch">for %X in (*.mkv) do mkvpropedit &quot;%X&quot; --add-track-statistics-tags --edit info --delete title ^
 --edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 ^
 --edit track:a1 --set name=&quot;FLAC 2.0&quot;                  --set language=jpn --set flag-default=1 ^
---edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=0 ^
+--edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=1 ^
 --edit track:s1 --set name=&quot;Full Subtitles [Fansub]&quot;   --set language=eng --set flag-default=1 --set flag-forced=0 ^
 --edit track:s2 --set name=&quot;Honorifics [Fansub]&quot;       --set language=enm --set flag-default=1 --set flag-forced=0 ^
 --edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 ^
---edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=eng --set flag-default=0 --set flag-forced=0</code></pre>
+--edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=spa --set flag-default=1 --set flag-forced=0</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="linux">
@@ -749,11 +749,11 @@ These alternative presentations are lost once decoded, even if they were to be e
   mkvpropedit &quot;${file}&quot; --add-track-statistics-tags --edit info --delete title \
   --edit track:v1 --set name=&quot;Encode Group&quot;              --set language=jpn --set flag-default=1 \
   --edit track:a1 --set name=&quot;FLAC 2.0&quot;                  --set language=jpn --set flag-default=1 \
-  --edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=0 \
+  --edit track:a2 --set name=&quot;Opus 5.1 @ 320kb/s&quot;        --set language=eng --set flag-default=1 \
   --edit track:s1 --set name=&quot;Full Subtitles [Fansub]&quot;   --set language=eng --set flag-default=1 --set flag-forced=0 \
   --edit track:s2 --set name=&quot;Honorifics [Fansub]&quot;       --set language=enm --set flag-default=1 --set flag-forced=0 \
   --edit track:s3 --set name=&quot;Signs/Songs [Fansub]&quot;      --set language=eng --set flag-default=0 --set flag-forced=1 \
-  --edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=eng --set flag-default=0 --set flag-forced=0
+  --edit track:s4 --set name=&quot;Full Subtitles [Official]&quot; --set language=spa --set flag-default=1 --set flag-forced=0
 done</code></pre>
 </doc-codeblock></div>
 </doc-tab>
