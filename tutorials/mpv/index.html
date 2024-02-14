@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760738709486">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761195484105">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.760738709486" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.761195484105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760738709486" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.761195484105" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760738709486" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.760738709486" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.761195484105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.761195484105" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -495,6 +495,7 @@ save-position-on-quit
 screenshot-format=png
 screenshot-dir=&quot;~/Pictures/mpv&quot;
 screenshot-template=&quot;%F-%p-%n&quot;
+screenshot-high-bit-depth=no
 
 ## Language Priority
 ## Sub
@@ -505,8 +506,7 @@ alang=jpn,ja
 ## Dub
 #slang=zxx,eng,en
 #alang=eng,en
-#subs-with-matching-audio=forced
-</code></pre>
+#subs-with-matching-audio=forced</code></pre>
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="understanding-the-config" collapsed>
@@ -543,51 +543,51 @@ alang=jpn,ja
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#video-output-drivers"><code v-pre>vo</code></a></td>
-<td>The output driver to be used by mpv. <em><code v-pre>gpu-next</code> is recommended for most modern hardware</em></td>
+<td>The output driver to be used by mpv. <em><code v-pre>gpu-next</code> is recommended for most modern hardware</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-scale-antiring"><code v-pre>scale-antiring</code></a></td>
-<td>Sets the strength of the antiringing filter. <em>We recommend not setting too high of a value to prevent unwanted artifacts</em></td>
+<td>Sets the strength of the antiringing filter. <em>We recommend not setting too high of a value to prevent unwanted artifacts</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-deband"><code v-pre>deband</code></a></td>
-<td>Toggles <doc-anchor-trigger to="#debanding">debanding</doc-anchor-trigger>. <em><code v-pre>profile=high-quality</code> enables deband by default and is manually disabled in the config. We recommend enabling it manually or using <doc-anchor-trigger to="#auto-profiles">auto-profiles</doc-anchor-trigger> when needed</em></td>
+<td>Toggles <doc-anchor-trigger to="#debanding">debanding</doc-anchor-trigger>. <em><code v-pre>profile=high-quality</code> enables deband by default and is manually disabled in the config. We recommend enabling it manually or using <doc-anchor-trigger to="#auto-profiles">auto-profiles</doc-anchor-trigger> when needed</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-dither-depth"><code v-pre>dither-depth</code></a></td>
-<td>Sets the dither depth. <em>This should be set to your monitor&#x27;s bit depth to prevent <doc-anchor-trigger to="#debanding">banding</doc-anchor-trigger></em></td>
+<td>Sets the dither depth. <em>This should be set to your monitor&#x27;s bit depth to prevent <doc-anchor-trigger to="#debanding">banding</doc-anchor-trigger></em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-keep-open"><code v-pre>keep-open</code></a></td>
-<td>Whether to close or leave the player open after the file finishes playing. <em>Use <code v-pre>no</code> if you want the player to close</em></td>
+<td>Whether to close or leave the player open after the file finishes playing. <em>Use <code v-pre>no</code> if you want the player to close</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#resuming-playback"><code v-pre>save-position-on-quit</code></a></td>
-<td>Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. <em>Remove this option if you do not want the player to save your position</em></td>
+<td>Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. <em>Remove this option if you do not want the player to save your position</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-screenshot-format"><code v-pre>screenshot-format</code></a></td>
-<td>File format used for screenshots. <em><code v-pre>png</code> is recommended for lossless quality</em></td>
+<td>File format used for screenshots. <em><code v-pre>png</code> is recommended for lossless quality</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-screenshot-dir"><code v-pre>screenshot-dir</code></a></td>
-<td>The directory where screenshots will be saved. <em>Currently set to your default pictures folder (<code v-pre>Pictures/mpv</code>)</em></td>
+<td>The directory where screenshots will be saved. <em>Currently set to your default pictures folder (<code v-pre>Pictures/mpv</code>)</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-screenshot-template"><code v-pre>screenshot-template</code></a></td>
-<td>The naming scheme for screenshots. <em><code v-pre>%F-%p</code> translates to <code v-pre>filename-timestamp</code></em></td>
+<td>The naming scheme for screenshots. <em><code v-pre>%F-%p</code> translates to <code v-pre>filename-timestamp</code></em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-slang"><code v-pre>slang</code></a></td>
-<td>Priority list of subtitle languages to use when there are multiple tracks</td>
+<td>Priority list of subtitle languages to use when there are multiple tracks.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-alang"><code v-pre>alang</code></a></td>
-<td>Priority list of audio languages to use when there are multiple tracks</td>
+<td>Priority list of audio languages to use when there are multiple tracks.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-subs-with-matching-audio"><code v-pre>subs-with-matching-audio</code></a></td>
-<td>Determines whether the subtitle and audio track must match their language. <em>Use <code v-pre>no</code> if you want to watch dubs with subtitle track</em></td>
+<td>Determines whether the subtitle and audio track must match their language.</td>
 </tr>
 </tbody>
 </table>
@@ -640,8 +640,7 @@ alang=jpn,ja
 # Set deband to &quot;no&quot; as we only need to enable it for specific cases
 deband=no
 deband-iterations=4
-deband-grain=48
-</code></pre>
+deband-grain=48</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
@@ -721,8 +720,7 @@ deband=no
 
 # Dither
 # This must be set to match your monitor's bit depth
-dither-depth = 8
-</code></pre>
+dither-depth = 8</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
