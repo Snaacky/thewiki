@@ -203,18 +203,18 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 Option                                                                                           | Meaning
 -------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [`profile`](https://mpv.io/manual/master/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
-[`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*
-[`scale-antiring`](https://mpv.io/manual/master/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*
-[`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*
-[`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*
-[`keep-open`](https://mpv.io/manual/master/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*
-[`save-position-on-quit`](https://mpv.io/manual/master/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*
-[`screenshot-format`](https://mpv.io/manual/master/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*
-[`screenshot-dir`](https://mpv.io/manual/master/#options-screenshot-dir)                         | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*
-[`screenshot-template`](https://mpv.io/manual/master/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*
-[`slang`](https://mpv.io/manual/master/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks
-[`alang`](https://mpv.io/manual/master/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks
-[`subs-with-matching-audio`](https://mpv.io/manual/master/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language. *Use `no` if you want to watch dubs with subtitle track*
+[`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*.
+[`scale-antiring`](https://mpv.io/manual/master/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*.
+[`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*.
+[`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*.
+[`keep-open`](https://mpv.io/manual/master/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*.
+[`save-position-on-quit`](https://mpv.io/manual/master/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*.
+[`screenshot-format`](https://mpv.io/manual/master/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*.
+[`screenshot-dir`](https://mpv.io/manual/master/#options-screenshot-dir)                         | The directory where screenshots will be saved. *Currently set to your default pictures folder (`Pictures/mpv`)*.
+[`screenshot-template`](https://mpv.io/manual/master/#options-screenshot-template)               | The naming scheme for screenshots. *`%F-%p` translates to `filename-timestamp`*.
+[`slang`](https://mpv.io/manual/master/#options-slang)                                           | Priority list of subtitle languages to use when there are multiple tracks.
+[`alang`](https://mpv.io/manual/master/#options-alang)                                           | Priority list of audio languages to use when there are multiple tracks.
+[`subs-with-matching-audio`](https://mpv.io/manual/master/#options-subs-with-matching-audio)     | Determines whether the subtitle and audio track must match their language.
 
 ===
 
@@ -241,7 +241,7 @@ To enable debanding in mpv, apply the following changes to your config:
 
 +++ `mpv.conf`
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="31-36" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="32-36" language="properties":::
 
 !!!warning
 Your deband settings should be placed after your [`profile`](https://mpv.io/manual/master/#profiles) in order to prevent conflict.
@@ -289,7 +289,7 @@ If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quali
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-10" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-9" language="properties":::
 
 !!!warning
 `dither-depth` should match your monitor's bit depth to prevent [banding](#debanding).
@@ -411,7 +411,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="37-46" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="38-47" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
