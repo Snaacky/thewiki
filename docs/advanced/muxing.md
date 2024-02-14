@@ -170,7 +170,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   | [clsid2/MPC-HC](https://github.com/clsid2/mpc-hc/) | Mostly                 | Doesn't respect the `Forced` flag.                                                                                                                               |
 
   !!!
-  The latest version of each player was tested on 2024-09-01
+  The latest version of each player was tested on 2024-01-09
   !!!
 
 ==- :icon-info: Full spec
