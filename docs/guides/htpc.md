@@ -73,6 +73,10 @@ Once you have picked a machine, you can move onto picking a GPU. We recommend ch
 
 The most important factor to consider when choosing a GPU is the video decoder hardware and its supported resolutions.
 
+!!!warning
+Be aware that lower quality GPUs will often use lower quality fans, or have them locked at high speeds. This can result in unwanted noise, which may impact your listening experience.
+!!!
+
 - For AMD, look up the card on [TechPowerUp](https://www.techpowerup.com/gpu-specs) and search for the *Unified Video Decoder* version. [Check this number here](https://en.wikipedia.org/wiki/Unified_Video_Decoder#Format_support) to see if it supports your codecs
 - For NVIDIA, see their [Video Encode and Decode GPU Support Matrix](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new) -> **NVDEC**
 
