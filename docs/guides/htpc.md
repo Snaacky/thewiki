@@ -68,6 +68,7 @@ If it includes a dGPU, you might not need to find one for your HTPC. Check to se
 Once you have picked a machine, you can move onto picking a GPU. We recommend choosing relatively recent, low-powered graphics cards as this will allow you to handle most modern shows without issue. Some examples of popular budget cards are:
 
 - AMD Radeon RX 550
+- NVIDIA Quadro P600 (Requires MiniDP to HDMI adapter)
 - NVIDIA GT 1030 (GDDR5) [!badge variant="info" text="Preferred for 4K/HDR"]
 
 The most important factor to consider when choosing a GPU is the video decoder hardware and its supported resolutions.
@@ -111,6 +112,10 @@ Make sure you install the appropriate graphics driver for your system:
 [!button variant="secondary" icon="download" text="Intel" margin="0 8 0 0"](https://www.intel.com/content/www/us/en/download-center)
 [!button variant="secondary" icon="download" text="NVIDIA"](https://www.nvidia.com/download/index.aspx)
 !!!
+
+### Linux
+
+Linux is another common option for HTPCs, however it will not be covered in this guide due to it's lack of HDR support in both X11 and Wayland. This means that you are limited to Kodi's built in player if you want to playback HDR content. If you chose to go down this route, most of the guide is the same, however paths will be different.
 
 ### mpv
 
@@ -183,6 +188,11 @@ However this is not default behaviour in Windows, and as such we recommend [chan
 Make sure you set `auto` to `yes` for automatic switching in `changerefresh.conf`.
 !!!
 
+!!!
+Some users experience issues such as the refresh rate not changing. If this is the case, you can try changing your `changerefresh.conf` to 
+`detect_display_resolution = false`, and setting `original_width` and `original_height` to your respective display's specifications. 
+!!!
+
 !!!warning
 [nircmd](https://www.nirsoft.net/utils/nircmd-x64.zip) is required for [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh). Download and copy `nircmd.exe` to your `Windows` folder (i.e. `C:\Windows`).
 !!!
@@ -221,5 +231,89 @@ After installing Kodi, go to `%appdata%\Kodi\userdata`, make a file called `play
 </rules>
 </playercorefactory>
 ```
+
+### Control
+
+Keyboard and mouse control is not optimal for couch usage. There are a few common ways to solve this:
+ - Combo keyboard and trackpad devices
+ - USB remotes
+ - CEC Adapter [!badge variant="info" text="Reccomended"]
+
+Although the most expensive option, the [Pulse-Eight USB - CEC Adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter) is one of the best ways to control your htpc. This allows you to use your TV's OEM remote control to send commands to your computer, including but not limited to directional pad, select button, color buttons and more depending on your specific make and model of TV. They can often be found cheaper on second hand marketplaces.
+
+!!!
+Although not officially rated to do so, the Pulse-Eight USB - CEC Adapter has been proven to somewhat work with 4K 120Hz signals, though your milage may vary.
+!!!
+#### libCEC
+
+Pulse-Eight hosts builds for [libcec](https://libcec.pulse-eight.com/) on their website. Libcec includes the cec-tray application, which allows you to convert cec button presses on the remote to keyboard commands in Windows. This allows for control of both Kodi and MPV. If you would like cec-tray to open automatically on boot, place a shortcut to `C:\Program Files (x86)\Pulse-Eight\USB-CEC Adapter\x64\netfx\cec-tray.exe` (or whereever else you installed libcec) in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`. 
+
+#### MPV
+
+To add CEC support to mpv, all you need to do is add the following lines to your `input.conf` in MPV.
+
+==- :icon-file-code: CEC `input.conf` config
+```properties
+# Left D-pad seeks 5 seconds backwards
+KP_LEFT seek -5
+# Right D-pad seeks 5 seconds forward
+KP_RIGHT seek 5
+# F2 enables/disables deband
+F2 cycle deband
+# F4 cycles through subtitles (backwards)
+F4 cycle sub down
+# F1 cycles through audio tracks
+F1 cycle audio
+# select pauses/plays
+ENTER cycle pause
+# backspace exit MPV
+BS quit
+```
+
+#### Kodi
+
+Kodi actually ships with support for the CEC adapter built in. Unfortunately, we cannot use this plugin because it does not pass the CEC commands to MPV. To disable the plugin, we must:
+1. Run Kodi
+2. Open Settings > System > Input > Peripherals > libCEC
+3. Disable the plugin
+4. Exit Kodi
+Now, despite the plugin being disabled, the cec-tray application will still detect `kodi.exe` and quit to prevent a conflict with the plugin. To avoid this, we can rename `kodi.exe` (usually located at `C:\Program Files\Kodi\kodi.exe`) to `kodi1.exe`. This will prevent cec-tray from quitting when Kodi is opened.
+
+#### AutoHotKey
+[AutoHotKey](https://www.autohotkey.com/) is a scripting language for macros. We can leverage ahk to open Kodi from our TV remote instead. Download and install AHK 1.1 from the offical website.
+
+Create a new text file named `kodi.ahk` and paste in this code
+
+==- :icon-file-code: `kodi.ahk` script
+
+```properties
+$F4::
+IfWinExist, ahk_exe mpv.exe
+{
+    ifWinNotActive, ahk_exe mpv.exe
+    {
+        WinActivate
+        return
+    }
+    Send {F4}
+    return
+}
+ 
+IfWinNotExist, ahk_exe kodi1.exe
+{
+    Run, C:\Program Files\Kodi\kodi1.exe  ; Replace with the full path if necessary
+    return
+}
+ 
+IfWinExist, ahk_exe kodi1.exe
+{
+    WinActivate
+    return
+}
+Send {F4}
+return
+```
+This script checks if `mpv.exe` or `kodi1.exe` are running. If they are not, `kodi1.exe` is ran. If they are running, then the F4 key is passed through to the running program. This allows using the remote to launch Kodi, without sacrificing a button. You are free to modify this code to run something other than kodi1.exe or listen for a key other than F4, this is just provided as an example. Save and close this file. You can now double click to run this script, or place it in the same `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` as cec-tray.
+
 
 ==-
