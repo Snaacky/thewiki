@@ -25,7 +25,7 @@ Generally, a dedicated graphics card (dGPU) will almost always be better than th
 
 +++ Dedicated
 
-A dGPU is a dedicated piece of hardware which will be used to handle video decoding. Cards in this category are usually from *AMD* or *NVIDIA*.
+A dGPU is a dedicated piece of hardware which will be used to handle video decoding. Cards in this category are usually from AMD or NVIDIA.
 
 You may want to consider a dGPU if:
 
@@ -35,7 +35,7 @@ You may want to consider a dGPU if:
 
 +++ Integrated
 
-An iGPU is an integrated piece of hardware on your [CPU](#cpu) which will be used to handle video decoding. CPUs in this category are usually from *Intel* or *AMD*.
+An iGPU is an integrated piece of hardware on your [CPU](#cpu) which will be used to handle video decoding. CPUs in this category are usually from Intel or AMD.
 
 You may want to consider an iGPU if:
 
@@ -53,7 +53,7 @@ For most budget-friendly setups, we recommend picking up and repurposing a used/
 
 Below are some examples of good candidates for HTPC setups to help you determine a good system:
 
-==- Systems using a dGPU
+==- :icon-rocket: Systems using a dGPU
 
 ![An example listing for a Dell OptiPlex 5040](/static/htpc/example-optiplex.png)
 
@@ -68,13 +68,13 @@ If it includes a dGPU, you might not need to find one for your HTPC. Check to se
 Once you have picked a machine, you can move onto picking a GPU. We recommend choosing relatively recent, low-powered graphics cards as this will allow you to handle most modern shows without issue. Some examples of popular budget cards are:
 
 - AMD Radeon RX 550
-- NVIDIA Quadro P600 (Requires MiniDP to HDMI adapter)
 - NVIDIA GT 1030 (GDDR5) [!badge variant="info" text="Preferred for 4K/HDR"]
+- NVIDIA Quadro P600 [!badge variant="warning" text="Mini DP to HDMI adapter required"]
 
 The most important factor to consider when choosing a GPU is the video decoder hardware and its supported resolutions.
 
 !!!warning
-Be aware that lower quality GPUs will often use lower quality fans, or have them locked at high speeds. This can result in unwanted noise, which may impact your listening experience.
+Lower quality GPUs will often use lower quality fans or lock them to run at high speeds. This can result in unwanted noise, which may impact your listening experience.
 !!!
 
 - For AMD, look up the card on [TechPowerUp](https://www.techpowerup.com/gpu-specs) and search for the *Unified Video Decoder* version. [Check this number here](https://en.wikipedia.org/wiki/Unified_Video_Decoder#Format_support) to see if it supports your codecs
@@ -86,12 +86,16 @@ Be aware that lower quality GPUs will often use lower quality fans, or have them
 Small form factor machines will require a low-profile GPU and bracket. Make sure to double-check the height of the card prior to installation, as passively-cooled cards tend to use larger heatsinks that may not fit in your case.
 !!!
 
-==- Systems using an iGPU
+==- :icon-cpu: Systems using an iGPU
 
 If you are choosing to use an iGPU for your HTPC, you can also look for MFF or micro desktops. These machines will have a smaller footprint and are very quiet. *Due to their size, however, they will not have room for a dGPU if you plan to upgrade later on.*
 
+Intel is generally the choice of CPU in this category, as there is a much broader selection of processors with integrated graphics. Additionally, you can take advantage of Intel Quick Sync Video for hardware decoding media.
+
+We recommend choosing 7th Generation Intel processors or newer to support playing the latest video codecs. [See the full list of codecs supported by various Intel generations.](https://wikipedia.org/wiki/Intel_Quick_Sync_Video#Hardware_decoding_and_encoding)
+
 !!!warning
-Avoid systems running 6th Generation Intel processors or older. These CPUs are known to have [issues hardware decoding HEVC content](https://github.com/mpv-player/mpv/issues/12154), and software decoding will have a performance impact on subtitles.
+Avoid systems running 6th Generation Intel processors or older. These CPUs are known to [not include proper support for HEVC content and encounter issues hardware decoding](https://github.com/mpv-player/mpv/issues/12154), and software decoding will have a performance impact on subtitles.
 !!!
 
 ![An example listing for a HP ProDesk 600](/static/htpc/example-prodesk.png)
@@ -100,7 +104,7 @@ This is an example of a good option to choose for your HTPC. As shown, this mach
 
 ==-
 
-## Software
+## Operating System
 
 ### Windows
 
@@ -109,7 +113,7 @@ For most HTPC users, Windows is the recommended operating system. *Optionally, y
 - [AtlasOS](https://atlasos.net)
 - [ReviOS](https://revi.cc)
 
-!!!warning
+!!!
 Make sure you install the appropriate graphics driver for your system:
 
 [!button variant="secondary" icon="download" text="AMD" margin="0 8 0 0"](https://www.amd.com/en/support)
@@ -119,7 +123,13 @@ Make sure you install the appropriate graphics driver for your system:
 
 ### Linux
 
-Linux is another common option for HTPCs, however it will not be covered in this guide due to it's lack of HDR support in both X11 and Wayland. This means that you are limited to Kodi's built in player if you want to playback HDR content. If you chose to go down this route, most of the guide is the same, however paths will be different.
+!!!warning
+HDR is not supported in X11 and Wayland. If you plan on playing HDR content, you will need to use Kodi's built-in player.
+!!!
+
+Linux is another common option for HTPCs. If you chose to go down this route, most of the setup remains the same, however file paths will be different.
+
+## Player
 
 ### mpv
 
@@ -192,9 +202,8 @@ However this is not default behaviour in Windows, and as such we recommend [chan
 Make sure you set `auto` to `yes` for automatic switching in `changerefresh.conf`.
 !!!
 
-!!!
-Some users experience issues such as the refresh rate not changing. If this is the case, you can try changing your `changerefresh.conf` to 
-`detect_display_resolution = false`, and setting `original_width` and `original_height` to your respective display's specifications. 
+!!!warning
+Some users experience issues with the [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh) script, such as the refresh rate not changing. If this is the case, you can try setting `detect_display_resolution = false` and manually setting `original_width` and `original_height` to your respective display's specifications in `changerefresh.conf`.
 !!!
 
 !!!warning
@@ -221,75 +230,105 @@ After installing Kodi, go to `%appdata%\Kodi\userdata`, make a file called `play
 
 ```xml
 <playercorefactory>
- <players>
- 	<player name="mpv" type="ExternalPlayer" audio="true" video="true">
-       <filename>Path\To\mpv.exe</filename>
-       <hidexbmc>true</hidexbmc>
-       <hideconsole>false</hideconsole>
-       <warpcursor>topright</warpcursor>
-       <playcountminimumtime>1200</playcountminimumtime>
- 	</player>
- </players>
-<rules action="prepend">
-  <rule filetypes="*" filename="*" player="mpv"/>
-</rules>
+  <players>
+    <player name="mpv" type="ExternalPlayer" audio="true" video="true">
+      <filename>Path\To\mpv.exe</filename>
+      <hidexbmc>true</hidexbmc>
+      <hideconsole>false</hideconsole>
+      <warpcursor>topright</warpcursor>
+      <playcountminimumtime>1200</playcountminimumtime>
+    </player>
+  </players>
+  <rules action="prepend">
+    <rule filetypes="*" filename="*" player="mpv"/>
+  </rules>
 </playercorefactory>
 ```
+
 ==-
-### Control
 
-Keyboard and mouse control is not optimal for couch usage. There are a few common ways to solve this:
- - Combo keyboard and trackpad devices
- - USB remotes
- - CEC Adapter [!badge variant="info" text="Reccomended"]
+## Control
 
-Although the most expensive option, the [Pulse-Eight USB - CEC Adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter) is one of the best ways to control your htpc. This allows you to use your TV's OEM remote control to send commands to your computer, including but not limited to directional pad, select button, color buttons and more depending on your specific make and model of TV. They can often be found cheaper on second hand marketplaces.
+Using a keyboard and mouse to control your system is not optimal for home theater usage. Instead, you should consider using an alternative input device:
 
+- CEC Adapter [!badge variant="primary" text="Recommended"]
+- Combo keyboard and trackpad devices
+- USB remotes
+
+Although the most expensive option, a CEC adapter is one of the best ways to control your HTPC. This allows you to use your TV's OEM remote control to send commands to your computer, including but not limited to directional pad, select button, color buttons, and more, depending on your specific make and model of TV.
+
+We recommend using the [Pulse-Eight CEC Adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter), which can often be found cheaper on second-hand marketplaces.
+
+!!!secondary
+Although not officially rated to do so, the Pulse-Eight CEC Adapter has been proven to somewhat work with 4K 120Hz signals, though your milage may vary.
 !!!
-Although not officially rated to do so, the Pulse-Eight USB - CEC Adapter has been proven to somewhat work with 4K 120Hz signals, though your milage may vary.
-!!!
-#### libCEC
 
-Pulse-Eight hosts builds for [libcec](https://libcec.pulse-eight.com/) on their website. Libcec includes the cec-tray application, which allows you to convert cec button presses on the remote to keyboard commands in Windows. This allows for control of both Kodi and MPV. If you would like cec-tray to open automatically on boot, place a shortcut to `C:\Program Files (x86)\Pulse-Eight\USB-CEC Adapter\x64\netfx\cec-tray.exe` (or whereever else you installed libcec) in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`. 
+### CEC
 
-#### MPV CEC
+Pulse-Eight hosts builds for [libCEC](https://libcec.pulse-eight.com) on their website. libCEC includes the `cec-tray` application, a tool that converts CEC button presses on a comapatible remote to keyboard commands in Windows, which can be used to control media player applications such as Kodi and mpv.
 
-To add CEC support to mpv, all you need to do is add the following lines to your `input.conf` in MPV.
+==- :icon-gear: Automatic startup
+
+1. Locate your libCEC installation folder. *By default, this can be found in `C:\Program Files (x86)\Pulse-Eight\USB-CEC Adapter\x64\netfx\`*
+2. Create a shortcut to `cec-tray.exe`. Place this shortcut in your startup folder
+   - Press `Win` + `R` and type `shell:startup` to find your startup folder
+   - You can also manually go to this folder by going to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` in File Explorer
+
+==-
+
+#### CEC with Media Players
+
++++ mpv
+
+To add CEC support to mpv, add the following lines to your mpv's `input.conf`:
 
 ==- :icon-file-code: CEC `input.conf` config
+
 ```properties
-# Left D-pad seeks 5 seconds backwards
+# Left D-pad - Seek backward by 5 seconds
 KP_LEFT seek -5
-# Right D-pad seeks 5 seconds forward
+# Right D-pad - Seek forward by 5 seconds 
 KP_RIGHT seek 5
-# F2 enables/disables deband
+# F2 - Toggle debanding
 F2 cycle deband
-# F4 cycles through subtitles (backwards)
+# F4 - Cycle through subtitles (backwards)
 F4 cycle sub down
-# F1 cycles through audio tracks
+# F1 - Cycle through audio tracks
 F1 cycle audio
-# select pauses/plays
+# Select - Pause/play
 ENTER cycle pause
-# backspace exit MPV
+# Backspace - Exit mpv
 BS quit
 ```
+
 ==-
-#### Kodi CEC
 
-Kodi actually ships with support for the CEC adapter built in. Unfortunately, we cannot use this plugin because it does not pass the CEC commands to MPV. To disable the plugin, we must:
-1. Run Kodi
-2. Open Settings > System > Input > Peripherals > libCEC
++++ Kodi
+
+Kodi includes support for CEC adapters by default. *Unfortunately, this plugin cannot be used to pass CEC commands to mpv.*
+
+To disable the plugin:
+
+1. Launch Kodi
+2. Go to *Settings* > *System* > *Input* > *Peripherals* > *libCEC*
 3. Disable the plugin
-4. Exit Kodi
+4. Relaunch/exit Kodi
 
-Now, despite the plugin being disabled, the cec-tray application will still detect `kodi.exe` and quit to prevent a conflict with the plugin. To avoid this, we can rename `kodi.exe` (usually located at `C:\Program Files\Kodi\kodi.exe`) to `kodi1.exe`. This will prevent cec-tray from quitting when Kodi is opened.
+The `cec-tray` application will still automatically detect `kodi.exe` and quit to prevent a conflict with the plugin. To avoid this, rename `kodi.exe` (by default, this can be found in located at `C:\Program Files\Kodi`) to another name, such as `kodi1.exe`. This will prevent `cec-tray` from quitting when Kodi is opened.
 
-#### AutoHotKey
-[AutoHotKey](https://www.autohotkey.com/) is a scripting language for macros. We can leverage ahk to open Kodi from our TV remote instead. Download and install AHK 1.1 from the offical website.
++++ AutoHotkey
 
-Create a new text file named `kodi.ahk` and paste in this code
+[AutoHotkey](https://www.autohotkey.com) is a scripting language for macros. This guide will show you how to use AHK to launch Kodi using your TV remote.
 
-==- :icon-file-code: `kodi.ahk` script
+#### Installation
+
+Install v1.1 of [AutoHotkey](https://www.autohotkey.com). Follow the on-screen instructions to install AHK onto your system.
+
+#### Script
+
+Create a new text file called `kodi.ahk` with the following:
+
+==- :icon-file-code: Kodi `.ahk` script
 
 ```properties
 $F4::
@@ -318,10 +357,20 @@ IfWinExist, ahk_exe kodi1.exe
 Send {F4}
 return
 ```
-Credit to Jimbo for the script
+
+!!!secondary
+Credits to Jimbo for the script.
+!!!
+
 ==-
-This script checks if `mpv.exe` or `kodi1.exe` are running. If they are not, `kodi1.exe` is ran. If they are running, then the F4 key is passed through to the running program. This allows using the remote to launch Kodi, without sacrificing a button. 
-You are free to modify this code to run something other than kodi1.exe or listen for a key other than F4, this is just provided as an example. Save and close this file. You can now double click to run this script, or place it in the same `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` as cec-tray.
 
+This script checks if `mpv.exe` or `kodi1.exe` are running:
 
+- If they are not running, `kodi1.exe` is ran
+- If they are currently running, the `F4` key is passed through to the running program. *This allows using the remote to launch Kodi, without sacrificing a button*
 
+You will need to modify this code if you want to run something other than `kodi1.exe` (i.e. you used a different file name for the Kodi executable or want to launch a different program) or listen for a key other than `F4`.
+
+To run this script, double-click the `.ahk` file. Alternatively, you can place it in your startup folder to run it automatically when `cec-tray` starts.
+
++++
