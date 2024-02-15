@@ -231,7 +231,7 @@ After installing Kodi, go to `%appdata%\Kodi\userdata`, make a file called `play
 </rules>
 </playercorefactory>
 ```
-
+==-
 ### Control
 
 Keyboard and mouse control is not optimal for couch usage. There are a few common ways to solve this:
@@ -269,7 +269,7 @@ ENTER cycle pause
 # backspace exit MPV
 BS quit
 ```
-
+==-
 #### Kodi
 
 Kodi actually ships with support for the CEC adapter built in. Unfortunately, we cannot use this plugin because it does not pass the CEC commands to MPV. To disable the plugin, we must:
@@ -313,7 +313,8 @@ IfWinExist, ahk_exe kodi1.exe
 Send {F4}
 return
 ```
+==-
 This script checks if `mpv.exe` or `kodi1.exe` are running. If they are not, `kodi1.exe` is ran. If they are running, then the F4 key is passed through to the running program. This allows using the remote to launch Kodi, without sacrificing a button. You are free to modify this code to run something other than kodi1.exe or listen for a key other than F4, this is just provided as an example. Save and close this file. You can now double click to run this script, or place it in the same `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` as cec-tray.
 
 
-==-
+
