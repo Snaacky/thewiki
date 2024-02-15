@@ -248,7 +248,7 @@ Although not officially rated to do so, the Pulse-Eight USB - CEC Adapter has be
 
 Pulse-Eight hosts builds for [libcec](https://libcec.pulse-eight.com/) on their website. Libcec includes the cec-tray application, which allows you to convert cec button presses on the remote to keyboard commands in Windows. This allows for control of both Kodi and MPV. If you would like cec-tray to open automatically on boot, place a shortcut to `C:\Program Files (x86)\Pulse-Eight\USB-CEC Adapter\x64\netfx\cec-tray.exe` (or whereever else you installed libcec) in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`. 
 
-#### MPV
+#### MPV CEC
 
 To add CEC support to mpv, all you need to do is add the following lines to your `input.conf` in MPV.
 
@@ -270,13 +270,14 @@ ENTER cycle pause
 BS quit
 ```
 ==-
-#### Kodi
+#### Kodi CEC
 
 Kodi actually ships with support for the CEC adapter built in. Unfortunately, we cannot use this plugin because it does not pass the CEC commands to MPV. To disable the plugin, we must:
 1. Run Kodi
 2. Open Settings > System > Input > Peripherals > libCEC
 3. Disable the plugin
 4. Exit Kodi
+
 Now, despite the plugin being disabled, the cec-tray application will still detect `kodi.exe` and quit to prevent a conflict with the plugin. To avoid this, we can rename `kodi.exe` (usually located at `C:\Program Files\Kodi\kodi.exe`) to `kodi1.exe`. This will prevent cec-tray from quitting when Kodi is opened.
 
 #### AutoHotKey
@@ -314,7 +315,8 @@ Send {F4}
 return
 ```
 ==-
-This script checks if `mpv.exe` or `kodi1.exe` are running. If they are not, `kodi1.exe` is ran. If they are running, then the F4 key is passed through to the running program. This allows using the remote to launch Kodi, without sacrificing a button. You are free to modify this code to run something other than kodi1.exe or listen for a key other than F4, this is just provided as an example. Save and close this file. You can now double click to run this script, or place it in the same `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` as cec-tray.
+This script checks if `mpv.exe` or `kodi1.exe` are running. If they are not, `kodi1.exe` is ran. If they are running, then the F4 key is passed through to the running program. This allows using the remote to launch Kodi, without sacrificing a button. 
+You are free to modify this code to run something other than kodi1.exe or listen for a key other than F4, this is just provided as an example. Save and close this file. You can now double click to run this script, or place it in the same `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup` as cec-tray.
 
 
 
