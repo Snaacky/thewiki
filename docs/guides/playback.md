@@ -15,11 +15,16 @@ image: /static/tohsaka.gif
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases) [!badge icon="link-external" variant="info" text="madVR Guide"](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
 - [Potplayer](https://potplayer.daum.net)
 
+!!!warning
+VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. We suggest using alternative media players.
+*See the example comparisons to mpv: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)*
+!!!
+
 +++ :robot_face: Android
 
+- [Kodi](https://play.google.com/store/apps/details?id=org.xbmc.kodi) [!badge icon="video" variant="info" text="Hi10P Support"]
 - [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
-- [Kodi (for hi10 playback)](https://play.google.com/store/apps/details?id=org.xbmc.kodi)
 
 +++ :green_apple: iOS
 
@@ -34,11 +39,6 @@ image: /static/tohsaka.gif
 - [Jellyfin](https://jellyfin.org)
 
 +++
-
-!!!warning
-VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. We suggest using alternative media players.
-*See the example comparisons to mpv: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)*
-!!!
 
 ## Media Servers
 

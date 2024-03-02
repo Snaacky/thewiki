@@ -87,11 +87,15 @@ Below is a brief list of recommended media player applications:
 - [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
 - [Potplayer](https://potplayer.daum.net)
 
+!!!warning
+VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles.
+!!!
+
 +++ :robot_face: Android
 
+- [Kodi](https://play.google.com/store/apps/details?id=org.xbmc.kodi) [!badge icon="video" variant="info" text="Hi10P Support"]
 - [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv)
 - [VLC for Android](https://play.google.com/store/apps/details?id=org.videolan.vlc)
-- [Kodi (for hi10 playback)](https://play.google.com/store/apps/details?id=org.xbmc.kodi)
 
 +++ :green_apple: iOS
 
@@ -106,9 +110,5 @@ Below is a brief list of recommended media player applications:
 - [Jellyfin](https://jellyfin.org)
 
 +++
-
-!!!warning
-VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles.
-!!!
 
 *See the [playback guide](/guides/playback) for more information.*
