@@ -18,11 +18,11 @@ Most unofficial streaming sites contain unwanted or annoying pop-ups/ads that ma
 [Anitaku](https://anitaku.to) (previously *Gogoanime*)
 :   Self-hosted site with a vast library. Majority of scraper sites will source from here
 
-[AniWatch](https://aniwatch.to) (previously *Zoro*)
-:   Self-hosted site with quality similar to AniWave while maintaining an extensive library. One of the only unofficial streaming sites with soft subtitles. *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me)*
-
 [AniWave](https://aniwave.to) (previously *9anime*)
 :   Self-hosted site with one of the largest and oldest anime libraries. Releases are often updated to include fansubs and BD releases for older content
+
+[HiAnime](https://hianime.to) (previously *Aniwatch/Zoro*)
+:   Self-hosted site with quality similar to AniWave while maintaining an extensive library. One of the only unofficial streaming sites with soft subtitles
 
 *See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.*
 
@@ -44,7 +44,7 @@ A **self-hosted** site is a streaming site that hosts the content on their own s
 
 Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. *However, some self-hosted libraries can be more limited.*
 
-**Examples of self-hosted sites:** [animepahe](https://animepahe.com), [Anitaku](https://anitaku.to), [AniWatch](https://aniwatch.to), [AniWave](https://aniwave.to)
+**Examples of self-hosted sites:** [animepahe](https://animepahe.com), [Anitaku](https://anitaku.to), [AniWave](https://aniwave.to), [HiAnime](https://hianime.to)
 
 +++ Scrapers
 
@@ -66,12 +66,12 @@ You can see for yourself in the quality comparisons linked below:
 
 Show                                                      | Sources
 ----------------------------------------------------------|------------------------------------------------------------------------------
-[Demon Slayer](https://slow.pics/c/pjYaqdnr)              | Anitaku (Gogoanime), AniWatch (Zoro), AniWave (9anime), animepahe, torrents
+[Demon Slayer](https://slow.pics/c/pjYaqdnr)              | Anitaku (Gogoanime), AniWave (9anime), animepahe, HiAnime (Zoro), torrents
 [Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | animepahe, Anitaku (Gogoanime), AniWave (9anime), torrents
 [Fate/Zero](https://slow.pics/c/1LNZtDzm)                 | animepahe, Anitaku (Gogoanime), AniWave (9anime), torrents
-[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | animepahe, Anitaku (Gogoanime), AniWatch, AniWave, torrents
-[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | Anitaku (Gogoanime), AniWatch (Zoro), AniWave (9anime), torrents
-[Senran Kagura](https://slow.pics/c/QLtX61qx)             | Anitaku (Gogoanime), AniWatch (Zoro), AniWave (9anime), animepahe, torrents
+[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | animepahe, Anitaku (Gogoanime), AniWave, HiAnime (AniWatch), torrents
+[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | Anitaku (Gogoanime), AniWave (9anime), HiAnime (Zoro), torrents
+[Senran Kagura](https://slow.pics/c/QLtX61qx)             | Anitaku (Gogoanime), AniWave (9anime), animepahe, HiAnime (Zoro), torrents
 [Vinland Saga S2](https://slow.pics/c/GjhwBwo3)           | Anitaku (Gogoanime), torrents
 
 #### Quality Tier List
@@ -82,9 +82,8 @@ Show                                                      | Sources
 
 +++ Tier 2 (Good)
 
-- [AniWatch](https://aniwatch.to) - *Formerly Zoro*
-  - *Not to be confused with defunct streaming site [Aniwatch.me](https://aniwatch.me)*
 - [AniWave](https://aniwave.to) - *Formerly 9anime*
+- [HiAnime](https://hianime.to) - *Formerly Aniwatch/Zoro*
 
 +++ Tier 3 (Okay)
 
@@ -117,7 +116,7 @@ Additionally, [AniWave](https://aniwave.to) has one of the best libraries when i
 
 ==- :icon-note: Soft subtitles
 
-[AniWatch](https://aniwatch.to) is one of the only streaming sites that use soft subtitles, with the other alternatives being legal streaming sites.
+[HiAnime](https://hianime.to) is one of the only streaming sites that use soft subtitles, with the other alternatives being legal streaming sites.
 
 ==- :icon-versions: UI and features
 
