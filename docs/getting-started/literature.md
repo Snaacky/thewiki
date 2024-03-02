@@ -108,17 +108,6 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
 [Mihon](https://github.com/mihonapp/mihon) [!badge variant="secondary" text="Most Convenient"]
 :   All-in-one manga reader with support for external sources and manga trackers
 
-[Tachiyomi](https://tachiyomi.org)
-:   All-in-one manga reader with support for external sources and manga trackers
-
-    !!!warning
-    Tachiyomi is no longer in active development. [You can download the last release here.](https://github.com/tachiyomiorg/tachiyomi/releases/latest)
-    !!!
-
-    !!!secondary
-    We recommend enabling 32-bit color mode to [avoid banding](https://slow.pics/c/eOC7j5nI). This can be found under *Settings* -> *Reader*.
-    !!!
-
 +++ iOS
 
 [Sidebooks](https://apps.apple.com/app/id409777225) [!badge icon=":heart:" variant="primary" text="Best Quality"]
