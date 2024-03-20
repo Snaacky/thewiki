@@ -890,7 +890,7 @@ If you plan on uploading to [Slowpoke Pics](https://slow.pics) (slow.pics) under
 - Visit [Slowpoke Pics](https://slow.pics) in your browser and log into your account
 - Open your browser's **Developer Tools**. You will need to get two values:
   - To get your `browserId`, go to **Application** -> **Storage** -> **Local Storage** -> `https://slow.pics`. Copy the key listed there
-  - To get your `sessionId`, go to **Network**. Refresh the page, then find `slow.pics`. Copy the key listed under `SLPSESSION`
+  - To get your `sessionId`, go to **Network**. Refresh the page, then find `slow.pics`. On the right section open cookies and copy the `SLP-SESSION` value
 - In VSPreview, go to **Settings** -> **Comp**
 - Paste the two values in the boxes provided
 
@@ -899,7 +899,7 @@ If you plan on uploading to [Slowpoke Pics](https://slow.pics) (slow.pics) under
 - Visit [Slowpoke Pics](https://slow.pics) in your browser and log into your account
 - Open your browser's **Developer Tools**. You will need to get two values:
   - To get your `browserId`, go to **Storage** -> **Local Storage** -> `https://slow.pics`. Copy the key listed there
-  - To get your `sessionId`, go to **Storage** -> **Cookies** -> `https://slow.pics`. Copy the key listed under `SLPSESSION`
+  - To get your `sessionId`, go to **Storage** -> **Cookies** -> `https://slow.pics`. Copy the key listed under `SLP-SESSION`
 - In VSPreview, go to **Settings** -> **Comp**
 - Paste the two values in the boxes provided
 
