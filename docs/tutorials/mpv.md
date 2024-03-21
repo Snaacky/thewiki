@@ -237,23 +237,13 @@ Color banding is a visual artifact that is typically seen in gradients, where th
 <p align="center">Banding (left) vs. No banding (right)</p>
 </p>
 
-To enable debanding in mpv, apply the following changes to your config:
+To enable debanding in mpv, you can simply press `b` (default). To increase the strength of debanding, you can add the following to your mpv.conf
 
 +++ `mpv.conf`
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="32-36" language="properties":::
-
-!!!warning
-Your deband settings should be placed after your [`profile`](https://mpv.io/manual/master/#profiles) in order to prevent conflict.
-!!!
-
-+++ `input.conf`
-
-:::code source="/static/tutorials/mpv/portable_config/input.conf" range="2-3" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="32-34" language="properties":::
 
 +++
-
-After applying your changes, debanding can be applied at any time by pressing `Shift` + `D`.
 
 ### Scaling
 
@@ -411,7 +401,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="38-47" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="36-45" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
