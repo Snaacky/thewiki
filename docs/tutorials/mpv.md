@@ -391,7 +391,7 @@ sub-ass-style-overrides=Kerning=yes
 
 To activate it with a key, add the following to your `input.conf`, replacing `k` with the bind of your choice, if necessary (case-sensitive):
 
-:::code source="/static/tutorials/mpv/portable_config/input.conf" range="5" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/input.conf" range="2" language="properties":::
 
 ### Auto Profiles
 
