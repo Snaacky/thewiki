@@ -18,7 +18,7 @@ VapourSynth is an open-source video processing framework. It handles all of your
 
 #### Dependencies
 
-- [Python 3.11](https://www.python.org/downloads/) - *Select `Add python.exe to PATH` during installation*
+- [Python 3.12](https://www.python.org/downloads/) - *Select `Add python.exe to PATH` during installation*
 - [Git](https://gitforwindows.org/)
 
 #### Installation
@@ -76,7 +76,7 @@ If you're working with Dolby Vision (DV) content, you will need to install addit
 Download and install [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) using `pip` in your terminal:
 
 ```powershell
-pip install vspreview
+pip install -U git+https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview.git
 ```
 
 ## Usage
@@ -825,9 +825,9 @@ How you should name your sources will depend on the content you're comparing. Fo
 
 The following guide changes the screenshot key from `Shift` + `S` to `Enter`:
 
-- Launch *File Explorer* and go to `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\misc`
+- Launch *File Explorer* and go to `%localappdata%\Programs\Python\Python312\Lib\site-packages\vspreview\toolbars\misc`
 - In a text editor, open `toolbar.py`
-- Locate the lines below (approximately line 143):
+- Locate the lines below (approximately line 158):
   - *Use the Find command to locate text (`Ctrl` + `F`)*
 
   ```py
@@ -848,9 +848,9 @@ The following guide changes the screenshot key from `Shift` + `S` to `Enter`:
 
 The following guide switches the binds for `Left arrow`/`Right arrow` and `Shift` + `Left arrow`/`Shift` + `Right arrow`:
 
-- Launch *File Explorer* and go to `%localappdata%\Programs\Python\Python311\Lib\site-packages\vspreview\toolbars\playback`
+- Launch *File Explorer* and go to `%localappdata%\Programs\Python\Python312\Lib\site-packages\vspreview\toolbars\playback`
 - In a text editor, open `toolbar.py`
-- Locate the lines below (approximately line 178):
+- Locate the lines below (approximately line 180):
   - *Use the Find command to locate text (`Ctrl` + `F`)*
 
   ```py
