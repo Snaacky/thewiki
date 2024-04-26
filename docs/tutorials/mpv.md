@@ -251,7 +251,7 @@ Scaling is the process of taking content that does not match your screen resolut
 Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
 
 +++ High-End PCs
-If you use high-end hardware, we suggest using one of these:
+If you use high-end hardware, we recommend using the following shaders:
 
 - [nnedi3-nns128-win8x4.hook](https://github.com/bjin/mpv-prescalers/blob/master/compute/nnedi3-nns128-win8x4.hook) for lower quality sources.
 - [ArtCNN_C4F32.glsl](https://github.com/Artoriuz/ArtCNN/blob/main/ArtCNN_C4F32.glsl) for higher quality sources.
@@ -265,7 +265,7 @@ Next, add the following to your `input.conf`, replacing `g` with the bind of you
 Now you can simply press `g` during playback to select the suitable shader.
 
 +++ Mid-Range PCs
-If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quality` profile.
+If you use mid-range hardware, we recommend sticking to mpv's built-in `high-quality` profile.
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
@@ -275,10 +275,10 @@ This is included in the [Basic Config](#basic-config).
 
 +++ Low-End PCs
 
-If you use low-end hardware, we suggest sticking to mpv's default profile, which aims for a balance between quality and performance. You don't need to make any changes to achieve this, as it's the default preset.
+If you use low-end hardware, we recommend sticking to mpv's default profile, which aims for a balance between quality and performance. You don't need to make any changes to achieve this, as it's the default preset.
 
 +++ Potato PCs
-If you use ultra low-end hardware, we suggest sticking to mpv's built-in `fast` profile, which prioritizes performance over quality.
+If you use ultra low-end hardware, we recommend sticking to mpv's built-in `fast` profile, which prioritizes performance over quality.
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
