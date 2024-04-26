@@ -14,8 +14,12 @@ image: /static/tohsaka.gif
 - [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
 
 !!!warning
-VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. We suggest using alternative media players.
-*See the example comparisons to mpv: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)*
+Players that you should avoid:
+1. [VLC](https://www.videolan.org/vlc/) - Introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. Examples: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)
+
+2. [Potplayer](https://potplayer.daum.net/) - Has previously [shipped with adware](https://forum.videohelp.com/threads/393452-PotPlayer-now-Adware%21).
+
+3. [MPC-HC](https://github.com/clsid2/mpc-hc) - Outdated, with lower-quality rendering, with or without madVR.
 !!!
 
 +++ :robot_face: Android
@@ -33,7 +37,6 @@ VLC is not recommended as it introduces visual artifacts, displays wrong colors,
 
 - [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="link-external" variant="info" text="Available on LibreELEC OS"](https://libreelec.tv)
 - [Plex](https://www.plex.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
-- [Emby](https://emby.media)
 - [Jellyfin](https://jellyfin.org)
 
 +++
