@@ -122,7 +122,7 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
 +++ Media Servers
 
 [Kavita](https://www.kavitareader.com)
-:   Free and open-source manga, comic, and book server. *Includes an integrated web reader ([demo](https://wiki.kavitareader.com/en/kavita-demo)) and support for OPDS (e.g. [CDisplayEx](https://www.cdisplayex.com), [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer))*
+:   Free and open-source manga, comic, and book server. *Includes an integrated web reader and support for OPDS (e.g. [CDisplayEx](https://www.cdisplayex.com), [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer))*
 
 [Komga](https://komga.org)
 :   Free and open-source manga server. *Includes an integrated web reader support for OPDS (e.g. [CDisplayEx](https://www.cdisplayex.com), [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer))*
