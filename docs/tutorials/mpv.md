@@ -59,8 +59,12 @@ scoop uninstall mpv-git
 
 [mpv](https://mpv.io) can also be found in the various forks below:
 
-- [ImPlay](https://github.com/tsl0922/ImPlay)
 - [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
+- [mpc-qt](https://github.com/mpc-qt/mpc-qt)
+
+!!!
+Consider using the official mpv as forks tend to lag behind in updates.
+!!!
 
 ==- 📦 Installing a pre-configured build
 
@@ -205,7 +209,6 @@ Option                                                                          
 [`profile`](https://mpv.io/manual/master/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
 [`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*.
 [`scale-antiring`](https://mpv.io/manual/master/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*.
-[`deband`](https://mpv.io/manual/master/#options-deband)                                         | Toggles [debanding](#debanding). *`profile=high-quality` enables deband by default and is manually disabled in the config. We recommend enabling it manually or using [auto-profiles](#auto-profiles) when needed*.
 [`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*.
 [`keep-open`](https://mpv.io/manual/master/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*.
 [`save-position-on-quit`](https://mpv.io/manual/master/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*.
@@ -237,13 +240,7 @@ Color banding is a visual artifact that is typically seen in gradients, where th
 <p align="center">Banding (left) vs. No banding (right)</p>
 </p>
 
-To enable debanding in mpv, you can simply press `b` (default). To increase the strength of debanding, you can add the following to your mpv.conf
-
-+++ `mpv.conf`
-
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="32-34" language="properties":::
-
-+++
+mpv ships with debanding capabilities so you don't have to do anything. Simply enable debanding during playback by pressing `b` (default keybind).
 
 ### Scaling
 
@@ -251,44 +248,37 @@ Scaling is the process of taking content that does not match your screen resolut
 
 [mpv](https://mpv.io) has a built-in profile called `high-quality` which enables better upscaling using `ewa_lanczossharp`. By default, mpv uses `lanczos` and `hermite`. *This option is necessary to enable even if you use an external shader, as it can act as a fallback.*
 
-!!!warning
-`high-quality` enables debanding by default, which is not recommended for high-quality sources. It should be followed by `deband=no`.
-!!!
-
 Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
 
 +++ High-End PCs
-If you use high-end hardware, we suggest using [nnedi3-nns256-win8x4](https://github.com/bjin/mpv-prescalers/blob/master/nnedi3-nns256-win8x4.hook).
+If you use high-end hardware, we suggest using one of these:
 
-Download the shader file and place it in your `shaders` folder.
+- [nnedi3-nns128-win8x4.hook](https://github.com/bjin/mpv-prescalers/blob/master/compute/nnedi3-nns128-win8x4.hook) for lower quality sources.
+- [ArtCNN_C4F32.glsl](https://github.com/Artoriuz/ArtCNN/blob/main/ArtCNN_C4F32.glsl) for higher quality sources.
 
-To use the shader, add the following to your `mpv.conf`:
+Download both the shader files and place them in your `shaders` folder.
 
-```properties
-glsl-shaders="~~/shaders/nnedi3-nns256-win8x4.hook"
-```
+Next, add the following to your `input.conf`, replacing `g` with the bind of your choice, if necessary (case-sensitive):
 
-To activate it with a key, add the following to your `input.conf`, replacing `G` with the bind of your choice, if necessary (case-sensitive):
+:::code source="/static/tutorials/mpv/portable_config/input.conf" range="2" language="properties":::
 
-```properties
-G change-list glsl-shaders toggle "~~/shaders/nnedi3-nns256-win8x4.hook"
-```
+Now you can simply press `g` during playback to select the suitable shader.
 
 +++ Mid-Range PCs
 If you use mid-range hardware, we suggest sticking to mpv's built-in `high-quality` profile.
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-9" language="properties":::
-
-!!!warning
-`dither-depth` should match your monitor's bit depth to prevent [banding](#debanding).
-!!!
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-4" language="properties":::
 
 This is included in the [Basic Config](#basic-config).
 
 +++ Low-End PCs
-If you use low-end hardware, we suggest sticking to mpv's built-in `fast` profile, which prioritizes performance over quality.
+
+If you use low-end hardware, we suggest sticking to mpv's default profile, which aims for a balance between quality and performance. You don't need to make any changes to achieve this, as it's the default preset.
+
++++ Potato PCs
+If you use ultra low-end hardware, we suggest sticking to mpv's built-in `fast` profile, which prioritizes performance over quality.
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
@@ -297,6 +287,15 @@ profile=fast
 ```
 
 +++
+
+### Dither
+
+Dither is an intentionally applied form of noise used to randomize quantization error, preventing large-scale patterns such as color banding in images. mpv applies dither to match the content bit-depth to your monitor's bit-depth but it may fail to detect the correct bit-depth of your monitor automatically in which case the wrong bit-depth will end up **adding** banding during playback.
+
+To avoid introducing banding during playback, explicitly set your monitor's bit-depth in `mpv.conf`:
+
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="8" language="properties":::
+
 
 ### Subtitle Restyling
 
@@ -391,7 +390,7 @@ sub-ass-style-overrides=Kerning=yes
 
 To activate it with a key, add the following to your `input.conf`, replacing `k` with the bind of your choice, if necessary (case-sensitive):
 
-:::code source="/static/tutorials/mpv/portable_config/input.conf" range="2" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/input.conf" range="5" language="properties":::
 
 ### Auto Profiles
 
@@ -401,7 +400,7 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="36-45" language="properties":::
+:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="32-40" language="properties":::
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
