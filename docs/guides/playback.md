@@ -12,8 +12,6 @@ image: /static/tohsaka.gif
 +++ :desktop_computer: PC
 
 - [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
-- [MPC-HC](https://github.com/clsid2/mpc-hc/releases) [!badge icon="link-external" variant="info" text="madVR Guide"](https://kokomins.wordpress.com/2021/03/27/mpc-hc-and-madvr-setup-guide/)
-- [Potplayer](https://potplayer.daum.net)
 
 !!!warning
 VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. We suggest using alternative media players.
