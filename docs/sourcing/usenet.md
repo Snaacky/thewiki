@@ -2,7 +2,7 @@
 label: Usenet
 order: -5
 description: Get started with usenet
-image: https://user-images.githubusercontent.com/78981416/215252980-0a038d94-b05c-4e52-83b4-51948df6a591.gif
+image: https://github.com/Snaacky/thewiki/assets/1512938/93fa431f-b859-4a9b-a716-7bbb75c63711
 
 ---
 
