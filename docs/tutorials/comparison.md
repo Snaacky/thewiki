@@ -47,11 +47,10 @@ In order to create comparisons with VSPreview, you will need to install its nece
   If `vsrepo.py` command doesn't work, make sure Windows is set to open `.py` files with Python. *[You may also need to add it to the `PATHEXT` environment variable.](/static/comparison/python-pathext.png)*
   !!!
 
-- [`awsmfunc`](https://github.com/OpusGang/awsmfunc) and [`vs-kernels`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-kernels) can be installed using `pip`:
+- [`awsmfunc`](https://github.com/OpusGang/awsmfunc) can be installed using `pip`:
 
   ```powershell
-  pip install git+https://github.com/OpusGang/awsmfunc.git
-  pip install vskernels --no-cache-dir -U
+  python -m pip install git+https://github.com/OpusGang/awsmfunc.git
   ```
 
 +++ Dolby Vision
@@ -73,11 +72,18 @@ If you're working with Dolby Vision (DV) content, you will need to install addit
 
 #### Installation
 
-Download and install [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) using `pip` in your terminal:
+Download and install [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jet) using `pip` in your terminal:
 
 ```powershell
-pip install -U git+https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview.git
+python -m pip install vsjet
 ```
+```powershell
+python -m vsjet latest
+```
+
+!!!
+As of writing this, installing [`vs-preview`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) directly from PyPI or git is broken. You have to install it using [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jet) which will install all JET packages.
+!!!
 
 ## Usage
 
@@ -190,6 +196,10 @@ Quick inverse telecine filter for converting telecined clips (usually 30 fps int
 clip1 = core.vivtc.VFM(clip1, 1)
 clip1 = core.vivtc.VDecimate(clip1)
 ```
+
+!!!
+You need [`vivtc`](https://github.com/vapoursynth/vivtc) installed for the above snippet to work. You can install it with `vsrepo.py install vivtc`.
+!!!
 
 ==- :icon-file-media: Framing (cropping, scaling, trimming)
 
