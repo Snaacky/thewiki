@@ -61,7 +61,7 @@ This guide aims to somewhat standardize naming schemes used for Anime in an effo
 
 2. You lose downloads from automatic snatchers because they simply fail to parse stupidly named releases.
 3. People usually have to rename said stupidly named releases to make them work in their media servers, which means they can no longer seed it.
-4. Switching to a better naming has exactly 0 disdvantages. It will not hurt you or the quality of your release, instead it'll simply widen your audience. The switch to a better naming should be a no-brainer considering how it's a rare case of all pros with no cons.
+4. Switching to a more compatible naming scheme has no disadvantages. It won't harm you or the quality of your release, it'll only serve to widen your audience and improve convenience. It should be a no-brainer considering that it only benefits those who are interested in the release.
 
 ### Recommended Tools
 
@@ -93,10 +93,7 @@ Examples:
 
 ```
 [Group] Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [CRC32].mkv
-Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [CRC32] [Group].mkv
 Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [CRC32]-Group.mkv
-Anime Name - S01E01 - (BD 1080p HEVC FLAC) [Dual Audio] [Group].mkv
-Anime Name - S00E01 - (AMZN WEB-DL 1080p H.264 EAC3) [Dual Audio] [Group].mkv
 Anime Name - 18.5 - S00E05 - (BD 1080p HEVC FLAC) [Dual Audio]-Group.mkv
 Anime Name (2022) - S01E01 - (BD Remux 1080p HEVC FLAC) [Dual Audio]-Group.mkv
 Anime.Name.S01E01.1080p.BluRay.Opus2.0.x264-Hi10P-Group.mkv
