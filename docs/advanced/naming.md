@@ -32,6 +32,8 @@ In general, a good file name should include:
   - If your file includes multiple audio tracks in different codecs, only list the default track's codec
 - The **releaser/group tag**
 
+*See [Recommended Schemes](#recommended-schemes) for various formats to follow for your files.*
+
 ### Examples of Bad Names
 
 A bad file name often leaves out important information that may be useful to the viewer. The following shows examples of badly named releases:
