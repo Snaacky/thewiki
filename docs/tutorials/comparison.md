@@ -83,7 +83,7 @@ python -m vsjet latest
 ```
 
 !!!warning
-Currently, installing [`vs-preview`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) directly from PyPI or git is broken. Instead, you have to install it using [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jet), which will install all necessary JET packages.
+Currently, installing [`vs-preview`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) directly from PyPI or git is broken. Instead, you have to install it using [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jet), which will install all JET packages.
 !!!
 
 ## Usage
