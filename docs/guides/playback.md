@@ -49,13 +49,12 @@ The setup consists of two parts: the **server** and the **client**. *Both may be
 
 In a typical setup, the server is installed on a computer hosted on your home network, with the client being installed on all your devices. Most media players will also come with their own client, as well as including support for using [Kodi](https://kodi.tv) as a client (recommended for anime).
 
-[!button variant="secondary" text="Emby" margin="0 8 0 0"](https://emby.media)
-[!button variant="secondary" text="Plex" margin="0 8 0 0"](https://www.plex.tv)
-[!button variant="secondary" text="Jellyfin"](https://jellyfin.org)
+[!button variant="secondary" text="Jellyfin" margin="0 8 0 0"](https://jellyfin.org)
+[!button variant="secondary" text="Plex"](https://www.plex.tv)
 
 !!!
 Running a media server requires a rigid folder structure and a specific file naming scheme.
-*See the guides for your server: [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/), [Jellyfin](https://jellyfin.org/docs/general/server/media/shows)*
+*See the guides for your server: [Jellyfin](https://jellyfin.org/docs/general/server/media/shows), [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/)*
 !!!
 
 ### Kodi
