@@ -16,7 +16,7 @@ This page serves as a guide on the most optimal naming schemes that provide all 
 In general, a good file name should include:
 
 - The full **anime show/series** or **movie title**
-  - If there are multiple versions of the show (e.g. `Hunter x Hunter (1999)` vs. `Hunter x Hunter (2011)`), you must include the year within the title. *Note that you must include the year for all movies*
+  - If there are multiple versions of the series, you must include the year within the title (e.g. [Hunter x Hunter (1999)](https://thetvdb.com/series/hunter-x-hunter) vs. [Hunter x Hunter (2011)](https://thetvdb.com/series/hunter-x-hunter-2011)). *Note that you must include the year for all movies*
   - We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)
 - The **season/episode number** (for TV series)
   - For specials, use `S00EXX` for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01 - OVA Title`) to easily differentiate between episodes*
@@ -43,18 +43,21 @@ A bad file name often leaves out important information that may be useful to the
 These naming schemes are **bad** as they:
 
 Do not include the [type of release](/guides/quality/#types-of-releases) and [where it is sourced from](/guides/quality/#blu-ray-vs-web)
-:   - File 2 does not list the video codec/resolution, audio codec, "Blu-ray/WEB" source, dual audio, etc.
+:   - It can be harder to determine which release is the better one
+    - File 2 does not list the video codec/resolution, audio codec, "Blu-ray/WEB" source, dual audio, etc.
 
 May be too long in length
-:   - File 2 includes episode chapters in the file name, which results in a long file name
+:   - Many programs do not support file paths longer than 256 characters
+    - File 2 includes episode chapters in the file name, totaling 159 characters alone
 
-Use an invalid naming scheme
-:   - File 1 separates the season and episode number (`S2 - 08`). *As a result, some programs may incorrectly parse this as `S01E08`*
+Use an inefficient/invalid naming scheme
+:   - File 1 uses absolute numbering for episodes. *We recommend using the `SXXEXX` format instead*
     - File 3 uses brackets to hold the season and episode number (`[S02,E00]`). *As a result, some programs may incorrectly parse this as a release group*
 
-Alter or uses a condensed show title
-:   - File 3 uses the incorrect order for the show title (`From Me to You Kimi Ni Todoke` instead of `Kimi ni Todoke - From Me to You`)
-    - File 4 uses a condensed show title (`Masamune` instead of `Masamune-kun's Revenge` or `Masamune-kun no Revenge`)
+Alter or uses an incorrect title
+:   - Some programs may fetch incorrect title metadata
+    - File 3 uses the incorrect order for the show title (`From Me to You Kimi Ni Todoke` instead of `Kimi ni Todoke - From Me to You`)
+    - File 4 does not include the show year. *As a result, media servers may fetch incorrect metadata ([JoJo's Bizarre Adventure](https://thetvdb.com/series/jojos-bizarre-adventure) is detected instead of [JoJo's Bizarre Adventure (2012)](https://thetvdb.com/series/jojos-bizarre-adventure-2012))*
 
 Using good naming schemes, it could look like the following:
 
@@ -76,7 +79,7 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
 :   The full show/series or movie title. *We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies). This can be in English or romanized Japanese*
 
     !!!warning
-    If there are multiple versions (e.g. `Hunter x Hunter (1999)` vs. `Hunter x Hunter (2011)`), you must include the year within the title. *For movies, this should always be included*
+    If there are multiple versions of the series, you must include the year within the title (e.g. [`Hunter.x.Hunter.1999`](https://thetvdb.com/series/hunter-x-hunter) vs. [`Hunter.x.Hunter.2011`](https://thetvdb.com/series/hunter-x-hunter-2011)). *For movies, this should always be included*
     !!!
 
 ![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) Season/episode number
@@ -89,8 +92,8 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
 ![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) Episode title [!badge variant="success" text="Optional"]
 :   The title of the episode. *We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)*
 
-    !!!info
-    This should generally be skipped for long file names.
+    !!!warning
+    This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs.
     !!!
 
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) Version number [!badge variant="warning" text="Conditional"]
@@ -106,17 +109,24 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
     For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `DSNP` for Disney+, `NF` for Netflix)
     !!!
 
-![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) Audio format(s)
+    !!!info
+    For Blu-ray/DVD remuxes, add `Remux` to the end (e.g. `BluRay.Remux` or `DVD.Remux`)
+    !!!
+
+![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) Dual audio marker [!badge variant="warning" text="Conditional"]
+:   The marker for file using multiple audio languages/tracks
+
+![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) Audio format(s)
 :   The codec of the file's audio. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
     !!!info
     If your file includes multiple audio tracks in different codecs, only list the default track's codec
     !!!
 
-![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) Video format
+![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) Video format
 :   The codec of the file's video. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
-![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) Releaser
+![#f0c6c6](https://placehold.co/14x14/f0c6c6/f0c6c6.png) Releaser
 :   The name of the releaser or release group
 
 +++ :icon-file-code: Variant 2
@@ -130,7 +140,7 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
 :   The full show/series or movie title. *We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies). This can be in English or romanized Japanese*
 
     !!!warning
-    If there are multiple versions (e.g. `Hunter x Hunter (1999)` vs. `Hunter x Hunter (2011)`), you must include the year within the title. *For movies, this should always be included*
+    If there are multiple versions of the series, you must include the year within the title (e.g. [`Hunter x Hunter (1999)`](https://thetvdb.com/series/hunter-x-hunter) vs. [`Hunter x Hunter (2011)`](https://thetvdb.com/series/hunter-x-hunter-2011)). *For movies, this should always be included*
     !!!
 
 ![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) Season/episode number
@@ -146,8 +156,8 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
 ![#81c8be](https://placehold.co/14x14/81c8be/81c8be.png) Episode title [!badge variant="success" text="Optional"]
 :   The title of the episode. *We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)*
 
-    !!!info
-    This should generally be skipped for long file names.
+    !!!warning
+    This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs.
     !!!
 
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) Source type
@@ -183,46 +193,48 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
 In general, a good folder should:
 
 - List the **season number(s)** (for TV series)
-  - If you are including multiple seasons, these should be separated and named by season (e.g. `Season 1`, `Season 2`, ...)
-  - If a season is split into two cours but stored in a single season (e.g. [86: Eighty Six](https://thetvdb.com/series/eighty-six/seasons/official/1)), include the episode range after the season info (e.g. `86: Eighty Six - S01 (E01-E11)` and `86: Eighty Six - S01 (E12-E23)`)
+  - If you are organizing multiple seasons, these should be separated and named by season (e.g. `Season 1`, `Season 2`, ...)
+  - If a season is split into two cours but stored in a single season (e.g. [86: Eighty Six](https://thetvdb.com/series/eighty-six/seasons/official/1)), include the episode range after the season info (e.g. `86: Eighty Six - S01E01-E11)` and `86: Eighty Six - S01E12-E23)`)
 - Store **specials/OVA episodes** in a separate folder named `Specials`
 - Store **additional content** (creditless OPs/EDs, PVs) in a separate folder named `Extras`
+  - `Extras` is a catch-all folder that automation/media servers completely ignore
   - Do not use folders such as `NC`, `Creditless`, etc.
 - Include the **releaser/group tag**
 
 Examples:
 
 ```text
-Anime Name Season 2 (BD Remux 1080p H.264 FLAC) [Dual Audio] [Group]
-Anime Name (2022) S01 (BD 1080p HEVC Opus) [Dual Audio]-Group
+Anime Name (2022) S01 (BD 1080p HEVC Opus) [Dual Audio] [Group]
 Anime.Name.2022.S01.1080p.AMZN.WEB-DL.DDP2.0.H.264-Group
-Anime Name S02 E01-E24 (BD Remux 1080p x264 8-bit DTS-HD) [Dual-Audio] [Group]
-Anime Name S01 E25-E48 (BD Remux 1080p x264 8-bit DTS-HD) [Dual-Audio] [Group]
-Anime.Name.2022.S01.E01-E11.1080p.BluRay.FLAC2.0.H.265-Group
+Anime Name - S01E01-E24 (BD Remux 1080p x264 8-bit DTS-HD) [Dual Audio] [Group]
 Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group
 ```
 
+!!!info
+For organization, it is recommended to put the group name at the end of folder names to allow for alphabetical sorting on the user's end.
+!!!
+
 ## Nyaa
 
-In general, a Nyaa release should include:
+In general, a good Nyaa release should:
 
-- The same guidelines followed for [folders](#folders)
-- Additional details/aliases at the end of the title for better searching (e.g. alternate show titles, season number, cour number)
+- Follow the same guidelines for [folders](#folders)
+- **Not include mutliple seasons.** These are not supported by automation and cannot be cross-seeded
+  - If you are including a few specials, or the special is important (e.g. finale), you may want to include it in the same torrent. *Otherwise, you should create a separate torrent*
+- Additional aliases at the end of the title for better searching (e.g. alternate show titles, `Season X (SXX)`)
 - A raw link to [MediaInfo](https://mediaarea.net/en/MediaInfo) information
   - For season releases, we recommend using the first episode
 - A link to a [quality comparison](/tutorials/comparison) including the video used in the release
+- A description of what was done or used to create the release
+  - e.g. Video/audio source, typesetting/translation changes, subtitle retiming, artifact fixes, tracks from other releases
 
-Examples:
+Example titles:
 
 ```text
-Anime Name Season 2 (BD 1080p Hi10 Opus) [Dual Audio] [Group] | Alternate Name
-[Group] Anime Name Season 2 (BD Remux 1080p H.264 FLAC) [Dual Audio] | Alternate Name
-Anime Name (2022) S01 (BD 1080p HEVC Opus) [Dual Audio]-Group | Alternate Name
-Anime.Name.2022.S01.1080p.AMZN.WEB-DL.DDP2.0.H.264-Group | Alternate Name
-[Group] Anime Name S02 E01-E24 (BD Remux 1080p x264 8-bit DTS-HD) [Dual-Audio] | Alternate Name
-[Group] Anime Name S01 E25-E48 (BD Remux 1080p x264 8-bit DTS-HD) [Dual-Audio] | Alternate Name
-Anime.Name.2022.S01.E01-E11.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name
-Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group | Alternate Name
+[Group] Anime Name (2022) - Season 1 (S01) (BD 1080p HEVC Opus) [Dual Audio] | Alias 1 | Alias 2
+Anime.Name.2022.S01.1080p.AMZN.WEB-DL.DUAL.DDP2.0.H.264-Group | Alias 1 | Alias 2
+[Group] Anime Name - S01E01-E24 (BD Remux 1080p x264 8-bit DTS-HD) [Dual Audio] | Alias 1 | Alias 2
+Anime.Name.2022.S01.1080p.BluRay.REMUX.AVC.FLAC.2.0-Group | Alias 1 | Alias 2
 ```
 
 ## Recommended Tools
