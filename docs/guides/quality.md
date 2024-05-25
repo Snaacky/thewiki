@@ -188,13 +188,17 @@ Alternatively, you can use the [ABX Comparator plugin for foobar2000](https://ww
 *If you manage to complete it with a decent probability, feel free to join our [Discord](https://discord.gg/snackbox) to talk about it!*
 !!!
 
-A good benchmark for lossy audio bitrates (Stereo/2.0) is:
+A good baseline for lossy audio bitrates is:
 
-- 128Kbps for Opus
-- 160Kbps for AAC
-- 192Kbps for MP3
+Format | Stereo (2.0, 2 channels) | Surround (5.1, 6 channels)
+-------|--------------------------|-----------------------------
+AAC    | 160 kb/s                 | 480 kb/s
+MP3    | 192 kb/s                 | 576 kb/s
+Opus   | 128 kb/s                 | 384 kb/s
 
-For surround audio, multiply them by the number of stereo pairs.
+!!!info
+For surround audio, multiply them by the number of stereo pairs (2 channels).
+!!!
 
 ## Subtitles
 

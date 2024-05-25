@@ -14,12 +14,11 @@ image: /static/tohsaka.gif
 - [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
 
 !!!warning
-Players that you should avoid:
-1. [VLC](https://www.videolan.org/vlc/) - Introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. Examples: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)
+The following players are **not recommended** and should be avoided:
 
-2. [Potplayer](https://potplayer.daum.net/) - Has previously [shipped with adware](https://forum.videohelp.com/threads/393452-PotPlayer-now-Adware%21).
-
-3. [MPC-HC](https://github.com/clsid2/mpc-hc) - Outdated, with lower-quality rendering, with or without madVR.
+- [MPC-HC](https://github.com/clsid2/mpc-hc) - Outdated with lower-quality rendering, with or without madVR
+- [Potplayer](https://potplayer.daum.net/) - Has previously [shipped with adware](https://forum.videohelp.com/threads/393452-PotPlayer-now-Adware%21)
+- [VLC](https://www.videolan.org/vlc/) - Introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. *See the comparisons with [Spice and Wolf](https://slow.pics/c/XhbmrYgU) and [One Piece](https://slow.pics/c/FW2nBwKP)*
 !!!
 
 +++ :robot_face: Android

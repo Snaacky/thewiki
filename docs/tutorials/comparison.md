@@ -77,12 +77,13 @@ Download and install [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs
 ```powershell
 python -m pip install vsjet
 ```
+
 ```powershell
 python -m vsjet latest
 ```
 
-!!!
-As of writing this, installing [`vs-preview`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) directly from PyPI or git is broken. You have to install it using [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jet) which will install all JET packages.
+!!!warning
+Currently, installing [`vs-preview`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) directly from PyPI or git is broken. Instead, you have to install it using [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jet), which will install all necessary JET packages.
 !!!
 
 ## Usage
@@ -191,15 +192,15 @@ clip3 = core.std.SetFieldBased(clip3, 0)
 
 Quick inverse telecine filter for converting telecined clips (usually 30 fps interlaced video) back to the original framerate (24 fps progressive).
 
+!!!warning
+[`vivtc`](https://github.com/vapoursynth/vivtc) needs to be installed in order for the following snippet to work. You can install it with `vsrepo.py install vivtc`.
+!!!
+
 ```py
 ## Inverse telecine: Fixes telecined video
 clip1 = core.vivtc.VFM(clip1, 1)
 clip1 = core.vivtc.VDecimate(clip1)
 ```
-
-!!!
-You need [`vivtc`](https://github.com/vapoursynth/vivtc) installed for the above snippet to work. You can install it with `vsrepo.py install vivtc`.
-!!!
 
 ==- :icon-file-media: Framing (cropping, scaling, trimming)
 
@@ -900,7 +901,7 @@ If you plan on uploading to [Slowpoke Pics](https://slow.pics) (slow.pics) under
 - Visit [Slowpoke Pics](https://slow.pics) in your browser and log into your account
 - Open your browser's **Developer Tools**. You will need to get two values:
   - To get your `browserId`, go to **Application** -> **Storage** -> **Local Storage** -> `https://slow.pics`. Copy the key listed there
-  - To get your `sessionId`, go to **Network**. Refresh the page, then find `slow.pics`. On the right section open cookies and copy the `SLP-SESSION` value
+  - To get your `sessionId`, go to **Network**. Refresh the page, then find `slow.pics`. In the right-hand section, go to **Cookies** and copy the **Value** listed under `SLP-SESSION`
 - In VSPreview, go to **Settings** -> **Comp**
 - Paste the two values in the boxes provided
 

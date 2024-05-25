@@ -30,16 +30,17 @@ If you like convenience, streaming sites can be a perfectly fine option for your
 ||| Pros
 
 - No or minimal setup required
-- Easy to use and access from all your devices
+- Easy to use and can be accessed from all your devices
 - No VPN required; no copyright infringement notices from your ISP
 - Can be completely free
 
 ||| Cons
 
-- [Video and audio quality may be worse than other sources](/guides/quality/#quality-comparisons), such as Blu-rays
+- [Video and audio quality may be worse compared to other sources](/guides/quality/#quality-comparisons), such as official Blu-rays
+- May not use or be updated to use [Blu-rays](/guides/quality/#blu-ray-vs-web)
 - May not permit downloading/offline playback
 - Limited show availability; some shows may be unavailable in your region
-- May have ads or pop-ups
+- May contain ads or pop-ups
 |||
 
 *See the [streaming sites](/sourcing/streaming/) sourcing guide and [quality guide](/guides/quality) for more information.*
@@ -66,7 +67,7 @@ If you like to prioritize quality, torrenting can be an amazing option for your 
 
 - Requires some setup
 - May be hard to access or impossible on certain devices, such as TVs
-- May be illegal where you live; *a [VPN](/getting-started/torrenting/#vpn) may be necessary*
+- May be illegal where you live; a [VPN](/getting-started/torrenting/#vpn) may be necessary
 - May require some payment, such as a premium VPN subscription
 
 |||
@@ -83,12 +84,14 @@ Below is a brief list of recommended media player applications:
 
 +++ :desktop_computer: PC
 
-- [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"]
-- [MPC-HC](https://github.com/clsid2/mpc-hc/releases)
-- [Potplayer](https://potplayer.daum.net)
+- [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
 
 !!!warning
-VLC is not recommended as it introduces visual artifacts, displays wrong colors, and breaks intensive subtitles.
+The following players are **not recommended** and should be avoided:
+
+- [MPC-HC](https://github.com/clsid2/mpc-hc) - Outdated with lower-quality rendering, with or without madVR
+- [Potplayer](https://potplayer.daum.net/) - Has previously [shipped with adware](https://forum.videohelp.com/threads/393452-PotPlayer-now-Adware%21)
+- [VLC](https://www.videolan.org/vlc/) - Introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. *See the comparisons with [Spice and Wolf](https://slow.pics/c/XhbmrYgU) and [One Piece](https://slow.pics/c/FW2nBwKP)*
 !!!
 
 +++ :robot_face: Android
@@ -106,7 +109,6 @@ VLC is not recommended as it introduces visual artifacts, displays wrong colors,
 
 - [Kodi](https://kodi.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [Plex](https://www.plex.tv) [!badge icon=":heart:" variant="primary" text="Recommended"]
-- [Emby](https://emby.media)
 - [Jellyfin](https://jellyfin.org)
 
 +++
