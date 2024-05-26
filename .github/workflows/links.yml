@@ -28,6 +28,7 @@ jobs:
             --exclude '^https://exhentai.org'
             --exclude '^https://www.nzbking.com'
             --exclude '^https://chan.sankakucomplex.com'
+            --exclude 'https://discordapp.com/api/guilds/974468300304171038/widget.png?style=banner2'
             './**/*.md'
 
 #           Public trackers, streaming sites, crunchyroll, kodi, qbittorrent, etc return 403
