@@ -57,14 +57,14 @@ scoop uninstall mpv-git
 
 ==- 🍴 Installing a fork
 
+!!!info
+We suggest sticking with the official mpv player as forks tend to lag behind in updates.
+!!!
+
 [mpv](https://mpv.io) can also be found in the various forks below:
 
-- [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 - [mpc-qt](https://github.com/mpc-qt/mpc-qt)
-
-!!!
-Consider using the official mpv as forks tend to lag behind in updates.
-!!!
+- [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
 ==- 📦 Installing a pre-configured build
 
@@ -240,7 +240,7 @@ Color banding is a visual artifact that is typically seen in gradients, where th
 <p align="center">Banding (left) vs. No banding (right)</p>
 </p>
 
-mpv ships with debanding capabilities so you don't have to do anything. Simply enable debanding during playback by pressing `b` (default keybind).
+Newer versions of mpv now ship with debanding capabilities, so no additional configuration is required. You can enable debanding anytime during playback by pressing `b` (default keybind).
 
 ### Scaling
 
@@ -251,10 +251,11 @@ Scaling is the process of taking content that does not match your screen resolut
 Scalers only work when the resolution of your video does not match your display. They do not activate if the content resolution already matches your display resolution.
 
 +++ High-End PCs
+
 If you use high-end hardware, we recommend using the following shaders:
 
-- [nnedi3-nns128-win8x4.hook](https://github.com/bjin/mpv-prescalers/blob/master/compute/nnedi3-nns128-win8x4.hook) for lower quality sources.
-- [ArtCNN_C4F32.glsl](https://github.com/Artoriuz/ArtCNN/blob/main/ArtCNN_C4F32.glsl) for higher quality sources.
+- [ArtCNN_C4F32.glsl](https://github.com/Artoriuz/ArtCNN/blob/main/ArtCNN_C4F32.glsl) for higher quality sources
+- [nnedi3-nns128-win8x4.hook](https://github.com/bjin/mpv-prescalers/blob/master/compute/nnedi3-nns128-win8x4.hook) for lower quality sources
 
 Download both the shader files and place them in your `shaders` folder.
 
@@ -262,9 +263,10 @@ Next, add the following to your `input.conf`, replacing `g` with the bind of you
 
 :::code source="/static/tutorials/mpv/portable_config/input.conf" range="2" language="properties":::
 
-Now you can simply press `g` during playback to select the suitable shader.
+To toggle the shader, press `g` during playback to select the suitable shader.
 
 +++ Mid-Range PCs
+
 If you use mid-range hardware, we recommend sticking to mpv's built-in `high-quality` profile.
 
 To use the profile, add the following to the top of your `mpv.conf`:
@@ -275,10 +277,11 @@ This is included in the [Basic Config](#basic-config).
 
 +++ Low-End PCs
 
-If you use low-end hardware, we recommend sticking to mpv's default profile, which aims for a balance between quality and performance. You don't need to make any changes to achieve this, as it's the default preset.
+If you use low-end hardware, we recommend sticking to mpv's default profile, which aims for a balance between quality and performance. No other changes need to be made as it is used by default.
 
 +++ Potato PCs
-If you use ultra low-end hardware, we recommend sticking to mpv's built-in `fast` profile, which prioritizes performance over quality.
+
+If you use very low-end hardware, we recommend sticking to mpv's `fast` profile, which prioritizes performance over quality.
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
@@ -290,12 +293,17 @@ profile=fast
 
 ### Dither
 
-Dither is an intentionally applied form of noise used to randomize quantization error, preventing large-scale patterns such as color banding in images. mpv applies dither to match the content bit-depth to your monitor's bit-depth but it may fail to detect the correct bit-depth of your monitor automatically in which case the wrong bit-depth will end up **adding** banding during playback.
+Dither is an intentionally applied noise filter that aims to help eliminate various visual artifacts, such as color banding during playback.
 
-To avoid introducing banding during playback, explicitly set your monitor's bit-depth in `mpv.conf`:
+By default, mpv uses dithering to match the content bit depth to your display's bit depth. *However, in some instances, it may fail to detect the correct bit depth of your display automatically, causing the wrong bit depth to be used and adding banding during playback.*
+
+To avoid introducing banding during playback, we recommend explicitly defining your display's bit depth. Most modern displays use the 8-bit color depth, however you can manually check this:
+
+- For Windows, this can be found in **Settings** -> **Display** -> **Advanced display settings** -> **Display information** -> **Bit depth**
+
+Then, set your display's bit depth in your `mpv.conf`:
 
 :::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="8" language="properties":::
-
 
 ### Subtitle Restyling
 

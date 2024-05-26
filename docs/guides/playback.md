@@ -14,12 +14,11 @@ image: /static/tohsaka.gif
 - [mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Recommended"] [!badge icon="sliders" variant="info" text="Setup Guide"](/tutorials/mpv)
 
 !!!warning
-Players that you should avoid:
-1. [VLC](https://www.videolan.org/vlc/) - Introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. Examples: [Spice and Wolf](https://slow.pics/c/XhbmrYgU), [One Piece](https://slow.pics/c/FW2nBwKP)
+The following players are **not recommended** and should be avoided:
 
-2. [Potplayer](https://potplayer.daum.net/) - Has previously [shipped with adware](https://forum.videohelp.com/threads/393452-PotPlayer-now-Adware%21).
-
-3. [MPC-HC](https://github.com/clsid2/mpc-hc) - Outdated, with lower-quality rendering, with or without madVR.
+- [MPC-HC](https://github.com/clsid2/mpc-hc) - Outdated with lower-quality rendering, with or without madVR
+- [Potplayer](https://potplayer.daum.net/) - Has previously [shipped with adware](https://forum.videohelp.com/threads/393452-PotPlayer-now-Adware%21)
+- [VLC](https://www.videolan.org/vlc/) - Introduces visual artifacts, displays wrong colors, and breaks intensive subtitles. *See the comparisons with [Spice and Wolf](https://slow.pics/c/XhbmrYgU) and [One Piece](https://slow.pics/c/FW2nBwKP)*
 !!!
 
 +++ :robot_face: Android
@@ -50,13 +49,12 @@ The setup consists of two parts: the **server** and the **client**. *Both may be
 
 In a typical setup, the server is installed on a computer hosted on your home network, with the client being installed on all your devices. Most media players will also come with their own client, as well as including support for using [Kodi](https://kodi.tv) as a client (recommended for anime).
 
-[!button variant="secondary" text="Emby" margin="0 8 0 0"](https://emby.media)
-[!button variant="secondary" text="Plex" margin="0 8 0 0"](https://www.plex.tv)
-[!button variant="secondary" text="Jellyfin"](https://jellyfin.org)
+[!button variant="secondary" text="Jellyfin" margin="0 8 0 0"](https://jellyfin.org)
+[!button variant="secondary" text="Plex"](https://www.plex.tv)
 
 !!!
 Running a media server requires a rigid folder structure and a specific file naming scheme.
-*See the guides for your server: [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/), [Jellyfin](https://jellyfin.org/docs/general/server/media/shows)*
+*See the guides for your server: [Jellyfin](https://jellyfin.org/docs/general/server/media/shows), [Plex](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/)*
 !!!
 
 ### Kodi
