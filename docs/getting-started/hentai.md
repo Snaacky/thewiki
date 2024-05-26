@@ -5,8 +5,6 @@ description: Learn how and where to find your favorite hentai
 image: https://user-images.githubusercontent.com/78981416/229375640-a48e0150-2558-40f5-b42b-dad17ff6729b.gif
 author:  
   name: "scourgeofgrozny"
-  link: https://github.com/scourgeofgrozny
-  avatar: https://avatars.githubusercontent.com/u/124029849
 ---
 
 # Hentai
