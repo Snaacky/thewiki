@@ -365,7 +365,7 @@ we can print out the new display dimensions
 to use with mkvpropedit like so:
 
 ```py
-print([round(width), round(height)])
+print(new_sar * clip.width / clip.height)
 ```
 
 ### Applying the corrected SAR/PAR
@@ -374,7 +374,7 @@ Once we've obtained these new display dimensions,
 we can edit the mkv with the following terminal command:
 
 ```shell
-mkvpropedit <filename>.mkv --edit track:v1 --set display-width=<display_width> --set display-height=<display_height>
+mkvpropedit <filename>.mkv --edit track:v1 --set display-unit=3 --set display-width=<display_width> --set display-height=<display_height>
 ```
 
 Replace:
@@ -386,7 +386,7 @@ Replace:
 This command is incomplete, however.
 In order for fully correct playback
 we need to set additional cropping flags
-so the video is cropped to it's respective active area.
+so the video is cropped to its respective active area.
 This can be done by adding the following to the above command:
 
 ```shell
@@ -406,10 +406,10 @@ more black/faded columns.
 If your disc has black borders on the top or bottom,
 you should additionally set the top/bottom pixel crop flags.
 
-Below is an example of a complete command:
+Below is an example of a complete command (for a 16:9 video with active area 711x480 and a top black bar):
 
 ```shell
-mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480 --set pixel-crop-left=5 --set pixel-crop-right=4 --set pixel-crop-top=4
+mkvpropedit test.mkv --edit track:v1 --set display-unit=3 --set display-width=1280 --set display-height=711 --set pixel-crop-left=5 --set pixel-crop-right=4 --set pixel-crop-top=4
 ```
 
 After this your SAR/PAR correction is done and the DVD remux is complete.
