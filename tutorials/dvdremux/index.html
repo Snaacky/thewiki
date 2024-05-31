@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770326703215">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770478445786">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.770326703215" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.770478445786" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770326703215" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.770478445786" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770326703215" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770326703215" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.770478445786" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.770478445786" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -634,7 +634,7 @@ clip_resized = Bicubic.scale(clip, mod2(width), mod2(height), keep_ar=True, sar=
 we can print out the new display dimensions
 to use with mkvpropedit like so:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">print([round(width), round(height)])</code></pre>
+<pre class="language-python"><code v-pre class="language-python">print(new_sar * clip.width / clip.height)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="applying-the-corrected-sarpar">
     <h3>
@@ -645,7 +645,7 @@ to use with mkvpropedit like so:</p>
 <p>Once we&#x27;ve obtained these new display dimensions,
 we can edit the mkv with the following terminal command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">mkvpropedit &lt;filename&gt;.mkv --edit track:v1 --set display-width=&lt;display_width&gt; --set display-height=&lt;display_height&gt;</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mkvpropedit &lt;filename&gt;.mkv --edit track:v1 --set display-unit=3 --set display-width=&lt;display_width&gt; --set display-height=&lt;display_height&gt;</code></pre>
 </doc-codeblock></div>
 <p>Replace:</p>
 <ul>
@@ -656,7 +656,7 @@ we can edit the mkv with the following terminal command:</p>
 <p>This command is incomplete, however.
 In order for fully correct playback
 we need to set additional cropping flags
-so the video is cropped to it&#x27;s respective active area.
+so the video is cropped to its respective active area.
 This can be done by adding the following to the above command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">--set pixel-crop-left=&lt;crop_left&gt; --set pixel-crop-right=&lt;crop_right&gt;</code></pre>
@@ -672,9 +672,9 @@ If your active width is odd, one of the borders will have
 more black/faded columns.</p>
 <p>If your disc has black borders on the top or bottom,
 you should additionally set the top/bottom pixel crop flags.</p>
-<p>Below is an example of a complete command:</p>
+<p>Below is an example of a complete command (for a 16:9 video with active area 711x480 and a top black bar):</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">mkvpropedit test.mkv --edit track:v1 --set display-width=864 --set display-height=480 --set pixel-crop-left=5 --set pixel-crop-right=4 --set pixel-crop-top=4</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">mkvpropedit test.mkv --edit track:v1 --set display-unit=3 --set display-width=1280 --set display-height=711 --set pixel-crop-left=5 --set pixel-crop-right=4 --set pixel-crop-top=4</code></pre>
 </doc-codeblock></div>
 <p>After this your SAR/PAR correction is done and the DVD remux is complete.</p>
 
