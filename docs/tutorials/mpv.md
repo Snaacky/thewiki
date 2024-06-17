@@ -254,7 +254,7 @@ Scalers only work when the resolution of your video does not match your display.
 
 If you use high-end hardware, we recommend using the following shaders:
 
-- [ArtCNN_C4F32.glsl](https://github.com/Artoriuz/ArtCNN/blob/main/ArtCNN_C4F32.glsl) for higher quality sources
+- [ArtCNN_C4F32.glsl](https://github.com/Artoriuz/ArtCNN/blob/main/GLSL/ArtCNN_C4F32.glsl) for higher quality sources
 - [nnedi3-nns128-win8x4.hook](https://github.com/bjin/mpv-prescalers/blob/master/compute/nnedi3-nns128-win8x4.hook) for lower quality sources
 
 Download both the shader files and place them in your `shaders` folder.
