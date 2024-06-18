@@ -22,10 +22,8 @@ In general, a good file name should include:
   - For specials, use `S00EXX` for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01 - OVA Title`) to easily differentiate between episodes*
 - The **source type** (i.e. `BD`, `DVD`, `WEB`)
   - Append `Remux` if your file uses a Blu-ray/DVD remux (i.e. `BD Remux` or `DVD Remux`)
-  - For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `DSNP` for Disney+, `NF` for Netflix)
-- The **source tag**
-  - e.g. `AMZN` for Amazon, `CR` for Crunchyroll, `DSNP` for Disney+, and `NF` for Netflix
-- The **video resolution** and **scan type** (`p` for progressive, `i` for interlaced)
+  - For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `CR` for Crunchyroll, `DSNP` for Disney+, `NF` for Netflix)
+- The **video resolution** and **scan type**
   - Use `p` for progressive video (e.g. `1080p`, `720p`)
   - Use `i` for interlaced video (e.g. `1080i`, `720i`)
 - The **video and audio codec**
@@ -106,11 +104,11 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
 :   The source where the video/audio are taken from
 
     !!!info
-    For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `DSNP` for Disney+, `NF` for Netflix)
+    For Blu-ray/DVD remuxes, add `Remux` to the end (e.g. `BluRay.Remux` or `DVD.Remux`)
     !!!
 
     !!!info
-    For Blu-ray/DVD remuxes, add `Remux` to the end (e.g. `BluRay.Remux` or `DVD.Remux`)
+    For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `CR` for Crunchyroll, `DSNP` for Disney+, `NF` for Netflix)
     !!!
 
 ![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) Dual audio marker [!badge variant="warning" text="Conditional"]
