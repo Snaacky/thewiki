@@ -11,24 +11,37 @@ When naming anime files, it's important to note as much information as possible 
 
 This page serves as a guide on the most optimal naming schemes that provide all the necessary details to users while ensuring the best compatibility with most automated setups.
 
-## File Names
+## General
 
-In general, a good file name should include:
+In general, a good naming scheme should:
 
-- The full **anime show/series** or **movie title**
+- Include the full **anime show/series** or **movie title**
   - If there are multiple versions of the series, you must include the year within the title (e.g. [Hunter x Hunter (1999)](https://thetvdb.com/series/hunter-x-hunter) vs. [Hunter x Hunter (2011)](https://thetvdb.com/series/hunter-x-hunter-2011)). *Note that you must include the year for all movies*
   - We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)
-- The **season/episode number** (for TV series)
-  - For specials, use `S00EXX` for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01 - OVA Title`) to easily differentiate between episodes*
-- The **source type** (i.e. `BD`, `DVD`, `WEB`)
+- Include the **source type** (i.e. `BD`, `DVD`, `WEB`)
   - Append `Remux` if your file uses a Blu-ray/DVD remux (i.e. `BD Remux` or `DVD Remux`)
   - For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `CR` for Crunchyroll, `DSNP` for Disney+, `NF` for Netflix)
-- The **video resolution** and **scan type**
+- Include the **video resolution** and **scan type**
   - Use `p` for progressive video (e.g. `1080p`, `720p`)
   - Use `i` for interlaced video (e.g. `1080i`, `720i`)
-- The **video and audio codec**
+- Include the **video and audio codec**
   - If your file includes multiple audio tracks in different codecs, only list the default track's codec
-- The **releaser/group tag**
+- Include a **releaser/group tag**
+- Limit the use of special characters or characters that need to be escaped
+  - We recommend sticking to alphanumeric characters (`A-Z`, `a-z`, `0-9`)
+  - Use `.` or `-` for delimiters
+
+## File Names
+
+In general, a good file name should:
+
+- Follow the same [general guidelines](#general) for naming
+- Include the **season/episode number** (for TV series)
+  - Use `SXXEXX` format (e.g. Season 2 Episode 10 = `S02E10`)
+  - Absolute episode numbers may be used together (e.g. `S02E10 - E22`), *but never by themselves*
+  - For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01 - OVA Title`) to easily differentiate between episodes*
+- Include a **releaser/group tag**
+  - This should be placed at the start or end of the file name
 
 *See [Recommended Schemes](#recommended-schemes) for various formats to follow for your files.*
 
@@ -70,7 +83,7 @@ A good file name allows a viewer to easily understand what the file is and what 
 ![Example file name using variant 1](/static/advanced/naming/variant-1.png)
 
 !!!warning
-Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be replaced with periods `.` instead.
+Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `'` should be omitted.
 !!!
 
 ![#ed8796](https://placehold.co/14x14/ed8796/ed8796.png) Show title
@@ -81,21 +94,25 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
     !!!
 
 ![#f5a97f](https://placehold.co/14x14/f5a97f/f5a97f.png) Season/episode number
-:   The season and episode number
+:   The season and episode number, in `SXXEXX` format
 
     !!!info
-    For specials, use `S00EXX` for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01.OVA.Title`) to easily differentiate between episodes*
+    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01.OVA.Title`) to easily differentiate between episodes*
     !!!
 
 ![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) Episode title [!badge variant="success" text="Optional"]
 :   The title of the episode. *We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)*
 
     !!!warning
-    This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs.
+    This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs
     !!!
 
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) Version number [!badge variant="warning" text="Conditional"]
 :   The version number for patched releases in `REPACKX` format, where `X` is the version number
+
+    !!!info
+    For marking repacks, omit the version number for v2 releases (i.e. v2 = `REPACK`). Otherwise, `X` is the version number minus one (e.g. v3 = `REPACK2`, v4 = `REPACK3`)
+    !!!
 
 ![#81c8be](https://placehold.co/14x14/81c8be/81c8be.png) Video resolution
 :   The vertical resolution of the file's video. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
@@ -142,10 +159,10 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
     !!!
 
 ![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) Season/episode number
-:   The season and episode number
+:   The season and episode number, in `SXXEXX` format
 
     !!!info
-    For specials, use `S00EXX` for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01 - OVA Title`) to easily differentiate between episodes*
+    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01 - OVA Title`) to easily differentiate between episodes*
     !!!
 
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) Version number [!badge variant="warning" text="Conditional"]
@@ -155,7 +172,7 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
 :   The title of the episode. *We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)*
 
     !!!warning
-    This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs.
+    This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs
     !!!
 
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) Source type
@@ -190,9 +207,11 @@ Spaces and special characters (i.e. apostrophes `'`, commas `,`) should be repla
 
 In general, a good folder should:
 
-- List the **season number(s)** (for TV series)
-  - If you are organizing multiple seasons, these should be separated and named by season (e.g. `Season 1`, `Season 2`, ...)
+- List the **season number** (for TV series)
+  - Use `SXX` format (e.g. `S01`, `S02`)
   - If a season is split into two cours but stored in a single season (e.g. [86: Eighty Six](https://thetvdb.com/series/eighty-six/seasons/official/1)), include the episode range after the season info (e.g. `86: Eighty Six - S01E01-E11)` and `86: Eighty Six - S01E12-E23)`)
+- **Not include mutliple seasons.** These are not supported by automation and cannot be cross-seeded
+  - If you are including a few specials, or the special is important (e.g. finale), you may want to include it in the same torrent. *Otherwise, you should create a separate torrent*
 - Store **specials/OVA episodes** in a separate folder named `Specials`
 - Store **additional content** (creditless OPs/EDs, PVs) in a separate folder named `Extras`
   - `Extras` is a catch-all folder that automation/media servers completely ignore
@@ -217,8 +236,6 @@ For organization, it is recommended to put the group name at the end of folder n
 In general, a good Nyaa release should:
 
 - Follow the same guidelines for [folders](#folders)
-- **Not include mutliple seasons.** These are not supported by automation and cannot be cross-seeded
-  - If you are including a few specials, or the special is important (e.g. finale), you may want to include it in the same torrent. *Otherwise, you should create a separate torrent*
 - Additional aliases at the end of the title for better searching (e.g. alternate show titles, `Season X (SXX)`)
 - A raw link to [MediaInfo](https://mediaarea.net/en/MediaInfo) information
   - For season releases, we recommend using the first episode
