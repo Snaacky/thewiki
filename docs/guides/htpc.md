@@ -281,7 +281,7 @@ Once you have installed libCEC, you should have a program named "cec-tray". This
 - Check the firmware version. If the Upgrade button is not greyed out, your adapter is not on the latest firmware. If you encounter any issues, updating this firmware may help, though some claim that the newer versions break some functionality, so YMMV.
 - In the "Foreground Application" tab, you can press a button on your remote to see what it is currently bound to, and change it. The later steps of this guide assume all default bindings, so keep that in mind when changing them.
 
-==- :sync: Automatic startup
+==- :icon-sync: Automatic startup
 
 1. Locate your libCEC installation folder. *By default, this can be found in `C:\Program Files (x86)\Pulse-Eight\USB-CEC Adapter\x64\netfx\`*
 2. Create a shortcut to `cec-tray.exe`. Place this shortcut in your startup folder
