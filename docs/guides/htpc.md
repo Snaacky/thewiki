@@ -263,7 +263,7 @@ We recommend using the [Pulse-Eight CEC Adapter](https://www.pulse-eight.com/p/1
 Although not officially rated to do so, the Pulse-Eight CEC Adapter has been proven to somewhat work with 4K 120Hz signals, though your milage may vary.
 !!!
 
-### CEC
++++ CEC
 
 Pulse-Eight hosts builds for [libCEC](https://libcec.pulse-eight.com) on their website. libCEC includes the `cec-tray` application, a tool that converts CEC button presses on a comapatible remote to keyboard commands in Windows, which can be used to control media player applications such as Kodi and mpv.
 
@@ -372,5 +372,7 @@ This script checks if `mpv.exe` or `kodi1.exe` are running:
 You will need to modify this code if you want to run something other than `kodi1.exe` (i.e. you used a different file name for the Kodi executable or want to launch a different program) or listen for a key other than `F4`.
 
 To run this script, double-click the `.ahk` file. Alternatively, you can place it in your startup folder to run it automatically when `cec-tray` starts.
+
++++
 
 +++
