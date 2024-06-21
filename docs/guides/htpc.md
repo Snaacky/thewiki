@@ -146,7 +146,8 @@ Depending on your hardware, the [example mpv configs](/tutorials/mpv/#basic-conf
 ontop=yes
 profile=high-quality
 blend-subtitles=video
-hwdec=auto-safe
+#If you aren't using the DRC Filter, change this to auto-safe for better performance.
+hwdec=auto-copy
 gpu-api=vulkan
 target-colorspace-hint=yes
 
@@ -171,11 +172,11 @@ alang=jpn,ja
 #subs-with-matching-audio=no
 
 [SDR]
-profile-cond=p["video-params/primaries"] and p["video-params/primaries"] ~= "bt.2020"
+profile-cond=p["video-params/gamma"] ~= "pq" and p["video-params/gamma"] ~= "hlg"
 vo=gpu
 
-[HDR]
-profile-cond=p["video-params/primaries"] == "bt.2020"
+[HDR/DV]
+profile-cond=p["video-params/gamma"] == "pq" or p["video-params/gamma"] == "hlg"
 vo=gpu-next
 target-contrast=inf ##inf is for OLED, for LCD get the contrast value from rtings or similar
 target-trc=pq
@@ -184,6 +185,10 @@ target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
 
 ## Above makes use of vo=gpu-next for HDR Content, and vo=gpu for SDR. This is a requirement for blend-subtitles=video
 ## blend-subtitles=video is used to avoid performance issues with rendering 1080p subtitles at 2160p.
+
+
+[drc]
+vf-toggle=scale=in_range=limited:out_range=full,setrange=limited
 ```
 
 !!!
@@ -270,14 +275,14 @@ Although not officially rated to do so, the Pulse-Eight CEC Adapter has been pro
 
 Pulse-Eight hosts builds for [libCEC](https://libcec.pulse-eight.com) on their website. libCEC includes the `cec-tray` application, a tool that converts CEC button presses on a comapatible remote to keyboard commands in Windows, which can be used to control media player applications such as Kodi and mpv.
 
-==- cec-tray configuration
+==- :icon-gear: cec-tray configuration
 Once you have installed libCEC, you should have a program named "cec-tray". This program is used to pass CEC commands as keyboard inputs. However, there are some settings you must, or should, change.
 - Set "HDMI port of the TV" to the port that the PC is connected to on the PC.
 - Check "Minimise after connecting to the adapter"
 - Check the firmware version. If the Upgrade button is not greyed out, your adapter is not on the latest firmware. If you encounter any issues, updating this firmware may help, though some claim that the newer versions break some functionality, so YMMV.
 - In the "Foreground Application" tab, you can press a button on your remote to see what it is currently bound to, and change it. The later steps of this guide assume all default bindings, so keep that in mind when changing them.
 
-==- :icon-gear: Automatic startup
+==- :sync: Automatic startup
 
 1. Locate your libCEC installation folder. *By default, this can be found in `C:\Program Files (x86)\Pulse-Eight\USB-CEC Adapter\x64\netfx\`*
 2. Create a shortcut to `cec-tray.exe`. Place this shortcut in your startup folder
@@ -305,6 +310,8 @@ F2 cycle deband
 F4 cycle sub down
 # F1 - Cycle through audio tracks
 F1 cycle audio
+# F3 - Toggle the DRC filter
+F3 apply-profile drc
 # Select - Pause/play
 ENTER cycle pause; show-text "${time-pos/full}"
 # Backspace - Exit mpv
