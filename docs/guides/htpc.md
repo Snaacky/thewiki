@@ -262,6 +262,8 @@ Using a keyboard and mouse to control your system is not optimal for home theate
 - Game Controller
 - Combo keyboard and trackpad devices
 
+### CEC
+
 Although the most expensive option, a CEC adapter is one of the best ways to control your HTPC. This allows you to use your TV's OEM remote control to send commands to your computer, including but not limited to directional pad, select button, color buttons, and more, depending on your specific make and model of TV.
 
 We recommend using the [Pulse-Eight CEC Adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter), which can often be found cheaper on second-hand marketplaces.
@@ -269,9 +271,6 @@ We recommend using the [Pulse-Eight CEC Adapter](https://www.pulse-eight.com/p/1
 !!!secondary
 Although not officially rated to do so, the Pulse-Eight CEC Adapter has been proven to somewhat work with 4K 120Hz signals, though your milage may vary.
 !!!
-
-### CEC
-
 
 Pulse-Eight hosts builds for [libCEC](https://libcec.pulse-eight.com) on their website. libCEC includes the `cec-tray` application, a tool that converts CEC button presses on a comapatible remote to keyboard commands in Windows, which can be used to control media player applications such as Kodi and mpv.
 
