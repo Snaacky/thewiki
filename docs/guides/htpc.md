@@ -252,8 +252,10 @@ After installing Kodi, go to `%appdata%\Kodi\userdata`, make a file called `play
 Using a keyboard and mouse to control your system is not optimal for home theater usage. Instead, you should consider using an alternative input device:
 
 - CEC Adapter [!badge variant="primary" text="Recommended"]
+- IR Remote
+- USB Remote
+- Game Controller
 - Combo keyboard and trackpad devices
-- USB remotes
 
 Although the most expensive option, a CEC adapter is one of the best ways to control your HTPC. This allows you to use your TV's OEM remote control to send commands to your computer, including but not limited to directional pad, select button, color buttons, and more, depending on your specific make and model of TV.
 
@@ -263,7 +265,8 @@ We recommend using the [Pulse-Eight CEC Adapter](https://www.pulse-eight.com/p/1
 Although not officially rated to do so, the Pulse-Eight CEC Adapter has been proven to somewhat work with 4K 120Hz signals, though your milage may vary.
 !!!
 
-==- CEC
+### CEC
+
 
 Pulse-Eight hosts builds for [libCEC](https://libcec.pulse-eight.com) on their website. libCEC includes the `cec-tray` application, a tool that converts CEC button presses on a comapatible remote to keyboard commands in Windows, which can be used to control media player applications such as Kodi and mpv.
 
@@ -375,4 +378,39 @@ To run this script, double-click the `.ahk` file. Alternatively, you can place i
 
 +++
 
-==-
+### IR
+
+Most TVs from the early 90s to now use some form of IR technology for the remote. Some higher end TVs will use RF or Bluetooth technology for the remote, but still contain the technology to be used with an IR Remote. It’s a cheap and reliable way to send remote signals long distance. There are a variety of methods of using an IR Remote with a PC, including:
+ - [FLIRC Dongle](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#BuyUpgrade) ($23.99)
+ - [Windows MCE Receiver](https://www.ebay.com/sch/i.html?_nkw=hp+media+center+reciever&_sacat=0) (~$10)
+ - [DIY Projects](https://www.instructables.com/DIY-USB-IR-receiver/) (~$5)
+The FLIRC is the most complete retail product, however all three can be made to work in any setup. However, all three will need a remote to interface with.
+
+Most low end TVs will be using an IR Remote. If there are buttons on the remote that don’t accidentally trigger other functions on the TV, these buttons can be programmed with your receiver. Some higher end remotes, such as the LG Magic Remote can be programmed as an IR Remote for devices like a Cable Box or DVD/BD player. You can take advantage of this feature to have the remote send IR signals that the TV knows are not directed at it.
+
+If you don’t have these features on your remote, there are alternative solutions as well. In the case of the MCE Receiver, there is an official remote that was meant to be used with it. You can also reuse any remote that you already have from an old or broken TV. 
+
+A more advanced solution would be Logitech Harmony or FLIRC Skip 1s. These are universal remotes that are programmable with macros and other advanced features, like turning on and setting inputs on all devices. The Harmony ecosystem was abandoned by Logitech, however the remotes can be found for very cheap on the used market. The FLIRC Skip 1s is a similar product that is still being manufactured, and doesn’t require a cloud service to be programmed like the Harmony.
+
+Once you have picked a reciever and remote, you can download the accompanying software. 
+
+==- FLIRC
+Download the FLIRC Software from [here](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#spec2)
+
+==- MCE IR
+The MCE Recievers were designed to only offically work with it's original remote/codes. Most "smart" universal remotes should have codes for the MCE system, including Harmony and Skip 1s.
+The (currently unmaintained) [EventGhost](https://github.com/EventGhost/EventGhost/releases) software is able to read arbitrary IR codes from the MCE reciever, and rebind alternative actions. To do so:
+1. After installation, click File > New to remove the sample configuration.
+2. At the top of the window, click the "Add Plugin..." button, and add the "Microsoft MCE Remote - Vista/Win7" plugin.
+3. In the next window, click "Install Service". This is an alternative driver for the reciever that will allow any IR code to be read.
+4. At the top of the window, click the "Add Macro..." button, but close the configuration window. You should have an "\<unnamed macro\>". Make one for each button you would like to bind. You should rename it to the appropriate action.
+5. Press the button you would like to bind. It should show on the left side of the EventGhost window.
+    - ![image](https://github.com/guyman624/thewiki/assets/82007920/9305a0ac-2e4e-4b4a-a04d-bc5bccfc7e0c)
+7. Drag this element to the macro you would like it to activate.
+8. Click the macro, and at the top of the window click "Add Action...". Add the Window > Emulate Keystrokes action.
+9. Configure the keystroke you would like to attach to this IR code.
+
+Once you have configured all the keys, as long as EventGhost is running, the keystrokes should be sent. You may wish to add EventGhost to the startup folder as detailed in the [CEC](#cec) section.
+
+==- 
+
