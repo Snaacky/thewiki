@@ -146,7 +146,7 @@ Depending on your hardware, the [example mpv configs](/tutorials/mpv/#basic-conf
 ontop=yes
 profile=high-quality
 blend-subtitles=video
-#If you aren't using the DRC Filter, change this to auto-safe for better performance.
+#If you aren't using the DRC Filter, you can change this to auto-safe for better performance.
 hwdec=auto-copy
 gpu-api=vulkan
 target-colorspace-hint=yes
@@ -275,10 +275,10 @@ Although not officially rated to do so, the Pulse-Eight CEC Adapter has been pro
 Pulse-Eight hosts builds for [libCEC](https://libcec.pulse-eight.com) on their website. libCEC includes the `cec-tray` application, a tool that converts CEC button presses on a comapatible remote to keyboard commands in Windows, which can be used to control media player applications such as Kodi and mpv.
 
 ==- :icon-gear: cec-tray configuration
-Once you have installed libCEC, you should have a program named "cec-tray". This program is used to pass CEC commands as keyboard inputs. However, there are some settings you must, or should, change.
+Once you have installed libCEC, open cec-tray. This program is used to pass CEC commands as keyboard inputs. The following settings should be changed prior to use:
 - Set "HDMI port of the TV" to the port that the PC is connected to on the PC.
 - Check "Minimise after connecting to the adapter"
-- Check the firmware version. If the Upgrade button is not greyed out, your adapter is not on the latest firmware. If you encounter any issues, updating this firmware may help, though some claim that the newer versions break some functionality, so YMMV.
+- Check the firmware version. If you encounter any issues, updating the firmware may help, though some claim that the newer versions firmwares break functionality, so your mileage may vary.
 - In the "Foreground Application" tab, you can press a button on your remote to see what it is currently bound to, and change it. The later steps of this guide assume all default bindings, so keep that in mind when changing them.
 
 ==- :icon-sync: Automatic startup
@@ -397,13 +397,12 @@ Most TVs from the early 90s to now use some form of IR technology for the remote
  - [FLIRC Dongle](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#BuyUpgrade) ($23.99)
  - [Windows MCE Receiver](https://www.ebay.com/sch/i.html?_nkw=hp+media+center+reciever&_sacat=0) (~$10)
  - [DIY Projects](https://www.instructables.com/DIY-USB-IR-receiver/) (~$5)
-The FLIRC is the most complete retail product, however all three can be made to work in any setup. However, all three will need a remote to interface with.
 
-Most low end TVs will be using an IR Remote. If there are buttons on the remote that don’t accidentally trigger other functions on the TV, these buttons can be programmed with your receiver. Some higher end remotes, such as the LG Magic Remote can be programmed as an IR Remote for devices like a Cable Box or DVD/BD player. You can take advantage of this feature to have the remote send IR signals that the TV knows are not directed at it.
+The FLIRC is the most complete retail product, however all three can be made to work in most setups. However, all three will need a remote to interface with.
 
-If you don’t have these features on your remote, there are alternative solutions as well. In the case of the MCE Receiver, there is an official remote that was meant to be used with it. You can also reuse any remote that you already have from an old or broken TV. 
+Most low end TVs will be using an IR Remote. If there are buttons on the remote that don’t accidentally trigger other functions on the TV, these buttons can be programmed with your receiver. Some higher end remotes, such as the LG Magic Remote can be programmed as an IR Remote for devices like a Cable Box or DVD/BD player. You can take advantage of this feature to have the remote send IR signals that the TV knows are not directed at it. If you don’t have these features on your remote, there are alternative solutions as well. In the case of the MCE Receiver, there is an official remote that was meant to be used with it. You can also reuse any remote that you already have from an old or broken TV. 
 
-A more advanced solution would be Logitech Harmony or FLIRC Skip 1s. These are universal remotes that are programmable with macros and other advanced features, like turning on and setting inputs on all devices. The Harmony ecosystem was abandoned by Logitech, however the remotes can be found for very cheap on the used market. The FLIRC Skip 1s is a similar product that is still being manufactured, and doesn’t require a cloud service to be programmed like the Harmony.
+A more advanced solution would be a programmable universal remote like the Logitech Harmony or FLIRC Skip 1s. These devices have features like turning on and setting inputs on all devices with one button. The Harmony ecosystem was abandoned by Logitech, however the remotes can be found for very cheap on the used market. The FLIRC Skip 1s is a similar product that is still being manufactured, and doesn’t require a cloud service to be programmed like the Harmony.
 
 #### Recievers
 
@@ -412,7 +411,9 @@ Download the FLIRC Software from [here](https://flirc.tv/products/flirc-usb-rece
 
 ==- MCE IR
 The MCE Recievers were designed to only offically work with it's original remote/codes. Most "smart" universal remotes should have codes for the MCE system, including Harmony and Skip 1s.
-The (currently unmaintained) [EventGhost](https://github.com/EventGhost/EventGhost/releases) software is able to read arbitrary IR codes from the MCE reciever, and rebind alternative actions. To do so:
+If you have an original remote, or supported universal remote, you can use [Advanced MCE Remote Mapper](https://forum.kodi.tv/showthread.php?tid=164252) to remap keys.
+
+The (currently unmaintained) [EventGhost](https://github.com/EventGhost/EventGhost/releases) software is able to read arbitrary IR codes from the MCE reciever, and can be used with any remote. To configure:
 1. After installation, click File > New to remove the sample configuration.
 2. At the top of the window, click the "Add Plugin..." button, and add the "Microsoft MCE Remote - Vista/Win7" plugin.
 3. In the next window, click "Install Service". This is an alternative driver for the reciever that will allow any IR code to be read.
