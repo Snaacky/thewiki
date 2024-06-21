@@ -270,6 +270,13 @@ Although not officially rated to do so, the Pulse-Eight CEC Adapter has been pro
 
 Pulse-Eight hosts builds for [libCEC](https://libcec.pulse-eight.com) on their website. libCEC includes the `cec-tray` application, a tool that converts CEC button presses on a comapatible remote to keyboard commands in Windows, which can be used to control media player applications such as Kodi and mpv.
 
+==- cec-tray configuration
+Once you have installed libCEC, you should have a program named "cec-tray". This program is used to pass CEC commands as keyboard inputs. However, there are some settings you must, or should, change.
+- Set "HDMI port of the TV" to the port that the PC is connected to on the PC.
+- Check "Minimise after connecting to the adapter"
+- Check the firmware version. If the Upgrade button is not greyed out, your adapter is not on the latest firmware. If you encounter any issues, updating this firmware may help, though some claim that the newer versions break some functionality, so YMMV.
+- In the "Foreground Application" tab, you can press a button on your remote to see what it is currently bound to, and change it. The later steps of this guide assume all default bindings, so keep that in mind when changing them.
+
 ==- :icon-gear: Automatic startup
 
 1. Locate your libCEC installation folder. *By default, this can be found in `C:\Program Files (x86)\Pulse-Eight\USB-CEC Adapter\x64\netfx\`*
@@ -299,7 +306,7 @@ F4 cycle sub down
 # F1 - Cycle through audio tracks
 F1 cycle audio
 # Select - Pause/play
-ENTER cycle pause
+ENTER cycle pause; show-text "${time-pos/full}"
 # Backspace - Exit mpv
 BS quit
 ```
@@ -392,7 +399,7 @@ If you don’t have these features on your remote, there are alternative solutio
 
 A more advanced solution would be Logitech Harmony or FLIRC Skip 1s. These are universal remotes that are programmable with macros and other advanced features, like turning on and setting inputs on all devices. The Harmony ecosystem was abandoned by Logitech, however the remotes can be found for very cheap on the used market. The FLIRC Skip 1s is a similar product that is still being manufactured, and doesn’t require a cloud service to be programmed like the Harmony.
 
-Once you have picked a reciever and remote, you can download the accompanying software. 
+#### Recievers
 
 ==- FLIRC
 Download the FLIRC Software from [here](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#spec2)
@@ -409,8 +416,22 @@ The (currently unmaintained) [EventGhost](https://github.com/EventGhost/EventGho
 7. Drag this element to the macro you would like it to activate.
 8. Click the macro, and at the top of the window click "Add Action...". Add the Window > Emulate Keystrokes action.
 9. Configure the keystroke you would like to attach to this IR code.
+10. Click File > Save to save the configuration as XML. EventGhost automatically reopens the previous file on startup.
 
 Once you have configured all the keys, as long as EventGhost is running, the keystrokes should be sent. You may wish to add EventGhost to the startup folder as detailed in the [CEC](#cec) section.
 
 ==- 
+
+#### Universal Remotes
+
+==- Logitech Harmony
+!!!warning
+Logitech has discontinued all Harmony products and has stopped supporting the software. The software relies on a cloud service to function, and if this cloud service were to go down, you would be rendered unable to change your remote configuration. At the time of writing this guide, ALL Harmony products are still fully functional and have no shutdown date from Logitech
+!!!
+
+There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list [here](https://support.myharmony.com/en-us/download#legacy).
+
+If you are using a remote that relies on the Harmony 7.x software, you may need to alter the model number to something from the same time frame as the software. For example, the LG 42C2 is not in the Harmony 7.x database, but the codes for the LG 32LC7D are fully cross compatible. If you cannot find a cross compatible device, the Harmony is capable of "learning" IR codes from the original remote.
+==- 
+
 
