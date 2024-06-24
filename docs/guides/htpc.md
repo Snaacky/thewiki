@@ -407,7 +407,19 @@ A more advanced solution would be a programmable universal remote like the Logit
 #### Recievers
 
 ==- FLIRC
-Download the FLIRC Software from [here](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#spec2)
+There are two different revisions of the FLIRC dongle. The first generation is in a clear plastic shell, and is no longer supported by FLIRC, however the latest software still is fully functional. The second generation is in a metal and plastic shell. It has the latest firmware updates, and also includes an IR transmitter. This transmitter is only functional through the CLI however, it is not implemented into the GUI. ([source](https://forum.flirc.tv/index.php?/topic/3980-transmit-ir-signal-on-gen-2/))
+
+
+Download the FLIRC Software from [here](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#spec2). The configuration is stored on the dongle itself, so you can configure on one computer then move to the HTPC without the need for the software on both.
+
+The basic usage of the software is as follows:
+1. Connect the dongle to the PC running the FLIRC software
+2. Select the type of controller you want to emulate from the Controllers tab. (You can select different buttons from multiple controllers)
+3. Click the button you would like to bind, then point the remote at the dongle and press the button.
+
+Although the most complete retail product, the FLIRC software is far from perfect. In my experience there are two quirks that you should know to take full advantage of the device.
+ - The "erase" button at the bottom seems to be non functional. This means that if you make a mistake, you need to go to File > Clear Configuration, __restart the software__, then start over.
+ - Different buttons with similar meanings on different tabs will do different things. For example, the "Wake" button on the "Full Keyboard" tab will __only__ wake the computer, where as the power button under "Media Keys" is both a sleep and wake button.
 
 ==- MCE IR
 The MCE Recievers were designed to only offically work with it's original remote/codes. Most "smart" universal remotes should have codes for the MCE system, including Harmony and Skip 1s.
