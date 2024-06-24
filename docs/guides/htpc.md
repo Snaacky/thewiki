@@ -404,6 +404,37 @@ Most low end TVs will be using an IR Remote. If there are buttons on the remote 
 
 A more advanced solution would be a programmable universal remote like the Logitech Harmony or FLIRC Skip 1s. These devices have features like turning on and setting inputs on all devices with one button. The Harmony ecosystem was abandoned by Logitech, however the remotes can be found for very cheap on the used market. The FLIRC Skip 1s is a similar product that is still being manufactured, and doesn’t require a cloud service to be programmed like the Harmony.
 
+#### Universal Remotes
+
+==- LG Magic Remote
+!!!warning
+LG Magic Remotes can ONLY be used with an LG TV. They cannot be used with other TVs.
+!!!
+
+The LG Magic Remote does not communicate with the TV via IR (except for the power button), however it is capable of emulating IR remotes. Although they do not have any HTPC specific IR codes, we can reuse the IR codes for a Cable Box.
+
+1. Open the full settings menu on your TV, and go to General > External Devices > Universal Control Settings.
+2. Select the HDMI Input that corresponds with your HTPC. In my case, it is HDMI 1. If there are any settings stored there, delete them.
+3. Select Set-Top Box. The other options (BD/DVD, Home Theater, OTT) are missing some buttons, like CH+/CH-.
+4. Select any of the service providers in your area. If you have a cable box, pick another brand to avoid confliction.
+5. During the self test, you can answer "Yes" to all the questions. These buttons will do nothing until you have configured them in your IR blaster.
+
+Your Magic Remote will now emit IR codes as long as the TV is on, and the input is set to the HTPC. Make sure that both of these things are true when trying to configure your IR Reciever, otherwise the remote will not emit any IR.
+
+When binding sleep/wake, you can use the ellipsis button to find the power button. This will allow you to turn the PC on when the TV detects no signal.
+<img src="https://github.com/guyman624/thewiki/assets/82007920/b6500aaf-229c-43e6-af28-8a627cd060b6" width="150">
+
+
+==- Logitech Harmony
+!!!warning
+Logitech has discontinued all Harmony products and has stopped supporting the software. The software relies on a cloud service to function, and if this cloud service were to go down, you would be rendered unable to change your remote configuration. At the time of writing this guide, ALL Harmony products are still fully functional and have no shutdown date from Logitech
+!!!
+
+There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list [here](https://support.myharmony.com/en-us/download#legacy).
+
+If you are using a remote that relies on the Harmony 7.x software, you may need to alter the model number to something from the same time frame as the software. For example, the LG 42C2 is not in the Harmony 7.x database, but the codes for the LG 32LC7D are fully cross compatible. If you cannot find a cross compatible device, the Harmony is capable of "learning" IR codes from the original remote.
+==- 
+
 #### Recievers
 
 ==- FLIRC
@@ -431,7 +462,7 @@ The (currently unmaintained) [EventGhost](https://github.com/EventGhost/EventGho
 3. In the next window, click "Install Service". This is an alternative driver for the reciever that will allow any IR code to be read.
 4. At the top of the window, click the "Add Macro..." button, but close the configuration window. You should have an "\<unnamed macro\>". Make one for each button you would like to bind. You should rename it to the appropriate action.
 5. Press the button you would like to bind. It should show on the left side of the EventGhost window.
-    - ![image](https://github.com/guyman624/thewiki/assets/82007920/9305a0ac-2e4e-4b4a-a04d-bc5bccfc7e0c)
+    - <img src="https://github.com/guyman624/thewiki/assets/82007920/9305a0ac-2e4e-4b4a-a04d-bc5bccfc7e0c" width="100">
 7. Drag this element to the macro you would like it to activate.
 8. Click the macro, and at the top of the window click "Add Action...". Add the Window > Emulate Keystrokes action.
 9. Configure the keystroke you would like to attach to this IR code.
@@ -439,18 +470,6 @@ The (currently unmaintained) [EventGhost](https://github.com/EventGhost/EventGho
 
 Once you have configured all the keys, as long as EventGhost is running, the keystrokes should be sent. You may wish to add EventGhost to the startup folder as detailed in the [CEC](#cec) section.
 
-==- 
-
-#### Universal Remotes
-
-==- Logitech Harmony
-!!!warning
-Logitech has discontinued all Harmony products and has stopped supporting the software. The software relies on a cloud service to function, and if this cloud service were to go down, you would be rendered unable to change your remote configuration. At the time of writing this guide, ALL Harmony products are still fully functional and have no shutdown date from Logitech
-!!!
-
-There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list [here](https://support.myharmony.com/en-us/download#legacy).
-
-If you are using a remote that relies on the Harmony 7.x software, you may need to alter the model number to something from the same time frame as the software. For example, the LG 42C2 is not in the Harmony 7.x database, but the codes for the LG 32LC7D are fully cross compatible. If you cannot find a cross compatible device, the Harmony is capable of "learning" IR codes from the original remote.
 ==- 
 
 
