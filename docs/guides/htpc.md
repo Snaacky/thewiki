@@ -68,8 +68,8 @@ If it includes a dGPU, you might not need to find one for your HTPC. Check to se
 Once you have picked a machine, you can move onto picking a GPU. We recommend choosing relatively recent, low-powered graphics cards as this will allow you to handle most modern shows without issue. Some examples of popular budget cards are:
 
 - AMD Radeon RX 550
-- NVIDIA GT 1030 (GDDR5) [!badge variant="info" text="Preferred for 4K/HDR"]
-- NVIDIA Quadro P600 [!badge variant="warning" text="Mini DP to HDMI adapter required"]
+- NVIDIA GT 1030 (GDDR5) 
+- NVIDIA Quadro P1000 [!badge variant="info" text="Preferred for 4K/HDR"] [!badge variant="warning" text="Mini DP to HDMI adapter required"]
 
 The most important factor to consider when choosing a GPU is the video decoder hardware and its supported resolutions.
 
@@ -103,6 +103,10 @@ Avoid systems running 6th Generation Intel processors or older. These CPUs are k
 This is an example of a good option to choose for your HTPC. As shown, this machine includes a capable CPU, decent amount of RAM preinstalled, and an SSD. This is an ideal candidate if size is a concern.
 
 ==-
+
+Whether your system has an iGPU or a dGPU, you may run into limitations with their I/O. Most office equipment such as Quadro GPUs and ThinkCentre PCs will omit HDMI. In these cases, you will need an __active__ DisplayPort to HDMI adapter. Improper adapters may be limited to 4K 30Hz or not support HDR. The following adapters have been verified to support 4K 60Hz with HDR, however any adapter labeled as such should work.
+ - [Amazon Basics DisplayPort (4k@60Hz) to HDMI Female Converter](https://www.amazon.com/DisplayPort-Adapter-Compatible-Microsoft-Projector/dp/B07JDWR6W9)
+ - [BENFEI Mini DisplayPort to HDMI, 4K@60Hz Active Mini DP to HDMI Adapter](https://www.amazon.com/DisplayPort-Adapter-Compatible-Microsoft-Projector/dp/B07ZNH35M5) 
 
 ## Operating System
 
@@ -146,8 +150,7 @@ Depending on your hardware, the [example mpv configs](/tutorials/mpv/#basic-conf
 ontop=yes
 profile=high-quality
 blend-subtitles=video
-#If you aren't using the DRC Filter, you can change this to auto-safe for better performance.
-hwdec=auto-copy
+hwdec=auto-copy #If you aren't using the DRC Filter, you can change this to auto-safe for better performance.
 gpu-api=vulkan
 target-colorspace-hint=yes
 
