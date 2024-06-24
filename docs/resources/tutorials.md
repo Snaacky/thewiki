@@ -5,7 +5,6 @@ order: -3
 
 # Tutorials
 
-- [Automate Downloads With Taiga2shana](/tutorials/shana)
 - [Creating a comparison](/tutorials/comparison)
 - [Creating torrents](/tutorials/torrent)
 - [Deluge](/tutorials/deluge)

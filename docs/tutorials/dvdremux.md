@@ -17,7 +17,7 @@ Assistance is available in [this Discord server](https://discord.gg/XTpc6Fa9eB) 
 2. FFmpeg >=7.0 GPL build from [BtbN](https://github.com/BtbN/FFmpeg-Builds/releases)
    - [Quick link for Windows x64](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.0-latest-win64-gpl-7.0.zip)
 3. [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases)
-   - [Setup guide](https://jaded-encoding-thaumaturgy.github.io/JET-guide/setup/)
+   - [Setup guide](https://jaded-encoding-thaumaturgy.github.io/JET-guide/basics/setup/)
 4. [MKVToolNix](https://mkvtoolnix.download/downloads.html)
 
 ## Finding Title/Angle/Chapter (MPC-HC)
