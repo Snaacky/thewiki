@@ -198,7 +198,7 @@ See the setup guide for details.
 
 DVD videos are stored as what's known as anamorphic video.
 This means that the video encoded on the disc
-have a different aspect ratio
+has a different aspect ratio
 from how it is meant to be displayed.
 NTSC discs store a 720x480 resolution
 while PAL discs are 720x576,
