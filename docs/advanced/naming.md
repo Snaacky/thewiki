@@ -7,7 +7,7 @@ order: -2
 
 # Naming
 
-When naming anime files, it's important to note as much information as possible (though not *everything*). This allows any viewer to understand what the file contains, making it easy for viewers to differentiate it between other files and allow for compatibility with various tools, such as [media servers](/guides/playback/#media-servers), [Usenet](/sourcing/usenet), [XDCC](/sorucing/ddl), etc.
+When naming anime files, it's important to note as much information as possible (though not *everything*). This allows any viewer to understand what the file contains, making it easy for viewers to differentiate it between other files and allow for compatibility with various tools, such as [media servers](/guides/playback/#media-servers), [Usenet](/sourcing/usenet), [XDCC](/sourcing/ddl), etc.
 
 This page serves as a guide on the most optimal naming schemes that provide all the necessary details to users while ensuring the best compatibility with most automated setups.
 
@@ -104,7 +104,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The season and episode number, in `SXXEXX` format
 
     !!!info
-    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also include an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
+    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also use an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
     !!!
 
     !!!warning
@@ -185,7 +185,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The season and episode number, in `SXXEXX` format
 
     !!!info
-    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also include an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
+    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also use an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
     !!!
 
     !!!warning
