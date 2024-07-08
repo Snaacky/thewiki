@@ -11,43 +11,17 @@ When naming anime files, it's important to note as much information as possible 
 
 This page serves as a guide on the most optimal naming schemes that provide all the necessary details to users while ensuring the best compatibility with most automated setups.
 
-## General
+## Reasons to Switch
 
-In general, a good naming scheme should:
+- Various file naming schemes often leave out important information that may be useful to the viewer
+- Automation tools such as [media servers](/guides/playback/#media-servers) can fail to parse information from poorly named releases, such as getting the wrong show title or episode number
+- Poorly named releases are often renamed in favor of better user readibility or software support, preventing users from continuing to seed on torrent clients
 
-- Include the full **anime show/series** or **movie title**
-  - If there are multiple versions of the series, you must include the year within the title (e.g. [Hunter x Hunter (1999)](https://thetvdb.com/series/hunter-x-hunter) vs. [Hunter x Hunter (2011)](https://thetvdb.com/series/hunter-x-hunter-2011)). *Note that you must include the year for all movies*
-  - We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)
-- Include the **source type** (i.e. `BD`, `DVD`, `WEB`)
-  - Append `Remux` if your file uses a Blu-ray/DVD remux (i.e. `BD Remux` or `DVD Remux`)
-  - For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `CR` for Crunchyroll, `DSNP` for Disney+, `NF` for Netflix)
-- Include the **video resolution** and **scan type**
-  - Use `p` for progressive video (e.g. `1080p`, `720p`)
-  - Use `i` for interlaced video (e.g. `1080i`, `720i`)
-- Include the **video and audio codec**
-  - If your file includes multiple audio tracks in different codecs, only list the default track's codec
-- Include a **releaser/group tag**
-- Limit the use of special characters or characters that need to be escaped
-  - We recommend sticking to alphanumeric characters (`A-Z`, `a-z`, `0-9`)
-  - Use `.` or `-` for delimiters
+See below for a list of examples on why your existing naming scheme may not be ideal:
 
-## File Names
+==- :icon-trash: Examples of Bad Names
 
-In general, a good file name should:
-
-- Follow the same [general guidelines](#general) for naming
-- Include the **season/episode number** (for TV series)
-  - Use `SXXEXX` format (e.g. Season 2 Episode 10 = `S02E10`)
-  - Absolute episode numbers may be used together (e.g. `S02E10 - E22`), *but never by themselves*
-  - For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01 - OVA Title`) to easily differentiate between episodes*
-- Include a **releaser/group tag**
-  - This should be placed at the start or end of the file name
-
-*See [Recommended Schemes](#recommended-schemes) for various formats to follow for your files.*
-
-### Examples of Bad Names
-
-A bad file name often leaves out important information that may be useful to the viewer. The following shows examples of badly named releases:
+The following shows examples of badly named releases:
 
 ![Releases using bad naming schemes](/static/advanced/naming/releases-bad-naming.png)
 
@@ -74,7 +48,40 @@ Using good naming schemes, it could look like the following:
 
 ![Releases using good naming schemes](/static/advanced/naming/releases-good-naming.png)
 
-### Recommended Schemes
+===
+
+## Workflow
+
+In general, a good naming scheme should:
+
+- Include the full **anime show/series** or **movie title**
+  - If there are multiple versions of the series, you must include the year within the title (e.g. [Hunter x Hunter (1999)](https://thetvdb.com/series/hunter-x-hunter) vs. [Hunter x Hunter (2011)](https://thetvdb.com/series/hunter-x-hunter-2011)). *Note that you must include the year for all movies*
+  - We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)
+- Include the **source type** (i.e. `BD`, `DVD`, `WEB`)
+  - Append `Remux` if your file uses a Blu-ray/DVD remux (i.e. `BD Remux` or `DVD Remux`)
+  - For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `CR` for Crunchyroll, `DSNP` for Disney+, `NF` for Netflix)
+- Include the **video resolution** and **scan type**
+  - The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `800`)*
+  - Use `p` for progressive video (e.g. `1080p`, `720p`) and `i` for interlaced video (e.g. `1080i`, `720i`)
+- Include the **video and audio codec**
+  - If your file includes multiple audio tracks in different codecs, only list the default track's codec
+- Include a **releaser/group tag**
+- Limit the use of special characters or characters that need to be escaped
+  - We recommend sticking to alphanumeric characters (`A-Z`, `a-z`, `0-9`)
+  - Use `.` or `-` for delimiters
+
+### File Names
+
+In general, a good file name should:
+
+- Follow the same general guidelines for naming
+- Include the **season/episode number** (for TV series)
+  - Use `SXXEXX` format (e.g. Season 2 Episode 10 = `S02E10`)
+  - Absolute episode numbers may be used together (e.g. `S02E10 - E22`), *but never by themselves*
+  - For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also include an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
+  - Do not use decimal numbering (`X.5`) as a single method of identifying specials, as these are often not supported by most software. *You may use these in conjunction with the `SXXEXX` identifier, though absolute numbering is more preferred*
+- Include a **releaser/group tag**
+  - This should be placed at the start or end of the file name
 
 A good file name allows a viewer to easily understand what the file is and what it contains. See the recommended variants below:
 
@@ -97,7 +104,11 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The season and episode number, in `SXXEXX` format
 
     !!!info
-    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01.OVA.Title`) to easily differentiate between episodes*
+    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also include an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
+    !!!
+
+    !!!warning
+    Do not use decimal numbering (`X.5`) as a single method of identifying specials, as these are often not supported by most software. *You may use these in conjunction with the `SXXEXX` identifier, though absolute numbering is more preferred*
     !!!
 
 ![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) Episode title [!badge variant="success" text="Optional"]
@@ -105,6 +116,10 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 
     !!!warning
     This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs
+    !!!
+
+    !!!info
+    For specials, it is recommended to include an episode title if it is possible
     !!!
 
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) Version number [!badge variant="warning" text="Conditional"]
@@ -115,7 +130,15 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
     !!!
 
 ![#81c8be](https://placehold.co/14x14/81c8be/81c8be.png) Video resolution
-:   The vertical resolution of the file's video. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+:   The resolution of the file's video in `XS` format, where `X` is the number of vertical pixels and `S` is the scan type. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+
+    !!!info
+    The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `800`)*
+    !!!
+
+    !!!info
+    Use `p` for progressive video (e.g. `1080p`, `720p`) and `i` for interlaced video (e.g. `1080i`, `720i`)
+    !!!
 
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) Source type
 :   The source where the video/audio are taken from
@@ -162,7 +185,11 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The season and episode number, in `SXXEXX` format
 
     !!!info
-    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *However, it is suggested to add an additional identifier such as including `OVA` or the episode title (i.e. `S00E01 - OVA Title`) to easily differentiate between episodes*
+    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also include an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
+    !!!
+
+    !!!warning
+    Do not use decimal numbering (`X.5`) as a single method of identifying specials, as these are often not supported by most software. *You may use these in conjunction with the `SXXEXX` identifier, though absolute numbering is more preferred*
     !!!
 
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) Version number [!badge variant="warning" text="Conditional"]
@@ -175,6 +202,10 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
     This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs
     !!!
 
+    !!!info
+    For specials, it is recommended to include an episode title if it is possible
+    !!!
+
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) Source type
 :   The source where the video/audio are taken from
 
@@ -183,7 +214,15 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
     !!!
 
 ![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) Video resolution
-:   The vertical resolution of the file's video. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+:   The resolution of the file's video in `XS` format, where `X` is the number of vertical pixels and `S` is the scan type. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+
+    !!!info
+    The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `800`)*
+    !!!
+
+    !!!info
+    Use `p` for progressive video (e.g. `1080p`, `720p`) and `i` for interlaced video (e.g. `1080i`, `720i`)
+    !!!
 
 ![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) Video format
 :   The codec of the file's video. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
@@ -203,7 +242,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 
 +++
 
-## Folders
+### Folders
 
 In general, a good folder should:
 
@@ -231,7 +270,7 @@ Anime.Name.2022.S01.E12-E23.1080p.BluRay.FLAC2.0.H.265-Group
 For organization, it is recommended to put the group name at the end of folder names to allow for alphabetical sorting on the user's end.
 !!!
 
-## Nyaa
+### Nyaa
 
 In general, a good Nyaa release should:
 
