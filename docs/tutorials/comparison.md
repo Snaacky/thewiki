@@ -100,7 +100,6 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 ```py
 ## Dependencies: Allows vspreview to run [required; do not remove]
 from vstools import vs, core
-from awsmfunc import FrameInfo
 from vskernels import Hermite, EwaLanczos
 from vspreview import set_output
 
@@ -122,11 +121,6 @@ source3 = "ThirdSourceName"
 ## Place any additional settings you want to use in your comp here
 ## <End of additional comp settings>
 
-## Frameinfo: Displays the frame number, type, and group name in the top left corner (no modification required; add/remove lines as needed)
-clip1 = FrameInfo(clip1, source1)
-clip2 = FrameInfo(clip2, source2)
-clip3 = FrameInfo(clip3, source3)
-
 ## Output: Comment/uncomment as needed depending on how many clips you're comparing
 set_output(clip1, name=source1)
 set_output(clip2, name=source2)
@@ -139,7 +133,6 @@ Section             | Description
 **Dependencies**    | Dependencies required to create comparisons in VSPreview
 **File paths**      | The location of your source file
 **Source**          | The name of each source. [We recommend following the naming scheme here.](#recommended-source-naming) *If you plan to use [Slowpoke Pics](#slowpoke-pics), this will be the name that will be displayed in comparisons*
-**FrameInfo**       | Lists the frame number, type, and source name in the top left of the videos
 **Output**          | Parameter that allows clips to appear in VSPreview
 
 ==- :icon-play: Playback (frame rate, FieldBased, inverse telecine)
@@ -261,6 +254,34 @@ clip2 = core.resize.Lanczos(clip2, format=vs.YUV444P16)
 clip3 = core.resize.Lanczos(clip3, format=vs.YUV444P16)
 ```
 
+#### Debanding
+
+Sometimes you may want to compare debanding during playtime in MPV. This can be achieved in `vs-preview` by matching
+MPV's deband settings.
+
+```py
+## Convert clips to 32-bit for precision
+clip1 = vstools.depth(clip1, 32)
+clip2 = vstools.depth(clip2, 32)
+clip3 = vstools.depth(clip3, 32)
+
+default_mpv_deband = core.placebo.Deband(clip1, planes=7, iterations=4, threshold=3.44, radius=16.0, grain=0.5)
+brazzers_deband = core.placebo.Deband(clip2, planes=7, iterations=4, threshold=5.0, radius=20.0, grain=0.5)
+hiroshima_deband = core.placebo.Deband(clip3, planes=7, iterations=4, threshold=7.0, radius=8.0, grain=0.5)
+
+default_mpv_deband = vstools.depth(default_mpv_deband, 8)
+brazzers_deband = vstools.depth(brazzers_deband, 8)
+hiroshima_deband = vstools.depth(hiroshima_deband, 8)
+
+set_output(default_mpv_deband)
+set_output(brazzers_deband)
+set_output(hiroshima_deband)
+```
+
+!!!
+You can find the equivalent MPV profiles [here](/tutorials/mpv/#debanding).
+!!!
+
 #### Tonemapping
 
 Converts the dynamic range of the source (i.e. HDR/DV -> SDR).
@@ -344,33 +365,6 @@ clip2 = core.std.SetFrameProps(clip2, _Matrix=vs.MATRIX_BT470_BG, _Transfer=vs.T
 clip3 = core.std.SetFrameProps(clip3, _Matrix=vs.MATRIX_ST170_M, _Transfer=vs.TRANSFER_BT601, _Primaries=vs.PRIMARIES_ST170_M)
 
 # HDR/DV
-clip4 = core.std.SetFrameProps(clip4, _Matrix=vs.MATRIX_BT2020_NCL, _Transfer=vs.TRANSFER_BT2020_10, _Primaries=vs.PRIMARIES_BT2020)
-```
-
-If you are unable to correct the source's colors with the initial matrix command, the source is likely flawed rather than an issue with the metadata. If this is the case, you should use the filters below:
-
-```py
-from vstools import depth
-
-## Resample: If the colors cannot be corrected with just retagging
-# SDR: BD/WEB (720p - 4K)
-clip1 = depth(clip1, 32)
-clip1 = core.placebo.Resample(clip1, height=clip1.height, width=clip1.width, filter="ewa_lanczos", blur=0.98125058372237073562493, radius=3.2383154841662362076499)
-clip1 = core.std.SetFrameProps(clip1, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRANSFER_BT709, _Primaries=vs.PRIMARIES_BT709)
-
-# SDR: PAL DVD
-clip2 = depth(clip2, 32)
-clip2 = core.placebo.Resample(clip2, height=clip2.height, width=clip2.width, filter="ewa_lanczos", blur=0.98125058372237073562493, radius=3.2383154841662362076499)
-clip2 = core.std.SetFrameProps(clip2, _Matrix=vs.MATRIX_BT470_BG, _Transfer=vs.TRANSFER_BT470_BG, _Primaries=vs.PRIMARIES_BT470_BG)
-
-# SDR: NTSC DVD
-clip3 = depth(clip3, 32)
-clip3 = core.placebo.Resample(clip3, height=clip3.height, width=clip3.width, filter="ewa_lanczos", blur=0.98125058372237073562493, radius=3.2383154841662362076499)
-clip3 = core.std.SetFrameProps(clip3, _Matrix=vs.MATRIX_ST170_M, _Transfer=vs.TRANSFER_BT601, _Primaries=vs.PRIMARIES_ST170_M,)
-
-# HDR/DV
-clip4 = depth(clip4, 32)
-clip4 = core.placebo.Resample(clip4, height=clip4.height, width=clip4.width, filter="ewa_lanczos", blur=0.98125058372237073562493, radius=3.2383154841662362076499)
 clip4 = core.std.SetFrameProps(clip4, _Matrix=vs.MATRIX_BT2020_NCL, _Transfer=vs.TRANSFER_BT2020_10, _Primaries=vs.PRIMARIES_BT2020)
 ```
 
