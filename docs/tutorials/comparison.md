@@ -241,7 +241,7 @@ clip3 = clip3[0:]
 For more advanced trimming such as chaining, splicing, and looping, see [Vapoursynth's docs](https://www.vapoursynth.com/doc/pythonreference.html#slicing-and-other-syntactic-sugar).
 !!!
 
-==- :icon-paintbrush: Color & contrast (depth, tonemapping, range, gamma, frameprops, DRC)
+==- :icon-paintbrush: Color & contrast (depth, debanding, tonemapping, range, gamma, frameprops, DRC)
 
 #### Depth
 
@@ -256,8 +256,8 @@ clip3 = core.resize.Lanczos(clip3, format=vs.YUV444P16)
 
 #### Debanding
 
-Sometimes you may want to compare debanding during playtime in MPV. This can be achieved in `vs-preview` by matching
-MPV's deband settings.
+Sometimes, you might want to compare mpv's real-time debanding. This can be achieved in `vs-preview` by matching
+mpv's deband settings.
 
 ```py
 ## Convert clips to 32-bit for precision
@@ -279,7 +279,7 @@ set_output(hiroshima_deband)
 ```
 
 !!!
-You can find the equivalent MPV profiles [here](/tutorials/mpv/#debanding).
+You can find the equivalent mpv profiles [here](/tutorials/mpv/#debanding).
 !!!
 
 #### Tonemapping
