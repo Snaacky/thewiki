@@ -190,6 +190,10 @@ is **broken**.
 !!!
 
 !!!
+Everything in the following section also applies for SD BD.
+!!!
+
+!!!
 This process will require loading the remux into VapourSynth.
 See the setup guide for details.
 !!!
