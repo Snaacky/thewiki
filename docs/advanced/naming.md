@@ -130,7 +130,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
     !!!
 
 ![#81c8be](https://placehold.co/14x14/81c8be/81c8be.png) Video resolution
-:   The resolution of the file's video in `XS` format, where `X` is the number of vertical pixels and `S` is the scan type. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+:   The file's video resolution in `XS` format, where `X` is the number of vertical pixels and `S` is the scan type. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
     !!!info
     The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `1080`)*
@@ -152,7 +152,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
     !!!
 
 ![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) Dual audio marker [!badge variant="warning" text="Conditional"]
-:   The marker for file using multiple audio languages/tracks
+:   The marker for files using multiple audio languages/tracks
 
 ![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) Audio format(s)
 :   The file's audio codec. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
@@ -210,7 +210,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
     !!!
 
 ![#8aadf4](https://placehold.co/14x14/8aadf4/8aadf4.png) Video resolution
-:   The resolution of the file's video in `XS` format, where `X` is the number of vertical pixels and `S` is the scan type. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+:   The file's video resolution in `XS` format, where `X` is the number of vertical pixels and `S` is the scan type. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
     !!!info
     The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `1080`)*
@@ -231,7 +231,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
     !!!
 
 ![#f0c6c6](https://placehold.co/14x14/f0c6c6/f0c6c6.png) Dual audio marker [!badge variant="warning" text="Conditional"]
-:   The marker for file using multiple audio languages/tracks
+:   The marker for files using multiple audio languages/tracks
 
 ![#f4dbd6](https://placehold.co/14x14/f4dbd6/f4dbd6.png) Checksum [!badge variant="success" text="Optional"]
 :   The CRC32 checksum for file verification. *We recommend using [RapidCRC](https://www.ov2.eu/programs/rapidcrc-unicode) for generating checksums*
