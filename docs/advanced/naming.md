@@ -56,12 +56,12 @@ In general, a good naming scheme should:
 
 - Include the full **anime show/series** or **movie title**
   - If there are multiple versions of the series, you must include the year within the title (e.g. [Hunter x Hunter (1999)](https://thetvdb.com/series/hunter-x-hunter) vs. [Hunter x Hunter (2011)](https://thetvdb.com/series/hunter-x-hunter-2011)). *Note that you must include the year for all movies*
-  - We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)
+  - We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (for TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (for movies)
 - Include the **source type** (i.e. `BD`, `DVD`, `WEB`)
   - Append `Remux` if your file uses a Blu-ray/DVD remux (i.e. `BD Remux` or `DVD Remux`)
   - For `WEB` releases, you may also include the source tag (e.g. `AMZN` for Amazon, `CR` for Crunchyroll, `DSNP` for Disney+, `NF` for Netflix)
 - Include the **video resolution** and **scan type**
-  - The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `800`)*
+  - The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `1080`)*
   - Use `p` for progressive video (e.g. `1080p`, `720p`) and `i` for interlaced video (e.g. `1080i`, `720i`)
 - Include the **video and audio codec**
   - If your file includes multiple audio tracks in different codecs, only list the default track's codec
@@ -78,8 +78,12 @@ In general, a good file name should:
 - Include the **season/episode number** (for TV series)
   - Use `SXXEXX` format (e.g. Season 2 Episode 10 = `S02E10`)
   - Absolute episode numbers may be used together (e.g. `S02E10 - E22`), *but never by themselves*
-  - For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also include an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
-  - Do not use decimal numbering (`X.5`) as a single method of identifying specials, as these are often not supported by most software. *You may use these in conjunction with the `SXXEXX` identifier, though absolute numbering is more preferred*
+  - For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification
+- Properly name **specials/OVAs** (for TV series, if applicable)
+  - Do not label specials/OVAs using only `X.5` format (e.g. `Anime Name - 18.5`), as these are not supported by most software. *However, you may choose to include it alongside the `SXXEXX` identifier if it makes it easier to identify it*
+  - We highly recommend adding the episode title as an identifier, as `S00EXX` by itself doesn't provide much information at a glance
+    - Refer to [TheTVDB](https://thetvdb.com) or [MyAnimeList](https://myanimelist.net) to obtain this information
+  - An absolute episode number may be included if it is not a decimal episode (i.e. it does not sit between two episodes), *though it isn't ideal*
 - Include a **releaser/group tag**
   - This should be placed at the start or end of the file name
 
@@ -104,22 +108,18 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The season and episode number, in `SXXEXX` format
 
     !!!info
-    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also use an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
-    !!!
-
-    !!!warning
-    Do not use decimal numbering (`X.5`) as a single method of identifying specials, as these are often not supported by most software. *You may use these in conjunction with the `SXXEXX` identifier, though absolute numbering is more preferred*
+    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification
     !!!
 
 ![#eed49f](https://placehold.co/14x14/eed49f/eed49f.png) Episode title [!badge variant="success" text="Optional"]
 :   The title of the episode. *We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)*
 
     !!!warning
-    This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs
+    This should generally be skipped to avoid creating file paths longer than 256 characters, which may cause problems with various programs
     !!!
 
     !!!info
-    For specials, it is recommended to include an episode title if it is possible
+    For specials, it is highly recommended to include an episode title if possible. Refer to [TheTVDB](https://thetvdb.com) or [MyAnimeList](https://myanimelist.net) to obtain this information
     !!!
 
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) Version number [!badge variant="warning" text="Conditional"]
@@ -133,7 +133,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The resolution of the file's video in `XS` format, where `X` is the number of vertical pixels and `S` is the scan type. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
     !!!info
-    The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `800`)*
+    The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `1080`)*
     !!!
 
     !!!info
@@ -155,14 +155,14 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The marker for file using multiple audio languages/tracks
 
 ![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) Audio format(s)
-:   The codec of the file's audio. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+:   The file's audio codec. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
     !!!info
     If your file includes multiple audio tracks in different codecs, only list the default track's codec
     !!!
 
 ![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) Video format
-:   The codec of the file's video. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+:   The file's video codec. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
 ![#f0c6c6](https://placehold.co/14x14/f0c6c6/f0c6c6.png) Releaser
 :   The name of the releaser or release group
@@ -185,11 +185,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The season and episode number, in `SXXEXX` format
 
     !!!info
-    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification. *You should also use an additional identifier for viewers to easily differentiate between episodes, such as including the episode title (recommended), `OVA`, or the absolute episode number*
-    !!!
-
-    !!!warning
-    Do not use decimal numbering (`X.5`) as a single method of identifying specials, as these are often not supported by most software. *You may use these in conjunction with the `SXXEXX` identifier, though absolute numbering is more preferred*
+    For specials, use season 0 (`S00EXX`) for guaranteed automatic parsing and correct identification
     !!!
 
 ![#a6da95](https://placehold.co/14x14/a6da95/a6da95.png) Version number [!badge variant="warning" text="Conditional"]
@@ -199,11 +195,11 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The title of the episode. *We recommend using names found in databases such as [TheTVDB](https://www.thetvdb.com) (TV series) and [The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-US) (movies)*
 
     !!!warning
-    This should generally be skipped to avoid creating file paths larger than 256 characters, which may cause problems with various programs
+    This should generally be skipped to avoid creating file paths longer than 256 characters, which may cause problems with various programs
     !!!
 
     !!!info
-    For specials, it is recommended to include an episode title if it is possible
+    For specials, it is highly recommended to include an episode title if possible. Refer to [TheTVDB](https://thetvdb.com) or [MyAnimeList](https://myanimelist.net) to obtain this information
     !!!
 
 ![#91d7e3](https://placehold.co/14x14/91d7e3/91d7e3.png) Source type
@@ -217,7 +213,7 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
 :   The resolution of the file's video in `XS` format, where `X` is the number of vertical pixels and `S` is the scan type. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
     !!!info
-    The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `800`)*
+    The video resolution is based on the number of vertical pixels according to the [16:9 aspect ratio](https://wikipedia.org/wiki/16:9_aspect_ratio#Common_resolutions) (i.e. `1920x1080` = `1080`). *Note that different aspect ratios do not affect the resolution (e.g. `1440x1080` = `1080`, `1920x800` = `1080`)*
     !!!
 
     !!!info
@@ -225,10 +221,10 @@ Spaces and commas `,` should be replaced with periods `.` instead. Apostrophes `
     !!!
 
 ![#c6a0f6](https://placehold.co/14x14/c6a0f6/c6a0f6.png) Video format
-:   The codec of the file's video. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+:   The file's video codec. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
 ![#f5bde6](https://placehold.co/14x14/f5bde6/f5bde6.png) Audio format(s)
-:   The codec of the file's audio. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
+:   The file's audio codec. *We recommend using [MediaInfo](https://mediaarea.net/MediaInfo) to find this information*
 
     !!!info
     If your file includes multiple audio tracks in different codecs, only list the default track's codec
@@ -248,7 +244,7 @@ In general, a good folder should:
 
 - List the **season number** (for TV series)
   - Use `SXX` format (e.g. `S01`, `S02`)
-  - If a season is split into two cours but stored in a single season (e.g. [86: Eighty Six](https://thetvdb.com/series/eighty-six/seasons/official/1)), include the episode range after the season info (e.g. `86: Eighty Six - S01E01-E11)` and `86: Eighty Six - S01E12-E23)`)
+  - If a season is split into multiple cours but stored in a single season (e.g. [86: Eighty Six](https://thetvdb.com/series/eighty-six/seasons/official/1)), include the episode range after the season info (e.g. `86: Eighty Six - S01E01-E11)` and `86: Eighty Six - S01E12-E23)`)
 - **Not include mutliple seasons.** These are not supported by automation and cannot be cross-seeded
   - If you are including a few specials, or the special is important (e.g. finale), you may want to include it in the same torrent. *Otherwise, you should create a separate torrent*
 - Store **specials/OVA episodes** in a separate folder named `Specials`
