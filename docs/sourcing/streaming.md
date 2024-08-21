@@ -54,7 +54,7 @@ This allows for anime libraries equivalent in size to self-hosted ones, without 
 
 Majority of sites will scrape from [Anitaku](https://anitaku.to), a popular self-hosted streaming site.
 
-**Examples of scraper sites:** [AllAnime](https://allanime.to), [Anix](https://anix.to), [YugenAnime](https://yugenanime.tv)
+**Examples of scraper sites:** [AllAnime](https://allanime.to), [Anix](https://anix.to), [YugenAnime](https://yugenanime.tv), [Anistreamx](https://anistreamx.com)
 
 +++
 
