@@ -252,6 +252,7 @@ Heres a table of the most common standards you'll see on DVDs:
 | DAR  | SAR/PAR   | Active Area |
 | ---- | --------- | ----------- |
 | 4:3  | 128:117   | 702x576     |
+| 4:3  | 1132:1035 | 690x566     |
 
 +++
 
