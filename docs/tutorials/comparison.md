@@ -206,9 +206,9 @@ Downscales or upscales the video. *This should be used to match sources that hav
 
   ```py
   ## Upscaling: Increases the resolution of clips to match the highest resolution using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended
-  clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=True)
-  clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
-  clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)
+  clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=False)
+  clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=False)
+  clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=False)
   ```
 
 - For downscaling (e.g. 2160p/4K -> 1080p), use `Hermite`:
