@@ -21,13 +21,13 @@ There are two main things to consider when building an anime HTPC: the [GPU](#gp
 
 ### GPU
 
-Generally, a dedicated graphics card (dGPU) will almost always be better than the integrated option (iGPU). *However, you may want to consider whether your home-theater setup will necessitate one if you're on a tighter budget:*
+Generally, a dedicated graphics card (GPU) will almost always be better than the integrated option (iGPU). *However, you may want to consider whether your home-theater setup will necessitate one if you're on a tighter budget:*
 
 +++ Dedicated
 
-A dGPU is a dedicated piece of hardware which will be used to handle video decoding. Cards in this category are usually from AMD or NVIDIA.
+A GPU is a dedicated piece of hardware which will be used to handle video decoding. Cards in this category are usually from AMD or NVIDIA.
 
-You may want to consider a dGPU if:
+You may want to consider a GPU if:
 
 - You plan to use shaders
 - You want to use filters like [debanding](/tutorials/mpv/#debanding)
@@ -53,17 +53,17 @@ For most budget-friendly setups, we recommend picking up and repurposing a used/
 
 Below are some examples of good candidates for HTPC setups to help you determine a good system:
 
-==- :icon-rocket: Systems using a dGPU
+==- :icon-rocket: Systems using a GPU
 
 ![An example listing for a Dell OptiPlex 5040](/static/htpc/example-optiplex.png)
 
 This is an example of a good option to choose for your HTPC. As shown, this machine includes a capable CPU, plenty of RAM preinstalled, and an SSD. It is only missing a dedicated graphics card.
 
-You should also keep your eyes peeled for machines that have a dGPU preinstalled:
+You should also keep your eyes peeled for machines that have a GPU preinstalled:
 
 ![A dedicated graphics card preinstalled in a Dell OptiPlex](/static/htpc/example-optiplex-dgpu.png)
 
-If it includes a dGPU, you might not need to find one for your HTPC. Check to see beforehand if it can handle the various codecs/video you plan to run on it.
+If it includes a GPU, you might not need to find one for your HTPC. Check to see beforehand if it can handle the various codecs/video you plan to run on it.
 
 Once you have picked a machine, you can move onto picking a GPU. We recommend choosing relatively recent, low-powered graphics cards as this will allow you to handle most modern shows without issue. Some examples of popular budget cards are:
 
@@ -88,7 +88,7 @@ Small form factor machines will require a low-profile GPU and bracket. Make sure
 
 ==- :icon-cpu: Systems using an iGPU
 
-If you are choosing to use an iGPU for your HTPC, you can also look for MFF or micro desktops. These machines will have a smaller footprint and are very quiet. *Due to their size, however, they will not have room for a dGPU if you plan to upgrade later on.*
+If you are choosing to use an iGPU for your HTPC, you can also look for MFF or micro desktops. These machines will have a smaller footprint and are very quiet. *Due to their size, however, they will not have room for a GPU if you plan to upgrade later on.*
 
 Intel is generally the choice of CPU in this category, as there is a much broader selection of processors with integrated graphics. Additionally, you can take advantage of Intel Quick Sync Video for hardware decoding media.
 
@@ -108,10 +108,7 @@ This is an example of a good option to choose for your HTPC. As shown, this mach
 
 ### Windows
 
-For most HTPC users, Windows is the recommended operating system. *Optionally, you may choose to install debloat scripts to increase performance:*
-
-- [AtlasOS](https://atlasos.net)
-- [ReviOS](https://revi.cc)
+For most HTPC users, Windows is the recommended operating system.
 
 !!!
 Make sure you install the appropriate graphics driver for your system:
