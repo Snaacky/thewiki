@@ -17,6 +17,7 @@ None of the maintainers of this wiki know how to encode, so we won't be covering
 | [Silentaperture's Guide](https://silentaperture.gitlab.io/mdbook-guide)                                 | Encoding guide. Sparsely updated.                                                         |
 | [Jaded Encoding Thaumaturgy](https://github.com/Jaded-Encoding-Thaumaturgy)                             | Actively maintained repository of Vapoursynth related packages.                           |
 | [fieldbased.media](https://fieldbased.media)                                                            | An overview of different types of field-based video content.                              |
+| [JET Guide](https://jaded-encoding-thaumaturgy.github.io/JET-guide/)                                    | A Collection of Guides from JET related to multimedia, encoding, and VapourSynth          |
 
 !!!
 All of these guides assume you already know [Python](https://docs.python.org/3/).
