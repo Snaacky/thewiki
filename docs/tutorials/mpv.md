@@ -242,6 +242,29 @@ Color banding is a visual artifact that is typically seen in gradients, where th
 
 Newer versions of mpv now ship with debanding capabilities, so no additional configuration is required. You can enable debanding anytime during playback by pressing `b` (default keybind).
 
+For sources where the default debanding isn't effective enough, you can apply more aggressive debanding profiles such as:
+
+```properties
+[BrazzersDeband]
+deband=yes
+deband-iterations=4
+deband-threshold=64
+deband-range=20
+deband-grain=32
+```
+
+```properties
+[HiroshimaDeband]
+deband-iterations=4
+deband-threshold=100
+deband-range=8
+deband-grain=32
+```
+
+!!!warning
+Keep in mind that stronger settings will cause a loss of detail and should be reserved for situations where the loss of detail is acceptable for reducing banding.
+!!!
+
 ### Scaling
 
 Scaling is the process of taking content that does not match your screen resolution and resizing it to fit your display. *See the [Playback Guide](/guides/playback/#scaling) for more information.*

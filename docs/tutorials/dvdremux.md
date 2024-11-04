@@ -17,7 +17,7 @@ Assistance is available in [this Discord server](https://discord.gg/XTpc6Fa9eB) 
 2. FFmpeg >=7.0 GPL build from [BtbN](https://github.com/BtbN/FFmpeg-Builds/releases)
    - [Quick link for Windows x64](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.0-latest-win64-gpl-7.0.zip)
 3. [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases)
-   - [Setup guide](https://jaded-encoding-thaumaturgy.github.io/JET-guide/setup/)
+   - [Setup guide](https://jaded-encoding-thaumaturgy.github.io/JET-guide/basics/setup/)
 4. [MKVToolNix](https://mkvtoolnix.download/downloads.html)
 
 ## Finding Title/Angle/Chapter (MPC-HC)
@@ -190,6 +190,10 @@ is **broken**.
 !!!
 
 !!!
+Everything in the following section also applies for SD BD.
+!!!
+
+!!!
 This process will require loading the remux into VapourSynth.
 See the setup guide for details.
 !!!
@@ -198,7 +202,7 @@ See the setup guide for details.
 
 DVD videos are stored as what's known as anamorphic video.
 This means that the video encoded on the disc
-have a different aspect ratio
+has a different aspect ratio
 from how it is meant to be displayed.
 NTSC discs store a 720x480 resolution
 while PAL discs are 720x576,
@@ -245,7 +249,10 @@ Heres a table of the most common standards you'll see on DVDs:
 
 +++ PAL
 
-todo
+| DAR  | SAR/PAR   | Active Area |
+| ---- | --------- | ----------- |
+| 4:3  | 128:117   | 702x576     |
+| 4:3  | 1132:1035 | 690x566     |
 
 +++
 

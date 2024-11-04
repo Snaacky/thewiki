@@ -21,7 +21,7 @@ There are two main things to consider when building an anime HTPC: the [GPU](#gp
 
 ### GPU
 
-Generally, a dedicated graphics card (dGPU) will almost always be better than the integrated option (iGPU). *However, you may want to consider whether your home-theater setup will necessitate one if you're on a tighter budget:*
+Generally, a discrete graphics card (dGPU) will almost always be better than the integrated option (iGPU). *However, you may want to consider whether your home-theater setup will necessitate one if you're on a tighter budget:*
 
 +++ Dedicated
 
@@ -112,10 +112,7 @@ Whether your system has an iGPU or a dGPU, you may run into limitations with the
 
 ### Windows
 
-For most HTPC users, Windows is the recommended operating system. *Optionally, you may choose to install debloat scripts to increase performance:*
-
-- [AtlasOS](https://atlasos.net)
-- [ReviOS](https://revi.cc)
+For most HTPC users, Windows is the recommended operating system.
 
 !!!
 Make sure you install the appropriate graphics driver for your system:

@@ -13,9 +13,8 @@ author:
 
 #### Subscription-Based Content
 
-[Kemono](https://kemono.party/)
+[Kemono](https://kemono.su/)
 - Best place to find content drops locked behind paywalls (e.g. Fantia, Fanbox, DLSite, Patreon). 
-
 - Note: If the artist's romanized username doesn't return any results, check their page for its hiragana/kanji equivalent.
 
 #### Wallpapers
@@ -41,12 +40,14 @@ author:
 
 - If a certain query doesn't return an expected upload, head to "Show Advanced Options" and click on "Browse Expunged Galleries"; uploads removed by users will be shown. However, keep in mind that the site is frequently subject to bothersome copyright takedowns.
 
+[Panda Backup](https://panda.chaika.moe/) - Contains ENG/JP removed from E-hentai. 
+
 [Ex-Hentai](https://exhentai.org/) 
 - Requires an E-Hentai account to be logged in to access. If the site remains blank after this, clear your browser's cookies or open a private tab and log in through there. 
+- Wider collection of content than E-Hentai.
 
-- Top place to look for content that may have been taken down from E-Hentai.
-
-[Anchira (formerly Koshoku)](https://anchira.to/)
+[Anchira](https://koharu.to/)
+- Backup onionsite archive [here](fakkunet27t5i5laxfyrrxqqndpd53do73vi4bbj6jcf7wfdszjukmid.onion)
 - If neither E-Hentai nor Ex-Hentai have what you're looking for, there's a fair chance it may be on here. This site boasts an ever-growing collection of English-published doujinshi that oftentimes is from a blacklisted publisher on the aforementioned sites.
 
 [Nhentai](https://nhentai.net/) - Scrapes and packages E-Hentai's content into a simple, cleaner design. Preferred by many for its minimalistic feel and easy navigation.

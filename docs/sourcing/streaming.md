@@ -18,11 +18,8 @@ Most unofficial streaming sites contain unwanted or annoying pop-ups/ads that ma
 [Anitaku](https://anitaku.to) (previously *Gogoanime*)
 :   Self-hosted site with a vast library. Majority of scraper sites will source from here
 
-[AniWave](https://aniwave.to) (previously *9anime*)
-:   Self-hosted site with one of the largest and oldest anime libraries. Releases are often updated to include fansubs and BD releases for older content
-
 [HiAnime](https://hianime.to) (previously *Aniwatch/Zoro*)
-:   Self-hosted site with quality similar to AniWave while maintaining an extensive library. One of the only unofficial streaming sites with soft subtitles
+:   Self-hosted site with higher quality compared to Anitaku while maintaining an extensive library. One of the only unofficial streaming sites with soft subtitles
 
 *See [The Index](https://theindex.moe) for a more comprehensive list of unofficial anime streaming sites.*
 
@@ -44,7 +41,7 @@ A **self-hosted** site is a streaming site that hosts the content on their own s
 
 Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. *However, some self-hosted libraries can be more limited.*
 
-**Examples of self-hosted sites:** [animepahe](https://animepahe.com), [Anitaku](https://anitaku.to), [AniWave](https://aniwave.to), [HiAnime](https://hianime.to)
+**Examples of self-hosted sites:** [animepahe](https://animepahe.com), [Anitaku](https://anitaku.to), [HiAnime](https://hianime.to)
 
 +++ Scrapers
 
@@ -54,7 +51,7 @@ This allows for anime libraries equivalent in size to self-hosted ones, without 
 
 Majority of sites will scrape from [Anitaku](https://anitaku.to), a popular self-hosted streaming site.
 
-**Examples of scraper sites:** [AllAnime](https://allanime.to), [Anix](https://anix.to), [Genoanime](https://genoanime.com), [YugenAnime](https://yugenanime.tv)
+**Examples of scraper sites:** [AllAnime](https://allanime.to), [Anix](https://anix.to), [YugenAnime](https://yugenanime.tv)
 
 +++
 
@@ -66,23 +63,22 @@ You can see for yourself in the quality comparisons linked below:
 
 Show                                                      | Sources
 ----------------------------------------------------------|------------------------------------------------------------------------------
-[Demon Slayer](https://slow.pics/c/pjYaqdnr)              | Anitaku (Gogoanime), AniWave (9anime), animepahe, HiAnime (Zoro), torrents
-[Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | animepahe, Anitaku (Gogoanime), AniWave (9anime), torrents
-[Fate/Zero](https://slow.pics/c/1LNZtDzm)                 | animepahe, Anitaku (Gogoanime), AniWave (9anime), torrents
-[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | animepahe, Anitaku (Gogoanime), AniWave, HiAnime (AniWatch), torrents
-[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | Anitaku (Gogoanime), AniWave (9anime), HiAnime (Zoro), torrents
-[Senran Kagura](https://slow.pics/c/QLtX61qx)             | Anitaku (Gogoanime), AniWave (9anime), animepahe, HiAnime (Zoro), torrents
+[Demon Slayer](https://slow.pics/c/pjYaqdnr)              | Anitaku (Gogoanime), animepahe, HiAnime (Zoro), torrents
+[Dokyuu Hentai HxEros](https://slow.pics/c/PZRxqAsh)      | animepahe, Anitaku (Gogoanime), torrents
+[Fate/Zero](https://slow.pics/c/1LNZtDzm)                 | animepahe, Anitaku (Gogoanime), torrents
+[Masamune-kun no Revenge R](https://slow.pics/c/rj3QjRMA) | animepahe, Anitaku (Gogoanime), HiAnime (AniWatch), torrents
+[Oshi no Ko](https://slow.pics/c/6HqApHsn)                | Anitaku (Gogoanime), HiAnime (Zoro), torrents
+[Senran Kagura](https://slow.pics/c/QLtX61qx)             | Anitaku (Gogoanime), animepahe, HiAnime (Zoro), torrents
 [Vinland Saga S2](https://slow.pics/c/GjhwBwo3)           | Anitaku (Gogoanime), torrents
 
 #### Quality Tier List
 
 +++ Tier 1 (Best)
 
-- [AllAnime](https://allanime.to) - Scraper site with great video quality when scraped from VRV, making them on par with SubsPlease/HorribleSubs torrent releases. *However, not all shows use VRV, resulting in Tier 3 quality*
+- [AllManga](https://allmanga.to) - Scraper site with great video quality when scraped from VRV, making them on par with SubsPlease/HorribleSubs torrent releases. *However, not all shows use VRV, resulting in Tier 3 quality*
 
 +++ Tier 2 (Good)
 
-- [AniWave](https://aniwave.to) - *Formerly 9anime*
 - [HiAnime](https://hianime.to) - *Formerly Aniwatch/Zoro*
 
 +++ Tier 3 (Okay)
@@ -100,19 +96,17 @@ There are a multitude of other factors that may affect your decision in picking 
 
 [Animepahe](https://animepahe.com) is very consistent at picking good BD releases with fansubs.
 
-[AniWave](https://aniwave.to) does this too, *but typically less often and with slightly worse release choice.*
-
 ==- :icon-file-directory: File size
 
 [animepahe](https://animepahe.com) has some of the smallest file sizes compared to other streaming sites.
 
-[Anitaku's](https://anitaku.to) are also relatively small when compared to sites like [AniWave](https://aniwave.to).
+[Anitaku's](https://anitaku.to) are relatively small when compared to sites like [HiAnime](https://hianime.to).
 
 ==- :icon-apps: Library
 
-[AniWave](https://aniwave.to) and [Anitaku](https://anitaku.to) have some of the largest libraries available.
+[Anitaku](https://anitaku.to) has some of the largest libraries available.
 
-Additionally, [AniWave](https://aniwave.to) has one of the best libraries when it comes to older and rarer shows.
+Additionally, [HiAnime](https://hianime.to) has one of the best libraries when it comes to older and rarer shows.
 
 ==- :icon-note: Soft subtitles
 

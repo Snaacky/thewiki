@@ -66,10 +66,7 @@ Not every block is implemented the same, so the only way to figure out is by tri
 ## Where can I download high quality anime soundtracks?
 
 - Direct download:
-  - https://sukidesuost.info/
-  
-  - https://hikarinoakari.com/
-   
+  - https://sukidesuost.info/   
 
 - Torrent:
   - https://nyaa.si/
