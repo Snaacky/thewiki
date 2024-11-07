@@ -72,7 +72,11 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
     This should only be used on sources where [obvious blacks appear gray](/static/literature/incorrect-black-levels.png). The black level value should be decreased [until the grays become black](/static/literature/correct-black-levels.png). *Generally, `-16` works for most sources.*
     ==-
     ==- :icon-sparkle-fill: Touchscreen support
-    mpv's bundled touchscreen controls are suboptimal. We recommend using third-party programs for adding touchscreen functionality to mpv, such as [GestureSign](https://gesturesign.win), a tool which allows you to convert gestures to keypresses ([example setup](/static/literature/gesturesign-example.png)).  
+    mpv recently implemented support for multitouch gestures through lua scripting. This allows for much more complex touch functionalily without the necessity for third party software. 
+    
+    The [touch-manga-mpv](https://github.com/guyman624/touch-manga-mpv) script allows for page turning and black level adjustment with touch gestures.
+    
+    There are also third party programs, such as [GestureSign](https://gesturesign.win), which allow you to convert gestures to keypresses ([example setup](/static/literature/gesturesign-example.png)).  
     You should also add the following into your `mpv.conf` to avoid triggering the OSD when swiping:
     ```properties
     no-osc
@@ -111,7 +115,7 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
 +++ iOS
 
 [iComics](https://apps.apple.com/app/icomics/id493845493) [!badge icon=":heart:" variant="primary" text="Best Quality"]
-:   Standalone reader with the [highest quality scaling](https://slow.pics/c/BV39ZZSK) on iOS
+:   Standalone reader with the [highest quality scaling](https://slow.pics/c/5JzAn5w7) on iOS
 
 [Aidoku](https://aidoku.app) [!badge variant="secondary" text="Most Convenient"]
 :   All-in-one manga reader with support for external sources and manga trackers. *Requires TestFlight or sideloading*
