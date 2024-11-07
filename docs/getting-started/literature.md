@@ -114,7 +114,7 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
 +++ iOS
 
 [iComics](https://apps.apple.com/app/icomics/id493845493) [!badge icon=":heart:" variant="primary" text="Best Quality"]
-:   Standalone reader with the [highest quality scaling](https://slow.pics/c/BV39ZZSK) on iOS
+:   Standalone reader with the [highest quality scaling](https://slow.pics/c/5JzAn5w7) on iOS
 
 [Aidoku](https://aidoku.app) [!badge variant="secondary" text="Most Convenient"]
 :   All-in-one manga reader with support for external sources and manga trackers. *Requires TestFlight or sideloading*
