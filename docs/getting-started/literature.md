@@ -73,7 +73,8 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
     ==-
     ==- :icon-sparkle-fill: Touchscreen support
     mpv recently implemented support for multitouch gestures through lua scripting. This allows for much more complex touch functionalily without the necessity for third party software. 
-    The [touch-manga-mpv](https://github.com/guyman624/touch-manga-mpv) script allows for page turning and black level adjustment with touch.
+    
+    The [touch-manga-mpv](https://github.com/guyman624/touch-manga-mpv) script allows for page turning and black level adjustment with touch gestures.
     
     There are also third party programs, such as [GestureSign](https://gesturesign.win), which allow you to convert gestures to keypresses ([example setup](/static/literature/gesturesign-example.png)).  
     You should also add the following into your `mpv.conf` to avoid triggering the OSD when swiping:
