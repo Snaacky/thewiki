@@ -46,8 +46,8 @@ author:
 - Requires an E-Hentai account to be logged in to access. If the site remains blank after this, clear your browser's cookies or open a private tab and log in through there. 
 - Wider collection of content than E-Hentai.
 
-[Anchira](https://koharu.to/)
-- Backup onionsite archive [here](fakkunet27t5i5laxfyrrxqqndpd53do73vi4bbj6jcf7wfdszjukmid.onion)
+[Anchira](https://schale.network/)
+- Backup onionsite archive [here](http://fakkunet27t5i5laxfyrrxqqndpd53do73vi4bbj6jcf7wfdszjukmid.onion)
 - If neither E-Hentai nor Ex-Hentai have what you're looking for, there's a fair chance it may be on here. This site boasts an ever-growing collection of English-published doujinshi that oftentimes is from a blacklisted publisher on the aforementioned sites.
 
 [Nhentai](https://nhentai.net/) - Scrapes and packages E-Hentai's content into a simple, cleaner design. Preferred by many for its minimalistic feel and easy navigation.
