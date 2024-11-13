@@ -210,7 +210,7 @@ for file in *.flac; do opusenc --bitrate 192 "${file}" "${file%.*}.opus"; done
 - Must include a `Signs and Songs` track for English dub.
 - It's recommended to check the subtitle track for obvious grammatical errors, punctuation errors, typos, etc.
 - Check the subtitle tracks for scene bleeds, i.e, when a line extends farther than it should/past a keyframe/scene change.
-- Pick the default subtitle track by diffing the different options and finding the best one. This can be done via sites like [Diffchecker](https://www.diffchecker.com/) or [evadiff](https://meitantei.org/public/evadiff/).
+- Pick the default subtitle track by diffing the different options and finding the best one. This can be done via sites like [Diffchecker](https://www.diffchecker.com/).
 - Here's a [subdigest](https://github.com/TypesettingTools/Myaamori-Aegisub-Scripts#sub-digest) script to get clean text file output of .ASS subtitles for diff checking:
 
 +++ Windows
