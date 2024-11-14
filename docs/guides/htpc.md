@@ -125,7 +125,8 @@ Make sure you install the appropriate graphics driver for your system:
 ### Linux
 
 !!!warning
-HDR is not supported in X11 and Wayland. If you plan on playing HDR content, you will need to use Kodi's built-in player.
+HDR is not supported in X11. Wayland has experimental support for HDR, but it requires some configuration to work with MPV.
+If you plan on playing HDR content, you will probably need to use Kodi's built-in player.
 !!!
 
 Linux is another common option for HTPCs. If you chose to go down this route, most of the setup remains the same, however file paths will be different.
@@ -430,10 +431,29 @@ When binding sleep/wake, you can use the ellipsis button to find the power butto
 Logitech has discontinued all Harmony products and has stopped supporting the software. The software relies on a cloud service to function, and if this cloud service were to go down, you would be rendered unable to change your remote configuration. At the time of writing this guide, ALL Harmony products are still fully functional and have no shutdown date from Logitech
 !!!
 
-There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list [here](https://support.myharmony.com/en-us/download#legacy).
+Pros:
+- Large community
+- Fairly cheap on the used market
+- Beginner friendly programming
+Cons:
+- No offical support
+- Reliant on online programming
 
-If you are using a remote that relies on the Harmony 7.x software, you may need to alter the model number to something from the same time frame as the software. For example, the LG 42C2 is not in the Harmony 7.x database, but the codes for the LG 32LC7D are fully cross compatible. If you cannot find a cross compatible device, the Harmony is capable of "learning" IR codes from the original remote.
-==- 
+There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list [here](https://support.myharmony.com/en-us/download#legacy).
+==- FLIRC Skip 1S
+The FLIRC Skip 1S is a universal remote developed after the discontinuation of the Logitech Harmony. It was designed in such a way that in the event that FLIRC were to go out of business, the remotes will still be fully functional and programmable.
+
+Pros:
+- Fully offline operation
+- Relatively cheap brand new
+- IR learning
+Cons:
+- Programming software is very buggy
+- Not "Scene Smart" in the way that the Harmony is
+- Difficult to make custom bindings with FLIRC Reciever
+
+The [Skip 1S](https://flirc.tv/products/skip1s-remote-universal-remote-control?variant=43489094729960#spec2) product page has the downloads for the latest "stable" release, but the [forums](https://forum.flirc.tv/index.php?/forum/102-beta-feedback/) usually have the latest beta. The program has some profiles for use with the FLIRC Reciever and Kodi, however there is not any simple/obvious way to add a custom keybinding. The simplest way I found was to add a "fake" cable box, add it's bindings to my remote, then on the reciever software bind these "fake" codes to the keys I needed.
+==-
 
 #### Recievers
 
@@ -449,7 +469,7 @@ The basic usage of the software is as follows:
 3. Click the button you would like to bind, then point the remote at the dongle and press the button.
 
 Although the most complete retail product, the FLIRC software is far from perfect. In my experience there are two quirks that you should know to take full advantage of the device.
- - The "erase" button at the bottom seems to be non functional. This means that if you make a mistake, you need to go to File > Clear Configuration, __restart the software__, then start over.
+ - The "erase" button at the bottom is unintuitive. If you want to remove a binding, click "erase", then press the button to clear on the remote, not on the screen/keyboard.
  - Different buttons with similar meanings on different tabs will do different things. For example, the "Wake" button on the "Full Keyboard" tab will __only__ wake the computer, where as the power button under "Media Keys" is both a sleep and wake button.
 
 ==- MCE IR
