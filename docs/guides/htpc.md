@@ -395,16 +395,14 @@ To run this script, double-click the `.ahk` file. Alternatively, you can place i
 
 ### IR
 
-Most TVs from the early 90s to now use some form of IR technology for the remote. Some higher end TVs will use RF or Bluetooth technology for the remote, but still contain the technology to be used with an IR Remote. It’s a cheap and reliable way to send remote signals long distance. There are a variety of methods of using an IR Remote with a PC, including:
+Most TVs use or supportIR technology for the remote. It’s a cheap and reliable way to send remote signals long distance. There are a variety of methods of using an IR Remote with a PC, including:
  - [FLIRC Dongle](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#BuyUpgrade) ($23.99)
  - [Windows MCE Receiver](https://www.ebay.com/sch/i.html?_nkw=hp+media+center+reciever&_sacat=0) (~$10)
  - [DIY Projects](https://www.instructables.com/DIY-USB-IR-receiver/) (~$5)
 
 The FLIRC is the most complete retail product, however all three can be made to work in most setups. However, all three will need a remote to interface with.
 
-Most low end TVs will be using an IR Remote. If there are buttons on the remote that don’t accidentally trigger other functions on the TV, these buttons can be programmed with your receiver. Some higher end remotes, such as the LG Magic Remote can be programmed as an IR Remote for devices like a Cable Box or DVD/BD player. You can take advantage of this feature to have the remote send IR signals that the TV knows are not directed at it. If you don’t have these features on your remote, there are alternative solutions as well. In the case of the MCE Receiver, there is an official remote that was meant to be used with it. You can also reuse any remote that you already have from an old or broken TV. 
-
-A more advanced solution would be a programmable universal remote like the Logitech Harmony or FLIRC Skip 1s. These devices have features like turning on and setting inputs on all devices with one button. The Harmony ecosystem was abandoned by Logitech, however the remotes can be found for very cheap on the used market. The FLIRC Skip 1s is a similar product that is still being manufactured, and doesn’t require a cloud service to be programmed like the Harmony.
+Most low end TVs will be using an IR Remote. If there are buttons on the remote that don’t accidentally trigger other functions on the TV, these buttons can be programmed with your receiver. Some higher end remotes, such as the LG Magic Remote can be programmed as an IR Remote for devices like a Cable Box or DVD/BD player. You can take advantage of this feature to have the remote send IR signals that the TV knows are not directed at it. If you don’t have these features on your remote, there are alternative solutions as well. Universal remotes like the FLIRC Skip 1s and Logitech Harmony are fully programmable and able to be used with HTPCs and the rest of your home theater setup simultaneously. 
 
 #### Universal Remotes
 
@@ -442,8 +440,8 @@ Cons:
 - Reliant on online programming
 
 There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list [here](https://support.myharmony.com/en-us/download#legacy).
-==- FLIRC Skip 1S
-The FLIRC Skip 1S is a universal remote developed after the discontinuation of the Logitech Harmony. It was designed in such a way that in the event that FLIRC were to go out of business, the remotes will still be fully functional and programmable.
+==- FLIRC Skip 1s
+The FLIRC Skip 1s is a universal remote developed after the discontinuation of the Logitech Harmony. It was designed in such a way that in the event that FLIRC were to go out of business, the remotes will still be fully functional and programmable.
 
 Pros:
 - Fully offline operation
@@ -455,7 +453,7 @@ Cons:
 - Not "Scene Smart" in the way that the Harmony is
 - Difficult to make custom bindings with FLIRC Reciever
 
-The [Skip 1S](https://flirc.tv/products/skip1s-remote-universal-remote-control?variant=43489094729960#spec2) product page has the downloads for the latest "stable" release, but the [forums](https://forum.flirc.tv/index.php?/forum/102-beta-feedback/) usually have the latest beta. The program has some profiles for use with the FLIRC Reciever and Kodi, however there is not any simple/obvious way to add a custom keybinding. The simplest way I found was to add a "fake" cable box, add it's bindings to my remote, then on the reciever software bind these "fake" codes to the keys I needed.
+The [Skip 1s](https://flirc.tv/products/skip1s-remote-universal-remote-control?variant=43489094729960#spec2) product page has the downloads for the latest "stable" release, but the [forums](https://forum.flirc.tv/index.php?/forum/102-beta-feedback/) usually have the latest beta. The program has some profiles for use with the FLIRC Reciever and Kodi, however there is not any simple/obvious way to add a custom keybinding. The simplest way I found was to add a "fake" cable box, add it's bindings to my remote, then on the reciever software bind these "fake" codes to the keys I needed.
 ==-
 
 #### Recievers
