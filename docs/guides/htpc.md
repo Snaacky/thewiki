@@ -126,6 +126,7 @@ Make sure you install the appropriate graphics driver for your system:
 
 !!!warning
 HDR is not supported in X11. Wayland has experimental support for HDR, but it requires some configuration to work with MPV.
+
 If you plan on playing HDR content, you will probably need to use Kodi's built-in player.
 !!!
 
@@ -435,6 +436,7 @@ Pros:
 - Large community
 - Fairly cheap on the used market
 - Beginner friendly programming
+
 Cons:
 - No offical support
 - Reliant on online programming
@@ -447,6 +449,7 @@ Pros:
 - Fully offline operation
 - Relatively cheap brand new
 - IR learning
+
 Cons:
 - Programming software is very buggy
 - Not "Scene Smart" in the way that the Harmony is
