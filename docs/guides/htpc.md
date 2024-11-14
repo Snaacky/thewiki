@@ -395,7 +395,7 @@ To run this script, double-click the `.ahk` file. Alternatively, you can place i
 
 ### IR
 
-Most TVs use or supportIR technology for the remote. It’s a cheap and reliable way to send remote signals long distance. There are a variety of methods of using an IR Remote with a PC, including:
+Most TVs use or support IR technology for the remote. It’s a cheap and reliable way to send remote signals long distance. There are a variety of methods of using an IR Remote with a PC, including:
  - [FLIRC Dongle](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#BuyUpgrade) ($23.99)
  - [Windows MCE Receiver](https://www.ebay.com/sch/i.html?_nkw=hp+media+center+reciever&_sacat=0) (~$10)
  - [DIY Projects](https://www.instructables.com/DIY-USB-IR-receiver/) (~$5)
