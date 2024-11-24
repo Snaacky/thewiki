@@ -319,7 +319,7 @@ clip3 = core.resize.Lanczos(clip3, format=vs.YUV444P16, range=1)
 
 #### Gamma
 
-Adjusts the gamma level of the video. *This should only be used to fix QuickTime gamma bugs or similar issues where one source will appear much brighter than the rest.*
+Adjusts the gamma level of the video. *This should only be used to fix the QuickTime gamma bug or similar issues where one source will appear much brighter than the rest.*
 
 ```py
 ## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
