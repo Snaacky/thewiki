@@ -6,9 +6,9 @@ image: /static/comparison/hyouka.gif
 
 # Comparison
 
-Quality comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources/releases. [It serves as a great way to distinguish the differences between good and bad sources](/guides/quality/#types-of-releases), and can help you determine which one to download.
+Quality comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources/releases. [It serves as a great way to distinguish the differences between good and bad sources](/guides/quality/#types-of-releases), and can help you identify video issues and determine which one to keep.
 
-This guide goes through the process of setting up and effectively utilizing [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview), a previewer utility for [VapourSynth](https://github.com/vapoursynth/vapoursynth), to produce useful quality comparisons that will allow you to ascertain which release offers the best visual experience.
+This guide goes through the process of setting up and effectively utilizing [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview), a previewer utility for [VapourSynth](https://github.com/vapoursynth/vapoursynth), to produce useful quality comparisons that will allow you to ascertain which video offers the best visual experience.
 
 ## Setup
 
@@ -33,9 +33,9 @@ VSPreview is a previewer application for scripts created in VapourSynth. It feat
 
 #### Dependencies
 
-In order to create comparisons with VSPreview, you will need to install its necessary dependencies.
+In order to create comparisons with VSPreview, you will need a few necessary dependencies:
 
-- [`ffms2`](https://github.com/FFMS/ffms2),[`fpng`](https://github.com/richgel999/fpng), [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth), [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works), and [`vs-placebo`](https://github.com/sgt0/vs-placebo) can be installed using `vsrepo` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). In your terminal, run the following:
+- [`ffms2`](https://github.com/FFMS/ffms2), [`fpng`](https://github.com/richgel999/fpng), [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth), [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works), and [`vs-placebo`](https://github.com/sgt0/vs-placebo) can be installed using `vsrepo` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). In your terminal, run the following:
 
   ```powershell
   vsrepo.py install ffms2 fpng libp2p lsmas placebo
@@ -73,7 +73,7 @@ Create a file called `comp.py`. Launch it in your favorite text editor and add s
 
 ==- :icon-file-code: Initial script [!badge variant="danger" text="Required"]
 
-Here's a simple `comp.py` script example that does nothing more than loading the videos and previewing them.
+The following `comp.py` script loads your sources into the previewer.
 
 !!!
 Make sure to comment (add `##` to the beginning of the line) and uncomment lines as needed.
@@ -111,10 +111,10 @@ set_output(clip3, name=source3)
 
 {.compact}
 Section             | Description
---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Dependencies**    | Dependencies required to create comparisons in VSPreview
 **File paths**      | The location of your source file
-**Source**          | The source name. Should be the encoder (not muxer) or specific source used (for untouched releases) eg Beatrice-Raws, JPN BD, DSNP
+**Source**          | The source name. This should be the name of the encoder (*not* muxer) or the specific source used for untouched releases (e.g. Beatrice-Raws, JPN BD, DSNP)
 **Output**          | Parameter that allows clips to appear in VSPreview
 
 ==- :icon-play: Playback (frame rate, FieldBased, inverse telecine)
@@ -238,7 +238,11 @@ clip3 = core.resize.Lanczos(clip3, format=vs.YUV444P16)
 
 #### Debanding
 
-Otherwise competitive sources with banding should be debanded to see how'd they'd fare when watching with deband in mpv. The debanded clip should never replace the original, instead it should be added as an additional node. Anything higher than default should only be used in extreme cases.
+Applies a debanding filter to the selected clip(s).
+
+!!!
+Sources with clear banding should be debanded to see how they fare when watching with a deband applied, such as using [mpv's](/tutorials/mpv/) built-in deband filters. The debanded clip should *never* replace the original. Instead, it should be added as an additional node. Debands higher than default should only be used in extreme cases.
+!!!
 
 ```py
 ## Convert clips to 32-bit for precision
@@ -260,7 +264,7 @@ set_output(hiroshima_deband)
 ```
 
 !!!
-You can find the equivalent mpv profiles [here](/tutorials/mpv/#debanding).
+You can find the equivalent deband settings for mpv [here](/tutorials/mpv/#debanding).
 !!!
 
 #### Tonemapping
@@ -315,7 +319,7 @@ clip3 = core.resize.Lanczos(clip3, format=vs.YUV444P16, range=1)
 
 #### Gamma
 
-Adjusts the gamma level of the video. *This should only be used to fix the QuickTime gamma bug or similar where one source will appear much brighter than the rest.*
+Adjusts the gamma level of the video. *This should only be used to fix QuickTime gamma bugs or similar issues where one source will appear much brighter than the rest.*
 
 ```py
 ## Gamma: Fixes gamma bug (i.e. one source is significantly brighter than the others) [32-bit required]
@@ -331,7 +335,7 @@ clip3 = core.std.Levels(clip3, gamma=0.88, planes=0)
 
 #### FrameProps
 
-Set the correct frame properties for your sources. This is most commonly used on sources you're upscaling or 4K SDR content. *This should be used on sources with incorrect/missing metadata or colors that are off, particularly reds and greens.*
+Set the correct frame properties for your sources. This is most commonly used on sources you're upscaling or 4K SDR content. *This should be used on sources with incorrect/missing metadata or colors that are off, particularly in reds and greens.*
 
 ```py
 ## FrameProps: Repairs sources with incorrect/missing metadata; typically used for 4K SDR and upscaled/downscaled content (colors will be off, particularly reds, greens, and blues)
@@ -381,55 +385,61 @@ Alternatively, you can create a create a `comp.bat` file, replacing `C:\path\to\
 vspreview "C:\path\to\comp.py"
 ```
 
-## First time setup
+## First-time Setup
 
-Drag the plugins menu from the right of your screen (Or do `Ctrl+P`) and open the SlowPics Comps tab
-- Under settings set the Collection Name Template to `{tmdb_title} ({tmdb_year}) - S01E01 - {video_nodes}`
-- Set Compression Type to `Slow`
-- Enter your [slow.pics](https://slow.pics/) Username and Password
-- Tick Default Public Flag
+1. Drag the *Plugins* menu from the right-side of the VSPreview window and open the *SlowPics Comps* tab. Alternatively, you can access the *Plugins* menu using `Ctrl+P`
 
-Click the Settings button on the bottom tab
-- Under Main, change Save Plugins Bar Position to `Global`
+2. Under *Settings*, set the following:
+   - Set *Collection Name Template* to `{tmdb_title} ({tmdb_year}) - S01E01 - {video_nodes}`
+   - Set *Compression Type* to `Slow`
+   - Enter your [slow.pics](https://slow.pics) username and password (optional)
+   - Tick the *Public Flag*
 
-Click the Playback button on the bottm tab
-- Set the bottom left value to an odd number, eg `109`
+3. Click the *Settings* button on the bottom tab. Under *Main*, change *Save Plugins Bar Position* to `Global`
 
-That's all, you can now close and re-open VSPreview to apply all these changes
+4. Click the *Playback* button on the bottom tab. Set the bottom-left value to an odd number (e.g `109`)
+
+Once complete, close and relaunch VSPreview to apply these changes.
 
 ## Comparing
 
 ### Basic Keybinds
-For the purpose of making comparisons, the following binds are all you need. You may wish to rebind them under Settings -> Shortcuts
 
-Key                | Action
--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`PgDown` or `Shift`+`Left`  | Move back *n* frames (default: *n = 1*)
-`PgUp` or `Shift`+`Right` | Move forward *n* frames (default: *n = 1*)
-`Number keys `       | Switches to source *n* (e.g. `2` switches to the second source)
-`Ctrl`+`Space`   | Mark current frame number
-`Ctrl`+`P`   | Open the plugins window
+For the purpose of making comparisons, you will only need the following binds:
+
+Key                        | Action
+---------------------------|------------------------------------------------------------------
+`PgDown` or `Shift`+`Left` | Moves back *n* frames (default: *n = 1*)
+`PgUp` or `Shift`+`Right`  | Moves forward *n* frames (default: *n = 1*)
+`Number keys`              | Switches to source *n* (e.g. `2` switches to the second source)
+`Ctrl`+`Space`             | Marks the current frame number
+`Ctrl`+`P`                 | Opens the plugins window
+
+!!!
+If you wish to manually set your keybinds, you can find them under *Settings* -> *Shortcuts*.
+!!!
 
 ### Capturing
 
-1. Open the plugins window and select the `SlowPics Comps` tab
+1. Open the *Plugins* window and select the *SlowPics Comps* tab
 
-2. Set the TMDB type and ID from [themoviedb](https://www.themoviedb.org/), eg `94605` for [Arcane](https://www.themoviedb.org/tv/94605-arcane)
+2. Set the TMDB type and ID from [The Movie Database](https://www.themoviedb.org) (e.g. `94605` for [Arcane](https://www.themoviedb.org/tv/94605))
 
-3. Skim through the videos and see if any of them need fixing with the commands in [scripting](#scripting)
+3. Before creating a comparison, skim through all your sources and ensure that they are displaying correctly. Most issues can be fixed using [filters](#scripting) in your comparison script
 
-4. Select the frames to be uploaded. Either by manually scrubbing through the video and marking frames with `Ctrl`+`Space`, specifying an amount of random frames in the plugin menu, or a mix of both
-Frames should ideally show a variety of scenarios (light/dark, static/high motion, flat/grainy etc) and also showcase some scenes with on screen text and bright reds if possible.
+4. Select the frames to be uploaded. There are multiple methods to doing so:
+   - **Manual:** Scrub through the video and mark each frame using `Ctrl`+`Space`
+   - **Automatic:** Specify am amount of random frames in the *Plugin* menu. You may choose to use this feature alongside capturing frames manually
+   - Frames should ideally show a variety of scenarios (e.g. light/dark, static/high-motion, flat/grainy, etc.). Particularly, you may want to capture scenes with on-screen text and bright reds (if possible).
 
-5. Hit the `Start Upload` and VSPreview will automatically screenshot all the frames and upload the comparsion to [slow.pics](https://slow.pics/)
+5. Hit the *Start Upload* button. VSPreview will automatically screenshot all selected frames and upload a comparsion to [slow.pics](https://slow.pics)
 
 !!!warning
-We don't recommend using the Dark/Light frames feature as it currently has many issues
+We don't recommend using the dark/light frames feature, as it currently has many issues.
 !!!
-
 
 ## Additional Scripts
 
 ### Automation
 
-If VSPreview is too complicated to setup, you can use [McBaws' script](https://github.com/McBaws/comp) to automatically generate the comparisons for you. Do note, this is far less powerful than just using VSPreview.
+If VSPreview is too complicated to setup, you can use [McBaws' script](https://github.com/McBaws/comp) to automatically generate the comparisons for you. However, this script is more limited compared to VSPreview.
