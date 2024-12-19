@@ -109,6 +109,9 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
     To get the best quality, set the [Image smooth filter to *Lanczos3*](/static/literature/perfect-viewer-scaling.png).
     !!!
 
+[Komelia](https://github.com/Snd-R/Komelia/releases) [!badge icon=":heart:" variant="primary" text="Best Quality"]
+:   Komga reader with the [highest quality scaling](https://slow.pics/c/77QVUJoN) on Android
+
 [Mihon](https://github.com/mihonapp/mihon) [!badge variant="secondary" text="Most Convenient"]
 :   All-in-one manga reader with support for external sources and manga trackers
 
