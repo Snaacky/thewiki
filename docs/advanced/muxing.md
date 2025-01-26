@@ -207,7 +207,7 @@ To set `LayoutResX` and `LayoutResY` in Aegisub, follow these steps:
 5. Set the appropriate values and click `OK`.
 
 !!!
-As of writing this, you need the Git master build of Aegisub to edit `LayoutRes`.
+As of writing this, you need the git master build of Aegisub to edit `LayoutRes`.
 !!!
 
 
