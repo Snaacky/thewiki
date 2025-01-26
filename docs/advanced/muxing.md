@@ -198,13 +198,17 @@ When working with ASS subtitle files, it's a good idea to explicitly add the `La
 
 - For older files that don't have `LayoutResX` and `LayoutResY`, you should make an educated guess. One approach is to set these values to match `PlayResX` and `PlayResY` or the storage size of the video, depending on which seems more appropriate for the situation. If you cannot make an educated guess, it's better to skip setting `LayoutResX` and `LayoutResY` to avoid potential layout issues.
 
-To set LayoutResX and LayoutResY in Aegisub, follow these steps:
+To set `LayoutResX` and `LayoutResY` in Aegisub, follow these steps:
 
 1. Open your subtitle file in Aegisub.
 2. Go to the menu bar and click on `File`.
 3. From the drop-down menu, select `Properties`.
 4. In the `Script Properties` window, [you will see fields for `Script` (PlayRes) and Layout (`LayoutRes`)](/static/advanced/muxing/aegisub_script_properties.png).
 5. Set the appropriate values and click `OK`.
+
+!!!
+As of writing this, you need the Git master build of Aegisub to edit `LayoutRes`.
+!!!
 
 
 ### Fonts
