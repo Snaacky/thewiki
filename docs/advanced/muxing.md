@@ -131,8 +131,6 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   | Subtitle #1 | eng      | Full Subtitles [Fansub] | :white_check_mark: | :x:                | None             |
   | Subtitle #2 | eng      | Signs/Songs [Fansub]    | :x:                | :white_check_mark: | None             |
 
-===
-
 ==- :icon-checklist: Practical Example - Advanced
 
   | Track       | Language | Name                                    | Default            | Forced             | Additional Flags |
