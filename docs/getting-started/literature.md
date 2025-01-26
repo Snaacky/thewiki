@@ -28,7 +28,7 @@ image: /static/literature/kujou.gif
 
 +++ Aggregators
 
-[ComicK](https://comick.cc/)
+[ComicK](https://comick.io/)
 :   Browser aggregator with the least compressed official rips
 
 [MangaDex](https://mangadex.org)
