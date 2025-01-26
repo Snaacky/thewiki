@@ -203,7 +203,7 @@ To set `LayoutResX` and `LayoutResY` in Aegisub, follow these steps:
 1. Open your subtitle file in Aegisub.
 2. Go to the menu bar and click on `File`.
 3. From the drop-down menu, select `Properties`.
-4. In the `Script Properties` window, [you will see fields for `Script` (PlayRes) and Layout (`LayoutRes`)](/static/advanced/muxing/aegisub_script_properties.png).
+4. In the `Script Properties` window, [you will see fields for `Script` (PlayRes) and `Layout` (LayoutRes)](/static/advanced/muxing/aegisub_script_properties.png).
 5. Set the appropriate values and click `OK`.
 
 !!!
