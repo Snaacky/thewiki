@@ -17,7 +17,6 @@ We also have a Discord server where you can hang out, report, and request things
 
 - [How and where to find your favorite anime](/getting-started/anime/)
 - [How and where to find your favorite manga and light novels](/getting-started/literature/)
-- [How and where to find your favorite hentai](/getting-started/hentai/)
 
 #### :book: Learn about various topics in detail
 
