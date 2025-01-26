@@ -121,26 +121,38 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
 ===
 
-==- :icon-checklist: Practical Example
+==- :icon-checklist: Practical Example - Basic
 
-  | Track        | Language | Name                                    | Default | Forced | Additional Flags |
-  |--------------|----------|-----------------------------------------|---------|--------|------------------|
-  | Video        | jpn      | Group                                   | yes     | no     | None             |
-  | Audio #1     | jpn      | FLAC 5.1                                | yes     | no     | None             |
-  | Audio #2     | jpn      | FLAC 2.0                                | yes     | no     | None             |
-  | Audio #3     | jpn      | FLAC 2.0 - Japanese Commentary          | no      | no     | Commentary       |
-  | Audio #4     | eng      | Opus 5.1 @ 320kb/s                      | yes     | no     | None             |
-  | Audio #5     | eng      | Opus 2.0 @ 192kb/s - Commentary         | no      | no     | Commentary       |
-  | Audio #6     | eng      | Opus 2.0 @ 192kb/s - Descriptive        | no      | no     | Visual-impaired  |
-  | Subtitle #1  | eng      | Full Subtitles [Fansub]                 | yes     | no     | None             |
-  | Subtitle #2  | enm      | Honorifics [Fansub]                     | yes     | no     | None             |
-  | Subtitle #3  | eng      | Japanese Commentary [USABD]             | no      | no     | Commentary       |
-  | Subtitle #4  | eng      | Signs/Songs [Fansub]                    | no      | yes    | None             |
-  | Subtitle #5  | eng      | SDH [USABD]                             | no      | no     | Hearing-impaired |
-  | Subtitle #6  | eng      | English Commentary [USABD]              | no      | no     | Commentary       |
-  | Subtitle #7  | es-ES    | Full Subtitles (Castilian) [SPABD]      | yes     | no     | None             |
-  | Subtitle #8  | es-419   | Full Subtitles (Latin American) [SPABD] | yes     | no     | None             |
-  | Subtitle #9  | de       | Full Subtitles [GERBD]                  | yes     | no     | None             |
+  | Track       | Language | Name                    | Default            | Forced             | Additional Flags |
+  |-------------|----------|-------------------------|--------------------|--------------------|------------------|
+  | Video       | jpn      | Group                   | :white_check_mark: | :x:                | None             |
+  | Audio #1    | jpn      | FLAC 2.0                | :white_check_mark: | :x:                | None             |
+  | Audio #2    | eng      | Opus 5.1 @ 320kb/s      | :white_check_mark: | :x:                | None             |
+  | Subtitle #1 | eng      | Full Subtitles [Fansub] | :white_check_mark: | :x:                | None             |
+  | Subtitle #2 | eng      | Signs/Songs [Fansub]    | :x:                | :white_check_mark: | None             |
+
+===
+
+==- :icon-checklist: Practical Example - Advanced
+
+  | Track       | Language | Name                                    | Default            | Forced             | Additional Flags |
+  |-------------|----------|-----------------------------------------|--------------------|--------------------|------------------|
+  | Video       | jpn      | Group                                   | :white_check_mark: | :x:                | None             |
+  | Audio #1    | jpn      | FLAC 5.1                                | :white_check_mark: | :x:                | None             |
+  | Audio #2    | jpn      | FLAC 2.0                                | :white_check_mark: | :x:                | None             |
+  | Audio #3    | jpn      | FLAC 2.0 - Japanese Commentary          | :x:                | :x:                | Commentary       |
+  | Audio #4    | eng      | Opus 5.1 @ 320kb/s                      | :white_check_mark: | :x:                | None             |
+  | Audio #5    | eng      | Opus 2.0 @ 192kb/s - Commentary         | :x:                | :x:                | Commentary       |
+  | Audio #6    | eng      | Opus 2.0 @ 192kb/s - Descriptive        | :x:                | :x:                | Visual-impaired  |
+  | Subtitle #1 | eng      | Full Subtitles [Fansub]                 | :white_check_mark: | :x:                | None             |
+  | Subtitle #2 | enm      | Honorifics [Fansub]                     | :white_check_mark: | :x:                | None             |
+  | Subtitle #3 | eng      | Japanese Commentary [USABD]             | :x:                | :x:                | Commentary       |
+  | Subtitle #4 | eng      | Signs/Songs [Fansub]                    | :x:                | :white_check_mark: | None             |
+  | Subtitle #5 | eng      | SDH [USABD]                             | :x:                | :x:                | Hearing-impaired |
+  | Subtitle #6 | eng      | English Commentary [USABD]              | :x:                | :x:                | Commentary       |
+  | Subtitle #7 | es-ES    | Full Subtitles (Castilian) [SPABD]      | :white_check_mark: | :x:                | None             |
+  | Subtitle #8 | es-419   | Full Subtitles (Latin American) [SPABD] | :white_check_mark: | :x:                | None             |
+  | Subtitle #9 | de       | Full Subtitles [GERBD]                  | :white_check_mark: | :x:                | None             |
 
 ===
 
