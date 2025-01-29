@@ -244,7 +244,7 @@ You must check that the aspect ratio is consistent throughout the entire file an
 
   - Open `Header Editor` in the left pane
   - Add your file
-  - Naviage to the Video track's properties
+  - Navigate to the Video track's properties
   - Adjust them as needed and then press `CTRL+S` to save without remuxing the file
 
   [![MKVToolNix GUI Header Editor](/static/advanced/muxing/mkvtoolnix_header_editor.png)](/static/advanced/muxing/mkvtoolnix_header_editor.png)
