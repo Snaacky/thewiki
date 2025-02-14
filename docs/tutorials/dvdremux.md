@@ -433,10 +433,17 @@ What this means is that if you try to resample from 1920x1080 to 960x540, and wa
 
 This makes things even more annoying when working with an anamorphic release, as it's very likely that the margins will be fractional, causing a lack of precision. I recommend resampling to 100x the original resolution of the subs first, which will increase the manual borders you should specify by 100x, improving the accuracy of the conversion.
 
-I'll use my Samurai Champloo release as an example. I had a sub file authored for the BD release in 1920x1080, and an anamorphic dvd remux with an active area of 711x480 and crop 5L, 4R. So I resampled the subs to 720x480, with margins defined by `crop * original sub res / storage res`. The left margin ended up as `5 * 192000 / 720 = 1333`. 
+I'll use my Samurai Champloo release as an example. I had a sub file authored for the BD release in 1920x1080, and an anamorphic dvd remux with an active area of 711x480 and crop 5L, 4R. So I resampled the subs to 720x480, with margins defined by `crop * original sub res / storage res`. The left margin ended up as `5 * 192000 / 720 = 1333`.
 
-- First, I resampled to 192000x108000
-- Then, I resampled to 720x480 with manual margins of 1333L 1067R
+- Open the subtitle file in aegisub
+- Navigate to Aegisub's Resample Resolution menu (Subtitle > Resample Resolution)
+- Set the Destination Resolution to 192000x108000 (or whatever the original resolution of the subtitles is x100)
+- Hit OK and resample.
+- Open Resample Resolution menu and set Destination Resolution to 720x480 (or the storage resolution of your anamorphic video) 
+- Use manual margins of 1333L, 1067R (or crop * original sub res / storage res)
+- Hit OK and resample.
+
+![Resample Resolution Menu Example](../static/tutorials/dvdremux/resample_resolution_menu.png)
 
 The exact steps you take may be different depending on how the subtitles were authored. So before you share your release, please make sure that the subtitles, especially any complex signs, are positioned correctly when using VLC, MPC-HC, and mpv with `blend-subtitles=yes". As long as this is the case, you're good to go.
 
