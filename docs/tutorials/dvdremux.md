@@ -375,7 +375,7 @@ to use with mkvpropedit like so:
 print(new_sar * clip.width / clip.height)
 ```
 
-### Applying the corrected SAR/PAR
+### Applying the corrected SAR/PAR to video
 
 Once we've obtained these new display dimensions,
 we can edit the mkv with the following terminal command:
@@ -419,4 +419,25 @@ Below is an example of a complete command (for a 16:9 video with active area 711
 mkvpropedit test.mkv --edit track:v1 --set display-unit=3 --set display-width=1280 --set display-height=711 --set pixel-crop-left=5 --set pixel-crop-right=4 --set pixel-crop-top=4
 ```
 
-After this your SAR/PAR correction is done and the DVD remux is complete.
+### Applying the corrected SAR/PAR to subtitles
+
+If you plan to include `.ass` subtitles that were authored for a square pixel source in your remux, you should resample them so they are stored at the same resolution as the anamorphic video (ie. 720x480 for NTSC and 720x576 for PAL). SAR/PAR correction must be done during resampling; the goal is to target mpv's `blend-subtitles=yes` option, which stretches and crops the subtitles in the same way as the video. 
+
+Ideally, players that don't correctly stretch and crop the video based on the mkv metadata will still have subtitles line up with the players correctly. For players like mpv that correctly stretch and crop the video, options like `blend-subtitles=yes` will stretch and crop the subtitles along with it, leading to correct presentation.
+
+For example, let's say you have 1080p subtitles from a Blu-Ray release, and your DVD remux has 720x480 anamorphic video with an active area of 711x480. What you want is to resample to 720x480 while undoing the crop by adding 9px of left and right borders to keep the subtitles inside the active area.
+
+Unfortunately, there is currently no way to do this in an automated fashion, so you have to manually open each sub file in Aegisub and run the resample resolution menu. The resample menu also does not let you add manual borders to the subs without changing the aspect ratio. This is further complicated by the fact that the margins listed in Aegisub are for the resolution before resampling, not the resolution after resampling.
+
+What this means is that if you try to resample from 1920x1080 to 960x540, and want to add 10 pixels of border to either side of the final 960x540 image, you shouldn't specify `10` for the manual border, but 10 * 1920 / 960 = `20`. In other words, you are adding a 20 pixel border to the 1920x1080 res, which will manifest as a 10 pixel border after resampling to 960x540.
+
+This makes things even more annoying when working with an anamorphic release, as it's very likely that the margins will be fractional, causing a lack of precision. I recommend resampling to 100x the original resolution of the subs first, which will increase the manual borders you should specify by 100x, improving the accuracy of the conversion.
+
+I'll use my Samurai Champloo release as an example. I had a sub file authored for the BD release in 1920x1080, and an anamorphic dvd remux with an active area of 711x480 and crop 5L, 4R. So I resampled the subs to 720x480, with margins defined by `crop * original sub res / storage res`. The left margin ended up as `5 * 192000 / 720 = 1333`. 
+
+- First, I resampled to 192000x108000
+- Then, I resampled to 720x480 with manual margins of 1333L 1067R
+
+The exact steps you take may be different depending on how the subtitles were authored. So before you share your release, please make sure that the subtitles, especially any complex signs, are positioned correctly when using VLC, MPC-HC, and mpv with `blend-subtitles=yes". As long as this is the case, you're good to go.
+
+After this your SAR/PAR correction is done and the DVD remux is complete!
