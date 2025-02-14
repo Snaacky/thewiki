@@ -68,8 +68,8 @@ If it includes a dGPU, you might not need to find one for your HTPC. Check to se
 Once you have picked a machine, you can move onto picking a GPU. We recommend choosing relatively recent, low-powered graphics cards as this will allow you to handle most modern shows without issue. Some examples of popular budget cards are:
 
 - AMD Radeon RX 550
-- NVIDIA GT 1030 (GDDR5) [!badge variant="info" text="Preferred for 4K/HDR"]
-- NVIDIA Quadro P600 [!badge variant="warning" text="Mini DP to HDMI adapter required"]
+- NVIDIA GT 1030 (GDDR5) 
+- NVIDIA Quadro P1000 [!badge variant="info" text="Preferred for 4K/HDR"] [!badge variant="warning" text="Mini DP to HDMI adapter required"]
 
 The most important factor to consider when choosing a GPU is the video decoder hardware and its supported resolutions.
 
@@ -104,6 +104,10 @@ This is an example of a good option to choose for your HTPC. As shown, this mach
 
 ==-
 
+Whether your system has an iGPU or a dGPU, you may run into limitations with their I/O. Most office equipment such as Quadro GPUs and ThinkCentre PCs will omit HDMI. In these cases, you will need an __active__ DisplayPort to HDMI adapter. Improper adapters may be limited to 4K 30Hz or not support HDR. The following adapters have been verified to support 4K 60Hz with HDR, however any adapter labeled as such should work.
+ - [Amazon Basics DisplayPort (4k@60Hz) to HDMI Female Converter](https://www.amazon.com/DisplayPort-Adapter-Compatible-Microsoft-Projector/dp/B07JDWR6W9)
+ - [BENFEI Mini DisplayPort to HDMI, 4K@60Hz Active Mini DP to HDMI Adapter](https://www.amazon.com/DisplayPort-Adapter-Compatible-Microsoft-Projector/dp/B07ZNH35M5) 
+
 ## Operating System
 
 ### Windows
@@ -121,7 +125,9 @@ Make sure you install the appropriate graphics driver for your system:
 ### Linux
 
 !!!warning
-HDR is not supported in X11 and Wayland. If you plan on playing HDR content, you will need to use Kodi's built-in player.
+HDR is not supported in X11. Wayland has experimental support for HDR, but it requires some configuration to work with MPV.
+
+If you plan on playing HDR content, you will probably need to use Kodi's built-in player.
 !!!
 
 Linux is another common option for HTPCs. If you chose to go down this route, most of the setup remains the same, however file paths will be different.
@@ -143,7 +149,7 @@ Depending on your hardware, the [example mpv configs](/tutorials/mpv/#basic-conf
 ontop=yes
 profile=high-quality
 blend-subtitles=video
-hwdec=auto-safe
+hwdec=auto-copy #If you aren't using the DRC Filter, you can change this to auto-safe for better performance.
 gpu-api=vulkan
 target-colorspace-hint=yes
 
@@ -168,11 +174,11 @@ alang=jpn,ja
 #subs-with-matching-audio=no
 
 [SDR]
-profile-cond=p["video-params/primaries"] and p["video-params/primaries"] ~= "bt.2020"
+profile-cond=p["video-params/gamma"] ~= "pq" and p["video-params/gamma"] ~= "hlg"
 vo=gpu
 
-[HDR]
-profile-cond=p["video-params/primaries"] == "bt.2020"
+[HDR/DV]
+profile-cond=p["video-params/gamma"] == "pq" or p["video-params/gamma"] == "hlg"
 vo=gpu-next
 target-contrast=inf ##inf is for OLED, for LCD get the contrast value from rtings or similar
 target-trc=pq
@@ -181,6 +187,10 @@ target-peak=700    ## If you have an HDR display, adjust this to the 10% peak
 
 ## Above makes use of vo=gpu-next for HDR Content, and vo=gpu for SDR. This is a requirement for blend-subtitles=video
 ## blend-subtitles=video is used to avoid performance issues with rendering 1080p subtitles at 2160p.
+
+
+[drc]
+vf-toggle=scale=in_range=limited:out_range=full,setrange=limited
 ```
 
 !!!
@@ -249,8 +259,12 @@ After installing Kodi, go to `%appdata%\Kodi\userdata`, make a file called `play
 Using a keyboard and mouse to control your system is not optimal for home theater usage. Instead, you should consider using an alternative input device:
 
 - CEC Adapter [!badge variant="primary" text="Recommended"]
+- IR Remote
+- USB Remote
+- Game Controller
 - Combo keyboard and trackpad devices
-- USB remotes
+
+### CEC
 
 Although the most expensive option, a CEC adapter is one of the best ways to control your HTPC. This allows you to use your TV's OEM remote control to send commands to your computer, including but not limited to directional pad, select button, color buttons, and more, depending on your specific make and model of TV.
 
@@ -260,11 +274,16 @@ We recommend using the [Pulse-Eight CEC Adapter](https://www.pulse-eight.com/p/1
 Although not officially rated to do so, the Pulse-Eight CEC Adapter has been proven to somewhat work with 4K 120Hz signals, though your milage may vary.
 !!!
 
-### CEC
-
 Pulse-Eight hosts builds for [libCEC](https://libcec.pulse-eight.com) on their website. libCEC includes the `cec-tray` application, a tool that converts CEC button presses on a comapatible remote to keyboard commands in Windows, which can be used to control media player applications such as Kodi and mpv.
 
-==- :icon-gear: Automatic startup
+==- :icon-gear: cec-tray configuration
+Once you have installed libCEC, open cec-tray. This program is used to pass CEC commands as keyboard inputs. The following settings should be changed prior to use:
+- Set "HDMI port of the TV" to the port that the PC is connected to on the PC.
+- Check "Minimise after connecting to the adapter"
+- Check the firmware version. If you encounter any issues, updating the firmware may help, though some claim that the newer versions firmwares break functionality, so your mileage may vary.
+- In the "Foreground Application" tab, you can press a button on your remote to see what it is currently bound to, and change it. The later steps of this guide assume all default bindings, so keep that in mind when changing them.
+
+==- :icon-sync: Automatic startup
 
 1. Locate your libCEC installation folder. *By default, this can be found in `C:\Program Files (x86)\Pulse-Eight\USB-CEC Adapter\x64\netfx\`*
 2. Create a shortcut to `cec-tray.exe`. Place this shortcut in your startup folder
@@ -292,8 +311,10 @@ F2 cycle deband
 F4 cycle sub down
 # F1 - Cycle through audio tracks
 F1 cycle audio
+# F3 - Toggle the DRC filter
+F3 apply-profile drc
 # Select - Pause/play
-ENTER cycle pause
+ENTER cycle pause; show-text "${time-pos/full}"
 # Backspace - Exit mpv
 BS quit
 ```
@@ -371,3 +392,105 @@ You will need to modify this code if you want to run something other than `kodi1
 To run this script, double-click the `.ahk` file. Alternatively, you can place it in your startup folder to run it automatically when `cec-tray` starts.
 
 +++
+
+### IR
+
+Most TVs use or support IR technology for the remote. It’s a cheap and reliable way to send remote signals long distance. There are a variety of methods of using an IR Remote with a PC, including:
+ - [FLIRC Dongle](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#BuyUpgrade) ($23.99)
+ - [Windows MCE Receiver](https://www.ebay.com/sch/i.html?_nkw=hp+media+center+reciever&_sacat=0) (~$10)
+ - [DIY Projects](https://www.instructables.com/DIY-USB-IR-receiver/) (~$5)
+
+The FLIRC is the most complete retail product, however all three can be made to work in most setups. However, all three will need a remote to interface with.
+
+Most low end TVs will be using an IR Remote. If there are buttons on the remote that don’t accidentally trigger other functions on the TV, these buttons can be programmed with your receiver. Some higher end remotes, such as the LG Magic Remote can be programmed as an IR Remote for devices like a Cable Box or DVD/BD player. You can take advantage of this feature to have the remote send IR signals that the TV knows are not directed at it. If you don’t have these features on your remote, there are alternative solutions as well. Universal remotes like the FLIRC Skip 1s and Logitech Harmony are fully programmable and able to be used with HTPCs and the rest of your home theater setup simultaneously. 
+
+#### Universal Remotes
+
+==- LG Magic Remote
+!!!warning
+LG Magic Remotes can ONLY be used with an LG TV. They cannot be used with other TVs.
+!!!
+
+The LG Magic Remote does not communicate with the TV via IR (except for the power button), however it is capable of emulating IR remotes. Although they do not have any HTPC specific IR codes, we can reuse the IR codes for a Cable Box.
+
+1. Open the full settings menu on your TV, and go to General > External Devices > Universal Control Settings.
+2. Select the HDMI Input that corresponds with your HTPC. In my case, it is HDMI 1. If there are any settings stored there, delete them.
+3. Select Set-Top Box. The other options (BD/DVD, Home Theater, OTT) are missing some buttons, like CH+/CH-.
+4. Select any of the service providers in your area. If you have a cable box, pick another brand to avoid confliction.
+5. During the self test, you can answer "Yes" to all the questions. These buttons will do nothing until you have configured them in your IR blaster.
+
+Your Magic Remote will now emit IR codes as long as the TV is on, and the input is set to the HTPC. Make sure that both of these things are true when trying to configure your IR Reciever, otherwise the remote will not emit any IR.
+
+When binding sleep/wake, you can use the ellipsis button to find the power button. This will allow you to turn the PC on when the TV detects no signal.
+<img src="https://github.com/guyman624/thewiki/assets/82007920/b6500aaf-229c-43e6-af28-8a627cd060b6" width="150">
+
+
+==- Logitech Harmony
+!!!warning
+Logitech has discontinued all Harmony products and has stopped supporting the software. The software relies on a cloud service to function, and if this cloud service were to go down, you would be rendered unable to change your remote configuration. At the time of writing this guide, ALL Harmony products are still fully functional and have no shutdown date from Logitech
+!!!
+
+Pros:
+- Large community
+- Fairly cheap on the used market
+- Beginner friendly programming
+
+Cons:
+- No offical support
+- Reliant on online programming
+
+There are three applications for the Harmony system depending on what generation of remote you have. If you have the Harmony Hub, you need the Harmony app. The other remotes either use the MyHarmony or the Harmony 7.x software. You can see the full compatibility list [here](https://support.myharmony.com/en-us/download#legacy).
+==- FLIRC Skip 1s
+The FLIRC Skip 1s is a universal remote developed after the discontinuation of the Logitech Harmony. It was designed in such a way that in the event that FLIRC were to go out of business, the remotes will still be fully functional and programmable.
+
+Pros:
+- Fully offline operation
+- Relatively cheap brand new
+- IR learning
+
+Cons:
+- Programming software is very buggy
+- Not "Scene Smart" in the way that the Harmony is
+- Difficult to make custom bindings with FLIRC Reciever
+
+The [Skip 1s](https://flirc.tv/products/skip1s-remote-universal-remote-control?variant=43489094729960#spec2) product page has the downloads for the latest "stable" release, but the [forums](https://forum.flirc.tv/index.php?/forum/102-beta-feedback/) usually have the latest beta. The program has some profiles for use with the FLIRC Reciever and Kodi, however there is not any simple/obvious way to add a custom keybinding. The simplest way I found was to add a "fake" cable box, add it's bindings to my remote, then on the reciever software bind these "fake" codes to the keys I needed.
+==-
+
+#### Recievers
+
+==- FLIRC
+There are two different revisions of the FLIRC dongle. The first generation is in a clear plastic shell, and is no longer supported by FLIRC, however the latest software still is fully functional. The second generation is in a metal and plastic shell. It has the latest firmware updates, and also includes an IR transmitter. This transmitter is only functional through the CLI however, it is not implemented into the GUI. ([source](https://forum.flirc.tv/index.php?/topic/3980-transmit-ir-signal-on-gen-2/))
+
+
+Download the FLIRC Software from [here](https://flirc.tv/products/flirc-usb-receiver?variant=43513067569384#spec2). The configuration is stored on the dongle itself, so you can configure on one computer then move to the HTPC without the need for the software on both.
+
+The basic usage of the software is as follows:
+1. Connect the dongle to the PC running the FLIRC software
+2. Select the type of controller you want to emulate from the Controllers tab. (You can select different buttons from multiple controllers)
+3. Click the button you would like to bind, then point the remote at the dongle and press the button.
+
+Although the most complete retail product, the FLIRC software is far from perfect. In my experience there are two quirks that you should know to take full advantage of the device.
+ - The "erase" button at the bottom is unintuitive. If you want to remove a binding, click "erase", then press the button to clear on the remote, not on the screen/keyboard.
+ - Different buttons with similar meanings on different tabs will do different things. For example, the "Wake" button on the "Full Keyboard" tab will __only__ wake the computer, where as the power button under "Media Keys" is both a sleep and wake button.
+
+==- MCE IR
+The MCE Recievers were designed to only offically work with it's original remote/codes. Most "smart" universal remotes should have codes for the MCE system, including Harmony and Skip 1s.
+If you have an original remote, or supported universal remote, you can use [Advanced MCE Remote Mapper](https://forum.kodi.tv/showthread.php?tid=164252) to remap keys.
+
+The (currently unmaintained) [EventGhost](https://github.com/EventGhost/EventGhost/releases) software is able to read arbitrary IR codes from the MCE reciever, and can be used with any remote. To configure:
+1. After installation, click File > New to remove the sample configuration.
+2. At the top of the window, click the "Add Plugin..." button, and add the "Microsoft MCE Remote - Vista/Win7" plugin.
+3. In the next window, click "Install Service". This is an alternative driver for the reciever that will allow any IR code to be read.
+4. At the top of the window, click the "Add Macro..." button, but close the configuration window. You should have an "\<unnamed macro\>". Make one for each button you would like to bind. You should rename it to the appropriate action.
+5. Press the button you would like to bind. It should show on the left side of the EventGhost window.
+    - <img src="https://github.com/guyman624/thewiki/assets/82007920/9305a0ac-2e4e-4b4a-a04d-bc5bccfc7e0c" width="100">
+7. Drag this element to the macro you would like it to activate.
+8. Click the macro, and at the top of the window click "Add Action...". Add the Window > Emulate Keystrokes action.
+9. Configure the keystroke you would like to attach to this IR code.
+10. Click File > Save to save the configuration as XML. EventGhost automatically reopens the previous file on startup.
+
+Once you have configured all the keys, as long as EventGhost is running, the keystrokes should be sent. You may wish to add EventGhost to the startup folder as detailed in the [CEC](#cec) section.
+
+==- 
+
+

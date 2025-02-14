@@ -121,26 +121,36 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
 ===
 
-==- :icon-checklist: Practical Example
+==- :icon-checklist: Practical Example - Basic
 
-  | Track        | Language | Name                                    | Default | Forced | Additional Flags |
-  |--------------|----------|-----------------------------------------|---------|--------|------------------|
-  | Video        | jpn      | Group                                   | yes     | no     | None             |
-  | Audio #1     | jpn      | FLAC 5.1                                | yes     | no     | None             |
-  | Audio #2     | jpn      | FLAC 2.0                                | yes     | no     | None             |
-  | Audio #3     | jpn      | FLAC 2.0 - Japanese Commentary          | no      | no     | Commentary       |
-  | Audio #4     | eng      | Opus 5.1 @ 320kb/s                      | yes     | no     | None             |
-  | Audio #5     | eng      | Opus 2.0 @ 192kb/s - Commentary         | no      | no     | Commentary       |
-  | Audio #6     | eng      | Opus 2.0 @ 192kb/s - Descriptive        | no      | no     | Visual-impaired  |
-  | Subtitle #1  | eng      | Full Subtitles [Fansub]                 | yes     | no     | None             |
-  | Subtitle #2  | enm      | Honorifics [Fansub]                     | yes     | no     | None             |
-  | Subtitle #3  | eng      | Japanese Commentary [USABD]             | no      | no     | Commentary       |
-  | Subtitle #4  | eng      | Signs/Songs [Fansub]                    | no      | yes    | None             |
-  | Subtitle #5  | eng      | SDH [USABD]                             | no      | no     | Hearing-impaired |
-  | Subtitle #6  | eng      | English Commentary [USABD]              | no      | no     | Commentary       |
-  | Subtitle #7  | es-ES    | Full Subtitles (Castilian) [SPABD]      | yes     | no     | None             |
-  | Subtitle #8  | es-419   | Full Subtitles (Latin American) [SPABD] | yes     | no     | None             |
-  | Subtitle #9  | de       | Full Subtitles [GERBD]                  | yes     | no     | None             |
+  | Track       | Language | Name                    | Default            | Forced             | Additional Flags |
+  |-------------|----------|-------------------------|--------------------|--------------------|------------------|
+  | Video       | jpn      | Group                   | :white_check_mark: | :x:                | None             |
+  | Audio #1    | jpn      | FLAC 2.0                | :white_check_mark: | :x:                | None             |
+  | Audio #2    | eng      | Opus 5.1 @ 320kb/s      | :white_check_mark: | :x:                | None             |
+  | Subtitle #1 | eng      | Full Subtitles [Fansub] | :white_check_mark: | :x:                | None             |
+  | Subtitle #2 | eng      | Signs/Songs [Fansub]    | :x:                | :white_check_mark: | None             |
+
+==- :icon-checklist: Practical Example - Advanced
+
+  | Track       | Language | Name                                    | Default            | Forced             | Additional Flags |
+  |-------------|----------|-----------------------------------------|--------------------|--------------------|------------------|
+  | Video       | jpn      | Group                                   | :white_check_mark: | :x:                | None             |
+  | Audio #1    | jpn      | FLAC 5.1                                | :white_check_mark: | :x:                | None             |
+  | Audio #2    | jpn      | FLAC 2.0                                | :white_check_mark: | :x:                | None             |
+  | Audio #3    | jpn      | FLAC 2.0 - Japanese Commentary          | :x:                | :x:                | Commentary       |
+  | Audio #4    | eng      | Opus 5.1 @ 320kb/s                      | :white_check_mark: | :x:                | None             |
+  | Audio #5    | eng      | Opus 2.0 @ 192kb/s - Commentary         | :x:                | :x:                | Commentary       |
+  | Audio #6    | eng      | Opus 2.0 @ 192kb/s - Descriptive        | :x:                | :x:                | Visual-impaired  |
+  | Subtitle #1 | eng      | Full Subtitles [Fansub]                 | :white_check_mark: | :x:                | None             |
+  | Subtitle #2 | enm      | Honorifics [Fansub]                     | :white_check_mark: | :x:                | None             |
+  | Subtitle #3 | eng      | Japanese Commentary [USABD]             | :x:                | :x:                | Commentary       |
+  | Subtitle #4 | eng      | Signs/Songs [Fansub]                    | :x:                | :white_check_mark: | None             |
+  | Subtitle #5 | eng      | SDH [USABD]                             | :x:                | :x:                | Hearing-impaired |
+  | Subtitle #6 | eng      | English Commentary [USABD]              | :x:                | :x:                | Commentary       |
+  | Subtitle #7 | es-ES    | Full Subtitles (Castilian) [SPABD]      | :white_check_mark: | :x:                | None             |
+  | Subtitle #8 | es-419   | Full Subtitles (Latin American) [SPABD] | :white_check_mark: | :x:                | None             |
+  | Subtitle #9 | de       | Full Subtitles [GERBD]                  | :white_check_mark: | :x:                | None             |
 
 ===
 
@@ -178,6 +188,29 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
 ===
 
+### Adding LayoutRes to ASS Files
+
+When working with ASS subtitle files, it's a good idea to explicitly add the `LayoutResX` and `LayoutResY` headers to [ensure your subtitles display correctly](https://slow.pics/c/EHRGN6GH). Here are three common cases to consider:
+
+- Typically, you'll want `LayoutResX` and `LayoutResY` to match `PlayResX` and `PlayResY` for newly authored subtitles.
+
+- If `LayoutResX` and `LayoutResY` are already set and they differ from `PlayResX` and `PlayResY`, it's best to keep the difference as-is. However, avoid creating new files with differing values.
+
+- For older files that don't have `LayoutResX` and `LayoutResY`, you should make an educated guess. One approach is to set these values to match `PlayResX` and `PlayResY` or the storage size of the video, depending on which seems more appropriate for the situation. If you cannot make an educated guess, it's better to skip setting `LayoutResX` and `LayoutResY` to avoid potential layout issues.
+
+To set `LayoutResX` and `LayoutResY` in Aegisub, follow these steps:
+
+1. Open your subtitle file in Aegisub.
+2. Go to the menu bar and click on `File`.
+3. From the drop-down menu, select `Properties`.
+4. In the `Script Properties` window, [you will see fields for `Script` (PlayRes) and `Layout` (LayoutRes)](/static/advanced/muxing/aegisub_script_properties.png).
+5. Set the appropriate values and click `OK`.
+
+!!!
+As of writing this, you need the [git master build of arch1t3cht/Aegisub](https://github.com/arch1t3cht/Aegisub) to edit `LayoutRes`.
+!!!
+
+
 ### Fonts
 
 [![Font attachments](/static/advanced/muxing/mkvtoolnix6.png)](/static/advanced/muxing/mkvtoolnix6.png)
@@ -211,7 +244,7 @@ You must check that the aspect ratio is consistent throughout the entire file an
 
   - Open `Header Editor` in the left pane
   - Add your file
-  - Naviage to the Video track's properties
+  - Navigate to the Video track's properties
   - Adjust them as needed and then press `CTRL+S` to save without remuxing the file
 
   [![MKVToolNix GUI Header Editor](/static/advanced/muxing/mkvtoolnix_header_editor.png)](/static/advanced/muxing/mkvtoolnix_header_editor.png)

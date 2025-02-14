@@ -355,6 +355,7 @@ sub-ass-style-overrides=playresx=1920,playresy=1080
 sub-font="Gandhi Sans"
 sub-font-size=50
 sub-color="#FFFFFF"
+sub-margin-y=40
 sub-border-size=2.4
 sub-border-color="#FF000000"
 sub-shadow-color="#A0000000"
@@ -381,6 +382,7 @@ sub-ass-style-overrides=playresx=1920,playresy=1080
 sub-font="Cabin"
 sub-font-size=50
 sub-color="#FFFFFFFF"
+sub-margin-y=40
 sub-border-size=2.4
 sub-border-color="#FF000000"
 sub-shadow-color="#A0000000"
@@ -410,6 +412,7 @@ sub-ass-style-overrides=playresx=1920,playresy=1080
 sub-font="Cabin F"
 sub-font-size=50
 sub-color="#FFFFFFFF"
+sub-margin-y=40
 sub-border-size=2.4
 sub-border-color="#FF000000"
 sub-shadow-color="#A0000000"
