@@ -116,7 +116,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   - When you have two regular tracks of the same language, let's say a `Japanese 2.0` track and a `Japanese 5.1` track, and you have correctly tagged them, you'll notice that these end up being tagged identically. In this case, players will fall back to using track order to select the audio track. Now, it's pretty much up to your personal preference as to which one goes first and ends up being the real default for the end user.
 
   !!!
-  Refer to the [Practical Example](#practical-example) to better understand the track ordering
+  Refer to the [Practical Example](#practical-example-basic) to better understand the track ordering
   !!!
 
 ===
