@@ -12,4 +12,4 @@ None of the maintainers of this wiki are fansubbers, so we won't be covering thi
 | Resource                                                                                                | Description                                                                               |
 | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | [unanimated.github.io](https://unanimated.github.io)                                                    | Several guides related to timing, typesetting, and more.                                  |
-| [Garret's Fansub meta guide](https://tilde.club/~garret/fansub.html)                                    | List of fansubbing related resources                                                      |
+| [garret's Fansub meta guide](https://tilde.club/~garret/fansub.html)                                    | List of fansubbing related resources                                                      |
