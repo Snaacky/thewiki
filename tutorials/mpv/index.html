@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793659749336">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794096469341">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793659749336" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.794096469341" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793659749336" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794096469341" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793659749336" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793659749336" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794096469341" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.794096469341" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -172,8 +172,8 @@
     </h3>
 </doc-anchor-target>
 <doc-panels>
-   <doc-panel id="installing-mpv" collapsed>
-       <template #title><span class="docs-emoji">&#x1F527;</span> Installing mpv</template>
+   <doc-panel id="option-1-installing-mpv" collapsed>
+       <template #title>Option #1: <span class="docs-emoji">&#x1F527;</span> Installing mpv</template>
 <ol>
 <li>Download the latest Windows build of <a href="https://mpv.io">mpv</a> from <a href="https://github.com/zhongfly/mpv-winbuild/releases/latest">mpv-winbuild</a>. <em>For most users, this should be <code v-pre>mpv-x86_64-YYYYMMDD-git-abcxyz.7z</code></em></li>
 <li>Once downloaded, extract the archive&#x27;s contents to your specified location</li>
@@ -206,8 +206,8 @@
 </figure>
 </p>
    </doc-panel>
-   <doc-panel id="installing-mpv-via-scoop" collapsed>
-       <template #title><span class="docs-emoji">&#x1F368;</span> Installing mpv via Scoop</template>
+   <doc-panel id="option-2-installing-mpv-via-scoop" collapsed>
+       <template #title>Option #2: <span class="docs-emoji">&#x1F368;</span> Installing mpv via Scoop</template>
 <p><a href="https://scoop.sh">Scoop</a> is a command line package manager for Windows. Unlike other installation methods, Scoop downloads and manages packages in a portable way, keeping them neatly isolated in <code v-pre>%userprofile%/scoop</code> and automatically adding them to your PATH.</p>
 <p>Scoop can be installed using their install script in a PowerShell window:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -234,8 +234,8 @@ scoop install extras/mpv-git</code></pre>
 </doc-tab>
 </doc-tabs>
    </doc-panel>
-   <doc-panel id="installing-a-fork" collapsed>
-       <template #title><span class="docs-emoji">&#x1F374;</span> Installing a fork</template>
+   <doc-panel id="option-3-installing-a-fork" collapsed>
+       <template #title>Option #3: <span class="docs-emoji">&#x1F374;</span> Installing a fork</template>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -262,8 +262,8 @@ scoop install extras/mpv-git</code></pre>
 </a></li>
 </ul>
    </doc-panel>
-   <doc-panel id="installing-a-pre-configured-build" collapsed>
-       <template #title><span class="docs-emoji">&#x1F4E6;</span> Installing a pre-configured build</template>
+   <doc-panel id="option-4-installing-a-pre-configured-build" collapsed>
+       <template #title>Option #4: <span class="docs-emoji">&#x1F4E6;</span> Installing a pre-configured build</template>
 <p>If you don&#x27;t want to setup mpv yourself, a portable build of mpv is available below. This is pre-configured to have the settings described in the <doc-anchor-trigger to="#basic-config">Basic Config</doc-anchor-trigger> and <doc-anchor-trigger to="#advanced-config">Advanced Config</doc-anchor-trigger> and is automatically updated daily. The <code v-pre>portable_config</code> folder can also be downloaded separately if you wish to add it to your existing mpv installation.</p>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
