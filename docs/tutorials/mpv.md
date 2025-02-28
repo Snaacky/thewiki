@@ -90,7 +90,7 @@ If you want to access mpv from the command line, you will need to add it to Wind
 
 ### macOS
 
-==- 🔧 Installing mpv
+==- Option #1: 🔧 Installing mpv
 
 Download the latest macOS build of [mpv](https://mpv.io):
 [!button size="s" variant="primary" icon="download" text="Stable" margin="0 8 0 0"](https://laboratory.stolendata.net/~djinn/mpv_osx/)
@@ -116,7 +116,7 @@ brew install mpv
 Distributions usually package outdated, unmaintained, and/or unsupported versions of mpv. We recommend using mpv-build or third-party packages instead.
 !!!
 
-==- 🔧 Installing mpv with unofficial packages
+==- Option #2: 🔧 Installing mpv with unofficial packages
 
 The following packages are not maintained by official mpv developers:
 
