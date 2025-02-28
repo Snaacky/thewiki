@@ -12,7 +12,7 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 ### Windows
 
-==- 🔧 Installing mpv
+==- Option #1: 🔧 Installing mpv
 
 1. Download the latest Windows build of [mpv](https://mpv.io) from [mpv-winbuild](https://github.com/zhongfly/mpv-winbuild/releases/latest). *For most users, this should be `mpv-x86_64-YYYYMMDD-git-abcxyz.7z`*
 2. Once downloaded, extract the archive's contents to your specified location
@@ -23,7 +23,7 @@ This folder cannot be changed after installation. If you wish to change it in th
 
 [!embed text="Installing mpv-winbuild"](/static/tutorials/mpv/mpv-winbuild-installation.mp4)
 
-==- 🍨 Installing mpv via Scoop
+==- Option #2: 🍨 Installing mpv via Scoop
 
 [Scoop](https://scoop.sh) is a command line package manager for Windows. Unlike other installation methods, Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `%userprofile%/scoop` and automatically adding them to your PATH.
 
@@ -55,7 +55,7 @@ scoop uninstall mpv-git
 
 +++
 
-==- 🍴 Installing a fork
+==- Option #3: 🍴 Installing a fork
 
 !!!info
 We suggest sticking with the official mpv player as forks tend to lag behind in updates.
@@ -66,7 +66,7 @@ We suggest sticking with the official mpv player as forks tend to lag behind in 
 - [mpc-qt](https://github.com/mpc-qt/mpc-qt)
 - [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
-==- 📦 Installing a pre-configured build
+==- Option #4: 📦 Installing a pre-configured build
 
 If you don't want to setup mpv yourself, a portable build of mpv is available below. This is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config) and is automatically updated daily. The `portable_config` folder can also be downloaded separately if you wish to add it to your existing mpv installation.
 
