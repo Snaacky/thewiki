@@ -38,7 +38,7 @@ This is what you should see on your first startup.
 If you installed mpv using scoop, `mpv.exe` is located in `%USERPROFILE%\scoop\apps\mpv\current\mpv.exe`
 !!!
 
-5. Click 5 to connect to the server.
+5. Click the button labeled 5 ("Store configuration and run Syncplay") to connect to the server.
 6. Drag the `.mkv` file from File Explorer into the newly created mpv window. Closing either window will disconnect you from the session.
 
 **Boxes 1 and 3 are subject to change per event, keep an eye on the announcements.**
