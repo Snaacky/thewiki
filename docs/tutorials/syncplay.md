@@ -7,9 +7,9 @@ author:
   avatar: https://github.com/Snaacky/thewiki/assets/78981416/2045b3c7-90a5-40ce-9d81-a81baa421227
 ---
 
-# Configuring SyncPlay for Group Watch Events (Windows)
+# SyncPlay for Group Watch Events (Windows)
 
-This guide is a quick tutorial to get SyncPlay set up for Snackbox Group Watch Events
+Quick tutorial to get SyncPlay set up for Snackbox Group Watch Events
 
 ## Required
 
@@ -20,25 +20,26 @@ This guide is a quick tutorial to get SyncPlay set up for Snackbox Group Watch E
 
 ## Steps
 
-1. Download SyncPlay Windows Installer and install it, not as administrator.
+1. Download SyncPlay Windows Installer and install it.
 2. Download and install Visual C++ Redist.
-3. Download and unzip mpv to a known location. You may skip this step if mpv is already present.
-4. Run SyncPlay from your Start Menu.
+3. Download and unzip mpv to a known location. You may skip this step if mpv is already installed.
+4. Run SyncPlay from the Start Menu.
 
-![image](/static/tutorials/syncplay_example.png)
+![Example](/static/tutorials/syncplay_example.png)
 
 This is what you should see on your first startup.
-In box 1, click the dropdown arrow on the far right. This is the server selection, typically only the first or second server is used.
-In box 2, input your username. 
-In box 3, input the room name. This will usually be announced alongside the server to select.
-In box 4, you need to click browse and select your copy of `mpv.exe`. This is wherever you the extracted the `.zip`. 
+
+ - In box 1, click the dropdown arrow on the far right. This will usually be announced alongside the name of the room.
+ - In box 2, input a username. 
+ - In box 3, input the room name. This will usually be announced alongside the server to select.
+ - In box 4, you need to click browse and select your copy of `mpv.exe`. This is wherever you the extracted the `.zip`. 
 
 !!!
 If you installed mpv using scoop, `mpv.exe` is located in `%USERPROFILE%\scoop\apps\mpv\current\mpv.exe`
 !!!
 
-5. Click 5 to connect to the event.
-6. Drag the `.mkv` file into the newly created mpv window. Closing either window will disconnect you from the session.
+5. Click 5 to connect to the server.
+6. Drag the `.mkv` file from File Explorer into the newly created mpv window. Closing either window will disconnect you from the session.
 
-Boxes 1 and 3 are subject to change per event, keep an eye on the announcements.
+**Boxes 1 and 3 are subject to change per event, keep an eye on the announcements.**
 
