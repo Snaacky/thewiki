@@ -20,5 +20,6 @@ order: -3
 - [qBittorrent](/tutorials/qbittorrent)
 - [Sonarr](/tutorials/sonarr)
 - [Split Tunneling](/tutorials/splittunnel)
+- [SyncPlay Setup and Config](/tutorials/syncplay)
 - [Transmission](/tutorials/transmission)
 - [Unblock Guide](/tutorials/unblock)
