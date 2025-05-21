@@ -53,14 +53,14 @@ In order to create comparisons with VSPreview, you will need a few necessary dep
 
 #### Installation
 
-Download and install [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jet) using `pip` in your terminal:
+!!!warning
+If you have the previous vs-jet packages installed, please follow the instructions on [`vs-jet`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jet) page to uninstall them. You need to do this before installing the newer vs-jetpack package.
+!!!
+
+Download and install [`vs-jetpack`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jetpack) and [`vs-preview`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) using `pip` in your terminal:
 
 ```powershell
-python -m pip install vsjet
-```
-
-```powershell
-python -m vsjet latest
+python -m pip install vsjetpack vspreview
 ```
 
 ## Usage
