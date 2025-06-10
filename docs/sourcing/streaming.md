@@ -15,7 +15,7 @@ Most unofficial streaming sites contain unwanted or annoying pop-ups/ads that ma
 
 ## Popular Sites
 
-[Anitaku](https://anitaku.to) (previously *Gogoanime*)
+[AnimeKAI](https://animekai.to) (previously *Gogoanime*, *Anitaku*)
 :   Self-hosted site with a vast library. Majority of scraper sites will source from here
 
 [HiAnime](https://hianime.to) (previously *Aniwatch/Zoro*)
