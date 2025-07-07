@@ -6,7 +6,7 @@ order: -1
 # Streaming Sites
 
 !!!
-If you're planning to stream content from your computer, we suggest using [Miru](https://github.com/ThaUnknown/miru), an application which lets you stream anime torrents, giving you both the convenience of streaming and quality of torrents.
+If you're planning to stream content from your computer, we suggest using [Hayase](https://github.com/hayase-app/ui), an application which lets you stream anime torrents, giving you both the convenience of streaming and quality of torrents.
 !!!
 
 !!!warning
