@@ -149,7 +149,7 @@ Anime.Name.S00E09.Title.of.the.Episode.1080p.BluRay.Opus2.0.x264-Hi10P-Group.mkv
 - Make one folder for each Season following all the guidelines. This is due to the fact that most trackers do not allow multi-season batch torrents.
 - Put `Group` tag at the end of the folder name to allow alphabetical sorting and easier parsing.
 - **Everything** that isn't an episode, e.g Creditless Intro/Outro, PVs, etc **must** be put in a subfolder called `Extras` (not `Extra`). Do **not** use subfolders like `NC`, `Creditless`, etc.
-- Special Episode/OVA must be put in the same folder if it's singular or a subfolder called `Specials` if there are multiple of them.
+- Ideally, you should upload specials/OVAs separately if they have their own entry on AnimeBytes/AniDB. If you still insist on grouping them with the main entry, you must put them in a subfolder called `Specials`. This is because `S00` is alphabetically above any other season, so a naive user might click the first file and end up watching the wrong episode. Furthermore, grouping them this way will lead to unnecessary complications when someone (even you) cross-posts it to a tracker that enforces proper boundaries between entries (which includes virtually every private tracker).
 - Anime that are a single season split between two cours, e.g. Eighty-Six aired in two cours, [cour 1](https://anilist.co/anime/116589/) and [cour 2](https://anilist.co/anime/131586/), but is a [single season](https://thetvdb.com/series/eighty-six/seasons/official/1), must be named in a way that satisfies both which is achieved by adding the episode range after the season info (`S0X`). For example, `Eighty-Six S01 E01-E11` and `Eighty-Six S01 E12-E23`.
 
 Examples:
