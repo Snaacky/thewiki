@@ -171,7 +171,7 @@ alang=jpn,ja
 # Uncomment this section to prefer English dub with subtitles for English dub
 #slang=zxx,eng,en
 #alang=eng,en
-#subs-with-matching-audio=no
+#subs-with-matching-audio=forced
 
 [SDR]
 profile-cond=p["video-params/gamma"] ~= "pq" and p["video-params/gamma"] ~= "hlg"
