@@ -15,9 +15,6 @@ Most unofficial streaming sites contain unwanted or annoying pop-ups/ads that ma
 
 ## Popular Sites
 
-[Anitaku](https://anitaku.to) (previously *Gogoanime*)
-:   Self-hosted site with a vast library. Majority of scraper sites will source from here
-
 [HiAnime](https://hianime.to) (previously *Aniwatch/Zoro*)
 :   Self-hosted site with higher quality compared to Anitaku while maintaining an extensive library. One of the only unofficial streaming sites with soft subtitles
 
@@ -41,7 +38,7 @@ A **self-hosted** site is a streaming site that hosts the content on their own s
 
 Typically, self-hosted sites allow for significantly better video quality compared to scrapers or other sites. They also generally pick good BD releases or fansubs for some shows. *However, some self-hosted libraries can be more limited.*
 
-**Examples of self-hosted sites:** [animepahe](https://animepahe.com), [Anitaku](https://anitaku.to), [HiAnime](https://hianime.to)
+**Examples of self-hosted sites:** [animepahe](https://animepahe.com),  [HiAnime](https://hianime.to)
 
 +++ Scrapers
 
@@ -49,7 +46,7 @@ A **scraper** is a site that grabs content hosted on existing self-hosted sites 
 
 This allows for anime libraries equivalent in size to self-hosted ones, without the need for the scraper to host content themselves. Additionally, site owners can implement their own UI or features, which may be preferred over the original site.
 
-Majority of sites will scrape from [Anitaku](https://anitaku.to), a popular self-hosted streaming site.
+Majority of sites will scrape from [HiAnime](https://hianime.to), a popular self-hosted streaming site.
 
 **Examples of scraper sites:** [AllAnime](https://allanime.to) and [YugenAnime](https://yugenanime.tv)
 
@@ -84,7 +81,6 @@ Show                                                      | Sources
 +++ Tier 3 (Okay)
 
 - [animepahe](https://animepahe.com) - Quality can be better or worse than Anitaku. *However, they offer significantly smaller file sizes and use good BD releases whenever available*
-- [Anitaku](https://anitaku.to) (and its scrapers) - *Formerly Gogoanime*
 
 +++
 
@@ -94,19 +90,15 @@ There are a multitude of other factors that may affect your decision in picking 
 
 ==- :icon-device-camera-video: Fansubs and BD releases
 
-[Animepahe](https://animepahe.com) is very consistent at picking good BD releases with fansubs.
+[animepahe](https://animepahe.com) is very consistent at picking good BD releases with fansubs.
 
 ==- :icon-file-directory: File size
 
 [animepahe](https://animepahe.com) has some of the smallest file sizes compared to other streaming sites.
 
-[Anitaku's](https://anitaku.to) are relatively small when compared to sites like [HiAnime](https://hianime.to).
-
 ==- :icon-apps: Library
 
-[Anitaku](https://anitaku.to) has some of the largest libraries available.
-
-Additionally, [HiAnime](https://hianime.to) has one of the best libraries when it comes to older and rarer shows.
+[HiAnime](https://hianime.to) has one of the best libraries when it comes to older and rarer shows.
 
 ==- :icon-note: Soft subtitles
 
