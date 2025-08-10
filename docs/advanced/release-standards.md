@@ -33,7 +33,7 @@ Unless you are making your own encode, you'll have to stick to the available opt
 
 ### Useful Tools
 
-- [eac3to](https://forum.doom9.org/showthread.php?t=125966) with [updated libraries](https://mega.nz/#!dFAmEC4Y!WMTQvzLkfTDHPfhTXURSLaFWbmDMVaq3dKfk4ucjYrI) for extracting and transcoding.
+- [eac3to](https://www.rationalqm.us/eac3to/) for extracting and transcoding.
 - [SoX](http://sox.sourceforge.net/) for resampling and bit depth reduction.
 - [opus-tools](https://opus-codec.org/downloads/) for transcoding lossless audio to Opus.
 - [muxtools](https://github.com/Jaded-Encoding-Thaumaturgy/muxtools) is an automation package for everything related to encoding and subbing.
