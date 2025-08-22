@@ -11,7 +11,7 @@ A virtual private network (VPN) is a service that gives you online privacy by ma
 
 ## What VPNs are safe for use?
 
-The only VPNs that should be considered safe are paid VPNs that claim that they do not retain logs. Make sure to do your research while picking a VPN provider. /r/VPN has a [VPN comparison table](https://www.reddit.com/r/VPN/comments/m736zt/vpn_comparison_table/), which is an excellent resource to start with. On top of a VPN with great speed without retaining any logs, you should also double check to see whether if the VPN in question supports crucial features such as port forwarding, split tunneling, or kill switch - such as Mullvad, TorGuard, or Private Internet Access (PIA).
+The only VPNs that should be considered safe are paid VPNs that claim that they do not retain logs. Make sure to do your research while picking a VPN provider. /r/VPN has a [VPN comparison table](https://www.reddit.com/r/VPN/comments/m736zt/vpn_comparison_table/), which is an excellent resource to start with. On top of a VPN with great speed without retaining any logs, you should also double check to see whether if the VPN in question supports crucial features such as port forwarding, split tunneling, or kill switch - such as AirVPN, Proton VPN, or Private Internet Access (PIA).
 
 TorrentFreak's [Which VPN Providers Really Take Privacy Seriously in 2021?](https://torrentfreak.com/best-vpn-anonymous-no-logging/) can also be used as a point of reference for paid VPNs feature comparison.
 
