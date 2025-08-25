@@ -92,17 +92,8 @@ Streaming sites use torrent releases as a source. Sometimes they get a release w
 ## I don't like downloading, are there any streaming/podcast sites?
 
 - https://listen.moe/
-   
-
-- https://animemusic.org/
-
-
 - https://themes.moe/
-   
-
 - https://ostlist.netlify.app/
-
-
 - https://animusic.moe/
 
 ## What do the things in brackets mean at the end of a torrent?
