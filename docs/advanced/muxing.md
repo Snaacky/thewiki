@@ -125,7 +125,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
   | Track       | Language | Name                    | Default            | Forced             | Additional Flags  |
   |-------------|----------|-------------------------|--------------------|--------------------|-------------------|
-  | Video       | jpn      | Group                   | :white_check_mark: | :x:                | None              |
+  | Video       | und      | Group                   | :white_check_mark: | :x:                | None              |
   | Audio #1    | jpn      | FLAC 2.0                | :white_check_mark: | :x:                | Original language |
   | Audio #2    | eng      | Opus 5.1 @ 320kb/s      | :white_check_mark: | :x:                | None              |
   | Subtitle #1 | eng      | Full Subtitles [Fansub] | :white_check_mark: | :x:                | None              |
@@ -135,7 +135,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
   | Track       | Language | Name                                    | Default            | Forced             | Additional Flags              |
   |-------------|----------|-----------------------------------------|--------------------|--------------------|-------------------------------|
-  | Video       | jpn      | Group                                   | :white_check_mark: | :x:                | None                          |
+  | Video       | und      | Group                                   | :white_check_mark: | :x:                | None                          |
   | Audio #1    | jpn      | FLAC 5.1                                | :white_check_mark: | :x:                | Original language             |
   | Audio #2    | jpn      | FLAC 2.0                                | :white_check_mark: | :x:                | Original language             |
   | Audio #3    | jpn      | FLAC 2.0 - Japanese Commentary          | :x:                | :x:                | Commentary, Original language |
