@@ -176,7 +176,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   | [VLC](https://www.videolan.org/vlc/)               | Mostly                 | Doesn't respect the `Forced` flag.                                                                                                                               |
   | [Plex](https://www.plex.tv/)                       | Mostly                 | Plex respects Matroska tags (such as Forced, SDH, language, etc) with the exception of the `Default` flag. Track order takes precedence over the `Default` flag. |
   | [Jellyfin](https://jellyfin.org/)                  | Yes                    |                                                                                                                                                                  |
-  | [Kodi](https://kodi.tv/)                           | Yes                    |                                                                                                                                                                  |
+  | [Kodi](https://kodi.tv/)                           | Yes                    | Has an option to select tracks with the `Original language` flag.                                                                                                |
   | [clsid2/MPC-HC](https://github.com/clsid2/mpc-hc/) | Mostly                 | Doesn't respect the `Forced` flag.                                                                                                                               |
 
   !!!
