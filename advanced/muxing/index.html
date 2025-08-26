@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809463663089">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809552572124">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.809463663089" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.809552572124" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809463663089" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809552572124" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809463663089" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809463663089" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809552572124" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809552572124" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -263,7 +263,7 @@ You&#x27;ll see 3 tabs here:</p>
 <li>Mention the codec, channels, and quality in the <code v-pre>Name</code> field.</li>
 <li>Language tag must be used appropriately reflecting the language of the audio.</li>
 <li>Audio tracks must not be marked as <code v-pre>Forced</code>.</li>
-<li>Regular <code v-pre>Japanese</code> audio must be tagged as <code v-pre>jpn</code> and marked as <code v-pre>Default</code>.</li>
+<li>Regular <code v-pre>Japanese</code> audio must be tagged as <code v-pre>jpn</code> and marked as <code v-pre>Default</code> and <code v-pre>Original language</code>.</li>
 <li>Regular <code v-pre>English</code> audio must be tagged as <code v-pre>eng</code> and marked as <code v-pre>Default</code>.</li>
 <li>Any and all other regular audio tracks (e.g Spanish dub, German dub, etc) must be tagged with their respective language tag and marked as <code v-pre>Default</code>.</li>
 <li>If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the <code v-pre>Name</code> field. For example, Castilian Spanish must be tagged as <code v-pre>es-ES</code> while Latin American Spanish must be tagged as <code v-pre>es-419</code>.</li>
@@ -355,7 +355,7 @@ You&#x27;ll see 3 tabs here:</p>
 <tbody>
 <tr>
 <td>Video</td>
-<td>jpn</td>
+<td>und</td>
 <td>Group</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
@@ -367,7 +367,7 @@ You&#x27;ll see 3 tabs here:</p>
 <td>FLAC 2.0</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
-<td>None</td>
+<td>Original language</td>
 </tr>
 <tr>
 <td>Audio #2</td>
@@ -414,7 +414,7 @@ You&#x27;ll see 3 tabs here:</p>
 <tbody>
 <tr>
 <td>Video</td>
-<td>jpn</td>
+<td>und</td>
 <td>Group</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
@@ -426,7 +426,7 @@ You&#x27;ll see 3 tabs here:</p>
 <td>FLAC 5.1</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
-<td>None</td>
+<td>Original language</td>
 </tr>
 <tr>
 <td>Audio #2</td>
@@ -434,7 +434,7 @@ You&#x27;ll see 3 tabs here:</p>
 <td>FLAC 2.0</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
-<td>None</td>
+<td>Original language</td>
 </tr>
 <tr>
 <td>Audio #3</td>
@@ -597,7 +597,7 @@ You&#x27;ll see 3 tabs here:</p>
 <tr>
 <td><a href="https://kodi.tv/">Kodi</a></td>
 <td>Yes</td>
-<td></td>
+<td>Has an option to select tracks with the <code v-pre>Original language</code> flag.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/clsid2/mpc-hc/">clsid2/MPC-HC</a></td>
