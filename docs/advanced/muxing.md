@@ -80,7 +80,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   - Mention the codec, channels, and quality in the `Name` field.
   - Language tag must be used appropriately reflecting the language of the audio.
   - Audio tracks must not be marked as `Forced`.
-  - Regular `Japanese` audio must be tagged as `jpn` and marked as `Default`.
+  - Regular `Japanese` audio must be tagged as `jpn` and marked as `Default` and `Original language`.
   - Regular `English` audio must be tagged as `eng` and marked as `Default`.
   - Any and all other regular audio tracks (e.g Spanish dub, German dub, etc) must be tagged with their respective language tag and marked as `Default`.
   - If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the `Name` field. For example, Castilian Spanish must be tagged as `es-ES` while Latin American Spanish must be tagged as `es-419`.
@@ -123,34 +123,34 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
 
 ==- :icon-checklist: Practical Example - Basic
 
-  | Track       | Language | Name                    | Default            | Forced             | Additional Flags |
-  |-------------|----------|-------------------------|--------------------|--------------------|------------------|
-  | Video       | jpn      | Group                   | :white_check_mark: | :x:                | None             |
-  | Audio #1    | jpn      | FLAC 2.0                | :white_check_mark: | :x:                | None             |
-  | Audio #2    | eng      | Opus 5.1 @ 320kb/s      | :white_check_mark: | :x:                | None             |
-  | Subtitle #1 | eng      | Full Subtitles [Fansub] | :white_check_mark: | :x:                | None             |
-  | Subtitle #2 | eng      | Signs/Songs [Fansub]    | :x:                | :white_check_mark: | None             |
+  | Track       | Language | Name                    | Default            | Forced             | Additional Flags  |
+  |-------------|----------|-------------------------|--------------------|--------------------|-------------------|
+  | Video       | und      | Group                   | :white_check_mark: | :x:                | None              |
+  | Audio #1    | jpn      | FLAC 2.0                | :white_check_mark: | :x:                | Original language |
+  | Audio #2    | eng      | Opus 5.1 @ 320kb/s      | :white_check_mark: | :x:                | None              |
+  | Subtitle #1 | eng      | Full Subtitles [Fansub] | :white_check_mark: | :x:                | None              |
+  | Subtitle #2 | eng      | Signs/Songs [Fansub]    | :x:                | :white_check_mark: | None              |
 
 ==- :icon-checklist: Practical Example - Advanced
 
-  | Track       | Language | Name                                    | Default            | Forced             | Additional Flags |
-  |-------------|----------|-----------------------------------------|--------------------|--------------------|------------------|
-  | Video       | jpn      | Group                                   | :white_check_mark: | :x:                | None             |
-  | Audio #1    | jpn      | FLAC 5.1                                | :white_check_mark: | :x:                | None             |
-  | Audio #2    | jpn      | FLAC 2.0                                | :white_check_mark: | :x:                | None             |
-  | Audio #3    | jpn      | FLAC 2.0 - Japanese Commentary          | :x:                | :x:                | Commentary       |
-  | Audio #4    | eng      | Opus 5.1 @ 320kb/s                      | :white_check_mark: | :x:                | None             |
-  | Audio #5    | eng      | Opus 2.0 @ 192kb/s - Commentary         | :x:                | :x:                | Commentary       |
-  | Audio #6    | eng      | Opus 2.0 @ 192kb/s - Descriptive        | :x:                | :x:                | Visual-impaired  |
-  | Subtitle #1 | eng      | Full Subtitles [Fansub]                 | :white_check_mark: | :x:                | None             |
-  | Subtitle #2 | enm      | Honorifics [Fansub]                     | :white_check_mark: | :x:                | None             |
-  | Subtitle #3 | eng      | Japanese Commentary [USABD]             | :x:                | :x:                | Commentary       |
-  | Subtitle #4 | eng      | Signs/Songs [Fansub]                    | :x:                | :white_check_mark: | None             |
-  | Subtitle #5 | eng      | SDH [USABD]                             | :x:                | :x:                | Hearing-impaired |
-  | Subtitle #6 | eng      | English Commentary [USABD]              | :x:                | :x:                | Commentary       |
-  | Subtitle #7 | es-ES    | Full Subtitles (Castilian) [SPABD]      | :white_check_mark: | :x:                | None             |
-  | Subtitle #8 | es-419   | Full Subtitles (Latin American) [SPABD] | :white_check_mark: | :x:                | None             |
-  | Subtitle #9 | de       | Full Subtitles [GERBD]                  | :white_check_mark: | :x:                | None             |
+  | Track       | Language | Name                                    | Default            | Forced             | Additional Flags  |
+  |-------------|----------|-----------------------------------------|--------------------|--------------------|-------------------|
+  | Video       | und      | Group                                   | :white_check_mark: | :x:                | None              |
+  | Audio #1    | jpn      | FLAC 5.1                                | :white_check_mark: | :x:                | Original language |
+  | Audio #2    | jpn      | FLAC 2.0                                | :white_check_mark: | :x:                | Original language |
+  | Audio #3    | jpn      | FLAC 2.0 - Japanese Commentary          | :x:                | :x:                | Commentary        |
+  | Audio #4    | eng      | Opus 5.1 @ 320kb/s                      | :white_check_mark: | :x:                | None              |
+  | Audio #5    | eng      | Opus 2.0 @ 192kb/s - Commentary         | :x:                | :x:                | Commentary        |
+  | Audio #6    | eng      | Opus 2.0 @ 192kb/s - Descriptive        | :x:                | :x:                | Visual-impaired   |
+  | Subtitle #1 | eng      | Full Subtitles [Fansub]                 | :white_check_mark: | :x:                | None              |
+  | Subtitle #2 | enm      | Honorifics [Fansub]                     | :white_check_mark: | :x:                | None              |
+  | Subtitle #3 | eng      | Japanese Commentary [USABD]             | :x:                | :x:                | Commentary        |
+  | Subtitle #4 | eng      | Signs/Songs [Fansub]                    | :x:                | :white_check_mark: | None              |
+  | Subtitle #5 | eng      | SDH [USABD]                             | :x:                | :x:                | Hearing-impaired  |
+  | Subtitle #6 | eng      | English Commentary [USABD]              | :x:                | :x:                | Commentary        |
+  | Subtitle #7 | es-ES    | Full Subtitles (Castilian) [SPABD]      | :white_check_mark: | :x:                | None              |
+  | Subtitle #8 | es-419   | Full Subtitles (Latin American) [SPABD] | :white_check_mark: | :x:                | None              |
+  | Subtitle #9 | de       | Full Subtitles [GERBD]                  | :white_check_mark: | :x:                | None              |
 
 ===
 
@@ -176,7 +176,7 @@ The `Properties` tab allows you tag each track with various flags. Tagging a tra
   | [VLC](https://www.videolan.org/vlc/)               | Mostly                 | Doesn't respect the `Forced` flag.                                                                                                                               |
   | [Plex](https://www.plex.tv/)                       | Mostly                 | Plex respects Matroska tags (such as Forced, SDH, language, etc) with the exception of the `Default` flag. Track order takes precedence over the `Default` flag. |
   | [Jellyfin](https://jellyfin.org/)                  | Yes                    |                                                                                                                                                                  |
-  | [Kodi](https://kodi.tv/)                           | Yes                    |                                                                                                                                                                  |
+  | [Kodi](https://kodi.tv/)                           | Yes                    | Has an option to select tracks with the `Original language` flag.                                                                                                |
   | [clsid2/MPC-HC](https://github.com/clsid2/mpc-hc/) | Mostly                 | Doesn't respect the `Forced` flag.                                                                                                                               |
 
   !!!
