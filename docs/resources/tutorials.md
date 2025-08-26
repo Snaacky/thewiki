@@ -9,7 +9,6 @@ order: -3
 - [Creating torrents](/tutorials/torrent)
 - [Deluge](/tutorials/deluge)
 - [Download OP/ED From MAL/AniList Account](/tutorials/oped)
-- [DVD Remux](/tutorials/dvdremux)
 - [How to Extract Visual Novel assets](/tutorials/visualnovels)
 - [How To Use IRC/XDCC](/tutorials/irc)
 - [Manage LN/WN using Calibre](/tutorials/calibre)
