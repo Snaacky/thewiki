@@ -207,19 +207,20 @@ If you're working with a different format, you should apply the suggestions acco
   with the regular track being the first within its language group.
 
   The recommended track order is:
-      1. Video
-      2. Original language audio group
-          1. Original language regular audio
-          2. Original language Specialized audio (commentary, descriptive, etc)
-      3. Dub audio group
-          1. Regular dub audio
-          2. Specialized dub audio (commentary, descriptive, etc)
-      4. Subtitle group related to Original audio
-          1. Regular subtitle tracks for regular original audio
-          2. Specialized subtitle track for audio tracks in the original audio group
-      5. Subtitle group related to dub audio
-          1. Regular subtitle tracks for the regular dub audio
-          2. Specialized subtitle track for audio tracks in the dub audio group (forced, commentary, sdh, etc)
+
+  1. Video
+  2. Original language audio group
+      1. Original language regular audio
+      2. Original language Specialized audio (commentary, descriptive, etc)
+  3. Dub audio group
+      1. Regular dub audio
+      2. Specialized dub audio (commentary, descriptive, etc)
+  4. Subtitle group related to Original audio
+      1. Regular subtitle tracks for regular original audio
+      2. Specialized subtitle track for audio tracks in the original audio group
+  5. Subtitle group related to dub audio
+      1. Regular subtitle tracks for the regular dub audio
+      2. Specialized subtitle track for audio tracks in the dub audio group (forced, commentary, sdh, etc)
 
   If you have multiple "regular" tracks of the same language,
   such as for example a `Japanese 2.0` track and a `Japanese 5.1` track,
