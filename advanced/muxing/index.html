@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809552631538">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811750295094">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.809552631538" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.811750295094" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809552631538" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.811750295094" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809552631538" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809552631538" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.811750295094" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.811750295094" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -241,59 +241,342 @@ You&#x27;ll see 3 tabs here:</p>
 </div>
 </li>
 </ol>
+<doc-anchor-target id="default-track-selection">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#default-track-selection">#</doc-anchor-trigger>
+        <span>Default Track Selection</span>
+    </h3>
+</doc-anchor-target>
+<p>When muxing releases, you&#x27;ll want to make sure you understand how the default track selection works.
+These examples are given to help you understand this as defined by the <a href="https://www.matroska.org/technical/notes.html#default-track-selection">Matroska spec</a>,
+and is modified to reflect anime release conventions, and will not reflect all possible cases.
+This selection may be modified by the user&#x27;s preferences.</p>
+<doc-panels>
+   <doc-panel id="audio-selection" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M11.553 3.064A.75.75 0 0 1 12 3.75v16.5a.75.75 0 0 1-1.255.555L5.46 16H2.75A1.75 1.75 0 0 1 1 14.25v-4.5C1 8.784 1.784 8 2.75 8h2.71l5.285-4.805a.752.752 0 0 1 .808-.13ZM10.5 5.445l-4.245 3.86a.748.748 0 0 1-.505.195h-3a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h3c.187 0 .367.069.505.195l4.245 3.86Zm8.218-1.223a.75.75 0 0 1 1.06 0c4.296 4.296 4.296 11.26 0 15.556a.75.75 0 0 1-1.06-1.06 9.5 9.5 0 0 0 0-13.436.75.75 0 0 1 0-1.06Z"/><path d="M16.243 7.757a.75.75 0 1 0-1.061 1.061 4.5 4.5 0 0 1 0 6.364.75.75 0 0 0 1.06 1.06 6 6 0 0 0 0-8.485Z"/></g></g></svg> Audio Selection</template>
+<p>Example track set:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>No.</th>
+<th>Track Type</th>
+<th>Language</th>
+<th>Name</th>
+<th>Original</th>
+<th>Default</th>
+<th>Other Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Video</td>
+<td>und</td>
+<td>Group Tag</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Audio</td>
+<td>jpn</td>
+<td>FLAC 5.1</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Audio</td>
+<td>jpn</td>
+<td>FLAC 2.0</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Audio</td>
+<td>jpn</td>
+<td>FLAC 2.0 - Commentary</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Commentary</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Audio</td>
+<td>eng</td>
+<td>FLAC 5.1</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Audio</td>
+<td>eng</td>
+<td>FLAC 2.0</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Audio</td>
+<td>eng</td>
+<td>FLAC 2.0</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Visual-impaired</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is a file that has 5 audio tracks,
+3 of which are Japanese (which is tagged as the original language) and 2 of which are English.</p>
+<p>If the player supports it and the user has specified it as a preference,
+the player will automatically select one of the audio tracks that are tagged as the original language.</p>
+<p>If the player has support for automatically selecting visual-impaired audio tracks
+and the user has set a preference for it, it will select the track that matches that preference
+if it matches the language preference of the user as well.</p>
+<p>If no tracks are automatically selected based on the above rules,
+it will look at the remaining tracks tagged as <code v-pre>Default</code>.
+In this example, that would be the 2nd, 3rd, 5th, and 6th tracks.
+The only differences between these tracks are the language and the channel layout.
+If the user has a channel layout preference, it will select the first track of the group that matches that preference.
+Finally, if no other preferences are set or match the existing tracks, it will select the first track in this group.</p>
+   </doc-panel>
+   <doc-panel id="subtitle-selection" collapsed>
+       <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.197 10a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-2.382 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-1.581 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z"/><path d="M4.125 0h15.75a4.11 4.11 0 0 1 2.92 1.205A4.11 4.11 0 0 1 24 4.125c0 1.384-.476 2.794-1.128 4.16-.652 1.365-1.515 2.757-2.352 4.104l-.008.013c-.849 1.368-1.669 2.691-2.28 3.97-.614 1.283-.982 2.45-.982 3.503a2.625 2.625 0 1 0 4.083-2.183.75.75 0 1 1 .834-1.247A4.126 4.126 0 0 1 19.875 24H4.5a4.125 4.125 0 0 1-4.125-4.125c0-2.234 1.258-4.656 2.59-6.902.348-.586.702-1.162 1.05-1.728.8-1.304 1.567-2.553 2.144-3.738H3.39c-.823 0-1.886-.193-2.567-1.035A3.647 3.647 0 0 1 0 4.125 4.125 4.125 0 0 1 4.125 0ZM15.75 19.875c0-1.38.476-2.786 1.128-4.15.649-1.358 1.509-2.743 2.343-4.086l.017-.028c.849-1.367 1.669-2.692 2.28-3.972.614-1.285.982-2.457.982-3.514A2.615 2.615 0 0 0 19.875 1.5a2.625 2.625 0 0 0-2.625 2.625c0 .865.421 1.509 1.167 2.009A.75.75 0 0 1 18 7.507H7.812c-.65 1.483-1.624 3.069-2.577 4.619-.334.544-.666 1.083-.98 1.612-1.355 2.287-2.38 4.371-2.38 6.137A2.625 2.625 0 0 0 4.5 22.5h12.193a4.108 4.108 0 0 1-.943-2.625ZM1.5 4.125c-.01.511.163 1.008.487 1.403.254.313.74.479 1.402.479h12.86a3.648 3.648 0 0 1-.499-1.882 4.11 4.11 0 0 1 .943-2.625H4.125A2.625 2.625 0 0 0 1.5 4.125Z"/></g></g></svg> Subtitle Selection</template>
+<p>Example track set:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>No.</th>
+<th>Track Type</th>
+<th>Language</th>
+<th>Name</th>
+<th>Original</th>
+<th>Default</th>
+<th>Forced</th>
+<th>Other Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Video</td>
+<td>und</td>
+<td>Group Tag</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Audio</td>
+<td>jpn</td>
+<td>FLAC 2.0</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Audio</td>
+<td>eng</td>
+<td>FLAC 5.1</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Subtitle</td>
+<td>eng</td>
+<td>Full Subtitles [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Subtitle</td>
+<td>eng</td>
+<td>Signs &amp; Songs [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Subtitle</td>
+<td>eng</td>
+<td>SDH [USABD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Hearing-impaired</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Subtitle</td>
+<td>eng</td>
+<td>English Commentary [USABD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Commentary</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Subtitle</td>
+<td>jpn</td>
+<td>Closed Captions [Netflix]</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Hearing-impaired</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Subtitle</td>
+<td>de</td>
+<td>Full Subtitles [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>None</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Subtitle</td>
+<td>de</td>
+<td>Signs &amp; Songs [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Here is a file that has 2 audio tracks and 7 subtitle tracks for 3 different languages.
+The original language is Japanese, and the release includes an English dub track.</p>
+<p>If the player supports it and the user has specified it as a preference,
+the player will automatically select the audio track tagged as the original language.
+In this example, that would be the Japanese audio track.</p>
+<p><strong>Japanese/Original Language Audio</strong>:</p>
+<p>If the user has no preferences set for subtitle tracks, it stops there—the player does not need to select a subtitle track.
+Note however that some players may still select a subtitle track based on the rules outlined below.</p>
+<p>However, if the user has set a preference for the original language for subtitles as well as hearing-impaired,
+it will select the 8th track, as that track is tagged as the original language
+(and even if it weren&#x27;t, the player should assume it is
+as it&#x27;s the same language as the original language defined by the audio track)
+and as hearing-impaired.</p>
+<p>Since there are no Japanese subtitle tracks tagged as <code v-pre>Forced</code>,
+the only remaining tracks that are eligible for auto-selection are the 4th and 9th tracks.
+If the user has a preference set for English subtitles, it will select the 4th track.
+If the language preference is instead set to German, it will select the 9th track.
+If there are no language preferences set, it will select the first track in this group,
+which would be the 4th track.</p>
+<p><strong>Dub Audio</strong>:</p>
+<p>As described above, the player will automatically select a subtitle track if it&#x27;s tagged as <code v-pre>Forced</code>
+and the language matches the language of the audio track.
+If the player were to auto-select the English dub audio track,
+it would also automatically select the 5th track.</p>
+<p>However, if the user has set a preference
+that may override the selection of any other subtitle tracks of that same language,
+such as preferring hearing-impaired subtitles,
+it will <em>always</em> select that track instead.</p>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="correct-tagging">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#correct-tagging">#</doc-anchor-trigger>
         <span>Correct Tagging</span>
     </h3>
 </doc-anchor-target>
-<p>The <code v-pre>Properties</code> tab allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing.</p>
+<p>The <code v-pre>Properties</code> tab in mkvtoolnix allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing.</p>
+<p>The following suggestions are given assuming you&#x27;re working with an average anime release.
+If you&#x27;re working with a different format, you should apply the suggestions accordingly.</p>
 <doc-panels>
    <doc-panel id="video-track" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"/><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5Z"/></g></g></svg> Video track</template>
 <ul>
-<li>You can leave the language tag as <code v-pre>und</code>. There&#x27;s not much documentation about this but the official examples leave it as <code v-pre>und</code> and I haven&#x27;t found any issues with or without the language tag on a video track. Feel free to correct me if you find otherwise.</li>
-<li>Mark it as <code v-pre>Default</code>.</li>
-<li>Mention the name of the <code v-pre>Encoder/Group</code> or simply region like <code v-pre>JPNBD</code> or <code v-pre>ITABD</code> if it&#x27;s untouched BluRay Remux.</li>
+<li><strong>Name</strong>: Optionally, set the name of the track to the name of the <code v-pre>Encoder/Group</code> or the source video&#x27;s region like <code v-pre>JPNBD</code> or <code v-pre>ITABD</code>.</li>
+<li><strong>Language</strong>: The language tag should be set to <code v-pre>und</code>. A case can be made to use the language of the source video&#x27;s region, but it&#x27;s not well documented how this is intended to be interpreted by players, so it&#x27;s safer to use <code v-pre>und</code>.</li>
 </ul>
    </doc-panel>
    <doc-panel id="audio-tracks" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M11.553 3.064A.75.75 0 0 1 12 3.75v16.5a.75.75 0 0 1-1.255.555L5.46 16H2.75A1.75 1.75 0 0 1 1 14.25v-4.5C1 8.784 1.784 8 2.75 8h2.71l5.285-4.805a.752.752 0 0 1 .808-.13ZM10.5 5.445l-4.245 3.86a.748.748 0 0 1-.505.195h-3a.25.25 0 0 0-.25.25v4.5c0 .138.112.25.25.25h3c.187 0 .367.069.505.195l4.245 3.86Zm8.218-1.223a.75.75 0 0 1 1.06 0c4.296 4.296 4.296 11.26 0 15.556a.75.75 0 0 1-1.06-1.06 9.5 9.5 0 0 0 0-13.436.75.75 0 0 1 0-1.06Z"/><path d="M16.243 7.757a.75.75 0 1 0-1.061 1.061 4.5 4.5 0 0 1 0 6.364.75.75 0 0 0 1.06 1.06 6 6 0 0 0 0-8.485Z"/></g></g></svg> Audio Tracks</template>
 <ul>
-<li>Mention the codec, channels, and quality in the <code v-pre>Name</code> field.</li>
-<li>Language tag must be used appropriately reflecting the language of the audio.</li>
-<li>Audio tracks must not be marked as <code v-pre>Forced</code>.</li>
-<li>Regular <code v-pre>Japanese</code> audio must be tagged as <code v-pre>jpn</code> and marked as <code v-pre>Default</code> and <code v-pre>Original language</code>.</li>
-<li>Regular <code v-pre>English</code> audio must be tagged as <code v-pre>eng</code> and marked as <code v-pre>Default</code>.</li>
-<li>Any and all other regular audio tracks (e.g Spanish dub, German dub, etc) must be tagged with their respective language tag and marked as <code v-pre>Default</code>.</li>
-<li>If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the <code v-pre>Name</code> field. For example, Castilian Spanish must be tagged as <code v-pre>es-ES</code> while Latin American Spanish must be tagged as <code v-pre>es-419</code>.</li>
-<li>Any and all non-Regular/Specialized tracks (e.g <code v-pre>commentary</code>, <code v-pre>descriptive audio</code>, etc) must be tagged with their respective flags and language but must not be marked as <code v-pre>Default</code></li>
+<li><strong>Name</strong>: Mention the codec, channels, and optionally the bitrate (if applicable) in the <code v-pre>Name</code> field.</li>
+<li><strong>Default</strong>: Tag regular audio tracks as <code v-pre>Default</code>.
+<ul>
+<li>Any and all non-regular/specialized tracks (e.g <code v-pre>commentary</code>, <code v-pre>SDH</code>, etc.) must be tagged with their respective flags and language and <strong>not</strong> be tagged as <code v-pre>Default</code>.</li>
+</ul>
+</li>
+<li><strong>Forced</strong>: Audio tracks must <strong>not</strong> be tagged as <code v-pre>Forced</code>.</li>
+<li><strong>Language</strong>: The language tag must appropriately reflect the language spoken in the audio. If there is no discernible language, set it to <code v-pre>zxx</code>.
+<ul>
+<li>If there are multiple dialects of the same language, use the correct dialect tag (e.g., <code v-pre>es-ES</code> for Castilian Spanish, <code v-pre>es-419</code> for Latin American Spanish) and clearly indicate the dialect in the <code v-pre>Name</code> field.</li>
+</ul>
+</li>
+<li><strong>Original Language</strong>: Tag the original audio language as <code v-pre>Original language</code>. For anime, this will typically be Japanese audio tracks. This should also be tagged for commentary, descriptive, or other specialized audio tracks in the same language.</li>
 </ul>
    </doc-panel>
    <doc-panel id="subtitle-tracks" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M9.197 10a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-2.382 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-1.581 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z"/><path d="M4.125 0h15.75a4.11 4.11 0 0 1 2.92 1.205A4.11 4.11 0 0 1 24 4.125c0 1.384-.476 2.794-1.128 4.16-.652 1.365-1.515 2.757-2.352 4.104l-.008.013c-.849 1.368-1.669 2.691-2.28 3.97-.614 1.283-.982 2.45-.982 3.503a2.625 2.625 0 1 0 4.083-2.183.75.75 0 1 1 .834-1.247A4.126 4.126 0 0 1 19.875 24H4.5a4.125 4.125 0 0 1-4.125-4.125c0-2.234 1.258-4.656 2.59-6.902.348-.586.702-1.162 1.05-1.728.8-1.304 1.567-2.553 2.144-3.738H3.39c-.823 0-1.886-.193-2.567-1.035A3.647 3.647 0 0 1 0 4.125 4.125 4.125 0 0 1 4.125 0ZM15.75 19.875c0-1.38.476-2.786 1.128-4.15.649-1.358 1.509-2.743 2.343-4.086l.017-.028c.849-1.367 1.669-2.692 2.28-3.972.614-1.285.982-2.457.982-3.514A2.615 2.615 0 0 0 19.875 1.5a2.625 2.625 0 0 0-2.625 2.625c0 .865.421 1.509 1.167 2.009A.75.75 0 0 1 18 7.507H7.812c-.65 1.483-1.624 3.069-2.577 4.619-.334.544-.666 1.083-.98 1.612-1.355 2.287-2.38 4.371-2.38 6.137A2.625 2.625 0 0 0 4.5 22.5h12.193a4.108 4.108 0 0 1-.943-2.625ZM1.5 4.125c-.01.511.163 1.008.487 1.403.254.313.74.479 1.402.479h12.86a3.648 3.648 0 0 1-.499-1.882 4.11 4.11 0 0 1 .943-2.625H4.125A2.625 2.625 0 0 0 1.5 4.125Z"/></g></g></svg> Subtitle Tracks</template>
 <ul>
-<li>Language tag must be used appropriately reflecting the language of the subtitles.</li>
-<li>Regular subtitle tracks (i.e, <code v-pre>Full Subtitles</code>) must be tagged with the appropriate language and marked as <code v-pre>Default</code>.</li>
-<li>The forced track (i.e, <code v-pre>Signs/Songs</code>) must be tagged with the appropriate language and marked as <code v-pre>Forced</code>. This track should not be marked as <code v-pre>Default</code> because it is not a &quot;regular&quot; track; instead, it is a specialized one meant to be used with dubs. The language tag must be identical to the language tag of the audio track it is intended to be used with.</li>
-<li>There should only be one <code v-pre>Forced</code> track per language.</li>
-<li><code v-pre>Honorifics</code> track must be tagged as <code v-pre>enm</code> and <code v-pre>Default</code> but not <code v-pre>Forced</code>. <em>Note: This isn&#x27;t a Matroska standard but a widely accepted convention in the anime community. Commercial software like <a href="https://www.plex.tv/">Plex</a> also support this convention.</em></li>
+<li><strong>Language</strong>: The language tag must appropriately reflect the language of the subtitles.
+<ul>
 <li>If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the <code v-pre>Name</code> field. For example, Castilian Spanish must be tagged as <code v-pre>es-ES</code> while Latin American Spanish must be tagged as <code v-pre>es-419</code>.</li>
-<li>Any and all non-regular/specialized tracks (e.g <code v-pre>commentary</code>, <code v-pre>SDH</code>, etc) must be tagged with their respective flags and language but must not be marked as <code v-pre>Default</code>.</li>
+</ul>
+</li>
+<li><strong>Default</strong>: Regular subtitle tracks (i.e, <code v-pre>Full Subtitles</code>) must be tagged as <code v-pre>Default</code>.
+<ul>
+<li>If no subtitle tracks should be eliglble to be automatically selected by the player (except for <code v-pre>Forced</code> tracks and other special tracks), you should mark none of the subtitle tracks as <code v-pre>Default</code>.</li>
+<li>Any and all non-regular/specialized tracks (e.g <code v-pre>commentary</code>, <code v-pre>SDH</code>, etc.) must be tagged with their respective flags and language and <strong>not</strong> be tagged as <code v-pre>Default</code>.</li>
+<li>Closed captions tracks must be tagged as <code v-pre>Hearing impaired</code>.</li>
+</ul>
+</li>
+<li><strong>Forced</strong>: The forced track (i.e, <code v-pre>Signs &amp; Songs</code>) must be tagged as <code v-pre>Forced</code>.
+<ul>
+<li>This track should not be tagged as <code v-pre>Default</code> because it is not a &quot;regular&quot; track; instead, it is a specialized track meant to be used with dubs. The language tag must be identical to the language tag of the audio track it is intended to be used with.</li>
+<li>There should only be one <code v-pre>Forced</code> track per language.</li>
+</ul>
+</li>
+<li><strong>Honorifics Tracks</strong>: <code v-pre>Honorifics</code> or other similar alternative tracks must be tagged as <code v-pre>enm</code> and <code v-pre>Default</code>, but <strong>not</strong> <code v-pre>Forced</code>.
+<ul>
+<li><em>Note: This isn&#x27;t a Matroska standard but a widely accepted convention in the anime community. Commercial software like <a href="https://www.plex.tv/">Plex</a> also support this convention.</em></li>
+</ul>
+</li>
+<li><strong>Original language</strong>: The <code v-pre>Original language</code> flag must be tagged on subtitle tracks that are the same language as the original language audio track. For anime, this will typically be a <em>closed captions</em> track.</li>
 </ul>
    </doc-panel>
    <doc-panel id="track-order" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3.604 3.089A.75.75 0 0 1 4 3.75V8.5h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 1 1 0-1.5h.75V5.151l-.334.223a.75.75 0 0 1-.832-1.248l1.5-1a.75.75 0 0 1 .77-.037ZM8.75 5.5a.75.75 0 0 0 0 1.5h11.5a.75.75 0 0 0 0-1.5H8.75Zm0 6a.75.75 0 0 0 0 1.5h11.5a.75.75 0 0 0 0-1.5H8.75Zm0 6a.75.75 0 0 0 0 1.5h11.5a.75.75 0 0 0 0-1.5H8.75ZM5.5 15.75c0-.704-.271-1.286-.72-1.686a2.302 2.302 0 0 0-1.53-.564c-.535 0-1.094.178-1.53.565-.449.399-.72.982-.72 1.685a.75.75 0 0 0 1.5 0c0-.296.104-.464.217-.564A.805.805 0 0 1 3.25 15c.215 0 .406.072.533.185.113.101.217.268.217.565 0 .332-.069.48-.21.657-.092.113-.216.24-.403.419l-.147.14c-.152.144-.33.313-.52.504l-1.5 1.5a.75.75 0 0 0-.22.53v.25c0 .414.336.75.75.75H5A.75.75 0 0 0 5 19H3.31l.47-.47c.176-.176.333-.324.48-.465l.165-.156a5.98 5.98 0 0 0 .536-.566c.358-.447.539-.925.539-1.593Z"/></g></g></svg> Track Order</template>
-<ul>
-<li>The track order also plays an important part in the automatic selection of tracks.</li>
-<li>Tracks should be grouped by language, with the regular track being the first within its language group.</li>
-<li>Recommended track order is:
+<p>The track order is important because it determines which track will be automatically selected by the player,
+assuming all tracks are correctly tagged and the user does not have any specific preferences set.</p>
+<p>Tracks should ideally be grouped by <em>language</em>,
+with the regular track being the first within its language group.</p>
+<p>The recommended track order is:</p>
 <ol>
 <li>Video</li>
-<li>Original audio group
+<li>Original language audio group
 <ol>
-<li>Original regular audio</li>
-<li>Original Specialized audio (commentary, descriptive, etc)</li>
+<li>Original language regular audio</li>
+<li>Original language Specialized audio (commentary, descriptive, etc)</li>
 </ol>
 </li>
 <li>Dub audio group
@@ -315,9 +598,13 @@ You&#x27;ll see 3 tabs here:</p>
 </ol>
 </li>
 </ol>
-</li>
-<li>When you have two regular tracks of the same language, let&#x27;s say a <code v-pre>Japanese 2.0</code> track and a <code v-pre>Japanese 5.1</code> track, and you have correctly tagged them, you&#x27;ll notice that these end up being tagged identically. In this case, players will fall back to using track order to select the audio track. Now, it&#x27;s pretty much up to your personal preference as to which one goes first and ends up being the real default for the end user.</li>
-</ul>
+<p>If you have multiple &quot;regular&quot; tracks of the same language,
+such as for example a <code v-pre>Japanese 2.0</code> track and a <code v-pre>Japanese 5.1</code> track,
+you&#x27;ll notice that these end up being tagged identically.
+In this case, players will typically fall back to using the track order to select an audio track.
+It&#x27;s up to personal preference which track should go first,
+but it&#x27;s recommended to either put the &quot;original&quot; audio track first (in the case of a 2.0 downmix or 5.1 upmix),
+or the most well-supported track (typically the 2.0 track).</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -344,51 +631,63 @@ You&#x27;ll see 3 tabs here:</p>
 <table class="comfortable">
 <thead>
 <tr>
-<th>Track</th>
+<th>No.</th>
+<th>Track Type</th>
 <th>Language</th>
 <th>Name</th>
+<th>Original</th>
 <th>Default</th>
 <th>Forced</th>
-<th>Additional Flags</th>
+<th>Other Flags</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>1</td>
 <td>Video</td>
 <td>und</td>
-<td>Group</td>
-<td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Group Tag</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #1</td>
+<td>2</td>
+<td>Audio</td>
 <td>jpn</td>
 <td>FLAC 2.0</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
-<td>Original language</td>
-</tr>
-<tr>
-<td>Audio #2</td>
-<td>eng</td>
-<td>Opus 5.1 @ 320kb/s</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
+<td>3</td>
+<td>Audio</td>
+<td>eng</td>
+<td>Opus 5.1 @ 320kb/s</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>4</td>
 <td>Subtitle #1</td>
 <td>eng</td>
 <td>Full Subtitles [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
+<td>5</td>
 <td>Subtitle #2</td>
 <td>eng</td>
 <td>Signs/Songs [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td>None</td>
@@ -403,139 +702,183 @@ You&#x27;ll see 3 tabs here:</p>
 <table class="comfortable">
 <thead>
 <tr>
-<th>Track</th>
+<th>No.</th>
+<th>Track Type</th>
 <th>Language</th>
 <th>Name</th>
+<th>Original</th>
 <th>Default</th>
 <th>Forced</th>
-<th>Additional Flags</th>
+<th>Other Flags</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>1</td>
 <td>Video</td>
 <td>und</td>
-<td>Group</td>
-<td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Group Tag</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #1</td>
+<td>2</td>
+<td>Audio</td>
 <td>jpn</td>
 <td>FLAC 5.1</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
-<td>Original language</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
+<td>None</td>
 </tr>
 <tr>
-<td>Audio #2</td>
+<td>3</td>
+<td>Audio</td>
 <td>jpn</td>
 <td>FLAC 2.0</td>
 <td><span class="docs-emoji">&#x2705;</span></td>
-<td><span class="docs-emoji">&#x274C;</span></td>
-<td>Original language</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
+<td>None</td>
 </tr>
 <tr>
-<td>Audio #3</td>
+<td>4</td>
+<td>Audio</td>
 <td>jpn</td>
 <td>FLAC 2.0 - Japanese Commentary</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td>N/A</td>
 <td>Commentary</td>
 </tr>
 <tr>
-<td>Audio #4</td>
+<td>5</td>
+<td>Audio</td>
 <td>eng</td>
 <td>Opus 5.1 @ 320kb/s</td>
-<td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td>N/A</td>
 <td>None</td>
 </tr>
 <tr>
-<td>Audio #5</td>
+<td>6</td>
+<td>Audio</td>
 <td>eng</td>
 <td>Opus 2.0 @ 192kb/s - Commentary</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td>N/A</td>
 <td>Commentary</td>
 </tr>
 <tr>
-<td>Audio #6</td>
+<td>7</td>
+<td>Audio</td>
 <td>eng</td>
 <td>Opus 2.0 @ 192kb/s - Descriptive</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td>N/A</td>
 <td>Visual-impaired</td>
 </tr>
 <tr>
+<td>8</td>
 <td>Subtitle #1</td>
 <td>eng</td>
 <td>Full Subtitles [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
+<td>9</td>
 <td>Subtitle #2</td>
 <td>enm</td>
 <td>Honorifics [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
+<td>10</td>
 <td>Subtitle #3</td>
 <td>eng</td>
 <td>Japanese Commentary [USABD]</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td>Commentary</td>
 </tr>
 <tr>
+<td>11</td>
 <td>Subtitle #4</td>
 <td>eng</td>
 <td>Signs/Songs [Fansub]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td>None</td>
 </tr>
 <tr>
+<td>12</td>
 <td>Subtitle #5</td>
 <td>eng</td>
 <td>SDH [USABD]</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td>Hearing-impaired</td>
 </tr>
 <tr>
+<td>13</td>
 <td>Subtitle #6</td>
 <td>eng</td>
 <td>English Commentary [USABD]</td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td>Commentary</td>
 </tr>
 <tr>
+<td>14</td>
 <td>Subtitle #7</td>
+<td>jpn</td>
+<td>Closed Captions [Netflix]</td>
+<td><span class="docs-emoji">&#x2705;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td><span class="docs-emoji">&#x274C;</span></td>
+<td>Hearing-impaired</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Subtitle #8</td>
 <td>es-ES</td>
 <td>Full Subtitles (Castilian) [SPABD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
-<td>Subtitle #8</td>
+<td>16</td>
+<td>Subtitle #9</td>
 <td>es-419</td>
 <td>Full Subtitles (Latin American) [SPABD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
 </tr>
 <tr>
-<td>Subtitle #9</td>
+<td>17</td>
+<td>Subtitle #10</td>
 <td>de</td>
 <td>Full Subtitles [GERBD]</td>
+<td><span class="docs-emoji">&#x274C;</span></td>
 <td><span class="docs-emoji">&#x2705;</span></td>
 <td><span class="docs-emoji">&#x274C;</span></td>
 <td>None</td>
@@ -555,12 +898,13 @@ You&#x27;ll see 3 tabs here:</p>
    <doc-panel id="forced-flag" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Forced Flag</template>
 <p><img src="../../static/advanced/muxing/forced_track_flag.png" alt="Forced Flag" /></p>
-<p>This flag DOES NOT mean that a subtitle track will be permanently on the screen, which is a common misconception. Forced subtitles only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. In our case, it&#x27;s supposed to be displayed whenever the English dub has untranslated things like Japanese Signs and Songs like Opening/Ending or Inserts.</p>
+<p>This flag DOES NOT mean that a subtitle track will be permanently on the screen, which is a common misconception. Forced subtitles only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. For anime, its purpose is to display subtitles whenever the English dub has untranslated things like Japanese Signs and Songs like Opening/Ending or Inserts.</p>
    </doc-panel>
    <doc-panel id="default-flag" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Default Flag</template>
 <p><img src="../../static/advanced/muxing/default_track_flag.png" alt="Default Flag" /></p>
-<p>This flag DOES NOT mean that a track is going to be the default choice upon playback, instead it&#x27;s a hint for the player indicating that a given track SHOULD be eligible to be automatically selected as the default track for a given language. If no tracks in a given language have the default track flag set, then all tracks in that language are eligible for automatic selection. This can be used to indicate that a track provides “regular service” suitable for users with default settings, as opposed to specialized services, such as commentary, hearing-impaired captions, or descriptive audio.</p>
+<p>This flag DOES NOT mean that a track is the default choice during playback, but instead it&#x27;s a hint for the player that a given track SHOULD be eligible to be automatically selected as the default track for the given language. If no tracks in a given language have the default track flag set, then no subtitle tracks will be automatically selected <em>unless</em> there is an accompanying <code v-pre>Forced</code> track for the selected audio track.</p>
+<p>This flag is used to indicate that a track provides “regular service” suitable for users with default settings, as opposed to specialized services such as commentary, hearing-impaired captions, or descriptive audio.</p>
    </doc-panel>
    <doc-panel id="player-support" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Player Support</template>
@@ -569,7 +913,9 @@ You&#x27;ll see 3 tabs here:</p>
 <thead>
 <tr>
 <th>Player</th>
-<th>Respects Matroska Tags</th>
+<th>Default</th>
+<th>Forced</th>
+<th>Original Language</th>
 <th>Additional Notes</th>
 </tr>
 </thead>
@@ -577,32 +923,44 @@ You&#x27;ll see 3 tabs here:</p>
 <tr>
 <td><a href="https://mpv.io/">mpv</a></td>
 <td>Yes</td>
+<td>Yes</td>
+<td>No</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="https://www.videolan.org/vlc/">VLC</a></td>
-<td>Mostly</td>
-<td>Doesn&#x27;t respect the <code v-pre>Forced</code> flag.</td>
+<td>Yes</td>
+<td>No</td>
+<td>Unknown</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="https://www.plex.tv/">Plex</a></td>
-<td>Mostly</td>
-<td>Plex respects Matroska tags (such as Forced, SDH, language, etc) with the exception of the <code v-pre>Default</code> flag. Track order takes precedence over the <code v-pre>Default</code> flag.</td>
+<td>No</td>
+<td>Yes</td>
+<td>Unknown</td>
+<td>Track order takes precedence over the <code v-pre>Default</code> flag.</td>
 </tr>
 <tr>
 <td><a href="https://jellyfin.org/">Jellyfin</a></td>
 <td>Yes</td>
+<td>Yes</td>
+<td>Unknown</td>
 <td></td>
 </tr>
 <tr>
 <td><a href="https://kodi.tv/">Kodi</a></td>
 <td>Yes</td>
-<td>Has an option to select tracks with the <code v-pre>Original language</code> flag.</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="https://github.com/clsid2/mpc-hc/">clsid2/MPC-HC</a></td>
-<td>Mostly</td>
-<td>Doesn&#x27;t respect the <code v-pre>Forced</code> flag.</td>
+<td>Yes</td>
+<td>No</td>
+<td>Unknown</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -627,7 +985,7 @@ You&#x27;ll see 3 tabs here:</p>
    </doc-panel>
    <doc-panel id="full-spec" collapsed>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></g></g></svg> Full spec</template>
-<p>Everything I&#x27;ve covered in this section is a simplified version of the full spec, which you can read <a href="https://www.matroska.org/technical/notes.html">here</a> if you want to.</p>
+<p>Everything covered in this section is a simplified version of the full spec, which you can read <a href="https://www.matroska.org/technical/notes.html">here</a> if you want to.</p>
    </doc-panel>
 </doc-panels>
 <doc-anchor-target id="adding-layoutres-to-ass-files">
