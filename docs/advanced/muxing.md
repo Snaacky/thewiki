@@ -34,7 +34,7 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
     [![](/static/advanced/muxing/mkvtoolnix.png)](/static/advanced/muxing/mkvtoolnix.png)
     ===
 
-2. When you first add a file in MKVToolNix, you'll get a pop to select it's behavior.
+2. When you first add a file in MKVToolNix, you'll get a popup to select its behavior.
     - Select `Add as new source files to the current multiplex settings`
     - Check `Always use the action selected above and don't ask again`
     - Click `OK`
@@ -69,25 +69,24 @@ On top of them sits `MKVToolNix GUI`, an easy-to-use program making the function
 
 When muxing releases, you'll want to make sure you understand how the default track selection works.
 These examples are given to help you understand this as defined by the [Matroska spec](https://www.matroska.org/technical/notes.html#default-track-selection),
-and is modified to reflect anime release conventions, and will not reflect all possible cases.
-This selection may be modified by the user's preferences.
+and is modified to reflect anime release conventions, and may not reflect all possible cases.
 
 ==- :icon-unmute: Audio Selection
 
   Example track set:
 
-  | No. | Track Type | Language | Name                  | Original           | Default            | Other Flags     |
-  | --- | ---------- | -------- | --------------------- | ------------------ | ------------------ | --------------- |
-  | 1   | Video      | und      | Group Tag             | N/A                | N/A                | None            |
-  | 2   | Audio      | jpn      | FLAC 5.1              | :white_check_mark: | :white_check_mark: | None            |
-  | 3   | Audio      | jpn      | FLAC 2.0              | :white_check_mark: | :white_check_mark: | None            |
-  | 4   | Audio      | jpn      | FLAC 2.0 - Commentary | :white_check_mark: | :x:                | Commentary      |
-  | 5   | Audio      | eng      | FLAC 5.1              | :x:                | :white_check_mark: | None            |
-  | 6   | Audio      | eng      | FLAC 2.0              | :x:                | :white_check_mark: | None            |
-  | 7   | Audio      | eng      | FLAC 2.0              | :x:                | :x:                | Visual-impaired |
+  | No. | Track Type | Language | Name                   | Original           | Default            | Other Flags     |
+  | --- | ---------- | -------- | ---------------------- | ------------------ | ------------------ | --------------- |
+  | 1   | Video      | und      | Group Tag              | N/A                | N/A                | None            |
+  | 2   | Audio      | jpn      | FLAC 5.1               | :white_check_mark: | :white_check_mark: | None            |
+  | 3   | Audio      | jpn      | FLAC 2.0               | :white_check_mark: | :white_check_mark: | None            |
+  | 4   | Audio      | jpn      | FLAC 2.0 - Commentary  | :white_check_mark: | :x:                | Commentary      |
+  | 5   | Audio      | eng      | FLAC 5.1               | :x:                | :white_check_mark: | None            |
+  | 6   | Audio      | eng      | FLAC 2.0               | :x:                | :white_check_mark: | None            |
+  | 7   | Audio      | eng      | FLAC 2.0 - Descriptive | :x:                | :x:                | Visual-impaired |
 
-  This is a file that has 5 audio tracks,
-  3 of which are Japanese (which is tagged as the original language) and 2 of which are English.
+  This is a file that has 6 audio tracks,
+  3 of which are Japanese (which is tagged as the original language) and 3 of which are English.
 
   If the player supports it and the user has specified it as a preference,
   the player will automatically select one of the audio tracks that are tagged as the original language.
@@ -129,89 +128,96 @@ This selection may be modified by the user's preferences.
 
   **Japanese/Original Language Audio**:
 
-  If the user has no preferences set for subtitle tracks, it stops there—the player does not need to select a subtitle track.
-  Note however that some players may still select a subtitle track based on the rules outlined below.
+  If the user has no preferences set for subtitle tracks,
+  the player is not required to select a subtitle track.
+  However, some players may still automatically select a subtitle track
+  based on the rules outlined below.
 
-  However, if the user has set a preference for the original language for subtitles as well as hearing-impaired,
-  it will select the 8th track, as that track is tagged as the original language
-  (and even if it weren't, the player should assume it is
-  as it's the same language as the original language defined by the audio track)
-  and as hearing-impaired.
+  If the user has set preferences for both original language subtitles and hearing-impaired tracks,
+  the player will select the Japanese closed captions track (track 8),
+  since it's tagged as both the original language and as hearing-impaired.
+  Even if the track weren't explicitly tagged as the original language,
+  the player should assume it matches the original language
+  since it's the same language as the audio track.
 
   Since there are no Japanese subtitle tracks tagged as `Forced`,
-  the only remaining tracks that are eligible for auto-selection are the 4th and 9th tracks.
-  If the user has a preference set for English subtitles, it will select the 4th track.
-  If the language preference is instead set to German, it will select the 9th track.
-  If there are no language preferences set, it will select the first track in this group,
-  which would be the 4th track.
+  the only remaining tracks eligible for auto-selection
+  are the full English (track 4) and German (track 9) subtitle tracks.
+  The player will select based on the user's language preference:
 
+  - English subtitles preferred -> selects the English track
+  - German subtitles preferred -> selects the German track
+  - No language preference -> selects the first track in the group (English track)
 
   **Dub Audio**:
 
-  As described above, the player will automatically select a subtitle track if it's tagged as `Forced`
-  and the language matches the language of the audio track.
-  If the player were to auto-select the English dub audio track,
-  it would also automatically select the 5th track.
+  When the player auto-selects the English dub audio track,
+  it will also automatically select the English forced subtitle track (Signs & Songs),
+  since it's tagged as `Forced` and matches the audio language.
 
-  However, if the user has set a preference
-  that may override the selection of any other subtitle tracks of that same language,
-  such as preferring hearing-impaired subtitles,
-  it will *always* select that track instead.
+  However, if the user has set preferences that override other subtitle tracks of the same language
+  (such as preferring hearing-impaired subtitles),
+  the player will always prioritize the track that matches those preferences instead.
 
 ===
 
 ### Correct Tagging
 
-The `Properties` tab in mkvtoolnix allows you tag each track with various flags. Tagging a track correctly is very important and must be done correctly because proper tagging enables a player to autoselect the correct language streams for audio and subtitles. Tags can be edited in the MKVToolNix or mkvpropedit without remuxing.
+The `Properties` tab in MKVToolNix allows you to tag each track with various flags.
+Tagging a track correctly is very important
+because it enables players to automatically select the correct language streams for audio and subtitles.
+Tags can be edited in MKVToolNix or mkvpropedit without remuxing.
 
-The following suggestions are given assuming you're working with an average anime release.
+The following suggestions assume you're working with an average anime release.
 If you're working with a different format, you should apply the suggestions accordingly.
 
 ==- :icon-play: Video track
 
-  - **Name**: Optionally, set the name of the track to the name of the `Encoder/Group` or the source video's region like `JPNBD` or `ITABD`.
-  - **Language**: The language tag should be set to `und`. A case can be made to use the language of the source video's region, but it's not well documented how this is intended to be interpreted by players, so it's safer to use `und`.
+  - **Name**: Optionally set the track name to the `Encoder/Group` or source region (e.g., `JPNBD`, `ITABD`).
+  - **Language**: Set to `und`. While you could use the source region's language, it's not well-documented how players interpret this, so it's safer to use `und`.
 
 ==- :icon-unmute: Audio Tracks
 
-  - **Name**: Mention the codec, channels, and optionally the bitrate (if applicable) in the `Name` field.
+  - **Name**: Include the codec, channels, and optionally the bitrate if applicable (e.g., `FLAC 5.1`, `Opus 2.0 @ 192kb/s`).
   - **Default**: Tag regular audio tracks as `Default`.
-      - Any and all non-regular/specialized tracks (e.g `commentary`, `SDH`, etc.) must be tagged with their respective flags and language and **not** be tagged as `Default`.
+      - Specialized tracks (commentary, SDH, etc.) must be tagged with their respective flags and **not** as `Default`.
   - **Forced**: Audio tracks must **not** be tagged as `Forced`.
-  - **Language**: The language tag must appropriately reflect the language spoken in the audio. If there is no discernible language, set it to `zxx`.
-    - If there are multiple dialects of the same language, use the correct dialect tag (e.g., `es-ES` for Castilian Spanish, `es-419` for Latin American Spanish) and clearly indicate the dialect in the `Name` field.
-  - **Original Language**: Tag the original audio language as `Original language`. For anime, this will typically be Japanese audio tracks. This should also be tagged for commentary, descriptive, or other specialized audio tracks in the same language.
-
+  - **Language**: Must reflect the spoken language. Use `zxx` if there is no discernible language.
+    - For multiple dialects, use the correct dialect tag (e.g. `es-ES` for Castilian Spanish, `es-419` for Latin American Spanish) and indicate the dialect in the `Name` field.
+  - **Original Language**: Tag the original audio language as `Original language`. For anime, this is typically the Japanese audio tracks.
+    - Also apply this tag to commentary, descriptive, or other specialized audio tracks in the same language.
 
 ==- :icon-log: Subtitle Tracks
 
-  - **Language**: The language tag must appropriately reflect the language of the subtitles.
-    - If you have multiple dialects of the same language, they must be tagged with the dialect and mentioned in the `Name` field. For example, Castilian Spanish must be tagged as `es-ES` while Latin American Spanish must be tagged as `es-419`.
-  - **Default**: Regular subtitle tracks (i.e, `Full Subtitles`) must be tagged as `Default`.
-    - If no subtitle tracks should be eliglble to be automatically selected by the player (except for `Forced` tracks and other special tracks), you should mark none of the subtitle tracks as `Default`.
-    - Any and all non-regular/specialized tracks (e.g `commentary`, `SDH`, etc.) must be tagged with their respective flags and language and **not** be tagged as `Default`.
-    - Closed captions tracks must be tagged as `Hearing impaired`.
-  - **Forced**: The forced track (i.e, `Signs & Songs`) must be tagged as `Forced`.
-    - This track should not be tagged as `Default` because it is not a "regular" track; instead, it is a specialized track meant to be used with dubs. The language tag must be identical to the language tag of the audio track it is intended to be used with.
-    - There should only be one `Forced` track per language.
-  - **Honorifics Tracks**: `Honorifics` or other similar alternative tracks must be tagged as `enm` and `Default`, but **not** `Forced`.
-    - *Note: This isn't a Matroska standard but a widely accepted convention in the anime community. Commercial software like [Plex](https://www.plex.tv/) also support this convention.*
-  - **Original language**: The `Original language` flag must be tagged on subtitle tracks that are the same language as the original language audio track. For anime, this will typically be a *closed captions* track.
+  - **Language**: Must reflect the subtitle language.
+    - For multiple dialects, use the correct dialect tag and mention it in the `Name` field (e.g., `es-ES` for Castilian Spanish, `es-419` for Latin American Spanish).
+  - **Default**: Regular subtitle tracks (`Full Subtitles`) must be tagged as `Default`.
+    - If no subtitle tracks should be auto-selected (except `Forced` and special tracks), mark none as `Default`.
+    - Specialized tracks (commentary, SDH, etc.) must be tagged with their respective flags and **not** as `Default`.
+    - Closed captions must be tagged as `Hearing impaired`.
+  - **Forced**: The forced track (`Signs & Songs`) must be tagged as `Forced`.
+    - This track should **not** be tagged as `Default` since it's specialized for use with dubs.
+    - The language tag must match the audio track it's intended for. If the dub language is English, the language tag must also be `eng`.
+    - Use only one `Forced` track per language.
+  - **Honorifics and other similar alternative tracks**: Tag as `enm` and `Default`, but **not** `Forced`.
+    - *Note: This isn't a Matroska standard but a widely accepted convention in the anime community. Commercial software like [Plex](https://www.plex.tv/) supports this convention.*
+  - **Original Language**: Tag subtitle tracks that match the original language audio track. For anime, this is typically a *closed captions* track.
 
 ==- :icon-list-ordered: Track Order
 
-  The track order is important because it determines which track will be automatically selected by the player,
-  assuming all tracks are correctly tagged and the user does not have any specific preferences set.
+  Track order determines which track will be automatically selected by the player
+  when all tracks are correctly tagged
+  and the user has no specific preferences set.
 
-  Tracks should ideally be grouped by *language*,
-  with the regular track being the first within its language group.
+  Tracks should be grouped by *language*,
+  with the regular track first within each language group.
 
   The recommended track order is:
 
   1. Video
   2. Original language audio group
       1. Original language regular audio
-      2. Original language Specialized audio (commentary, descriptive, etc)
+      2. Original language specialized audio (commentary, descriptive, etc)
   3. Dub audio group
       1. Regular dub audio
       2. Specialized dub audio (commentary, descriptive, etc)
@@ -222,12 +228,22 @@ If you're working with a different format, you should apply the suggestions acco
       1. Regular subtitle tracks for the regular dub audio
       2. Specialized subtitle track for audio tracks in the dub audio group (forced, commentary, sdh, etc)
 
-  If you have multiple "regular" tracks of the same language,
-  such as for example a `Japanese 2.0` track and a `Japanese 5.1` track,
-  you'll notice that these end up being tagged identically.
-  In this case, players will typically fall back to using the track order to select an audio track.
+  !!!
+  MKVToolNix will sort track types
+  (video, audio, subtitles)
+  in the correct order by default in the UI.
+  However, it will not automatically arrange the tracks
+  within each language group.
+  !!!
+
+  For multiple "regular" tracks of the same language
+  (e.g., `Japanese 2.0` and `Japanese 5.1` tracks),
+  these will be tagged identically.
+  In this case,
+  players typically fall back to track order for selection.
   It's up to personal preference which track should go first,
-  but it's recommended to either put the "original" audio track first (in the case of a 2.0 downmix or 5.1 upmix),
+  but it's recommended to either put the "original" audio track first
+  (in the case of a 2.0 downmix or 5.1 upmix),
   or the most well-supported track (typically the 2.0 track).
 
   !!!
@@ -244,7 +260,7 @@ If you're working with a different format, you should apply the suggestions acco
   | 2   | Audio       | jpn      | FLAC 2.0                | :white_check_mark: | :white_check_mark: | N/A                | None              |
   | 3   | Audio       | eng      | Opus 5.1 @ 320kb/s      | :x:                | :white_check_mark: | N/A                | None              |
   | 4   | Subtitle #1 | eng      | Full Subtitles [Fansub] | :x:                | :white_check_mark: | :x:                | None              |
-  | 5   | Subtitle #2 | eng      | Signs/Songs [Fansub]    | :x:                | :x:                | :white_check_mark: | None              |
+  | 5   | Subtitle #2 | eng      | Signs & Songs [Fansub]    | :x:              | :x:                | :white_check_mark: | None              |
 
 ==- :icon-checklist: Practical Example - Advanced
 
@@ -260,7 +276,7 @@ If you're working with a different format, you should apply the suggestions acco
   | 8   | Subtitle #1  | eng      | Full Subtitles [Fansub]                 | :x:                | :white_check_mark: | :x:                | None                |
   | 9   | Subtitle #2  | enm      | Honorifics [Fansub]                     | :x:                | :white_check_mark: | :x:                | None                |
   | 10  | Subtitle #3  | eng      | Japanese Commentary [USABD]             | :x:                | :x:                | :x:                | Commentary          |
-  | 11  | Subtitle #4  | eng      | Signs/Songs [Fansub]                    | :x:                | :x:                | :white_check_mark: | None                |
+  | 11  | Subtitle #4  | eng      | Signs & Songs [Fansub]                  | :x:                | :x:                | :white_check_mark: | None                |
   | 12  | Subtitle #5  | eng      | SDH [USABD]                             | :x:                | :x:                | :x:                | Hearing-impaired    |
   | 13  | Subtitle #6  | eng      | English Commentary [USABD]              | :x:                | :x:                | :x:                | Commentary          |
   | 14  | Subtitle #7  | jpn      | Closed Captions [Netflix]               | :white_check_mark: | :x:                | :x:                | Hearing-impaired    |
@@ -418,7 +434,7 @@ These alternative presentations are lost once decoded, even if they were to be e
   --edit track:a2 --set name="Opus 5.1 @ 320kb/s"        --set language=eng --set flag-default=1 ^
   --edit track:s1 --set name="Full Subtitles [Fansub]"   --set language=eng --set flag-default=1 --set flag-forced=0 ^
   --edit track:s2 --set name="Honorifics [Fansub]"       --set language=enm --set flag-default=1 --set flag-forced=0 ^
-  --edit track:s3 --set name="Signs/Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 ^
+  --edit track:s3 --set name="Signs & Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 ^
   --edit track:s4 --set name="Full Subtitles [Official]" --set language=spa --set flag-default=1 --set flag-forced=0
   ```
 
@@ -432,7 +448,7 @@ These alternative presentations are lost once decoded, even if they were to be e
     --edit track:a2 --set name="Opus 5.1 @ 320kb/s"        --set language=eng --set flag-default=1 \
     --edit track:s1 --set name="Full Subtitles [Fansub]"   --set language=eng --set flag-default=1 --set flag-forced=0 \
     --edit track:s2 --set name="Honorifics [Fansub]"       --set language=enm --set flag-default=1 --set flag-forced=0 \
-    --edit track:s3 --set name="Signs/Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 \
+    --edit track:s3 --set name="Signs & Songs [Fansub]"      --set language=eng --set flag-default=0 --set flag-forced=1 \
     --edit track:s4 --set name="Full Subtitles [Official]" --set language=spa --set flag-default=1 --set flag-forced=0
   done
   ```
