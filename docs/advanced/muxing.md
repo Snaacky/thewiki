@@ -422,7 +422,12 @@ These alternative presentations are lost once decoded, even if they were to be e
 ==- :icon-terminal: mkvpropedit command to retag an `mkv` file without remuxing
 
   !!!
-  This is an example, you'll have to edit the command further to apply to your specific file
+  This is an example,
+  you'll have to edit the command further
+  to apply to your specific file.
+  If your filename has a CRC in it,
+  you must also update that
+  to reflect the new CRC.
   !!!
 
   +++ Windows
