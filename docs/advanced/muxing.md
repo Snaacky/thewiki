@@ -197,7 +197,7 @@ If you're working with a different format, you should apply the suggestions acco
     - Closed captions must be tagged as `Hearing impaired`.
   - **Forced**: The forced track (`Signs & Songs`) must be tagged as `Forced`.
     - This track should **not** be tagged as `Default` since it's specialized for use with dubs.
-    - The language tag must match the audio track it's intended for. If the dub language is English, the language tag must also be `eng`.
+    - The language tag must match the audio track it's intended for. If the dub language is English, the language tag for its Signs & Songs must also be `eng`.
     - Use only one `Forced` track per language.
   - **Honorifics and other similar alternative tracks**: Tag as `enm` and `Default`, but **not** `Forced`.
     - *Note: This isn't a Matroska standard but a widely accepted convention in the anime community. Commercial software like [Plex](https://www.plex.tv/) supports this convention.*
