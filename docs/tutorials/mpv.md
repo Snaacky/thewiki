@@ -66,13 +66,6 @@ We suggest sticking with the official mpv player as forks tend to lag behind in 
 - [mpc-qt](https://github.com/mpc-qt/mpc-qt)
 - [mpv.net](https://github.com/mpvnet-player/mpv.net) [!badge icon="apps" variant="info" text="Microsoft Store"](https://apps.microsoft.com/store/detail/9N64SQZTB3LM)
 
-==- Option #4: 📦 Installing a pre-configured build
-
-If you don't want to setup mpv yourself, a portable build of mpv is available below. This is pre-configured to have the settings described in the [Basic Config](#basic-config) and [Advanced Config](#advanced-config) and is automatically updated daily. The `portable_config` folder can also be downloaded separately if you wish to add it to your existing mpv installation.
-
-[!file text="mpv" icon="play"](https://github.com/Snaacky/thewiki/releases/tag/mpv)
-[!file text="portable_config" icon="package"](https://github.com/Snaacky/thewiki/releases/download/mpv/portable_config.7z)
-
 ===
 
 ==- 📁 Adding mpv to PATH
@@ -196,7 +189,33 @@ We recommend taking your time to create your own config. If you want to get up a
 
 ==- :icon-file-code: Generic `mpv.conf`
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-30" language="properties":::
+```properties
+## Video
+profile=high-quality
+vo=gpu-next
+scale-antiring=0.6
+
+## Behavior (personal preference)
+keep-open=yes
+save-position-on-quit
+
+## Screenshots
+screenshot-format=png
+screenshot-dir="~/Pictures/mpv"
+screenshot-template="%F-%p-%n"
+screenshot-high-bit-depth=no
+
+## Language Priority
+## Sub
+## Add enm before eng for honorifics
+slang=eng,en
+alang=jpn,ja
+
+## Dub
+#slang=zxx,eng,en
+#alang=eng,en
+#subs-with-matching-audio=forced
+```
 
 ==- :icon-info: Understanding the config
 
@@ -209,7 +228,6 @@ Option                                                                          
 [`profile`](https://mpv.io/manual/master/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
 [`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*.
 [`scale-antiring`](https://mpv.io/manual/master/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*.
-[`dither-depth`](https://mpv.io/manual/master/#options-dither-depth)                             | Sets the dither depth. *This should be set to your monitor's bit depth to prevent [banding](#debanding)*.
 [`keep-open`](https://mpv.io/manual/master/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*.
 [`save-position-on-quit`](https://mpv.io/manual/master/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*.
 [`screenshot-format`](https://mpv.io/manual/master/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*.
@@ -231,7 +249,9 @@ This guide assumes you know the location of your config folder. *See [Config Ove
 
 ### Debanding
 
-Color banding is a visual artifact that is typically seen in gradients, where the colors can be easily differentiated by the human eye. *See [Tom Scott's video explaining color banding](https://youtu.be/h9j89L8eQQk).*
+Color banding is a visual artifact that is typically seen in gradients,
+where the colors can be easily differentiated by the human eye. 
+*See [Tom Scott's video explaining color banding](https://youtu.be/h9j89L8eQQk).*
 
 <p align="center">
    <a href="https://user-images.githubusercontent.com/78981416/214381256-e5722886-57d7-4cd4-834e-edbd30b432e0.png">
@@ -240,29 +260,15 @@ Color banding is a visual artifact that is typically seen in gradients, where th
 <p align="center">Banding (left) vs. No banding (right)</p>
 </p>
 
-Newer versions of mpv now ship with debanding capabilities, so no additional configuration is required. You can enable debanding anytime during playback by pressing `b` (default keybind).
-
-For sources where the default debanding isn't effective enough, you can apply more aggressive debanding profiles such as:
-
-```properties
-[BrazzersDeband]
-deband=yes
-deband-iterations=4
-deband-threshold=64
-deband-range=20
-deband-grain=32
-```
-
-```properties
-[HiroshimaDeband]
-deband-iterations=4
-deband-threshold=100
-deband-range=8
-deband-grain=32
-```
+mpv includes built-in debanding with sensible defaults, so no additional
+configuration is required. You can enable it anytime during playback by
+pressing `b` (default keybind). If the default deband is inadequate for a
+specific video, you may need to experiment with the [`--deband-*`](https://mpv.io/manual/master/#options-deband)
+options to find what works best.
 
 !!!warning
-Keep in mind that stronger settings will cause a loss of detail and should be reserved for situations where the loss of detail is acceptable for reducing banding.
+Keep in mind that stronger settings will cause a loss of detail and
+should be reserved for situations where the loss of detail is acceptable for reducing banding.
 !!!
 
 ### Scaling
@@ -284,7 +290,9 @@ Download both the shader files and place them in your `shaders` folder.
 
 Next, add the following to your `input.conf`, replacing `g` with the bind of your choice, if necessary (case-sensitive):
 
-:::code source="/static/tutorials/mpv/portable_config/input.conf" range="2" language="properties":::
+```properties
+g cycle-values glsl-shaders "~~/shaders/nnedi3-nns128-win8x4.hook" "~~/shaders/ArtCNN_C4F32.glsl" ""
+```
 
 To toggle the shader, press `g` during playback to select the suitable shader.
 
@@ -294,7 +302,11 @@ If you use mid-range hardware, we recommend sticking to mpv's built-in `high-qua
 
 To use the profile, add the following to the top of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="1-4" language="properties":::
+```properties
+profile=high-quality
+vo=gpu-next
+scale-antiring=0.6
+```
 
 This is included in the [Basic Config](#basic-config).
 
@@ -314,23 +326,10 @@ profile=fast
 
 +++
 
-### Dither
-
-Dither is an intentionally applied noise filter that aims to help eliminate various visual artifacts, such as color banding during playback.
-
-By default, mpv uses dithering to match the content bit depth to your display's bit depth. *However, in some instances, it may fail to detect the correct bit depth of your display automatically, causing the wrong bit depth to be used and adding banding during playback.*
-
-To avoid introducing banding during playback, we recommend explicitly defining your display's bit depth. Most modern displays use the 8-bit color depth, however you can manually check this:
-
-- For Windows, this can be found in **Settings** -> **Display** -> **Advanced display settings** -> **Display information** -> **Bit depth**
-
-Then, set your display's bit depth in your `mpv.conf`:
-
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="8" language="properties":::
-
 ### Subtitle Restyling
 
-Most releases will use their own font for `.ass` subtitles. These can be manually overridden by mpv, which can help improve readability or match personal preferences.
+Most releases will use their own font for `.ass` subtitles. 
+These can be manually overridden by mpv, which can help improve readability or match personal preferences.
 
 !!!warning
 Restyling subtitles may lead to incorrect rendering in some cases.
@@ -424,7 +423,9 @@ sub-ass-style-overrides=Kerning=yes
 
 To activate it with a key, add the following to your `input.conf`, replacing `k` with the bind of your choice, if necessary (case-sensitive):
 
-:::code source="/static/tutorials/mpv/portable_config/input.conf" range="5" language="properties":::
+```properties
+k cycle_values sub-ass-override "force" "no"
+```
 
 ### Auto Profiles
 
@@ -434,7 +435,17 @@ For instance, some seasonal releases may exhibit banding issues and use subjecti
 
 Add the following to the end of your `mpv.conf`:
 
-:::code source="/static/tutorials/mpv/portable_config/mpv.conf" range="32-40" language="properties":::
+```properties
+[crunchyroll]
+profile-cond=filename:match("SubsPlease") or filename:match("Erai%-raws") or filename:match("HorribleSubs")
+profile-restore=copy
+sub-ass-use-video-data=aspect-ratio
+
+[simulcast]
+profile-cond=(function(a)for b,c in ipairs(a)do if filename:match(c)then return true end end end)({"SubsPlease","Erai%-raws","Tsundere%-Raws","%-VARYG","HorribleSubs","SubsPlus%+", "Yameii"})
+profile-restore=copy
+deband=yes
+```
 
 !!!warning
 Your auto profile(s) should be placed at the end of your `mpv.conf` in order to prevent conflict.
@@ -461,7 +472,8 @@ Below is a list of some popular scripts:
 2. Locate the `scripts` folder. *You may need to create this folder if it doesn't exist*
 3. Drag your script file(s) (e.g. `.lua`) into the folder
 
-Your scripts are automatically loaded when you launch mpv. *If mpv is currently open, you will need to relaunch it in order for your script(s) to take effect.*
+Your scripts are automatically loaded when you launch mpv.
+*If mpv is currently open, you will need to relaunch it in order for your script(s) to take effect.*
 
 ==-
 
@@ -472,8 +484,7 @@ You can customize how mpv looks using skins. These are subject to personal prefe
 Below is a list of some popular skins:
 
 - [mfpbar](https://codeberg.org/NRK/mpv-toolbox/src/branch/master/mfpbar)
-- [ModernX](https://github.com/cyl0/ModernX)
-- [mpv-osc-modern](https://github.com/maoiscat/mpv-osc-modern)
+- [ModernX](https://github.com/zydezu/ModernX)
 - [mpv-osc-tethys](https://github.com/Zren/mpv-osc-tethys)
 - [mpv-progressbar](https://github.com/torque/mpv-progressbar)
 - [oscc](https://github.com/longtermfree/oscc)
