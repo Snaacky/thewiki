@@ -84,6 +84,7 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 from vstools import vs, core
 from vskernels import Hermite, EwaLanczos
 from vspreview import set_output
+import vstools
 
 ## <Additional dependencies>
 ## Place any additional dependencies you want to use in your comp here
