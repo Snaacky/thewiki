@@ -18,7 +18,7 @@ VapourSynth is an open-source video processing framework. It handles all of your
 
 #### Dependencies
 
-- [Python 3.12.x](https://www.python.org/downloads/) - *Download the latest 3.12 version at the bottom and select `Add python.exe to PATH` during installation*
+- [Python 3.13.x](https://www.python.org/downloads/) - *Download the latest 3.13.x version at the bottom and select `Add python.exe to PATH` during installation*
 - [Git](https://gitforwindows.org/) - *Spam next during installation*
 
 #### Installation
@@ -35,10 +35,10 @@ VSPreview is a previewer application for scripts created in VapourSynth. It feat
 
 In order to create comparisons with VSPreview, you will need a few necessary dependencies:
 
-- [`ffms2`](https://github.com/FFMS/ffms2), [`fpng`](https://github.com/richgel999/fpng), [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth), [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works), and [`vs-placebo`](https://github.com/sgt0/vs-placebo) can be installed using `vsrepo` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). In your terminal, run the following:
+- [`ffms2`](https://github.com/FFMS/ffms2), [`fpng`](https://github.com/richgel999/fpng), [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth), [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works), [`vs-placebo`](https://github.com/sgt0/vs-placebo), [`resize2`](https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2), and [`akarin`](https://github.com/Jaded-Encoding-Thaumaturgy/akarin-vapoursynth-plugin) can be installed using `vsrepo` from [VapourSynth](https://github.com/vapoursynth/vapoursynth/releases). In your terminal, run the following:
 
   ```powershell
-  vsrepo.py install ffms2 fpng libp2p lsmas placebo
+  vsrepo.py install ffms2 fpng libp2p lsmas placebo resize2 akarin
   ```
 
   !!!
@@ -91,9 +91,9 @@ from vspreview import set_output
 ## <End of additional dependencies>
 
 ## File paths: Hold shift and right-click your file, select copy as path, and paste it here. For NF WEB-DLs change core.lsmas.LWLibavSource to core.ffms2.Source
-clip1 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
-clip2 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
-clip3 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv")
+clip1 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv", rap_verification=False)
+clip2 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv", rap_verification=False)
+clip3 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv", rap_verification=False)
 
 ## Source: Name of the source
 source1 = "FirstSourceName"
@@ -188,23 +188,27 @@ Downscales or upscales the video. *This should be used to match sources that hav
 - For upscaling (e.g. 720p -> 1080p), use `EwaLanczos`:
 
   ```py
-  ## Upscaling: Increases the resolution of clips to match the highest resolution using EwaLanczos (equivalent scaling to mpv's high-quality profile); recommended
-  clip1 = EwaLanczos.scale(clip1, 1920, 1080, sigmoid=False)
-  clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=False)
-  clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=False)
+  ## Upscaling: Increases the resolution of clips to match the highest resolution using EwaLanczos (equivalent scaling to mpv's high-quality profile)
+  clip1 = EwaLanczos.scale(clip1, 1440, 1080, sigmoid=True)
+  clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
+  clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)
   ```
+
+!!!warning
+If the colors of your sources do not match after upscaling, see the Color Spaces section below
+!!!
 
 - For downscaling (e.g. 2160p/4K -> 1080p), use `Hermite`:
 
   ```py
-  ## Downscaling: Decreases the resolution of clips to match the lowest resolution using Hermite (equivalent scaling to mpv's high-quality profile); not recommended
-  clip1 = Hermite.scale(clip1, 1920, 1080, linear=True)
+  ## Downscaling: Decreases the resolution of clips to match the lowest resolution using Hermite (equivalent scaling to mpv's high-quality profile)
+  clip1 = Hermite.scale(clip1, 1280, 720, linear=True)
   clip2 = Hermite.scale(clip2, 1920, 1080, linear=True)
   clip3 = Hermite.scale(clip3, 3840, 2160, linear=True)
   ```
 
 !!!warning
-Downscaling is generally not recommended. We suggest upscaling your sources to match the highest resolution unless you have a specific reason (e.g. comparing how a higher resolution file would look on a lower resolution display).  
+Downscaling is generally not recommended. We suggest upscaling your sources to match the highest resolution unless you have a specific reason (e.g. comparing how a higher resolution file would look on a lower resolution display).
 !!!
 
 #### Trimming
@@ -217,14 +221,14 @@ To get the frame difference, find a unique frame (e.g. scene changes) in the cor
 ## Trimming: Trim frames to match clips (calculate the frame difference and enter the number here)
 clip1 = clip1[0:]
 clip2 = clip2[24:]
-clip3 = clip3[0:]
+clip3 = clip3[144:]
 ```
 
 !!!secondary
 For more advanced trimming such as chaining, splicing, and looping, see [Vapoursynth's docs](https://www.vapoursynth.com/doc/pythonreference.html#slicing-and-other-syntactic-sugar).
 !!!
 
-==- :icon-paintbrush: Color & contrast (depth, debanding, tonemapping, range, gamma, frameprops, DRC)
+==- :icon-paintbrush: Color & contrast (depth, debanding, tonemapping, gamma, color spaces, DRC)
 
 #### Depth
 
@@ -242,31 +246,14 @@ clip3 = core.resize.Lanczos(clip3, format=vs.YUV444P16)
 Applies a debanding filter to the selected clip(s).
 
 !!!
-Sources with clear banding should be debanded to see how they fare when watching with a deband applied, such as using [mpv's](/tutorials/mpv/) built-in deband filters. The debanded clip should *never* replace the original. Instead, it should be added as an additional node. Debands higher than default should only be used in extreme cases.
+Otherwise competitive sources with obvious banding should be debanded to see how they'd fare with [mpv's](/tutorials/mpv/) built-in deband filter. The debanded clip should *never* replace the original. Instead, it should be added as an additional node.
 !!!
 
 ```py
-## Convert clips to 32-bit for precision
 clip1 = vstools.depth(clip1, 32)
-clip2 = vstools.depth(clip2, 32)
-clip3 = vstools.depth(clip3, 32)
-
-default_mpv_deband = core.placebo.Deband(clip1, planes=7, iterations=4, threshold=3.44, radius=16.0, grain=0.5)
-brazzers_deband = core.placebo.Deband(clip2, planes=7, iterations=4, threshold=5.0, radius=20.0, grain=0.5)
-hiroshima_deband = core.placebo.Deband(clip3, planes=7, iterations=4, threshold=7.0, radius=8.0, grain=0.5)
-
-default_mpv_deband = vstools.depth(default_mpv_deband, 8)
-brazzers_deband = vstools.depth(brazzers_deband, 8)
-hiroshima_deband = vstools.depth(hiroshima_deband, 8)
-
-set_output(default_mpv_deband)
-set_output(brazzers_deband)
-set_output(hiroshima_deband)
+clip1 = core.placebo.Deband(clip1, planes=7, iterations=4, threshold=3.44, radius=16.0, grain=0.5)
+clip1 = vstools.depth(clip1, 8)
 ```
-
-!!!
-You can find the equivalent deband settings for mpv [here](/tutorials/mpv/#debanding).
-!!!
 
 #### Tonemapping
 
@@ -303,20 +290,24 @@ clip2 = core.std.SetFrameProps(clip2, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRAN
 clip3 = core.std.SetFrameProps(clip3, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRANSFER_BT709, _Primaries=vs.PRIMARIES_BT709)
 ```
 
+#### Clipping
+Sometimes the source will be SDR in an HDR container, often seen with anime on Netflix. In these cases you can clip the source to get an exact match to SDR, unlike with traditional tonemapping.
+
+```py
+## Clip HDR source to SDR
+clip1 = core.resize.Bicubic(clip1, matrix=1, transfer=1, primaries=1)
+
+## Clip DV source to SDR
+clip2args = PlaceboTonemapOpts(source_colorspace=ColorSpace.DOVI, target_colorspace=ColorSpace.HDR10, use_dovi=True)
+clip2 = core.placebo.Tonemap(clip2, **clip2args.vsplacebo_dict())
+clip2 = core.std.SetFrameProps(clip2, _Matrix=vs.MATRIX_BT2020_NCL, _Transfer=vs.TRANSFER_ST2084, _Primaries=vs.PRIMARIES_BT2020)
+clip2 = core.resize.Bicubic(clip2, matrix=1, transfer=1, primaries=1)
+```
+
+
 !!!
 Refer to the [libplacebo](https://libplacebo.org/options/) and [vs-placebo](https://github.com/sgt0/vs-placebo?tab=readme-ov-file#tonemap) docs to gain a better understanding of what each parameter does.
 !!!
-
-#### Range
-
-Sets the color range of the clip as limited (`0`) or full (`1`). *This should be used on sources containing incorrect metadata.*
-
-```py
-## Color range: Marks the clip's range as limited (0) or full (1); DV clips will need to be set to limited (0) after tonemapping
-clip1 = core.resize.Lanczos(clip1, format=vs.YUV444P16, range=0)
-clip2 = core.resize.Lanczos(clip2, format=vs.YUV444P16, range=0)
-clip3 = core.resize.Lanczos(clip3, format=vs.YUV444P16, range=1)
-```
 
 #### Gamma
 
@@ -334,24 +325,28 @@ clip2 = core.std.Levels(clip2, gamma=0.88, planes=0)
 clip3 = core.std.Levels(clip3, gamma=0.88, planes=0)
 ```
 
-#### FrameProps
+#### Color Spaces
 
-Set the correct frame properties for your sources. This is most commonly used on sources you're upscaling or 4K SDR content. *This should be used on sources with incorrect/missing metadata or colors that are off, particularly in reds and greens.*
+Sets the correct color information, should be used on sources with incorrect/missing metadata, particularly when upscaling.
 
 ```py
-## FrameProps: Repairs sources with incorrect/missing metadata; typically used for 4K SDR and upscaled/downscaled content (colors will be off, particularly reds, greens, and blues)
+## Color Spaces: Tag sources with incorrect/missing metadata; typically used for 4K SDR and upscaled/downscaled content (colors will be off, particularly reds, greens, and blues)
 
-# SDR: BD/WEB (720p - 4K)
+# HD BD/WEB
 clip1 = core.std.SetFrameProps(clip1, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRANSFER_BT709, _Primaries=vs.PRIMARIES_BT709)
 
-# SDR: PAL DVD
+# PAL DVD
 clip2 = core.std.SetFrameProps(clip2, _Matrix=vs.MATRIX_BT470_BG, _Transfer=vs.TRANSFER_BT470_BG, _Primaries=vs.PRIMARIES_BT470_BG)
 
-# SDR: NTSC DVD
+# NTSC DVD
 clip3 = core.std.SetFrameProps(clip3, _Matrix=vs.MATRIX_ST170_M, _Transfer=vs.TRANSFER_BT601, _Primaries=vs.PRIMARIES_ST170_M)
 
-# HDR/DV
-clip4 = core.std.SetFrameProps(clip4, _Matrix=vs.MATRIX_BT2020_NCL, _Transfer=vs.TRANSFER_BT2020_10, _Primaries=vs.PRIMARIES_BT2020)
+# HD BD/WEB with incorrectly tagged Matrix
+clip4 = core.std.SetFrameProps(clip4, _Matrix=vs.MATRIX_ST170_M), _Transfer=vs.TRANSFER_BT709, _Primaries=vs.PRIMARIES_BT709)
+
+# HD BD/WEB with incorrectly converted Matrix
+clip5 = core.resize.Point(clip5, _Matrix=vs.MATRIX_ST170_M)
+clip5 = core.std.SetFrameProp(clip5, _Matrix=vs.MATRIX_BT709)
 ```
 
 #### Double-Range Compression (DRC)
@@ -366,8 +361,7 @@ clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 
 ```py
 ## Fix Reverse DRC: Repairs sources with extremely crushed blacks and blown out highlights
-clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=0)
-clip1 = core.resize.Point(clip1, range_in=1, range=0, dither_type="error_diffusion")
+clip1 = core.std.SetFrameProp(clip1, prop="_ColorRange", intval=1)
 ```
 
 ==-
