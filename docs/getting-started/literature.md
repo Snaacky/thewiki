@@ -14,7 +14,7 @@ image: /static/literature/kujou.gif
 +++ Downloads
 
 [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
-:   Public torrent tracker with the most high-quality official digital rips
+:   Public torrent tracker with the most high-quality official digital rips.
 
     Scanlations can also be found here, though significantly less than aggregator sites.
 
@@ -29,13 +29,13 @@ image: /static/literature/kujou.gif
 +++ Aggregators
 
 [ComicK](https://comick.io/)
-:   Browser aggregator with the least compressed official rips
+:   Browser aggregator with the least compressed official rips.
 
 [MangaDex](https://mangadex.org)
-:   Browser aggregator with the most convenient scanlations
+:   Browser aggregator with the most convenient scanlations.
 
 [MangaLife](https://manga4life.com)/[MangaSee](https://mangasee123.com)
-:   Browser aggregator with the most convenient official rips
+:   Browser aggregator with the most convenient official rips.
 
 !!!
 Aggregators use downscaled and compressed images, resulting in lower image quality than digital rips.
@@ -47,8 +47,19 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
 
 +++ PC
 
-[mpv](https://mpv.io/installation/) [!badge icon=":heart:" variant="primary" text="Best Quality"]
-:   Standalone reader with the highest quality scaling on PC
+[Komelia](https://github.com/Snd-R/Komelia/releases) [!badge icon=":heart:" variant="primary" text="Recommended"]
+:   Client for the [Komga](https://komga.org/) media server with high quality scaling.
+    ==- :icon-file-media: Recommended scaling settings
+    - Upsampling mode: Bicubic Mitchell
+    - Downsampling kernel: Mitchell
+    - Linear light downsampling: Enabled
+    ==-
+    ==- :icon-sliders: Fixing black levels
+    Komelia allows you to manually fix black levels with the Color Correction Menu. [Open the Levels section and drag the top slider past the first graph spike.](https://files.catbox.moe/1kl512.png) A black level of 32 should fix most of the image, however you will need to go slightly higher to cover outlier values caused by jpeg compression. [A value of 42 works well.](https://slow.pics/c/o8N4KakD) You can then save it as a preset for quick black level fixing.
+    ==-
+
+[mpv](https://mpv.io/installation/)
+:   Standalone reader with the highest quality scaling on PC.
 
     This should be used with the [mpv-manga-reader script](https://github.com/Dudemanguy/mpv-manga-reader) in order to enable basic manga reader functionality. *See [how to install custom scripts in mpv](/tutorials/mpv/#custom-scripts).*
 
@@ -84,11 +95,11 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
     ```
     ==-
 
-[Suwayomi](https://github.com/Suwayomi/Suwayomi-Server) [!badge variant="secondary" text="Most Convenient"]
-:   All-in-one manga reader server with support for external sources and manga trackers
+[Suwayomi](https://github.com/Suwayomi/Suwayomi-Server) [!badge variant="secondary" text="Convenient"]
+:   All-in-one manga reader server with support for external sources and manga trackers.
 
 [CDisplayEx](https://www.cdisplayex.com)
-:   Standalone reader with the [second highest quality scaling](https://slow.pics/c/y737QBlP) on PC
+:   Standalone reader with [decent scaling](https://slow.pics/c/y737QBlP). Not recommended anymore unless you simply do not wish to set up Komelia or MPV.
 
     ==- :icon-file-media: Recommended scaling settings
     To get the best quality, set the [*Resizing Algorithm to Lanczos*](/static/literature/cdisplayex-scaling.png) and the [*Lanczos quality slider to level 2*](/static/literature/cdisplayex-scaling2.png).
@@ -102,41 +113,57 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
 
 +++ Android
 
-[Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer) [!badge icon=":heart:" variant="primary" text="Best Quality"]
-:   Standalone reader with the [highest quality scaling](https://slow.pics/c/y737QBlP) on Android
+[Komelia](https://github.com/Snd-R/Komelia/releases) [!badge icon=":heart:" variant="primary" text="Recommended"]
+:   Client for the [Komga](https://komga.org/) media server with [high quality scaling.](https://slow.pics/c/77QVUJoN)
+    ==- :icon-file-media: Recommended scaling settings
+    - Upsampling mode: Bilinear
+    - Downsampling kernel: Mitchell
+    - Linear light downsampling: Enabled
+    ==-
+    ==- :icon-sliders: Fixing black levels
+    Komelia allows you to manually fix black levels with the Color Correction Menu. [Open the Levels section and drag the top slider past the first graph spike.](https://files.catbox.moe/1kl512.png) A black level of 32 should fix most of the image, however you will need to go slightly higher to cover outlier values caused by jpeg compression. [A value of 42 works well.](https://slow.pics/c/o8N4KakD) You can then save it as a preset for quick black level fixing.
+    ==-
+
+[Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer)
+:   Standalone reader with [high quality scaling.](https://slow.pics/c/y737QBlP)
 
     !!!
     To get the best quality, set the [Image smooth filter to *Lanczos3*](/static/literature/perfect-viewer-scaling.png).
     !!!
 
-[Komelia](https://github.com/Snd-R/Komelia/releases) [!badge icon=":heart:" variant="primary" text="Best Quality"]
-:   Komga reader with the [highest quality scaling](https://slow.pics/c/77QVUJoN) on Android
+    !!!warning
+    Adds artifacts to full color pages regardless of scaling algorithm.
+    !!!
 
-[Mihon](https://github.com/mihonapp/mihon) [!badge variant="secondary" text="Most Convenient"]
-:   All-in-one manga reader with support for external sources and manga trackers
+    ==- :icon-sliders: Fixing black levels
+    Perfect Viewer allows you to manually fix black levels with the Color balance Menu. [Set the range to `Shadow` and drag all the sliders to -0.16.](https://files.catbox.moe/ma4m2x.png)
+    ==-
+
+[Mihon](https://github.com/mihonapp/mihon) [!badge variant="secondary" text="Convenient"]
+:   All-in-one manga reader with support for external sources and manga trackers.
 
 +++ iOS
 
-[iComics](https://apps.apple.com/app/icomics/id493845493) [!badge icon=":heart:" variant="primary" text="Best Quality"]
-:   Standalone reader with the [highest quality scaling](https://slow.pics/c/5JzAn5w7) on iOS
+[iComics](https://apps.apple.com/app/icomics/id493845493) [!badge icon=":heart:" variant="primary" text="Recommended"]
+:   Standalone reader with the [highest quality scaling](https://slow.pics/c/5JzAn5w7) on iOS.
 
-[Aidoku](https://aidoku.app) [!badge variant="secondary" text="Most Convenient"]
-:   All-in-one manga reader with support for external sources and manga trackers. *Requires TestFlight or sideloading*
+[Aidoku](https://aidoku.app) [!badge variant="secondary" text="Convenient"]
+:   All-in-one manga reader with support for external sources and manga trackers. *Requires TestFlight or sideloading*.
 
-[Paperback](https://paperback.moe)
-:   All-in-one manga reader with support for external sources
+[Paperback](https://paperback.moe) [!badge variant="secondary" text="Convenient"]
+:   All-in-one manga reader with support for external sources.
 
 +++ Media Servers
 
-[Kavita](https://www.kavitareader.com)
-:   Free and open-source manga, comic, and book server. *Includes an integrated web reader and support for OPDS (e.g. [CDisplayEx](https://www.cdisplayex.com), [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer))*
-
-[Komga](https://komga.org)
-:   Free and open-source manga server. *Includes an integrated web reader support for OPDS (e.g. [CDisplayEx](https://www.cdisplayex.com), [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer))*
+[Komga](https://komga.org) [!badge icon=":heart:" variant="primary" text="Recommended"]
+:   Free and open-source manga server. Recommended to use with the [Komelia](https://github.com/Snd-R/Komelia/releases) client.
 
     !!!secondary
     See [Readers](https://komga.org/docs/category/readers) on Komga docs to set it up with your existing reading client.
     !!!
+
+[Kavita](https://www.kavitareader.com)
+:   Free and open-source manga, comic, and book server. *Includes an integrated web reader and support for OPDS (e.g. [CDisplayEx](https://www.cdisplayex.com), [Perfect Viewer](https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer))*.
 
 +++
 
@@ -147,10 +174,10 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
 +++ Downloads
 
 [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
-:   Public torrent tracker with the most high-quality light novel rips
+:   Public torrent tracker with the most high-quality light novel rips.
 
 [AnimeBytes](https://animebytes.tv) [!badge icon="lock" variant="danger" text="Private"]
-:   Private torrent tracker with a more organized layout and access to old and rare rips
+:   Private torrent tracker with a more organized layout and access to old and rare rips.
 
 +++
 
@@ -159,17 +186,17 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
 +++ PC
 
 [Calibre](https://calibre-ebook.com)
-:   Standalone reader with support for various file types and includes additional e-book management features
+:   Standalone reader with support for various file types and includes additional e-book management features.
 
 [Sumatra PDF](https://www.sumatrapdfreader.org)
-:   Standalone reader with support for various file types
+:   Standalone reader with support for various file types.
 
 +++ Android
 
 [Moon+ Reader](https://play.google.com/store/apps/details?id=com.flyersoft.moonreader)
-:   Standalone reader with support for various file types
+:   Standalone reader with support for various file types.
 
 [LNReader](https://github.com/LNReader/lnreader)
-:   All-in-one light novel reader with support for external sources
+:   All-in-one light novel reader with support for external sources.
 
 +++
