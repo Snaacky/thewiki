@@ -201,6 +201,7 @@ vf-toggle=scale=in_range=limited:out_range=full,setrange=limited
 
 #### Scripts
 
++++ Auto Refresh Rate switching
 Most modern TVs are capable of changing refresh rate to match the frame rate of the content, which removes [judder](/guides/playback#explaining-judder).
 
 However this is not default behaviour in Windows, and as such we recommend [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh), a script that automatically accomplishes this.
@@ -216,6 +217,13 @@ Some users experience issues with the [change-refresh](https://github.com/Cogent
 !!!warning
 [nircmd](https://www.nirsoft.net/utils/nircmd-x64.zip) is required for [change-refresh](https://github.com/CogentRedTester/mpv-changerefresh). Download and copy `nircmd.exe` to your `Windows` folder (i.e. `C:\Windows`).
 !!!
+
++++ Auto HDR mode switching
+MPV cannot natively switch into HDR mode when playing HDR content, so we recommend [mpv-display-plugin](https://github.com/dyphire/mpv-display-plugin) alongside [hdr-mode.lua](https://github.com/dyphire/mpv-scripts/blob/main/hdr-mode.lua), which will add this functionality. 
+
+Simply download the latest [display.zip](https://github.com/dyphire/mpv-display-plugin/releases) release and extract it into your MPV scripts folder, then on the hdr-mode.lua page hit the download icon and open it in a text editor. You will need to change `hdr_mode` from `noth` to `switch` and configure `target_peak` to match your display's peak brightness. This can be found under display settings -> advanced display. If your display does not report one, run the [Windows HDR Calibration Tool](https://apps.microsoft.com/detail/9n7f2sm5d1lr) first. Once you're done save the file into your MPV scripts folder.
+
++++
 
 ### Kodi
 
