@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813260664583">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813731162963">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.813260664583" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.813731162963" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813260664583" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813731162963" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813260664583" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813260664583" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813731162963" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813731162963" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -181,7 +181,7 @@
 </doc-anchor-target>
 <ul>
 <li><a href="https://www.python.org/downloads/">Python 3.13.x</a> - <em>Download the latest 3.13.x version at the bottom and select <code v-pre>Add python.exe to PATH</code> during installation</em></li>
-<li><a href="https://gitforwindows.org/">Git</a> - <em>Spam next during installation</em></li>
+<li><a href="https://gitforwindows.org/">Git</a> - <em>Repeatedly click next during installation</em></li>
 </ul>
 <doc-anchor-target id="installation">
     <h4>
@@ -312,7 +312,7 @@ from vspreview import set_output
 ## Place any additional dependencies you want to use in your comp here
 ## &lt;End of additional dependencies&gt;
 
-## File paths: Hold shift and right-click your file, select copy as path, and paste it here. For NF WEB-DLs change core.lsmas.LWLibavSource to core.ffms2.Source
+## File paths: Hold Shift and Right-click your file, select copy as path, and paste it here. For NF WEB-DLs change core.lsmas.LWLibavSource to core.ffms2.Source
 clip1 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;, rap_verification=False)
 clip2 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;, rap_verification=False)
 clip3 = core.lsmas.LWLibavSource(r&quot;C:\Paste\File\Path\Here.mkv&quot;, rap_verification=False)
@@ -455,7 +455,7 @@ clip1 = core.vivtc.VDecimate(clip1)</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>If you are cropping with odd numbers, you will need to convert your clip to 16-bit depth with 4:4:4 chroma subsampling. (see <doc-anchor-trigger to="#color-contrast-depth-tonemapping-range-gamma-matrix-drc">Color &amp; contrast</doc-anchor-trigger> -&gt; <em>Depth</em>).</p>
+<p>If you are cropping with odd numbers, you will need to convert your clip to 16-bit depth with 4:4:4 chroma subsampling. (see <doc-anchor-trigger to="#color--contrast-depth-debanding-tonemapping-gamma-color-spaces-drc">Color &amp; contrast</doc-anchor-trigger> -&gt; <em>Depth</em>).</p>
         </div>
     </div>
 </div>
@@ -773,7 +773,7 @@ clip1 = core.std.SetFrameProp(clip1, prop=&quot;_ColorRange&quot;, intval=1)</co
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-powershell"><code v-pre class="language-powershell">vspreview comp.py</code></pre>
 </doc-codeblock></div>
-<p>Alternatively, you can create a create a <code v-pre>comp.bat</code> file, replacing <code v-pre>C:\path\to\comp.py</code> with the exact file path to your script:</p>
+<p>Alternatively, you can create a <code v-pre>comp.bat</code> file, replacing <code v-pre>C:\path\to\comp.py</code> with the exact file path to your script:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-powershell"><code v-pre class="language-powershell">vspreview &quot;C:\path\to\comp.py&quot;</code></pre>
 </doc-codeblock></div>
@@ -878,11 +878,11 @@ clip1 = core.std.SetFrameProp(clip1, prop=&quot;_ColorRange&quot;, intval=1)</co
 <li><p>Select the frames to be uploaded. There are multiple methods to doing so:</p>
 <ul>
 <li><strong>Manual:</strong> Scrub through the video and mark each frame using <code v-pre>Ctrl</code>+<code v-pre>Space</code></li>
-<li><strong>Automatic:</strong> Specify am amount of random frames in the <em>Plugin</em> menu. You may choose to use this feature alongside capturing frames manually</li>
+<li><strong>Automatic:</strong> Specify an amount of random frames in the <em>Plugin</em> menu. You may choose to use this feature alongside capturing frames manually</li>
 <li>Frames should ideally show a variety of scenarios (e.g. light/dark, static/high-motion, flat/grainy, etc.). Particularly, you may want to capture scenes with on-screen text and bright reds (if possible).</li>
 </ul>
 </li>
-<li><p>Hit the <em>Start Upload</em> button. VSPreview will automatically screenshot all selected frames and upload a comparsion to <a href="https://slow.pics">slow.pics</a></p>
+<li><p>Hit the <em>Start Upload</em> button. VSPreview will automatically screenshot all selected frames and upload a comparison to <a href="https://slow.pics">slow.pics</a></p>
 </li>
 </ol>
 <div class="flex mb-6">
@@ -901,6 +901,109 @@ clip1 = core.std.SetFrameProp(clip1, prop=&quot;_ColorRange&quot;, intval=1)</co
         </div>
     </div>
 </div>
+<doc-anchor-target id="choosing-sources-anime">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#choosing-sources-anime">#</doc-anchor-trigger>
+        <span>Choosing Sources (Anime)</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>The following will help make your comparison as effective as possible</strong></p>
+<ul>
+<li>Include every available BD, you generally will need to check U2 (Private tracker)</li>
+<li>If 2 sources have identical video, only include 1 and label it as such (eg JPN/USA BD)</li>
+<li>We generally recommend picking episode 2 to ensure both the OP and ED are shown</li>
+<li>Include at least 1 web source when available</li>
+<li>Include all relevant encodes, see below</li>
+</ul>
+<doc-panel id="source-hierarchy" collapsed>
+    <template #title>Source Hierarchy</template>
+<doc-tabs>
+<doc-tab v-cloak id="tier-1">
+<template #title>Tier 1</template>
+<p><strong>These sources should always be included</strong></p>
+<ul>
+<li><strong>Any BD/WEB fansub release</strong></li>
+<li>Akatomba-Raws</li>
+<li>Beatrice-Raws</li>
+<li>H-Enc</li>
+<li>HQR</li>
+<li>Kagura</li>
+<li>Kawaiika-Raws</li>
+<li>km</li>
+<li>Kuroi-raws</li>
+<li>mottoj</li>
+<li>NanoAlchemist</li>
+<li>neko-raws</li>
+<li>Raws-Maji/KnK</li>
+<li>Salender-Raws</li>
+<li>SCY</li>
+<li>Seicher</li>
+<li>sergey_krs</li>
+<li>SOFCJ-Raws</li>
+<li>UQW</li>
+<li>Urotsuki</li>
+<li>VCB-Studio</li>
+<li>YURASUKA</li>
+<li>Yurasyk/Chyrka</li>
+<li>Yousei-raws</li>
+<li>Zagzad</li>
+<li><code v-pre>=^_^=</code>/frost</li>
+</ul>
+</doc-tab>
+<doc-tab v-cloak id="tier-2">
+<template #title>Tier 2</template>
+<p><strong>These sources should be included when the previous tier is not available, or when the only existing muxes use them</strong></p>
+<ul>
+<li>Almighty</li>
+<li>ANK-Raws</li>
+<li>CBM</li>
+<li>DmonHiro</li>
+<li>IrizaRaws</li>
+<li>iAHD</li>
+<li>jsum</li>
+<li>Koten_Gars</li>
+<li>kuchikirukia</li>
+<li>Lowpower-Raws</li>
+<li>moscowgolem</li>
+<li>Moozzi2</li>
+<li>philosophy-raws</li>
+<li>ReinForce</li>
+<li>SEV</li>
+<li>Snow-Raws</li>
+<li>UCCUSS</li>
+</ul>
+</doc-tab>
+<doc-tab v-cloak id="tier-3">
+<template #title>Tier 3</template>
+<p><strong>These sources should never be included as they provide no value</strong></p>
+<ul>
+<li><strong>Any mini-encode</strong></li>
+<li><strong>Any re-encode</strong></li>
+<li>7³ACG</li>
+<li>AI-RAWS</li>
+<li>Centaurea-Raws</li>
+<li>DarkDream</li>
+<li>DBD-Raws</li>
+<li>Deadmau- RAWS</li>
+<li>FY-Raws</li>
+<li>GHOST</li>
+<li>Salieri</li>
+<li>Shiniori-Raws</li>
+</ul>
+</doc-tab>
+<doc-tab v-cloak id="web">
+<template #title>Web</template>
+<p><strong>Generally you will only need 1 web source in the comparison, which should be picked in the following order</strong></p>
+<ol>
+<li>Crunchyroll (CR) - Should be the latest 8Mbps stream, if not publicly available <a href="https://bin.theindex.moe/?c7a22bd18ce6d196#9Uxu6xHeZbYTV1wkM3FWhebLiPdUx37XkBQzF7CBvhHG">check this list</a></li>
+<li>Disney+ (DSNP)</li>
+<li>Netflix (NF)</li>
+<li>Animation Digital Network (ADN)</li>
+<li>Amazon (AMZN)</li>
+<li>HIDIVE (HIDI)</li>
+</ol>
+</doc-tab>
+</doc-panel>
 <doc-anchor-target id="additional-scripts">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#additional-scripts">#</doc-anchor-trigger>
@@ -913,7 +1016,7 @@ clip1 = core.std.SetFrameProp(clip1, prop=&quot;_ColorRange&quot;, intval=1)</co
         <span>Automation</span>
     </h3>
 </doc-anchor-target>
-<p>If VSPreview is too complicated to setup, you can use <a href="https://github.com/McBaws/comp">McBaws&#x27; script</a> to automatically generate the comparisons for you. However, this script is more limited compared to VSPreview.</p>
+<p>If VSPreview is too complicated to set up, you can use <a href="https://github.com/McBaws/comp">McBaws&#x27; script</a> to automatically generate the comparisons for you. However, this script is more limited compared to VSPreview.</p>
 
                                 
                                 <!-- Required only on API pages -->
