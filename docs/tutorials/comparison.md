@@ -19,7 +19,7 @@ VapourSynth is an open-source video processing framework. It handles all of your
 #### Dependencies
 
 - [Python 3.13.x](https://www.python.org/downloads/) - *Download the latest 3.13.x version at the bottom and select `Add python.exe to PATH` during installation*
-- [Git](https://gitforwindows.org/) - *Spam next during installation*
+- [Git](https://gitforwindows.org/) - *Repeatedly click next during installation*
 
 #### Installation
 
@@ -90,7 +90,7 @@ from vspreview import set_output
 ## Place any additional dependencies you want to use in your comp here
 ## <End of additional dependencies>
 
-## File paths: Hold shift and right-click your file, select copy as path, and paste it here. For NF WEB-DLs change core.lsmas.LWLibavSource to core.ffms2.Source
+## File paths: Hold Shift and Right-click your file, select copy as path, and paste it here. For NF WEB-DLs change core.lsmas.LWLibavSource to core.ffms2.Source
 clip1 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv", rap_verification=False)
 clip2 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv", rap_verification=False)
 clip3 = core.lsmas.LWLibavSource(r"C:\Paste\File\Path\Here.mkv", rap_verification=False)
@@ -167,7 +167,7 @@ clip1 = core.vivtc.VDecimate(clip1)
 Crops the source video by *n* pixels from the selected side. For example, `left=20` will remove 20 horizontal pixels starting from the left side. *This should be used on sources that use letterboxing or other form of borders.*
 
 !!!warning
-If you are cropping with odd numbers, you will need to convert your clip to 16-bit depth with 4:4:4 chroma subsampling. (see [Color & contrast](#color-contrast-depth-tonemapping-range-gamma-matrix-drc) -> *Depth*).
+If you are cropping with odd numbers, you will need to convert your clip to 16-bit depth with 4:4:4 chroma subsampling. (see [Color & contrast](#color--contrast-depth-debanding-tonemapping-gamma-color-spaces-drc) -> *Depth*).
 !!!
 
 ```py
@@ -374,7 +374,7 @@ To run your comparison script, launch a terminal window in your working director
 vspreview comp.py
 ```
 
-Alternatively, you can create a create a `comp.bat` file, replacing `C:\path\to\comp.py` with the exact file path to your script:
+Alternatively, you can create a `comp.bat` file, replacing `C:\path\to\comp.py` with the exact file path to your script:
 
 ```powershell
 vspreview "C:\path\to\comp.py"
@@ -424,17 +424,101 @@ If you wish to manually set your keybinds, you can find them under *Settings* ->
 
 4. Select the frames to be uploaded. There are multiple methods to doing so:
    - **Manual:** Scrub through the video and mark each frame using `Ctrl`+`Space`
-   - **Automatic:** Specify am amount of random frames in the *Plugin* menu. You may choose to use this feature alongside capturing frames manually
+   - **Automatic:** Specify an amount of random frames in the *Plugin* menu. You may choose to use this feature alongside capturing frames manually
    - Frames should ideally show a variety of scenarios (e.g. light/dark, static/high-motion, flat/grainy, etc.). Particularly, you may want to capture scenes with on-screen text and bright reds (if possible).
 
-5. Hit the *Start Upload* button. VSPreview will automatically screenshot all selected frames and upload a comparsion to [slow.pics](https://slow.pics)
+5. Hit the *Start Upload* button. VSPreview will automatically screenshot all selected frames and upload a comparison to [slow.pics](https://slow.pics)
 
 !!!warning
 We don't recommend using the dark/light frames feature, as it currently has many issues.
 !!!
 
+## Choosing Sources (Anime)
+**The following will help make your comparison as effective as possible**
+- Include every available BD, you generally will need to check U2 (Private tracker)
+- If 2 sources have identical video, only include 1 and label it as such (eg JPN/USA BD)
+- We generally recommend picking episode 2 to ensure both the OP and ED are shown
+- Include at least 1 web source when available
+- Include all relevant encodes, see below
+
+==- Source Hierarchy
++++ Tier 1
+**These sources should always be included**
+- **Any BD/WEB fansub release**
+- Akatomba-Raws
+- Beatrice-Raws
+- H-Enc
+- HQR
+- Kagura
+- Kawaiika-Raws
+- km
+- Kuroi-raws
+- mottoj
+- NanoAlchemist
+- neko-raws
+- Raws-Maji/KnK
+- Salender-Raws
+- SCY
+- Seicher
+- sergey_krs
+- SOFCJ-Raws
+- UQW
+- Urotsuki
+- VCB-Studio
+- YURASUKA
+- Yurasyk/Chyrka
+- Yousei-raws
+- Zagzad
+- `=^_^=`/frost
+
++++ Tier 2
+**These sources should be included when the previous tier is not available, or when the only existing muxes use them**
+- Almighty
+- ANK-Raws
+- CBM
+- DmonHiro
+- IrizaRaws
+- iAHD
+- jsum
+- Koten_Gars
+- kuchikirukia
+- Lowpower-Raws
+- moscowgolem
+- Moozzi2
+- philosophy-raws
+- ReinForce
+- SEV
+- Snow-Raws
+- UCCUSS
+
++++ Tier 3
+**These sources should never be included as they provide no value**
+- **Any mini-encode**
+- **Any re-encode**
+- 7³ACG
+- AI-RAWS
+- Centaurea-Raws
+- DarkDream
+- DBD-Raws
+- Deadmau- RAWS
+- FY-Raws
+- GHOST
+- Salieri
+- Shiniori-Raws
+
++++ Web
+**Generally you will only need 1 web source in the comparison, which should be picked in the following order**
+1. Crunchyroll (CR) - Should be the latest 8Mbps stream, if not publicly available [check this list](https://bin.theindex.moe/?c7a22bd18ce6d196#9Uxu6xHeZbYTV1wkM3FWhebLiPdUx37XkBQzF7CBvhHG)
+1. Disney+ (DSNP)
+1. Netflix (NF)
+1. Animation Digital Network (ADN)
+1. Amazon (AMZN)
+1. HIDIVE (HIDI)
+
+==-
+
 ## Additional Scripts
 
 ### Automation
 
-If VSPreview is too complicated to setup, you can use [McBaws' script](https://github.com/McBaws/comp) to automatically generate the comparisons for you. However, this script is more limited compared to VSPreview.
+If VSPreview is too complicated to set up, you can use [McBaws' script](https://github.com/McBaws/comp) to automatically generate the comparisons for you. However, this script is more limited compared to VSPreview.
