@@ -82,9 +82,8 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 ```py
 ## Dependencies: Allows vspreview to run [required; do not remove]
 import vstools
-from vstools import vs, core
+from vstools import vs, core, set_output
 from vskernels import Hermite, EwaLanczos
-from vspreview import set_output
 
 ## <Additional dependencies>
 ## Place any additional dependencies you want to use in your comp here
