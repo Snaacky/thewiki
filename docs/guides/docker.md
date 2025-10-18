@@ -187,8 +187,6 @@ services:
     volumes:
       - './radarr:/config'
       - '/home/user/data:/data'
-    ports:
-      - 7878:7878
     networks:
       - guide
     restart: unless-stopped
