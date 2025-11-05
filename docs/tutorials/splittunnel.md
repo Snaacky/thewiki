@@ -13,30 +13,27 @@ This guide can be used to achieve whitelist split tunneling on any Wireguard VPN
 
 ## Required
 
-1. [WireSockUI](https://github.com/wiresock/WireSockUI/releases)
+1. [Wiresock Secure Connect](https://www.wiresock.net/wiresock-secure-connect/download)
 2. Torrent Client (qBittorrent preferred)
 3. Your provider's wireguard .conf file
 
 ## Steps
 
-1. Download WireSockUI. Extract the exe and config file to a folder where it wont be deleted by accident
+1. Download and install Wiresock Secure Connect
 2. Run the program
-3. Click the settings icon around the bottom middle of the window
-4. In settings, enable `Virtual Network Adapter mode` and click save
-5. Now click Add Tunnel (bottom left). Browse for your VPN configuration file
-6. Select your configuration and click Edit at the bottom right of the window
-7. A text file should open. Add `AllowedApps = qbittorrent` to the bottom of this file, then click Save. If you would like to add more programs, add a comma and a space. For example, `AllowedApps = qbittorrent, firefox`
-  ![image](https://github.com/guyman624/thewiki/assets/82007920/d2ba5e4f-ecdd-422e-b645-dd8d76635861)
-7a. If instead of whitlisting only qBittorrent, you would prefer blacklisting other applications, for example have everything route through the VPN except the browser, you can instead use something like `DisallowedApps = firefox` or `DisallowedApps = chrome`
+3. Click the settings icon around the bottom right corner.
+4. In settings, enable `Virtual Adapter Mode` and click restart ![image](https://github.com/user-attachments/assets/8328d7de-fbf4-472c-b8e9-f425ac368636)
+5. Now click Import Configuration.
+6. Select your configuration and click Edit at the top right of the window
+7. Scroll down until you see "Tunneled Applications" and type the exe name of the program you would like to be inside the VPN. Clicking the Windows icon will bring up a menu with all currently running programs. ![image](https://github.com/user-attachments/assets/8fa47af1-788f-4a78-912e-0b0e6c3abb0f)
+8. Save, close the configuration window and enable the VPN.
 
-8. Activate the tunnel
-
-At this point, you should be torrenting through the VPN as long as WireSockUI is running and Activated. However, you may be concered about accidentally disabling the VPN while a torrent is running. To fix this, we can change a setting in qBittorrent.
+At this point, you should be torrenting through the VPN as long as Wiresock Secure Connect is running and Activated. However, you may be concered about accidentally disabling the VPN while a torrent is running. To fix this, we can change a setting in qBittorrent.
 
 1. Open qBittorrent settings
 2. On the left hand bar, click Advanced
 3. Look for `Network Interface`. The default setting is `Any Interface`
-4. Expand the drop down. If you are lucky, the correct interface will be `Local Area Connection`. If you have more than one `Local Area Connection`, continue on. If you don't, skip to step 8
+4. Expand the drop down. If you are lucky, the correct interface will be `WireSock Virtual Adapter`. If you don't see this, continue on. Otherwise, skip to step 8.
 5. Press Windows + R key together. Paste in `ncpa.cpl`
 6. In the window that shows up, you should see all your network adapters, including virtual ones. Find the one that says `WireSock Virtual Adapter` on the third line. Write down it's name, or rename it to WireSock
   ![image](https://github.com/guyman624/thewiki/assets/82007920/f17e1c3c-1ca8-4d3d-b98b-edce36b5b6da)
