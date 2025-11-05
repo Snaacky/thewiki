@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813912920117">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815691032782">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.813912920117" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.815691032782" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813912920117" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.815691032782" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813912920117" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.815691032782" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -177,7 +177,7 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li><a href="https://github.com/wiresock/WireSockUI/releases">WireSockUI</a></li>
+<li><a href="https://www.wiresock.net/wiresock-secure-connect/download">Wiresock Secure Connect</a></li>
 <li>Torrent Client (qBittorrent preferred)</li>
 <li>Your provider&#x27;s wireguard .conf file</li>
 </ol>
@@ -188,23 +188,21 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Download WireSockUI. Extract the exe and config file to a folder where it wont be deleted by accident</li>
+<li>Download and install Wiresock Secure Connect</li>
 <li>Run the program</li>
-<li>Click the settings icon around the bottom middle of the window</li>
-<li>In settings, enable <code v-pre>Virtual Network Adapter mode</code> and click save</li>
-<li>Now click Add Tunnel (bottom left). Browse for your VPN configuration file</li>
-<li>Select your configuration and click Edit at the bottom right of the window</li>
-<li>A text file should open. Add <code v-pre>AllowedApps = qbittorrent</code> to the bottom of this file, then click Save. If you would like to add more programs, add a comma and a space. For example, <code v-pre>AllowedApps = qbittorrent, firefox</code>
-<img src="https://github.com/guyman624/thewiki/assets/82007920/d2ba5e4f-ecdd-422e-b645-dd8d76635861" alt="image" />
-7a. If instead of whitlisting only qBittorrent, you would prefer blacklisting other applications, for example have everything route through the VPN except the browser, you can instead use something like <code v-pre>DisallowedApps = firefox</code> or <code v-pre>DisallowedApps = chrome</code></li>
-<li>Activate the tunnel</li>
+<li>Click the settings icon around the bottom right corner.</li>
+<li>In settings, enable <code v-pre>Virtual Adapter Mode</code> and click restart <img src="https://github.com/user-attachments/assets/8328d7de-fbf4-472c-b8e9-f425ac368636" alt="image" /></li>
+<li>Now click Import Configuration.</li>
+<li>Select your configuration and click <code v-pre>Edit</code> at the top right of the window</li>
+<li>Scroll down until you see <code v-pre>Tunneled Applications</code> and type the exe name of the program you would like to be inside the VPN. Clicking the Windows icon will bring up a menu with all currently running programs. <img src="https://github.com/user-attachments/assets/8fa47af1-788f-4a78-912e-0b0e6c3abb0f" alt="image" /></li>
+<li>Save, close the configuration window and enable the VPN.</li>
 </ol>
-<p>At this point, you should be torrenting through the VPN as long as WireSockUI is running and Activated. However, you may be concered about accidentally disabling the VPN while a torrent is running. To fix this, we can change a setting in qBittorrent.</p>
+<p>At this point, you should be torrenting through the VPN as long as Wiresock Secure Connect is running and Activated. However, you may be concered about accidentally disabling the VPN while a torrent is running. To fix this, we can change a setting in qBittorrent.</p>
 <ol>
 <li>Open qBittorrent settings</li>
 <li>On the left hand bar, click Advanced</li>
 <li>Look for <code v-pre>Network Interface</code>. The default setting is <code v-pre>Any Interface</code></li>
-<li>Expand the drop down. If you are lucky, the correct interface will be <code v-pre>Local Area Connection</code>. If you have more than one <code v-pre>Local Area Connection</code>, continue on. If you don&#x27;t, skip to step 8</li>
+<li>Expand the drop down. If you are lucky, the correct interface will be <code v-pre>WireSock Virtual Adapter</code> or the same as your .conf file. If you don&#x27;t see this, continue on. Otherwise, skip to step 8.</li>
 <li>Press Windows + R key together. Paste in <code v-pre>ncpa.cpl</code></li>
 <li>In the window that shows up, you should see all your network adapters, including virtual ones. Find the one that says <code v-pre>WireSock Virtual Adapter</code> on the third line. Write down it&#x27;s name, or rename it to WireSock
 <img src="https://github.com/guyman624/thewiki/assets/82007920/f17e1c3c-1ca8-4d3d-b98b-edce36b5b6da" alt="image" /></li>
