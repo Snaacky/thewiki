@@ -8,13 +8,13 @@ order: -2
 
 # Naming
 
-This guide aims to somewhat standardize naming schemes used for Anime in an effort to make them work beyond File Explorer and work well with Usenet, XDCC, automation software, and media servers.
+This guide aims to somewhat standardize naming schemes used for Anime in an effort to make them work beyond File Explorer and work well with Usenet, automation software, and media servers.
 **Everything mentioned here aims to work with everything and if something isn't mentioned, it's very likely because it breaks support for one thing or another.** Adopting all of it will ensure compatibility with basically everything, for example, not only will your releases be snatched by auto-downloaders but will also be parsed and matched accurately and people can drop your releases in media servers without having to rename and break seeding.
 
 ## Why should you bother?
 
 1. Commonly used anime naming looks like gibberish to both humans and machines alike.
-    
+
     Example 1: `[SubsPlease] Hikari no Ou - 14 (1080p) [48F1910E].mkv`
     - First look tells me it's a show called Hikari no Ou by SubsPlease and it's 1080p.
     - But where is this from? BluRay? DVD? WEB-DL? WEBRip? Oh web-dl? Which one?
@@ -36,7 +36,7 @@ This guide aims to somewhat standardize naming schemes used for Anime in an effo
     - What audio/video codec is in this? My TV can only play XYZ.
 
     As a thought excercise, here's what it looks like to both humans and machines: `[SomeGroup] Some Show - 17 [CRC].mkv`
-    
+
     The example is a real release which I've simply replaced the names to simulate how it looks to someone who's not acquainted with the whole anime scene. Now tell me:
 
     - What source is it?
@@ -46,7 +46,7 @@ This guide aims to somewhat standardize naming schemes used for Anime in an effo
     - Is it an encode or a remux?
 
     Now let's try the same thought excercise on something that's actually named properly:
-    
+
     ```
     Some.Show.S03E04.1080p.CR.WEB-DL.Dual-Audio.AAC2.0.H.264-SomeGroup.mkv
     [SomeGroup] Some Show - S03E04 (BD 1080p HEVC Opus) [Dual Audio] [CF1029D9].mkv
@@ -79,7 +79,7 @@ This guide aims to somewhat standardize naming schemes used for Anime in an effo
 - Must contain resolution, i.e, `1080`, `720`, `576` or `480` together with scan type, i.e, `p` if the content is fully Progressive or `i` if it’s Interlaced. So finally it looks like this: `1080p`, `720p`, `576p`, `480i`. Different aspect ratios do not change this resolution, e.g. `1440x1080` and `1920x800` are both still 1080p.
 - Must mention the Video and Audio Codec. There are cases where you have two audio tracks with two different codecs, in which case you must only put the codec of the original/primary/default audio track in the filename.
 - Always add a group tag to your release, ideally placing it at the end for both easier parsing and human readability.
-- You should use `.` or `-` as a delimiter.
+- You should use a space (` `), `.`, or `-` as a delimiter.
 - Limit the use of special characters or characters that need to be escaped. Ideally, don't use any special characters and limit yourself to `a-z`,`A-Z`, and `0-9`. E.g, write `MASH` instead of `M*A*S*H`.
 
 ### Filename
