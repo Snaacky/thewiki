@@ -79,7 +79,7 @@ This guide aims to somewhat standardize naming schemes used for Anime in an effo
 - Must contain resolution, i.e, `1080`, `720`, `576` or `480` together with scan type, i.e, `p` if the content is fully Progressive or `i` if it’s Interlaced. So finally it looks like this: `1080p`, `720p`, `576p`, `480i`. Different aspect ratios do not change this resolution, e.g. `1440x1080` and `1920x800` are both still 1080p.
 - Must mention the Video and Audio Codec. There are cases where you have two audio tracks with two different codecs, in which case you must only put the codec of the original/primary/default audio track in the filename.
 - Always add a group tag to your release, ideally placing it at the end for both easier parsing and human readability.
-- You should use a space (` `), `.`, or `-` as a delimiter.
+- You should use a `.`, `-`, or space (` `) as a delimiter.
 - Limit the use of special characters or characters that need to be escaped. Ideally, don't use any special characters and limit yourself to `a-z`,`A-Z`, and `0-9`. E.g, write `MASH` instead of `M*A*S*H`.
 
 ### Filename
