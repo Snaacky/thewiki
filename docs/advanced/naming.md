@@ -12,7 +12,7 @@ This guide aims to somewhat standardize naming schemes used for anime
 in an effort to make them not just File Explorer-friendly,
 but also work well with automation software and media servers.
 
-**The goal of every recommendation given her is to ensure it works with both automation software _and_ file explorers.**
+**The goal of every recommendation given here is to ensure it works with both automation software _and_ file explorers.**
 **If something isn't mentioned, it's very likely because it breaks support for one or the other.**
 
 Adopting all of these suggestions will ensure compatibility with basically everything.
