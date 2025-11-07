@@ -8,7 +8,7 @@ order: -2
 
 # Naming
 
-This guide aims to somewhat standardize naming schemes used for Anime in an effort to make them work beyond File Explorer and work well with Usenet, automation software, and media servers.
+This guide aims to somewhat standardize naming schemes used for anime in an effort to make them work beyond File Explorer and work well with Usenet, automation software, and media servers.
 **Everything mentioned here aims to work with everything and if something isn't mentioned, it's very likely because it breaks support for one thing or another.** Adopting all of it will ensure compatibility with basically everything, for example, not only will your releases be snatched by auto-downloaders but will also be parsed and matched accurately and people can drop your releases in media servers without having to rename and break seeding.
 
 ## Why should you bother?
