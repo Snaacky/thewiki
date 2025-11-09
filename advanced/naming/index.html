@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815691032782">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815985820265">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.815691032782" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.815985820265" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.815691032782" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.815985820265" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.815691032782" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.815985820265" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -157,8 +157,15 @@
         <span>Naming</span>
     </h1>
 </doc-anchor-target>
-<p>This guide aims to somewhat standardize naming schemes used for Anime in an effort to make them work beyond File Explorer and work well with Usenet, XDCC, automation software, and media servers.
-<strong>Everything mentioned here aims to work with everything and if something isn&#x27;t mentioned, it&#x27;s very likely because it breaks support for one thing or another.</strong> Adopting all of it will ensure compatibility with basically everything, for example, not only will your releases be snatched by auto-downloaders but will also be parsed and matched accurately and people can drop your releases in media servers without having to rename and break seeding.</p>
+<p>This guide aims to somewhat standardize naming schemes used for anime
+in an effort to make them not just File Explorer-friendly,
+but also work well with automation software and media servers.</p>
+<p><strong>The goal of every recommendation given here is to ensure it works with both automation software <em>and</em> file explorers.</strong>
+<strong>If something isn&#x27;t mentioned, it&#x27;s very likely because it breaks support for one or the other.</strong></p>
+<p>Adopting all of these suggestions will ensure compatibility with basically everything.
+For example, not only will auto-downloaders snatch your releases,
+but they will also be parsed and matched accurately in media servers
+without the need to rename files or otherwise break seeding.</p>
 <doc-anchor-target id="why-should-you-bother">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#why-should-you-bother">#</doc-anchor-trigger>
@@ -244,7 +251,7 @@ Some.Show.S03E04.1080p.BluRay.Remux.Dual-Audio.FLAC2.0.H.264-SomeGroup.mkv</code
 <li>Must contain resolution, i.e, <code v-pre>1080</code>, <code v-pre>720</code>, <code v-pre>576</code> or <code v-pre>480</code> together with scan type, i.e, <code v-pre>p</code> if the content is fully Progressive or <code v-pre>i</code> if it’s Interlaced. So finally it looks like this: <code v-pre>1080p</code>, <code v-pre>720p</code>, <code v-pre>576p</code>, <code v-pre>480i</code>. Different aspect ratios do not change this resolution, e.g. <code v-pre>1440x1080</code> and <code v-pre>1920x800</code> are both still 1080p.</li>
 <li>Must mention the Video and Audio Codec. There are cases where you have two audio tracks with two different codecs, in which case you must only put the codec of the original/primary/default audio track in the filename.</li>
 <li>Always add a group tag to your release, ideally placing it at the end for both easier parsing and human readability.</li>
-<li>You should use <code v-pre>.</code> or <code v-pre>-</code> as a delimiter.</li>
+<li>You should use a <code v-pre>.</code>, <code v-pre>-</code>, or space (<code v-pre> </code>) as a delimiter.</li>
 <li>Limit the use of special characters or characters that need to be escaped. Ideally, don&#x27;t use any special characters and limit yourself to <code v-pre>a-z</code>,<code v-pre>A-Z</code>, and <code v-pre>0-9</code>. E.g, write <code v-pre>MASH</code> instead of <code v-pre>M*A*S*H</code>.</li>
 </ul>
 <doc-anchor-target id="filename">
