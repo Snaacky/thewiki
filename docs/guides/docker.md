@@ -8,16 +8,21 @@ author:
     avatar: "https://github.com/Snaacky/thewiki/assets/78981416/2045b3c7-90a5-40ce-9d81-a81baa421227"
     link: "https://github.com/guyman624"
   - name: "bankai_phonk"
+  - name: "perry"
 ---
 
 # Setting up a Docker automation stack
 
 Docker is a piece of software that allows you to virtualize applications into containers, so that you don't have to deal with dependency
-management and can carry around a solution that's easily deployable anywhere you go.
+management, and can carry around a solution that's easily deployable anywhere you go.
+
+It is especially useful in this case, as we will deploy an entire automation stack from a single config file! Docker is also a premier choice for home lab/server uses, but can be used on a desktop PC as well.
 
 This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a
 VPN with a killswitch, Sonarr, Radarr, and Jackett. While we've opted for Jackett here, you could also switch it out for Prowlarr if you'd
 prefer something more flexible. It's compose file is very similar to Radarr/Sonarr.
+
+The basic idea is that we will create a single "compose" file that tells the Docker engine what containers we want to download, and what configuration options we want to set for each one. A sample compose file is presented later in this guide, but we recommend reading through it, as you will need to change parts of it to match your setup. Take special note of `environment` variables, as those are essentially your settings options, and will be important in later steps. Some pages linked in this guide also contain instructions for using `docker run` commands, but we do not recommend this as it is more difficult to maintain.
 
 ## Installing Docker
 
@@ -25,25 +30,20 @@ First we need to install Docker onto our system. Windows users can do so by down
 [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/), while Linux users can follow the instructions outlined
 [here](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository), after which they can proceed onto the
 [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall).
-
+Depending on how you've installed and configured Docker, you may need to append `sudo` before the commands listed in the rest of this guide.
 ## Setting up a Docker network
 
 Now we'll be setting up a network so that our containers can communicate with each other. This step's quite simple, it's just `docker network create guide`. A list of all your current networks can be seen with `docker network ls`.
 
-## Generating a Wireguard configuration file
+## Preparing the VPN
 
-For maximum privacy and security we'll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Jackett however won't go
-through that, as some trackers and indexers might not like it if you send requests from a random non-whitelisted IP.
+For maximum privacy and security we'll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Jackett however won't go through that, as some trackers and indexers might not like it if you send requests from a random non-whitelisted IP. This guide reccomends Gluetun, but the process is similar for other VPN container options.
 
-The process for getting a configuration file is different from provider to provider, so we'd recommend looking around your provider's website,
-forum and support articles if you can't find it immediately.
-
-Once you've generated a configuration file we'd also recommend carrying out port forwarding so that you're connectable.
+What we need is a configuration file, obtained from your chosen VPN provider. Wireguard is preferable and recommended, but OpenVPN is technically an option as well. This configuration file contains the info needed to allow Gluetun, (or your VPN client of choice,) to connect to your VPN provider's servers. The process for getting a config file varies based on your provider, so we recommend searching for it online, or your provider's website. [This page](https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers) also contains per-provider instructions for getting a config file, as well as some other configuration that we will cover shortly.
 
 ## Deploying everything using `docker compose`
 
-Now that we've gotten everything ready we can finally set up the stack. Paste the following into a file called `docker-compose.yml`. We'd recommend
-this file being a directory that is purely for this Docker stack, such as `/home/user/projects/automation/`.
+Now that we've gotten everything ready we can finally set up the stack. Paste the following into a file called `compose.yaml`. We'd recommend this file being a directory that is purely for this Docker stack, such as `/home/user/projects/automation/`. As a note, you will need to be working from inside this directory when running `docker compose` commands.
 
 We would also recommend sorting your media-related folders in the following way for ease of use:
 - `/home/user/data/torrents/` - where you torrent client will save files.
@@ -59,65 +59,55 @@ Paths for Docker are extremely important as configuring them incorrectly can bre
 ```yml
 # Some notes about some important things so that they don't need to be repeated for every container.
 #
-# 1. The usage of a VPN
 #
-# The usenet and torrent clients sit behind a Wireguard VPN, if you don't want to mimic that setup, you can remove the Wireguard container.
-#
-# However if you do remove it you'll need to edit the file a bit for everything to work.
-#
-# Firstly, remove `depends_on:` and `network_mode:` from the Transmission and SABnzbd containers. After that you'll need to move the `ports:`
-# section from the Wireguard container and add it to the Transmission and SABnzbd containers. The unused "default Wireguard listening port"
-# line can also be safely removed.
-#
-# 2. Docker Compose's `volume parameter`
+# 1. Docker Compose's `volume parameter`
 #
 # The `volume` parameter lets you mount directories from your host system to the Docker container so that information can persist upon bringing a container
-# down or up.
+# down or up. Create these directories where you want and add them for each container following the template.
+# See (https://docs.docker.com/engine/storage/) for more information on giving your containers access to storage locations.
+# Generally, the structure follows a `/path/to/your/data:/path/your/container/sees` structure, where the path after the colon is how the folders you add will appear from the perspective of your container.
 #
 # Following the recommend directory structure from before, we've already filled out the volume mount settings, so that every service will have it's
 # own directory for it's compose files, all in the form of `/home/user/projects/automation/<service name>`.
 #
 # This can of course be changed if you're experienced with Docker and would prefer to use custom mount locations.
 #
-# 3. Values for PUID and PGID
+# 2. Values for PUID and PGID
 #
 # These values refer to the host OS user's UID and GID, respectively. You can find this out by entering `id $user` in your terminal.
 #
-# 4. Timezones
+# 3. Timezones
 #
 # All instances of `TZ` in the `environment` section should be changed to `TZ=Your/Timezone`. To find your timezone and the correct way to format it
 # for Docker, you can check this Wikipedia article (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) and get the information
 # from the "TZ identifier" column
+#
+# 4. Gluetun environment variables and setup instructions for each provider can be found at 
+# (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
+# To help with readability, settings have been filled out to roughly match a configuration for ProtonVPN.
 
 ---
 version: "3.8"
 services:
-  wireguard:
-    container_name: wireguard
-    image: linuxserver/wireguard
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
+  gluetun:
+    container_name: gluetun
+    image: qmcgaw/gluetun:latest
+    environment: # You will need to edit these settings based on the instructions listed for your provider. See above.
+      - VPN_SERVICE_PROVIDER= # Left blank intentionally. Put your provider here!
+      - VPN_TYPE=wireguard # Do not change this unless you want to use OpenVPN
+      - WIREGUARD_PRIVATE_KEY= # See instructions for how to find this!
+      - WIREGUARD_ADDRESS= # Same as above!
+      - VPN_PORT_FORWARDING=on # This is mostly only useful for ProtonVPN
+      - VPN_FORWARD_ONLY=on # Same as above!
+      - VPN_PORT_FORWARDING_UP_COMMAND= # This can be useful to dynamically update your forwarded port in other programs if it isn't static.
     cap_add:
       - NET_ADMIN
-      - SYS_MODULE
-    sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1
-      - net.ipv6.conf.all.disable_ipv6=0
-    ports: # Port openings are handled through the VPN container when a VPN sits in front of the container.
-      - '51820:51820/udp' # Default WireGuard listening port
-      - '8080:8080' # SABnzbd UI
-      - '9091:9091' # Transmission ui
-      - '7474:7474' # Autobrr
-    dns:
-      - 1.1.1.1
-    volumes:
-      - './wireguard:/config'
-      - '/lib/modules:/lib/modules' # Don't touch this unless you know what you're doing!
-    networks:
-      - guide
-    restart: unless-stopped
+      - NET_BIND_SERVICE
+      - NET_RAW
+    ports: # Anything using your VPN will need its ports added here to be reachable. 
+      - 8123:8123 # Qbittorrent WebUI
+      - 8080:8080 # SABnzbd UI
+      - 7474:7474 # Autobrr
   sabnzbd:
     container_name: sabnzbd
     image: lscr.io/linuxserver/sabnzbd:latest
@@ -130,24 +120,26 @@ services:
     volumes:
       - './sabnzbd:/config'
       - '/home/user/data:/data'
-    network_mode: "service:wireguard"
+    network_mode: container:gluetun
     restart: unless-stopped
-  transmission:
-    image: lscr.io/linuxserver/transmission:latest
-    container_name: transmission
+  qbittorrent:
+    container_name: qbittorrent
+    image: linuxserver/qbittorrent:latest
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
-      - PEERPORT=1000 # Replace this with the port that you forwarded during the `Generating a Wireguard configuration file` step.
-      - TRANSMISSION_RPC_PORT=9091
-    depends_on:
-      - wireguard
-    volumes:
-      - './transmission:/config'
-      - '/home/user/data:/data'
-    network_mode: "service:wireguard"
+      - TZ=Etc/UTC # Change this based on your timezone
+      - WEBUI_PORT=8123
+      - TORRENTING_PORT= # Set this to your forwarded port, or delete it and use VPN_PORT_FORWARDING_UP_COMMAND
+    ports:
+      - 8123:8123
+    network_mode: container:gluetun
+    depdens_on:
+      - gluetun
     restart: unless-stopped
+    volumes:
+      - ./qbittorrent:/config
+      - /home/user/data:/data
   autobrr:
     container_name: autobrr
     image: ghcr.io/autobrr/autobrr:latest
@@ -155,10 +147,10 @@ services:
     environment:
       - TZ=${TZ}
     depends_on:
-      - wireguard
+      - gluetun
     volumes:
       - './autobrr:/config'
-    network_mode: "service:wireguard"
+    network_mode: container:gluetun
     restart: unless-stopped
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
@@ -219,13 +211,17 @@ in a detached mode, but since it's your first time running them, Docker will pul
 
 Once all of that's done, you'll want to run `docker compose down`, which will shut down each of the containers.
 
-Now you'll want to take that Wireguard configuration file you got from earlier, rename it to `wg0.conf` and place it in
-`/home/user/projects/automation/wireguard` (newly created folder after we deployed the containers). Your VPN will now be functional the next time
-you run your stack!
+By running in detached mode, we also block any terminal output from our containers. Some of these outputs contain vital information for setting up your container the first time, specifically the output from Qbittorrent. To view it, run `docker compose up yourcontainer`. Perform any steps needed with the window still open, as closing it will stop the container. To start it normally, run `docker compose up -d` again, or `docker compose up -d yourcontainer`. `docker compose start` can also be used to start containers that have already been created and do not need updating, but `docker compose up -d` is generally recommended by this guide to avoid issues. 
+
+We recommend looking at the `man` page or official documentation for Docker to familiarize yourself with available commands. `docker pull`, `docker ps`, and `docker system prune` can be useful, for example. See documentation for info on what these do!
 
 ## Setting up a killswitch
 
-While we've gotten our VPN working, we still don't have a killswitch yet. That's where this bit comes in.
+The information below is left only as a resource for users deviating from this guide and using a Wireguard container for their vpn. Gluetun contains killswitch functionality out of the box and should not require any manual intervention.
+
+DO NOT FOLLOW THESE SETTINGS IF YOU ARE USING GLUETUN AS ADVISED!
+
+If using a Wireguard container instead of Gluetun, a killswitch will not yet be implemented. That's where this bit comes in.
 
 ```bash
 PostUp = DROUTE=$(ip route | grep default | awk '{print $3}'); HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; ip route add $HOMENET3 via $DROUTE; ip route add $HOMENET2 via $DROUTE; ip route add $HOMENET via $DROUTE; iptables -I OUTPUT -d $HOMENET -j ACCEPT; iptables -A OUTPUT -d $HOMENET2 -j ACCEPT; iptables -A OUTPUT -d $HOMENET3 -j ACCEPT; iptables -A OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT
@@ -256,9 +252,9 @@ PersistentKeepalive = 15
 
 Once you've done that run `docker compose up -d` once more and you're all ready to go.
 
-Note that if you use qBittorrent and it's web UI you can optionally bind all connections to the Wireguard network inteface. This can be done by
+Note that if you use qBittorrent and its web UI you can optionally bind all connections to the Wireguard network inteface. This can be done by
 going to settings and navigating to the advanced tab all the way on the right. You should immediately see the options to bind your connections to a
-network interface, and to optionally bind your connections to the VPN IP.
+network interface, and to optionally bind your connections to the VPN IP. If using Gluetun, this should show up as `tun0`.
 
 ## Adding your clients to Sonarr and Radarr
 
@@ -268,3 +264,9 @@ Deluge, etc.)
 For the hostname it would be your local network address, which you can [find like so on Windows](https://www.whatismybrowser.com/detect/what-is-my-local-ip-address) and [like so on Linux](https://www.ionos.com/digitalguide/hosting/technical-matters/get-linux-ip-address/).
 
 The port would just be whatever was on the left hand side of the `port` declarations in the Compose file.
+
+## Finishing touches
+
+As stated previously in this guide, we highly recommend familiarizing yourself further with Docker and its commands. The purpose of this guide is to get you up and running as fast as possible, while minimizing areas of confusion. Docker, and Docker Compose, are very powerful, and can be used to run an entire home media setup. There are several sections in this guide that require user input, so make sure to check those first if you are having trouble!
+
+The `compose.yaml` file provided will create seven total containers, and all of these have their own documentation pages available online. You should not have to visit these, but it is worth keeping them bookmarked in case of future issues. Searching for the `image` name listed is usually the most direct way to locate them if needed. Questions or support requests for this guide should be directed to the #questions channel in Snackbox.
