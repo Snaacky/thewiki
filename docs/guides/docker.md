@@ -18,11 +18,13 @@ management, and can carry around a solution that's easily deployable anywhere yo
 
 It is especially useful in this case, as we will deploy an entire automation stack from a single config file! Docker is also a premier choice for home lab/server uses, but can be used on a desktop PC as well.
 
-This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a
-VPN with a killswitch, Sonarr, Radarr, and Jackett. While we've opted for Jackett here, you could also switch it out for Prowlarr if you'd
-prefer something more flexible. It's compose file is very similar to Radarr/Sonarr.
-
 The basic idea is that we will create a single "compose" file that tells the Docker engine what containers we want to download, and what configuration options we want to set for each one. A sample compose file is presented later in this guide, but we recommend reading through it, as you will need to change parts of it to match your setup. Take special note of `environment` variables, as those are essentially your settings options, and will be important in later steps. Some pages linked in this guide also contain instructions for using `docker run` commands, but we do not recommend this as it is more difficult to maintain.
+
+This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a
+VPN with a killswitch, Sonarr, Radarr, Autobrr, and Jackett. While we've opted for Jackett here, you could also switch it out for Prowlarr if you'd
+prefer something more flexible. It's compose file is very similar to Radarr/Sonarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.
+
+This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
 
 ## Installing Docker
 
@@ -31,6 +33,7 @@ First we need to install Docker onto our system. Windows users can do so by down
 [here](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository), after which they can proceed onto the
 [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall).
 Depending on how you've installed and configured Docker, you may need to append `sudo` before the commands listed in the rest of this guide.
+
 ## Setting up a Docker network
 
 Now we'll be setting up a network so that our containers can communicate with each other. This step's quite simple, it's just `docker network create guide`. A list of all your current networks can be seen with `docker network ls`.
@@ -43,7 +46,7 @@ What we need is a configuration file, obtained from your chosen VPN provider. Wi
 
 ## Deploying everything using `docker compose`
 
-Now that we've gotten everything ready we can finally set up the stack. Paste the following into a file called `compose.yaml`. We'd recommend this file being a directory that is purely for this Docker stack, such as `/home/user/projects/automation/`. As a note, you will need to be working from inside this directory when running `docker compose` commands.
+Now that we've gotten everything ready we can finally set up the stack. Paste the following into a file called `compose.yaml`. We'd recommend this file being a directory that is purely for this Docker stack, such as `/home/user/projects/automation/`. As a note, you will need to be working from inside this directory when running `docker compose` commands. Please take the time to read the notes included in this file, as they have further instructions and will need to be completed for everything to function.
 
 We would also recommend sorting your media-related folders in the following way for ease of use:
 - `/home/user/data/torrents/` - where you torrent client will save files.
@@ -67,8 +70,8 @@ Paths for Docker are extremely important as configuring them incorrectly can bre
 # See (https://docs.docker.com/engine/storage/) for more information on giving your containers access to storage locations.
 # Generally, the structure follows a `/path/to/your/data:/path/your/container/sees` structure, where the path after the colon is how the folders you add will appear from the perspective of your container.
 #
-# Following the recommend directory structure from before, we've already filled out the volume mount settings, so that every service will have it's
-# own directory for it's compose files, all in the form of `/home/user/projects/automation/<service name>`.
+# Following the recommend directory structure from before, we've already filled out the volume mount settings, so that every service will have its
+# own directory for its compose files, all in the form of `/home/user/projects/automation/<service name>`.
 #
 # This can of course be changed if you're experienced with Docker and would prefer to use custom mount locations.
 #
@@ -82,8 +85,9 @@ Paths for Docker are extremely important as configuring them incorrectly can bre
 # for Docker, you can check this Wikipedia article (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) and get the information
 # from the "TZ identifier" column
 #
-# 4. Gluetun environment variables and setup instructions for each provider can be found at 
-# (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
+# 4. Gluetun and VPN providers
+#
+# environment variables and setup instructions for each provider can be found at (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
 # To help with readability, settings have been filled out to roughly match a configuration for ProtonVPN.
 
 ---
@@ -92,10 +96,10 @@ services:
   gluetun:
     container_name: gluetun
     image: qmcgaw/gluetun:latest
-    environment: # You will need to edit these settings based on the instructions listed for your provider. See above.
+    environment: # You will need to edit these settings based on the instructions listed for your provider. See above. Fields not needed for your provider can be removed.
       - VPN_SERVICE_PROVIDER= # Left blank intentionally. Put your provider here!
       - VPN_TYPE=wireguard # Do not change this unless you want to use OpenVPN
-      - WIREGUARD_PRIVATE_KEY= # See instructions for how to find this!
+      - WIREGUARD_PRIVATE_KEY= # See 4. Gluetun for how to find this!
       - WIREGUARD_ADDRESS= # Same as above!
       - VPN_PORT_FORWARDING=on # This is mostly only useful for ProtonVPN
       - VPN_FORWARD_ONLY=on # Same as above!
@@ -105,9 +109,11 @@ services:
       - NET_BIND_SERVICE
       - NET_RAW
     ports: # Anything using your VPN will need its ports added here to be reachable. 
-      - 8123:8123 # Qbittorrent WebUI
+      - 8123:8123 # qBittorrent WebUI
       - 8080:8080 # SABnzbd UI
       - 7474:7474 # Autobrr
+    networks: 
+      - guide
   sabnzbd:
     container_name: sabnzbd
     image: lscr.io/linuxserver/sabnzbd:latest
@@ -116,7 +122,7 @@ services:
       - PGID=1000
       - TZ=Europe/London
     depends_on:
-      - wireguard
+      - gluetun
     volumes:
       - './sabnzbd:/config'
       - '/home/user/data:/data'
@@ -140,6 +146,8 @@ services:
     volumes:
       - ./qbittorrent:/config
       - /home/user/data:/data
+    networks:
+      - guide
   autobrr:
     container_name: autobrr
     image: ghcr.io/autobrr/autobrr:latest
@@ -152,6 +160,8 @@ services:
       - './autobrr:/config'
     network_mode: container:gluetun
     restart: unless-stopped
+    networks:
+      - guide
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
@@ -252,21 +262,30 @@ PersistentKeepalive = 15
 
 Once you've done that run `docker compose up -d` once more and you're all ready to go.
 
-Note that if you use qBittorrent and its web UI you can optionally bind all connections to the Wireguard network inteface. This can be done by
+Note that if you use qBittorrent and its web UI you can optionally bind all connections to the VPN network inteface. This can be done by
 going to settings and navigating to the advanced tab all the way on the right. You should immediately see the options to bind your connections to a
 network interface, and to optionally bind your connections to the VPN IP. If using Gluetun, this should show up as `tun0`.
 
+## Accessing your containers
+
+Once everything is up and running, you should be able to access the Web UIs of your various Docker containers. Do so by opening a web browser and navigating to `http://ip:port`. For accessing a container on the same machine that's hosting it, `http://localhost:port` or `https://localhost:port` can be used. The `ip` field refers to the local machine ip (not your network's public ip) which can be found by running `ipconfig` on Windows and `ifconfig` or `ip address` on Linux. The `port` field is the port your container is configured to broadcast on, which is defined in `compose.yaml`. For example, qBittorrent will be at `http://localhost:8123` based on the file provided in this guide.
+
+Most setup from this point on will be done through the relevant Web UIs. 
+
 ## Adding your clients to Sonarr and Radarr
 
-This can be done by going to settings, navigating to download clients and picking whatever clients you use (SABnzbd, Transmission, qBitorrent,
-Deluge, etc.)
+Begin by pulling up Sonarr and Radarr in your browser as discussed in the previous step. We are going to give them the information needed to begin automation!
 
-For the hostname it would be your local network address, which you can [find like so on Windows](https://www.whatismybrowser.com/detect/what-is-my-local-ip-address) and [like so on Linux](https://www.ionos.com/digitalguide/hosting/technical-matters/get-linux-ip-address/).
+Go to settings, navigate to download clients, and pick whatever clients you use (SABnzbd, Transmission, qBitorrent, Deluge, etc.) Follow on-screen instructions as necessary. If unclear, the clients recommended and configured in this guide are qBittorrent and SABnzbd. You will also want to configure your indexers here if adding them directly. If using Jackett (or Prowlarr) you will need to configure those first, and then come back to add them.
 
-The port would just be whatever was on the left hand side of the `port` declarations in the Compose file.
+## Jackett and Autobrr
 
-## Finishing touches
+These programs sit in-between Sonarr/Radarr and your indexers, and take the burden of API engagement away from them. They take requests for content from Sonarr/Radarr and translate them into API calls for specific files. Autobrr can be used to automatically download files announced over irc, and Jackett should be used for more specific searches. For example, let's say you wanted to download `Minions`. You'd add the title to Sonarr, Sonarr asks Jackett for the file, Jackett looks through your indexers and returns download options, Sonarr picks one, and sends it to your usenet or torrent client for download. 
+
+As with before, configuration is done through the Web UI. Add your indexers as instructed on-screen, and add Jackett or Autobrr to your download clients or Sonarr/Radarr. 
+
+## Finishing Touches
 
 As stated previously in this guide, we highly recommend familiarizing yourself further with Docker and its commands. The purpose of this guide is to get you up and running as fast as possible, while minimizing areas of confusion. Docker, and Docker Compose, are very powerful, and can be used to run an entire home media setup. There are several sections in this guide that require user input, so make sure to check those first if you are having trouble!
 
-The `compose.yaml` file provided will create seven total containers, and all of these have their own documentation pages available online. You should not have to visit these, but it is worth keeping them bookmarked in case of future issues. Searching for the `image` name listed is usually the most direct way to locate them if needed. Questions or support requests for this guide should be directed to the #questions channel in Snackbox.
+The `compose.yaml` file provided will create seven total containers, and all of these have their own documentation pages available online; it is worth keeping them bookmarked in case of future issues. Searching for the `image` name listed is usually the most direct way to locate them if needed. Questions or support requests for this guide should be directed to the #questions channel in Snackbox.
