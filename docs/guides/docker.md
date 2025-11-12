@@ -229,7 +229,7 @@ The information below is left only as a resource for users deviating from this g
 
 DO NOT FOLLOW THESE SETTINGS IF YOU ARE USING GLUETUN AS ADVISED!
 
-If using a Wireguard container instead of Gluetun, a killswitch will not yet be implemented. That's where this bit comes in.
+==- If using a Wireguard container instead of Gluetun, a killswitch will not yet be implemented. That's where this bit comes in.
 
 ```bash
 PostUp = DROUTE=$(ip route | grep default | awk '{print $3}'); HOMENET=192.168.1.0/24; HOMENET2=10.0.0.0/8; HOMENET3=172.16.0.0/12; ip route add $HOMENET3 via $DROUTE; ip route add $HOMENET2 via $DROUTE; ip route add $HOMENET via $DROUTE; iptables -I OUTPUT -d $HOMENET -j ACCEPT; iptables -A OUTPUT -d $HOMENET2 -j ACCEPT; iptables -A OUTPUT -d $HOMENET3 -j ACCEPT; iptables -A OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT
@@ -259,7 +259,7 @@ PersistentKeepalive = 15
 ```
 
 Once you've done that run `docker compose up -d` once more and you're all ready to go.
-
+==-
 Note that if you use qBittorrent and its web UI you can optionally bind all connections to the VPN network inteface. This can be done by
 going to settings and navigating to the advanced tab all the way on the right. You should immediately see the options to bind your connections to a
 network interface, and to optionally bind your connections to the VPN IP. If using Gluetun, this should show up as `tun0`.
