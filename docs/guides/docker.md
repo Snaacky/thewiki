@@ -16,15 +16,13 @@ author:
 Docker is a piece of software that allows you to virtualize applications into containers, so that you don't have to deal with dependency
 management, and can carry around a solution that's easily deployable anywhere you go.
 
-It is especially useful in this case, as we will deploy an entire automation stack from a single config file! Docker is also a premier choice for home lab/server uses, but can be used on a desktop PC as well.
+It is especially useful in this case, as we will deploy an entire automation stack from a single config file!
 
-The basic idea is that we will create a single "compose" file that tells the Docker engine what containers we want to download, and what configuration options we want to set for each one. A sample compose file is presented later in this guide, but we recommend reading through it, as you will need to change parts of it to match your setup. Take special note of `environment` variables, as those are essentially your settings options, and will be important in later steps. Some pages linked in this guide also contain instructions for using `docker run` commands, but we do not recommend this as it is more difficult to maintain.
+The basic idea is that we will create a single "compose" file that tells the Docker engine what containers we want to download, and what configuration options we want to set for each one. A sample compose file is presented later in this guide, but we recommend reading through it, as you will need to change parts of it to match your setup. Take special note of `environment` variables, as those are essentially your settings options.
 
-This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a
-VPN with a killswitch, Sonarr, Radarr, Autobrr, and Jackett. While we've opted for Jackett here, you could also switch it out for Prowlarr if you'd
-prefer something more flexible. It's compose file is very similar to Radarr/Sonarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.
+This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a VPN with a killswitch, Sonarr, Radarr, Autobrr, and Prowlarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.
 
-We are primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
+This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
 
 ## Installing Docker
 
@@ -40,9 +38,11 @@ Now we'll be setting up a network so that our containers can communicate with ea
 
 ## Preparing the VPN
 
-For maximum privacy and security we'll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Jackett however won't go through that, as some trackers and indexers might not like it if you send requests from a random non-whitelisted IP. This guide reccomends Gluetun, but the process is similar for other VPN container options.
+For maximum privacy and security we'll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Prowlarr however won't go through that, as some trackers and indexers might not like it if you send requests from a random non-whitelisted IP. This guide reccomends Gluetun, but the process is similar for other VPN container options.
 
-What we need is a configuration file, obtained from your chosen VPN provider. Wireguard is preferable and recommended, but OpenVPN is technically an option as well. This configuration file contains the info needed to allow Gluetun, (or your VPN client of choice,) to connect to your VPN provider's servers. The process for getting a config file varies based on your provider, so we recommend searching for it online, or your provider's website. [This page](https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers) also contains per-provider instructions for getting a config file, as well as some other configuration that we will cover shortly. If possible, make sure to enable forwarding of one or more ports for use with torrent and usenet clients.
+What we need is a configuration file, obtained from your chosen VPN provider. Wireguard is preferable and recommended over OpenVPN. This configuration file contains the info needed to allow Gluetun, (or your VPN client of choice,) to connect to your VPN provider's servers. 
+
+The process for getting a config file varies based on your provider, so we recommend searching for it online, or your provider's website. [This page](https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers) also contains per-provider instructions for getting a config file, as well as some other configuration that we will cover shortly. If possible, make sure to enable forwarding of one or more ports for use with torrent and usenet clients.
 
 ## Deploying everything using `docker compose`
 
@@ -120,7 +120,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=Europe/London # Change this based on your timezone
     depends_on:
       - gluetun
     volumes:
@@ -153,7 +153,7 @@ services:
     image: ghcr.io/autobrr/autobrr:latest
     user: 1000:1000
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ} # Change this based on your timezone
     depends_on:
       - gluetun
     volumes:
@@ -168,7 +168,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=Europe/London # Change this based on your timezone
     ports:
       - 8989:8989
     volumes:
@@ -183,7 +183,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=Europe/London # Change this based on your timezone
     ports:
       - 7878:7878
     volumes:
@@ -194,19 +194,17 @@ services:
     networks:
       - guide
     restart: unless-stopped
-  jackett:
-    image: lscr.io/linuxserver/jackett:latest
-    container_name: jackett
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
-      - AUTO_UPDATE=true # Optional
-      - RUN_OPTS= # Optional
+      - TZ=Europe/London # Change this based on your timezone
     ports:
-      - 9117:9117
+      - 9696:9696
     volumes:
-      - './jackett:/config'
+      - './prowlarr:/config'
       - '/home/user/data:/data'
     networks:
       - guide
@@ -274,15 +272,17 @@ Most setup from this point on will be done through the relevant Web UIs.
 
 ## Adding your clients to Sonarr and Radarr
 
-Begin by pulling up Sonarr and Radarr in your browser as discussed in the previous step. We are going to give them the information needed to begin automation!
+Begin by pulling up Sonarr and Radarr in your browser as discussed in the previous step. We are going to give them the information needed to start automation!
 
-Go to settings, navigate to download clients, and pick whatever clients you use (SABnzbd, Transmission, qBitorrent, Deluge, etc.) Follow on-screen instructions as necessary. If unclear, the clients recommended and configured in this guide are qBittorrent and SABnzbd. You will also want to configure your indexers here if adding them directly. If using Jackett (or Prowlarr) you will need to configure those first, and then come back to add them.
+Go to settings, navigate to download clients, and pick whatever clients you use (SABnzbd, Transmission, qBitorrent, Deluge, etc.) Follow on-screen instructions as necessary. If unclear, the clients recommended and configured in this guide are qBittorrent and SABnzbd. You will also want to configure your indexers here if adding them directly. If using Prowlarr you will need to configure those first, and then come back to add them.
 
-## Jackett and Autobrr
+## Prowlarr and Autobrr
 
-These programs sit in-between Sonarr/Radarr and your indexers, and take the burden of API engagement away from them. They take requests for content from Sonarr/Radarr and translate them into API calls for specific files. Autobrr can be used to automatically download files announced over irc, and Jackett should be used for more specific searches. For example, let's say you wanted to download `Minions`. You'd add the title to Sonarr, Sonarr asks Jackett for the file, Jackett looks through your indexers and returns download options, Sonarr picks one, and sends it to your usenet or torrent client for download. 
+These programs sit in-between Sonarr/Radarr and your indexers, and take the burden of API engagement away from them. They take requests for content from Sonarr/Radarr and translate them into API calls for specific files. Autobrr can be used to automatically download files announced over irc, and Prowlarr should be used for more specific searches. 
 
-As with before, configuration is done through the Web UI. Add your indexers as instructed on-screen, and add Jackett or Autobrr to your download clients or Sonarr/Radarr. 
+For example, let's say you wanted to download `Minions`. You'd add the title to Sonarr, Sonarr asks Prowlarr for the file, Prowlarr looks through your indexers and returns download options, Sonarr picks one, and sends it to your usenet or torrent client for download. 
+
+As with before, configuration is done through the Web UI. Add your indexers as instructed on-screen, and add Prowlarr or Autobrr to your download clients or Sonarr/Radarr. 
 
 ## Finishing Touches
 
