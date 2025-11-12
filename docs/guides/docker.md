@@ -24,7 +24,7 @@ This guide will cover how to setup a Docker stack for common media automation pr
 VPN with a killswitch, Sonarr, Radarr, Autobrr, and Jackett. While we've opted for Jackett here, you could also switch it out for Prowlarr if you'd
 prefer something more flexible. It's compose file is very similar to Radarr/Sonarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.
 
-This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
+We are primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
 
 ## Installing Docker
 
