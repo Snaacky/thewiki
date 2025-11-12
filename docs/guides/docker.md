@@ -88,10 +88,12 @@ services:
   gluetun:
     container_name: gluetun
     image: qmcgaw/gluetun:latest
+    devices:
+      - /dev/net/tun:/dev/net/tun
     environment: # You will need to edit these settings based on the instructions listed for your provider. See above. Fields not needed for your provider can be removed.
-      - VPN_SERVICE_PROVIDER= # Left blank intentionally. Put your provider here!
+      - VPN_SERVICE_PROVIDER= # See 4. Gluetun above
       - VPN_TYPE=wireguard # Do not change this unless you want to use OpenVPN
-      - WIREGUARD_PRIVATE_KEY= # See 4. Gluetun for how to find this!
+      - WIREGUARD_PRIVATE_KEY= # See 4. Gluetun above for how to find this!
       - WIREGUARD_ADDRESS= # Same as above!
       - VPN_PORT_FORWARDING=on # This is mostly only useful for ProtonVPN
       - VPN_FORWARD_ONLY=on # Same as above!
@@ -104,8 +106,6 @@ services:
       - 8123:8123 # qBittorrent WebUI
       - 8080:8080 # SABnzbd UI
       - 7474:7474 # Autobrr
-    networks: 
-      - guide
   sabnzbd:
     container_name: sabnzbd
     image: lscr.io/linuxserver/sabnzbd:latest
@@ -129,17 +129,13 @@ services:
       - TZ=Etc/UTC # Change this based on your timezone
       - WEBUI_PORT=8123
       - TORRENTING_PORT= # Set this to your forwarded port, or delete it and use VPN_PORT_FORWARDING_UP_COMMAND
-    ports:
-      - 8123:8123
     network_mode: container:gluetun
-    depdens_on:
+    depends_on:
       - gluetun
     restart: unless-stopped
     volumes:
       - ./qbittorrent:/config
       - /home/user/data:/data
-    networks:
-      - guide
   autobrr:
     container_name: autobrr
     image: ghcr.io/autobrr/autobrr:latest
@@ -152,58 +148,45 @@ services:
       - './autobrr:/config'
     network_mode: container:gluetun
     restart: unless-stopped
-    networks:
-      - guide
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
+    ports:
+      - 8989:8989
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London # Change this based on your timezone
-    ports:
-      - 8989:8989
     volumes:
       - './sonarr:/config'
       - '/home/user/data:/data'
-    networks:
-      - guide
     restart: unless-stopped
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
+    ports:
+      - 7878:7878
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London # Change this based on your timezone
-    ports:
-      - 7878:7878
     volumes:
       - './radarr:/config'
       - '/home/user/data:/data'
-    ports:
-      - 7878:7878
-    networks:
-      - guide
     restart: unless-stopped
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
+    ports:
+      - 9696:9696
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London # Change this based on your timezone
-    ports:
-      - 9696:9696
     volumes:
       - './prowlarr:/config'
       - '/home/user/data:/data'
-    networks:
-      - guide
     restart: unless-stopped
-networks:
-  guide:
-    external: true
 ```
 ==-
 
