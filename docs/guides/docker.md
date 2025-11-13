@@ -88,7 +88,7 @@ version: "3.8"
 services:
   gluetun:
     container_name: gluetun
-    image: qmcgaw/gluetun:latest
+    image: qmcgaw/gluetun:latest # This tag points to the development version due to dev preferences. If having stability issues, relpace :latest with :v3
     devices:
       - /dev/net/tun:/dev/net/tun
     environment: # You will need to edit these settings based on the instructions listed for your provider. See above. Fields not needed for your provider can be removed.
@@ -122,7 +122,7 @@ services:
     restart: unless-stopped
   qbittorrent:
     container_name: qbittorrent
-    image: linuxserver/qbittorrent:latest
+    image: linuxserver/qbittorrent:latest 
     environment:
       - PUID=1000
       - PGID=1000
