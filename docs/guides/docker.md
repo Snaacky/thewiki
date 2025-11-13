@@ -13,16 +13,15 @@ author:
 
 # Setting up a Docker automation stack
 
-Docker is a piece of software that allows you to virtualize applications into containers, so that you don't have to deal with dependency
-management, and can carry around a solution that's easily deployable anywhere you go.
+Docker is a piece of software that allows containerize applications, avoiding dependency managment and installation time, and can carry around a solution that's easily deployable anywhere you go.
 
-It is especially useful in this case, as we will deploy an entire automation stack from a single config file!
+In this tutorial we will deploy a whole automation stack from a single configuration file.
 
 The basic idea is that we will create a single "compose" file that tells the Docker engine what containers we want to download, and what configuration options we want to set for each one. A sample compose file is presented later in this guide, but we recommend reading through it, as you will need to change parts of it to match your setup. Take special note of `environment` variables, as those are essentially your settings options.
 
 This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a VPN with a killswitch, Sonarr, Radarr, Autobrr, and Prowlarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.
 
-This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
+This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions on Discord. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
 
 ## Installing Docker
 
@@ -32,33 +31,26 @@ First we need to install Docker onto our system. Windows users can do so by down
 [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall).
 Depending on how you've installed and configured Docker, you may need to append `sudo` before the commands listed in the rest of this guide.
 
+<!--- 
+i dont think this is necessary anymore...
 ## Setting up a Docker network
 
 Now we'll be setting up a network so that our containers can communicate with each other. This step's quite simple, it's just `docker network create guide`. A list of all your current networks can be seen with `docker network ls`.
+-->
 
 ## Preparing the VPN
 
-For maximum privacy and security we'll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Prowlarr however won't go through that, as some trackers and indexers might not like it if you send requests from a random non-whitelisted IP. This guide reccomends Gluetun, but the process is similar for other VPN container options.
+For maximum privacy and security we'll be tunnelling our usenet and torrent clients through a VPN. Radarr, Sonarr and Prowlarr however won't go through it, as some trackers and indexers forbid this. This guide reccomends Gluetun, but the process is similar for other VPN container options.
 
-What we need is a configuration file, obtained from your chosen VPN provider. Wireguard is preferable and recommended over OpenVPN. This configuration file contains the info needed to allow Gluetun, (or your VPN client of choice,) to connect to your VPN provider's servers. 
+What we need is a configuration file, usually `.conf`, obtained from your chosen VPN provider. Wireguard is preferable and recommended over OpenVPN. This configuration file contains the info needed to allow Gluetun, (or your VPN client of choice,) to connect to your VPN provider's servers. 
 
 The process for getting a config file varies based on your provider, so we recommend searching for it online, or your provider's website. [This page](https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers) also contains per-provider instructions for getting a config file, as well as some other configuration that we will cover shortly. If possible, make sure to enable forwarding of one or more ports for use with torrent and usenet clients.
 
 ## Deploying everything using `docker compose`
 
-Now that we've gotten everything ready we can finally set up the stack. Paste the following into a file called `compose.yaml`. We'd recommend this file being a directory that is purely for this Docker stack, such as `/home/user/projects/automation/`. As a note, you will need to be working from inside this directory when running `docker compose` commands. Please take the time to read the notes included in this file, as they have further instructions and will need to be completed for everything to function.
+Now that we've gotten everything ready we can finally set up the stack. Create a new folder to house all everything compose related, for example `/home/user/projects/automation`. Inside this folder, make a new file named `compose.yaml`, and paste in the following:
 
-We would also recommend sorting your media-related folders in the following way for ease of use:
-- `/home/user/data/torrents/` - where you torrent client will save files.
-- `/home/user/data/usenet` - where your usenet client will save files.
-- `/home/user/data/media` - where your hardlinked files will reside, so that they can be read by your media server (Plex/Jellyfin/etc.)
-  - `/home/user/data/media/tv` - where Sonarr will hardlink files.
-  - `/home/user/data/media/movies` - where Radarr will hardlink files.
-  - You can take this concept further and make more subfolders in `media` if you'd like to have one more than one Sonarr or Radarr instance. People
-  sometimes do this if they'd like both a 4K and an HD version of a piece of media, as both the *arrs can only hardlink one version at a time.
-
-Paths for Docker are extremely important as configuring them incorrectly can break hardlinking and cause you to waste space!
-
+==- compose.yaml
 ```yml
 # Some notes about some important things so that they don't need to be repeated for every container.
 #
@@ -96,10 +88,12 @@ services:
   gluetun:
     container_name: gluetun
     image: qmcgaw/gluetun:latest
+    devices:
+      - /dev/net/tun:/dev/net/tun
     environment: # You will need to edit these settings based on the instructions listed for your provider. See above. Fields not needed for your provider can be removed.
-      - VPN_SERVICE_PROVIDER= # Left blank intentionally. Put your provider here!
+      - VPN_SERVICE_PROVIDER= # See 4. Gluetun above
       - VPN_TYPE=wireguard # Do not change this unless you want to use OpenVPN
-      - WIREGUARD_PRIVATE_KEY= # See 4. Gluetun for how to find this!
+      - WIREGUARD_PRIVATE_KEY= # See 4. Gluetun above for how to find this!
       - WIREGUARD_ADDRESS= # Same as above!
       - VPN_PORT_FORWARDING=on # This is mostly only useful for ProtonVPN
       - VPN_FORWARD_ONLY=on # Same as above!
@@ -112,8 +106,6 @@ services:
       - 8123:8123 # qBittorrent WebUI
       - 8080:8080 # SABnzbd UI
       - 7474:7474 # Autobrr
-    networks: 
-      - guide
   sabnzbd:
     container_name: sabnzbd
     image: lscr.io/linuxserver/sabnzbd:latest
@@ -137,17 +129,13 @@ services:
       - TZ=Etc/UTC # Change this based on your timezone
       - WEBUI_PORT=8123
       - TORRENTING_PORT= # Set this to your forwarded port, or delete it and use VPN_PORT_FORWARDING_UP_COMMAND
-    ports:
-      - 8123:8123
     network_mode: container:gluetun
-    depdens_on:
+    depends_on:
       - gluetun
     restart: unless-stopped
     volumes:
       - ./qbittorrent:/config
       - /home/user/data:/data
-    networks:
-      - guide
   autobrr:
     container_name: autobrr
     image: ghcr.io/autobrr/autobrr:latest
@@ -160,66 +148,65 @@ services:
       - './autobrr:/config'
     network_mode: container:gluetun
     restart: unless-stopped
-    networks:
-      - guide
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
+    ports:
+      - 8989:8989
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London # Change this based on your timezone
-    ports:
-      - 8989:8989
     volumes:
       - './sonarr:/config'
       - '/home/user/data:/data'
-    networks:
-      - guide
     restart: unless-stopped
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
+    ports:
+      - 7878:7878
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London # Change this based on your timezone
-    ports:
-      - 7878:7878
     volumes:
       - './radarr:/config'
       - '/home/user/data:/data'
-    ports:
-      - 7878:7878
-    networks:
-      - guide
     restart: unless-stopped
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
+    ports:
+      - 9696:9696
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London # Change this based on your timezone
-    ports:
-      - 9696:9696
     volumes:
       - './prowlarr:/config'
       - '/home/user/data:/data'
-    networks:
-      - guide
     restart: unless-stopped
-networks:
-  guide:
-    external: true
 ```
+==-
 
-After all of that you'll want to go into `/home/user/projects/automation` and run `docker compose up -d`. This will deploy all of the containers
-in a detached mode, but since it's your first time running them, Docker will pull the images for each of these containers.
+We would also recommend sorting your media-related folders in the following way for ease of use:
+- `/home/user/data/torrents/` - where you torrent client will save files.
+- `/home/user/data/usenet` - where your usenet client will save files.
+- `/home/user/data/media` - where your hardlinked files will reside, so that they can be read by your media server (Plex/Jellyfin/etc.)
+  - `/home/user/data/media/tv` - where Sonarr will hardlink files.
+  - `/home/user/data/media/movies` - where Radarr will hardlink files.
+  - You can take this concept further and make more subfolders in `media` if you'd like to have one more than one Sonarr or Radarr instance. People
+  sometimes do this if they'd like both a 4K and an HD version of a piece of media, as both the *arrs can only hardlink one version at a time.
 
-Once all of that's done, you'll want to run `docker compose down`, which will shut down each of the containers.
+Paths for Docker are extremely important as configuring them incorrectly can break hardlinking and cause you to waste space!
 
-By running in detached mode, we also block any terminal output from our containers. Some of these outputs contain vital information for setting up your container the first time, specifically the output from Qbittorrent. To view it, run `docker compose up yourcontainer`. Perform any steps needed with the window still open, as closing it will stop the container. To start it normally, run `docker compose up -d` again, or `docker compose up -d yourcontainer`. `docker compose start` can also be used to start containers that have already been created and do not need updating, but `docker compose up -d` is generally recommended by this guide to avoid issues. 
+After all of that you'll want to go into `/home/user/projects/automation` and run `docker compose up -d`.  This will deploy all of the containers
+in a `-d`etached mode, but since it's your first time running them, Docker will pull the images for each of these containers. Any `docker compose` command must be run within the folder that contains `compose.yaml`.
+
+Another useful command is `docker compose down`, which will shut down each of the containers.
+
+By running in detached mode, we also block any terminal output from our containers. Some of these outputs contain vital information for setting up your container the first time, specifically the output from Qbittorrent. To view the console output, you can run `docker logs <name of container>`, for example `docker logs qbittorrent`.
 
 We recommend looking at the `man` page or official documentation for Docker to familiarize yourself with available commands. `docker pull`, `docker ps`, and `docker system prune` can be useful, for example. See documentation for info on what these do!
 
