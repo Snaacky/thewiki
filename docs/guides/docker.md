@@ -13,16 +13,17 @@ author:
 
 # Setting up a Docker automation stack
 
-Docker is a piece of software that allows containerize applications, avoiding dependency managment and installation time, and can carry around a solution that's easily deployable anywhere you go.
+Docker is a piece of software that allows containerizing applications, avoiding dependency managment, reduicing installation time, and portability.
 
-In this tutorial we will deploy a whole automation stack from a single configuration file.
+In this tutorial we will deploy a whole automation stack from a single configuration file!
 
 The basic idea is that we will create a single "compose" file that tells the Docker engine what containers we want to download, and what configuration options we want to set for each one. A sample compose file is presented later in this guide, but we recommend reading through it, as you will need to change parts of it to match your setup. Take special note of `environment` variables, as those are essentially your settings options.
 
 This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a usenet client, a VPN with a killswitch, Sonarr, Radarr, Autobrr, and Prowlarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.
 
-This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions on Discord. We will cover some basic usecases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
-
+!!!
+This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions on Discord. We will cover some basic use cases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
+!!!
 ## Installing Docker
 
 First we need to install Docker onto our system. Windows users can do so by downloading
@@ -97,7 +98,7 @@ services:
       - WIREGUARD_ADDRESS= # Same as above!
       - VPN_PORT_FORWARDING=on # This is mostly only useful for ProtonVPN
       - VPN_FORWARD_ONLY=on # Same as above!
-      - VPN_PORT_FORWARDING_UP_COMMAND= # This can be useful to dynamically update your forwarded port in other programs if it isn't static.
+      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{PORTS}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1' #This example up command will update qBittorrent with your forwarded port automatically. See 4. Gluetun for more information.
     cap_add:
       - NET_ADMIN
       - NET_BIND_SERVICE
@@ -105,7 +106,6 @@ services:
     ports: # Anything using your VPN will need its ports added here to be reachable. 
       - 8123:8123 # qBittorrent WebUI
       - 8080:8080 # SABnzbd UI
-      - 7474:7474 # Autobrr
   sabnzbd:
     container_name: sabnzbd
     image: lscr.io/linuxserver/sabnzbd:latest
@@ -134,19 +134,16 @@ services:
       - gluetun
     restart: unless-stopped
     volumes:
-      - ./qbittorrent:/config
-      - /home/user/data:/data
+      - './qbittorrent:/config'
+      - '/home/user/data:/data'
   autobrr:
     container_name: autobrr
     image: ghcr.io/autobrr/autobrr:latest
     user: 1000:1000
     environment:
       - TZ=${TZ} # Change this based on your timezone
-    depends_on:
-      - gluetun
     volumes:
       - './autobrr:/config'
-    network_mode: container:gluetun
     restart: unless-stopped
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
@@ -208,13 +205,17 @@ Another useful command is `docker compose down`, which will shut down each of th
 
 By running in detached mode, we also block any terminal output from our containers. Some of these outputs contain vital information for setting up your container the first time, specifically the output from Qbittorrent. To view the console output, you can run `docker logs <name of container>`, for example `docker logs qbittorrent`.
 
+!!!
 We recommend looking at the `man` page or official documentation for Docker to familiarize yourself with available commands. `docker pull`, `docker ps`, and `docker system prune` can be useful, for example. See documentation for info on what these do!
-
+!!!
+!!!warning
+The default password for qBittorrent will be located in its console output/logs. See above.
+!!!
 ## Setting up a killswitch
 
 The information below is left only as a resource for users deviating from this guide and using a Wireguard container for their vpn. Gluetun contains killswitch functionality out of the box and should not require any manual intervention.
 
-DO NOT FOLLOW THESE SETTINGS IF YOU ARE USING GLUETUN AS ADVISED!
+DO NOT IMPLEMENT THE FOLLOWING SETTINGS IF USING GLUETUN AS ADVISED!
 
 ==- If using a Wireguard container instead of Gluetun, a killswitch will not yet be implemented. That's where this bit comes in.
 
@@ -253,7 +254,11 @@ network interface, and to optionally bind your connections to the VPN IP. If usi
 
 ## Accessing your containers
 
-Once everything is up and running, you should be able to access the Web UIs of your various Docker containers. Do so by opening a web browser and navigating to `http://ip:port`. For accessing a container on the same machine that's hosting it, `http://localhost:port` or `https://localhost:port` can be used. The `ip` field refers to the local machine ip (not your network's public ip) which can be found by running `ipconfig` on Windows and `ifconfig` or `ip address` on Linux. The `port` field is the port your container is configured to broadcast on, which is defined in `compose.yaml`. For example, qBittorrent will be at `http://localhost:8123` based on the file provided in this guide.
+Once everything is up and running, you should be able to access the Web UIs of your various Docker containers. Do so by opening a web browser and navigating to `http://ip:port`. For accessing a container on the same machine that's hosting it, `http://localhost:port` or `https://localhost:port` can be used. The `ip` field refers to the local machine ip (not your network's public ip). The `port` field is the port your container is configured to broadcast on, which is defined in `compose.yaml`. For example, qBittorrent will be at `http://localhost:8123` based on the file provided in this guide.
+
+!!!
+A machine's `ip` can be found by running `ipconfig` on Windows, and `ifconfig` or `ip address` on Linux
+!!!
 
 Most setup from this point on will be done through the relevant Web UIs. 
 
@@ -275,4 +280,8 @@ As with before, configuration is done through the Web UI. Add your indexers as i
 
 As stated previously in this guide, we highly recommend familiarizing yourself further with Docker and its commands. The purpose of this guide is to get you up and running as fast as possible, while minimizing areas of confusion. Docker, and Docker Compose, are very powerful, and can be used to run an entire home media setup. There are several sections in this guide that require user input, so make sure to check those first if you are having trouble!
 
-The `compose.yaml` file provided will create seven total containers, and all of these have their own documentation pages available online; it is worth keeping them bookmarked in case of future issues. Searching for the `image` name listed is usually the most direct way to locate them if needed. Questions or support requests for this guide should be directed to the #questions channel in Snackbox.
+The `compose.yaml` file provided will create seven total containers, and all of these have their own documentation pages available online; it is worth keeping them bookmarked in case of future issues. Searching for the `image` name listed is usually the most direct way to locate them if needed. 
+
+!!!
+Questions or support requests for this guide should be directed to the #questions channel in Snackbox.
+!!!
