@@ -231,18 +231,21 @@ services:
 ==-
 
 We would also recommend sorting your media-related folders in the following way for ease of use:
-- `/home/user/data/torrents/` - where you torrent client will save files.
+- `/home/user/data/torrents` - where you torrent client will save files.
 - `/home/user/data/media` - where your hardlinked files will reside, so that they can be read by your media server (Plex/Jellyfin/etc.)
   - `/home/user/data/media/tv` - where Sonarr will hardlink files.
   - `/home/user/data/media/movies` - where Radarr will hardlink files.
-  - You can take this concept further and make more subfolders in `media` if you'd like to have one more than one Sonarr or Radarr instance. People
-  sometimes do this if they'd like both a 4K and an HD version of a piece of media, as both the *arrs can only hardlink one version at a time.
+  - You can take this concept further and make more subfolders in `media` if you'd like to have one more than one Sonarr or Radarr instance. People sometimes do this if they'd like both a 4K and an HD version of a piece of media, as both the *arrs can only hardlink one version at a time.
+  
+!!!
+The `/home/user/` portion of these file locations can be replaced with whatever folder structure you desire. For example, if using a second hard drive, you could use `/path/to/drive/` followed by the relevant subdirectories. We have filled out the compose file with `/home/user/` as convention, so this will need to be changed if you desire a different base directory for your media.
+!!!
 
 Paths for Docker are extremely important as configuring them incorrectly can break hardlinking and cause you to waste space!
 
 After all of that you'll want to go into `/home/user/projects/automation` and run `docker compose up -d`.  This will deploy all of the containers in a `-d`etached mode, but since it's your first time running them, Docker will pull the images for each of these containers. Any `docker compose` command must be run within the folder that contains `compose.yaml`.
 
-Another useful command is `docker compose down`, which will shut down each of the containers.
+Another useful command is `docker compose down`, which will shut down your containers.
 
 By running in detached mode, we also block any terminal output from our containers. Some of these outputs contain vital information for setting up your container the first time, specifically the output from qBittorrent. To view the console output, you can run `docker logs <name of container>`, for example `docker logs qBittorrent`.
 
