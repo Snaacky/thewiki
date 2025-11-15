@@ -19,7 +19,7 @@ In this tutorial we will deploy a whole automation stack from a single configura
 
 The basic idea is that we will create a single "compose" file that tells the Docker engine what containers we want to download, and what configuration options we want to set for each one. A sample compose file is presented later in this guide, but we recommend reading through it, as you will need to change parts of it to match your setup. Take special note of `environment` variables, as those are essentially your settings options.
 
-This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a Usenet client, a VPN, Sonarr, Radarr, and Prowlarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.
+This guide will cover how to setup a Docker stack for common media automation programs, namely: a torrent client, a VPN, Sonarr, Radarr, and Prowlarr. These applications work together to automatically download files from chosen indexers, based on user-defined filters.
 
 !!!
 This guide is primarily focused on basic setup and deployment of these applications. For information and help with configuring and using them, please check the relevant documentation, or ask in #questions on Discord. We will cover some basic use cases but your needs will vary depending on what indexers you have access to. Our goal here is to get you acquainted with Docker Compose, and give you a good jumping off point.
@@ -34,11 +34,11 @@ Depending on how you've installed and configured Docker, you may need to append 
 
 ## Preparing the VPN
 
-For maximum privacy and security we'll be tunneling our Usenet and torrent clients through a VPN. Radarr, Sonarr and Prowlarr however won't go through it, as some trackers and indexers forbid this. This guide recommends Gluetun, but the process is similar for other VPN container options.
+For maximum privacy and security we'll be tunneling our torrent client through a VPN. Radarr, Sonarr and Prowlarr however won't go through it, as some trackers and indexers forbid this. This guide recommends Gluetun, but the process is similar for other VPN container options.
 
 What we need is a configuration file, usually `.conf`, obtained from your chosen VPN provider. Wireguard is preferable and recommended over OpenVPN. This configuration file contains the info needed to allow Gluetun, (or your VPN client of choice,) to connect to your VPN provider's servers. 
 
-The process for getting a config file varies based on your provider, so we recommend searching for it online, or your provider's website. [This page](https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers) also contains per-provider instructions for getting a config file, as well as some other configuration that we will cover shortly. If possible, make sure to enable forwarding of one or more ports for use with torrent and usenet clients.
+The process for getting a config file varies based on your provider, so we recommend searching for it online, or your provider's website. [This page](https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers) also contains per-provider instructions for getting a config file, as well as some other configuration that we will cover shortly. If possible, make sure to enable forwarding of one or more ports for use with torrent clients.
 
 ## Deploying everything using `docker compose`
 
@@ -103,25 +103,8 @@ services:
       - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{PORTS}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1' #This example up command will update qBittorrent with your forwarded port automatically. See 4. Gluetun for more information. Can also be removed if not using port forwarding.
     cap_add:
       - NET_ADMIN
-      - NET_BIND_SERVICE
-      - NET_RAW
     ports: # Anything using your VPN will need its ports added here to be reachable. 
       - 8123:8123 # qBittorrent WebUI
-      - 8080:8080 # SABnzbd UI
-  sabnzbd:
-    container_name: sabnzbd
-    image: lscr.io/linuxserver/sabnzbd:latest
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London # Change this based on your timezone
-    depends_on:
-      - gluetun
-    volumes:
-      - './sabnzbd:/config'
-      - '/home/user/data:/data'
-    network_mode: container:gluetun
-    restart: unless-stopped
   qbittorrent:
     container_name: qbittorrent
     image: linuxserver/qbittorrent:latest 
@@ -208,7 +191,6 @@ services:
       - NET_ADMIN
     ports: # Anything using your VPN will need its ports added here to be reachable. 
       - 8123:8123 # qBittorrent WebUI
-      - 8080:8080 # SABnzbd UI
 #
 # Mullvad complete example:
   
@@ -227,7 +209,6 @@ services:
       - NET_ADMIN
     ports: # Anything using your VPN will need its ports added here to be reachable. 
       - 8123:8123 # qBittorrent WebUI
-      - 8080:8080 # SABnzbd UI
 #
 # AirVPN complete example:
   gluetun:
@@ -246,13 +227,11 @@ services:
       - NET_ADMIN
     ports: # Anything using your VPN will need its ports added here to be reachable. 
       - 8123:8123 # qBittorrent WebUI
-      - 8080:8080 # SABnzbd UI
 ```
 ==-
 
 We would also recommend sorting your media-related folders in the following way for ease of use:
 - `/home/user/data/torrents/` - where you torrent client will save files.
-- `/home/user/data/usenet` - where your usenet client will save files.
 - `/home/user/data/media` - where your hardlinked files will reside, so that they can be read by your media server (Plex/Jellyfin/etc.)
   - `/home/user/data/media/tv` - where Sonarr will hardlink files.
   - `/home/user/data/media/movies` - where Radarr will hardlink files.
@@ -278,9 +257,9 @@ The default password for qBittorrent will be located in its console output/logs.
 !!!
 ## VPN Safety
 
-Many VPN solutions require extra effort to make sure torrent and Usenet traffic doesn't accidentally leak outside. The compose file given already confines your torrent and Usenet client to your VPN's internal. Gluetun comes bundled with a killswitch, which will block traffic not routed through a VPN, so there should be no way for traffic to escape based on this setup. 
+Many VPN solutions require extra effort to make sure torrent traffic doesn't accidentally leak outside. The compose file given already confines your torrent client to your VPN's internal. Gluetun comes bundled with a killswitch, which will block traffic not routed through a VPN, so there should be no way for traffic to escape based on this setup. 
 
-Note that if you use qBittorrent and its web UI, you can optionally bind all connections to the VPN network interface. This can be done by going to settings and navigating to the advanced tab all the way on the right. You should immediately see the options to bind your connections to a network interface, and to optionally bind your connections to the VPN IP. If using Gluetun, this should show up as `tun0`. This setting should not be necessary, but can provide peace of mind in the event user error causes multiple systems to fail. 
+Note that you can optionally bind all connections to the VPN network interface. This can be done by going to settings and navigating to the advanced tab all the way on the right. You should immediately see the options to bind your connections to a network interface, and to optionally bind your connections to the VPN IP. If using Gluetun, this should show up as `tun0`. This setting should not be necessary, but can provide peace of mind in the event user error causes multiple systems to fail. 
 
 ## Accessing your containers
 
@@ -292,17 +271,17 @@ A machine's `ip` can be found by running `ip address`, `ifconfig` or `hostname -
 
 Most setup from this point on will be done through the relevant Web UIs. 
 
-## Adding your clients to Sonarr and Radarr
+## Adding your client(s) to Sonarr and Radarr
 
 Begin by pulling up Sonarr and Radarr in your browser as discussed in the previous step. We are going to give them the information needed to start automation!
 
-Go to settings, navigate to download clients, and pick whatever clients you use (SABnzbd and qBittorrent.) Follow on-screen instructions as necessary. You will also want to configure your indexers here if adding them directly. If using Prowlarr you will need to configure those first, and then come back to add them.
+Go to settings, navigate to download clients, and pick whatever clients you use (qBittorrent.) Follow on-screen instructions as necessary. You will also want to configure your indexers here if adding them directly. If using Prowlarr you will need to configure those first, and then come back to add them.
 
 ## Prowlarr
 
 Prowlarr sits in-between Sonarr/Radarr and your indexers, and take the burden of API engagement away from them. It takes requests for content from Sonarr/Radarr and translates them into API calls for specific files. 
 
-For example, let's say you wanted to download a movie. You'd add the title to Sonarr, Sonarr asks Prowlarr for the file, Prowlarr looks through your indexers and returns download options, Sonarr picks one, and sends it to your usenet or torrent client for download. 
+For example, let's say you wanted to download a movie. You'd add the title to Sonarr, Sonarr asks Prowlarr for the file, Prowlarr looks through your indexers and returns download options, Sonarr picks one, and sends it to your torrent client for download. 
 
 As with before, configuration is done through the Web UI. Add your indexers as instructed on-screen, and add Prowlarr to your download clients or Sonarr/Radarr. 
 
