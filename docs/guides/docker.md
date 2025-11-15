@@ -77,6 +77,14 @@ Now that we've installed Docker and retrieved our VPN configuration, we can set 
 #
 # environment variables and setup instructions for each provider can be found at (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
 # To help with readability, settings have been filled out to roughly match a configuration for ProtonVPN.
+# 
+# 5. Forwarded ports
+# 
+# Forwarding a port roughly means opening it to incoming traffic. This concept applies both to internal ports (ports between devices on your home network or between Docker containers,) and public ports (ports forwarded through your VPN or on your router.) 
+# 
+# We make references to both types in this guide. To clarify the difference: 
+# Ports listed under `ports:` in the below file are internal (between Docker containers.)
+# Forwarded ports anywhere in `environment:` refers to ports forwarded through your VPN
 
 ---
 services:
@@ -122,7 +130,7 @@ services:
       - PGID=1000
       - TZ=Europe/London # Change this based on your timezone
       - WEBUI_PORT=8123
-      - TORRENTING_PORT= # Set this to your forwarded port, or delete it and use VPN_PORT_FORWARDING_UP_COMMAND
+      - TORRENTING_PORT= # Set this to your forwarded port, or delete it and use VPN_PORT_FORWARDING_UP_COMMAND. Delete entirely if not using port forwarding.
     network_mode: container:gluetun
     depends_on:
       - gluetun
@@ -169,6 +177,76 @@ services:
       - './prowlarr:/config'
       - '/home/user/data:/data'
     restart: unless-stopped
+```
+==-
+
+==- Some extra sample Gluetun configurations for different VPNs
+```yml
+# The following segments are intended to fully replace the Gluetun section in the above compose file.
+#
+# You are welcome to use these directly, but we still recommend reading the page for your provider at (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
+#
+# Most of these examples have further configuration options that you may wish to utilize, located at the link above.
+# These are as basic as possible, while still detailing the important differences between providers.
+
+---
+# ProtonVPN complete example:
+
+  gluetun:
+    container_name: gluetun
+    image: qmcgaw/gluetun:latest 
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - VPN_SERVICE_PROVIDER=protonvpn
+      - VPN_TYPE=wireguard
+      - WIREGUARD_PRIVATE_KEY= # This is the same for all Proton servers
+      - VPN_PORT_FORWARDING=on # Left on in this case because paid Proton supports port forwarding
+      - VPN_FORWARD_ONLY=on # Same as above
+      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{PORTS}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1' 
+    cap_add:
+      - NET_ADMIN
+    ports: # Anything using your VPN will need its ports added here to be reachable. 
+      - 8123:8123 # qBittorrent WebUI
+      - 8080:8080 # SABnzbd UI
+#
+# Mullvad complete example:
+  
+  gluetun:
+    container_name: gluetun
+    image: qmcgaw/gluetun:latest 
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - VPN_SERVICE_PROVIDER=mullvad
+      - VPN_TYPE=wireguard
+      - WIREGUARD_PRIVATE_KEY= # This is the same for all Proton servers
+      - WIREGUARED_ADDRESSES= # `Address` value found in the VPN config file you downloaded earlier. See (https://github.com/qdm12/gluetun/discussions/805#discussioncomment-2026642) if you are having trouble. This page is also linked on the provider instructions for Mullvad.
+      - OWNED_ONLY=yes # Only use VPN servers owned by Mullvad
+    cap_add:
+      - NET_ADMIN
+    ports: # Anything using your VPN will need its ports added here to be reachable. 
+      - 8123:8123 # qBittorrent WebUI
+      - 8080:8080 # SABnzbd UI
+#
+# AirVPN complete example:
+  gluetun:
+    container_name: gluetun
+    image: qmcgaw/gluetun:latest 
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - VPN_SERVICE_PROVIDER=airvpn
+      - VPN_TYPE=wireguard
+      - WIREGUARD_PRIVATE_KEY= # As with other providers, get this value from the config file you generated earlier.
+      - WIREGUARD_PRESHARED_KEY= # Same as above
+      - WIREGUARED_ADDRESSES= # Same as above      - OWNED_ONLY=yes
+      - FRIEWALL_VPN_INPUT_PORTS= # Put any forwarded ports here
+    cap_add:
+      - NET_ADMIN
+    ports: # Anything using your VPN will need its ports added here to be reachable. 
+      - 8123:8123 # qBittorrent WebUI
+      - 8080:8080 # SABnzbd UI
 ```
 ==-
 
