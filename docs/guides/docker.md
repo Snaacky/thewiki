@@ -100,7 +100,7 @@ services:
       - WIREGUARD_ADDRESS= # Same as above!
       - VPN_PORT_FORWARDING=on # Turn this off if you are not using port forwarding
       - VPN_FORWARD_ONLY=on # Same as above!
-      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{PORTS}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1' #This example up command will update qBittorrent with your forwarded port automatically. See 4. Gluetun for more information. Can also be removed if not using port forwarding.
+      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":\{{PORTS}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1' #This example up command will update qBittorrent with your forwarded port automatically. See 4. Gluetun for more information. Can also be removed if not using port forwarding.
     cap_add:
       - NET_ADMIN
     ports: # Anything using your VPN will need its ports added here to be reachable. 
