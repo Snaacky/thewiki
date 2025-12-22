@@ -186,7 +186,7 @@ services:
       - WIREGUARD_PRIVATE_KEY= # This is the same for all Proton servers
       - VPN_PORT_FORWARDING=on # Left on in this case because paid Proton supports port forwarding
       - VPN_FORWARD_ONLY=on # Same as above
-      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{PORTS}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1' 
+      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{'{{'}}PORT{{'}}'}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1' 
     cap_add:
       - NET_ADMIN
     ports: # Anything using your VPN will need its ports added here to be reachable. 
