@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.816452163807">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.819818818055">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.816452163807" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.819818818055" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.816452163807" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.819818818055" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.816452163807" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.816452163807" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.819818818055" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.819818818055" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -487,17 +487,27 @@ clip3 = core.std.Crop(clip3, left=0, right=0, top=21, bottom=21)</code></pre>
         <span>Scaling</span>
     </h4>
 </doc-anchor-target>
-<p>Downscales or upscales the video. <em>This should be used to match sources that have differing resolutions.</em></p>
+<p>Scaling should be used for all sources that have <em>differing resolutions</em> so they output to the same resolution.</p>
+<p>For example, if you have a 720p and 1080p source, you can either:</p>
 <ul>
-<li><p>For upscaling (e.g. 720p -&gt; 1080p), use <code v-pre>EwaLanczos</code>:</p>
+<li>Upscale the 720p source to 1080p using <code v-pre>EwaLanczos</code>.</li>
+</ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">## Upscaling: Increases the resolution of clips to match the highest resolution using EwaLanczos (equivalent scaling to mpv's high-quality profile)
-clip1 = EwaLanczos.scale(clip1, 1440, 1080, sigmoid=True)
-clip2 = EwaLanczos.scale(clip2, 1920, 1080, sigmoid=True)
-clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">## Scaling: Modify the output resolution of specified clips, use EwaLanczos for upscaling OR Hermite for downscaling (both are equivalent scaling to mpv's high-quality profile)
+clip1 = EwaLanczos().scale(clip1, 1920, 1080, sigmoid=True)</code></pre>
 </doc-codeblock></div>
+<p><strong>Or</strong></p>
+<ul>
+<li>Downscale the 1080p source to 720p using <code v-pre>Hermite</code>.
+<ul>
+<li><strong>Warning: Downscaling produces worse results and is not recommended for comparisons.</strong></li>
+</ul>
 </li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-python"><code v-pre class="language-python">## Scaling: Modify the output resolution of specified clips, use EwaLanczos for upscaling OR Hermite for downscaling (both are equivalent scaling to mpv's high-quality profile)
+clip1 = Hermite().scale(clip1, 1920, 1080, sigmoid=True)</code></pre>
+</doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -510,33 +520,7 @@ clip3 = EwaLanczos.scale(clip3, 3840, 2160, sigmoid=True)</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>If the colors of your sources do not match after upscaling, see the Color Spaces section below</p>
-        </div>
-    </div>
-</div>
-<ul>
-<li><p>For downscaling (e.g. 2160p/4K -&gt; 1080p), use <code v-pre>Hermite</code>:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">## Downscaling: Decreases the resolution of clips to match the lowest resolution using Hermite (equivalent scaling to mpv's high-quality profile)
-clip1 = Hermite.scale(clip1, 1280, 720, linear=True)
-clip2 = Hermite.scale(clip2, 1920, 1080, linear=True)
-clip3 = Hermite.scale(clip3, 3840, 2160, linear=True)</code></pre>
-</doc-codeblock></div>
-</li>
-</ul>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Downscaling is generally not recommended. We suggest upscaling your sources to match the highest resolution unless you have a specific reason (e.g. comparing how a higher resolution file would look on a lower resolution display).</p>
+<p>If the colors of your sources do not match after upscaling, see the Color Spaces section below.</p>
         </div>
     </div>
 </div>
