@@ -186,7 +186,7 @@ Scaling should be used for all sources that have *differing resolutions* so they
 
 
 For example, if you have a 720p and 1080p source, you can either:
- - Upscale the 720p source to 1080p using `EwaLanczos`
+ - Upscale the 720p source to 1080p using `EwaLanczos`.
 
   ```py
   ## Scaling: Modify the output resolution of specified clips, use EwaLanczos for upscaling OR Hermite for downscaling (both are equivalent scaling to mpv's high-quality profile)
@@ -195,8 +195,8 @@ For example, if you have a 720p and 1080p source, you can either:
 
 **Or**
 
- - Downscale the 1080p source to 720p using `Hermite`
-   - **Warning: Downscaling produces worse results and is not recommended for comparisons**
+ - Downscale the 1080p source to 720p using `Hermite`.
+   - **Warning: Downscaling produces worse results and is not recommended for comparisons.**
 
   ```py
   ## Scaling: Modify the output resolution of specified clips, use EwaLanczos for upscaling OR Hermite for downscaling (both are equivalent scaling to mpv's high-quality profile)
@@ -204,7 +204,7 @@ For example, if you have a 720p and 1080p source, you can either:
   ```
 
 !!!warning
-If the colors of your sources do not match after upscaling, see the Color Spaces section below
+If the colors of your sources do not match after upscaling, see the Color Spaces section below.
 !!!
 
 #### Trimming
