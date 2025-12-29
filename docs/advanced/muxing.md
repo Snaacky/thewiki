@@ -312,7 +312,7 @@ If you're working with a different format, you should apply the suggestions acco
   | [Jellyfin](https://jellyfin.org/)                  | 10.11.5 | Yes     | Yes    | Unknown           | Prefers `Default` over `Forced` unless configured.                                                                                  |
   | [Kodi](https://kodi.tv/)                           | 21.3    | Yes     | Yes    | Yes               |                                                                                                                                     |
   | [clsid2/MPC-HC](https://github.com/clsid2/mpc-hc/) | 2.5.6   | Yes     | No     | Unknown           |                                                                                                                                     |
-  | [Hayase](https://hayase.watch)                     | 19.0.0  | Yes     | No     | Unknown           | Avoids picking forced track.                                                                                                        |
+  | [Hayase](https://hayase.watch)                     | 6.4.200 | No      | No     | Unknown           | Developer confirmed should avoid `Forced`, however this functionality was broken at the time of testing.                            |
 
   !!!
   The latest version of each player was tested on 2025-12-28
