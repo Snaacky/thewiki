@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820438776744">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.822218592706">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.820438776744" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.822218592706" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.820438776744" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.822218592706" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.820438776744" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.820438776744" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.822218592706" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.822218592706" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -542,8 +542,8 @@ vf-toggle=scale=in_range=limited:out_range=full,setrange=limited</code></pre>
 </doc-tab>
 <doc-tab v-cloak id="auto-hdr-mode-switching">
 <template #title>Auto HDR mode switching</template>
-<p>MPV cannot natively switch into HDR mode when playing HDR content, so we recommend <a href="https://github.com/dyphire/mpv-display-plugin">mpv-display-plugin</a> alongside <a href="https://github.com/dyphire/mpv-scripts/blob/main/hdr-mode.lua">hdr-mode.lua</a>, which will add this functionality.</p>
-<p>Simply download the latest <a href="https://github.com/dyphire/mpv-display-plugin/releases">display.zip</a> release and extract it into your MPV scripts folder, then on the hdr-mode.lua page hit the download icon and open it in a text editor. You will need to change <code v-pre>hdr_mode</code> from <code v-pre>noth</code> to <code v-pre>switch</code> and configure <code v-pre>target_peak</code> to match your display&#x27;s peak brightness. This can be found under display settings -&gt; advanced display. If your display does not report one, run the <a href="https://apps.microsoft.com/detail/9n7f2sm5d1lr">Windows HDR Calibration Tool</a> first. Once you&#x27;re done save the file into your MPV scripts folder.</p>
+<p>MPV cannot natively switch into HDR mode when playing HDR content, so we recommend <a href="https://github.com/dyphire/mpv-display-plugin">mpv-display-plugin</a> alongside <a href="https://gist.github.com/emotion3459/cdea08e68671d8858d73b4698a24316c">hdr-toggle.lua</a>, which will add this functionality.</p>
+<p>Simply download the latest <a href="https://github.com/dyphire/mpv-display-plugin/releases">display.zip</a> release and extract it into your MPV scripts folder, then on the hdr-toggle.lua page click Download ZIP, open the folder inside, and drag hdr-toggle.lua into your MPV scripts folder.</p>
 </doc-tab>
 </doc-tabs>
 <doc-anchor-target id="kodi">
