@@ -51,36 +51,48 @@ Now that we've installed Docker and retrieved our VPN configuration, we can set 
 #
 # 1. Docker Compose's `volume parameter`
 #
-# The `volume` parameter lets you mount directories from your host system to the Docker container so that information can persist upon bringing a container
-# down or up. Create these directories where you want and add them for each container following the template.
-# See (https://docs.docker.com/engine/storage/) for more information on giving your containers access to storage locations.
+# The `volume` parameter lets you mount directories from your host system to the Docker container so
+# that information can persist upon bringing a container down or up. Create these directories where 
+# you want and add them for each container following the template.
+# See (https://docs.docker.com/engine/storage/) for more information on giving your containers access to
+# storage locations.
 #
-# Generally, the volumes follow a `/host:/container` structure. The path before the colon is where the files are located on your system, and the path afterward is how the container will see them internally.
-# For example, if we were to add '/user/home:/example' our container would see a directory called /example that would have all the files from /user/home.
+# Generally, the volumes follow a `/host:/container` structure. The path before the colon is where the
+# files are located on your system, and the path afterward is how the container will see them internally.
+# For example, if we were to add '/user/home:/example' our container would see a directory called 
+# `/example` that would have all the files from `/user/home`.
 #
-# Following the recommend directory structure from before, we've already filled out the volume mount settings, so that every service will have its
-# own directory for its compose files, all in the form of `/home/user/projects/automation/<service name>`.
+# Following the recommend directory structure from before, we've already filled out the volume mount
+# settings, so that every service will have its
+# own directory for its compose files, all in the form of 
+# `/home/user/projects/automation/<service name>`.
 #
-# This can of course be changed if you're experienced with Docker and would prefer to use custom mount locations.
+# This can of course be changed if you're experienced with Docker and would prefer to use custom mount
+# locations.
 #
 # 2. Values for PUID and PGID
 #
-# These values refer to the host OS user's UID and GID, respectively. You can find this out by entering `id $user` in your terminal.
+# These values refer to the host OS user's UID and GID, respectively. You can find this out by entering
+# `id $user` in your terminal.
 #
 # 3. Time zones
 #
-# All instances of `TZ` in the `environment` section should be changed to `TZ=Your/Timezone`. To find your timezone and the correct way to format it
-# for Docker, you can check this Wikipedia article (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) and get the information
-# from the "TZ identifier" column
+# All instances of `TZ` in the `environment` section should be changed to `TZ=Your/Timezone`. To find
+# your timezone and the correct way to format it for Docker, you can check this Wikipedia article 
+# (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) and get the information from the
+# "TZ identifier" column
 #
 # 4. Gluetun and VPN providers
 #
-# environment variables and setup instructions for each provider can be found at (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
+# environment variables and setup instructions for each provider can be found at 
+# (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
 # To help with readability, settings have been filled out to roughly match a configuration for ProtonVPN.
 # 
 # 5. Forwarded ports
 # 
-# Forwarding a port roughly means opening it to incoming traffic. This concept applies both to internal ports (ports between devices on your home network or between Docker containers,) and public ports (ports forwarded through your VPN or on your router.) 
+# Forwarding a port roughly means opening it to incoming traffic. This concept applies both to internal
+# ports (ports between devices on your home network or between Docker containers,) and public ports
+# (ports forwarded through your VPN or on your router.) 
 # 
 # We make references to both types in this guide. To clarify the difference: 
 # Ports listed under `ports:` in the below file are internal (between Docker containers.)
@@ -100,7 +112,9 @@ services:
       - WIREGUARD_ADDRESS= # Same as above!
       - VPN_PORT_FORWARDING=on # Turn this off if you are not using port forwarding
       - VPN_FORWARD_ONLY=on # Same as above!
-      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{'{{'}}PORT{{'}}'}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1' #This example up command will update qBittorrent with your forwarded port automatically. See 4. Gluetun for more information. Can also be removed if not using port forwarding.
+      - VPN_PORT_FORWARDING_UP_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{'{{'}}PORT{{'}}'}}}" http://127.0.0.1:8123/api/v2/app/setPreferences 2>&1'
+# This example up command will update qBittorrent with your forwarded port automatically. See 4. Gluetun
+# for more information. Can also be removed if not using port forwarding.
     cap_add:
       - NET_ADMIN
     ports: # Anything using your VPN will need its ports added here to be reachable. 
@@ -113,7 +127,9 @@ services:
       - PGID=1000
       - TZ=Europe/London # Change this based on your timezone
       - WEBUI_PORT=8123
-      - TORRENTING_PORT= # Set this to your forwarded port, or delete it and use VPN_PORT_FORWARDING_UP_COMMAND. Delete entirely if not using port forwarding.
+      - TORRENTING_PORT= 
+# Set this to your forwarded port, or delete it and use VPN_PORT_FORWARDING_UP_COMMAND. 
+# Delete entirely if not using port forwarding.
     network_mode: container:gluetun
     depends_on:
       - gluetun
@@ -167,9 +183,11 @@ services:
 ```yml
 # The following segments are intended to fully replace the Gluetun section in the above compose file.
 #
-# You are welcome to use these directly, but we still recommend reading the page for your provider at (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
+# You are welcome to use these directly, but we still recommend reading the page for your provider at
+# (https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
 #
-# Most of these examples have further configuration options that you may wish to utilize, located at the link above.
+# Most of these examples have further configuration options that you may wish to utilize, located at the
+# link above.
 # These are as basic as possible, while still detailing the important differences between providers.
 
 ---
