@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.822277356116">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.822505564619">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.822277356116" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.822505564619" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.822277356116" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.822505564619" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.822277356116" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.822277356116" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.822505564619" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.822505564619" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -175,8 +175,9 @@
    <doc-panel id="option-1--installing-mpv" collapsed>
        <template #title>Option #1: <span class="docs-emoji">&#x1F527;</span> Installing mpv</template>
 <ol>
-<li>Download the latest Windows build of <a href="https://mpv.io">mpv</a> from <a href="https://github.com/zhongfly/mpv-winbuild/releases/latest">mpv-winbuild</a>. <em>For most users, this should be <code v-pre>mpv-x86_64-YYYYMMDD-git-abcxyz.7z</code></em></li>
-<li>Once downloaded, extract the archive&#x27;s contents to your specified location</li>
+<li>Download the latest Windows build of <a href="https://mpv.io">mpv</a> from <a href="https://github.com/zhongfly/mpv-winbuild/releases/latest">mpv-winbuild</a>. For most users, this should be <code v-pre>mpv-x86_64-YYYYMMDD-git-abcxyz.7z</code>.</li>
+<li>Once downloaded, extract the archive&#x27;s contents to your desired location.</li>
+<li>In the extracted folder, run <code v-pre>mpv-register.bat</code>. This registers mpv with Windows so it can open media files by default and appear in &quot;Open with&quot; menus, but you will still need to set mpv as your default media player in Windows settings.</li>
 </ol>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -190,21 +191,11 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This folder cannot be changed after installation. If you wish to change it in the future, you will need to uninstall it first.</p>
+<p>Simply moving the mpv folder after registration will break the setup.<br />
+If you move it, you must run <code v-pre>mpv-register.bat</code> again from the new location.</p>
         </div>
     </div>
 </div>
-<ol start="3">
-<li>Navigate to the <code v-pre>installer</code> folder and run <code v-pre>mpv-install.bat</code>. Follow the on-screen instructions to complete installation</li>
-</ol>
-<p>
-<figure>
-    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
-        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/tutorials/mpv/mpv-winbuild-installation.mp4" allowfullscreen></iframe>
-    </div>
-    <figcaption class="caption">Installing mpv-winbuild</figcaption>
-</figure>
-</p>
    </doc-panel>
    <doc-panel id="option-2--installing-mpv-via-scoop" collapsed>
        <template #title>Option #2: <span class="docs-emoji">&#x1F368;</span> Installing mpv via Scoop</template>
@@ -467,7 +458,6 @@ scoop install extras/mpv-git</code></pre>
 <pre translate="no" class="language-properties"><code v-pre class="language-properties">## Video
 profile=high-quality
 vo=gpu-next
-scale-antiring=0.6
 
 ## Behavior (personal preference)
 keep-open=yes
@@ -526,10 +516,6 @@ alang=jpn,ja
 <tr>
 <td><a href="https://mpv.io/manual/master/#video-output-drivers"><code v-pre>vo</code></a></td>
 <td>The output driver to be used by mpv. <em><code v-pre>gpu-next</code> is recommended for most modern hardware</em>.</td>
-</tr>
-<tr>
-<td><a href="https://mpv.io/manual/master/#options-scale-antiring"><code v-pre>scale-antiring</code></a></td>
-<td>Sets the strength of the antiringing filter. <em>We recommend not setting too high of a value to prevent unwanted artifacts</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-keep-open"><code v-pre>keep-open</code></a></td>
