@@ -36,7 +36,7 @@ If you plan on sharing your torrent to the public, you'll need to set tracker UR
 
 ```text
 http://nyaa.tracker.wf:7777/announce
-http://anidex.moe:6969/announce
+https://tracker.nekobt.to/api/tracker/public/announce
 udp://open.stealth.si:80/announce
 udp://tracker.opentrackr.org:1337/announce
 udp://tracker.coppersurfer.tk:6969/announce
