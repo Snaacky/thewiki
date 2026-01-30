@@ -18,7 +18,7 @@ We suggest you use a reliable content blocker such as [uBlock Origin](https://ub
 - [Nyaa](https://nyaa.si) [!badge icon=":heart:" variant="primary" text="Recommended"]
 - [AcgnX](https://share.acgnx.se) [!badge variant="secondary" text="Chinese"]
 - [ACG.RIP](https://acg.rip) [!badge variant="secondary" text="Chinese"]
-- [AniDex](https://anidex.info)
+- [nekoBT](https://nekobt.to)
 - [AnimeTosho](https://animetosho.org) [!badge variant="danger" icon="search" text="Scraper"]
 - [DMHY](https://dmhy.org) [!badge variant="secondary" text="Chinese"]
 - [RuTracker](https://rutracker.org) [!badge variant="secondary" text="Russian"]
