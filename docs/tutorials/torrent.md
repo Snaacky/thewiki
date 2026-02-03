@@ -67,12 +67,12 @@ There are several tools you can use to make a torrent:
 
 ```batch
 torf --max-piece-size 16 ^
--t http://nyaa.tracker.wf:7777/announce,^
-http://anidex.moe:6969/announce,^
-udp://open.stealth.si:80/announce,^
-udp://tracker.opentrackr.org:1337/announce,^
-udp://tracker.coppersurfer.tk:6969/announce,^
-udp://exodus.desync.com:6969/announce ^
+-t http://nyaa.tracker.wf:7777/announce ^
+-t http://anidex.moe:6969/announce ^
+-t udp://open.stealth.si:80/announce ^
+-t udp://tracker.opentrackr.org:1337/announce ^
+-t udp://tracker.coppersurfer.tk:6969/announce ^
+-t udp://exodus.desync.com:6969/announce ^
 "D:\path\to\root\directory"
 ```
 
@@ -80,12 +80,12 @@ udp://exodus.desync.com:6969/announce ^
 
 ```batch
 for /d %X in (*) do torf --max-piece-size 16 ^
--t http://nyaa.tracker.wf:7777/announce,^
-http://anidex.moe:6969/announce,^
-udp://open.stealth.si:80/announce,^
-udp://tracker.opentrackr.org:1337/announce,^
-udp://tracker.coppersurfer.tk:6969/announce,^
-udp://exodus.desync.com:6969/announce ^
+-t http://nyaa.tracker.wf:7777/announce ^
+-t http://anidex.moe:6969/announce ^
+-t udp://open.stealth.si:80/announce ^
+-t udp://tracker.opentrackr.org:1337/announce ^
+-t udp://tracker.coppersurfer.tk:6969/announce ^
+-t udp://exodus.desync.com:6969/announce ^
 "%X"
 ```
 
@@ -93,12 +93,12 @@ udp://exodus.desync.com:6969/announce ^
 
 ```batch
 for %X in (*.mkv) do torf --max-piece-size 16 ^
--t http://nyaa.tracker.wf:7777/announce,^
-http://anidex.moe:6969/announce,^
-udp://open.stealth.si:80/announce,^
-udp://tracker.opentrackr.org:1337/announce,^
-udp://tracker.coppersurfer.tk:6969/announce,^
-udp://exodus.desync.com:6969/announce ^
+-t http://nyaa.tracker.wf:7777/announce ^
+-t http://anidex.moe:6969/announce ^
+-t udp://open.stealth.si:80/announce ^
+-t udp://tracker.opentrackr.org:1337/announce ^
+-t udp://tracker.coppersurfer.tk:6969/announce ^
+-t udp://exodus.desync.com:6969/announce ^
 "%X"
 ```
 
@@ -110,12 +110,12 @@ udp://exodus.desync.com:6969/announce ^
 
 ```shell
 torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce,\
-http://anidex.moe:6969/announce,\
-udp://open.stealth.si:80/announce,\
-udp://tracker.opentrackr.org:1337/announce,\
-udp://tracker.coppersurfer.tk:6969/announce,\
-udp://exodus.desync.com:6969/announce \
+-t http://nyaa.tracker.wf:7777/announce \
+-t http://anidex.moe:6969/announce \
+-t udp://open.stealth.si:80/announce \
+-t udp://tracker.opentrackr.org:1337/announce \
+-t udp://tracker.coppersurfer.tk:6969/announce \
+-t udp://exodus.desync.com:6969/announce \
 "New Folder"
 ```
 
@@ -123,12 +123,12 @@ udp://exodus.desync.com:6969/announce \
 
 ```shell
 for dir in ./*/; do torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce,\
-http://anidex.moe:6969/announce,\
-udp://open.stealth.si:80/announce,\
-udp://tracker.opentrackr.org:1337/announce,\
-udp://tracker.coppersurfer.tk:6969/announce,\
-udp://exodus.desync.com:6969/announce \
+-t http://nyaa.tracker.wf:7777/announce \
+-t http://anidex.moe:6969/announce \
+-t udp://open.stealth.si:80/announce \
+-t udp://tracker.opentrackr.org:1337/announce \
+-t udp://tracker.coppersurfer.tk:6969/announce \
+-t udp://exodus.desync.com:6969/announce \
 "$dir"; done
 ```
 
@@ -136,12 +136,12 @@ udp://exodus.desync.com:6969/announce \
 
 ```shell
 for file in *.mkv; do torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce,\
-http://anidex.moe:6969/announce,\
-udp://open.stealth.si:80/announce,\
-udp://tracker.opentrackr.org:1337/announce,\
-udp://tracker.coppersurfer.tk:6969/announce,\
-udp://exodus.desync.com:6969/announce \
+-t http://nyaa.tracker.wf:7777/announce \
+-t http://anidex.moe:6969/announce \
+-t udp://open.stealth.si:80/announce \
+-t udp://tracker.opentrackr.org:1337/announce \
+-t udp://tracker.coppersurfer.tk:6969/announce \
+-t udp://exodus.desync.com:6969/announce \
 "$file"; done
 ```
 
