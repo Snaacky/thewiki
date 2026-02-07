@@ -219,9 +219,9 @@ Some users experience issues with the [change-refresh](https://github.com/Cogent
 !!!
 
 +++ Auto HDR mode switching
-MPV cannot natively switch into HDR mode when playing HDR content, so we recommend [mpv-display-plugin](https://github.com/dyphire/mpv-display-plugin) alongside [hdr-mode.lua](https://github.com/dyphire/mpv-scripts/blob/main/hdr-mode.lua), which will add this functionality. 
+MPV cannot natively switch into HDR mode when playing HDR content, so we recommend [mpv-display-plugin](https://github.com/dyphire/mpv-display-plugin) alongside [hdr-toggle.lua](https://gist.github.com/emotion3459/cdea08e68671d8858d73b4698a24316c), which will add this functionality. 
 
-Simply download the latest [display.zip](https://github.com/dyphire/mpv-display-plugin/releases) release and extract it into your MPV scripts folder, then on the hdr-mode.lua page hit the download icon and open it in a text editor. You will need to change `hdr_mode` from `noth` to `switch` and configure `target_peak` to match your display's peak brightness. This can be found under display settings -> advanced display. If your display does not report one, run the [Windows HDR Calibration Tool](https://apps.microsoft.com/detail/9n7f2sm5d1lr) first. Once you're done save the file into your MPV scripts folder.
+Simply download the latest [display.zip](https://github.com/dyphire/mpv-display-plugin/releases) release and extract it into your MPV scripts folder, then on the hdr-toggle.lua page click Download ZIP, open the folder inside, and drag hdr-toggle.lua into your MPV scripts folder.
 
 +++
 

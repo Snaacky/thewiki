@@ -246,13 +246,7 @@ If you're working with a different format, you should apply the suggestions acco
   (in the case of a 2.0 downmix or 5.1 upmix),
   or the most well-supported track (typically the 2.0 track).
 
-  !!!
-  Refer to the [Practical Example](#practical-example-basic) to better understand the track ordering
-  !!!
-
-===
-
-==- :icon-checklist: Practical Example - Basic
+==- :icon-checklist: Example: Tagging a Simple Dual-Audio Release
 
   | No. | Track Type  | Language | Name                    | Original           | Default            | Forced             | Other Flags       |
   | --- | ----------- | -------- | ----------------------- | ------------------ | ------------------ | ------------------ | ----------------- |
@@ -261,28 +255,8 @@ If you're working with a different format, you should apply the suggestions acco
   | 3   | Audio       | eng      | Opus 5.1 @ 320kb/s      | :x:                | :white_check_mark: | N/A                | None              |
   | 4   | Subtitle #1 | eng      | Full Subtitles [Fansub] | :x:                | :white_check_mark: | :x:                | None              |
   | 5   | Subtitle #2 | eng      | Signs & Songs [Fansub]    | :x:              | :x:                | :white_check_mark: | None              |
-
-==- :icon-checklist: Practical Example - Advanced
-
-  | No. | Track Type   | Language | Name                                    | Original           | Default            | Forced             | Other Flags         |
-  | --- | ------------ | -------- | --------------------------------------- | ------------------ | ------------------ | ------------------ | ------------------- |
-  | 1   | Video        | und      | Group Tag                               | N/A                | N/A                | N/A                | None                |
-  | 2   | Audio        | jpn      | FLAC 5.1                                | :white_check_mark: | :white_check_mark: | N/A                | None                |
-  | 3   | Audio        | jpn      | FLAC 2.0                                | :white_check_mark: | :white_check_mark: | N/A                | None                |
-  | 4   | Audio        | jpn      | FLAC 2.0 - Japanese Commentary          | :x:                | :x:                | N/A                | Commentary          |
-  | 5   | Audio        | eng      | Opus 5.1 @ 320kb/s                      | :x:                | :white_check_mark: | N/A                | None                |
-  | 6   | Audio        | eng      | Opus 2.0 @ 192kb/s - Commentary         | :x:                | :x:                | N/A                | Commentary          |
-  | 7   | Audio        | eng      | Opus 2.0 @ 192kb/s - Descriptive        | :x:                | :x:                | N/A                | Visual-impaired     |
-  | 8   | Subtitle #1  | eng      | Full Subtitles [Fansub]                 | :x:                | :white_check_mark: | :x:                | None                |
-  | 9   | Subtitle #2  | enm      | Honorifics [Fansub]                     | :x:                | :white_check_mark: | :x:                | None                |
-  | 10  | Subtitle #3  | eng      | Japanese Commentary [USABD]             | :x:                | :x:                | :x:                | Commentary          |
-  | 11  | Subtitle #4  | eng      | Signs & Songs [Fansub]                  | :x:                | :x:                | :white_check_mark: | None                |
-  | 12  | Subtitle #5  | eng      | SDH [USABD]                             | :x:                | :x:                | :x:                | Hearing-impaired    |
-  | 13  | Subtitle #6  | eng      | English Commentary [USABD]              | :x:                | :x:                | :x:                | Commentary          |
-  | 14  | Subtitle #7  | jpn      | Closed Captions [Netflix]               | :white_check_mark: | :x:                | :x:                | Hearing-impaired    |
-  | 15  | Subtitle #8  | es-ES    | Full Subtitles (Castilian) [SPABD]      | :x:                | :white_check_mark: | :x:                | None                |
-  | 16  | Subtitle #9  | es-419   | Full Subtitles (Latin American) [SPABD] | :x:                | :white_check_mark: | :x:                | None                |
-  | 17  | Subtitle #10 | de       | Full Subtitles [GERBD]                  | :x:                | :white_check_mark: | :x:                | None                |
+  
+  For more advanced examples, refer back to the [Default Track Selection](#default-track-selection) section, which already explains this quite well.
 
 ===
 

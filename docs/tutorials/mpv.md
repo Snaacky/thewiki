@@ -14,14 +14,14 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 
 ==- Option #1: 🔧 Installing mpv
 
-1. Download the latest Windows build of [mpv](https://mpv.io) from [mpv-winbuild](https://github.com/zhongfly/mpv-winbuild/releases/latest). *For most users, this should be `mpv-x86_64-YYYYMMDD-git-abcxyz.7z`*
-2. Once downloaded, extract the archive's contents to your specified location
-!!!warning
-This folder cannot be changed after installation. If you wish to change it in the future, you will need to uninstall it first.
-!!!
-3. Navigate to the `installer` folder and run `mpv-install.bat`. Follow the on-screen instructions to complete installation
+1. Download the latest Windows build of [mpv](https://mpv.io) from [mpv-winbuild](https://github.com/zhongfly/mpv-winbuild/releases/latest). For most users, this should be `mpv-x86_64-YYYYMMDD-git-abcxyz.7z`.
+2. Once downloaded, extract the archive's contents to your desired location.
+3. In the extracted folder, run `mpv-register.bat`. This registers mpv with Windows so it can open media files by default and appear in "Open with" menus, but you will still need to set mpv as your default media player in Windows settings.
 
-[!embed text="Installing mpv-winbuild"](/static/tutorials/mpv/mpv-winbuild-installation.mp4)
+!!!warning  
+Simply moving the mpv folder after registration will break the setup.  
+If you move it, you must run `mpv-register.bat` again from the new location.  
+!!!
 
 ==- Option #2: 🍨 Installing mpv via Scoop
 
@@ -193,7 +193,6 @@ We recommend taking your time to create your own config. If you want to get up a
 ## Video
 profile=high-quality
 vo=gpu-next
-scale-antiring=0.6
 
 ## Behavior (personal preference)
 keep-open=yes
@@ -227,7 +226,6 @@ Option                                                                          
 -------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [`profile`](https://mpv.io/manual/master/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
 [`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*.
-[`scale-antiring`](https://mpv.io/manual/master/#options-scale-antiring)                         | Sets the strength of the antiringing filter. *We recommend not setting too high of a value to prevent unwanted artifacts*.
 [`keep-open`](https://mpv.io/manual/master/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*.
 [`save-position-on-quit`](https://mpv.io/manual/master/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*.
 [`screenshot-format`](https://mpv.io/manual/master/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*.

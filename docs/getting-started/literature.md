@@ -132,7 +132,7 @@ Aggregators use downscaled and compressed images, resulting in lower image quali
     !!!
 
     !!!warning
-    Adds artifacts to full color pages regardless of scaling algorithm.
+    Adds [artifacts](https://slow.pics/c/AWxiDa89) to jpeg files regardless of scaling algorithm.
     !!!
 
     ==- :icon-sliders: Fixing black levels

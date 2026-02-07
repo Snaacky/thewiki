@@ -36,11 +36,12 @@ If you plan on sharing your torrent to the public, you'll need to set tracker UR
 
 ```text
 http://nyaa.tracker.wf:7777/announce
-http://anidex.moe:6969/announce
+https://tracker.nekobt.to/api/tracker/public/announce
+http://tracker.anirena.com:80/announce
 udp://open.stealth.si:80/announce
 udp://tracker.opentrackr.org:1337/announce
-udp://tracker.coppersurfer.tk:6969/announce
 udp://exodus.desync.com:6969/announce
+udp://tracker.torrent.eu.org:451/announce
 ```
 
 ## Creating
@@ -67,12 +68,13 @@ There are several tools you can use to make a torrent:
 
 ```batch
 torf --max-piece-size 16 ^
--t http://nyaa.tracker.wf:7777/announce,^
-http://anidex.moe:6969/announce,^
-udp://open.stealth.si:80/announce,^
-udp://tracker.opentrackr.org:1337/announce,^
-udp://tracker.coppersurfer.tk:6969/announce,^
-udp://exodus.desync.com:6969/announce ^
+-t http://nyaa.tracker.wf:7777/announce ^
+-t https://tracker.nekobt.to/api/tracker/public/announce ^
+-t http://tracker.anirena.com:80/announce ^
+-t udp://open.stealth.si:80/announce ^
+-t udp://tracker.opentrackr.org:1337/announce ^
+-t udp://exodus.desync.com:6969/announce ^
+-t udp://tracker.torrent.eu.org:451/announce ^
 "D:\path\to\root\directory"
 ```
 
@@ -80,12 +82,13 @@ udp://exodus.desync.com:6969/announce ^
 
 ```batch
 for /d %X in (*) do torf --max-piece-size 16 ^
--t http://nyaa.tracker.wf:7777/announce,^
-http://anidex.moe:6969/announce,^
-udp://open.stealth.si:80/announce,^
-udp://tracker.opentrackr.org:1337/announce,^
-udp://tracker.coppersurfer.tk:6969/announce,^
-udp://exodus.desync.com:6969/announce ^
+-t http://nyaa.tracker.wf:7777/announce ^
+-t https://tracker.nekobt.to/api/tracker/public/announce ^
+-t http://tracker.anirena.com:80/announce ^
+-t udp://open.stealth.si:80/announce ^
+-t udp://tracker.opentrackr.org:1337/announce ^
+-t udp://exodus.desync.com:6969/announce ^
+-t udp://tracker.torrent.eu.org:451/announce ^
 "%X"
 ```
 
@@ -93,12 +96,13 @@ udp://exodus.desync.com:6969/announce ^
 
 ```batch
 for %X in (*.mkv) do torf --max-piece-size 16 ^
--t http://nyaa.tracker.wf:7777/announce,^
-http://anidex.moe:6969/announce,^
-udp://open.stealth.si:80/announce,^
-udp://tracker.opentrackr.org:1337/announce,^
-udp://tracker.coppersurfer.tk:6969/announce,^
-udp://exodus.desync.com:6969/announce ^
+-t http://nyaa.tracker.wf:7777/announce ^
+-t https://tracker.nekobt.to/api/tracker/public/announce ^
+-t http://tracker.anirena.com:80/announce ^
+-t udp://open.stealth.si:80/announce ^
+-t udp://tracker.opentrackr.org:1337/announce ^
+-t udp://exodus.desync.com:6969/announce ^
+-t udp://tracker.torrent.eu.org:451/announce ^
 "%X"
 ```
 
@@ -110,12 +114,13 @@ udp://exodus.desync.com:6969/announce ^
 
 ```shell
 torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce,\
-http://anidex.moe:6969/announce,\
-udp://open.stealth.si:80/announce,\
-udp://tracker.opentrackr.org:1337/announce,\
-udp://tracker.coppersurfer.tk:6969/announce,\
-udp://exodus.desync.com:6969/announce \
+-t http://nyaa.tracker.wf:7777/announce \
+-t https://tracker.nekobt.to/api/tracker/public/announce \
+-t http://tracker.anirena.com:80/announce \
+-t udp://open.stealth.si:80/announce \
+-t udp://tracker.opentrackr.org:1337/announce \
+-t udp://exodus.desync.com:6969/announce \
+-t udp://tracker.torrent.eu.org:451/announce \
 "New Folder"
 ```
 
@@ -123,12 +128,13 @@ udp://exodus.desync.com:6969/announce \
 
 ```shell
 for dir in ./*/; do torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce,\
-http://anidex.moe:6969/announce,\
-udp://open.stealth.si:80/announce,\
-udp://tracker.opentrackr.org:1337/announce,\
-udp://tracker.coppersurfer.tk:6969/announce,\
-udp://exodus.desync.com:6969/announce \
+-t http://nyaa.tracker.wf:7777/announce \
+-t https://tracker.nekobt.to/api/tracker/public/announce \
+-t http://tracker.anirena.com:80/announce \
+-t udp://open.stealth.si:80/announce \
+-t udp://tracker.opentrackr.org:1337/announce \
+-t udp://exodus.desync.com:6969/announce \
+-t udp://tracker.torrent.eu.org:451/announce \
 "$dir"; done
 ```
 
@@ -136,12 +142,13 @@ udp://exodus.desync.com:6969/announce \
 
 ```shell
 for file in *.mkv; do torf --max-piece-size 16 \
--t http://nyaa.tracker.wf:7777/announce,\
-http://anidex.moe:6969/announce,\
-udp://open.stealth.si:80/announce,\
-udp://tracker.opentrackr.org:1337/announce,\
-udp://tracker.coppersurfer.tk:6969/announce,\
-udp://exodus.desync.com:6969/announce \
+-t http://nyaa.tracker.wf:7777/announce \
+-t https://tracker.nekobt.to/api/tracker/public/announce \
+-t http://tracker.anirena.com:80/announce \
+-t udp://open.stealth.si:80/announce \
+-t udp://tracker.opentrackr.org:1337/announce \
+-t udp://exodus.desync.com:6969/announce \
+-t udp://tracker.torrent.eu.org:451/announce \
 "$file"; done
 ```
 
@@ -194,11 +201,12 @@ n    | Piece Size
 ```shell
 mktorrent -v -l 24 \
 -a http://nyaa.tracker.wf:7777/announce \
--a http://anidex.moe:6969/announce \
+-a https://tracker.nekobt.to/api/tracker/public/announce \
+-a http://tracker.anirena.com:80/announce \
 -a udp://open.stealth.si:80/announce \
 -a udp://tracker.opentrackr.org:1337/announce \
--a udp://tracker.coppersurfer.tk:6969/announce \
 -a udp://exodus.desync.com:6969/announce \
+-a udp://tracker.torrent.eu.org:451/announce \
 "D:\path\to\root\directory"
 ```
 
@@ -207,11 +215,12 @@ mktorrent -v -l 24 \
 ```shell
 for dir in ./*/; do mktorrent -v -l 24 \
 -a http://nyaa.tracker.wf:7777/announce \
--a http://anidex.moe:6969/announce \
+-a https://tracker.nekobt.to/api/tracker/public/announce \
+-a http://tracker.anirena.com:80/announce \
 -a udp://open.stealth.si:80/announce \
 -a udp://tracker.opentrackr.org:1337/announce \
--a udp://tracker.coppersurfer.tk:6969/announce \
 -a udp://exodus.desync.com:6969/announce \
+-a udp://tracker.torrent.eu.org:451/announce \
 "$dir"; done
 ```
 
@@ -220,11 +229,12 @@ for dir in ./*/; do mktorrent -v -l 24 \
 ```shell
 for file in *.mkv; do mktorrent -v -l 24 \
 -a http://nyaa.tracker.wf:7777/announce \
--a http://anidex.moe:6969/announce \
+-a https://tracker.nekobt.to/api/tracker/public/announce \
+-a http://tracker.anirena.com:80/announce \
 -a udp://open.stealth.si:80/announce \
 -a udp://tracker.opentrackr.org:1337/announce \
--a udp://tracker.coppersurfer.tk:6969/announce \
 -a udp://exodus.desync.com:6969/announce \
+-a udp://tracker.torrent.eu.org:451/announce \
 "$file"; done
 ```
 
@@ -242,8 +252,24 @@ for file in *.mkv; do mktorrent -v -l 24 \
 - Under **Fields** -> **Tracker URLS**, paste in the trackers
 
 !!!warning
-Line breaks after each [tracker URL](#trackers) are necessary when creating the torrent.
+Line breaks after each tracker URL are necessary when creating the torrent.
 !!!
+
+```text
+http://nyaa.tracker.wf:7777/announce
+
+https://tracker.nekobt.to/api/tracker/public/announce
+
+http://tracker.anirena.com:80/announce
+
+udp://open.stealth.si:80/announce
+
+udp://tracker.opentrackr.org:1337/announce
+
+udp://exodus.desync.com:6969/announce
+
+udp://tracker.torrent.eu.org:451/announce
+```
 
 [!embed text="Creating a torrent for a directory"](/static/torrenting/qbittorrent/creating-torrents-single.mp4)
 
@@ -264,11 +290,12 @@ Line breaks after each [tracker URL](#trackers) are necessary when creating the 
 ```batch
 torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
-http://anidex.moe:6969/announce ^
+https://tracker.nekobt.to/api/tracker/public/announce ^
+http://tracker.anirena.com:80/announce ^
 udp://open.stealth.si:80/announce ^
 udp://tracker.opentrackr.org:1337/announce ^
-udp://tracker.coppersurfer.tk:6969/announce ^
 udp://exodus.desync.com:6969/announce ^
+udp://tracker.torrent.eu.org:451/announce ^
 "D:\path\to\root\directory"
 ```
 
@@ -277,11 +304,12 @@ udp://exodus.desync.com:6969/announce ^
 ```batch
 for /d %X in (*) do torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
-http://anidex.moe:6969/announce ^
+https://tracker.nekobt.to/api/tracker/public/announce ^
+http://tracker.anirena.com:80/announce ^
 udp://open.stealth.si:80/announce ^
 udp://tracker.opentrackr.org:1337/announce ^
-udp://tracker.coppersurfer.tk:6969/announce ^
 udp://exodus.desync.com:6969/announce ^
+udp://tracker.torrent.eu.org:451/announce ^
 "%X"
 ```
 
@@ -290,11 +318,12 @@ udp://exodus.desync.com:6969/announce ^
 ```batch
 for %X in (*.mkv) do torrenttools create -l 16MiB ^
 -a http://nyaa.tracker.wf:7777/announce ^
-http://anidex.moe:6969/announce ^
+https://tracker.nekobt.to/api/tracker/public/announce ^
+http://tracker.anirena.com:80/announce ^
 udp://open.stealth.si:80/announce ^
 udp://tracker.opentrackr.org:1337/announce ^
-udp://tracker.coppersurfer.tk:6969/announce ^
 udp://exodus.desync.com:6969/announce ^
+udp://tracker.torrent.eu.org:451/announce ^
 "%X"
 ```
 
@@ -307,11 +336,12 @@ udp://exodus.desync.com:6969/announce ^
 ```shell
 torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
-http://anidex.moe:6969/announce \
+https://tracker.nekobt.to/api/tracker/public/announce \
+http://tracker.anirena.com:80/announce \
 udp://open.stealth.si:80/announce \
 udp://tracker.opentrackr.org:1337/announce \
-udp://tracker.coppersurfer.tk:6969/announce \
 udp://exodus.desync.com:6969/announce \
+udp://tracker.torrent.eu.org:451/announce \
 "New Folder"
 ```
 
@@ -320,11 +350,12 @@ udp://exodus.desync.com:6969/announce \
 ```shell
 for dir in ./*/; do torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
-http://anidex.moe:6969/announce \
+https://tracker.nekobt.to/api/tracker/public/announce \
+http://tracker.anirena.com:80/announce \
 udp://open.stealth.si:80/announce \
 udp://tracker.opentrackr.org:1337/announce \
-udp://tracker.coppersurfer.tk:6969/announce \
 udp://exodus.desync.com:6969/announce \
+udp://tracker.torrent.eu.org:451/announce \
 "$dir"; done
 ```
 
@@ -333,11 +364,12 @@ udp://exodus.desync.com:6969/announce \
 ```shell
 for file in *.mkv; do torrenttools create -l 16MiB \
 -a http://nyaa.tracker.wf:7777/announce \
-http://anidex.moe:6969/announce \
+https://tracker.nekobt.to/api/tracker/public/announce \
+http://tracker.anirena.com:80/announce \
 udp://open.stealth.si:80/announce \
 udp://tracker.opentrackr.org:1337/announce \
-udp://tracker.coppersurfer.tk:6969/announce \
 udp://exodus.desync.com:6969/announce \
+udp://tracker.torrent.eu.org:451/announce \
 "$file"; done
 ```
 
