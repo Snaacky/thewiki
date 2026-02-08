@@ -278,17 +278,18 @@ If you're working with a different format, you should apply the suggestions acco
 
 ==- :icon-info: Player Support
 
-  | Player                                             | Default | Forced | Original Language | Additional Notes                                      |
-  | -------------------------------------------------- | ------- | ------ | ----------------- | ----------------------------------------------------- |
-  | [mpv](https://mpv.io/)                             | Yes     | Yes    | No                |                                                       |
-  | [VLC](https://www.videolan.org/vlc/)               | Yes     | No     | Unknown           |                                                       |
-  | [Plex](https://www.plex.tv/)                       | No      | Yes    | Unknown           | Track order takes precedence over the `Default` flag. |
-  | [Jellyfin](https://jellyfin.org/)                  | Yes     | Yes    | Unknown           |                                                       |
-  | [Kodi](https://kodi.tv/)                           | Yes     | Yes    | Yes               |                                                       |
-  | [clsid2/MPC-HC](https://github.com/clsid2/mpc-hc/) | Yes     | No     | Unknown           |                                                       |
+  | Player                                             | Version | Default | Forced | Original Language | Additional Notes                                                                                                                    |
+  | -------------------------------------------------- | ------- | ------- | ------ | ----------------- | -----------------------------------------------------                                                                               |
+  | [mpv](https://mpv.io/)                             | 4ecf729 | Yes     | Yes    | No                |                                                                                                                                     |
+  | [VLC](https://www.videolan.org/vlc/)               | 3.0.21  | Yes     | No     | Unknown           | Prefers `Default` track matching (system?) language.                                                                                |
+  | [Plex](https://www.plex.tv/)                       | 1.42.2  | No      | Yes    | Unknown           | Track order takes precedence over the `Default` flag. Never picks any subtitle (even forced) unless configured in Account Settings. |
+  | [Jellyfin](https://jellyfin.org/)                  | 10.11.5 | Yes     | Yes    | Unknown           | Prefers `Default` over `Forced` unless configured.                                                                                  |
+  | [Kodi](https://kodi.tv/)                           | 21.3    | Yes     | Yes    | Yes               |                                                                                                                                     |
+  | [clsid2/MPC-HC](https://github.com/clsid2/mpc-hc/) | 2.5.6   | Yes     | No     | Unknown           |                                                                                                                                     |
+  | [Hayase](https://hayase.watch)                     | 6.4.200 | No      | No     | Unknown           | Developer confirmed should avoid `Forced`, however this functionality was broken at the time of testing.                            |
 
   !!!
-  The latest version of each player was tested on 2024-01-09
+  The latest version of each player was tested on 2025-12-28
   !!!
 
 ==- :icon-info: Full spec
