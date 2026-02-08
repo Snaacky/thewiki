@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.823506881788">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.823862630694">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.823506881788" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.823862630694" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.823506881788" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.823862630694" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.823506881788" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.823506881788" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.823862630694" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.823862630694" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -379,19 +379,6 @@ udp://tracker.torrent.eu.org:451/announce</code></pre>
 </doc-panels>
 </doc-tab>
 </doc-tabs>
-<p>By default, torf-cli heavily biases 8 MiB piece size in situations where 16 MiB would be more suitable. <em>We recommend performing the following edit to more aggressively target 1000 pieces:</em></p>
-<ul>
-<li>Go to your torf-cli install location (e.g. <code v-pre>%localappdata%\Programs\Python\Python311\Lib\site-packages\torf</code>)</li>
-<li>Open <code v-pre>_torrent.py</code> using your text editor and replace lines 723-728:</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">        elif size &lt;= 16 * 2**30: # 16 GiB / 1024 pieces = 16 MiB max
-            pieces = size / 1024
-        elif size &lt;= 32 * 2**30: # 32 GiB / 2048 pieces = 16 MiB max
-            pieces = size / 2048
-        elif size &lt;= 64 * 2**30: # 64 GiB / 2048 pieces = 32 MiB max
-            pieces = size / 2048</code></pre>
-</doc-codeblock></div>
 <doc-anchor-target id="dottorrent-gui">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#dottorrent-gui">#</doc-anchor-trigger>
