@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.823862651558">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.823862746143">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.823862651558" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.823862746143" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.823862651558" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.823862746143" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.823862651558" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.823862651558" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.823862746143" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.823862746143" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -739,6 +739,7 @@ or the most well-supported track (typically the 2.0 track).</p>
 <thead>
 <tr>
 <th>Player</th>
+<th>Version</th>
 <th>Default</th>
 <th>Forced</th>
 <th>Original Language</th>
@@ -748,6 +749,7 @@ or the most well-supported track (typically the 2.0 track).</p>
 <tbody>
 <tr>
 <td><a href="https://mpv.io/">mpv</a></td>
+<td>4ecf729</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
@@ -755,27 +757,31 @@ or the most well-supported track (typically the 2.0 track).</p>
 </tr>
 <tr>
 <td><a href="https://www.videolan.org/vlc/">VLC</a></td>
+<td>3.0.21</td>
 <td>Yes</td>
 <td>No</td>
 <td>Unknown</td>
-<td></td>
+<td>Prefers <code v-pre>Default</code> track matching (system?) language.</td>
 </tr>
 <tr>
 <td><a href="https://www.plex.tv/">Plex</a></td>
+<td>1.42.2</td>
 <td>No</td>
 <td>Yes</td>
 <td>Unknown</td>
-<td>Track order takes precedence over the <code v-pre>Default</code> flag.</td>
+<td>Track order takes precedence over the <code v-pre>Default</code> flag. Never picks any subtitle (even forced) unless configured in Account Settings.</td>
 </tr>
 <tr>
 <td><a href="https://jellyfin.org/">Jellyfin</a></td>
+<td>10.11.5</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Unknown</td>
-<td></td>
+<td>Prefers <code v-pre>Default</code> over <code v-pre>Forced</code> unless configured.</td>
 </tr>
 <tr>
 <td><a href="https://kodi.tv/">Kodi</a></td>
+<td>21.3</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Yes</td>
@@ -783,10 +789,19 @@ or the most well-supported track (typically the 2.0 track).</p>
 </tr>
 <tr>
 <td><a href="https://github.com/clsid2/mpc-hc/">clsid2/MPC-HC</a></td>
+<td>2.5.6</td>
 <td>Yes</td>
 <td>No</td>
 <td>Unknown</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="https://hayase.watch">Hayase</a></td>
+<td>6.4.200</td>
+<td>No</td>
+<td>No</td>
+<td>Unknown</td>
+<td>Developer confirmed should avoid <code v-pre>Forced</code>, however this functionality was broken at the time of testing.</td>
 </tr>
 </tbody>
 </table>
@@ -804,7 +819,7 @@ or the most well-supported track (typically the 2.0 track).</p>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>The latest version of each player was tested on 2024-01-09</p>
+<p>The latest version of each player was tested on 2025-12-28</p>
         </div>
     </div>
 </div>
