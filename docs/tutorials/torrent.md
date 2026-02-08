@@ -156,20 +156,6 @@ for file in *.mkv; do torf --max-piece-size 16 \
 
 +++
 
-By default, torf-cli heavily biases 8 MiB piece size in situations where 16 MiB would be more suitable. *We recommend performing the following edit to more aggressively target 1000 pieces:*
-
-- Go to your torf-cli install location (e.g. `%localappdata%\Programs\Python\Python311\Lib\site-packages\torf`)
-- Open `_torrent.py` using your text editor and replace lines 723-728:
-
-```py
-        elif size <= 16 * 2**30: # 16 GiB / 1024 pieces = 16 MiB max
-            pieces = size / 1024
-        elif size <= 32 * 2**30: # 32 GiB / 2048 pieces = 16 MiB max
-            pieces = size / 2048
-        elif size <= 64 * 2**30: # 64 GiB / 2048 pieces = 32 MiB max
-            pieces = size / 2048
-```
-
 ### dottorrent-gui
 
 [dottorrent-gui](https://github.com/kz26/dottorrent-gui) is a Windows GUI application for creating torrents.
