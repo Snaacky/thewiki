@@ -192,7 +192,6 @@ We recommend taking your time to create your own config. If you want to get up a
 ```properties
 ## Video
 profile=high-quality
-vo=gpu-next
 
 ## Behavior (personal preference)
 keep-open=yes
@@ -225,7 +224,6 @@ See [mpv's user manual](https://mpv.io/manual/stable) for a detailed explanation
 Option                                                                                           | Meaning
 -------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 [`profile`](https://mpv.io/manual/master/#profiles)                                              | The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.
-[`vo`](https://mpv.io/manual/master/#video-output-drivers)                                       | The output driver to be used by mpv. *`gpu-next` is recommended for most modern hardware*.
 [`keep-open`](https://mpv.io/manual/master/#options-keep-open)                                   | Whether to close or leave the player open after the file finishes playing. *Use `no` if you want the player to close*.
 [`save-position-on-quit`](https://mpv.io/manual/master/#resuming-playback)                       | Save the current playback position on quit. When the file is reopened, mpv will resume from where it left off. *Remove this option if you do not want the player to save your position*.
 [`screenshot-format`](https://mpv.io/manual/master/#options-screenshot-format)                   | File format used for screenshots. *`png` is recommended for lossless quality*.
@@ -302,7 +300,6 @@ To use the profile, add the following to the top of your `mpv.conf`:
 
 ```properties
 profile=high-quality
-vo=gpu-next
 ```
 
 This is included in the [Basic Config](#basic-config).

@@ -31,8 +31,7 @@ Be sure to close the Plex App before applying the modifications.
   - Create `mpv.conf` file
   - Paste this into the file:
 ```
-profile=gpu-hq
-vo=gpu-next
+profile=high-quality
 tls-ca-file={Plex}\resources\cacert.pem
 ```
 where `{Plex}` is your plex install path, so it'll most likely look something like `tls-ca-file=C:\Program Files\Plex\Plex\resources\cacert.pem` if you never changed it.
