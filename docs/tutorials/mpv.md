@@ -18,7 +18,7 @@ image: https://user-images.githubusercontent.com/78981416/215125796-08b99128-fe5
 2. Once downloaded, extract the archive's contents to your desired location.
 3. In the extracted folder, run `mpv-register.bat`. This registers mpv with Windows so it can open media files by default and appear in "Open with" menus, but you will still need to set mpv as your default media player in Windows settings.
 
-!!!warning  
+!!!warning
 Simply moving the mpv folder after registration will break the setup.  
 If you move it, you must run `mpv-register.bat` again from the new location.  
 !!!
@@ -303,7 +303,6 @@ To use the profile, add the following to the top of your `mpv.conf`:
 ```properties
 profile=high-quality
 vo=gpu-next
-scale-antiring=0.6
 ```
 
 This is included in the [Basic Config](#basic-config).
