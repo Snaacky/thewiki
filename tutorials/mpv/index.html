@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.1.825592598381">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.1.825610480130">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.0.1">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.0.1.825592598381" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.0.1.825610480130" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.1.825592598381" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.1.825610480130" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.1.825592598381" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.1.825592598381" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.1.825610480130" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.1.825610480130" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -432,7 +432,6 @@ scoop install extras/mpv-git</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-properties"><code v-pre class="language-properties">## Video
 profile=high-quality
-vo=gpu-next
 
 ## Behavior (personal preference)
 keep-open=yes
@@ -487,10 +486,6 @@ alang=jpn,ja
 <tr>
 <td><a href="https://mpv.io/manual/master/#profiles"><code translate="no" v-pre>profile</code></a></td>
 <td>The profile to be used by mpv. This should be left at the top of your file avoid conflict with other settings.</td>
-</tr>
-<tr>
-<td><a href="https://mpv.io/manual/master/#video-output-drivers"><code translate="no" v-pre>vo</code></a></td>
-<td>The output driver to be used by mpv. <em><code translate="no" v-pre>gpu-next</code> is recommended for most modern hardware</em>.</td>
 </tr>
 <tr>
 <td><a href="https://mpv.io/manual/master/#options-keep-open"><code translate="no" v-pre>keep-open</code></a></td>
@@ -619,8 +614,7 @@ should be reserved for situations where the loss of detail is acceptable for red
 <p>If you use mid-range hardware, we recommend sticking to mpv&#x27;s built-in <code translate="no" v-pre>high-quality</code> profile.</p>
 <p>To use the profile, add the following to the top of your <code translate="no" v-pre>mpv.conf</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-properties"><code v-pre class="language-properties">profile=high-quality
-vo=gpu-next</code></pre>
+<pre translate="no" class="language-properties"><code v-pre class="language-properties">profile=high-quality</code></pre>
 </doc-codeblock></div>
 <p>This is included in the <doc-anchor-trigger to="#basic-config">Basic Config</doc-anchor-trigger>.</p>
 </doc-tab>
