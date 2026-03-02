@@ -21,8 +21,8 @@ jobs:
         with:
           dotnet-version: 7.0.x
 
-      - uses: retypeapp/action-build@latest
+      - uses: retypeapp/action-build@v3
 
-      - uses: retypeapp/action-github-pages@latest
+      - uses: retypeapp/action-github-pages@v3
         with:
           update-branch: true
