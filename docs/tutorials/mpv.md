@@ -431,7 +431,7 @@ Add the following to the end of your `mpv.conf`:
 
 ```properties
 [crunchyroll]
-profile-cond=filename:match("SubsPlease") or filename:match("Erai%-raws") or filename:match("HorribleSubs")
+profile-cond=filename:match("SubsPlease") or filename:match("HorribleSubs")
 profile-restore=copy
 sub-ass-use-video-data=aspect-ratio
 
