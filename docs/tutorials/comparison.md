@@ -170,12 +170,12 @@ HDR
 clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT2020_NCL, Transfer.ST2084, Primaries.BT2020, ColorRange.LIMITED))
 ```
 
-HD BD/WEB with incorrectly tagged 709 -> 601 Matrix 
+HD BD/WEB with incorrectly tagged matrix (Reds/green will look off)
 ```py
 clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, Transfer.BT709, Primaries.BT709, ColorRange.LIMITED))
 ```
 
-HD BD/WEB with incorrectly converted 709 -> 601 Matrix
+HD BD/WEB with incorrectly converted matrix (Inverse of the above, use this if that method makes colors look worse)
 ```py
 clip1 = core.resize.Point(clip1, _Matrix=vs.MATRIX_ST170_M)
 clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, ColorRange.LIMITED))
