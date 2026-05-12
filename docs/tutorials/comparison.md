@@ -43,7 +43,7 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 ## Dependencies: Allows vspreview to run [required; do not remove]
 from vstools import vs, core, depth, set_output, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased
 from vssource import FFMS2, LSMAS
-from vskernels import Point, EwaLanczosSharp
+from vskernels import Point, EwaLanczosSharp, Hermite
 from vsdeinterlace import vfm, vdecimate
 from awsmfunc.types.placebo import PlaceboColorSpace as ColorSpace
 from awsmfunc.types.placebo import PlaceboTonemapFunction as Tonemap
@@ -241,7 +241,7 @@ clip1 = core.std.Levels(clip1, gamma=0.88, planes=0)
 ## Pixel format (Required)
 Converts to RGBS which is required for debanding and scaling
 ```py
-clip1 = depth(clip1, 32)
+clip1 = Point().resample(clip1, format=vs.RGBS)
 ```
 
 ### Debanding
