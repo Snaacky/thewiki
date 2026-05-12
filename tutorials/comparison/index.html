@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.829113506848">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.831943889841">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.12.0.829113506848" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.831943889841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.829113506848" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.831943889841" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.829113506848" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.829113506848" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.831943889841" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.831943889841" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -191,7 +191,7 @@ This guide goes through the process of setting up and effectively utilizing <a h
 <pre translate="no" class="language-python"><code v-pre class="language-python">## Dependencies: Allows vspreview to run [required; do not remove]
 from vstools import vs, core, depth, set_output, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased
 from vssource import FFMS2, LSMAS
-from vskernels import Point, EwaLanczosSharp
+from vskernels import Point, EwaLanczosSharp, Hermite
 from vsdeinterlace import vfm, vdecimate
 from awsmfunc.types.placebo import PlaceboColorSpace as ColorSpace
 from awsmfunc.types.placebo import PlaceboTonemapFunction as Tonemap
@@ -473,7 +473,7 @@ clip1 = core.std.SetFrameProps(clip1, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRAN
 </doc-anchor-target>
 <p>Converts to RGBS which is required for debanding and scaling</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = depth(clip1, 32)</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Point().resample(clip1, format=vs.RGBS)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="debanding">
     <h3>
