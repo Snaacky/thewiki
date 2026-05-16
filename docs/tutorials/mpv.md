@@ -23,7 +23,35 @@ Simply moving the mpv folder after registration will break the setup.
 If you move it, you must run `mpv-register.bat` again from the new location.  
 !!!
 
-==- Option #2: 🍨 Installing mpv via Scoop
+==- Option #2: 📦 Installing mpv via Winget
+
+[Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) is Microsoft's built-in package manager for Windows 10 and Windows 11. Installing mpv via Winget requires no extra software to be downloaded and automatically adds mpv to your PATH, allowing you to access it from your terminal. Winget takes from the shinchiro builds, which are listed on mpv's website.
+
+Run PowerShell as an Administrator by searching for it in the Start menu, and click on "Run as Administrator". Afterwards, you can install mpv using `winget install`:
+!!!warning
+If PowerShell is not ran as an Adminstrator, mpv will install but you will not be able to set file associations!
+!!!
+```powershell
+winget install -e --id shinchiro.mpv
+```
+Assuming it installed to C:\Program Files\MPV Player, you can set up file associations with:
+```powershell
+cd 'C:\Program Files\MPV Player\installer'
+.\mpv-install.bat
+```
+
++++ Updating mpv
+```powershell
+winget upgrade shinchiro.mpv
+```
++++ Uninstalling mpv
+```powershell
+winget uninstall shinchiro.mpv
+```
+
++++
+
+==- Option #3: 🍨 Installing mpv via Scoop
 
 [Scoop](https://scoop.sh) is a command line package manager for Windows. Unlike other installation methods, Scoop downloads and manages packages in a portable way, keeping them neatly isolated in `%userprofile%/scoop` and automatically adding them to your PATH.
 
@@ -55,7 +83,7 @@ scoop uninstall mpv-git
 
 +++
 
-==- Option #3: 🍴 Installing a fork
+==- Option #4: 🍴 Installing a fork
 
 !!!info
 We suggest sticking with the official mpv player as forks tend to lag behind in updates.
