@@ -11,19 +11,29 @@ This guide goes through the process of setting up and effectively utilizing [VSP
 
 ## Installing
 
-- [`Python 3.14`](https://www.python.org/downloads/latest/python3.14/) - *Scroll down and select the installer for your platform (**NOT install manager**). During installation check Add python.exe to PATH*
++++ uv [!badge icon=":heart:" variant="info"]
 
-- [`VapourSynth R73`](https://github.com/vapoursynth/vapoursynth/releases/tag/R73) - Download and install `VapourSynth-x64-R73.exe`. *During installation, select `Install for me only`.*
+- Install [`uv`](https://docs.astral.sh/uv/getting-started/installation/)
 
-- [`ffms2`](https://github.com/FFMS/ffms2) [`fpng`](https://github.com/richgel999/fpng) [`LibP2P`](https://github.com/DJATOM/LibP2P-Vapoursynth) [`LSMASHSource`](https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works) [`vs-placebo`](https://github.com/sgt0/vs-placebo) [`resize2`](https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2) [`akarin`](https://github.com/Jaded-Encoding-Thaumaturgy/akarin-vapoursynth-plugin) [`vivtc`](https://github.com/vapoursynth/vivtc) - In your terminal, run the following:
- ```powershell
-  vsrepo.py install ffms2 fpng libp2p lsmas placebo resize2 akarin vivtc
-  ```
-- [`vs-jetpack`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-jetpack) [`vs-preview`](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview) [`awsmfunc`](https://github.com/OpusGang/awsmfunc) - In your terminal, run the following:
+- Make a folder that will contain all your comping related files
 
-```powershell
-python -m pip install vsjetpack vspreview awsmfunc
+- Open your terminal in said folder and type `uv venv` and hit enter. 
+
+- Paste the command below and hit enter again to install all the dependencies.
+```py
+uv pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsmas --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple
 ```
+
++++ pip
+
+- Install [`Python`](https://www.python.org/downloads/)
+
+- Open your terminal, paste the command below, and hit enter to install all the dependencies.
+```py
+pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsmas --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple
+```
++++
+
 
 ## Scripting
 
@@ -266,7 +276,22 @@ Downscales higher resolution sources to match a lower resolution source. **Only 
 
 ## Running
 
-To run your comparison script, launch a terminal window in your working directory and run the following:
++++ uv
+
+To run your comparison script, launch a terminal window in your comp folder and run the following:
+
+```powershell
+uv run vspreview comp.py
+```
+
+Alternatively, you can create a `comp.bat` file, replacing `C:\path\to\comp.py` with the exact file path to your script:
+
+```powershell
+uv run vspreview "C:\path\to\comp.py"
+```
++++ pip
+
+To run your comparison script, launch a terminal window in your comp folder and run the following:
 
 ```powershell
 vspreview comp.py
@@ -277,6 +302,7 @@ Alternatively, you can create a `comp.bat` file, replacing `C:\path\to\comp.py` 
 ```powershell
 vspreview "C:\path\to\comp.py"
 ```
++++
 
 ## First-time Setup
 
