@@ -21,7 +21,7 @@ This guide goes through the process of setting up and effectively utilizing [VSP
 
 - Paste the command below and hit enter again to install all the dependencies.
 ```py
-uv pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple vapoursynth-lsmas
+uv pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsmas --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple
 ```
 
 +++ pip
@@ -30,7 +30,7 @@ uv pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] --extra-index-ur
 
 - Open your terminal, paste the command below, and hit enter to install all the dependencies.
 ```py
-pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple vapoursynth-lsmas
+pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsmas --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple
 ```
 +++
 
