@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.832327614390">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.834080249203">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.12.0.832327614390" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.834080249203" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.832327614390" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.834080249203" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.832327614390" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.832327614390" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.834080249203" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.834080249203" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -140,23 +140,38 @@ This guide goes through the process of setting up and effectively utilizing <a h
         <span>Installing</span>
     </h2>
 </doc-anchor-target>
+<doc-tabs>
+<doc-tab v-cloak id="uv-badge-icon-variantinfo">
+<template #title>uv <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border h-6 px-2 text-xs rounded-md">
+    <span class="docs-emoji">&#x2764;&#xFE0F;</span>
+</span></template>
 <ul>
-<li><p><a href="https://www.python.org/downloads/latest/python3.14/"><code translate="no" v-pre>Python 3.14</code></a> - <em>Scroll down and select the installer for your platform (<strong>NOT install manager</strong>). During installation check Add python.exe to PATH</em></p>
+<li><p>Install <a href="https://docs.astral.sh/uv/getting-started/installation/"><code translate="no" v-pre>uv</code></a></p>
 </li>
-<li><p><a href="https://github.com/vapoursynth/vapoursynth/releases/tag/R73"><code translate="no" v-pre>VapourSynth R73</code></a> - Download and install <code translate="no" v-pre>VapourSynth-x64-R73.exe</code>. <em>During installation, select <code translate="no" v-pre>Install for me only</code>.</em></p>
+<li><p>Make a folder that will contain all your comping related files</p>
 </li>
-<li><p><a href="https://github.com/FFMS/ffms2"><code translate="no" v-pre>ffms2</code></a> <a href="https://github.com/richgel999/fpng"><code translate="no" v-pre>fpng</code></a> <a href="https://github.com/DJATOM/LibP2P-Vapoursynth"><code translate="no" v-pre>LibP2P</code></a> <a href="https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works"><code translate="no" v-pre>LSMASHSource</code></a> <a href="https://github.com/sgt0/vs-placebo"><code translate="no" v-pre>vs-placebo</code></a> <a href="https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2"><code translate="no" v-pre>resize2</code></a> <a href="https://github.com/Jaded-Encoding-Thaumaturgy/akarin-vapoursynth-plugin"><code translate="no" v-pre>akarin</code></a> <a href="https://github.com/vapoursynth/vivtc"><code translate="no" v-pre>vivtc</code></a> - In your terminal, run the following:</p>
+<li><p>Open your terminal in said folder and type <code translate="no" v-pre>uv venv</code> and hit enter.</p>
+</li>
+<li><p>Paste the command below and hit enter again to install all the dependencies.</p>
 </li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-powershell"><code v-pre class="language-powershell"> vsrepo.py install ffms2 fpng libp2p lsmas placebo resize2 akarin vivtc</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">uv pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsmas --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="pip">
+<template #title>pip</template>
 <ul>
-<li><a href="https://github.com/Jaded-Encoding-Thaumaturgy/vs-jetpack"><code translate="no" v-pre>vs-jetpack</code></a> <a href="https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview"><code translate="no" v-pre>vs-preview</code></a> <a href="https://github.com/OpusGang/awsmfunc"><code translate="no" v-pre>awsmfunc</code></a> - In your terminal, run the following:</li>
+<li><p>Install <a href="https://www.python.org/downloads/"><code translate="no" v-pre>Python</code></a></p>
+</li>
+<li><p>Open your terminal, paste the command below, and hit enter to install all the dependencies.</p>
+</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">python -m pip install vsjetpack vspreview awsmfunc</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsmas --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="scripting">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scripting">#</doc-anchor-trigger>
@@ -505,7 +520,21 @@ clip1 = core.std.SetFrameProps(clip1, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRAN
         <span>Running</span>
     </h2>
 </doc-anchor-target>
-<p>To run your comparison script, launch a terminal window in your working directory and run the following:</p>
+<doc-tabs>
+<doc-tab v-cloak id="uv">
+<template #title>uv</template>
+<p>To run your comparison script, launch a terminal window in your comp folder and run the following:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">uv run vspreview comp.py</code></pre>
+</doc-codeblock></div>
+<p>Alternatively, you can create a <code translate="no" v-pre>comp.bat</code> file, replacing <code translate="no" v-pre>C:\path\to\comp.py</code> with the exact file path to your script:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">uv run vspreview &quot;C:\path\to\comp.py&quot;</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="pip">
+<template #title>pip</template>
+<p>To run your comparison script, launch a terminal window in your comp folder and run the following:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-powershell"><code v-pre class="language-powershell">vspreview comp.py</code></pre>
 </doc-codeblock></div>
@@ -513,6 +542,8 @@ clip1 = core.std.SetFrameProps(clip1, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRAN
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-powershell"><code v-pre class="language-powershell">vspreview &quot;C:\path\to\comp.py&quot;</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="first-time-setup">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#first-time-setup">#</doc-anchor-trigger>
