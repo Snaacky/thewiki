@@ -106,7 +106,7 @@ Once the upload has finished, you'll be left with the NZB file in the directory 
 
 ## Usenet Providers and Backbones
 
-![Usenet Providers and Backbones](https://usenet.rexum.space/_ipx/_/images/Usenet_Providers_and_Backbones_Version_2025-06-30.png)
+![Usenet Providers and Backbones](https://usenet.rexum.space/_ipx/_/images/Usenet_Providers_and_Backbones_Version_2026-01-01.png)
 
 !!!
 The above map is from <https://usenet.rexum.space/tree#map>
