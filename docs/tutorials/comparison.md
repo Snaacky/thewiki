@@ -1,7 +1,7 @@
 ---
 label: Comparison
-image: /static/comparison/embed.gif
 description: Learn how to compare different video sources
+image: /static/comparison/kevin.gif
 ---
 
 # Comparison
