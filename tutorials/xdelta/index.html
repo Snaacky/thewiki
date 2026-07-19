@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.837808039244">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.837808679235">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -21,21 +21,23 @@
     <meta property="og:url" content="https://thewiki.moe/tutorials/xdelta/">
     <meta property="og:title" content="xDelta">
     <meta property="og:description" content="Learn how to create and use patch files to fix media">
+    <meta property="og:image" content="https://thewiki.moe/static/tutorials/xdelta/xdelta3-cross-gui.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thewiki.moe/tutorials/xdelta/">
     <meta property="twitter:title" content="xDelta">
     <meta property="twitter:description" content="Learn how to create and use patch files to fix media">
+    <meta property="twitter:image" content="https://thewiki.moe/static/tutorials/xdelta/xdelta3-cross-gui.png">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.12.0.837808039244" rel="stylesheet">
+    <link href="/resources/css/retype.css?v=3.12.0.837808679235" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.837808039244" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.837808039244" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.837808039244" defer></script>
+    <script data-cfasync="false" src="/resources/js/config.js?v=3.12.0.837808679235" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="/resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="/resources/js/lunr.js?v=3.12.0.837808679235" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="/resources/js/prism.js?v=3.12.0.837808679235" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -50,7 +52,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="retype-branding-logo" href="/" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">The Wiki</span>
                         </a>
                     </div>
@@ -225,7 +227,7 @@
 </li>
 </ol>
 <p><figure class="content-center">
-    <img src="../../static/tutorials/xdelta/xdelta3-cross-gui.png" alt="xDelta3 Cross GUI" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <img src="/static/tutorials/xdelta/xdelta3-cross-gui.png" alt="xDelta3 Cross GUI" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">xDelta3 Cross GUI</figcaption>
 </figure>
 </p>
@@ -260,7 +262,7 @@
 <doc-panel id="video-tutorial" collapsed>
     <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25Z"/><path d="M9 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842L9.77 16.005a.5.5 0 0 1-.77-.42Z"/></g></g></svg> Video tutorial</template>
 <p><figure class="content-center">
-    <img src="../../static/tutorials/xdelta/xdelta3-automatic.gif" alt="Automatic patching" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <img src="/static/tutorials/xdelta/xdelta3-automatic.gif" alt="Automatic patching" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">Automatic patching</figcaption>
 </figure>
 </p>
@@ -298,7 +300,7 @@
 <p>
 <figure>
     <div class="relative w-full mb-6 overflow-hidden pt-9/16">
-        <iframe class="w-full h-full border-0 absolute inset-0" src="../../static/tutorials/xdelta/xdelta3-manual.mp4" allowfullscreen></iframe>
+        <iframe class="w-full h-full border-0 absolute inset-0" src="/static/tutorials/xdelta/xdelta3-manual.mp4" allowfullscreen></iframe>
     </div>
     <figcaption class="caption">Manual patching</figcaption>
 </figure>
