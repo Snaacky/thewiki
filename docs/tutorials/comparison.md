@@ -1,13 +1,19 @@
 ---
 label: Comparison
-description: Learn how to compare various sources of a video
-image: /static/comparison/hyouka.gif
+image: /static/comparison/embed.gif
+description: Learn how to compare different video sources
 ---
 
 # Comparison
 
-Quality comparisons are frequently used within the enthusiast community to compare the video quality offered by different sources/releases. [It serves as a great way to distinguish the differences between good and bad sources](/guides/quality/#types-of-releases), and can help you identify video issues and determine which one to keep.
-This guide goes through the process of setting up and effectively utilizing [VSPreview](https://github.com/Jaded-Encoding-Thaumaturgy/vs-preview), a previewer utility for [VapourSynth](https://github.com/vapoursynth/vapoursynth), to produce useful quality comparisons that will allow you to ascertain which video offers the best visual experience.
+Quality comparisons allow you to evaluate different video sources/releases and identify differences in visual quality, helping determine which source provides the best experience.  
+This guide covers how to set up and use [VSView](https://jaded-encoding-thaumaturgy.github.io/vs-view/) with [VapourSynth](https://github.com/vapoursynth/vapoursynth) to create accurate comparisons.
+
+!!! VSPreview is deprecated
+
+As of May 13th 2026, VSPreview has been archived and will no longer receive updates. Fresh installations require manual modifications to function correctly, and compatibility with third-party services such as slow.pics is not guaranteed indefinitely.  
+As such, this guide now exclusively covers VSView.
+!!!
 
 ## Installing
 
@@ -21,7 +27,7 @@ This guide goes through the process of setting up and effectively utilizing [VSP
 
 - Paste the command below and hit enter again to install all the dependencies.
 ```py
-uv pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsmas --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple
+uv pip install vsview[recommended] vsjetpack[full] awsmfunc vsfpng
 ```
 
 +++ pip
@@ -30,7 +36,7 @@ uv pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsma
 
 - Open your terminal, paste the command below, and hit enter to install all the dependencies.
 ```py
-pip install vsfpng vspreview vsview awsmfunc vsjetpack[full] vapoursynth-lsmas --extra-index-url https://jaded-encoding-thaumaturgy.github.io/vs-wheels/simple
+pip install vsview[recommended] vsjetpack[full] awsmfunc vsfpng
 ```
 +++
 
@@ -41,6 +47,40 @@ In order to create a comparison, you will need to create a VapourSynth script.
 
 Create a file called `comp.py`. Launch it in your favorite text editor and add sections as desired:
 
+!!! Coming from VSPreview?
+
+VSPreview scripts need a few modifications to function with VSView.
+
+==- Migration steps
+#### 1. Update the `vstools` import
+
+Remove `set_output` from the `vstools` import:
+
+```diff
+- from vstools import vs, core, depth, set_output, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased
++ from vstools import vs, core, depth, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased
+```
+
+#### 2. Add the `vsview` import
+
+Add the following line:
+
+```diff
++ from vsview import set_output
+```
+
+#### 3. Update `set_output()` usage
+
+Remove the `name=` argument:
+
+```diff
+- set_output(clip1, name=source1)
++ set_output(clip1, source1)
+```
+After these changes, your VSPreview script should be compatible with VSView.
+==- 
+!!!
+
 ==- :icon-file-code: Initial script [!badge variant="danger" text="Required"]
 
 The following `comp.py` script loads your sources into the previewer.
@@ -50,8 +90,8 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 !!!
 
 ```py
-## Dependencies: Allows vspreview to run [required; do not remove]
-from vstools import vs, core, depth, set_output, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased
+## Dependencies: Allows VSView to run [required; do not remove]
+from vstools import vs, core, depth, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased, ChromaLocation
 from vssource import FFMS2, LSMAS
 from vskernels import Point, EwaLanczosSharp, Hermite
 from vsdeinterlace import vfm, vdecimate
@@ -59,8 +99,9 @@ from awsmfunc.types.placebo import PlaceboColorSpace as ColorSpace
 from awsmfunc.types.placebo import PlaceboTonemapFunction as Tonemap
 from awsmfunc.types.placebo import PlaceboGamutMapping as Gamut
 from awsmfunc.types.placebo import PlaceboTonemapOpts
+from vsview import set_output
 
-## File paths: Hold Shift and Right-click your file, select copy as path, and paste it here. For NF WEB-DLs change LSMAS to FFMS2
+## File paths: Hold Shift and Right-click your file, select copy as path, and paste it here. Change LSMAS to FFMS2 if you encounter any issues
 clip1 = LSMAS.source(r"C:\Paste\File\Path\Here.mkv")
 clip2 = LSMAS.source(r"C:\Paste\File\Path\Here.mkv")
 clip3 = LSMAS.source(r"C:\Paste\File\Path\Here.mkv")
@@ -75,22 +116,24 @@ source3 = "ThirdSourceName"
 ## <End of additional comp settings>
 
 ## Output: Comment/uncomment as needed depending on how many clips you're comparing
-set_output(clip1, name=source1)
-set_output(clip2, name=source2)
-set_output(clip3, name=source3)
+set_output(clip1, source1)
+set_output(clip2, source2)
+set_output(clip3, source3)
 ```
 
 {.compact}
 Section             | Description
 --------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Dependencies**    | Dependencies required to create comparisons in VSPreview
+**Dependencies**    | Dependencies required to create comparisons in VSView
 **File paths**      | The location of your source file
 **Source**          | The source name. This should be the name of the encoder (*not* muxer) or the specific source used for untouched releases (e.g. Beatrice-Raws, JPN BD, DSNP)
-**Output**          | Parameter that allows clips to appear in VSPreview
-
+**Output**          | Parameter that allows clips to appear in VSView
 ==-
-!!!secondary
-Please note the order of the following filters. The filters under each (Required) section **must** be placed in that order in your script.
+
+## Filters
+
+!!!warning
+Note the order of the following filters. All 3 *(Required)* options **must** be used, and the filters under each *(Required)* section **must** be placed in that order in your script.
 !!!
 
 ### Inverse Telecine
@@ -109,7 +152,7 @@ Properly tags progressive content in interlaced container as progressive for cor
 clip1 = FieldBased.PROGRESSIVE.apply(clip1)
 ```
 
-## Subsampling (Required)
+## Subsampling [!badge variant="danger" text="(Required)"]
 
 Converts clips to 16-bit depth with 4:4:4 chroma subsampling.
 
@@ -118,7 +161,28 @@ clip1 = EwaLanczosSharp().scale(depth(clip1, 16), format=vs.YUV444P16, antiring=
 ```
 
 !!!warning
-This is currently broken on Nvidia with more than 2 sources unless you manually upgrade [`vs-placebo`](https://github.com/sgt0/vs-placebo/actions/runs/24158358466/artifacts/6337091717)
+This is currently broken on Nvidia with more than 2 sources unless you manually upgrade vs-placebo
+
+==- Installation instructions
+
+1. Make sure you're logged into GitHub, then download and extract the fixed [libvs_placebo.dll](https://github.com/sgt0/vs-placebo/actions/runs/24158358466/artifacts/6337091717)
+
+   If you cannot access GitHub, use [this mirror](https://mega.nz/file/eJAxDZxC#cChjkDlCfqAydnG23zV3ZX5toigG8mBpwXL6bPmUSk8) instead
+
+2. Locate your existing `libvs_placebo.dll`.
+
+   Example locations:
+
+   ```text
+   C:\Comp\.venv\Lib\site-packages\vapoursynth\plugins\libvs_placebo.dll
+   ```
+   ```text
+   C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\site-packages\vapoursynth\plugins\libvs_placebo.dll
+   ```
+
+3. Replace the existing DLL with the newly downloaded version.
+
+==-
 !!!
 
 ### Frame Rate
@@ -187,7 +251,7 @@ clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, Transfer.BT709, Primar
 
 HD BD/WEB with incorrectly converted matrix (Inverse of the above, use this if that method makes colors look worse)
 ```py
-clip1 = core.resize.Point(clip1, _Matrix=vs.MATRIX_ST170_M)
+clip1 = Point().resample(clip1, matrix=Matrix.ST170_M, format=vs.YUV444P16)
 clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, ColorRange.LIMITED))
 ```
 ===
@@ -211,14 +275,14 @@ Clipping should always be attempted first before resorting to tonemapping, even 
 
 Clip HDR source to SDR
 ```py
-clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709)
+clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444P16)
 ```
 Clip DV (Profile 5) source to SDR
 ```py
 clip1args = PlaceboTonemapOpts(source_colorspace=ColorSpace.DOVI, target_colorspace=ColorSpace.HDR10, use_dovi=True)
 clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
 clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT2020_NCL, Transfer.ST2084, Primaries.BT2020))
-clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709)
+clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444P16)
 ```
 
 ### Tonemapping
@@ -234,7 +298,7 @@ clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
 clip1 = core.std.SetFrameProps(clip1, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRANSFER_BT709, _Primaries=vs.PRIMARIES_BT709)
 ```
 
-## Depth (Required)
+## Depth [!badge variant="danger" text="(Required)"]
 Converts the clip to 32 bit depth for accurate output
 ```py
 clip1 = depth(clip1, 32)
@@ -248,7 +312,7 @@ Adjusts the gamma level of the video. *Should be used to fix the QuickTime gamma
 clip1 = core.std.Levels(clip1, gamma=0.88, planes=0)
 ```
 
-## Pixel format (Required)
+## Pixel format [!badge variant="danger" text="(Required)"]
 Converts to RGBS which is required for debanding and scaling
 ```py
 clip1 = Point().resample(clip1, format=vs.RGBS)
@@ -281,44 +345,58 @@ Downscales higher resolution sources to match a lower resolution source. **Only 
 To run your comparison script, launch a terminal window in your comp folder and run the following:
 
 ```powershell
-uv run vspreview comp.py
+uv run vsview comp.py
 ```
 
 Alternatively, you can create a `comp.bat` file, replacing `C:\path\to\comp.py` with the exact file path to your script:
 
 ```powershell
-uv run vspreview "C:\path\to\comp.py"
+uv run vsview "C:\path\to\comp.py"
 ```
 +++ pip
 
 To run your comparison script, launch a terminal window in your comp folder and run the following:
 
 ```powershell
-vspreview comp.py
+vsview comp.py
 ```
 
 Alternatively, you can create a `comp.bat` file, replacing `C:\path\to\comp.py` with the exact file path to your script:
 
 ```powershell
-vspreview "C:\path\to\comp.py"
+vsview "C:\path\to\comp.py"
 ```
 +++
 
 ## First-time Setup
 
-1. Drag the *Plugins* menu from the right-side of the VSPreview window and open the *SlowPics Comps* tab. Alternatively, you can access the *Plugins* menu using `Ctrl+P`
+1. Open the settings menu in the top left
 
-2. Under *Settings*, set the following:
-   - Set *Collection Name Template* to `{tmdb_title} ({tmdb_year}) - S01E01 - {video_nodes}`
-   - Set *Compression Type* to `Slow`
-   - Enter your [slow.pics](https://slow.pics) username and password (optional)
-   - Tick the *Public Flag*
+2. Under *Plugin - Comparison*, set the following:
+   - Set *Collection Name Template* to `{name} ({year}) - S01E01 - {vs_names}`
+   - Enter your [slow.pics](https://slow.pics) credentials (optional)
 
-3. Click the *Settings* button on the bottom tab. Under *Main*, change *Save Plugins Bar Position* to `Global`
+==- Optional QoL Changes
 
-4. Click the *Playback* button on the bottom tab. Set the bottom-left value to an odd number (e.g `109`)
+These are some subjective changes which making skimming around for manual frame selecting easier
 
-Once complete, close and relaunch VSPreview to apply these changes.
+1. Open the settings menu in the top left
+
+2. Under *View*, set the following:
+    - Untick enable zoom animation
+
+3. Under Shortcuts, set the following:
+    - Play/Pause: Ctrl+Space
+    - Seek Previous Frame: Shift+Left
+    - Seek Next Frame: Shift+Right
+    - Seek N Frames Back: Left
+    - Seek N Frames Forward: Right
+    - Add Current Frame: Space
+
+4. Right click the *Play* button in the bottom left. Set seek step to a random odd number (e.g `97`)
+==-
+
+Once complete, close and relaunch VSView to apply these changes.
 
 ## Comparing
 
@@ -328,8 +406,10 @@ For the purpose of making comparisons, you will only need the following binds:
 
 Key                        | Action
 ---------------------------|------------------------------------------------------------------
-`PgDown` or `Shift`+`Left` | Moves back *n* frames (default: *n = 1*)
-`PgUp` or `Shift`+`Right`  | Moves forward *n* frames (default: *n = 1*)
+`Left` | Moves back 1 frame
+`Right`  | Moves forward 1 frame
+`Shift`+`Left` | Moves back *n* frames (default: *n = 24*)
+`Shift`+`Right`  | Moves forward *n* frames (default: *n = 24*)
 `Number keys`              | Switches to source *n* (e.g. `2` switches to the second source)
 `Ctrl`+`Space`             | Marks the current frame number
 `Ctrl`+`P`                 | Opens the plugins window
@@ -340,28 +420,25 @@ If you wish to manually set your keybinds, you can find them under *Settings* ->
 
 ### Capturing
 
-1. Open the *Plugins* window and select the *SlowPics Comps* tab
+1. Open the *Plugins* window and select the *Comparisons* tab
 
-2. Set the TMDB type and ID from [The Movie Database](https://www.themoviedb.org) (e.g. `94605` for [Arcane](https://www.themoviedb.org/tv/94605))
+2. Under *TMDB Name* search for the show/movie and select it, change/remove the episode number if needed
 
-3. Before creating a comparison, skim through all your sources and ensure that they are displaying correctly. Most issues can be fixed using [filters](#scripting) in your comparison script
+3. Before creating a comparison, skim through all your sources and ensure that they are displaying correctly and stay in sync throughout the entire runtime. Most issues can be fixed using [filters](#scripting) in your comparison script
 
 4. Select the frames to be uploaded. There are multiple methods to doing so:
    - **Manual:** Scrub through the video and mark each frame using `Ctrl`+`Space`
-   - **Automatic:** Specify an amount of random frames in the *Plugin* menu. You may choose to use this feature alongside capturing frames manually
-   - Frames should ideally show a variety of scenarios (e.g. light/dark, static/high-motion, flat/grainy, etc.). Particularly, you may want to capture scenes with on-screen text and bright reds (if possible).
+   - **Automatic:** Specify an amount of random frames in the *Plugin* menu and click *Select frames*
+   - Frames should ideally show a variety of scenarios (e.g. light/dark, static/high-motion, flat/grainy, etc.). Make sure to include scenes with on-screen text and bright reds when possible
+   - An average of 50 frames is recommended, which is the maximum allowed for automatic comparisons. You can still add more manual frames on top of this if needed
 
-5. Hit the *Start Upload* button. VSPreview will automatically screenshot all selected frames and upload a comparison to [slow.pics](https://slow.pics)
-
-!!!warning
-We don't recommend using the dark/light frames feature, as it currently has many issues.
-!!!
+5. Hit the *Extract & Upload* button. VSView will automatically screenshot all selected frames and upload a comparison to [slow.pics](https://slow.pics)
 
 ## Choosing Sources (Anime)
 **The following will help make your comparison as effective as possible**
-- Include every available BD, you generally will need to check U2 (Private tracker)
+- Include every available Blu-ray, you generally will need to check U2 (Private tracker)
 - If 2 sources have identical video, only include 1 and label it as such (eg JPN/USA BD)
-- We generally recommend picking episode 2 to ensure both the OP and ED are shown
+- We generally recommend choosing episode 2 to ensure both the OP and ED are shown
 - Include at least 1 web source when available
 - Include all relevant encodes, see below
 
@@ -416,7 +493,7 @@ We don't recommend using the dark/light frames feature, as it currently has many
 - UCCUSS
 
 +++ Tier 3
-**These sources should never be included as they provide no value**
+**These sources should generally never be included unless the only existing muxes use them**
 - **Any mini-encode**
 - **Any re-encode**
 - 7³ACG
@@ -435,8 +512,8 @@ We don't recommend using the dark/light frames feature, as it currently has many
 1. Crunchyroll (CR) - Should be the latest 8Mbps stream, if not publicly available [check this list](https://bin.theindex.moe/?c7a22bd18ce6d196#9Uxu6xHeZbYTV1wkM3FWhebLiPdUx37XkBQzF7CBvhHG)
 1. Disney+ (DSNP)
 1. Netflix (NF)
-1. Animation Digital Network (ADN)
 1. Amazon (AMZN)
+1. Animation Digital Network (ADN)
 1. HIDIVE (HIDI)
 
 ==-
