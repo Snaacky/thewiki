@@ -5,6 +5,9 @@ input: ./docs
 exclude:
   - "hidden/"
 
+generator:
+  paths: root
+
 branding:
   title: The Wiki
 
