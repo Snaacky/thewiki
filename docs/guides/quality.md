@@ -222,14 +222,67 @@ They can be downloaded under the *Subtitles* section of a release:
 
 ===
 
-!!!
-Looking for fansubbed seasonal anime? Check [FansubDB](https://fansubdb.com)'s list of release groups that are working on current shows.
-!!!
+## Airing releases
 
-## Releases
+With so many releases available for each show, choosing the best one can be overwhelming. Here is a general guide to recommended release groups  
+For completed shows you should instead check [SeaDex](https://releases.moe).  It is actively maintained to stay up-to-date on what's best, backed by quality comparisons
 
-With so many options for every show, it can be hard to find which one to download.
+### Notable WEB-DL Fixers
+These groups fix issues with web sources and should always be picked over the untouched source
 
-Although most [re-encoded releases](#types-of-releases) (marked in <span style="color:#E53E3E">red</span> on [Nyaa](https://nyaa.si/help#torrent-colors)) should be avoided, the best release group varies per show, and there's no foolproof way to tell without [comparing the different sources](#quality-comparisons).
+{.compact}
+| Group | Notes |
+|:------|:------|
+| **SubsPlus+** | Automated improvements to HiDive subtitles, muxed with a manually selected superior video source |
+| **Unfucked**, **Subsmix**, **TSPlease** | Merges typesetting from other languages when CR doesn't have any<br>See [Crunchyroll is destroying its subtitles](https://daiz.moe/crunchyroll-is-destroying-its-subtitles-for-no-good-reason/) and [Crunchyroll Pipelines & Formats](https://docs.google.com/spreadsheets/d/1YSXp5jxPE4LMAyaPH5sl9xXbZiSjnD_zRRZbZ26Rk44/htmlview#gid=221235503) |
 
-[SeaDex](https://releases.moe) is a quick and easy way to find the best releases for your shows. It is actively maintained to stay up-to-date on what's best, backed by quality comparisons.
+
+### Notable WEB-DL Groups
+{.compact}
+| Group | Public | LayoutRes | Restyle | Naming | Chapters | Audio | Dub | Sources | Notes |
+|:------|:------:|:---------:|:-------:|:------:|:--------:|:-----:|:---:|:------:|:------|
+| **ToonsHub** | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | The recommended choice |
+| **VARYG** | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | Native | Dual | All | Fastest<br>Naming is occasionally broken from automation<br>Has had issues with automated signs track creation |
+| **Erai-raws** | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | Native+ | Sub | All | Slow to start ripping new seasons<br>Uses the higher quality xHE-AAC 192Kbps stream for NF |
+| **SubsPlease** | :white_check_mark: | :x: | :white_check_mark:- | :x: | :x: | Native- | Sub | CR<br>HIDI | Most consistent releases<br>Restyle can cause issues<br>Uses the lower quality AAC 128Kbps stream for CR |
+| **AnoZu** | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native<br>AMZN | Dual | CR | Primarily on Seedpool.<br>DDP is only for dual audio releases |
+| **Kitsune** | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | AMZN | Dual | All | Aither internal<br>Has had issues with dub sync |
+| **Yameii** | :white_check_mark: | :white_check_mark: | N/A | :white_check_mark: | :white_check_mark: | Native | Dub | CR | Rips the dub Stream, which is a different encode and can have different content |
+
+<small>
+
+**Public :** Non-public releases can be found on the private trackers listed in the notes  
+**LayoutRes :** Required for typesetting to display correctly, see [Adding LayoutRes to ASS Files](/advanced/muxing/#adding-layoutres-to-ass-files)  
+**Restyle :** Changes the default font to something more visually appealing, see [Anime WEB-DL Groups Font comparison](https://slow.pics/c/lez5c1GP)  
+**Naming :** Uses official titles and includes useful information such as source, release type, codecs
+</small>
+
+### Notable Fansub Groups
+The notable currently active fansub groups, these releases generally improve on the source's video quality, subtitle quality, or both
+
+{.compact}
+| | | |
+|:---|:---|:---|
+| **9volt**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5B9volt%5D%22) · [nekoBT](https://nekobt.to/groups/4398244388404) | **Asakura**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BAsakura%5D%22) · [nekoBT](https://nekobt.to/groups/7310842786873) | **BlackRose**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BBlackRose%5D%22) · [nekoBT](https://nekobt.to/groups/9496112614974) |
+| **cappybara**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BCappybara%5D%22) · [nekoBT](https://nekobt.to/groups/4528651404085) | **Chihiro**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BChihiro%5D%22) · [nekoBT](https://nekobt.to/groups/7513738503473) | **Commie**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BCommie%5D%22) · [nekoBT](https://nekobt.to/groups/7434523383604) |
+| **CrappySubs**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BCrappySubs%5D%22) · [nekoBT](https://nekobt.to/groups/7657200696888) | **Cyan**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BCyan%5D%22) · [nekoBT](https://nekobt.to/groups/4529225239867) | **derpie**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5Bderpie%5D%22) · [nekoBT](https://nekobt.to/groups/4637277057591) |
+| **FLE**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BFLE%5D%22) · [nekoBT](https://nekobt.to/groups/4661198055985) | **Freehold**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BFreehold%5D%22) · [nekoBT](https://nekobt.to/groups/7271873158193) | **GJM**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BGJM%5D%22) · [nekoBT](https://nekobt.to/groups/4416382069043) |
+| **Half-Baked**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BHalf-Baked%5D%22) | **Kaizoku**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BKaizoku%5D%22) · [nekoBT](https://nekobt.to/groups/8438338633525) | **Kaleido-subs**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BKaleido-subs%5D%22) · [nekoBT](https://nekobt.to/groups/4397444928050) |
+| **Lazyleido**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BLazyleido%5D%22) · [nekoBT](https://nekobt.to/groups/6220083224625) | **MTBB**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BMTBB%5D%22) · [nekoBT](https://nekobt.to/groups/7364000585776) | **RaiN**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BRaiN%5D%22) |
+| **Reza**<br>[Nyaa](https://nyaa.si/user/Reza27) | **Salchow**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BSalchow%22) · [nekoBT](https://nekobt.to/groups/7310206892857) | **sam**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5Bsam%5D%22) · [nekoBT](https://nekobt.to/groups/7466298080819) |
+| **sgt**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5Bsgt%5D%22) · [nekoBT](https://nekobt.to/groups/8111921135162) | **Starbez**<br>[Nyaa](https://nyaa.si/user/Starbez) · [nekoBT](https://nekobt.to/groups/7292250934068) | **Vodes**<br>[Nyaa](https://nyaa.si/?f=0&c=0_0&q=%22%5BVodes%5D%22) · [nekoBT](https://nekobt.to/groups/5949517558321) |
+
+<small>
+
+Check [FansubDB](https://fansubdb.com)'s list of release groups that are working on current shows.
+</small>
+
+### Web tier list
+{.compact}
+| Tier | Source | Bitrate | Audio | Subs | Notes |
+|:----:|:-------|:-------:|:-----:|:----:|:------|
+| 1 | Crunchyroll<br>(CR) | 8Mbps | AAC 192Kbps | ASS | Should be the first pick whenever it exists |
+| 2 | Disney+<br>(DSNP) | Variable<br>12.7Mbps max | AAC 128Kbps | SRT | Generally the best option when CR doesn't have the license |
+| 3 | Netflix<br>(NF) | 5Mbps | AAC 128Kbps | SRT | Has different streams for DV (Generally best), HDR, HEVC, AV1<br>Has a superior xHE-AAC 192Kbps audio stream which is typically unripped due to bad compatibility | 
+| 4 | Amazon<br>(AMZN) | Variable<br>10Mbps max | DDP 224Kbps | SRT | Has many different services and streams that can offer wildly different quality |
+| 5 | HIDIVE<br>(HIDI) | 5.3Mbps | AAC 128Kbps | ASS | Wrong frame rate (24.0fps) resulting in a dupe frame every 1000 frames (a stutter every 42 seconds) Always get SubsPlus+ instead |
