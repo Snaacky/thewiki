@@ -227,6 +227,30 @@ They can be downloaded under the *Subtitles* section of a release:
 With so many releases available for each show, choosing the best one can be overwhelming. Here is a general guide to recommended release groups  
 For completed shows you should instead check [SeaDex](https://releases.moe).  It is actively maintained to stay up-to-date on what's best, backed by quality comparisons
 
+### Notable WEB-DL Groups
+<small>This information is current as of 10th August 2026 and applies to recent releases from around this period onward. Older rips **will** have issues not mentioned here</small>
+
+{.compact}
+| Group | Pub | LayRes | Style | Matrix | Name | Chap | Audio | Dub | Sub | Source | Majin | Notes |
+|:------|:------:|:---------:|:-------:|:------:|:------:|:--------:|:-----:|:---:|:---------:|:------:|:-----:|:------|
+| AnoZu | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native<br>*AMZN* | Dual | All | CR | 7.5Mb/s+ | Primarily on Seedpool<br>AMZN audio is only for dual releases |
+| Yameii | :white_check_mark: | :white_check_mark: | N/A | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dub | SDH | CR | Never | CR: Rips the dub stream (sometimes different) |
+| ToonsHub | :white_check_mark: | :white_check_mark: | :white_check_mark:- | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | All | 7.1Mb/s+ | Restyle sometimes messes with TS |
+| Kitsune | :x: | :white_check_mark: | :white_check_mark:- | :white_check_mark: | :white_check_mark: | :white_check_mark: | AMZN | Dual | All | All | Never | Aither internal<br>Restyle frequently messes with TS |
+| VARYG | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | All | ?Mb/s+ | Issues with missing/wrong fonts<br>Naming occasionally broken |
+| SubsPlease | :white_check_mark: | :x: | :white_check_mark:- | :white_check_mark: | :x: | :x: | Native- | Sub | Eng | CR<br>HIDI | Never | Restyle sometimes messes with TS<br>CR: Uses lower quality AAC 128Kbps |
+| Erai-raws | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: | Native+ | Sub | All | All | Always | Slow to start ripping new seasons<br>NF: Uses higher quality xHE-AAC 192Kbps |
+
+<small>
+
+**Public:** Releases publicly available on Nyaa, non-public releases can be found on the private trackers listed in the notes  
+**LayoutRes:** Required for typesetting to display correctly. Releases without LayoutRes set will have broken perspective. See [Adding LayoutRes to ASS Files](/advanced/muxing/#adding-layoutres-to-ass-files)  
+**Restyle:** Changes the default font to something more visually appealing. See [Anime WEB-DL Groups Font comparison](https://slow.pics/c/lez5c1GP)  
+**Matrix:** The subtitle colorspace, not setting this will result in wrong colors for subtitles authored in BT.709 (generally foreign subs)  
+**Naming:** Uses official titles only and includes useful information such as the source, release type, and codecs  
+**Majin:** Experimental CR stream; quality varies by title. Bitrate shown is the minimum to prefer Majin over 8Mbps. Groups not bitrate gating will have inferior quality
+</small>
+
 ### Notable WEB-DL Fixers
 These groups fix issues with web sources and should always be picked over the untouched source
 
@@ -234,28 +258,8 @@ These groups fix issues with web sources and should always be picked over the un
 | Group | Notes |
 |:------|:------|
 | **SubsPlus+** | Automated improvements to HiDive subtitles, muxed with a manually selected superior video source |
-| **Unfucked**, **Subsmix**, **TSPlease** | Merges typesetting from other languages when CR doesn't have any<br>See [Crunchyroll is destroying its subtitles](https://daiz.moe/crunchyroll-is-destroying-its-subtitles-for-no-good-reason/) and [Crunchyroll Pipelines & Formats](https://docs.google.com/spreadsheets/d/1YSXp5jxPE4LMAyaPH5sl9xXbZiSjnD_zRRZbZ26Rk44/htmlview#gid=221235503) |
+| **Unfucked**, **Subsmix**, **TSPlease** | Merges typesetting from other languages when CR doesn't have any<br>See [Crunchyroll is destroying its subtitles](https://daiz.moe/crunchyroll-is-destroying-its-subtitles-for-no-good-reason/) article and [Crunchyroll Pipelines & Formats](https://docs.google.com/spreadsheets/d/1YSXp5jxPE4LMAyaPH5sl9xXbZiSjnD_zRRZbZ26Rk44/htmlview#gid=221235503) spreadsheet |
 
-
-### Notable WEB-DL Groups
-{.compact}
-| Group | Public | LayoutRes | Restyle | Naming | Chapters | Audio | Dub | Sources | Notes |
-|:------|:------:|:---------:|:-------:|:------:|:--------:|:-----:|:---:|:------:|:------|
-| **ToonsHub** | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | The recommended choice |
-| **VARYG** | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | Native | Dual | All | Fastest<br>Naming is occasionally broken from automation<br>Has had issues with automated signs track creation |
-| **Erai-raws** | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | Native+ | Sub | All | Slow to start ripping new seasons<br>Uses the higher quality xHE-AAC 192Kbps stream for NF |
-| **SubsPlease** | :white_check_mark: | :x: | :white_check_mark:- | :x: | :x: | Native- | Sub | CR<br>HIDI | Most consistent releases<br>Restyle can cause issues<br>Uses the lower quality AAC 128Kbps stream for CR |
-| **AnoZu** | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native<br>AMZN | Dual | CR | Primarily on Seedpool.<br>DDP is only for dual audio releases |
-| **Kitsune** | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | AMZN | Dual | All | Aither internal<br>Has had issues with dub sync |
-| **Yameii** | :white_check_mark: | :white_check_mark: | N/A | :white_check_mark: | :white_check_mark: | Native | Dub | CR | Rips the dub Stream, which is a different encode and can have different content |
-
-<small>
-
-**Public :** Non-public releases can be found on the private trackers listed in the notes  
-**LayoutRes :** Required for typesetting to display correctly, see [Adding LayoutRes to ASS Files](/advanced/muxing/#adding-layoutres-to-ass-files)  
-**Restyle :** Changes the default font to something more visually appealing, see [Anime WEB-DL Groups Font comparison](https://slow.pics/c/lez5c1GP)  
-**Naming :** Uses official titles and includes useful information such as source, release type, codecs
-</small>
 
 ### Notable Fansub Groups
 The notable currently active fansub groups, these releases generally improve on the source's video quality, subtitle quality, or both
@@ -281,8 +285,8 @@ Check [FansubDB](https://fansubdb.com)'s list of release groups that are working
 {.compact}
 | Tier | Source | Bitrate | Audio | Subs | Notes |
 |:----:|:-------|:-------:|:-----:|:----:|:------|
-| 1 | Crunchyroll<br>(CR) | 8Mbps | AAC 192Kbps | ASS | Should be the first pick whenever it exists |
-| 2 | Disney+<br>(DSNP) | Variable<br>12.7Mbps max | AAC 128Kbps | SRT | Generally the best option when CR doesn't have the license |
-| 3 | Netflix<br>(NF) | 5Mbps | AAC 128Kbps | SRT | Has different streams for DV (Generally best), HDR, HEVC, AV1<br>Has a superior xHE-AAC 192Kbps audio stream which is typically unripped due to bad compatibility | 
-| 4 | Amazon<br>(AMZN) | Variable<br>10Mbps max | DDP 224Kbps | SRT | Has many different services and streams that can offer wildly different quality |
-| 5 | HIDIVE<br>(HIDI) | 5.3Mbps | AAC 128Kbps | ASS | Wrong frame rate (24.0fps) resulting in a dupe frame every 1000 frames (a stutter every 42 seconds) Always get SubsPlus+ instead |
+| 1 | Crunchyroll(**CR**) | 2pass: 8Mb/s<br>Majin: VBR | AAC:192Kb/s | ASS | New "Majin" VBR stream generally offers better quality unless the bitrate is much lower |
+| 2 | Disney+(**DSNP**) | VBR | AAC:128Kb/s | SRT | Generally the best option when CR doesn't have the license |
+| 3 | Netflix(**NF**) | 2pass: 5Mb/s | AAC128Kb/s<br>*AAC:192Kb/s* | SRT | Has different streams for DV (Generally best), HDR, HEVC, AV1<br>xHE-AAC 192Kbps audio stream is typically unripped due to bad compatibility | 
+| 4 | Amazon(**AMZN**) | VBR | DDP:224Kb/s | SRT | Has many different services and streams that can offer wildly different quality<br>Tends to be much more competitive in grainy shows where it offers higher bitrates |
+| 5 | HIDIVE(**HIDI**) | 2pass: 5.3Mb/s | AAC:128Kb/s | ASS | Wrong frame rate (24.0fps) resulting in a dupe frame (stutter) every 1000 frames (42 seconds)<br>Uses a very bad AAC encoder resulting in much worse quality than other services |
