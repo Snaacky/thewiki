@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.837808679235">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.839672195859">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="/resources/css/retype.css?v=3.12.0.837808679235" rel="stylesheet">
+    <link href="/resources/css/retype.css?v=3.12.0.839672195859" rel="stylesheet">
 
-    <script data-cfasync="false" src="/resources/js/config.js?v=3.12.0.837808679235" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="/resources/js/config.js?v=3.12.0.839672195859" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="/resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="/resources/js/lunr.js?v=3.12.0.837808679235" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="/resources/js/lunr.js?v=3.12.0.839672195859" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -539,32 +539,309 @@
 </figure>
 </p>
 </doc-panel>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Looking for fansubbed seasonal anime? Check <a href="https://fansubdb.com">FansubDB</a>&#x27;s list of release groups that are working on current shows.</p>
-        </div>
-    </div>
-</div>
-<doc-anchor-target id="releases">
+<doc-anchor-target id="airing-releases">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#releases">#</doc-anchor-trigger>
-        <span>Releases</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#airing-releases">#</doc-anchor-trigger>
+        <span>Airing releases</span>
     </h2>
 </doc-anchor-target>
-<p>With so many options for every show, it can be hard to find which one to download.</p>
-<p>Although most <doc-anchor-trigger to="#types-of-releases">re-encoded releases</doc-anchor-trigger> (marked in <span style="color:#E53E3E">red</span> on <a href="https://nyaa.si/help#torrent-colors">Nyaa</a>) should be avoided, the best release group varies per show, and there&#x27;s no foolproof way to tell without <doc-anchor-trigger to="#quality-comparisons">comparing the different sources</doc-anchor-trigger>.</p>
-<p><a href="https://releases.moe">SeaDex</a> is a quick and easy way to find the best releases for your shows. It is actively maintained to stay up-to-date on what&#x27;s best, backed by quality comparisons.</p>
+<p>With so many releases available for each show, choosing the best one can be overwhelming. Here is a general guide to recommended release groups<br />
+For completed shows you should instead check <a href="https://releases.moe">SeaDex</a>.  It is actively maintained to stay up-to-date on what&#x27;s best, backed by quality comparisons</p>
+<doc-anchor-target id="notable-web-dl-groups">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#notable-web-dl-groups">#</doc-anchor-trigger>
+        <span>Notable WEB-DL Groups</span>
+    </h3>
+</doc-anchor-target>
+<p><small>This information is current as of 10th August 2026 and applies to recent releases from around this period onward. Older rips <strong>will</strong> have issues not mentioned here</small></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th style="text-align: left;">Group</th>
+<th style="text-align: center;">Pub</th>
+<th style="text-align: center;">LayRes</th>
+<th style="text-align: center;">Style</th>
+<th style="text-align: center;">Matrix</th>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Chap</th>
+<th style="text-align: center;">Audio</th>
+<th style="text-align: center;">Dub</th>
+<th style="text-align: center;">Sub</th>
+<th style="text-align: center;">Source</th>
+<th style="text-align: center;">Majin</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AnoZu</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;">Native<br><em>AMZN</em></td>
+<td style="text-align: center;">Dual</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">CR</td>
+<td style="text-align: center;">7.5Mb/s+</td>
+<td style="text-align: left;">Primarily on Seedpool<br>AMZN audio is only for dual releases</td>
+</tr>
+<tr>
+<td style="text-align: left;">Yameii</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;">N/A</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;">Native</td>
+<td style="text-align: center;">Dub</td>
+<td style="text-align: center;">SDH</td>
+<td style="text-align: center;">CR</td>
+<td style="text-align: center;">Never</td>
+<td style="text-align: left;">CR: Rips the dub stream (sometimes different)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ToonsHub</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span>-</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;">Native</td>
+<td style="text-align: center;">Dual</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">7.1Mb/s+</td>
+<td style="text-align: left;">Restyle sometimes messes with TS</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kitsune</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span>-</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;">AMZN</td>
+<td style="text-align: center;">Dual</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">Never</td>
+<td style="text-align: left;">Aither internal<br>Restyle frequently messes with TS</td>
+</tr>
+<tr>
+<td style="text-align: left;">VARYG</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;">Native</td>
+<td style="text-align: center;">Dual</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">?Mb/s+</td>
+<td style="text-align: left;">Issues with missing/wrong fonts<br>Naming occasionally broken</td>
+</tr>
+<tr>
+<td style="text-align: left;">SubsPlease</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span>-</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;">Native-</td>
+<td style="text-align: center;">Sub</td>
+<td style="text-align: center;">Eng</td>
+<td style="text-align: center;">CR<br>HIDI</td>
+<td style="text-align: center;">Never</td>
+<td style="text-align: left;">Restyle sometimes messes with TS<br>CR: Uses lower quality AAC 128Kbps</td>
+</tr>
+<tr>
+<td style="text-align: left;">Erai-raws</td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x274C;</span></td>
+<td style="text-align: center;"><span class="docs-emoji">&#x2705;</span></td>
+<td style="text-align: center;">Native+</td>
+<td style="text-align: center;">Sub</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">All</td>
+<td style="text-align: center;">Always</td>
+<td style="text-align: left;">Slow to start ripping new seasons<br>NF: Uses higher quality xHE-AAC 192Kbps</td>
+</tr>
+</tbody>
+</table>
+</div>
+<small>
+<p><strong>Public:</strong> Releases publicly available on Nyaa, non-public releases can be found on the private trackers listed in the notes<br />
+<strong>LayoutRes:</strong> Required for typesetting to display correctly. Releases without LayoutRes set will have broken perspective. See <a href="/advanced/muxing/#adding-layoutres-to-ass-files">Adding LayoutRes to ASS Files</a><br />
+<strong>Restyle:</strong> Changes the default font to something more visually appealing. See <a href="https://slow.pics/c/lez5c1GP">Anime WEB-DL Groups Font comparison</a><br />
+<strong>Matrix:</strong> The subtitle colorspace, not setting this will result in wrong colors for subtitles authored in BT.709 (generally foreign subs)<br />
+<strong>Naming:</strong> Uses official titles only and includes useful information such as the source, release type, and codecs<br />
+<strong>Majin:</strong> Experimental CR stream; quality varies by title. Bitrate shown is the minimum to prefer Majin over 8Mbps. Groups not bitrate gating will have inferior quality
+</small></p>
+<doc-anchor-target id="notable-web-dl-fixers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#notable-web-dl-fixers">#</doc-anchor-trigger>
+        <span>Notable WEB-DL Fixers</span>
+    </h3>
+</doc-anchor-target>
+<p>These groups fix issues with web sources and should always be picked over the untouched source</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th style="text-align: left;">Group</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>SubsPlus+</strong></td>
+<td style="text-align: left;">Automated improvements to HiDive subtitles, muxed with a manually selected superior video source</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Unfucked</strong>, <strong>Subsmix</strong>, <strong>TSPlease</strong></td>
+<td style="text-align: left;">Merges typesetting from other languages when CR doesn&#x27;t have any<br>See <a href="https://daiz.moe/crunchyroll-is-destroying-its-subtitles-for-no-good-reason/">Crunchyroll is destroying its subtitles</a> article and <a href="https://docs.google.com/spreadsheets/d/1YSXp5jxPE4LMAyaPH5sl9xXbZiSjnD_zRRZbZ26Rk44/htmlview#gid=221235503">Crunchyroll Pipelines &amp; Formats</a> spreadsheet</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="notable-fansub-groups">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#notable-fansub-groups">#</doc-anchor-trigger>
+        <span>Notable Fansub Groups</span>
+    </h3>
+</doc-anchor-target>
+<p>The notable currently active fansub groups, these releases generally improve on the source&#x27;s video quality, subtitle quality, or both</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>9volt</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5B9volt%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/4398244388404">nekoBT</a></td>
+<td style="text-align: left;"><strong>Asakura</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BAsakura%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/7310842786873">nekoBT</a></td>
+<td style="text-align: left;"><strong>BlackRose</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BBlackRose%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/9496112614974">nekoBT</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>cappybara</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BCappybara%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/4528651404085">nekoBT</a></td>
+<td style="text-align: left;"><strong>Chihiro</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BChihiro%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/7513738503473">nekoBT</a></td>
+<td style="text-align: left;"><strong>Commie</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BCommie%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/7434523383604">nekoBT</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CrappySubs</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BCrappySubs%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/7657200696888">nekoBT</a></td>
+<td style="text-align: left;"><strong>Cyan</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BCyan%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/4529225239867">nekoBT</a></td>
+<td style="text-align: left;"><strong>derpie</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5Bderpie%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/4637277057591">nekoBT</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FLE</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BFLE%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/4661198055985">nekoBT</a></td>
+<td style="text-align: left;"><strong>Freehold</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BFreehold%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/7271873158193">nekoBT</a></td>
+<td style="text-align: left;"><strong>GJM</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BGJM%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/4416382069043">nekoBT</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Half-Baked</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BHalf-Baked%5D%22">Nyaa</a></td>
+<td style="text-align: left;"><strong>Kaizoku</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BKaizoku%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/8438338633525">nekoBT</a></td>
+<td style="text-align: left;"><strong>Kaleido-subs</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BKaleido-subs%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/4397444928050">nekoBT</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Lazyleido</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BLazyleido%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/6220083224625">nekoBT</a></td>
+<td style="text-align: left;"><strong>MTBB</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BMTBB%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/7364000585776">nekoBT</a></td>
+<td style="text-align: left;"><strong>RaiN</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BRaiN%5D%22">Nyaa</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reza</strong><br><a href="https://nyaa.si/user/Reza27">Nyaa</a></td>
+<td style="text-align: left;"><strong>Salchow</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BSalchow%22">Nyaa</a> · <a href="https://nekobt.to/groups/7310206892857">nekoBT</a></td>
+<td style="text-align: left;"><strong>sam</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5Bsam%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/7466298080819">nekoBT</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>sgt</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5Bsgt%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/8111921135162">nekoBT</a></td>
+<td style="text-align: left;"><strong>Starbez</strong><br><a href="https://nyaa.si/user/Starbez">Nyaa</a> · <a href="https://nekobt.to/groups/7292250934068">nekoBT</a></td>
+<td style="text-align: left;"><strong>Vodes</strong><br><a href="https://nyaa.si/?f=0&amp;c=0_0&amp;q=%22%5BVodes%5D%22">Nyaa</a> · <a href="https://nekobt.to/groups/5949517558321">nekoBT</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<small>
+<p>Check <a href="https://fansubdb.com">FansubDB</a>&#x27;s list of release groups that are working on current shows.
+</small></p>
+<doc-anchor-target id="web-tier-list">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#web-tier-list">#</doc-anchor-trigger>
+        <span>Web tier list</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th style="text-align: center;">Tier</th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: center;">Bitrate</th>
+<th style="text-align: center;">Audio</th>
+<th style="text-align: center;">Subs</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Crunchyroll(<strong>CR</strong>)</td>
+<td style="text-align: center;">2pass: 8Mb/s<br>Majin: VBR</td>
+<td style="text-align: center;">AAC:192Kb/s</td>
+<td style="text-align: center;">ASS</td>
+<td style="text-align: left;">New &quot;Majin&quot; VBR stream generally offers better quality unless the bitrate is much lower</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Disney+(<strong>DSNP</strong>)</td>
+<td style="text-align: center;">VBR</td>
+<td style="text-align: center;">AAC:128Kb/s</td>
+<td style="text-align: center;">SRT</td>
+<td style="text-align: left;">Generally the best option when CR doesn&#x27;t have the license</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Netflix(<strong>NF</strong>)</td>
+<td style="text-align: center;">2pass: 5Mb/s</td>
+<td style="text-align: center;">AAC128Kb/s<br><em>AAC:192Kb/s</em></td>
+<td style="text-align: center;">SRT</td>
+<td style="text-align: left;">Has different streams for DV (Generally best), HDR, HEVC, AV1<br>xHE-AAC 192Kbps audio stream is typically unripped due to bad compatibility</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Amazon(<strong>AMZN</strong>)</td>
+<td style="text-align: center;">VBR</td>
+<td style="text-align: center;">DDP:224Kb/s</td>
+<td style="text-align: center;">SRT</td>
+<td style="text-align: left;">Has many different services and streams that can offer wildly different quality<br>Tends to be much more competitive in grainy shows where it offers higher bitrates</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">HIDIVE(<strong>HIDI</strong>)</td>
+<td style="text-align: center;">2pass: 5.3Mb/s</td>
+<td style="text-align: center;">AAC:128Kb/s</td>
+<td style="text-align: center;">ASS</td>
+<td style="text-align: left;">Wrong frame rate (24.0fps) resulting in a dupe frame (stutter) every 1000 frames (42 seconds)<br>Uses a very bad AAC encoder resulting in much worse quality than other services</td>
+</tr>
+</tbody>
+</table>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
