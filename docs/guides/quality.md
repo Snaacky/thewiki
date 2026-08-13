@@ -228,7 +228,7 @@ With so many releases available for each show, choosing the best one can be over
 For completed shows you should instead check [SeaDex](https://releases.moe).  It is actively maintained to stay up-to-date on what's best, backed by quality comparisons
 
 ### Notable WEB-DL Groups
-<small>This information is current as of 10th August 2026 and applies to recent releases from around this period onward. Older rips **will** have issues not mentioned here</small>
+<small>This information is current as of 13th August 2026 and applies to recent releases from around this period onward. Older rips **will** have issues not mentioned here</small>
 
 {.compact}
 | Group | Pub | LayRes | Style | Matrix | Name | Chap | Audio | Dub | Sub | Source | Majin | Notes |
@@ -237,9 +237,9 @@ For completed shows you should instead check [SeaDex](https://releases.moe).  It
 | Yameii | :white_check_mark: | :white_check_mark: | N/A | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dub | SDH | CR | Never | CR: Rips the dub stream (sometimes different) |
 | ToonsHub | :white_check_mark: | :white_check_mark: | :white_check_mark:- | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | All | 7.1Mb/s+ | Restyle sometimes messes with TS |
 | Kitsune | :x: | :white_check_mark: | :white_check_mark:- | :white_check_mark: | :white_check_mark: | :white_check_mark: | AMZN | Dual | All | All | Never | Aither internal<br>Restyle frequently messes with TS |
-| VARYG | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | All | ?Mb/s+ | Issues with missing/wrong fonts<br>Naming occasionally broken |
+| VARYG | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | All | 8Mb/s+ | Almost always has missing/wrong fonts<br>Naming occasionally broken |
 | SubsPlease | :white_check_mark: | :x: | :white_check_mark:- | :white_check_mark: | :x: | :x: | Native- | Sub | Eng | CR<br>HIDI | Never | Restyle sometimes messes with TS<br>CR: Uses lower quality AAC 128Kbps |
-| Erai-raws | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: | Native+ | Sub | All | All | Always | Slow to start ripping new seasons<br>NF: Uses higher quality xHE-AAC 192Kbps |
+| Erai-raws | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: | Native+ | Sub | All | All | 6Mb/s+? | Slow to start ripping new seasons<br>NF: Uses higher quality xHE-AAC 192Kbps |
 
 <small>
 
