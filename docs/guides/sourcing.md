@@ -13,9 +13,9 @@ visibility: hidden
 
 If you're in a rush to get something, try searching on Nyaa with the recommended release from -
 
-- [SeaDex Index](http://releases.moe)
+- [SeaDex Index](https://releases.moe)
 
-- [A Certain Fansubber's Index](http://index.fansubcar.tel)
+- [A Certain Fansubber's Index](https://index.fansubcar.tel)
 
 The first one is geared more towards video quality than the best subtitles. A lot of releases were compared by various people and compiled into these sheets to make it easier for you. However, these don't cover all the anime that exists. Subtitle preferences are subjective and the author's might not match with your own or the best video might not be compatible with your setup. It's always better to have an idea about these things yourself so you can always find what you need.
 
@@ -49,13 +49,19 @@ Public:
 
 - [Nyaa.si](https://nyaa.si)
 
-- [Anidex](https://anidex.info/)
+- [nekoBT](https://nekobt.to)
+
+- [AniRena](https://www.anirena.com/?cat=anime)
 
 - [Rutracker](https://rutracker.org/) (Russian, use Google Translate)
 
 - [Tokyotosho](https://www.tokyotosho.info/?cat=1)
 
-- [AnimeTosho](https://animetosho.org/) - Scrapes other public trackers, useful for getting information, mediainfo or subtitles and attachments from a torrent.
+- [AnimeTosho.org](https://animetosho.org/) - Scrapes other public trackers, useful for getting information, mediainfo or subtitles and attachments from a torrent. Stopped updating on 2026-05-09, can still be used to obtain older releases. Site planned to go offline in May 2027, check the announcements.
+
+- [AnimeTosho.xyz](https://animetosho.xyz/) - One of the new AnimeTosho replacements, not affiliated with the original. Scrapes other public trackers, useful for getting information, mediainfo or subtitles and attachments from a torrent.
+
+- [TsukiHime](https://tsukihime.org/) - Another AnimeTosho replacement. Scrapes other public trackers, useful for getting information, mediainfo or subtitles and attachments from a torrent.
 
 Private:
 
@@ -63,7 +69,7 @@ Private:
 
 - [BakaBT](http://bakabt.me/)
 
-- [AnimeTorrents](https://animetorrents.me/)
+- [AnimeZ](https://animez.to/)
 
 - [U2](https://u2.dmhy.org)
 
@@ -75,7 +81,11 @@ Private:
 
 - Anichiraku (private) - Stuff from Nyaa and other places mirrored to google drive for fast direct downloads.
 
-- Animetosho - Mirrors most torrents posted on TokyoTosho, Anidex and Nyaa's English translated anime category onto various file hosting services, as well as usenet. Screenshots, mediainfo, subtitles are also extracted and posted.
+- Animetosho.org - Mirrors most torrents posted on TokyoTosho, Anidex and Nyaa's English translated anime category onto various file hosting services, as well as usenet. Screenshots, mediainfo, subtitles are also extracted and posted. Stopped updating on 2026-05-09, can still be used to obtain older releases.
+
+- AnimeTosho.xyz - Mirrors most torrents posted on TokyoTosho, Nyaa.si English translated anime category and all non-RAW torrents from nekoBT onto various file hosting services, as well as usenet. Screenshots, mediainfo, subtitles are also extracted and posted.
+
+- TsukiHime - Mirrors most torrents posted on nekoBT and Nyaa.si English translated anime category onto various file hosting services, as well as usenet. Screenshots, mediainfo, subtitles and audio are also extracted and posted.
 
 ## Advanced
 
