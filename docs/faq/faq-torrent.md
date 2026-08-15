@@ -45,9 +45,11 @@ If you live in a developed country, you most likely need a VPN or seedbox for to
 
 ## Where can I find anime torrents?
 
-* [Nyaa](https://nyaa.si)
+* [Nyaa.si](https://nyaa.si)
 
-* [AniDex](https://anidex.info/)
+* [nekoBT](https://nekobt.to)
+
+* [AniRena](https://www.anirena.com/?cat=anime)
 
 * [TokyoTosho](https://www.tokyotosho.info/?cat=1)
 
