@@ -16,10 +16,10 @@ New to torrenting? See the [torrenting guide](/getting-started/torrenting) on ho
 
     Users can join this tracker through recruitments on various top-tier trackers. Unlike other trackers, however, joining AB is difficult and *not* guaranteed as several factors can affect your standing, such as receiving bans from other trackers.
 
-[AnimeTorrents](https://animetorrents.me) (AnT/AnimeZ)
+[AnimeZ](https://animez.to/) (AnT/AnimeZ)
 :   A closed private BitTorrent tracker for anime
 
-    Users can join this tracker through recruitments. Unfortunately, getting into this tracker is currently impossible, as recruits remain closed.
+    Users can join this tracker through recruitments, occasional open registration or by using one of the paid seedbox deals. For more info click the Register button on the home page. You can also invite yourself from their other sites (AvistaZ, PrivateHD, CinemaZ, ExoticaZ) if you fullfill the requirements, check the invites section from your profile on these sites.
 
 [BakaBT](https://bakabt.me) (BBT)
 :   A closed private BitTorrent tracker for anime, literature, music, etc.
