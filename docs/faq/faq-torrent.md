@@ -59,7 +59,7 @@ P2P groups `SubsPlease` and `Erai-raws` and scene groups `SUGOI` and `SENPAI` up
 
 However, they're not the best source for older anime or anime that has been released to Blu-ray. For the absolute best video quality or the best fansubs, try searching for the releases mentioned in:
 
-* [SeaSmoke's Anime Index](https://releases.moe)
+* [SeaDex Index](https://releases.moe)
 
 * [A Certain Fansubber's Index](https://docs.google.com/spreadsheets/d/1PJYwhjzLNPXV2X1np-S4rdZE4fb7pxp-QbHY1O0jH6Q/htmlview)
 
