@@ -19,7 +19,9 @@ We suggest you use a reliable content blocker such as [uBlock Origin](https://ub
 - [nekoBT](https://nekobt.to)
 - [Tokyo Toshokan](https://www.tokyotosho.info/?cat=1)
 - [AniRena](https://www.anirena.com)
-- [AnimeTosho](https://animetosho.org) [!badge variant="danger" icon="search" text="Scraper"]
+- [AnimeTosho.org](https://animetosho.org) [!badge variant="danger" icon="search" text="Scraper"]
+- [AnimeTosho.xyz](https://animetosho.xyz/) [!badge variant="danger" icon="search" text="Scraper"]
+- [TsukiHime](https://tsukihime.org/) [!badge variant="danger" icon="search" text="Scraper"]
 - [AcgnX](https://share.acgnx.se) [!badge variant="secondary" text="Chinese"]
 - [ACG.RIP](https://acg.rip) [!badge variant="secondary" text="Chinese"]
 - [DMHY](https://dmhy.org) [!badge variant="secondary" text="Chinese"]
