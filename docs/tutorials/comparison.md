@@ -252,7 +252,7 @@ clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, Transfer.BT709, Primar
 HD BD/WEB with incorrectly converted matrix (Inverse of the above, use this if that method makes colors look worse)
 ```py
 clip1 = Point().resample(clip1, matrix=Matrix.ST170_M, format=vs.YUV444P16)
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, ColorRange.LIMITED))
+clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT709, ColorRange.LIMITED))
 ```
 ===
 
