@@ -225,16 +225,16 @@ They can be downloaded under the *Subtitles* section of a release:
 ## Airing releases
 
 With so many releases available for each show, choosing the best one can be overwhelming. Here is a general guide to recommended release groups  
-For completed shows you should instead check [SeaDex](https://releases.moe).  It is actively maintained to stay up-to-date on what's best, backed by quality comparisons
+For completed shows you should instead check [SeaDex](https://seadex.moe).  It is actively maintained to stay up-to-date on what's best, backed by quality comparisons
 
 ### Notable WEB-DL Groups
-<small>This information is current as of 13th August 2026 and applies to recent releases from around this period onward. Older rips **will** have issues not mentioned here</small>
+<small>This information is current as of October 2026 and applies to recent releases from around this period onward. Older rips **will** have issues not mentioned here</small>
 
 {.compact}
 | Group | Pub | LayRes | Style | Matrix | Name | Chap | Audio | Dub | Sub | Source | Majin | Notes |
 |:------|:------:|:---------:|:-------:|:------:|:------:|:--------:|:-----:|:---:|:---------:|:------:|:-----:|:------|
-| AnoZu | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native<br>*AMZN* | Dual | All | CR | 7.5Mb/s+ | Primarily on Seedpool<br>AMZN audio is only for dual releases |
-| Yameii | :white_check_mark: | :white_check_mark: | N/A | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dub | SDH | CR | Never | CR: Rips the dub stream (sometimes different) |
+| AnoZu | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native<br>*AMZN* | Dual | All | CR | 7.5Mb/s+ | AMZN audio is only for dual releases |
+| Yameii | :white_check_mark: | :white_check_mark: | N/A | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dub | SDH | CR | 8Mb/s+ | CR: Rips the dub stream (sometimes different) |
 | ToonsHub | :white_check_mark: | :white_check_mark: | :white_check_mark:- | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | All | 7.1Mb/s+ | Restyle sometimes messes with TS |
 | Kitsune | :x: | :white_check_mark: | :white_check_mark:- | :white_check_mark: | :white_check_mark: | :white_check_mark: | AMZN | Dual | All | All | Never | Aither internal<br>Restyle frequently messes with TS |
 | VARYG | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Native | Dual | All | All | 8Mb/s+ | Almost always has missing/wrong fonts<br>Naming occasionally broken |
@@ -248,7 +248,7 @@ For completed shows you should instead check [SeaDex](https://releases.moe).  It
 **Restyle:** Changes the default font to something more visually appealing. See [Anime WEB-DL Groups Font comparison](https://slow.pics/c/lez5c1GP)  
 **Matrix:** The subtitle colorspace, not setting this will result in wrong colors for subtitles authored in BT.709 (generally foreign subs)  
 **Naming:** Uses official titles only and includes useful information such as the source, release type, and codecs  
-**Majin:** Experimental CR stream; quality varies by title. Bitrate shown is the minimum to prefer Majin over 8Mbps. Groups not bitrate gating will have inferior quality
+**Majin:** New CR stream; quality varies by title. Bitrate shown is the minimum to prefer Majin over 8Mbps. Groups not bitrate gating will have inferior quality
 </small>
 
 ### Notable WEB-DL Fixers
