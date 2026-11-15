@@ -58,7 +58,7 @@ Remove `set_output` from the `vstools` import:
 
 ```diff
 - from vstools import vs, core, depth, set_output, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased
-+ from vstools import vs, core, depth, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased
++ from vstools import vs, core, depth, Matrix, Transfer, Primaries, ColorRange, FieldBased
 ```
 
 #### 2. Add the `vsview` import
@@ -91,7 +91,7 @@ Make sure to comment (add `##` to the beginning of the line) and uncomment lines
 
 ```py
 ## Dependencies: Allows VSView to run [required; do not remove]
-from vstools import vs, core, depth, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased, ChromaLocation
+from vstools import vs, core, depth, Matrix, Transfer, Primaries, ColorRange, FieldBased, ChromaLocation
 from vssource import FFMS2, LSMAS
 from vskernels import Point, EwaLanczosSharp, Hermite
 from vsdeinterlace import vfm, vdecimate
@@ -154,10 +154,10 @@ clip1 = FieldBased.PROGRESSIVE.apply(clip1)
 
 ## Subsampling [!badge variant="danger" text="(Required)"]
 
-Converts clips to 16-bit depth with 4:4:4 chroma subsampling.
+Converts clips to 4:4:4 chroma subsampling.
 
 ```py
-clip1 = EwaLanczosSharp().scale(depth(clip1, 16), format=vs.YUV444P16, antiring=0.6)
+clip1 = EwaLanczosSharp().scale(clip1, format=vs.YUV444PS, antiring=0.6)
 ```
 
 !!!warning
@@ -220,39 +220,58 @@ clip1 = core.std.Crop(clip1, left=240, right=240, top=0, bottom=0)
 Sets the correct color information, should be used on sources with incorrect/missing metadata.
 
 ```py
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT709, Transfer.BT709, Primaries.BT709, ColorRange.LIMITED))
+clip1 = Matrix.BT709.apply(clip1)
+clip1 = Transfer.BT709.apply(clip1)
+clip1 = Primaries.BT709.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)
 ```
 ==- Example adjustments
 
 HD BD/WEB
 ```py
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT709, Transfer.BT709, Primaries.BT709, ColorRange.LIMITED))
+clip1 = Matrix.BT709.apply(clip1)
+clip1 = Transfer.BT709.apply(clip1)
+clip1 = Primaries.BT709.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)
 ```
 
 NTSC DVD
 ```py
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, Transfer.BT601, Primaries.ST170_M, ColorRange.LIMITED))
+clip1 = Matrix.ST170_M.apply(clip1)
+clip1 = Transfer.BT601.apply(clip1)
+clip1 = Primaries.ST170_M.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)
 ```
 
 PAL DVD
 ```py
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT470_BG, Transfer.BT601, Primaries.BT470_BG, ColorRange.LIMITED))
+clip1 = Matrix.BT470_BG.apply(clip1)
+clip1 = Transfer.BT601.apply(clip1)
+clip1 = Primaries.BT470_BG.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)
 ```
 
 HDR
 ```py
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT2020_NCL, Transfer.ST2084, Primaries.BT2020, ColorRange.LIMITED))
+clip1 = Matrix.BT2020_NCL.apply(clip1)
+clip1 = Transfer.ST2084.apply(clip1)
+clip1 = Primaries.BT2020.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)
 ```
 
 HD BD/WEB with incorrectly tagged matrix (Reds/green will look off)
 ```py
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, Transfer.BT709, Primaries.BT709, ColorRange.LIMITED))
+clip1 = Matrix.BT170_M.apply(clip1)
+clip1 = Transfer.BT709.apply(clip1)
+clip1 = Primaries.BT709.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)
 ```
 
 HD BD/WEB with incorrectly converted matrix (Inverse of the above, use this if that method makes colors look worse)
 ```py
-clip1 = Point().resample(clip1, matrix=Matrix.ST170_M, format=vs.YUV444P16)
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT709, ColorRange.LIMITED))
+clip1 = Point().resample(clip1, matrix=Matrix.ST170_M, format=vs.YUV444PS)
+clip1 = Matrix.BT709.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)
 ```
 ===
 
@@ -275,14 +294,16 @@ Clipping should always be attempted first before resorting to tonemapping, even 
 
 Clip HDR source to SDR
 ```py
-clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444P16)
+clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444PS)
 ```
 Clip DV (Profile 5) source to SDR
 ```py
 clip1args = PlaceboTonemapOpts(source_colorspace=ColorSpace.DOVI, target_colorspace=ColorSpace.HDR10, use_dovi=True)
-clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT2020_NCL, Transfer.ST2084, Primaries.BT2020))
-clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444P16)
+clip1 = depth(core.placebo.Tonemap(depth(clip1, 16), **clip1args.vsplacebo_dict()), 32)
+clip1 = Matrix.BT2020_NCL.apply(clip1)
+clip1 = Transfer.ST2084.apply(clip1)
+clip1 = Primaries.BT2020.apply(clip1)
+clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444PS)
 ```
 
 ### Tonemapping
@@ -294,14 +315,10 @@ Converts the dynamic range of the source (i.e. HDR/DV -> SDR).
 
 ```py
 clip1args = PlaceboTonemapOpts(source_colorspace=ColorSpace.HDR10, target_colorspace=ColorSpace.SDR, tone_map_function=Tonemap.Spline, gamut_mapping=Gamut.Perceptual, peak_detect=True, use_dovi=True, contrast_recovery=0.3 ,dst_max=100)
-clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
-clip1 = core.std.SetFrameProps(clip1, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRANSFER_BT709, _Primaries=vs.PRIMARIES_BT709)
-```
-
-## Depth [!badge variant="danger" text="(Required)"]
-Converts the clip to 32 bit depth for accurate output
-```py
-clip1 = depth(clip1, 32)
+clip1 = depth(core.placebo.Tonemap(depth(clip1, 16), **clip1args.vsplacebo_dict()), 32)
+clip1 = Matrix.BT709.apply(clip1)
+clip1 = Transfer.BT709.apply(clip1)
+clip1 = Primaries.BT709.apply(clip1)
 ```
 
 ### Gamma
