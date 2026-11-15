@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.845396023427">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.848100453524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="/resources/css/retype.css?v=3.12.0.845396023427" rel="stylesheet">
+    <link href="/resources/css/retype.css?v=3.12.0.848100453524" rel="stylesheet">
 
-    <script data-cfasync="false" src="/resources/js/config.js?v=3.12.0.845396023427" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="/resources/js/config.js?v=3.12.0.848100453524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="/resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="/resources/js/lunr.js?v=3.12.0.845396023427" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="/resources/js/prism.js?v=3.12.0.845396023427" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="/resources/js/lunr.js?v=3.12.0.848100453524" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="/resources/js/prism.js?v=3.12.0.848100453524" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -227,7 +227,7 @@ As such, this guide now exclusively covers VSView.</p>
 <p>Remove <code translate="no" v-pre>set_output</code> from the <code translate="no" v-pre>vstools</code> import:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-diff"><code v-pre class="language-diff">- from vstools import vs, core, depth, set_output, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased
-+ from vstools import vs, core, depth, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased</code></pre>
++ from vstools import vs, core, depth, Matrix, Transfer, Primaries, ColorRange, FieldBased</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="2-add-the-vsview-import">
     <h4>
@@ -279,7 +279,7 @@ As such, this guide now exclusively covers VSView.</p>
 </div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-python"><code v-pre class="language-python">## Dependencies: Allows VSView to run [required; do not remove]
-from vstools import vs, core, depth, PropEnum, Matrix, Transfer, Primaries, ColorRange, FieldBased, ChromaLocation
+from vstools import vs, core, depth, Matrix, Transfer, Primaries, ColorRange, FieldBased, ChromaLocation
 from vssource import FFMS2, LSMAS
 from vskernels import Point, EwaLanczosSharp, Hermite
 from vsdeinterlace import vfm, vdecimate
@@ -387,9 +387,9 @@ set_output(clip3, source3)</code></pre>
         </span></span>
     </h2>
 </doc-anchor-target>
-<p>Converts clips to 16-bit depth with 4:4:4 chroma subsampling.</p>
+<p>Converts clips to 4:4:4 chroma subsampling.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = EwaLanczosSharp().scale(depth(clip1, 16), format=vs.YUV444P16, antiring=0.6)</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = EwaLanczosSharp().scale(clip1, format=vs.YUV444PS, antiring=0.6)</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -482,34 +482,53 @@ To get the frame difference, find a unique frame (e.g. scene changes) in the cor
 </doc-anchor-target>
 <p>Sets the correct color information, should be used on sources with incorrect/missing metadata.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT709, Transfer.BT709, Primaries.BT709, ColorRange.LIMITED))</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Matrix.BT709.apply(clip1)
+clip1 = Transfer.BT709.apply(clip1)
+clip1 = Primaries.BT709.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)</code></pre>
 </doc-codeblock></div>
 <doc-panel id="example-adjustments" collapsed>
     <template #title>Example adjustments</template>
 <p>HD BD/WEB</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT709, Transfer.BT709, Primaries.BT709, ColorRange.LIMITED))</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Matrix.BT709.apply(clip1)
+clip1 = Transfer.BT709.apply(clip1)
+clip1 = Primaries.BT709.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)</code></pre>
 </doc-codeblock></div>
 <p>NTSC DVD</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, Transfer.BT601, Primaries.ST170_M, ColorRange.LIMITED))</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Matrix.ST170_M.apply(clip1)
+clip1 = Transfer.BT601.apply(clip1)
+clip1 = Primaries.ST170_M.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)</code></pre>
 </doc-codeblock></div>
 <p>PAL DVD</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT470_BG, Transfer.BT601, Primaries.BT470_BG, ColorRange.LIMITED))</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Matrix.BT470_BG.apply(clip1)
+clip1 = Transfer.BT601.apply(clip1)
+clip1 = Primaries.BT470_BG.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)</code></pre>
 </doc-codeblock></div>
 <p>HDR</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT2020_NCL, Transfer.ST2084, Primaries.BT2020, ColorRange.LIMITED))</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Matrix.BT2020_NCL.apply(clip1)
+clip1 = Transfer.ST2084.apply(clip1)
+clip1 = Primaries.BT2020.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)</code></pre>
 </doc-codeblock></div>
 <p>HD BD/WEB with incorrectly tagged matrix (Reds/green will look off)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = PropEnum.ensure_presences(clip1, (Matrix.ST170_M, Transfer.BT709, Primaries.BT709, ColorRange.LIMITED))</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Matrix.BT170_M.apply(clip1)
+clip1 = Transfer.BT709.apply(clip1)
+clip1 = Primaries.BT709.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)</code></pre>
 </doc-codeblock></div>
 <p>HD BD/WEB with incorrectly converted matrix (Inverse of the above, use this if that method makes colors look worse)</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Point().resample(clip1, matrix=Matrix.ST170_M, format=vs.YUV444P16)
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT709, ColorRange.LIMITED))</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Point().resample(clip1, matrix=Matrix.ST170_M, format=vs.YUV444PS)
+clip1 = Matrix.BT709.apply(clip1)
+clip1 = ColorRange.LIMITED.apply(clip1)</code></pre>
 </doc-codeblock></div>
 </doc-panel>
 <doc-anchor-target id="double-range-compression">
@@ -537,14 +556,16 @@ clip1 = ColorRange.LIMITED.apply(clip1)</code></pre>
 Clipping should always be attempted first before resorting to tonemapping, even if some highlights get blown out. You may also need to apply a 0.92  <doc-anchor-trigger to="#gamma">gamma adjustment</doc-anchor-trigger> afterwards.</p>
 <p>Clip HDR source to SDR</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444P16)</code></pre>
+<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444PS)</code></pre>
 </doc-codeblock></div>
 <p>Clip DV (Profile 5) source to SDR</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-python"><code v-pre class="language-python">clip1args = PlaceboTonemapOpts(source_colorspace=ColorSpace.DOVI, target_colorspace=ColorSpace.HDR10, use_dovi=True)
-clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
-clip1 = PropEnum.ensure_presences(clip1, (Matrix.BT2020_NCL, Transfer.ST2084, Primaries.BT2020))
-clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444P16)</code></pre>
+clip1 = depth(core.placebo.Tonemap(depth(clip1, 16), **clip1args.vsplacebo_dict()), 32)
+clip1 = Matrix.BT2020_NCL.apply(clip1)
+clip1 = Transfer.ST2084.apply(clip1)
+clip1 = Primaries.BT2020.apply(clip1)
+clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, primaries=Primaries.BT709, format=vs.YUV444PS)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="tonemapping">
     <h3>
@@ -559,20 +580,10 @@ clip1 = Point().resample(clip1, matrix=Matrix.BT709, transfer=Transfer.BT709, pr
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-python"><code v-pre class="language-python">clip1args = PlaceboTonemapOpts(source_colorspace=ColorSpace.HDR10, target_colorspace=ColorSpace.SDR, tone_map_function=Tonemap.Spline, gamut_mapping=Gamut.Perceptual, peak_detect=True, use_dovi=True, contrast_recovery=0.3 ,dst_max=100)
-clip1 = core.placebo.Tonemap(clip1, **clip1args.vsplacebo_dict())
-clip1 = core.std.SetFrameProps(clip1, _Matrix=vs.MATRIX_BT709, _Transfer=vs.TRANSFER_BT709, _Primaries=vs.PRIMARIES_BT709)</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="depth">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#depth">#</doc-anchor-trigger>
-        <span>Depth <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-danger-text bg-badge-danger border border-badge-danger-border h-6 px-2 text-xs rounded-md">
-            <span>(Required)</span>
-        </span></span>
-    </h2>
-</doc-anchor-target>
-<p>Converts the clip to 32 bit depth for accurate output</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">clip1 = depth(clip1, 32)</code></pre>
+clip1 = depth(core.placebo.Tonemap(depth(clip1, 16), **clip1args.vsplacebo_dict()), 32)
+clip1 = Matrix.BT709.apply(clip1)
+clip1 = Transfer.BT709.apply(clip1)
+clip1 = Primaries.BT709.apply(clip1)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="gamma">
     <h3>
